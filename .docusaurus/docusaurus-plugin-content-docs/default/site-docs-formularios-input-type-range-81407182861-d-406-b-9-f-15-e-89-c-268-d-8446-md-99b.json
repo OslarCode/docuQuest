@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Input Type Range 81407182861d406b9f15e89c268d8446",
+  "title": "Input Type Range",
+  "description": "Los formularios HTML son una parte fundamental de la interacción del usuario con las páginas web. Permiten a los usuarios ingresar datos, realizar selecciones y enviar información de manera interactiva. Uno de los input types más interesantes y útiles es el \"range\", que permite a los usuarios seleccionar un valor dentro de un rango predefinido. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"range\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/Input Type Range 81407182861d406b9f15e89c268d8446.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Input Type Range 81407182861d406b9f15e89c268d8446",
+  "permalink": "/docs/formularios/Input Type Range 81407182861d406b9f15e89c268d8446",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Input Type Range 81407182861d406b9f15e89c268d8446.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

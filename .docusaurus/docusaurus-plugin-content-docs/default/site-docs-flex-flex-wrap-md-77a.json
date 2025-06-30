@@ -1,0 +1,24 @@
+{
+  "id": "flex/flexWrap",
+  "title": "flex-wrap: Controlando el Ajuste de Líneas",
+  "description": "📘 Introducción",
+  "source": "@site/docs/flex/flexWrap.md",
+  "sourceDirName": "flex",
+  "slug": "/flex/flexWrap",
+  "permalink": "/docuQuest/docs/flex/flexWrap",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/flexWrap.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Ejes en Flexbox: Eje Principal y Eje Secundario",
+    "permalink": "/docuQuest/docs/flex/ejesFlexbox"
+  },
+  "next": {
+    "title": "flex-flow: Control Direccional y de Envoltura en una Sola Línea",
+    "permalink": "/docuQuest/docs/flex/flexFlow"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "js/dom/acceso_dom",
+  "title": "Acceso al DOM",
+  "description": "El acceso y manipulación del Modelo de Objetos del Documento (DOM) es una habilidad fundamental para los desarrolladores web. El DOM proporciona una representación estructurada del documento HTML o XML, permitiendo a los desarrolladores acceder y manipular su contenido y estructura utilizando JavaScript. Esta capacidad es esencial para crear páginas web dinámicas e interactivas. En este texto, exploraremos en profundidad los métodos principales para acceder al DOM: getElementById, getElementsByClassName, getElementsByTagName, y los selectores CSS avanzados querySelector y querySelectorAll.",
+  "source": "@site/docs/js/dom/acceso_dom.md",
+  "sourceDirName": "js/dom",
+  "slug": "/js/dom/acceso_dom",
+  "permalink": "/docs/js/dom/acceso_dom",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/dom/acceso_dom.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

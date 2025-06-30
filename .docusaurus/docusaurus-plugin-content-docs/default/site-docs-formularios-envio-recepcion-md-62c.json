@@ -1,0 +1,24 @@
+{
+  "id": "formularios/envioRecepcion",
+  "title": "Envío y recepción de datos",
+  "description": "El envío y la recepción de datos a través de un formulario web son procesos fundamentales que facilitan la interacción entre los usuarios y las aplicaciones web. Este texto explora en detalle cómo funciona internamente este proceso, qué sistemas intervienen y qué protocolos se utilizan para garantizar una comunicación efectiva entre el navegador del usuario y el servidor web.",
+  "source": "@site/docs/formularios/envioRecepcion.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/envioRecepcion",
+  "permalink": "/docuQuest/docs/formularios/envioRecepcion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/envioRecepcion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Variabilidad de los datos",
+    "permalink": "/docuQuest/docs/formularios/variabilidadDatos"
+  },
+  "next": {
+    "title": "Servidor Web",
+    "permalink": "/docuQuest/docs/formularios/servidorWeb"
+  }
+}

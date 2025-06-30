@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Input Type Text d0f46b3022ad440d9035516797fd48a5",
+  "title": "Input Type Text",
+  "description": "En el mundo del desarrollo web, los formularios HTML son una herramienta fundamental para interactuar con los usuarios y recopilar información. Dentro de estos formularios, el elemento input es uno de los más utilizados para permitir a los usuarios ingresar datos. Uno de los tipos más básicos y versátiles de input es el input type \"text\". En este texto, exploraremos en profundidad qué es y cómo funciona el input type \"text\" en los formularios web, analizando su definición, funcionalidad, ejemplos de uso y consideraciones adicionales.",
+  "source": "@site/docs/formularios/Input Type Text d0f46b3022ad440d9035516797fd48a5.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Input Type Text d0f46b3022ad440d9035516797fd48a5",
+  "permalink": "/docs/formularios/Input Type Text d0f46b3022ad440d9035516797fd48a5",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Input Type Text d0f46b3022ad440d9035516797fd48a5.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

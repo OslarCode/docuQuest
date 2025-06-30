@@ -1,0 +1,24 @@
+{
+  "id": "poo/clases&metodos",
+  "title": "Clases y métodos en JavaScript (ES6+)",
+  "description": "En este módulo, exploraremos las Clases y Métodos en JavaScript (ES6+), centrándonos en su definición, uso del constructor, instanciación de objetos, encapsulación y métodos estáticos. Estos conceptos son fundamentales para aplicar la Programación Orientada a Objetos (POO) en JavaScript de manera efectiva.",
+  "source": "@site/docs/poo/clases&metodos.md",
+  "sourceDirName": "poo",
+  "slug": "/poo/clases&metodos",
+  "permalink": "/docuQuest/docs/poo/clases&metodos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/poo/clases&metodos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Objetos y prototipos en JavaScript",
+    "permalink": "/docuQuest/docs/poo/objetos&prototipos"
+  },
+  "next": {
+    "title": "Herencia y polimorfismo en JavaScript",
+    "permalink": "/docuQuest/docs/poo/herencia&polimorfismo"
+  }
+}

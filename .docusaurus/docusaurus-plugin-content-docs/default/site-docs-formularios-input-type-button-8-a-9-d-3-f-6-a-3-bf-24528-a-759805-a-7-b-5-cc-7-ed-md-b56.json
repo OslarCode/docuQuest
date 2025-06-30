@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Input Type Button 8a9d3f6a3bf24528a759805a7b5cc7ed",
+  "title": "Input Type Button",
+  "description": "En el desarrollo web, los formularios son una parte esencial de la interacción entre los usuarios y las aplicaciones en línea. Los input types en HTML permiten a los desarrolladores crear una amplia variedad de controles de entrada para recopilar información del usuario. El input type \"button\" es uno de estos tipos de entrada y se utiliza para crear botones en los formularios web. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"button\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/Input Type Button 8a9d3f6a3bf24528a759805a7b5cc7ed.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Input Type Button 8a9d3f6a3bf24528a759805a7b5cc7ed",
+  "permalink": "/docs/formularios/Input Type Button 8a9d3f6a3bf24528a759805a7b5cc7ed",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Input Type Button 8a9d3f6a3bf24528a759805a7b5cc7ed.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,24 @@
+{
+  "id": "css2/imagenes",
+  "title": "Estilos para Imágenes en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/imagenes.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/imagenes",
+  "permalink": "/docuQuest/docs/css2/imagenes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/imagenes.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Media Queries en CSS3",
+    "permalink": "/docuQuest/docs/css2/mediaQueries"
+  },
+  "next": {
+    "title": "Módulo 1: Introducción a la Usabilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/introduccion"
+  }
+}

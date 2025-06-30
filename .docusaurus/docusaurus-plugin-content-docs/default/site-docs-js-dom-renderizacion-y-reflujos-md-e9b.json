@@ -1,0 +1,15 @@
+{
+  "id": "js/dom/renderización_y_reflujos",
+  "title": "Renderización y Reflujos",
+  "description": "Introducción",
+  "source": "@site/docs/js/dom/renderización_y_reflujos.md",
+  "sourceDirName": "js/dom",
+  "slug": "/js/dom/renderización_y_reflujos",
+  "permalink": "/docs/js/dom/renderización_y_reflujos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/dom/renderización_y_reflujos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

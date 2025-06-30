@@ -1,0 +1,24 @@
+{
+  "id": "formularios/autocomplete",
+  "title": "Atributo Autocomplete",
+  "description": "Los formularios HTML son elementos esenciales en el desarrollo web, permitiendo la interacción entre los usuarios y los sitios web. Uno de los atributos menos conocidos pero igualmente importantes en la construcción de formularios es el atributo \"autocomplete\", que controla si el navegador debe completar automáticamente los campos del formulario basándose en el historial de entradas del usuario. En este texto, exploraremos en detalle qué es y cómo funciona el atributo \"autocomplete\" en los formularios web, analizando su significado, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/autocomplete.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/autocomplete",
+  "permalink": "/docuQuest/docs/formularios/autocomplete",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/autocomplete.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo Method",
+    "permalink": "/docuQuest/docs/formularios/method"
+  },
+  "next": {
+    "title": "Atributo Novalidate",
+    "permalink": "/docuQuest/docs/formularios/novalidate"
+  }
+}

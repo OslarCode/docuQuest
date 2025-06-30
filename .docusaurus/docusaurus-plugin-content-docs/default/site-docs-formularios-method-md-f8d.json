@@ -1,0 +1,24 @@
+{
+  "id": "formularios/method",
+  "title": "Atributo Method",
+  "description": "Los formularios HTML son elementos fundamentales en el desarrollo web, permitiendo la interacción entre los usuarios y los sitios web. Uno de los atributos más importantes en la construcción de formularios es el atributo \"method\", que determina cómo se enviarán los datos del formulario al servidor web. En este texto, exploraremos en detalle qué es y cómo funciona el atributo \"method\" en los formularios web, analizando su significado, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/method.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/method",
+  "permalink": "/docuQuest/docs/formularios/method",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/method.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo Target",
+    "permalink": "/docuQuest/docs/formularios/target"
+  },
+  "next": {
+    "title": "Atributo Autocomplete",
+    "permalink": "/docuQuest/docs/formularios/autocomplete"
+  }
+}

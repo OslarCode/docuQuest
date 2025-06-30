@@ -1,0 +1,24 @@
+{
+  "id": "js/breakContinue",
+  "title": "Break & Continue",
+  "description": "En el mundo de la programación, el control del flujo de ejecución es fundamental para desarrollar aplicaciones eficientes y funcionales. JavaScript, como lenguaje de programación ampliamente utilizado en el desarrollo web y de aplicaciones, ofrece diversas herramientas para controlar el flujo de ejecución de un programa. En este extenso análisis, exploraremos en detalle qué son y cómo funcionan las sentencias break y continue en JavaScript, examinando su sintaxis, comportamiento y aplicaciones prácticas.",
+  "source": "@site/docs/js/breakContinue.md",
+  "sourceDirName": "js",
+  "slug": "/js/breakContinue",
+  "permalink": "/docuQuest/docs/js/breakContinue",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/breakContinue.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "While",
+    "permalink": "/docuQuest/docs/js/while"
+  },
+  "next": {
+    "title": "Iterables",
+    "permalink": "/docuQuest/docs/js/iterables"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputFile",
+  "title": "Input Type File",
+  "description": "En el desarrollo web, los formularios son una herramienta fundamental para recopilar información de los usuarios. HTML ofrece una variedad de input types que permiten a los usuarios introducir diferentes tipos de datos. Uno de estos input types es el \"file\", que permite a los usuarios seleccionar y cargar archivos desde sus dispositivos locales. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"file\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputFile.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputFile",
+  "permalink": "/docuQuest/docs/formularios/inputFile",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputFile.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Email",
+    "permalink": "/docuQuest/docs/formularios/inputEmail"
+  },
+  "next": {
+    "title": "Input Type Hidden",
+    "permalink": "/docuQuest/docs/formularios/inputHidden"
+  }
+}

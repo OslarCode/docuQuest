@@ -1,0 +1,15 @@
+{
+  "id": "js/api/fetch",
+  "title": "Fetch API",
+  "description": "Introducción",
+  "source": "@site/docs/js/api/fetch.md",
+  "sourceDirName": "js/api",
+  "slug": "/js/api/fetch",
+  "permalink": "/docuQuest/docs/js/api/fetch",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/api/fetch.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

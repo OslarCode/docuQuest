@@ -1,0 +1,16 @@
+{
+  "id": "poo/objetos&prototipos",
+  "title": "Módulo 2: Objetos y prototipos en JavaScript",
+  "description": "En este módulo, exploraremos los Objetos y Prototipos en JavaScript, comprendiendo cómo este lenguaje implementa la Programación Orientada a Objetos (POO) de manera única. Abordaremos las diferencias entre la POO clásica y la basada en prototipos, la creación y manipulación de objetos, y profundizaremos en el concepto de prototipos y su papel en la herencia.",
+  "source": "@site/docs/poo/2.objetos&prototipos.md",
+  "sourceDirName": "poo",
+  "slug": "/poo/objetos&prototipos",
+  "permalink": "/docs/poo/objetos&prototipos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/poo/2.objetos&prototipos.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {}
+}

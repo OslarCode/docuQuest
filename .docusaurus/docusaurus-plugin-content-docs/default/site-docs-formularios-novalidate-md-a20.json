@@ -1,0 +1,24 @@
+{
+  "id": "formularios/novalidate",
+  "title": "Atributo Novalidate",
+  "description": "Los formularios HTML son elementos fundamentales en el desarrollo web, permitiendo la interacción entre los usuarios y los sitios web. Uno de los atributos menos conocidos pero igualmente importantes en la construcción de formularios es el atributo \"novalidate\", que controla si el navegador debe realizar la validación de los campos del formulario antes de enviar los datos al servidor. En este texto, exploraremos en detalle qué es y cómo funciona el atributo \"novalidate\" en los formularios web, analizando su significado, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/novalidate.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/novalidate",
+  "permalink": "/docuQuest/docs/formularios/novalidate",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/novalidate.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo Autocomplete",
+    "permalink": "/docuQuest/docs/formularios/autocomplete"
+  },
+  "next": {
+    "title": "Atributo Enctype",
+    "permalink": "/docuQuest/docs/formularios/enctype"
+  }
+}

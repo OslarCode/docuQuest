@@ -1,0 +1,24 @@
+{
+  "id": "css/text",
+  "title": "Propiedades de Texto en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/text.md",
+  "sourceDirName": "css",
+  "slug": "/css/text",
+  "permalink": "/docuQuest/docs/css/text",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/text.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Outline en CSS3",
+    "permalink": "/docuQuest/docs/css/outline"
+  },
+  "next": {
+    "title": "Fuentes en CSS3",
+    "permalink": "/docuQuest/docs/css/fuentes"
+  }
+}

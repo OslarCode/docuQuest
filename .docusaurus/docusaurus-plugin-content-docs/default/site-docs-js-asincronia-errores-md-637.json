@@ -1,0 +1,24 @@
+{
+  "id": "js/asincronia/errores",
+  "title": "Manejo de errores",
+  "description": "En la programación, los errores son inevitables. Pueden surgir por diversas razones, como errores de sintaxis, errores lógicos o problemas de conectividad a la red. En JavaScript, un lenguaje de programación ampliamente utilizado en el desarrollo web, es fundamental comprender cómo manejar estos errores de manera efectiva para garantizar un funcionamiento suave y confiable de las aplicaciones.",
+  "source": "@site/docs/js/asincronia/errores.md",
+  "sourceDirName": "js/asincronia",
+  "slug": "/js/asincronia/errores",
+  "permalink": "/docuQuest/docs/js/asincronia/errores",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/asincronia/errores.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Async/Await",
+    "permalink": "/docuQuest/docs/js/asincronia/asyncAwait"
+  },
+  "next": {
+    "title": "Operaciones asíncronas comunes (Ajax VS Fetch)",
+    "permalink": "/docuQuest/docs/js/asincronia/operacionesAsincronas"
+  }
+}

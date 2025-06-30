@@ -1,0 +1,24 @@
+{
+  "id": "js/strings/strings",
+  "title": "Strings",
+  "description": "Introducción",
+  "source": "@site/docs/js/strings/strings.md",
+  "sourceDirName": "js/strings",
+  "slug": "/js/strings/",
+  "permalink": "/docuQuest/docs/js/strings/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/strings/strings.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "¿Por qué en JavaScript se dice que todo son objetos?",
+    "permalink": "/docuQuest/docs/js/objetos/todoSonObjetos"
+  },
+  "next": {
+    "title": "Métodos de Strings",
+    "permalink": "/docuQuest/docs/js/strings/metodosStrings"
+  }
+}

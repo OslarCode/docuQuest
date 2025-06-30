@@ -1,0 +1,24 @@
+{
+  "id": "html/elementosSpan",
+  "title": "El Funcionamiento del Elemento span en HTML 5",
+  "description": "Concepto del Elemento `` en HTML5",
+  "source": "@site/docs/html/elementosSpan.md",
+  "sourceDirName": "html",
+  "slug": "/html/elementosSpan",
+  "permalink": "/docuQuest/docs/html/elementosSpan",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/elementosSpan.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funcionamiento de los Elementos meta en HTML5",
+    "permalink": "/docuQuest/docs/html/elementosMeta"
+  },
+  "next": {
+    "title": "Funcionamiento de los Enlaces en HTML 5",
+    "permalink": "/docuQuest/docs/html/enlaces"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "html/audio",
+  "title": "Funcionamiento del Audio en HTML 5",
+  "description": "Concepto de Audio en HTML5",
+  "source": "@site/docs/html/audio.md",
+  "sourceDirName": "html",
+  "slug": "/html/audio",
+  "permalink": "/docuQuest/docs/html/audio",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/audio.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funcionamiento de las Imágenes en HTML 5",
+    "permalink": "/docuQuest/docs/html/imagenes"
+  },
+  "next": {
+    "title": "Accesibilidad Web en HTML 5",
+    "permalink": "/docuQuest/docs/html/accesibilidad"
+  }
+}

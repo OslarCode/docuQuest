@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Servidor Web 346eaed9dfb94e45b8f45f122fdf3af9",
+  "title": "Servidor Web",
+  "description": "El funcionamiento de un servidor web en el contexto del envío y recepción de formularios desde un navegador web es un proceso esencial en la interacción entre el usuario y la aplicación web. Este texto se adentrará en los conceptos básicos de qué es un servidor web, cómo funciona en términos generales, el proceso interno del envío y recepción de datos a través de un formulario web, los sistemas involucrados y los protocolos que actúan para facilitar esta acción.",
+  "source": "@site/docs/formularios/Servidor Web 346eaed9dfb94e45b8f45f122fdf3af9.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Servidor Web 346eaed9dfb94e45b8f45f122fdf3af9",
+  "permalink": "/docs/formularios/Servidor Web 346eaed9dfb94e45b8f45f122fdf3af9",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Servidor Web 346eaed9dfb94e45b8f45f122fdf3af9.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

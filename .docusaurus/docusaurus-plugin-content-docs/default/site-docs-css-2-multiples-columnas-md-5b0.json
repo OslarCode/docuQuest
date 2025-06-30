@@ -1,0 +1,24 @@
+{
+  "id": "css2/multiplesColumnas",
+  "title": "Múltiples Columnas en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/multiplesColumnas.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/multiplesColumnas",
+  "permalink": "/docuQuest/docs/css2/multiplesColumnas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/multiplesColumnas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Paginación en CSS3",
+    "permalink": "/docuQuest/docs/css2/paginacion"
+  },
+  "next": {
+    "title": "Variables en CSS3",
+    "permalink": "/docuQuest/docs/css2/variables"
+  }
+}

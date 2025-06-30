@@ -1,0 +1,24 @@
+{
+  "id": "css2/button",
+  "title": "Botones en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/button.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/button",
+  "permalink": "/docuQuest/docs/css2/button",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/button.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Máscara en CSS3",
+    "permalink": "/docuQuest/docs/css2/mascara"
+  },
+  "next": {
+    "title": "Paginación en CSS3",
+    "permalink": "/docuQuest/docs/css2/paginacion"
+  }
+}

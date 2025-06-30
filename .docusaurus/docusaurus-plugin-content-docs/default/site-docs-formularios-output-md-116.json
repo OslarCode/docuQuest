@@ -1,0 +1,24 @@
+{
+  "id": "formularios/output",
+  "title": "Elemento Output",
+  "description": "En el desarrollo web, los formularios desempeñan un papel crucial en la interacción entre los usuarios y las aplicaciones en línea. El elemento \"output\" en HTML es una etiqueta utilizada para mostrar el resultado de una operación o cálculo realizado en un formulario. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"output\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/output.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/output",
+  "permalink": "/docuQuest/docs/formularios/output",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/output.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elemento Datalist",
+    "permalink": "/docuQuest/docs/formularios/datalist"
+  },
+  "next": {
+    "title": "Elemento Optgroup",
+    "permalink": "/docuQuest/docs/formularios/optgroup"
+  }
+}

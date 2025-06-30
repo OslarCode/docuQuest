@@ -1,0 +1,24 @@
+{
+  "id": "js/dom/renderizacionReflujos",
+  "title": "Renderización y Reflujos",
+  "description": "Introducción",
+  "source": "@site/docs/js/dom/renderizacionReflujos.md",
+  "sourceDirName": "js/dom",
+  "slug": "/js/dom/renderizacionReflujos",
+  "permalink": "/docuQuest/docs/js/dom/renderizacionReflujos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/dom/renderizacionReflujos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manipulación del DOM",
+    "permalink": "/docuQuest/docs/js/dom/manipulacion"
+  },
+  "next": {
+    "title": "Maps",
+    "permalink": "/docuQuest/docs/js/maps"
+  }
+}

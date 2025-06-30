@@ -1,0 +1,15 @@
+{
+  "id": "js/operadores_de_asignacion",
+  "title": "Operadores de Asignación",
+  "description": "Introducción",
+  "source": "@site/docs/js/operadores_de_asignacion.md",
+  "sourceDirName": "js",
+  "slug": "/js/operadores_de_asignacion",
+  "permalink": "/docs/js/operadores_de_asignacion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/operadores_de_asignacion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

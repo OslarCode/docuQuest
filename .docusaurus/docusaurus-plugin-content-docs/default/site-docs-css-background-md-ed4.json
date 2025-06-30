@@ -1,0 +1,24 @@
+{
+  "id": "css/background",
+  "title": "Backgrounds en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/background.md",
+  "sourceDirName": "css",
+  "slug": "/css/background",
+  "permalink": "/docuQuest/docs/css/background",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/background.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Colores en CSS3",
+    "permalink": "/docuQuest/docs/css/colores"
+  },
+  "next": {
+    "title": "Borders en CSS3",
+    "permalink": "/docuQuest/docs/css/borders"
+  }
+}

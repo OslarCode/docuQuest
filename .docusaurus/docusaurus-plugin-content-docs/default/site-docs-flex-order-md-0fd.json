@@ -1,0 +1,24 @@
+{
+  "id": "flex/order",
+  "title": "Order: Controlando el orden visual sin tocar el HTML",
+  "description": "📘 ¿Qué es order?",
+  "source": "@site/docs/flex/order.md",
+  "sourceDirName": "flex",
+  "slug": "/flex/order",
+  "permalink": "/docuQuest/docs/flex/order",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/order.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Align-content: Controlando el Espaciado entre Líneas",
+    "permalink": "/docuQuest/docs/flex/alignContent"
+  },
+  "next": {
+    "title": "Flex-grow: Cómo distribuir el espacio sobrante",
+    "permalink": "/docuQuest/docs/flex/flexGrow"
+  }
+}

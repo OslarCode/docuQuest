@@ -1,0 +1,24 @@
+{
+  "id": "js/generators",
+  "title": "Generators",
+  "description": "En el mundo de la programación, especialmente en el ámbito de JavaScript, los Generators son una característica poderosa que permite la creación de iteradores personalizados de manera eficiente y elegante. En este texto, exploraremos en profundidad qué son y cómo funcionan los Generators en JavaScript, centrándonos en su importancia y su papel en el desarrollo de aplicaciones avanzadas.",
+  "source": "@site/docs/js/generators.md",
+  "sourceDirName": "js",
+  "slug": "/js/generators",
+  "permalink": "/docuQuest/docs/js/generators",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/generators.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Operaciones asíncronas comunes (Ajax VS Fetch)",
+    "permalink": "/docuQuest/docs/js/asincronia/operacionesAsincronas"
+  },
+  "next": {
+    "title": "Proxies",
+    "permalink": "/docuQuest/docs/js/proxies"
+  }
+}

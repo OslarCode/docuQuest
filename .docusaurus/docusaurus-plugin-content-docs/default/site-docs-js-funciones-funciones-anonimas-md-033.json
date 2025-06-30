@@ -1,0 +1,15 @@
+{
+  "id": "js/funciones/funciones_anónimas",
+  "title": "Funciones Anónimas",
+  "description": "Introducción",
+  "source": "@site/docs/js/funciones/funciones_anónimas.md",
+  "sourceDirName": "js/funciones",
+  "slug": "/js/funciones/funciones_anónimas",
+  "permalink": "/docs/js/funciones/funciones_anónimas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/funciones/funciones_anónimas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "js/sintaxis_JavaScript",
+  "title": "Sintaxis JavaScript",
+  "description": "Introducción",
+  "source": "@site/docs/js/sintaxis_JavaScript.md",
+  "sourceDirName": "js",
+  "slug": "/js/sintaxis_JavaScript",
+  "permalink": "/docs/js/sintaxis_JavaScript",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/sintaxis_JavaScript.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

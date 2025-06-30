@@ -1,0 +1,24 @@
+{
+  "id": "js/arrays/metodosArrays",
+  "title": "Métodos para arrays",
+  "description": "Introducción",
+  "source": "@site/docs/js/arrays/metodosArrays.md",
+  "sourceDirName": "js/arrays",
+  "slug": "/js/arrays/metodosArrays",
+  "permalink": "/docuQuest/docs/js/arrays/metodosArrays",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/arrays/metodosArrays.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Interactuar con arrays",
+    "permalink": "/docuQuest/docs/js/arrays/interactuar"
+  },
+  "next": {
+    "title": "Fechas",
+    "permalink": "/docuQuest/docs/js/fechas"
+  }
+}

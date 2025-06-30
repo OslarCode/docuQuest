@@ -1,0 +1,15 @@
+{
+  "id": "css/heigh&width",
+  "title": "Propiedades Height y Width en CSS3",
+  "description": "---",
+  "source": "@site/docs/css/heigh&width.md",
+  "sourceDirName": "css",
+  "slug": "/css/heigh&width",
+  "permalink": "/docs/css/heigh&width",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/css/heigh&width.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

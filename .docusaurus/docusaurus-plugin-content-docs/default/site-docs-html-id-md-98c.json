@@ -1,0 +1,24 @@
+{
+  "id": "html/id",
+  "title": "Atributo id en HTML 5",
+  "description": "En la creación de contenido web utilizando HTML5, el atributo id desempeña un papel esencial al proporcionar una identificación única para elementos HTML individuales. Este atributo permite identificar específicamente un elemento dentro de un documento HTML, lo que facilita su selección y manipulación mediante CSS y JavaScript.",
+  "source": "@site/docs/html/id.md",
+  "sourceDirName": "html",
+  "slug": "/html/id",
+  "permalink": "/docuQuest/docs/html/id",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/id.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo class en HTML 5",
+    "permalink": "/docuQuest/docs/html/class"
+  },
+  "next": {
+    "title": "Computer Code y Elementos Relacionados en HTML 5",
+    "permalink": "/docuQuest/docs/html/computerCode"
+  }
+}

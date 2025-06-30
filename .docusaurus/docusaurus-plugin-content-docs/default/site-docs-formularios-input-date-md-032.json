@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputDate",
+  "title": "Input Type Date",
+  "description": "En el ámbito del desarrollo web, los formularios juegan un papel crucial al permitir la interacción entre los usuarios y las aplicaciones en línea. HTML ofrece una variedad de input types para recopilar diferentes tipos de datos. Uno de estos input types es el \"date\", que permite a los usuarios seleccionar una fecha a través de un calendario integrado en el navegador. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"date\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputDate.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputDate",
+  "permalink": "/docuQuest/docs/formularios/inputDate",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputDate.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Color",
+    "permalink": "/docuQuest/docs/formularios/inputColor"
+  },
+  "next": {
+    "title": "Input Type Email",
+    "permalink": "/docuQuest/docs/formularios/inputEmail"
+  }
+}

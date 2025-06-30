@@ -1,0 +1,24 @@
+{
+  "id": "css/align",
+  "title": "Propiedad align en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/align.md",
+  "sourceDirName": "css",
+  "slug": "/css/align",
+  "permalink": "/docuQuest/docs/css/align",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/align.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Inline-block en CSS3",
+    "permalink": "/docuQuest/docs/css/inlineBlock"
+  },
+  "next": {
+    "title": "Combinadores en CSS3",
+    "permalink": "/docuQuest/docs/css/combinators"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "html/class",
+  "title": "Atributo class en HTML 5",
+  "description": "En la creación de contenido web utilizando HTML5, el atributo class juega un papel crucial en la aplicación de estilos y la manipulación del contenido mediante CSS y JavaScript. Este atributo permite asignar uno o más nombres de clase a elementos HTML, lo que les proporciona una identidad específica y les permite ser seleccionados y estilizados de manera individual o grupal.",
+  "source": "@site/docs/html/class.md",
+  "sourceDirName": "html",
+  "slug": "/html/class",
+  "permalink": "/docuQuest/docs/html/class",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/class.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Entidades en HTML5",
+    "permalink": "/docuQuest/docs/html/entidades"
+  },
+  "next": {
+    "title": "Atributo id en HTML 5",
+    "permalink": "/docuQuest/docs/html/id"
+  }
+}

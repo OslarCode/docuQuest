@@ -1,0 +1,24 @@
+{
+  "id": "css2/gradient",
+  "title": "Gradientes en CSS3",
+  "description": "Exploración Avanzada de los Gradientes en CSS3",
+  "source": "@site/docs/css2/gradient.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/gradient",
+  "permalink": "/docuQuest/docs/css2/gradient",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/gradient.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Bordes con Imágenes en CSS3",
+    "permalink": "/docuQuest/docs/css2/borders"
+  },
+  "next": {
+    "title": "Sombras en CSS3",
+    "permalink": "/docuQuest/docs/css2/shadow"
+  }
+}

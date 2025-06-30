@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputMonth",
+  "title": "Input Type Month",
+  "description": "En el ámbito del desarrollo web, los formularios desempeñan un papel crucial al permitir a los usuarios interactuar con las aplicaciones en línea. HTML ofrece una amplia gama de input types que facilitan la recopilación de datos de los usuarios. Uno de estos input types es el \"month\", que permite a los usuarios seleccionar un mes y un año en un formato específico. En este texto, exploraremos en profundidad qué es y cómo funciona el input type \"month\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputMonth.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputMonth",
+  "permalink": "/docuQuest/docs/formularios/inputMonth",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputMonth.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Image",
+    "permalink": "/docuQuest/docs/formularios/inputImage"
+  },
+  "next": {
+    "title": "Input Type Number",
+    "permalink": "/docuQuest/docs/formularios/inputNumber"
+  }
+}

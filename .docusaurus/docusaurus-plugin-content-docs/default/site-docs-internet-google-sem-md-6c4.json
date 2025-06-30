@@ -1,0 +1,24 @@
+{
+  "id": "internet/google/SEM",
+  "title": "Metodologías de búsqueda SEM",
+  "description": "💰 SEM: Cómo atraer visitas pagando por anuncios",
+  "source": "@site/docs/internet/google/SEM.md",
+  "sourceDirName": "internet/google",
+  "slug": "/internet/google/SEM",
+  "permalink": "/docuQuest/docs/internet/google/SEM",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/google/SEM.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Metodologías de búsqueda SEO",
+    "permalink": "/docuQuest/docs/internet/google/SEO"
+  },
+  "next": {
+    "title": "Crawlers: Googlebot",
+    "permalink": "/docuQuest/docs/internet/google/googlebot"
+  }
+}

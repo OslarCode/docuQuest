@@ -1,0 +1,24 @@
+{
+  "id": "poo/objetos&prototipos",
+  "title": "Objetos y prototipos en JavaScript",
+  "description": "En este módulo, exploraremos los Objetos y Prototipos en JavaScript, comprendiendo cómo este lenguaje implementa la Programación Orientada a Objetos (POO) de manera única. Abordaremos las diferencias entre la POO clásica y la basada en prototipos, la creación y manipulación de objetos, y profundizaremos en el concepto de prototipos y su papel en la herencia.",
+  "source": "@site/docs/poo/objetos&prototipos.md",
+  "sourceDirName": "poo",
+  "slug": "/poo/objetos&prototipos",
+  "permalink": "/docuQuest/docs/poo/objetos&prototipos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/poo/objetos&prototipos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fundamentos de la programación orientada a objetos (Poo)",
+    "permalink": "/docuQuest/docs/poo/fundamentosPOO"
+  },
+  "next": {
+    "title": "Clases y métodos en JavaScript (ES6+)",
+    "permalink": "/docuQuest/docs/poo/clases&metodos"
+  }
+}

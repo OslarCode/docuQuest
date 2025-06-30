@@ -1,0 +1,24 @@
+{
+  "id": "js/operadores/precedenciaOperadores",
+  "title": "Precedencia de Operadores",
+  "description": "Introducción a la Precedencia en JavaScript",
+  "source": "@site/docs/js/operadores/precedenciaOperadores.md",
+  "sourceDirName": "js/operadores",
+  "slug": "/js/operadores/precedenciaOperadores",
+  "permalink": "/docuQuest/docs/js/operadores/precedenciaOperadores",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/operadores/precedenciaOperadores.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Operadores Lógicos",
+    "permalink": "/docuQuest/docs/js/operadores/operadoresLogicos"
+  },
+  "next": {
+    "title": "Funciones",
+    "permalink": "/docuQuest/docs/js/funciones/"
+  }
+}

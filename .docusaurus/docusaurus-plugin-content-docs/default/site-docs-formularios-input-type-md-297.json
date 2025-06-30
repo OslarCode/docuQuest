@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputType",
+  "title": "Elemento Input",
+  "description": "En el desarrollo web, los formularios HTML son elementos fundamentales que permiten a los usuarios interactuar con los sitios web enviando información al servidor. Dentro de estos formularios, el elemento \"input\" desempeña un papel esencial al proporcionar campos de entrada donde los usuarios pueden ingresar datos. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"input\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputType.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputType",
+  "permalink": "/docuQuest/docs/formularios/inputType",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputType.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo Rel",
+    "permalink": "/docuQuest/docs/formularios/rel"
+  },
+  "next": {
+    "title": "Elemento Label",
+    "permalink": "/docuQuest/docs/formularios/label"
+  }
+}

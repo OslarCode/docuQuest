@@ -1,0 +1,24 @@
+{
+  "id": "js/typeof",
+  "title": "Typeof",
+  "description": "El operador typeof es una herramienta fundamental en JavaScript que permite determinar el tipo de dato de una variable o expresión. Este operador devuelve una cadena de texto que representa el tipo de dato del valor especificado, lo que facilita la escritura de código flexible y robusto al permitir la ejecución de acciones específicas según el tipo de datos involucrado.",
+  "source": "@site/docs/js/typeof.md",
+  "sourceDirName": "js",
+  "slug": "/js/typeof",
+  "permalink": "/docuQuest/docs/js/typeof",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/typeof.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sets",
+    "permalink": "/docuQuest/docs/js/sets"
+  },
+  "next": {
+    "title": "Expresiones Regulares",
+    "permalink": "/docuQuest/docs/js/expresionesRegulares"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "poo/pooAplicada",
+  "title": "(Avanzado) Módulo 5: POO aplicada al desarrollo web con JavaScript",
+  "description": "POO en el Desarrollo de Aplicaciones Web",
+  "source": "@site/docs/poo/5.pooAplicada.md",
+  "sourceDirName": "poo",
+  "slug": "/poo/pooAplicada",
+  "permalink": "/docs/poo/pooAplicada",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/poo/5.pooAplicada.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {}
+}

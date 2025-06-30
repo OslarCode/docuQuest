@@ -1,0 +1,24 @@
+{
+  "id": "css/overflow",
+  "title": "Propiedad overflow en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/overflow.md",
+  "sourceDirName": "css",
+  "slug": "/css/overflow",
+  "permalink": "/docuQuest/docs/css/overflow",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/overflow.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Propiedad z-index en CSS3",
+    "permalink": "/docuQuest/docs/css/zIndex"
+  },
+  "next": {
+    "title": "Propiedad float en CSS3",
+    "permalink": "/docuQuest/docs/css/float"
+  }
+}

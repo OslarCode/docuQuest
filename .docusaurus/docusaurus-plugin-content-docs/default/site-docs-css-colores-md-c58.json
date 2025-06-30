@@ -1,0 +1,24 @@
+{
+  "id": "css/colores",
+  "title": "Colores en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/colores.md",
+  "sourceDirName": "css",
+  "slug": "/css/colores",
+  "permalink": "/docuQuest/docs/css/colores",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/colores.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Los Comentarios en CSS3",
+    "permalink": "/docuQuest/docs/css/comentarios"
+  },
+  "next": {
+    "title": "Backgrounds en CSS3",
+    "permalink": "/docuQuest/docs/css/background"
+  }
+}

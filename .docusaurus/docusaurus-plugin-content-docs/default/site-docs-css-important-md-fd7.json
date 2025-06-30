@@ -1,0 +1,24 @@
+{
+  "id": "css/important",
+  "title": "Propiedad !important en CSS3",
+  "description": "En el mundo del desarrollo web, la cascada de estilos es un principio fundamental en CSS que determina cómo se aplican y sobrescriben los estilos a los elementos HTML. Sin embargo, en ciertos casos, puede surgir la necesidad de priorizar un estilo sobre otro de manera absoluta, sin importar la especificidad de las reglas de estilo. Es aquí donde entra en juego la propiedad !important en CSS3.",
+  "source": "@site/docs/css/important.md",
+  "sourceDirName": "css",
+  "slug": "/css/important",
+  "permalink": "/docuQuest/docs/css/important",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/important.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Unidades de Medida en CSS3",
+    "permalink": "/docuQuest/docs/css/unidadesMedida"
+  },
+  "next": {
+    "title": "Specificity en CSS3",
+    "permalink": "/docuQuest/docs/css/especificidad"
+  }
+}

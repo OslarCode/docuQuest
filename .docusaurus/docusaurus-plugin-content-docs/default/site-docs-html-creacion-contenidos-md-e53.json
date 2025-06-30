@@ -1,0 +1,24 @@
+{
+  "id": "html/creacionContenidos",
+  "title": "Creación de Contenidos en HTML5: Encabezados y Párrafos",
+  "description": "Encabezados en HTML5",
+  "source": "@site/docs/html/creacionContenidos.md",
+  "sourceDirName": "html",
+  "slug": "/html/creacionContenidos",
+  "permalink": "/docuQuest/docs/html/creacionContenidos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/creacionContenidos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Etiquetas y Atributos en HTML5: Fundamentos y Funcionamiento",
+    "permalink": "/docuQuest/docs/html/etiquetasAtributos"
+  },
+  "next": {
+    "title": "Formateo de Texto en HTML5",
+    "permalink": "/docuQuest/docs/html/formateoTexto"
+  }
+}

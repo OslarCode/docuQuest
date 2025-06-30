@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/introduccion",
+  "title": "Módulo 1: Introducción a la Usabilidad Web",
+  "description": "🧭 Entender la Usabilidad Web sin Complicaciones",
+  "source": "@site/docs/ac&us/introduccion.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/introduccion",
+  "permalink": "/docuQuest/docs/ac&us/introduccion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/introduccion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Estilos para Imágenes en CSS3",
+    "permalink": "/docuQuest/docs/css2/imagenes"
+  },
+  "next": {
+    "title": "Módulo 2: Diseño Web Centrado en el Usuario",
+    "permalink": "/docuQuest/docs/ac&us/dcu"
+  }
+}

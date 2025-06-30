@@ -1,0 +1,24 @@
+{
+  "id": "css2/shadow",
+  "title": "Sombras en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/shadow.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/shadow",
+  "permalink": "/docuQuest/docs/css2/shadow",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/shadow.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gradientes en CSS3",
+    "permalink": "/docuQuest/docs/css2/gradient"
+  },
+  "next": {
+    "title": "Efectos en el Texto en CSS3",
+    "permalink": "/docuQuest/docs/css2/textEffect"
+  }
+}

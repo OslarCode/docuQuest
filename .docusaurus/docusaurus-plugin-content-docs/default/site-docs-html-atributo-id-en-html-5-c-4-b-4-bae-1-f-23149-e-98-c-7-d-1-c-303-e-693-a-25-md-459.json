@@ -1,0 +1,15 @@
+{
+  "id": "html/Atributo id en HTML 5 c4b4bae1f23149e98c7d1c303e693a25",
+  "title": "Atributo id en HTML 5",
+  "description": "En la creación de contenido web utilizando HTML5, el atributo id desempeña un papel esencial al proporcionar una identificación única para elementos HTML individuales. Este atributo permite identificar específicamente un elemento dentro de un documento HTML, lo que facilita su selección y manipulación mediante CSS y JavaScript. En este ensayo, exploraremos en detalle qué es y cómo funciona el atributo id en HTML5, así como su importancia y ejemplos prácticos de su uso.",
+  "source": "@site/docs/html/Atributo id en HTML 5 c4b4bae1f23149e98c7d1c303e693a25.md",
+  "sourceDirName": "html",
+  "slug": "/html/Atributo id en HTML 5 c4b4bae1f23149e98c7d1c303e693a25",
+  "permalink": "/docs/html/Atributo id en HTML 5 c4b4bae1f23149e98c7d1c303e693a25",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/html/Atributo id en HTML 5 c4b4bae1f23149e98c7d1c303e693a25.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

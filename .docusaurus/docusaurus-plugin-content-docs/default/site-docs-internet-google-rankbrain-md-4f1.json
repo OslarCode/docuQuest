@@ -1,0 +1,24 @@
+{
+  "id": "internet/google/rankbrain",
+  "title": "Algoritmo de búsqueda RankBrain de Google",
+  "description": "🤖 Algoritmo RankBrain de Google",
+  "source": "@site/docs/internet/google/rankbrain.md",
+  "sourceDirName": "internet/google",
+  "slug": "/internet/google/rankbrain",
+  "permalink": "/docuQuest/docs/internet/google/rankbrain",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/google/rankbrain.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Algoritmo de búsqueda Hummingbird de Google",
+    "permalink": "/docuQuest/docs/internet/google/hummingbird"
+  },
+  "next": {
+    "title": "Metodologías de búsqueda SEO",
+    "permalink": "/docuQuest/docs/internet/google/SEO"
+  }
+}

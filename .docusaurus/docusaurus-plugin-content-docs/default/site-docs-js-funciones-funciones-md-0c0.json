@@ -1,0 +1,24 @@
+{
+  "id": "js/funciones/funciones",
+  "title": "Funciones",
+  "description": "Introducción",
+  "source": "@site/docs/js/funciones/funciones.md",
+  "sourceDirName": "js/funciones",
+  "slug": "/js/funciones/",
+  "permalink": "/docuQuest/docs/js/funciones/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/funciones/funciones.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Precedencia de Operadores",
+    "permalink": "/docuQuest/docs/js/operadores/precedenciaOperadores"
+  },
+  "next": {
+    "title": "Funciones Anónimas",
+    "permalink": "/docuQuest/docs/js/funciones/funcionesAnonimas"
+  }
+}

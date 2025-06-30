@@ -1,0 +1,24 @@
+{
+  "id": "js/dom/eventosUsuario",
+  "title": "Eventos de interacción con el usuario",
+  "description": "Lista de algunos de los eventos más comunes disponibles en el DOM (Document Object Model) en JavaScript:",
+  "source": "@site/docs/js/dom/eventosUsuario.md",
+  "sourceDirName": "js/dom",
+  "slug": "/js/dom/eventosUsuario",
+  "permalink": "/docuQuest/docs/js/dom/eventosUsuario",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/dom/eventosUsuario.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Eventos",
+    "permalink": "/docuQuest/docs/js/dom/eventos"
+  },
+  "next": {
+    "title": "Manipulación del DOM",
+    "permalink": "/docuQuest/docs/js/dom/manipulacion"
+  }
+}

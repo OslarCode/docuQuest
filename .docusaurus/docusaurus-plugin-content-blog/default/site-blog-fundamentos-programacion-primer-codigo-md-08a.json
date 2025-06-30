@@ -1,0 +1,60 @@
+{
+  "permalink": "/blog/fundamentos-programacion",
+  "editUrl": "https://github.com/OslarCode/OslarCode/blog/fundamentosProgramacionPrimerCodigo.md",
+  "source": "@site/blog/fundamentosProgramacionPrimerCodigo.md",
+  "title": "Fundamentos de la programación: tu primera aventura con el código",
+  "description": "Descubre los conceptos esenciales de programación como algoritmos, estructuras de datos, variables y operadores. Una guía clara y entretenida para empezar desde cero.",
+  "date": "2025-06-28T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "programación",
+      "permalink": "/blog/tags/programacion"
+    },
+    {
+      "inline": false,
+      "label": "Fundamentos",
+      "permalink": "/blog/tags/fundamentos",
+      "description": "fundamentos tag description"
+    },
+    {
+      "inline": false,
+      "label": "Principiantes",
+      "permalink": "/blog/tags/principiantes",
+      "description": "Principiantes tag description"
+    },
+    {
+      "inline": false,
+      "label": "Algoritmos",
+      "permalink": "/blog/tags/algoritmos",
+      "description": "Algoritmos tag description"
+    }
+  ],
+  "readingTime": 2.89,
+  "hasTruncateMarker": false,
+  "authors": [
+    {
+      "name": "oslar",
+      "key": null,
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "title": "Fundamentos de la programación: tu primera aventura con el código",
+    "description": "Descubre los conceptos esenciales de programación como algoritmos, estructuras de datos, variables y operadores. Una guía clara y entretenida para empezar desde cero.",
+    "slug": "fundamentos-programacion",
+    "author": "oslar",
+    "date": "2025-06-28",
+    "tags": [
+      "programación",
+      "fundamentos",
+      "principiantes",
+      "algoritmos"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Aprende a programar desde cero: Tu nueva aventura digital",
+    "permalink": "/blog/aprende-a-programar"
+  }
+}

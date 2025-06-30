@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Input Type File faf9646c323641868e5a7f6bccd16aeb",
+  "title": "Input Type File",
+  "description": "En el desarrollo web, los formularios son una herramienta fundamental para recopilar información de los usuarios. HTML ofrece una variedad de input types que permiten a los usuarios introducir diferentes tipos de datos. Uno de estos input types es el \"file\", que permite a los usuarios seleccionar y cargar archivos desde sus dispositivos locales. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"file\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/Input Type File faf9646c323641868e5a7f6bccd16aeb.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Input Type File faf9646c323641868e5a7f6bccd16aeb",
+  "permalink": "/docs/formularios/Input Type File faf9646c323641868e5a7f6bccd16aeb",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Input Type File faf9646c323641868e5a7f6bccd16aeb.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

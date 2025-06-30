@@ -1,0 +1,24 @@
+{
+  "id": "html/bloqueVSlinea",
+  "title": "Elementos en Bloque y Elementos en Línea en HTML 5",
+  "description": "Elementos en Bloque en HTML5",
+  "source": "@site/docs/html/bloqueVSlinea.md",
+  "sourceDirName": "html",
+  "slug": "/html/bloqueVSlinea",
+  "permalink": "/docuQuest/docs/html/bloqueVSlinea",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/bloqueVSlinea.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funcionamiento del Elemento Canvas en HTML 5",
+    "permalink": "/docuQuest/docs/html/canvas"
+  },
+  "next": {
+    "title": "Elemento div en HTML 5",
+    "permalink": "/docuQuest/docs/html/div"
+  }
+}

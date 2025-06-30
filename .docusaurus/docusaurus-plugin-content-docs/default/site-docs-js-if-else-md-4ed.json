@@ -1,0 +1,15 @@
+{
+  "id": "js/IfElse",
+  "title": "If/Else",
+  "description": "En el mundo de la programación, los condicionales son estructuras fundamentales que permiten tomar decisiones basadas en ciertas condiciones. En JavaScript, uno de los lenguajes de programación más populares y ampliamente utilizados, los condicionales son esenciales para controlar el flujo de ejecución de un programa. En este análisis, exploraremos en detalle qué son y cómo funcionan los condicionales if, else, y else if en JavaScript.",
+  "source": "@site/docs/js/IfElse.md",
+  "sourceDirName": "js",
+  "slug": "/js/IfElse",
+  "permalink": "/docs/js/IfElse",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/IfElse.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

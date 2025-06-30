@@ -1,0 +1,24 @@
+{
+  "id": "js/funciones/funcionesFlecha",
+  "title": "Funciones Flecha",
+  "description": "¿Qué son las Funciones Flecha en JavaScript?",
+  "source": "@site/docs/js/funciones/funcionesFlecha.md",
+  "sourceDirName": "js/funciones",
+  "slug": "/js/funciones/funcionesFlecha",
+  "permalink": "/docuQuest/docs/js/funciones/funcionesFlecha",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/funciones/funcionesFlecha.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funciones como Objetos de Primera Clase",
+    "permalink": "/docuQuest/docs/js/funciones/funcionesPrimeraClase"
+  },
+  "next": {
+    "title": "Objetos",
+    "permalink": "/docuQuest/docs/js/objetos/"
+  }
+}

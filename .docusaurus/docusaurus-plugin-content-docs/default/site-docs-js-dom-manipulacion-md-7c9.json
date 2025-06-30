@@ -1,0 +1,24 @@
+{
+  "id": "js/dom/manipulacion",
+  "title": "Manipulación del DOM",
+  "description": "La manipulación del Modelo de Objetos del Documento (DOM) es una habilidad fundamental en el desarrollo web, que permite a los desarrolladores crear, modificar y eliminar elementos en una página web de manera dinámica. La capacidad de interactuar con el DOM de forma programática utilizando JavaScript es crucial para crear experiencias de usuario ricas e interactivas. En este texto, exploraremos en profundidad las principales técnicas de manipulación del DOM: crear elementos con document.createElement(), modificar el contenido de los elementos con element.innerHTML o element.textContent, modificar atributos con element.setAttribute() o directamente con element.attribute, y agregar o eliminar nodos con parent.appendChild(), parent.removeChild(), entre otros.",
+  "source": "@site/docs/js/dom/manipulacion.md",
+  "sourceDirName": "js/dom",
+  "slug": "/js/dom/manipulacion",
+  "permalink": "/docuQuest/docs/js/dom/manipulacion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/dom/manipulacion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Eventos de interacción con el usuario",
+    "permalink": "/docuQuest/docs/js/dom/eventosUsuario"
+  },
+  "next": {
+    "title": "Renderización y Reflujos",
+    "permalink": "/docuQuest/docs/js/dom/renderizacionReflujos"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputImage",
+  "title": "Input Type Image",
+  "description": "En el desarrollo web, los formularios son una herramienta esencial para recopilar información de los usuarios. HTML ofrece una variedad de input types que permiten a los usuarios introducir diferentes tipos de datos. Uno de estos input types es el \"image\", que permite a los usuarios enviar formularios haciendo clic en una imagen en lugar de un botón de envío estándar. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"image\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputImage.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputImage",
+  "permalink": "/docuQuest/docs/formularios/inputImage",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputImage.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Hidden",
+    "permalink": "/docuQuest/docs/formularios/inputHidden"
+  },
+  "next": {
+    "title": "Input Type Month",
+    "permalink": "/docuQuest/docs/formularios/inputMonth"
+  }
+}

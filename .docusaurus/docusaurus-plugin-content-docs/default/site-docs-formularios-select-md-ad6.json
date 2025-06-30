@@ -1,0 +1,24 @@
+{
+  "id": "formularios/select",
+  "title": "Elemento Select",
+  "description": "En el desarrollo web, los formularios son elementos cruciales que permiten a los usuarios interactuar con los sitios web al enviar información al servidor. El elemento \"select\" en HTML es una herramienta esencial que facilita la selección de opciones predefinidas en un formulario. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"select\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/select.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/select",
+  "permalink": "/docuQuest/docs/formularios/select",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/select.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elemento Label",
+    "permalink": "/docuQuest/docs/formularios/label"
+  },
+  "next": {
+    "title": "Elemento TextArea",
+    "permalink": "/docuQuest/docs/formularios/textArea"
+  }
+}

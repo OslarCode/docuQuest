@@ -1,0 +1,24 @@
+{
+  "id": "css/unidadesMedida",
+  "title": "Unidades de Medida en CSS3",
+  "description": "En el desarrollo web, el uso adecuado de unidades de medida en CSS3 es esencial para lograr diseños precisos y adaptables a diferentes dispositivos y pantallas. Estas unidades permiten especificar longitudes y tamaños de manera flexible, brindando a los desarrolladores un amplio abanico de opciones para definir dimensiones y espaciados en sus aplicaciones web.",
+  "source": "@site/docs/css/unidadesMedida.md",
+  "sourceDirName": "css",
+  "slug": "/css/unidadesMedida",
+  "permalink": "/docuQuest/docs/css/unidadesMedida",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/unidadesMedida.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Selectores de Atributos en CSS3",
+    "permalink": "/docuQuest/docs/css/selectoresAtributos"
+  },
+  "next": {
+    "title": "Propiedad !important en CSS3",
+    "permalink": "/docuQuest/docs/css/important"
+  }
+}

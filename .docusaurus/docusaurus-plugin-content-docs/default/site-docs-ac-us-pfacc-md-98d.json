@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/pfacc",
+  "title": "Módulo 9: Principios Fundamentales de la Accesibilidad Web",
+  "description": "🌍 ¿Qué hace que una web sea realmente accesible?",
+  "source": "@site/docs/ac&us/pfacc.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/pfacc",
+  "permalink": "/docuQuest/docs/ac&us/pfacc",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/pfacc.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 8: Normativas y Estándares en Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/neacc"
+  },
+  "next": {
+    "title": "Módulo 10: Diseño y Desarrollo Web Accesible",
+    "permalink": "/docuQuest/docs/ac&us/ddwacc"
+  }
+}

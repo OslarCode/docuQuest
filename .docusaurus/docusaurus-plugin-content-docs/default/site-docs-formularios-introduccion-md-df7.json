@@ -1,0 +1,24 @@
+{
+  "id": "formularios/introduccion",
+  "title": "Introducción a los formularios",
+  "description": "Los formularios constituyen una pieza fundamental en la interacción entre usuarios y páginas web. Permiten recopilar información de los visitantes, facilitando así la comunicación y el intercambio de datos. En el contexto de HTML (HyperText Markup Language), los formularios se implementan mediante una serie de elementos y atributos que proporcionan estructura y funcionalidad a esta herramienta.",
+  "source": "@site/docs/formularios/introduccion.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/introduccion",
+  "permalink": "/docuQuest/docs/formularios/introduccion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/introduccion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Normativas Españolas sobre Accesibilidad Web en HTML5",
+    "permalink": "/docuQuest/docs/html/normativaEspanola"
+  },
+  "next": {
+    "title": "La web interactiva",
+    "permalink": "/docuQuest/docs/formularios/webInteractiva"
+  }
+}

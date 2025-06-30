@@ -1,0 +1,24 @@
+{
+  "id": "internet/dominiosDNSHosting",
+  "title": "Dominios, DNS y Hosting",
+  "description": "🌐 Módulo 5: ¿Qué es un dominio?",
+  "source": "@site/docs/internet/dominiosDNSHosting.md",
+  "sourceDirName": "internet",
+  "slug": "/internet/dominiosDNSHosting",
+  "permalink": "/docuQuest/docs/internet/dominiosDNSHosting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/dominiosDNSHosting.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Http, Https y ciclo de vida de una petición",
+    "permalink": "/docuQuest/docs/internet/https"
+  },
+  "next": {
+    "title": "Gestión del tráfico y ancho de banda en la web",
+    "permalink": "/docuQuest/docs/internet/trafico"
+  }
+}

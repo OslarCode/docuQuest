@@ -1,0 +1,15 @@
+{
+  "id": "js/dom/eventos_dom",
+  "title": "Eventos",
+  "description": "Introducción",
+  "source": "@site/docs/js/dom/eventos_dom.md",
+  "sourceDirName": "js/dom",
+  "slug": "/js/dom/eventos_dom",
+  "permalink": "/docs/js/dom/eventos_dom",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/dom/eventos_dom.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

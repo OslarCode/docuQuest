@@ -1,0 +1,24 @@
+{
+  "id": "internet/google/google",
+  "title": "Google",
+  "description": "🌍 Dominio del mercado de Google: cómo cambió la forma de buscar en Internet",
+  "source": "@site/docs/internet/google/google.md",
+  "sourceDirName": "internet/google",
+  "slug": "/internet/google/",
+  "permalink": "/docuQuest/docs/internet/google/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/google/google.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Navegadores web y motores de renderizado",
+    "permalink": "/docuQuest/docs/internet/navegadores"
+  },
+  "next": {
+    "title": "Algoritmo de búsqueda PageRank de Google",
+    "permalink": "/docuQuest/docs/internet/google/pageRank"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "css2/mascara",
+  "title": "Máscara en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/mascara.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/mascara",
+  "permalink": "/docuQuest/docs/css2/mascara",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/mascara.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Imágenes Reflejadas en CSS3",
+    "permalink": "/docuQuest/docs/css2/imagenesReflejadas"
+  },
+  "next": {
+    "title": "Botones en CSS3",
+    "permalink": "/docuQuest/docs/css2/button"
+  }
+}

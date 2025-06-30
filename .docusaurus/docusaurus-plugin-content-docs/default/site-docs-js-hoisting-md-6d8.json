@@ -1,0 +1,24 @@
+{
+  "id": "js/hoisting",
+  "title": "Hoisting",
+  "description": "El hoisting es un comportamiento clave en JavaScript que a menudo puede ser confuso para los desarrolladores, pero es esencial para comprender cómo funcionan las variables y las funciones en el lenguaje. El término \"hoisting\" significa elevar o izar, y se refiere al comportamiento por el cual las declaraciones de variables y funciones son movidas al comienzo del contexto (ya sea global o local) durante la fase de interpretación del código. Aunque puede parecer extraño, es importante entenderlo para evitar errores y comportamientos inesperados en tu código JavaScript.",
+  "source": "@site/docs/js/hoisting.md",
+  "sourceDirName": "js",
+  "slug": "/js/hoisting",
+  "permalink": "/docuQuest/docs/js/hoisting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/hoisting.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Console.log()",
+    "permalink": "/docuQuest/docs/js/consoleLog"
+  },
+  "next": {
+    "title": "Operadores",
+    "permalink": "/docuQuest/docs/js/operadores/"
+  }
+}

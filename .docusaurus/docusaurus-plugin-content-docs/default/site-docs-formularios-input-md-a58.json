@@ -1,0 +1,15 @@
+{
+  "id": "formularios/input",
+  "title": "Elemento Input",
+  "description": "En el desarrollo web, los formularios HTML son elementos fundamentales que permiten a los usuarios interactuar con los sitios web enviando información al servidor. Dentro de estos formularios, el elemento \"input\" desempeña un papel esencial al proporcionar campos de entrada donde los usuarios pueden ingresar datos. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"input\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/input.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/input",
+  "permalink": "/docs/formularios/input",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/input.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

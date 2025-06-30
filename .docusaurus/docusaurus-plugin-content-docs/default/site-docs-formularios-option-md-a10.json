@@ -1,0 +1,24 @@
+{
+  "id": "formularios/option",
+  "title": "Elemento Option",
+  "description": "En el desarrollo web, los formularios son una parte esencial de la interacción entre los usuarios y las aplicaciones en línea. El elemento \"option\" en HTML es una etiqueta utilizada dentro de los elementos \"select\" y \"datalist\" para definir las opciones que los usuarios pueden seleccionar en un menú desplegable. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"option\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/option.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/option",
+  "permalink": "/docuQuest/docs/formularios/option",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/option.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elemento Optgroup",
+    "permalink": "/docuQuest/docs/formularios/optgroup"
+  },
+  "next": {
+    "title": "Input Type Button",
+    "permalink": "/docuQuest/docs/formularios/inputButton"
+  }
+}

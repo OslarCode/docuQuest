@@ -1,0 +1,24 @@
+{
+  "id": "html/accesibilidad",
+  "title": "Accesibilidad Web en HTML 5",
+  "description": "La accesibilidad web se refiere a la práctica de diseñar y desarrollar sitios web de manera que sean accesibles y utilizables por todas las personas, incluidas aquellas con discapacidades. HTML5, como lenguaje de marcado utilizado en la creación de páginas web, ofrece una serie de características y técnicas que pueden mejorar la accesibilidad de un sitio.",
+  "source": "@site/docs/html/accesibilidad.md",
+  "sourceDirName": "html",
+  "slug": "/html/accesibilidad",
+  "permalink": "/docuQuest/docs/html/accesibilidad",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/accesibilidad.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funcionamiento del Audio en HTML 5",
+    "permalink": "/docuQuest/docs/html/audio"
+  },
+  "next": {
+    "title": "Normativas Españolas sobre Accesibilidad Web en HTML5",
+    "permalink": "/docuQuest/docs/html/normativaEspanola"
+  }
+}

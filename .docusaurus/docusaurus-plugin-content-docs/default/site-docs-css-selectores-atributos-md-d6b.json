@@ -1,0 +1,24 @@
+{
+  "id": "css/selectoresAtributos",
+  "title": "Selectores de Atributos en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/selectoresAtributos.md",
+  "sourceDirName": "css",
+  "slug": "/css/selectoresAtributos",
+  "permalink": "/docuQuest/docs/css/selectoresAtributos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/selectoresAtributos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Propiedad Opacity en CSS3",
+    "permalink": "/docuQuest/docs/css/opacity"
+  },
+  "next": {
+    "title": "Unidades de Medida en CSS3",
+    "permalink": "/docuQuest/docs/css/unidadesMedida"
+  }
+}

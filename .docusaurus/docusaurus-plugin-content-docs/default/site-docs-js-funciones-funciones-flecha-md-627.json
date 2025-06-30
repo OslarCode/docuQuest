@@ -1,0 +1,15 @@
+{
+  "id": "js/funciones/funciones_flecha",
+  "title": "Funciones Flecha",
+  "description": "Introducción",
+  "source": "@site/docs/js/funciones/funciones_flecha.md",
+  "sourceDirName": "js/funciones",
+  "slug": "/js/funciones/funciones_flecha",
+  "permalink": "/docs/js/funciones/funciones_flecha",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/funciones/funciones_flecha.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

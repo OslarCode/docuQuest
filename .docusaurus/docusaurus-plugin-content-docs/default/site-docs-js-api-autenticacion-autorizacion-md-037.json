@@ -1,0 +1,24 @@
+{
+  "id": "js/api/autenticacionAutorizacion",
+  "title": "Autenticación y Autorización",
+  "description": "Introducción",
+  "source": "@site/docs/js/api/autenticacionAutorizacion.md",
+  "sourceDirName": "js/api",
+  "slug": "/js/api/autenticacionAutorizacion",
+  "permalink": "/docuQuest/docs/js/api/autenticacionAutorizacion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/api/autenticacionAutorizacion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Async/Await",
+    "permalink": "/docuQuest/docs/js/api/asyncAwait"
+  },
+  "next": {
+    "title": "Casos de uso avanzados",
+    "permalink": "/docuQuest/docs/js/api/casosAvanzados"
+  }
+}

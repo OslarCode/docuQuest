@@ -1,0 +1,24 @@
+{
+  "id": "flex/flexBasis",
+  "title": "Flex-basis: Definiendo el tamaño inicial de un elemento flexible",
+  "description": "📘 ¿Qué es flex-basis?",
+  "source": "@site/docs/flex/flexBasis.md",
+  "sourceDirName": "flex",
+  "slug": "/flex/flexBasis",
+  "permalink": "/docuQuest/docs/flex/flexBasis",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/flexBasis.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Flex-shrink: Controlando la contracción de elementos",
+    "permalink": "/docuQuest/docs/flex/flexShrink"
+  },
+  "next": {
+    "title": "Align-self en Flexbox: Alineación individual en el eje cruzado",
+    "permalink": "/docuQuest/docs/flex/alignSelf"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "js/asincronia/asincronía",
+  "title": "Asincronía",
+  "description": "La asincronía en JavaScript permite ejecutar tareas sin bloquear el flujo principal del programa, lo que es esencial para manejar operaciones como peticiones a servidores, lectura de archivos o temporizadores. Gracias a mecanismos como callbacks, promesas y async/await, JavaScript puede responder a eventos o procesar datos externos sin detener la interacción del usuario con la página. Esta capacidad hace que las aplicaciones web sean más rápidas, reactivas y eficientes.",
+  "source": "@site/docs/js/asincronia/asincronía.md",
+  "sourceDirName": "js/asincronia",
+  "slug": "/js/asincronia/asincronía",
+  "permalink": "/docs/js/asincronia/asincronía",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/asincronia/asincronía.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,24 @@
+{
+  "id": "html/computerCode",
+  "title": "Computer Code y Elementos Relacionados en HTML 5",
+  "description": "En HTML5, el computer code (código informático) es un aspecto crucial para representar y formatear fragmentos de código, comandos, variables y otras partes relacionadas con la programación y la informática. Este concepto es fundamental para la presentación adecuada de código dentro de un documento HTML.",
+  "source": "@site/docs/html/computerCode.md",
+  "sourceDirName": "html",
+  "slug": "/html/computerCode",
+  "permalink": "/docuQuest/docs/html/computerCode",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/computerCode.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo id en HTML 5",
+    "permalink": "/docuQuest/docs/html/id"
+  },
+  "next": {
+    "title": "Contenido Embebido iframe en HTML 5",
+    "permalink": "/docuQuest/docs/html/contenidoEmbebido"
+  }
+}

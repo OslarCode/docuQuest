@@ -1,0 +1,15 @@
+{
+  "id": "js/asincronia/Introducción",
+  "title": "Introducción",
+  "description": "JavaScript es un lenguaje que se ejecuta en el navegador y destaca por su capacidad para manejar operaciones asincrónicas sin bloquear el hilo principal. Esto permite que las aplicaciones web sigan siendo fluidas y reactivas incluso cuando realizan tareas que toman tiempo, como solicitudes a servidores o lectura de archivos.",
+  "source": "@site/docs/js/asincronia/Introducción.md",
+  "sourceDirName": "js/asincronia",
+  "slug": "/js/asincronia/Introducción",
+  "permalink": "/docs/js/asincronia/Introducción",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/asincronia/Introducción.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

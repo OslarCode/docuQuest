@@ -1,0 +1,24 @@
+{
+  "id": "js/sintaxis",
+  "title": "Sintaxis JavaScript",
+  "description": "Sintaxis Básica de JavaScript",
+  "source": "@site/docs/js/sintaxis.md",
+  "sourceDirName": "js",
+  "slug": "/js/sintaxis",
+  "permalink": "/docuQuest/docs/js/sintaxis",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/sintaxis.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Ubicación de los archivos JavaScript",
+    "permalink": "/docuQuest/docs/js/ubicacionArchivos"
+  },
+  "next": {
+    "title": "Tipos de datos",
+    "permalink": "/docuQuest/docs/js/tiposDatos"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "flex/actividades/proyectoFlexDemo",
+  "title": "Flex Demo",
+  "description": "Flex Demo",
+  "source": "@site/docs/flex/actividades/proyectoFlexDemo.md",
+  "sourceDirName": "flex/actividades",
+  "slug": "/flex/actividades/proyectoFlexDemo",
+  "permalink": "/docuQuest/docs/flex/actividades/proyectoFlexDemo",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/actividades/proyectoFlexDemo.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "🧪 Proyecto práctico: Demo Interactiva Completa de Flexbox",
+    "permalink": "/docuQuest/docs/flex/actividades/proyectoDemoInteractiva"
+  }
+}

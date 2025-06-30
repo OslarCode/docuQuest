@@ -1,0 +1,24 @@
+{
+  "id": "css/padding",
+  "title": "Paddings en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/padding.md",
+  "sourceDirName": "css",
+  "slug": "/css/padding",
+  "permalink": "/docuQuest/docs/css/padding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/padding.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Margins en CSS3",
+    "permalink": "/docuQuest/docs/css/margin"
+  },
+  "next": {
+    "title": "Propiedades Height y Width en CSS3",
+    "permalink": "/docuQuest/docs/css/height&width"
+  }
+}

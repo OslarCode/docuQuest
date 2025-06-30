@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/tauw",
+  "title": "Módulo 12: Tecnologías de Asistencia y su Uso en la Web",
+  "description": "🌍 ¿Qué son las tecnologías de asistencia y por qué importan?",
+  "source": "@site/docs/ac&us/tauw.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/tauw",
+  "permalink": "/docuQuest/docs/ac&us/tauw",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/tauw.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 11: Herramientas y Técnicas para la Validación de la Accesibilidad",
+    "permalink": "/docuQuest/docs/ac&us/htvacc"
+  },
+  "next": {
+    "title": "Módulo 13: Evolución y Futuro de la Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/efacc"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputText",
+  "title": "Input Type Text",
+  "description": "En el mundo del desarrollo web, los formularios HTML son una herramienta fundamental para interactuar con los usuarios y recopilar información. Dentro de estos formularios, el elemento input es uno de los más utilizados para permitir a los usuarios ingresar datos. Uno de los tipos más básicos y versátiles de input es el input type \"text\". En este texto, exploraremos en profundidad qué es y cómo funciona el input type \"text\" en los formularios web, analizando su definición, funcionalidad, ejemplos de uso y consideraciones adicionales.",
+  "source": "@site/docs/formularios/inputText.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputText",
+  "permalink": "/docuQuest/docs/formularios/inputText",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputText.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Tel",
+    "permalink": "/docuQuest/docs/formularios/inputTel"
+  },
+  "next": {
+    "title": "Input Type Time",
+    "permalink": "/docuQuest/docs/formularios/inputTime"
+  }
+}

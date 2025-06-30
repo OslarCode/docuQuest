@@ -1,0 +1,15 @@
+{
+  "id": "js/precedencia_de_operadores",
+  "title": "Precedencia de Operadores",
+  "description": "En la programación, especialmente en lenguajes como JavaScript, entender la precedencia de los operadores es fundamental para escribir código claro y evitar errores sutiles. La precedencia determina el orden en el que se evalúan las expresiones cuando hay múltiples operadores en una misma línea de código. En este texto, exploraremos en profundidad qué es la precedencia en JavaScript, cómo funciona y cómo puede afectar a nuestro código.",
+  "source": "@site/docs/js/precedencia_de_operadores.md",
+  "sourceDirName": "js",
+  "slug": "/js/precedencia_de_operadores",
+  "permalink": "/docs/js/precedencia_de_operadores",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/precedencia_de_operadores.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/neacc",
+  "title": "Módulo 8: Normativas y Estándares en Accesibilidad Web",
+  "description": "🌐 Normas y reglas para una web accesible para todos",
+  "source": "@site/docs/ac&us/neacc.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/neacc",
+  "permalink": "/docuQuest/docs/ac&us/neacc",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/neacc.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 7: Introducción a la Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/acc"
+  },
+  "next": {
+    "title": "Módulo 9: Principios Fundamentales de la Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/pfacc"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "formularios/action",
+  "title": "Atributo Action",
+  "description": "Los formularios HTML constituyen una parte fundamental del desarrollo web, permitiendo la interacción entre los usuarios y los sitios web. Entre los atributos clave de los formularios, el atributo \"action\" desempeña un papel crucial al definir el destino de los datos ingresados por el usuario y la acción a realizar por el servidor web. En este texto, exploraremos en profundidad qué es y cómo funciona el atributo \"action\" en los formularios web, analizando su significado, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/action.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/action",
+  "permalink": "/docuQuest/docs/formularios/action",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/action.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Métodos GET y POST",
+    "permalink": "/docuQuest/docs/formularios/getPost"
+  },
+  "next": {
+    "title": "Atributo Target",
+    "permalink": "/docuQuest/docs/formularios/target"
+  }
+}

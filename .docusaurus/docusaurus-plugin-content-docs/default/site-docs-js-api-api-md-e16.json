@@ -1,0 +1,24 @@
+{
+  "id": "js/api/api",
+  "title": "API Rest",
+  "description": "Una API REST (Representational State Transfer) en JavaScript es una interfaz que nos permite comunicarnos con otra aplicación a través de peticiones HTTP. Estas peticiones pueden ser para obtener datos, añadir información o borrar registros.",
+  "source": "@site/docs/js/api/api.md",
+  "sourceDirName": "js/api",
+  "slug": "/js/api/",
+  "permalink": "/docs/js/api/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/api/api.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Proxies",
+    "permalink": "/docs/js/proxies"
+  },
+  "next": {
+    "title": "Introducción",
+    "permalink": "/docs/js/api/introduccion"
+  }
+}

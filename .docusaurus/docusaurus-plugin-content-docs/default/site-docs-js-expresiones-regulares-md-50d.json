@@ -1,0 +1,24 @@
+{
+  "id": "js/expresionesRegulares",
+  "title": "Expresiones Regulares",
+  "description": "Las expresiones regulares, también conocidas como regex o RegExp, son una herramienta poderosa y versátil utilizada en muchos lenguajes de programación, incluyendo JavaScript. Permiten realizar búsquedas, manipulaciones y validaciones de patrones de texto de manera eficiente y flexible.",
+  "source": "@site/docs/js/expresionesRegulares.md",
+  "sourceDirName": "js",
+  "slug": "/js/expresionesRegulares",
+  "permalink": "/docuQuest/docs/js/expresionesRegulares",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/expresionesRegulares.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Typeof",
+    "permalink": "/docuQuest/docs/js/typeof"
+  },
+  "next": {
+    "title": "Clases",
+    "permalink": "/docuQuest/docs/js/clases"
+  }
+}

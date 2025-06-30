@@ -1,0 +1,24 @@
+{
+  "id": "js/while",
+  "title": "While",
+  "description": "El bucle while es una estructura de control fundamental en JavaScript que permite ejecutar repetidamente un bloque de código mientras se cumpla una condición específica.",
+  "source": "@site/docs/js/while.md",
+  "sourceDirName": "js",
+  "slug": "/js/while",
+  "permalink": "/docuQuest/docs/js/while",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/while.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "For…of",
+    "permalink": "/docuQuest/docs/js/for/forOf"
+  },
+  "next": {
+    "title": "Break & Continue",
+    "permalink": "/docuQuest/docs/js/breakContinue"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Input Type Tel c40107b24f854ef7bc3b2fcfe519d82a",
+  "title": "Input Type Tel",
+  "description": "En el desarrollo web, los formularios juegan un papel crucial en la interacción entre los usuarios y las aplicaciones en línea. Dentro de estos formularios, los elementos input son esenciales para recopilar diversos tipos de información del usuario. Uno de estos tipos es el input type \"tel\", que se utiliza para recolectar números de teléfono. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"tel\" en los formularios web, analizando su propósito, funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/Input Type Tel c40107b24f854ef7bc3b2fcfe519d82a.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Input Type Tel c40107b24f854ef7bc3b2fcfe519d82a",
+  "permalink": "/docs/formularios/Input Type Tel c40107b24f854ef7bc3b2fcfe519d82a",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Input Type Tel c40107b24f854ef7bc3b2fcfe519d82a.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

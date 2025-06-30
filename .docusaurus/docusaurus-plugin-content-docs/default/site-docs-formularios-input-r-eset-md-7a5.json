@@ -1,0 +1,15 @@
+{
+  "id": "formularios/inputREset",
+  "title": "Input Type Reset",
+  "description": "Los formularios HTML son una parte esencial de la web, permitiendo la interacción entre usuarios y aplicaciones. Dentro de los elementos que componen un formulario, se encuentran los input types, que definen el tipo de entrada de datos que se espera del usuario. Uno de estos input types es el \"reset\", que tiene una función específica dentro de los formularios web. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"reset\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputREset.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputREset",
+  "permalink": "/docs/formularios/inputREset",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/inputREset.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,24 @@
+{
+  "id": "js/objetos/objetos",
+  "title": "Objetos",
+  "description": "¿Qué son los Objetos en JavaScript?",
+  "source": "@site/docs/js/objetos/objetos.md",
+  "sourceDirName": "js/objetos",
+  "slug": "/js/objetos/",
+  "permalink": "/docuQuest/docs/js/objetos/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/objetos/objetos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funciones Flecha",
+    "permalink": "/docuQuest/docs/js/funciones/funcionesFlecha"
+  },
+  "next": {
+    "title": "This",
+    "permalink": "/docuQuest/docs/js/objetos/this"
+  }
+}

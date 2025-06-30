@@ -1,0 +1,24 @@
+{
+  "id": "js/introduccion",
+  "title": "Introducción",
+  "description": "JavaScript en el Desarrollo Web",
+  "source": "@site/docs/js/introduccion.md",
+  "sourceDirName": "js",
+  "slug": "/js/introduccion",
+  "permalink": "/docuQuest/docs/js/introduccion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/introduccion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 13: Evolución y Futuro de la Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/efacc"
+  },
+  "next": {
+    "title": "¿Por qué JavaScript?",
+    "permalink": "/docuQuest/docs/js/whyJS"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputSearch",
+  "title": "Input Type Search",
+  "description": "Los formularios HTML son elementos cruciales en el diseño web moderno, permitiendo la interacción entre usuarios y aplicaciones web. Dentro de estos formularios, los input types desempeñan un papel fundamental al definir el tipo de entrada de datos que se espera del usuario. Uno de estos input types es el \"search\", diseñado específicamente para la búsqueda de contenido dentro de una página web o aplicación. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"search\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputSearch.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputSearch",
+  "permalink": "/docuQuest/docs/formularios/inputSearch",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputSearch.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Reset",
+    "permalink": "/docuQuest/docs/formularios/inputReset"
+  },
+  "next": {
+    "title": "Input Type Submit",
+    "permalink": "/docuQuest/docs/formularios/inputSubmit"
+  }
+}

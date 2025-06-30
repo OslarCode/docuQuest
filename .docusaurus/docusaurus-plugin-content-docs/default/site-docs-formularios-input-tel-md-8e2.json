@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputTel",
+  "title": "Input Type Tel",
+  "description": "En el desarrollo web, los formularios juegan un papel crucial en la interacción entre los usuarios y las aplicaciones en línea. Dentro de estos formularios, los elementos input son esenciales para recopilar diversos tipos de información del usuario. Uno de estos tipos es el input type \"tel\", que se utiliza para recolectar números de teléfono. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"tel\" en los formularios web, analizando su propósito, funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputTel.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputTel",
+  "permalink": "/docuQuest/docs/formularios/inputTel",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputTel.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Submit",
+    "permalink": "/docuQuest/docs/formularios/inputSubmit"
+  },
+  "next": {
+    "title": "Input Type Text",
+    "permalink": "/docuQuest/docs/formularios/inputText"
+  }
+}

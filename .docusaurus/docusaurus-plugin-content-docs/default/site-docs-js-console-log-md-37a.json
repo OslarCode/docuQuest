@@ -1,0 +1,24 @@
+{
+  "id": "js/consoleLog",
+  "title": "Console.log()",
+  "description": "Introducción",
+  "source": "@site/docs/js/consoleLog.md",
+  "sourceDirName": "js",
+  "slug": "/js/consoleLog",
+  "permalink": "/docuQuest/docs/js/consoleLog",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/consoleLog.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Ámbito de variables",
+    "permalink": "/docuQuest/docs/js/ambito"
+  },
+  "next": {
+    "title": "Hoisting",
+    "permalink": "/docuQuest/docs/js/hoisting"
+  }
+}

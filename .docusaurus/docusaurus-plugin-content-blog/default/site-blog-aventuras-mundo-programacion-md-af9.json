@@ -1,0 +1,22 @@
+{
+  "permalink": "/blog/aventurasMundoProgramacion",
+  "editUrl": "https://github.com/OslarCode/OslarCode/blog/aventurasMundoProgramacion.md",
+  "source": "@site/blog/aventurasMundoProgramacion.md",
+  "title": "Aventuras en el Mundo de la Programación",
+  "description": "La programación es el lenguaje que da vida a las máquinas y permite la creación de aplicaciones.",
+  "date": "2025-06-27T22:21:51.317Z",
+  "tags": [],
+  "readingTime": 10.63,
+  "hasTruncateMarker": false,
+  "authors": [],
+  "frontMatter": {
+    "title": "Aventuras en el Mundo de la Programación",
+    "publishDate": "22 Feb 2024",
+    "description": "La programación es el lenguaje que da vida a las máquinas y permite la creación de aplicaciones."
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Welcome",
+    "permalink": "/blog/welcome"
+  }
+}

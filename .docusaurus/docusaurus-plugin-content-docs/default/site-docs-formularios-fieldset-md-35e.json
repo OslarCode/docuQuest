@@ -1,0 +1,24 @@
+{
+  "id": "formularios/fieldset",
+  "title": "Elemento Fieldset",
+  "description": "En el desarrollo web, los formularios son elementos esenciales para interactuar con los usuarios y recopilar información. El elemento \"fieldset\" en HTML es una etiqueta semántica que se utiliza para agrupar elementos relacionados en un formulario y proporcionar una estructura visual y organizativa. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"fieldset\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/fieldset.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/fieldset",
+  "permalink": "/docuQuest/docs/formularios/fieldset",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/fieldset.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elemento Button",
+    "permalink": "/docuQuest/docs/formularios/button"
+  },
+  "next": {
+    "title": "Elemento Legend",
+    "permalink": "/docuQuest/docs/formularios/legend"
+  }
+}

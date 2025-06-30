@@ -1,0 +1,24 @@
+{
+  "id": "css/icons",
+  "title": "Icons en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/icons.md",
+  "sourceDirName": "css",
+  "slug": "/css/icons",
+  "permalink": "/docuQuest/docs/css/icons",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/icons.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fuentes en CSS3",
+    "permalink": "/docuQuest/docs/css/fuentes"
+  },
+  "next": {
+    "title": "Links en CSS3",
+    "permalink": "/docuQuest/docs/css/links"
+  }
+}

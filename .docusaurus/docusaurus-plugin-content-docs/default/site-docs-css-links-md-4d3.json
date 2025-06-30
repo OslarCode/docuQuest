@@ -1,0 +1,24 @@
+{
+  "id": "css/links",
+  "title": "Links en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/links.md",
+  "sourceDirName": "css",
+  "slug": "/css/links",
+  "permalink": "/docuQuest/docs/css/links",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/links.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Icons en CSS3",
+    "permalink": "/docuQuest/docs/css/icons"
+  },
+  "next": {
+    "title": "Listas en CSS3",
+    "permalink": "/docuQuest/docs/css/listas"
+  }
+}

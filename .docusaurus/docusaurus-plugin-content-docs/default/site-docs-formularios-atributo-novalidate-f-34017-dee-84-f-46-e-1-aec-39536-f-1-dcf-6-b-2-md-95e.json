@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Atributo Novalidate f34017dee84f46e1aec39536f1dcf6b2",
+  "title": "Atributo Novalidate",
+  "description": "Los formularios HTML son elementos fundamentales en el desarrollo web, permitiendo la interacción entre los usuarios y los sitios web. Uno de los atributos menos conocidos pero igualmente importantes en la construcción de formularios es el atributo \"novalidate\", que controla si el navegador debe realizar la validación de los campos del formulario antes de enviar los datos al servidor. En este texto, exploraremos en detalle qué es y cómo funciona el atributo \"novalidate\" en los formularios web, analizando su significado, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/Atributo Novalidate f34017dee84f46e1aec39536f1dcf6b2.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Atributo Novalidate f34017dee84f46e1aec39536f1dcf6b2",
+  "permalink": "/docs/formularios/Atributo Novalidate f34017dee84f46e1aec39536f1dcf6b2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Atributo Novalidate f34017dee84f46e1aec39536f1dcf6b2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

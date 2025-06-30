@@ -1,0 +1,15 @@
+{
+  "id": "js/operadoresAritmeticos",
+  "title": "Operadores Aritméticos",
+  "description": "Introducción",
+  "source": "@site/docs/js/operadoresAritmeticos.md",
+  "sourceDirName": "js",
+  "slug": "/js/operadoresAritmeticos",
+  "permalink": "/docs/js/operadoresAritmeticos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/operadoresAritmeticos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

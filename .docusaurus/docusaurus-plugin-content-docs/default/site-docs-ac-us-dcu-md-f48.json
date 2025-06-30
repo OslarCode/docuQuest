@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/dcu",
+  "title": "Módulo 2: Diseño Web Centrado en el Usuario",
+  "description": "👥 Diseñar pensando en quienes realmente usan la web",
+  "source": "@site/docs/ac&us/dcu.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/dcu",
+  "permalink": "/docuQuest/docs/ac&us/dcu",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/dcu.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 1: Introducción a la Usabilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/introduccion"
+  },
+  "next": {
+    "title": "Módulo 3: Diseño Conceptual y Prototipado",
+    "permalink": "/docuQuest/docs/ac&us/dcp"
+  }
+}

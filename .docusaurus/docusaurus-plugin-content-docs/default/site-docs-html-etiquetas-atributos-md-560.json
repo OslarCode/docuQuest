@@ -1,0 +1,24 @@
+{
+  "id": "html/etiquetasAtributos",
+  "title": "Etiquetas y Atributos en HTML5: Fundamentos y Funcionamiento",
+  "description": "Etiquetas en HTML5",
+  "source": "@site/docs/html/etiquetasAtributos.md",
+  "sourceDirName": "html",
+  "slug": "/html/etiquetasAtributos",
+  "permalink": "/docuQuest/docs/html/etiquetasAtributos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/etiquetasAtributos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elementos Semánticos en HTML5: Su Significado y Funcionamiento",
+    "permalink": "/docuQuest/docs/html/elementosSemanticos"
+  },
+  "next": {
+    "title": "Creación de Contenidos en HTML5: Encabezados y Párrafos",
+    "permalink": "/docuQuest/docs/html/creacionContenidos"
+  }
+}

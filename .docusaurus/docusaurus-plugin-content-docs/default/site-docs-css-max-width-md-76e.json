@@ -1,0 +1,24 @@
+{
+  "id": "css/maxWidth",
+  "title": "Propiedad max-width en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/maxWidth.md",
+  "sourceDirName": "css",
+  "slug": "/css/maxWidth",
+  "permalink": "/docuQuest/docs/css/maxWidth",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/maxWidth.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Propiedad display en CSS3",
+    "permalink": "/docuQuest/docs/css/display"
+  },
+  "next": {
+    "title": "Propiedad position en CSS3",
+    "permalink": "/docuQuest/docs/css/position"
+  }
+}

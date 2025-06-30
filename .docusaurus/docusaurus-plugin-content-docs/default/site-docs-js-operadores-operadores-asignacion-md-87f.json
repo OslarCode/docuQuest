@@ -1,0 +1,24 @@
+{
+  "id": "js/operadores/operadoresAsignacion",
+  "title": "Operadores de Asignación",
+  "description": "¿Qué son los Operadores de Asignación en JavaScript?",
+  "source": "@site/docs/js/operadores/operadoresAsignacion.md",
+  "sourceDirName": "js/operadores",
+  "slug": "/js/operadores/operadoresAsignacion",
+  "permalink": "/docuQuest/docs/js/operadores/operadoresAsignacion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/operadores/operadoresAsignacion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Operadores Aritméticos",
+    "permalink": "/docuQuest/docs/js/operadores/operadoresAritmeticos"
+  },
+  "next": {
+    "title": "Operadores de Comparación",
+    "permalink": "/docuQuest/docs/js/operadores/operadoresComparacion"
+  }
+}

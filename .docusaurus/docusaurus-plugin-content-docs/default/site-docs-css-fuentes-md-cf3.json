@@ -1,0 +1,24 @@
+{
+  "id": "css/fuentes",
+  "title": "Fuentes en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/fuentes.md",
+  "sourceDirName": "css",
+  "slug": "/css/fuentes",
+  "permalink": "/docuQuest/docs/css/fuentes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/fuentes.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Propiedades de Texto en CSS3",
+    "permalink": "/docuQuest/docs/css/text"
+  },
+  "next": {
+    "title": "Icons en CSS3",
+    "permalink": "/docuQuest/docs/css/icons"
+  }
+}

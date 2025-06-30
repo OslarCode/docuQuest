@@ -1,0 +1,24 @@
+{
+  "id": "css2/2D",
+  "title": "Transformaciones en 2D en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/2D.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/2D",
+  "permalink": "/docuQuest/docs/css2/2D",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/2D.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Efectos en el Texto en CSS3",
+    "permalink": "/docuQuest/docs/css2/textEffect"
+  },
+  "next": {
+    "title": "Transformaciones en 3D en CSS3",
+    "permalink": "/docuQuest/docs/css2/3D"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "css/pseudoclases",
+  "title": "Pseudo-clases en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/pseudoclases.md",
+  "sourceDirName": "css",
+  "slug": "/css/pseudoclases",
+  "permalink": "/docuQuest/docs/css/pseudoclases",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/pseudoclases.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Combinadores en CSS3",
+    "permalink": "/docuQuest/docs/css/combinators"
+  },
+  "next": {
+    "title": "Pseudo-elementos en CSS3",
+    "permalink": "/docuQuest/docs/css/pseudoelementos"
+  }
+}

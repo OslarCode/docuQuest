@@ -1,0 +1,24 @@
+{
+  "id": "formularios/legend",
+  "title": "Elemento Legend",
+  "description": "En el desarrollo web, los formularios son una parte crucial de la interacción entre los usuarios y las aplicaciones en línea. El elemento \"legend\" en HTML es una etiqueta utilizada para proporcionar una descripción o título para un grupo de elementos dentro de un elemento \"fieldset\" en un formulario. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"legend\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/legend.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/legend",
+  "permalink": "/docuQuest/docs/formularios/legend",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/legend.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elemento Fieldset",
+    "permalink": "/docuQuest/docs/formularios/fieldset"
+  },
+  "next": {
+    "title": "Elemento Datalist",
+    "permalink": "/docuQuest/docs/formularios/datalist"
+  }
+}

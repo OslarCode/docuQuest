@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputNumber",
+  "title": "Input Type Number",
+  "description": "En el contexto del desarrollo web, los formularios son una herramienta fundamental para interactuar con los usuarios y recopilar información. HTML ofrece una variedad de input types que permiten a los usuarios introducir diferentes tipos de datos. Uno de estos input types es el \"number\", que permite a los usuarios ingresar valores numéricos. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"number\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputNumber.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputNumber",
+  "permalink": "/docuQuest/docs/formularios/inputNumber",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputNumber.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Month",
+    "permalink": "/docuQuest/docs/formularios/inputMonth"
+  },
+  "next": {
+    "title": "Input Type Password",
+    "permalink": "/docuQuest/docs/formularios/inputPassword"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "formularios/variabilidadDatos",
+  "title": "Variabilidad de los datos",
+  "description": "La variabilidad de los datos en una página web representa la capacidad de presentar información dinámica y actualizada de manera que se adapte a diferentes situaciones, preferencias del usuario o cambios en el entorno. En este texto, exploraremos en profundidad qué implica que una página web tenga datos variables, cómo se logra esta variabilidad y cómo los formularios contribuyen a la dinámica de los datos en la web.",
+  "source": "@site/docs/formularios/variabilidadDatos.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/variabilidadDatos",
+  "permalink": "/docuQuest/docs/formularios/variabilidadDatos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/variabilidadDatos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "La web interactiva",
+    "permalink": "/docuQuest/docs/formularios/webInteractiva"
+  },
+  "next": {
+    "title": "Envío y recepción de datos",
+    "permalink": "/docuQuest/docs/formularios/envioRecepcion"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "flex/alignContent",
+  "title": "Align-content: Controlando el Espaciado entre Líneas",
+  "description": "📘 Introducción",
+  "source": "@site/docs/flex/alignContent.md",
+  "sourceDirName": "flex",
+  "slug": "/flex/alignContent",
+  "permalink": "/docuQuest/docs/flex/alignContent",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/alignContent.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "flex-flow: Control Direccional y de Envoltura en una Sola Línea",
+    "permalink": "/docuQuest/docs/flex/flexFlow"
+  },
+  "next": {
+    "title": "Order: Controlando el orden visual sin tocar el HTML",
+    "permalink": "/docuQuest/docs/flex/order"
+  }
+}

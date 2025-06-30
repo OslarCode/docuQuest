@@ -1,0 +1,24 @@
+{
+  "id": "js/operadores/operadoresConcatenacion",
+  "title": "Operadores de Concatenación",
+  "description": "Los operadores de concatenación son una parte esencial en el arsenal de herramientas de cualquier desarrollador web que trabaje con JavaScript. Estos operadores permiten combinar o unir valores de diferentes tipos, como cadenas de texto o arrays, en una sola entidad.",
+  "source": "@site/docs/js/operadores/operadoresConcatenacion.md",
+  "sourceDirName": "js/operadores",
+  "slug": "/js/operadores/operadoresConcatenacion",
+  "permalink": "/docuQuest/docs/js/operadores/operadoresConcatenacion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/operadores/operadoresConcatenacion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Operadores de Comparación",
+    "permalink": "/docuQuest/docs/js/operadores/operadoresComparacion"
+  },
+  "next": {
+    "title": "Operadores Lógicos",
+    "permalink": "/docuQuest/docs/js/operadores/operadoresLogicos"
+  }
+}

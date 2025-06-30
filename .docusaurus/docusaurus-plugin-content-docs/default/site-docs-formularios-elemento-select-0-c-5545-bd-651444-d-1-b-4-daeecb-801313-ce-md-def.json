@@ -1,0 +1,15 @@
+{
+  "id": "formularios/Elemento Select 0c5545bd651444d1b4daeecb801313ce",
+  "title": "Elemento Select",
+  "description": "En el desarrollo web, los formularios son elementos cruciales que permiten a los usuarios interactuar con los sitios web al enviar información al servidor. El elemento \"select\" en HTML es una herramienta esencial que facilita la selección de opciones predefinidas en un formulario. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"select\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/Elemento Select 0c5545bd651444d1b4daeecb801313ce.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/Elemento Select 0c5545bd651444d1b4daeecb801313ce",
+  "permalink": "/docs/formularios/Elemento Select 0c5545bd651444d1b4daeecb801313ce",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/formularios/Elemento Select 0c5545bd651444d1b4daeecb801313ce.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

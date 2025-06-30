@@ -1,0 +1,24 @@
+{
+  "id": "js/fechas",
+  "title": "Fechas",
+  "description": "¿Qué son las Fechas en JavaScript?",
+  "source": "@site/docs/js/fechas.md",
+  "sourceDirName": "js",
+  "slug": "/js/fechas",
+  "permalink": "/docuQuest/docs/js/fechas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/fechas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Métodos para arrays",
+    "permalink": "/docuQuest/docs/js/arrays/metodosArrays"
+  },
+  "next": {
+    "title": "Math",
+    "permalink": "/docuQuest/docs/js/math"
+  }
+}

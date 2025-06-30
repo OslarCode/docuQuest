@@ -1,0 +1,24 @@
+{
+  "id": "css/outline",
+  "title": "Outline en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/outline.md",
+  "sourceDirName": "css",
+  "slug": "/css/outline",
+  "permalink": "/docuQuest/docs/css/outline",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/outline.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Box Model en CSS3",
+    "permalink": "/docuQuest/docs/css/boxModel"
+  },
+  "next": {
+    "title": "Propiedades de Texto en CSS3",
+    "permalink": "/docuQuest/docs/css/text"
+  }
+}

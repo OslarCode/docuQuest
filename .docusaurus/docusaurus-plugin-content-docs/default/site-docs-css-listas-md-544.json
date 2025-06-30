@@ -1,0 +1,24 @@
+{
+  "id": "css/listas",
+  "title": "Listas en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/listas.md",
+  "sourceDirName": "css",
+  "slug": "/css/listas",
+  "permalink": "/docuQuest/docs/css/listas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/listas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Links en CSS3",
+    "permalink": "/docuQuest/docs/css/links"
+  },
+  "next": {
+    "title": "Tablas en CSS3",
+    "permalink": "/docuQuest/docs/css/tablas"
+  }
+}

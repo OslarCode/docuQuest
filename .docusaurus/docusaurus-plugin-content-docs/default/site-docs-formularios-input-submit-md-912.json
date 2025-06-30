@@ -1,0 +1,24 @@
+{
+  "id": "formularios/inputSubmit",
+  "title": "Input Type Submit",
+  "description": "Los formularios HTML son una parte esencial de la experiencia de usuario en la web, permitiendo a los usuarios enviar datos a servidores web para su procesamiento. Dentro de los formularios, los input types juegan un papel fundamental al definir el tipo de entrada de datos que se espera del usuario. Uno de los input types más comunes es el \"submit\", que se utiliza para enviar los datos del formulario al servidor para su procesamiento. En este texto, exploraremos en detalle qué es y cómo funciona el input type \"submit\" en los formularios web, analizando su propósito, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/inputSubmit.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/inputSubmit",
+  "permalink": "/docuQuest/docs/formularios/inputSubmit",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/inputSubmit.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Type Search",
+    "permalink": "/docuQuest/docs/formularios/inputSearch"
+  },
+  "next": {
+    "title": "Input Type Tel",
+    "permalink": "/docuQuest/docs/formularios/inputTel"
+  }
+}

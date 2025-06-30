@@ -1,0 +1,24 @@
+{
+  "id": "formularios/target",
+  "title": "Atributo Target",
+  "description": "Los formularios HTML son elementos esenciales en el desarrollo web, permitiendo la interacción entre los usuarios y los sitios web. Dentro de los atributos que definen el comportamiento de un formulario, el atributo \"target\" juega un papel crucial al especificar dónde se abrirá el resultado del envío del formulario. En este texto, exploraremos en detalle qué es y cómo funciona el atributo \"target\" en los formularios web, analizando su significado, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/target.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/target",
+  "permalink": "/docuQuest/docs/formularios/target",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/target.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Atributo Action",
+    "permalink": "/docuQuest/docs/formularios/action"
+  },
+  "next": {
+    "title": "Atributo Method",
+    "permalink": "/docuQuest/docs/formularios/method"
+  }
+}

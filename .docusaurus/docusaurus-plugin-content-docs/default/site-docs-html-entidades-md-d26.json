@@ -1,0 +1,24 @@
+{
+  "id": "html/entidades",
+  "title": "Entidades en HTML5",
+  "description": "¿Qué son las Entidades en HTML5?",
+  "source": "@site/docs/html/entidades.md",
+  "sourceDirName": "html",
+  "slug": "/html/entidades",
+  "permalink": "/docuQuest/docs/html/entidades",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/entidades.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Caracteres Especiales en HTML 5",
+    "permalink": "/docuQuest/docs/html/caracteresEspeciales"
+  },
+  "next": {
+    "title": "Atributo class en HTML 5",
+    "permalink": "/docuQuest/docs/html/class"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "js/for/forOf",
+  "title": "For…of",
+  "description": "El bucle for...of es una estructura de control en JavaScript que se utiliza para iterar sobre elementos de datos iterables, como arreglos, cadenas de texto, objetos iterables (por ejemplo, Map y Set), y otros. A diferencia de otros bucles como for y for...in, que se centran en índices o claves, el bucle for...of se enfoca en los valores de los elementos del iterable.",
+  "source": "@site/docs/js/for/forOf.md",
+  "sourceDirName": "js/for",
+  "slug": "/js/for/forOf",
+  "permalink": "/docuQuest/docs/js/for/forOf",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/for/forOf.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "For…in",
+    "permalink": "/docuQuest/docs/js/for/forIn"
+  },
+  "next": {
+    "title": "While",
+    "permalink": "/docuQuest/docs/js/while"
+  }
+}

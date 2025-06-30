@@ -1,0 +1,24 @@
+{
+  "id": "css/comentarios",
+  "title": "Los Comentarios en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/comentarios.md",
+  "sourceDirName": "css",
+  "slug": "/css/comentarios",
+  "permalink": "/docuQuest/docs/css/comentarios",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/comentarios.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fundamentos de la Sintaxis CSS3",
+    "permalink": "/docuQuest/docs/css/sintaxis"
+  },
+  "next": {
+    "title": "Colores en CSS3",
+    "permalink": "/docuQuest/docs/css/colores"
+  }
+}

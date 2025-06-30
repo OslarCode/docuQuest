@@ -1,0 +1,24 @@
+{
+  "id": "js/funciones/funcionesPrimeraClase",
+  "title": "Funciones como Objetos de Primera Clase",
+  "description": "¿Qué son las Funciones como Objetos de Primera Clase en JavaScript?",
+  "source": "@site/docs/js/funciones/funcionesPrimeraClase.md",
+  "sourceDirName": "js/funciones",
+  "slug": "/js/funciones/funcionesPrimeraClase",
+  "permalink": "/docuQuest/docs/js/funciones/funcionesPrimeraClase",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/funciones/funcionesPrimeraClase.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funciones Auto-ejecutables",
+    "permalink": "/docuQuest/docs/js/funciones/funcionesAutoEjecutables"
+  },
+  "next": {
+    "title": "Funciones Flecha",
+    "permalink": "/docuQuest/docs/js/funciones/funcionesFlecha"
+  }
+}

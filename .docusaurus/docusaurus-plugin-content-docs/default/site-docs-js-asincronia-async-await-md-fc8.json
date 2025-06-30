@@ -1,0 +1,24 @@
+{
+  "id": "js/asincronia/asyncAwait",
+  "title": "Async/Await",
+  "description": "1. Async/Await",
+  "source": "@site/docs/js/asincronia/asyncAwait.md",
+  "sourceDirName": "js/asincronia",
+  "slug": "/js/asincronia/asyncAwait",
+  "permalink": "/docuQuest/docs/js/asincronia/asyncAwait",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/asincronia/asyncAwait.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Promesas",
+    "permalink": "/docuQuest/docs/js/asincronia/promesas"
+  },
+  "next": {
+    "title": "Manejo de errores",
+    "permalink": "/docuQuest/docs/js/asincronia/errores"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "css/sintaxis",
+  "title": "Fundamentos de la Sintaxis CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/sintaxis.md",
+  "sourceDirName": "css",
+  "slug": "/css/sintaxis",
+  "permalink": "/docuQuest/docs/css/sintaxis",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/sintaxis.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fundamentos y Principios de CSS3",
+    "permalink": "/docuQuest/docs/css/fundamentos"
+  },
+  "next": {
+    "title": "Los Comentarios en CSS3",
+    "permalink": "/docuQuest/docs/css/comentarios"
+  }
+}

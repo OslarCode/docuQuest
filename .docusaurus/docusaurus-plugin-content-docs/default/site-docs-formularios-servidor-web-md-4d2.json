@@ -1,0 +1,24 @@
+{
+  "id": "formularios/servidorWeb",
+  "title": "Servidor Web",
+  "description": "El funcionamiento de un servidor web en el contexto del envío y recepción de formularios desde un navegador web es un proceso esencial en la interacción entre el usuario y la aplicación web. Este texto se adentrará en los conceptos básicos de qué es un servidor web, cómo funciona en términos generales, el proceso interno del envío y recepción de datos a través de un formulario web, los sistemas involucrados y los protocolos que actúan para facilitar esta acción.",
+  "source": "@site/docs/formularios/servidorWeb.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/servidorWeb",
+  "permalink": "/docuQuest/docs/formularios/servidorWeb",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/servidorWeb.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Envío y recepción de datos",
+    "permalink": "/docuQuest/docs/formularios/envioRecepcion"
+  },
+  "next": {
+    "title": "Métodos GET y POST",
+    "permalink": "/docuQuest/docs/formularios/getPost"
+  }
+}

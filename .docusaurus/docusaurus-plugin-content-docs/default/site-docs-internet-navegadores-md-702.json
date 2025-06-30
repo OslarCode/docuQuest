@@ -1,0 +1,24 @@
+{
+  "id": "internet/navegadores",
+  "title": "Navegadores web y motores de renderizado",
+  "description": "🧭 Módulo 8: ¿Qué es un navegador web?",
+  "source": "@site/docs/internet/navegadores.md",
+  "sourceDirName": "internet",
+  "slug": "/internet/navegadores",
+  "permalink": "/docuQuest/docs/internet/navegadores",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/navegadores.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gestión del tráfico y ancho de banda en la web",
+    "permalink": "/docuQuest/docs/internet/trafico"
+  },
+  "next": {
+    "title": "Google",
+    "permalink": "/docuQuest/docs/internet/google/"
+  }
+}

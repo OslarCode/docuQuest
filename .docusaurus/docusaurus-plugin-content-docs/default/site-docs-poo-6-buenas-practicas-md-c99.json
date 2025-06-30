@@ -1,0 +1,16 @@
+{
+  "id": "poo/buenasPracticas",
+  "title": "Módulo 6: Proyecto final y buenas prácticas con JavaScript",
+  "description": "En este sexto y último módulo, consolidaremos los conocimientos adquiridos sobre la Programación Orientada a Objetos (POO) en JavaScript mediante el desarrollo de una mini aplicación web. Además, exploraremos buenas prácticas y principios de diseño que nos permitirán escribir código limpio, reutilizable y mantenible",
+  "source": "@site/docs/poo/6.buenasPracticas.md",
+  "sourceDirName": "poo",
+  "slug": "/poo/buenasPracticas",
+  "permalink": "/docs/poo/buenasPracticas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/poo/6.buenasPracticas.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {}
+}

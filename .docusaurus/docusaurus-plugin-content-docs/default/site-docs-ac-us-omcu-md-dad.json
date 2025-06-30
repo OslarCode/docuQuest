@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/omcu",
+  "title": "Módulo 6: Optimización y Mejora Continua de la Usabilidad",
+  "description": "🔧 ¿Cómo hacer que tu web funcione cada vez mejor?",
+  "source": "@site/docs/ac&us/omcu.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/omcu",
+  "permalink": "/docuQuest/docs/ac&us/omcu",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/omcu.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 5: Accesibilidad y Usabilidad",
+    "permalink": "/docuQuest/docs/ac&us/"
+  },
+  "next": {
+    "title": "Módulo 7: Introducción a la Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/acc"
+  }
+}

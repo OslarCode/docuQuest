@@ -1,0 +1,24 @@
+{
+  "id": "html/canvas",
+  "title": "Funcionamiento del Elemento Canvas en HTML 5",
+  "description": "Uno de estos elementos clave es `, que ofrece una forma poderosa de generar gráficos, animaciones y elementos visuales dentro de una página web. En este ensayo, exploraremos en detalle qué es el elemento ` en HTML5, cómo funciona y su importancia en la creación de contenidos web avanzados e interactivos.",
+  "source": "@site/docs/html/canvas.md",
+  "sourceDirName": "html",
+  "slug": "/html/canvas",
+  "permalink": "/docuQuest/docs/html/canvas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/canvas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funcionamiento de las Tablas en HTML 5",
+    "permalink": "/docuQuest/docs/html/tablas"
+  },
+  "next": {
+    "title": "Elementos en Bloque y Elementos en Línea en HTML 5",
+    "permalink": "/docuQuest/docs/html/bloqueVSlinea"
+  }
+}

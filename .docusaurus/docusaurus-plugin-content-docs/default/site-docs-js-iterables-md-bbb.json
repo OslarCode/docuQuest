@@ -1,0 +1,24 @@
+{
+  "id": "js/iterables",
+  "title": "Iterables",
+  "description": "Introducción a los Objetos Iterables",
+  "source": "@site/docs/js/iterables.md",
+  "sourceDirName": "js",
+  "slug": "/js/iterables",
+  "permalink": "/docuQuest/docs/js/iterables",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/iterables.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Break & Continue",
+    "permalink": "/docuQuest/docs/js/breakContinue"
+  },
+  "next": {
+    "title": "Sets",
+    "permalink": "/docuQuest/docs/js/sets"
+  }
+}

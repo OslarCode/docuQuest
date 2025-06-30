@@ -1,0 +1,24 @@
+{
+  "id": "internet/google/SEO",
+  "title": "Metodologías de búsqueda SEO",
+  "description": "📈 SEO: Cómo lograr que tu sitio aparezca en Google",
+  "source": "@site/docs/internet/google/SEO.md",
+  "sourceDirName": "internet/google",
+  "slug": "/internet/google/SEO",
+  "permalink": "/docuQuest/docs/internet/google/SEO",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/google/SEO.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Algoritmo de búsqueda RankBrain de Google",
+    "permalink": "/docuQuest/docs/internet/google/rankbrain"
+  },
+  "next": {
+    "title": "Metodologías de búsqueda SEM",
+    "permalink": "/docuQuest/docs/internet/google/SEM"
+  }
+}

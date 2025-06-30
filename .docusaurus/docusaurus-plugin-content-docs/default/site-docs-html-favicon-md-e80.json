@@ -1,0 +1,24 @@
+{
+  "id": "html/favicon",
+  "title": "Favicon en HTML 5",
+  "description": "El Favicon es un pequeño icono o imagen que se muestra en la pestaña del navegador junto al título de la página web, así como en la lista de marcadores y en la barra de direcciones. Este elemento es una parte importante del diseño y la identidad visual de un sitio web, ya que proporciona una representación visual única y reconocible de la marca o el contenido de la página.",
+  "source": "@site/docs/html/favicon.md",
+  "sourceDirName": "html",
+  "slug": "/html/favicon",
+  "permalink": "/docuQuest/docs/html/favicon",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/favicon.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funcionamiento de los Enlaces en HTML 5",
+    "permalink": "/docuQuest/docs/html/enlaces"
+  },
+  "next": {
+    "title": "Funcionamiento de las Tablas en HTML 5",
+    "permalink": "/docuQuest/docs/html/tablas"
+  }
+}

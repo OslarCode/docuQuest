@@ -1,0 +1,24 @@
+{
+  "id": "js/arrays/interactuar",
+  "title": "Interactuar con arrays",
+  "description": "En el desarrollo de aplicaciones web con JavaScript, los arrays son una estructura de datos fundamental que se utiliza para almacenar y manipular colecciones de elementos. Iterar sobre arrays es una tarea común en la programación, ya que permite acceder y operar con cada elemento del array de manera individual. JavaScript proporciona varios métodos integrados que facilitan la iteración sobre arrays de diferentes maneras.",
+  "source": "@site/docs/js/arrays/interactuar.md",
+  "sourceDirName": "js/arrays",
+  "slug": "/js/arrays/interactuar",
+  "permalink": "/docuQuest/docs/js/arrays/interactuar",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/arrays/interactuar.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Arrays",
+    "permalink": "/docuQuest/docs/js/arrays/"
+  },
+  "next": {
+    "title": "Métodos para arrays",
+    "permalink": "/docuQuest/docs/js/arrays/metodosArrays"
+  }
+}

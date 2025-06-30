@@ -1,0 +1,24 @@
+{
+  "id": "css/opacity",
+  "title": "Propiedad Opacity en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/opacity.md",
+  "sourceDirName": "css",
+  "slug": "/css/opacity",
+  "permalink": "/docuQuest/docs/css/opacity",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/opacity.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Pseudo-elementos en CSS3",
+    "permalink": "/docuQuest/docs/css/pseudoelementos"
+  },
+  "next": {
+    "title": "Selectores de Atributos en CSS3",
+    "permalink": "/docuQuest/docs/css/selectoresAtributos"
+  }
+}

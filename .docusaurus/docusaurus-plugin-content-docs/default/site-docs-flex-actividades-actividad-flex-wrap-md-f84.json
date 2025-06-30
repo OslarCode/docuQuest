@@ -1,0 +1,24 @@
+{
+  "id": "flex/actividades/actividadFlexWrap",
+  "title": "🧪 Actividad Práctica: Creación de un Tablero de Tarjetas Flexibles",
+  "description": "🎯 Objetivo",
+  "source": "@site/docs/flex/actividades/actividadFlexWrap.md",
+  "sourceDirName": "flex/actividades",
+  "slug": "/flex/actividades/actividadFlexWrap",
+  "permalink": "/docuQuest/docs/flex/actividades/actividadFlexWrap",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/actividades/actividadFlexWrap.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Align-self en Flexbox: Alineación individual en el eje cruzado",
+    "permalink": "/docuQuest/docs/flex/alignSelf"
+  },
+  "next": {
+    "title": "🧪 Actividad práctica: Explorando flex-flow en entornos reales",
+    "permalink": "/docuQuest/docs/flex/actividades/actividadFlexFlow"
+  }
+}

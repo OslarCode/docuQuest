@@ -1,0 +1,24 @@
+{
+  "id": "js/modulos",
+  "title": "Módulos",
+  "description": "¿Qué son los Módulos en JavaScript?",
+  "source": "@site/docs/js/modulos.md",
+  "sourceDirName": "js",
+  "slug": "/js/modulos",
+  "permalink": "/docuQuest/docs/js/modulos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/modulos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Maps",
+    "permalink": "/docuQuest/docs/js/maps"
+  },
+  "next": {
+    "title": "Depuración del código",
+    "permalink": "/docuQuest/docs/js/depuracionCodigo"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/htvacc",
+  "title": "Módulo 11: Herramientas y Técnicas para la Validación de la Accesibilidad",
+  "description": "🔍 ¿Cómo saber si tu web es realmente accesible?",
+  "source": "@site/docs/ac&us/htvacc.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/htvacc",
+  "permalink": "/docuQuest/docs/ac&us/htvacc",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/htvacc.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 10: Diseño y Desarrollo Web Accesible",
+    "permalink": "/docuQuest/docs/ac&us/ddwacc"
+  },
+  "next": {
+    "title": "Módulo 12: Tecnologías de Asistencia y su Uso en la Web",
+    "permalink": "/docuQuest/docs/ac&us/tauw"
+  }
+}

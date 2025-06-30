@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/dcp",
+  "title": "Módulo 3: Diseño Conceptual y Prototipado",
+  "description": "🧪 Dar forma a las ideas antes de construir: diseño y prototipos",
+  "source": "@site/docs/ac&us/dcp.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/dcp",
+  "permalink": "/docuQuest/docs/ac&us/dcp",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/dcp.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 2: Diseño Web Centrado en el Usuario",
+    "permalink": "/docuQuest/docs/ac&us/dcu"
+  },
+  "next": {
+    "title": "Módulo 4: Métodos y Técnicas de Usabilidad",
+    "permalink": "/docuQuest/docs/ac&us/mtu"
+  }
+}

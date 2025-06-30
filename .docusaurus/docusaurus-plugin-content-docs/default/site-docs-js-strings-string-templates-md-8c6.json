@@ -1,0 +1,24 @@
+{
+  "id": "js/strings/stringTemplates",
+  "title": "Strings Templates",
+  "description": "Introducción",
+  "source": "@site/docs/js/strings/stringTemplates.md",
+  "sourceDirName": "js/strings",
+  "slug": "/js/strings/stringTemplates",
+  "permalink": "/docuQuest/docs/js/strings/stringTemplates",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/strings/stringTemplates.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Métodos de Strings",
+    "permalink": "/docuQuest/docs/js/strings/metodosStrings"
+  },
+  "next": {
+    "title": "Números",
+    "permalink": "/docuQuest/docs/js/numeros"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "js/funciones/funcionesAnonimas",
+  "title": "Funciones Anónimas",
+  "description": "¿Qué son las Funciones Anónimas en JavaScript?",
+  "source": "@site/docs/js/funciones/funcionesAnonimas.md",
+  "sourceDirName": "js/funciones",
+  "slug": "/js/funciones/funcionesAnonimas",
+  "permalink": "/docuQuest/docs/js/funciones/funcionesAnonimas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/js/funciones/funcionesAnonimas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Funciones",
+    "permalink": "/docuQuest/docs/js/funciones/"
+  },
+  "next": {
+    "title": "Funciones Auto-ejecutables",
+    "permalink": "/docuQuest/docs/js/funciones/funcionesAutoEjecutables"
+  }
+}

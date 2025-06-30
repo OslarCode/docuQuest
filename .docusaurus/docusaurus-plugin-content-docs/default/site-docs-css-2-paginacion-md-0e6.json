@@ -1,0 +1,24 @@
+{
+  "id": "css2/paginacion",
+  "title": "Paginación en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/paginacion.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/paginacion",
+  "permalink": "/docuQuest/docs/css2/paginacion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/paginacion.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Botones en CSS3",
+    "permalink": "/docuQuest/docs/css2/button"
+  },
+  "next": {
+    "title": "Múltiples Columnas en CSS3",
+    "permalink": "/docuQuest/docs/css2/multiplesColumnas"
+  }
+}

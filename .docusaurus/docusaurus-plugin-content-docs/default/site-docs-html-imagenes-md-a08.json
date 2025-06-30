@@ -1,0 +1,24 @@
+{
+  "id": "html/imagenes",
+  "title": "Funcionamiento de las Imágenes en HTML 5",
+  "description": "Concepto de Imágenes en HTML5",
+  "source": "@site/docs/html/imagenes.md",
+  "sourceDirName": "html",
+  "slug": "/html/imagenes",
+  "permalink": "/docuQuest/docs/html/imagenes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/imagenes.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Contenido Embebido iframe en HTML 5",
+    "permalink": "/docuQuest/docs/html/contenidoEmbebido"
+  },
+  "next": {
+    "title": "Funcionamiento del Audio en HTML 5",
+    "permalink": "/docuQuest/docs/html/audio"
+  }
+}

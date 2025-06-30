@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkDocuQuest_oslar_code=self.webpackChunkDocuQuest_oslar_code||[]).push([[9647],{7121:(e,s,r)=>{r.r(s),r.d(s,{default:()=>d});r(6540);var u=r(4164),c=r(5500),a=r(7559),o=r(2831),t=r(1656),l=r(4848);function d(e){return(0,l.jsx)(c.e3,{className:(0,u.A)(a.G.wrapper.docsPages),children:(0,l.jsx)(t.A,{children:(0,o.v)(e.route.routes)})})}}}]);

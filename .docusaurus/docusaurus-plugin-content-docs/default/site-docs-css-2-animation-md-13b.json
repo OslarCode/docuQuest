@@ -1,0 +1,24 @@
+{
+  "id": "css2/animation",
+  "title": "Animaciones en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/animation.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/animation",
+  "permalink": "/docuQuest/docs/css2/animation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/animation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tooltips en CSS3",
+    "permalink": "/docuQuest/docs/css2/tooltips"
+  },
+  "next": {
+    "title": "Imágenes Reflejadas en CSS3",
+    "permalink": "/docuQuest/docs/css2/imagenesReflejadas"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "poo/fundamentosPOO",
+  "title": "Módulo 1: Fundamentos de la programación orientada a objetos (Poo)",
+  "description": "La Programación Orientada a Objetos (POO) es un paradigma de programación que organiza el diseño de software en torno a objetos, que son instancias de clases. Este enfoque permite modelar entidades del mundo real de manera más intuitiva, facilitando la gestión y escalabilidad de aplicaciones complejas",
+  "source": "@site/docs/poo/1.fundamentosPOO.md",
+  "sourceDirName": "poo",
+  "slug": "/poo/fundamentosPOO",
+  "permalink": "/docs/poo/fundamentosPOO",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/poo/1.fundamentosPOO.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {}
+}

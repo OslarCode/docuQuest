@@ -1,0 +1,24 @@
+{
+  "id": "css/combinators",
+  "title": "Combinadores en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/combinators.md",
+  "sourceDirName": "css",
+  "slug": "/css/combinators",
+  "permalink": "/docuQuest/docs/css/combinators",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/combinators.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Propiedad align en CSS3",
+    "permalink": "/docuQuest/docs/css/align"
+  },
+  "next": {
+    "title": "Pseudo-clases en CSS3",
+    "permalink": "/docuQuest/docs/css/pseudoclases"
+  }
+}

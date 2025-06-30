@@ -1,0 +1,24 @@
+{
+  "id": "html/contenidoEmbebido",
+  "title": "Contenido Embebido iframe en HTML 5",
+  "description": "Concepto de Contenido Embebido `` en HTML5",
+  "source": "@site/docs/html/contenidoEmbebido.md",
+  "sourceDirName": "html",
+  "slug": "/html/contenidoEmbebido",
+  "permalink": "/docuQuest/docs/html/contenidoEmbebido",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/html/contenidoEmbebido.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Code y Elementos Relacionados en HTML 5",
+    "permalink": "/docuQuest/docs/html/computerCode"
+  },
+  "next": {
+    "title": "Funcionamiento de las Imágenes en HTML 5",
+    "permalink": "/docuQuest/docs/html/imagenes"
+  }
+}

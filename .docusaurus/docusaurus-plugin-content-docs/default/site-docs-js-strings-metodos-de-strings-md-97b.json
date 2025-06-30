@@ -1,0 +1,15 @@
+{
+  "id": "js/strings/metodos_de_strings",
+  "title": "Métodos de Strings",
+  "description": "Introducción",
+  "source": "@site/docs/js/strings/metodos_de_strings.md",
+  "sourceDirName": "js/strings",
+  "slug": "/js/strings/metodos_de_strings",
+  "permalink": "/docs/js/strings/metodos_de_strings",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/strings/metodos_de_strings.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,24 @@
+{
+  "id": "css/tablas",
+  "title": "Tablas en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css/tablas.md",
+  "sourceDirName": "css",
+  "slug": "/css/tablas",
+  "permalink": "/docuQuest/docs/css/tablas",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css/tablas.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Listas en CSS3",
+    "permalink": "/docuQuest/docs/css/listas"
+  },
+  "next": {
+    "title": "Propiedad display en CSS3",
+    "permalink": "/docuQuest/docs/css/display"
+  }
+}

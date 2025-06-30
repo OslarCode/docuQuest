@@ -1,0 +1,15 @@
+{
+  "id": "js/asincronia/Manejo de errores",
+  "title": "Manejo de errores",
+  "description": "En la programación, los errores son inevitables. Pueden surgir por diversas razones, como errores de sintaxis, errores lógicos o problemas de conectividad a la red. En JavaScript, un lenguaje de programación ampliamente utilizado en el desarrollo web, es fundamental comprender cómo manejar estos errores de manera efectiva para garantizar un funcionamiento suave y confiable de las aplicaciones. En este texto, exploraremos en detalle cómo se manejan los errores en JavaScript, las herramientas y técnicas disponibles, y las mejores prácticas para abordarlos de manera efectiva.",
+  "source": "@site/docs/js/asincronia/Manejo de errores.md",
+  "sourceDirName": "js/asincronia",
+  "slug": "/js/asincronia/Manejo de errores",
+  "permalink": "/docs/js/asincronia/Manejo de errores",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/asincronia/Manejo de errores.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

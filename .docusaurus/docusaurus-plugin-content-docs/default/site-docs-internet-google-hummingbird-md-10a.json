@@ -1,0 +1,24 @@
+{
+  "id": "internet/google/hummingbird",
+  "title": "Algoritmo de búsqueda Hummingbird de Google",
+  "description": "Algoritmo de Búsqueda Hummingbird de Google",
+  "source": "@site/docs/internet/google/hummingbird.md",
+  "sourceDirName": "internet/google",
+  "slug": "/internet/google/hummingbird",
+  "permalink": "/docuQuest/docs/internet/google/hummingbird",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/internet/google/hummingbird.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Algoritmo de búsqueda PageRank de Google",
+    "permalink": "/docuQuest/docs/internet/google/pageRank"
+  },
+  "next": {
+    "title": "Algoritmo de búsqueda RankBrain de Google",
+    "permalink": "/docuQuest/docs/internet/google/rankbrain"
+  }
+}

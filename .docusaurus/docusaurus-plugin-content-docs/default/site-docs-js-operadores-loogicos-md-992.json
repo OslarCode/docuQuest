@@ -1,0 +1,15 @@
+{
+  "id": "js/operadoresLoogicos",
+  "title": "Operadores Lógicos",
+  "description": "Los operadores lógicos son herramientas esenciales en cualquier lenguaje de programación, y en JavaScript no es diferente. Estos operadores permiten realizar operaciones lógicas sobre valores booleanos, es decir, valores que pueden ser true o false.",
+  "source": "@site/docs/js/operadoresLoogicos.md",
+  "sourceDirName": "js",
+  "slug": "/js/operadoresLoogicos",
+  "permalink": "/docs/js/operadoresLoogicos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/js/operadoresLoogicos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

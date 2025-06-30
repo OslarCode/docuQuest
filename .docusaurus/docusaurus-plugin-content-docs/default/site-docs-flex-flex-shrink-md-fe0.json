@@ -1,0 +1,24 @@
+{
+  "id": "flex/flexShrink",
+  "title": "Flex-shrink: Controlando la contracción de elementos",
+  "description": "📘 ¿Qué es flex-shrink?",
+  "source": "@site/docs/flex/flexShrink.md",
+  "sourceDirName": "flex",
+  "slug": "/flex/flexShrink",
+  "permalink": "/docuQuest/docs/flex/flexShrink",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/flex/flexShrink.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Flex-grow: Cómo distribuir el espacio sobrante",
+    "permalink": "/docuQuest/docs/flex/flexGrow"
+  },
+  "next": {
+    "title": "Flex-basis: Definiendo el tamaño inicial de un elemento flexible",
+    "permalink": "/docuQuest/docs/flex/flexBasis"
+  }
+}

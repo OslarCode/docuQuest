@@ -1,0 +1,24 @@
+{
+  "id": "css2/variables",
+  "title": "Variables en CSS3",
+  "description": "Introducción",
+  "source": "@site/docs/css2/variables.md",
+  "sourceDirName": "css2",
+  "slug": "/css2/variables",
+  "permalink": "/docuQuest/docs/css2/variables",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/css2/variables.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Múltiples Columnas en CSS3",
+    "permalink": "/docuQuest/docs/css2/multiplesColumnas"
+  },
+  "next": {
+    "title": "Media Queries en CSS3",
+    "permalink": "/docuQuest/docs/css2/mediaQueries"
+  }
+}

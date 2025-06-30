@@ -1,0 +1,24 @@
+{
+  "id": "ac&us/ddwacc",
+  "title": "Módulo 10: Diseño y Desarrollo Web Accesible",
+  "description": "🌐 Diseñar pensando en todos",
+  "source": "@site/docs/ac&us/ddwacc.md",
+  "sourceDirName": "ac&us",
+  "slug": "/ac&us/ddwacc",
+  "permalink": "/docuQuest/docs/ac&us/ddwacc",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/ac&us/ddwacc.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Módulo 9: Principios Fundamentales de la Accesibilidad Web",
+    "permalink": "/docuQuest/docs/ac&us/pfacc"
+  },
+  "next": {
+    "title": "Módulo 11: Herramientas y Técnicas para la Validación de la Accesibilidad",
+    "permalink": "/docuQuest/docs/ac&us/htvacc"
+  }
+}

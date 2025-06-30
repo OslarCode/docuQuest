@@ -1,0 +1,24 @@
+{
+  "id": "formularios/button",
+  "title": "Elemento Button",
+  "description": "En el desarrollo web, los formularios son una parte esencial de la interacción entre los usuarios y los sitios web. El elemento \"button\" en HTML es una etiqueta versátil que permite a los desarrolladores crear botones interactivos dentro de los formularios. En este texto, exploraremos en detalle qué es y cómo funciona el elemento \"button\" en los formularios web, analizando su significado, sus atributos, su funcionamiento interno y proporcionando ejemplos ilustrativos.",
+  "source": "@site/docs/formularios/button.md",
+  "sourceDirName": "formularios",
+  "slug": "/formularios/button",
+  "permalink": "/docuQuest/docs/formularios/button",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/OslarCode/OslarCode/docs/formularios/button.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Elemento TextArea",
+    "permalink": "/docuQuest/docs/formularios/textArea"
+  },
+  "next": {
+    "title": "Elemento Fieldset",
+    "permalink": "/docuQuest/docs/formularios/fieldset"
+  }
+}
