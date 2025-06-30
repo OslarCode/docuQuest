@@ -20,16 +20,16 @@ const config = {
   },
 
   // Establece aquí la URL de producción de tu sitio
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://oslarcode.github.io",
   // Establece el pathname /<baseUrl>/ bajo el cual se sirve tu sitio
   // Para despliegues en GitHub Pages, normalmente es '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/docuQuest/",
 
   // Configuración para despliegue en GitHub Pages.
   // Si no usas GitHub Pages, no necesitas esto.
   organizationName: "oslarcode", // Normalmente tu nombre de usuario u organización en GitHub.
   projectName: "docuQuest", // Normalmente el nombre de tu repositorio.
-
+  deploymentBranch: "gh-pages",
   onBrokenLinks: "throw", // Lanza error si hay enlaces rotos
   onBrokenMarkdownLinks: "warn", // Muestra advertencia si hay enlaces Markdown rotos
 
