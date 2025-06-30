@@ -1,0 +1,10 @@
+oslar:
+  name: Oscar Lara
+  title: Desarrollador y diseñador web
+  url: https://github.com/OslarCode/OslarCode
+  image_url: https://github.com/oslarcode.png
+  page: true
+  socials:
+    linkedin: oslarcode
+    github: oslarcode
+    newsletter: https://github.com/OslarCode/OslarCode
