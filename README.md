@@ -1,7 +1,11 @@
 ````markdown
 # 🌐 DocuQuest – Tu portal de aprendizaje en desarrollo web
 
-**DocuQuest** es un sitio web educativo creado con [Docusaurus](https://docusaurus.io/) que recopila temarios explicativos sobre tecnologías clave para el desarrollo web moderno, como **HTML, CSS, JavaScript** y muchas más. El objetivo es ofrecer una documentación clara, organizada y accesible para estudiantes, autodidactas y desarrolladores que desean aprender o reforzar sus conocimientos.
+**DocuQuest** es un sitio web educativo creado con [Docusaurus](https://docusaurus.io/)
+que recopila temarios explicativos sobre tecnologías clave para el desarrollo web moderno,
+como **HTML, CSS, JavaScript** y muchas más. El objetivo es ofrecer una documentación clara,
+organizada y accesible para estudiantes, autodidactas y desarrolladores que desean aprender
+o reforzar sus conocimientos.
 
 ## 🚀 Tecnologías cubiertas
 
