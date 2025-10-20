@@ -397,6 +397,22 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "backend",
+      collapsed: true,
+      items: [
+        "backend/introduction",
+        {
+          type: "category",
+          label: "bases_de_datos_realacionales",
+          collapsed: true,
+          items: [
+              "bd/introduction",
+          ],
+        },
+      ],
+    },
   ],
 };
 
