@@ -27,18 +27,6 @@ EJEMPLO REAL MÍNIMO CON NODE.JS (EXPRESS + SQLITE)
 
 Un CRUD básico de productos para que un frontend pueda listar y crear.
 
-Estructura de archivos:
-
-project/
-
-├─ db.sqlite
-
-├─ index.js
-
-├─ package.json
-
-└─ .env  (por ejemplo: PORT=3000)
-
 Contenido de package.json:
 
 ```
@@ -61,15 +49,15 @@ Contenido de package.json:
 Contenido de index.js:
 
 ```jsx
-import 'dotenv/config';
-import express from 'express';
-import Database from 'better-sqlite3';
-import { z } from 'zod';
+import "dotenv/config";
+import express from "express";
+import Database from "better-sqlite3";
+import { z } from "zod";
 
 const app = express();
 app.use(express.json());
 
-const db = new Database('db.sqlite');
+const db = new Database("db.sqlite");
 
 // Migración mínima (idempotente)
 db.exec(`
@@ -82,40 +70,43 @@ db.exec(`
 
 const ProductSchema = z.object({
   name: z.string().min(1),
-  price: z.number().nonnegative()
+  price: z.number().nonnegative(),
 });
 
 // Rutas
-app.get('/api/products', (req, res) => {
-  const rows = db.prepare('SELECT * FROM products ORDER BY id DESC').all();
+app.get("/api/products", (req, res) => {
+  const rows = db.prepare("SELECT * FROM products ORDER BY id DESC").all();
   res.json(rows);
 });
 
-app.post('/api/products', (req, res) => {
+app.post("/api/products", (req, res) => {
   const parse = ProductSchema.safeParse(req.body);
-  if (!parse.success) return res.status(400).json({ error: parse.error.flatten() });
+  if (!parse.success)
+    return res.status(400).json({ error: parse.error.flatten() });
 
   const { name, price } = parse.data;
-  const stmt = db.prepare('INSERT INTO products (name, price) VALUES (?, ?)');
+  const stmt = db.prepare("INSERT INTO products (name, price) VALUES (?, ?)");
   const info = stmt.run(name, price);
-  const product = db.prepare('SELECT * FROM products WHERE id = ?').get(info.lastInsertRowid);
+  const product = db
+    .prepare("SELECT * FROM products WHERE id = ?")
+    .get(info.lastInsertRowid);
   res.status(201).json(product);
 });
 
 // Ejemplo de validación en parámetro
-app.delete('/api/products/:id', (req, res) => {
+app.delete("/api/products/:id", (req, res) => {
   const id = Number(req.params.id);
-  if (!Number.isInteger(id) || id <= 0) return res.status(400).json({ error: 'id inválido' });
+  if (!Number.isInteger(id) || id <= 0)
+    return res.status(400).json({ error: "id inválido" });
 
-  const info = db.prepare('DELETE FROM products WHERE id = ?').run(id);
-  if (info.changes === 0) return res.status(404).json({ error: 'No existe' });
+  const info = db.prepare("DELETE FROM products WHERE id = ?").run(id);
+  if (info.changes === 0) return res.status(404).json({ error: "No existe" });
   res.status(204).send();
 });
 
 // Arranque
 const port = process.env.PORT ?? 3000;
 app.listen(port, () => console.log(`API lista en http://localhost:${port}`));
-
 ```
 
 Cómo probar:
@@ -134,7 +125,7 @@ curl -X POST http://localhost:3000/api/products \
 
 COSAS QUE HARÍAS EN UN BACKEND REAL
 
-- Autenticación JWT para rutas protegidas (por ejemplo /api/admin/*).
+- Autenticación JWT para rutas protegidas (por ejemplo /api/admin/\*).
 - Rate limiting y configuración de CORS.
 - Validación fuerte con Zod o Joi en entrada y salida.
 - Capas separadas (rutas → controladores → servicios → repositorios).
@@ -146,27 +137,3 @@ COSAS QUE HARÍAS EN UN BACKEND REAL
 EN UNA FRASE
 
 El backend es el servicio que custodia los datos y las reglas del negocio, expone APIs fiables y seguras, y garantiza que cada request se convierta en una respuesta coherente. Lo demás es implementación.
-
----
-
-[PHP](https://www.notion.so/PHP-1af9de518f2280629388cc5c3600495d?pvs=21)
-
-[SQL](https://www.notion.so/SQL-1d89de518f22800fa9eaedb7801ed85b?pvs=21)
-
-[JSON](https://www.notion.so/JSON-1da9de518f2280169bc6c5af646d29c4?pvs=21)
-
-[Terminal](https://www.notion.so/Terminal-1dc9de518f22802cb0fad46fe2e810eb?pvs=21)
-
-[Codeigniter](https://www.notion.so/Codeigniter-1f59de518f22807f8755cb20b28dad3f?pvs=21)
-
-[Seguridad Web backend](https://www.notion.so/Seguridad-Web-backend-1ff9de518f228069bc02c30a98a0b0a3?pvs=21)
-
-[Python Backend](https://www.notion.so/Python-Backend-1819de518f22809a86a0e1e311a9054d?pvs=21)
-
-[Node.js](https://www.notion.so/Node-js-2219de518f228068a0e5dcdb219a6197?pvs=21)
-
-[SQLite](https://www.notion.so/SQLite-2879de518f228066b455f6bee2d259c1?pvs=21)
-
-[Express JS](https://www.notion.so/Express-JS-2879de518f2280cd8a0ccf5a3a6d11f3?pvs=21)
-
-[Bases de datos relacionales](https://www.notion.so/Bases-de-datos-relacionales-2889de518f2280158899e63a368815d1?pvs=21)

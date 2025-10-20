@@ -399,17 +399,15 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "backend",
+      label: "Backend",
       collapsed: true,
       items: [
         "backend/introduction",
         {
           type: "category",
-          label: "bases_de_datos_realacionales",
+          label: "Bases de Datos Relacionales",
           collapsed: true,
-          items: [
-              "bd/introduction",
-          ],
+          items: ["backend/databases/introduction"],
         },
       ],
     },
