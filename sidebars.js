@@ -322,20 +322,7 @@ const sidebars = {
             "js/maps",
             "js/modulos",
             "js/depuracionCodigo",
-            {
-              type: "category",
-              label: "Asincronia",
-              collapsed: true,
-              items: [
-                "js/asincronia/asincronia",
-                "js/asincronia/introduccion",
-                "js/asincronia/callbacks",
-                "js/asincronia/promesas",
-                "js/asincronia/asyncAwait",
-                "js/asincronia/errores",
-                "js/asincronia/operacionesAsincronas",
-              ],
-            },
+            "js/asincronia",
             "js/generators",
             "js/proxies",
             {
