@@ -3165,3 +3165,3931 @@ funcionInfinita();
 - **Stack Overflow:** Recursión infinita
 - **Bloqueo:** Funciones síncronas que tardan mucho
 - **Callbacks profundos:** Mucha anidación
+
+---
+
+## 🧩 **Las Dos Colas: Task Queue vs Microtask Queue**
+
+Imagina una cafetería muy organizada:
+
+### ☕ **Ejemplo del mundo real:**
+
+- **Clientes normales (Task Queue):** Hacen fila y se atienden uno por uno
+- **Clientes VIP (Microtask Queue):** Tienen prioridad y se atienden inmediatamente
+- **Barista (Event Loop):** Atiende primero a todos los VIP, luego a un cliente normal
+
+## 🔧 **Task Queue (Cola de Tareas)**
+
+### **¿Qué va aquí?**
+
+- `setTimeout`, `setInterval`
+- Eventos del DOM (clics, teclas, etc.)
+- `requestAnimationFrame`
+- Operaciones de I/O
+
+```javascript
+// Ejemplo: setTimeout va a la Task Queue
+console.log("1. 🟢 Inicio");
+
+setTimeout(() => {
+  console.log("3. ⏰ Timeout - Task Queue");
+}, 0);
+
+console.log("2. 🔴 Fin");
+
+// Resultado:
+// 1. 🟢 Inicio
+// 2. 🔴 Fin
+// 3. ⏰ Timeout - Task Queue
+```
+
+## ⚡ **Microtask Queue (Cola de Microtareas)**
+
+### **¿Qué va aquí?**
+
+- `.then()`, `.catch()`, `.finally()` de Promesas
+- `queueMicrotask()`
+- `MutationObserver`
+
+```javascript
+// Ejemplo: Promesas van a la Microtask Queue
+console.log("1. 🟢 Inicio");
+
+Promise.resolve().then(() => {
+  console.log("3. 🤝 Promesa - Microtask Queue");
+});
+
+console.log("2. 🔴 Fin");
+
+// Resultado:
+// 1. 🟢 Inicio
+// 2. 🔴 Fin
+// 3. 🤝 Promesa - Microtask Queue
+```
+
+## 💻 **Demo Interactivo: Todas las Colas en Acción**
+
+Aquí tienes un ejemplo completo que muestra visualmente cómo interactúan todas las partes:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Colas y Orden de Ejecución - Demo Completo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .sistema {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+      }
+      .componente {
+        border: 3px solid;
+        border-radius: 8px;
+        padding: 15px;
+        min-height: 300px;
+      }
+      .call-stack {
+        border-color: #dc3545;
+        background: #f8d7da;
+      }
+      .web-apis {
+        border-color: #ffc107;
+        background: #fff3cd;
+      }
+      .microtask-queue {
+        border-color: #007bff;
+        background: #cce7ff;
+      }
+      .task-queue {
+        border-color: #28a745;
+        background: #d4edda;
+      }
+      .tarea {
+        background: white;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border-left: 4px solid;
+        font-size: 13px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .sincrona {
+        border-left-color: #dc3545;
+      }
+      .promesa {
+        border-left-color: #007bff;
+      }
+      .settimeout {
+        border-left-color: #ffc107;
+      }
+      .evento {
+        border-left-color: #28a745;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .btn-ejemplo {
+        background: #007bff;
+        color: white;
+      }
+      .btn-orden {
+        background: #6f42c1;
+        color: white;
+      }
+      .btn-limpiar {
+        background: #6c757d;
+        color: white;
+      }
+      .explicacion {
+        background: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+      .orden-ejecucion {
+        background: #2d2d2d;
+        color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        font-family: "Courier New", monospace;
+      }
+      .consola {
+        background: #2d2d2d;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        min-height: 150px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .prioridad {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .nivel {
+        flex: 1;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 0 5px;
+      }
+      .alta {
+        background: #007bff;
+        color: white;
+      }
+      .media {
+        background: #28a745;
+        color: white;
+      }
+      .baja {
+        background: #ffc107;
+        color: #212529;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎯 Colas y Orden de Ejecución en JavaScript</h1>
+
+      <div class="prioridad">
+        <div class="nivel alta">
+          <h3>🥇 ALTA PRIORIDAD</h3>
+          <p>Call Stack (Código síncrono)</p>
+        </div>
+        <div class="nivel media">
+          <h3>🥈 MEDIA PRIORIDAD</h3>
+          <p>Microtask Queue (Promesas)</p>
+        </div>
+        <div class="nivel baja">
+          <h3>🥉 BAJA PRIORIDAD</h3>
+          <p>Task Queue (setTimeout, Eventos)</p>
+        </div>
+      </div>
+
+      <div class="sistema">
+        <div class="componente call-stack">
+          <h3>🏗️ Call Stack</h3>
+          <p><em>Código síncrono - Se ejecuta inmediatamente</em></p>
+          <div id="stack-content"></div>
+        </div>
+
+        <div class="componente web-apis">
+          <h3>🌐 Web APIs</h3>
+          <p><em>Operaciones en segundo plano</em></p>
+          <div id="apis-content"></div>
+        </div>
+
+        <div class="componente microtask-queue">
+          <h3>⚡ Microtask Queue</h3>
+          <p><em>Promesas - ALTA prioridad</em></p>
+          <div id="microtask-content"></div>
+        </div>
+
+        <div class="componente task-queue">
+          <h3>📋 Task Queue</h3>
+          <p><em>setTimeout, Eventos - BAJA prioridad</em></p>
+          <div id="task-content"></div>
+        </div>
+      </div>
+
+      <div class="explicacion">
+        <h3>🎯 ORDEN DE EJECUCIÓN (¡IMPORTANTE!):</h3>
+        <p>1. <strong>Call Stack:</strong> Todo el código síncrono primero</p>
+        <p>
+          2. <strong>Microtask Queue:</strong> TODAS las promesas (alta
+          prioridad)
+        </p>
+        <p>3. <strong>Task Queue:</strong> SOLO UNA tarea (baja prioridad)</p>
+        <p>4. <strong>Repetir</strong> desde el paso 1</p>
+      </div>
+
+      <button class="btn-ejemplo" onclick="ejecutarEjemploCompleto()">
+        🚀 Ejecutar Ejemplo Completo
+      </button>
+      <button class="btn-orden" onclick="demostrarOrdenEjecucion()">
+        🔄 Demostrar Orden de Ejecución
+      </button>
+      <button class="btn-limpiar" onclick="limpiarTodo()">
+        🗑️ Limpiar Todo
+      </button>
+
+      <h3>📝 Código de Ejemplo:</h3>
+      <div class="orden-ejecucion">
+        console.log('1. Script inicio');<br />
+        <br />
+        setTimeout(() => {<br />
+        &nbsp;&nbsp;console.log('6. Timeout');<br />
+        }, 0);<br />
+        <br />
+        Promise.resolve().then(() => {<br />
+        &nbsp;&nbsp;console.log('4. Promesa 1');<br />
+        });<br />
+        <br />
+        console.log('2. Script medio');<br />
+        <br />
+        queueMicrotask(() => {<br />
+        &nbsp;&nbsp;console.log('5. queueMicrotask');<br />
+        });<br />
+        <br />
+        Promise.resolve().then(() => {<br />
+        &nbsp;&nbsp;console.log('3. Promesa 2');<br />
+        });<br />
+        <br />
+        console.log('7. Script fin');
+      </div>
+
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
+    </div>
+
+    <script>
+      // Elementos del DOM
+      const stackContent = document.getElementById("stack-content");
+      const apisContent = document.getElementById("apis-content");
+      const microtaskContent = document.getElementById("microtask-content");
+      const taskContent = document.getElementById("task-content");
+      const consola = document.getElementById("consola");
+
+      // Estado del sistema
+      let callStack = [];
+      let webAPIs = [];
+      let microtaskQueue = [];
+      let taskQueue = [];
+      let contadorTareas = 0;
+
+      function log(mensaje) {
+        consola.innerHTML += `<div>${mensaje}</div>`;
+        consola.scrollTop = consola.scrollHeight;
+      }
+
+      function limpiarTodo() {
+        callStack = [];
+        webAPIs = [];
+        microtaskQueue = [];
+        taskQueue = [];
+        contadorTareas = 0;
+        consola.innerHTML = "";
+        actualizarVisualizacion();
+      }
+
+      function actualizarVisualizacion() {
+        stackContent.innerHTML = callStack
+          .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
+          .join("");
+
+        apisContent.innerHTML = webAPIs
+          .map((api) => `<div class="tarea ${api.tipo}">${api.nombre}</div>`)
+          .join("");
+
+        microtaskContent.innerHTML = microtaskQueue
+          .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
+          .join("");
+
+        taskContent.innerHTML = taskQueue
+          .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
+          .join("");
+      }
+
+      // 1️⃣ EJEMPLO COMPLETO DEL SISTEMA
+      async function ejecutarEjemploCompleto() {
+        limpiarTodo();
+        log("🚀 INICIANDO SISTEMA COMPLETO DE COLAS");
+
+        // Función para simular operaciones asincrónicas
+        function simularOperacion(nombre, tipo, destino, duracion = 1000) {
+          const id = contadorTareas++;
+          const tarea = { id, nombre: `${nombre} #${id}`, tipo };
+
+          // Agregar a Web APIs
+          webAPIs.push(tarea);
+          log(`🌐 Web API iniciada: ${tarea.nombre}`);
+          actualizarVisualizacion();
+
+          // Simular que termina después del tiempo
+          setTimeout(() => {
+            // Remover de Web APIs
+            webAPIs = webAPIs.filter((api) => api.id !== id);
+
+            // Agregar a la cola correspondiente
+            if (destino === "microtask") {
+              microtaskQueue.push(tarea);
+              log(`⚡ Microtask agregada: ${tarea.nombre}`);
+            } else {
+              taskQueue.push(tarea);
+              log(`📋 Task agregada: ${tarea.nombre}`);
+            }
+
+            actualizarVisualizacion();
+          }, duracion);
+        }
+
+        // Simular diferentes tipos de operaciones
+
+        // setTimeout (Task Queue)
+        simularOperacion("setTimeout", "settimeout", "task", 800);
+        simularOperacion("setTimeout", "settimeout", "task", 1200);
+
+        // Promesas (Microtask Queue)
+        simularOperacion("Promise.then()", "promesa", "microtask", 600);
+        simularOperacion("Promise.then()", "promesa", "microtask", 400);
+
+        // Eventos (Task Queue)
+        simularOperacion("Evento click", "evento", "task", 1000);
+
+        // queueMicrotask (Microtask Queue)
+        simularOperacion("queueMicrotask", "promesa", "microtask", 300);
+
+        // Procesar el event loop
+        let ciclos = 0;
+        const interval = setInterval(() => {
+          procesarEventLoop();
+          ciclos++;
+
+          if (ciclos > 15) {
+            clearInterval(interval);
+            log("🏁 Sistema completado");
+          }
+        }, 500);
+      }
+
+      function procesarEventLoop() {
+        log("\n--- CICLO DEL EVENT LOOP ---");
+
+        // 1. Procesar Call Stack (código síncrono)
+        if (callStack.length > 0) {
+          const tarea = callStack.pop();
+          log(`🎯 Call Stack: ${tarea.nombre}`);
+        }
+
+        // 2. Procesar TODAS las Microtasks (alta prioridad)
+        while (microtaskQueue.length > 0) {
+          const microtask = microtaskQueue.shift();
+          log(`⚡ Microtask EJECUTADA: ${microtask.nombre}`);
+        }
+
+        // 3. Procesar UNA Task (baja prioridad)
+        if (taskQueue.length > 0) {
+          const task = taskQueue.shift();
+          log(`📋 Task EJECUTADA: ${task.nombre}`);
+        }
+
+        actualizarVisualizacion();
+      }
+
+      // 2️⃣ DEMOSTRACIÓN DEL ORDEN DE EJECUCIÓN
+      function demostrarOrdenEjecucion() {
+        limpiarTodo();
+        log("🎯 DEMOSTRANDO EL ORDEN DE EJECUCIÓN");
+        log("=====================================");
+
+        // Este código se ejecutará en el orden REAL
+        setTimeout(() => {
+          log("6. ⏰ setTimeout (Task Queue)");
+        }, 0);
+
+        Promise.resolve().then(() => {
+          log("3. 🤝 Promesa 1 (Microtask Queue)");
+        });
+
+        queueMicrotask(() => {
+          log("4. ⚡ queueMicrotask (Microtask Queue)");
+        });
+
+        Promise.resolve().then(() => {
+          log("5. 🤝 Promesa 2 (Microtask Queue)");
+        });
+
+        log("1. 🟢 Script inicio (Call Stack)");
+        log("2. 🔴 Script medio (Call Stack)");
+        log("7. 🟡 Script fin (Call Stack)");
+
+        log(
+          "\n💡 NOTA: Observa cómo se ejecutan primero todas las Microtasks antes que el setTimeout"
+        );
+      }
+
+      // 3️⃣ EJEMPLO PRÁCTICO: ¿QUÉ PASA CUANDO...?
+      function ejemploPractico() {
+        log("\n🔍 EJEMPLO PRÁCTICO: Microtasks dentro de Tasks");
+
+        setTimeout(() => {
+          log("A. ⏰ Timeout (Task) iniciado");
+
+          Promise.resolve().then(() => {
+            log("B. 🤝 Promesa DENTRO de timeout (Microtask)");
+          });
+
+          log("C. ⏰ Timeout (Task) terminado");
+        }, 0);
+
+        Promise.resolve().then(() => {
+          log("D. 🤝 Promesa FUERA de timeout (Microtask)");
+        });
+
+        log("E. 🟢 Código síncrono (Call Stack)");
+
+        // Orden esperado: E, D, A, C, B
+      }
+
+      // Inicializar
+      actualizarVisualizacion();
+
+      // Ejecutar ejemplo práctico automáticamente
+      setTimeout(ejemploPractico, 2000);
+    </script>
+  </body>
+</html>
+```
+
+## 🎯 **El Orden de Ejecución (¡REGLA DE ORO!)**
+
+```javascript
+console.log("1. 🟢 Script inicio"); // Call Stack
+
+setTimeout(() => {
+  console.log("6. ⏰ Timeout"); // Task Queue
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("3. 🤝 Promesa 1"); // Microtask Queue
+});
+
+console.log("2. 🔴 Script medio"); // Call Stack
+
+queueMicrotask(() => {
+  console.log("4. ⚡ queueMicrotask"); // Microtask Queue
+});
+
+Promise.resolve().then(() => {
+  console.log("5. 🤝 Promesa 2"); // Microtask Queue
+});
+
+console.log("7. 🟡 Script fin"); // Call Stack
+
+// RESULTADO:
+// 1. 🟢 Script inicio
+// 2. 🔴 Script medio
+// 7. 🟡 Script fin
+// 3. 🤝 Promesa 1
+// 4. ⚡ queueMicrotask
+// 5. 🤝 Promesa 2
+// 6. ⏰ Timeout
+```
+
+## 🔄 **Flujo Completo del Event Loop**
+
+### **Ciclo 1:**
+
+1. **Call Stack:** Ejecuta todo el código síncrono
+2. **Microtask Queue:** Ejecuta TODAS las microtasks
+3. **Task Queue:** Ejecuta UNA task
+4. **Render:** Actualiza la interfaz (si es necesario)
+
+### **Ciclo 2:**
+
+1. **Call Stack:** Vacío (no hay código síncrono)
+2. **Microtask Queue:** Vacía (ya se ejecutaron todas)
+3. **Task Queue:** Ejecuta la siguiente task
+4. **Render:** Actualiza la interfaz (si es necesario)
+
+### ✅ **Task Queue (Baja Prioridad):**
+
+- `setTimeout`, `setInterval`
+- Eventos del DOM
+- `requestAnimationFrame`
+- **Se ejecuta:** UNA por ciclo del event loop
+
+### ⚡ **Microtask Queue (Alta Prioridad):**
+
+- `.then()`, `.catch()`, `.finally()`
+- `queueMicrotask()`
+- `MutationObserver`
+- **Se ejecuta:** TODAS antes de pasar a las tasks
+
+### 🔄 **Orden Inviolable:**
+
+1. **Call Stack** (código síncrono)
+2. **Microtask Queue** (TODAS las promesas)
+3. **Task Queue** (UNA task)
+4. **Repetir**
+
+---
+
+# Mecanismos avanzados de la asincronía en JavaScript
+
+## 🧩 **¿Qué es Promise.all()?**
+
+Imagina que estás organizando una fiesta y necesitas:
+
+### 🎉 **Ejemplo del mundo real:**
+
+- **Sin Promise.all():** Llamas a un amigo, esperas a que llegue, luego llamas a otro, esperas...
+- **Con Promise.all():** Llamas a TODOS tus amigos a la vez, y esperas a que TODOS lleguen
+
+### 💻 **Traducción a JavaScript:**
+
+**Promise.all()** te permite ejecutar **múltiples promesas al mismo tiempo** y esperar a que **TODAS** se resuelvan.
+
+## 🔧 **Sintaxis Básica de Promise.all()**
+
+```javascript
+// Promise.all() recibe un ARRAY de promesas
+Promise.all([promesa1, promesa2, promesa3])
+  .then((resultados) => {
+    // resultados es un array con TODOS los resultados
+    console.log("Todos terminaron:", resultados);
+  })
+  .catch((error) => {
+    // Si CUALQUIERA falla, se captura aquí
+    console.error("Alguna falló:", error);
+  });
+```
+
+## 💻 **Demo Interactivo: Promise.all() en Acción**
+
+Aquí tienes un ejemplo completo que puedes probar:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise.all() - Ejecutar Promesas en Paralelo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .comparacion {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      .metodo {
+        border: 2px solid;
+        border-radius: 8px;
+        padding: 15px;
+      }
+      .secuencial {
+        border-color: #dc3545;
+        background: #f8d7da;
+      }
+      .paralelo {
+        border-color: #28a745;
+        background: #d4edda;
+      }
+      .tarea {
+        background: white;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border-left: 4px solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .pendiente {
+        border-left-color: #ffc107;
+      }
+      .procesando {
+        border-left-color: #007bff;
+      }
+      .completada {
+        border-left-color: #28a745;
+      }
+      .fallada {
+        border-left-color: #dc3545;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .btn-paralelo {
+        background: #28a745;
+        color: white;
+      }
+      .btn-secuencial {
+        background: #dc3545;
+        color: white;
+      }
+      .btn-api {
+        background: #007bff;
+        color: white;
+      }
+      .btn-limpiar {
+        background: #6c757d;
+        color: white;
+      }
+      .estadisticas {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .estadistica {
+        padding: 15px;
+        border-radius: 8px;
+        background: #e9ecef;
+        flex: 1;
+        margin: 0 10px;
+      }
+      .tiempo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+      }
+      .codigo {
+        background: #2d2d2d;
+        color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+      }
+      .consola {
+        background: #2d2d2d;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        min-height: 200px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .progreso {
+        height: 20px;
+        background: #e9ecef;
+        border-radius: 10px;
+        margin: 5px 0;
+        overflow: hidden;
+      }
+      .barra-progreso {
+        height: 100%;
+        background: #007bff;
+        transition: width 0.3s ease;
+        width: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Promise.all() - Ejecutar Promesas en Paralelo</h1>
+      <p>
+        <strong>Definición sencilla:</strong> Ejecuta múltiples promesas
+        <strong>al mismo tiempo</strong> y espera a que
+        <strong>TODAS</strong> terminen.
+      </p>
+
+      <div class="estadisticas">
+        <div class="estadistica">
+          <h3>⏱️ Tiempo Secuencial</h3>
+          <div class="tiempo" id="tiempoSecuencial">0ms</div>
+          <p>(Una después de otra)</p>
+        </div>
+        <div class="estadistica">
+          <h3>⚡ Tiempo Paralelo</h3>
+          <div class="tiempo" id="tiempoParalelo">0ms</div>
+          <p>(Todas al mismo tiempo)</p>
+        </div>
+        <div class="estadistica">
+          <h3>🎯 Mejora</h3>
+          <div class="tiempo" id="mejora">0%</div>
+          <p>(Más rápido)</p>
+        </div>
+      </div>
+
+      <div class="comparacion">
+        <div class="metodo secuencial">
+          <h3>🐌 Secuencial (Sin Promise.all)</h3>
+          <p><em>Una tarea después de otra</em></p>
+          <div id="tareas-secuenciales">
+            <div class="tarea pendiente" id="secuencial-1">
+              <span>📥 Descargar imagen 1</span>
+              <span>⏳ Esperando...</span>
+            </div>
+            <div class="tarea pendiente" id="secuencial-2">
+              <span>📥 Descargar imagen 2</span>
+              <span>⏳ Esperando...</span>
+            </div>
+            <div class="tarea pendiente" id="secuencial-3">
+              <span>📥 Descargar imagen 3</span>
+              <span>⏳ Esperando...</span>
+            </div>
+          </div>
+          <button class="btn-secuencial" onclick="ejecutarSecuencial()">
+            🐌 Ejecutar Secuencial
+          </button>
+        </div>
+
+        <div class="metodo paralelo">
+          <h3>⚡ Paralelo (Con Promise.all)</h3>
+          <p><em>Todas las tareas al mismo tiempo</em></p>
+          <div id="tareas-paralelas">
+            <div class="tarea pendiente" id="paralelo-1">
+              <span>📥 Descargar imagen 1</span>
+              <span>⏳ Esperando...</span>
+            </div>
+            <div class="tarea pendiente" id="paralelo-2">
+              <span>📥 Descargar imagen 2</span>
+              <span>⏳ Esperando...</span>
+            </div>
+            <div class="tarea pendiente" id="paralelo-3">
+              <span>📥 Descargar imagen 3</span>
+              <span>⏳ Esperando...</span>
+            </div>
+          </div>
+          <button class="btn-paralelo" onclick="ejecutarParalelo()">
+            ⚡ Ejecutar Paralelo
+          </button>
+        </div>
+      </div>
+
+      <h3>📝 Código de Comparación:</h3>
+      <div class="comparacion">
+        <div class="codigo">
+          // 🐌 SECUENCIAL (lento)<br />
+          async function secuencial() {<br />
+          &nbsp;&nbsp;const resultado1 = await tarea(1000);<br />
+          &nbsp;&nbsp;const resultado2 = await tarea(1000);<br />
+          &nbsp;&nbsp;const resultado3 = await tarea(1000);<br />
+          &nbsp;&nbsp;// Tiempo total: ~3000ms<br />
+          }
+        </div>
+        <div class="codigo">
+          // ⚡ PARALELO (rápido)<br />
+          async function paralelo() {<br />
+          &nbsp;&nbsp;const resultados = await Promise.all([<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000)<br />
+          &nbsp;&nbsp;]);<br />
+          &nbsp;&nbsp;// Tiempo total: ~1000ms<br />
+          }
+        </div>
+      </div>
+
+      <button class="btn-api" onclick="ejemploAPIsReales()">
+        🌐 Ejemplo con APIs Reales
+      </button>
+      <button class="btn-limpiar" onclick="limpiarTodo()">
+        🗑️ Limpiar Todo
+      </button>
+
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
+    </div>
+
+    <script>
+      // Elementos del DOM
+      const consola = document.getElementById("consola");
+      const tiempoSecuencial = document.getElementById("tiempoSecuencial");
+      const tiempoParalelo = document.getElementById("tiempoParalelo");
+      const mejora = document.getElementById("mejora");
+
+      function log(mensaje) {
+        consola.innerHTML += `<div>${mensaje}</div>`;
+        consola.scrollTop = consola.scrollHeight;
+      }
+
+      function limpiarTodo() {
+        consola.innerHTML = "";
+        tiempoSecuencial.textContent = "0ms";
+        tiempoParalelo.textContent = "0ms";
+        mejora.textContent = "0%";
+
+        // Resetear estados visuales de tareas
+        for (let i = 1; i <= 3; i++) {
+          resetearTarea(`secuencial-${i}`);
+          resetearTarea(`paralelo-${i}`);
+        }
+      }
+
+      function actualizarTarea(id, estado, mensaje) {
+        const elemento = document.getElementById(id);
+        elemento.className = `tarea ${estado}`;
+        elemento.querySelector("span:last-child").textContent = mensaje;
+      }
+
+      function resetearTarea(id) {
+        actualizarTarea(id, "pendiente", "⏳ Esperando...");
+      }
+
+      // Función que simula una tarea asincrónica (como descargar un archivo)
+      function simularTarea(nombre, duracion, probabilidadExito = 0.9) {
+        return new Promise((resolve, reject) => {
+          const inicio = Date.now();
+
+          setTimeout(() => {
+            const exito = Math.random() < probabilidadExito;
+            const tiempoTranscurrido = Date.now() - inicio;
+
+            if (exito) {
+              resolve({
+                nombre,
+                duracion,
+                tiempoReal: tiempoTranscurrido,
+                estado: "✅ Completado",
+              });
+            } else {
+              reject({
+                nombre,
+                duracion,
+                tiempoReal: tiempoTranscurrido,
+                estado: "❌ Falló",
+              });
+            }
+          }, duracion);
+        });
+      }
+
+      // 1️⃣ EJECUCIÓN SECUENCIAL (LENTA)
+      async function ejecutarSecuencial() {
+        limpiarTodo();
+        log("🐌 INICIANDO EJECUCIÓN SECUENCIAL");
+        const inicioTotal = Date.now();
+
+        try {
+          // Tarea 1
+          actualizarTarea("secuencial-1", "procesando", "⏬ Descargando...");
+          const resultado1 = await simularTarea("Imagen 1", 1000);
+          actualizarTarea(
+            "secuencial-1",
+            "completada",
+            `✅ ${resultado1.tiempoReal}ms`
+          );
+          log(
+            `📥 ${resultado1.nombre} completado en ${resultado1.tiempoReal}ms`
+          );
+
+          // Tarea 2 (espera a que termine la 1)
+          actualizarTarea("secuencial-2", "procesando", "⏬ Descargando...");
+          const resultado2 = await simularTarea("Imagen 2", 1000);
+          actualizarTarea(
+            "secuencial-2",
+            "completada",
+            `✅ ${resultado2.tiempoReal}ms`
+          );
+          log(
+            `📥 ${resultado2.nombre} completado en ${resultado2.tiempoReal}ms`
+          );
+
+          // Tarea 3 (espera a que terminen la 1 y 2)
+          actualizarTarea("secuencial-3", "procesando", "⏬ Descargando...");
+          const resultado3 = await simularTarea("Imagen 3", 1000);
+          actualizarTarea(
+            "secuencial-3",
+            "completada",
+            `✅ ${resultado3.tiempoReal}ms`
+          );
+          log(
+            `📥 ${resultado3.nombre} completado en ${resultado3.tiempoReal}ms`
+          );
+
+          const tiempoTotal = Date.now() - inicioTotal;
+          tiempoSecuencial.textContent = `${tiempoTotal}ms`;
+          log(`🐌 TIEMPO TOTAL SECUENCIAL: ${tiempoTotal}ms`);
+        } catch (error) {
+          log(`❌ Error en ejecución secuencial: ${error.nombre}`);
+        }
+      }
+
+      // 2️⃣ EJECUCIÓN PARALELA (RÁPIDA) - CON PROMISE.ALL()
+      async function ejecutarParalelo() {
+        limpiarTodo();
+        log("⚡ INICIANDO EJECUCIÓN PARALELA CON PROMISE.ALL()");
+        const inicioTotal = Date.now();
+
+        try {
+          // Iniciar TODAS las tareas al mismo tiempo
+          actualizarTarea("paralelo-1", "procesando", "⏬ Descargando...");
+          actualizarTarea("paralelo-2", "procesando", "⏬ Descargando...");
+          actualizarTarea("paralelo-3", "procesando", "⏬ Descargando...");
+
+          // Promise.all() ejecuta todas las promesas en paralelo
+          const resultados = await Promise.all([
+            simularTarea("Imagen 1", 1000),
+            simularTarea("Imagen 2", 1000),
+            simularTarea("Imagen 3", 1000),
+          ]);
+
+          // Actualizar UI con resultados
+          resultados.forEach((resultado, index) => {
+            actualizarTarea(
+              `paralelo-${index + 1}`,
+              "completada",
+              `✅ ${resultado.tiempoReal}ms`
+            );
+            log(
+              `📥 ${resultado.nombre} completado en ${resultado.tiempoReal}ms`
+            );
+          });
+
+          const tiempoTotal = Date.now() - inicioTotal;
+          tiempoParalelo.textContent = `${tiempoTotal}ms`;
+          log(`⚡ TIEMPO TOTAL PARALELO: ${tiempoTotal}ms`);
+
+          // Calcular mejora
+          const tiempoSec = parseInt(tiempoSecuencial.textContent) || 3000;
+          const mejoraPorcentaje = Math.round(
+            (1 - tiempoTotal / tiempoSec) * 100
+          );
+          mejora.textContent = `${mejoraPorcentaje}% más rápido`;
+        } catch (error) {
+          log(`❌ Error en ejecución paralela: ${error.nombre}`);
+          // Si una falla, Promise.all() rechaza inmediatamente
+        }
+      }
+
+      // 3️⃣ EJEMPLO CON APIS REALES
+      async function ejemploAPIsReales() {
+        limpiarTodo();
+        log("🌐 EJEMPLO CON APIS REALES - Cargando datos de usuarios...");
+
+        try {
+          // Hacer múltiples peticiones HTTP en paralelo
+          const [usuarios, posts, comentarios] = await Promise.all([
+            fetch("https://jsonplaceholder.typicode.com/users").then((r) =>
+              r.json()
+            ),
+            fetch("https://jsonplaceholder.typicode.com/posts").then((r) =>
+              r.json()
+            ),
+            fetch("https://jsonplaceholder.typicode.com/comments").then((r) =>
+              r.json()
+            ),
+          ]);
+
+          log(`✅ Usuarios cargados: ${usuarios.length}`);
+          log(`✅ Posts cargados: ${posts.length}`);
+          log(`✅ Comentarios cargados: ${comentarios.length}`);
+          log("🎉 ¡Todos los datos cargados en paralelo!");
+        } catch (error) {
+          log(`❌ Error cargando datos: ${error.message}`);
+        }
+      }
+
+      // 4️⃣ EJEMPLO: MANEJO DE ERRORES EN PROMISE.ALL()
+      async function ejemploConErrores() {
+        log("\n⚠️ EJEMPLO: Promise.all() con errores");
+
+        try {
+          const resultados = await Promise.all([
+            simularTarea("Tarea 1", 500, 0.9),
+            simularTarea("Tarea 2", 800, 0.3), // Esta probablemente falle
+            simularTarea("Tarea 3", 600, 0.9),
+          ]);
+
+          log("✅ Todas las tareas completadas");
+        } catch (error) {
+          log(`❌ Promise.all() falló porque una tarea falló: ${error.nombre}`);
+          log('💡 Promise.all() es "todo o nada": si UNA falla, TODAS fallan');
+        }
+      }
+
+      // 5️⃣ EJEMPLO: PROMISE.ALLSETTLED() (alternativa cuando quieres todos los resultados)
+      async function ejemploAllSettled() {
+        log("\n🛡️ EJEMPLO: Promise.allSettled() (no se detiene por errores)");
+
+        const resultados = await Promise.allSettled([
+          simularTarea("Tarea A", 400, 0.9),
+          simularTarea("Tarea B", 600, 0.2), // Esta probablemente falle
+          simularTarea("Tarea C", 500, 0.9),
+        ]);
+
+        resultados.forEach((resultado, index) => {
+          if (resultado.status === "fulfilled") {
+            log(`✅ Tarea ${index + 1}: ${resultado.value.estado}`);
+          } else {
+            log(`❌ Tarea ${index + 1}: ${resultado.reason.estado}`);
+          }
+        });
+
+        log("🎯 Promise.allSettled() espera a TODAS, sin importar errores");
+      }
+
+      // Ejecutar ejemplos adicionales después de un tiempo
+      setTimeout(() => {
+        ejemploConErrores();
+        setTimeout(ejemploAllSettled, 2000);
+      }, 5000);
+    </script>
+  </body>
+</html>
+```
+
+## 🎯 **Características Clave de Promise.all()**
+
+### ✅ **Ventajas:**
+
+- **Máxima velocidad:** Ejecuta en paralelo
+- **Sincronización:** Espera a que TODAS terminen
+- **Orden preservado:** Los resultados mantienen el orden del array
+
+### ⚠️ **Comportamiento con Errores:**
+
+```javascript
+// Si UNA promesa falla, Promise.all() falla inmediatamente
+Promise.all([
+  promesaExitosa(),
+  promesaQueFalla(), // ¡Esto hace que TODO falle!
+  promesaExitosa(), // Esta ni siquiera se ejecuta
+])
+  .then((resultados) => {
+    // No se ejecuta si hay algún error
+  })
+  .catch((error) => {
+    // Se captura el PRIMER error que ocurra
+  });
+```
+
+## 🔧 **Alternativas a Promise.all()**
+
+### **Promise.allSettled()** - No se detiene por errores
+
+```javascript
+// Espera a que TODAS terminen (éxito o error)
+const resultados = await Promise.allSettled([
+  promesaExitosa(),
+  promesaQueFalla(),
+  promesaExitosa(),
+]);
+
+resultados.forEach((resultado, index) => {
+  if (resultado.status === "fulfilled") {
+    console.log(`Tarea ${index}: ✅`, resultado.value);
+  } else {
+    console.log(`Tarea ${index}: ❌`, resultado.reason);
+  }
+});
+```
+
+### **Promise.race()** - La primera que termine
+
+```javascript
+// Devuelve la primera promesa que se resuelva o rechace
+const ganadora = await Promise.race([
+  promesaLenta(3000),
+  promesaRapida(1000), // Esta gana
+  promesaMedia(2000),
+]);
+```
+
+### ✅ **¿Cuándo usar Promise.all()?**
+
+- Cuando necesitas **múltiples datos independientes**
+- Cuando las tareas **no dependen** entre sí
+- Para **optimizar velocidad** (ejecución paralela)
+- Cuando quieres **esperar a que todas terminen**
+
+### ❌ **¿Cuándo NO usar Promise.all()?**
+
+- Cuando las tareas **dependen** entre sí
+- Cuando manejas **muchísimas** promesas (puede saturar)
+- Cuando quieres **resultados parciales** aunque algunas fallen
+
+### 💡 **Casos de Uso Reales:**
+
+- Cargar **múltiples imágenes** para una galería
+- Obtener **datos de varias APIs** al mismo tiempo
+- **Procesar archivos** en paralelo
+- **Validaciones múltiples** independientes
+
+## 🧩 **¿Qué es Promise.race()?**
+
+Imagina una carrera de atletismo:
+
+### 🏃‍♂️ **Ejemplo del mundo real:**
+
+- **Sin Promise.race():** Esperas a que TODOS los corredores terminen
+- **Con Promise.race():** Solo te importa el **PRIMERO** que cruce la meta
+
+### 💻 **Traducción a JavaScript:**
+
+**Promise.race()** ejecuta múltiples promesas y devuelve la **PRIMERA** que se resuelva o rechace, ignorando las demás.
+
+## 🔧 **Sintaxis Básica de Promise.race()**
+
+```javascript
+// Promise.race() recibe un ARRAY de promesas
+Promise.race([promesaRapida, promesaLenta, promesaMedia])
+  .then((ganadora) => {
+    // Solo se ejecuta con la PRIMERA que termine
+    console.log("¡Ganó:", ganadora);
+  })
+  .catch((error) => {
+    // Si la PRIMERA en terminar es un error
+    console.error("Primera en fallar:", error);
+  });
+```
+
+## 💻 **Demo Interactivo: Promise.race() en Acción**
+
+Aquí tienes un ejemplo completo que puedes probar:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise.race() - La Carrera de Promesas</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .carrera {
+        border: 3px solid #007bff;
+        border-radius: 10px;
+        padding: 20px;
+        background: #f0f8ff;
+        margin: 20px 0;
+      }
+      .corredor {
+        background: white;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border-left: 5px solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      .esperando {
+        border-left-color: #6c757d;
+        background: #f8f9fa;
+      }
+      .corriendo {
+        border-left-color: #007bff;
+        background: #e7f3ff;
+      }
+      .ganador {
+        border-left-color: #28a745;
+        background: #d4edda;
+        transform: scale(1.02);
+      }
+      .perdedor {
+        border-left-color: #dc3545;
+        background: #f8d7da;
+        opacity: 0.7;
+      }
+      .fallo {
+        border-left-color: #ffc107;
+        background: #fff3cd;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .btn-carrera {
+        background: #007bff;
+        color: white;
+      }
+      .btn-timeout {
+        background: #28a745;
+        color: white;
+      }
+      .btn-carga {
+        background: #6f42c1;
+        color: white;
+      }
+      .btn-limpiar {
+        background: #6c757d;
+        color: white;
+      }
+      .pista {
+        height: 100px;
+        background: linear-gradient(90deg, #e9ecef 0%, #dee2e6 100%);
+        border-radius: 8px;
+        margin: 20px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .participante {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        transition: left 0.5s ease;
+        left: 10px;
+      }
+      .rapido {
+        background: #dc3545;
+        top: 10px;
+      }
+      .medio {
+        background: #007bff;
+        top: 50px;
+      }
+      .lento {
+        background: #28a745;
+        top: 90px;
+      }
+      .meta {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #000;
+      }
+      .meta-texto {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        writing-mode: vertical-rl;
+        font-weight: bold;
+      }
+      .estadisticas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+      }
+      .estadistica {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        background: #e9ecef;
+      }
+      .ganador-estadistica {
+        background: #d4edda;
+        border: 2px solid #28a745;
+      }
+      .tiempo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+      }
+      .codigo {
+        background: #2d2d2d;
+        color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+      }
+      .consola {
+        background: #2d2d2d;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        min-height: 200px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .explicacion {
+        background: #fff3cd;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        border-left: 4px solid #ffc107;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏁 Promise.race() - La Carrera de Promesas</h1>
+      <p>
+        <strong>Definición sencilla:</strong> Ejecuta múltiples promesas y
+        devuelve la <strong>PRIMERA</strong> que termine (éxito o error).
+      </p>
+
+      <div class="explicacion">
+        <h3>🎯 ¿En qué se diferencia de Promise.all()?</h3>
+        <p>
+          ✅ <strong>Promise.all():</strong> Espera a que
+          <strong>TODAS</strong> terminen
+        </p>
+        <p>
+          ✅ <strong>Promise.race():</strong> Solo espera a la
+          <strong>PRIMERA</strong> que termine
+        </p>
+      </div>
+
+      <h2>🏃‍♂️ Pista de Carrera</h2>
+      <div class="pista">
+        <div class="participante rapido" id="corredor-rapido">🚀 Rápido</div>
+        <div class="participante medio" id="corredor-medio">🐢 Medio</div>
+        <div class="participante lento" id="corredor-lento">🐌 Lento</div>
+        <div class="meta"></div>
+        <div class="meta-texto">META</div>
+      </div>
+
+      <div class="estadisticas">
+        <div class="estadistica">
+          <h3>🚀 Corredor Rápido</h3>
+          <div class="tiempo" id="tiempo-rapido">-</div>
+          <p>500-800ms</p>
+        </div>
+        <div class="estadistica">
+          <h3>🐢 Corredor Medio</h3>
+          <div class="tiempo" id="tiempo-medio">-</div>
+          <p>1000-1500ms</p>
+        </div>
+        <div class="estadistica">
+          <h3>🐌 Corredor Lento</h3>
+          <div class="tiempo" id="tiempo-lento">-</div>
+          <p>2000-3000ms</p>
+        </div>
+      </div>
+
+      <div class="carrera">
+        <h3>🎯 Participantes de la Carrera</h3>
+        <div class="corredor esperando" id="participante-rapido">
+          <span>🚀 <strong>Promesa Rápida</strong> (500-800ms)</span>
+          <span>⏳ Esperando inicio...</span>
+        </div>
+        <div class="corredor esperando" id="participante-medio">
+          <span>🐢 <strong>Promesa Media</strong> (1000-1500ms)</span>
+          <span>⏳ Esperando inicio...</span>
+        </div>
+        <div class="corredor esperando" id="participante-lento">
+          <span>🐌 <strong>Promesa Lenta</strong> (2000-3000ms)</span>
+          <span>⏳ Esperando inicio...</span>
+        </div>
+
+        <button class="btn-carrera" onclick="iniciarCarrera()">
+          🏁 Iniciar Carrera
+        </button>
+        <button class="btn-timeout" onclick="ejemploTimeout()">
+          ⏰ Ejemplo con Timeout
+        </button>
+        <button class="btn-carga" onclick="ejemploCargaImagenes()">
+          🖼️ Carrera de Carga
+        </button>
+        <button class="btn-limpiar" onclick="limpiarTodo()">
+          🗑️ Limpiar Todo
+        </button>
+      </div>
+
+      <h3>📝 Código de Ejemplo:</h3>
+      <div class="codigo">
+        // 🏁 Promise.race() - Solo importa el primero<br />
+        const ganadora = await Promise.race([<br />
+        &nbsp;&nbsp;promesaRapida(500), // 🚀 Este probablemente gane<br />
+        &nbsp;&nbsp;promesaMedia(1000), // 🐢 Este llega segundo<br />
+        &nbsp;&nbsp;promesaLenta(2000) // 🐌 Este llega último<br />
+        ]);<br /><br />
+        console.log('¡Ganó:', ganadora);<br />
+        // Solo se ejecuta con el resultado del MÁS RÁPIDO
+      </div>
+
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
+    </div>
+
+    <script>
+      // Elementos del DOM
+      const consola = document.getElementById("consola");
+      const corredorRapido = document.getElementById("corredor-rapido");
+      const corredorMedio = document.getElementById("corredor-medio");
+      const corredorLento = document.getElementById("corredor-lento");
+
+      function log(mensaje) {
+        consola.innerHTML += `<div>${mensaje}</div>`;
+        consola.scrollTop = consola.scrollHeight;
+      }
+
+      function limpiarTodo() {
+        consola.innerHTML = "";
+        resetearParticipantes();
+        resetearPista();
+        resetearEstadisticas();
+      }
+
+      function resetearParticipantes() {
+        for (const id of ["rapido", "medio", "lento"]) {
+          const elemento = document.getElementById(`participante-${id}`);
+          elemento.className = "corredor esperando";
+          elemento.querySelector("span:last-child").textContent =
+            "⏳ Esperando inicio...";
+        }
+      }
+
+      function resetearPista() {
+        corredorRapido.style.left = "10px";
+        corredorMedio.style.left = "10px";
+        corredorLento.style.left = "10px";
+      }
+
+      function resetearEstadisticas() {
+        for (const id of ["rapido", "medio", "lento"]) {
+          document.getElementById(`tiempo-${id}`).textContent = "-";
+        }
+      }
+
+      function actualizarParticipante(id, estado, mensaje) {
+        const elemento = document.getElementById(`participante-${id}`);
+        elemento.className = `corredor ${estado}`;
+        elemento.querySelector("span:last-child").textContent = mensaje;
+      }
+
+      function actualizarPista(id, progreso) {
+        const elemento = document.getElementById(`corredor-${id}`);
+        const pistaWidth = document.querySelector(".pista").offsetWidth - 80;
+        elemento.style.left = `${10 + (progreso * pistaWidth) / 100}px`;
+      }
+
+      function actualizarTiempo(id, tiempo) {
+        document.getElementById(`tiempo-${id}`).textContent = `${tiempo}ms`;
+      }
+
+      // Función que simula una promesa con tiempo variable
+      function crearPromesa(
+        nombre,
+        minTiempo,
+        maxTiempo,
+        probabilidadExito = 0.9
+      ) {
+        return new Promise((resolve, reject) => {
+          const tiempo = Math.random() * (maxTiempo - minTiempo) + minTiempo;
+          const inicio = Date.now();
+          let progreso = 0;
+
+          // Animación de progreso
+          const intervalo = setInterval(() => {
+            progreso += 100 / (tiempo / 100);
+            if (progreso >= 100) {
+              clearInterval(intervalo);
+              progreso = 100;
+            }
+            actualizarPista(nombre.toLowerCase(), progreso);
+          }, 100);
+
+          setTimeout(() => {
+            clearInterval(intervalo);
+            const tiempoReal = Date.now() - inicio;
+            actualizarTiempo(nombre.toLowerCase(), tiempoReal);
+
+            const exito = Math.random() < probabilidadExito;
+
+            if (exito) {
+              resolve({
+                nombre,
+                tiempo: tiempoReal,
+                mensaje: `✅ ${nombre} completado en ${tiempoReal}ms`,
+              });
+            } else {
+              reject({
+                nombre,
+                tiempo: tiempoReal,
+                mensaje: `❌ ${nombre} falló después de ${tiempoReal}ms`,
+              });
+            }
+          }, tiempo);
+        });
+      }
+
+      // 1️⃣ CARRERA BÁSICA CON PROMISE.RACE()
+      async function iniciarCarrera() {
+        limpiarTodo();
+        log("🏁 INICIANDO CARRERA CON PROMISE.RACE()");
+
+        // Preparar participantes
+        actualizarParticipante("rapido", "corriendo", "🏃‍♂️ Corriendo...");
+        actualizarParticipante("medio", "corriendo", "🏃‍♂️ Corriendo...");
+        actualizarParticipante("lento", "corriendo", "🏃‍♂️ Corriendo...");
+
+        try {
+          // Promise.race() - Solo espera al MÁS RÁPIDO
+          const ganadora = await Promise.race([
+            crearPromesa("Rapido", 500, 800),
+            crearPromesa("Medio", 1000, 1500),
+            crearPromesa("Lento", 2000, 3000),
+          ]);
+
+          // Solo esto se ejecuta (con el ganador)
+          log(`🎉 ¡GANÓ ${ganadora.nombre.toUpperCase()}!`);
+          log(ganadora.mensaje);
+          actualizarParticipante(
+            ganadora.nombre.toLowerCase(),
+            "ganador",
+            `🏆 ¡GANADOR! ${ganadora.tiempo}ms`
+          );
+
+          // Marcar los demás como perdedores
+          ["rapido", "medio", "lento"].forEach((id) => {
+            if (id !== ganadora.nombre.toLowerCase()) {
+              actualizarParticipante(
+                id,
+                "perdedor",
+                `😞 Perdió - ${
+                  document.getElementById(`tiempo-${id}`).textContent
+                }`
+              );
+            }
+          });
+
+          log("💡 Promise.race() solo devuelve el PRIMERO en terminar");
+        } catch (error) {
+          // Si el PRIMERO en terminar fue un error
+          log(`💥 El primero en terminar fue un ERROR: ${error.nombre}`);
+          log(error.mensaje);
+          actualizarParticipante(
+            error.nombre.toLowerCase(),
+            "fallo",
+            `💥 Falló - ${error.tiempo}ms`
+          );
+        }
+      }
+
+      // 2️⃣ EJEMPLO PRÁCTICO: TIMEOUT CON PROMISE.RACE()
+      async function ejemploTimeout() {
+        limpiarTodo();
+        log("⏰ EJEMPLO: TIMEOUT CON PROMISE.RACE()");
+
+        function conTimeout(promesa, tiempoLimite) {
+          const timeout = new Promise((_, reject) => {
+            setTimeout(() => {
+              reject(new Error(`⏰ Timeout después de ${tiempoLimite}ms`));
+            }, tiempoLimite);
+          });
+
+          return Promise.race([promesa, timeout]);
+        }
+
+        // Simular una operación que puede tardar mucho
+        const operacionLenta = new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("✅ Operación lenta completada");
+          }, 3000); // Tarda 3 segundos
+        });
+
+        try {
+          // Timeout de 2 segundos
+          const resultado = await conTimeout(operacionLenta, 2000);
+          log(resultado);
+        } catch (error) {
+          log(`❌ ${error.message}`);
+          log("💡 El timeout ganó la carrera contra la operación lenta");
+        }
+      }
+
+      // 3️⃣ EJEMPLO PRÁCTICO: CARRERA DE CARGA DE IMÁGENES
+      async function ejemploCargaImagenes() {
+        limpiarTodo();
+        log("🖼️ EJEMPLO: CARRERA DE CARGA DE IMÁGENES");
+
+        // Simular carga de imágenes desde diferentes servidores
+        function cargarImagen(servidor, tiempo) {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve(`✅ Imagen cargada desde ${servidor} en ${tiempo}ms`);
+            }, tiempo);
+          });
+        }
+
+        try {
+          // Intentar cargar desde múltiples servidores
+          const imagen = await Promise.race([
+            cargarImagen("Servidor Principal", 1500),
+            cargarImagen("Servidor Secundario", 800),
+            cargarImagen("CDN Rápido", 400),
+            cargarImagen("Cache Local", 200),
+          ]);
+
+          log(imagen);
+          log("🎯 Usamos la imagen del servidor más rápido");
+        } catch (error) {
+          log(`❌ Error cargando imagen: ${error.message}`);
+        }
+      }
+
+      // 4️⃣ EJEMPLO: PROMISE.RACE() CON ERRORES
+      async function ejemploConErrores() {
+        log("\n⚠️ EJEMPLO: Promise.race() con posibles errores");
+
+        function tareaInestable(nombre, tiempo, probabilidadFallo) {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (Math.random() < probabilidadFallo) {
+                reject(new Error(`❌ ${nombre} falló`));
+              } else {
+                resolve(`✅ ${nombre} exitosa`);
+              }
+            }, tiempo);
+          });
+        }
+
+        try {
+          const resultado = await Promise.race([
+            tareaInestable("Servidor A", 500, 0.8), // Alto riesgo
+            tareaInestable("Servidor B", 800, 0.2), // Bajo riesgo
+            tareaInestable("Servidor C", 1000, 0.5), // Riesgo medio
+          ]);
+
+          log(resultado);
+        } catch (error) {
+          log(`💥 El primero en terminar fue un error: ${error.message}`);
+          log(
+            "⚠️ Promise.race() no distingue entre éxito y error - solo toma el primero"
+          );
+        }
+      }
+
+      // 5️⃣ EJEMPLO: CANCELACIÓN CON PROMISE.RACE()
+      async function ejemploCancelacion() {
+        log("\n🚫 EJEMPLO: PATRÓN DE CANCELACIÓN");
+
+        let cancelar = false;
+
+        function operacionCancelable() {
+          return new Promise((resolve, reject) => {
+            const intervalo = setInterval(() => {
+              if (cancelar) {
+                clearInterval(intervalo);
+                reject(new Error("🚫 Operación cancelada por el usuario"));
+              }
+            }, 100);
+
+            // Simular trabajo
+            setTimeout(() => {
+              clearInterval(intervalo);
+              resolve("✅ Operación completada");
+            }, 3000);
+          });
+        }
+
+        function crearBotonCancelacion() {
+          return new Promise((_, reject) => {
+            // Simular botón de cancelación
+            setTimeout(() => {
+              if (Math.random() < 0.3) {
+                // 30% de probabilidad de cancelar
+                reject(new Error("🛑 Usuario canceló la operación"));
+              }
+            }, 1500);
+          });
+        }
+
+        try {
+          const resultado = await Promise.race([
+            operacionCancelable(),
+            crearBotonCancelacion(),
+          ]);
+
+          log(resultado);
+        } catch (error) {
+          log(error.message);
+        }
+      }
+
+      // Ejecutar ejemplos adicionales
+      setTimeout(() => {
+        ejemploConErrores();
+        setTimeout(ejemploCancelacion, 3000);
+      }, 8000);
+    </script>
+  </body>
+</html>
+```
+
+## 🎯 **Características Clave de Promise.race()**
+
+### ✅ **Comportamiento:**
+
+- **Primero en terminar gana:** No importa si es éxito o error
+- **Ignora las demás:** Las otras promesas siguen ejecutándose en segundo plano
+- **No espera:** Devuelve inmediatamente cuando una termina
+
+### ⚠️ **Casos Especiales:**
+
+```javascript
+// Si el PRIMERO es un error, Promise.race() falla
+Promise.race([
+  Promise.reject("❌ Error inmediato"),
+  Promise.resolve("✅ Éxito rápido"),
+]).catch((error) => {
+  console.log(error); // "❌ Error inmediato"
+});
+
+// Si el PRIMERO es éxito, Promise.race() tiene éxito
+Promise.race([
+  Promise.resolve("✅ Éxito inmediato"),
+  Promise.reject("❌ Error lento"),
+]).then((resultado) => {
+  console.log(resultado); // "✅ Éxito inmediato"
+});
+```
+
+## 🔧 **Casos de Uso Prácticos**
+
+### **1. Timeouts**
+
+```javascript
+function conTimeout(promesa, tiempoLimite) {
+  const timeout = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error("Timeout")), tiempoLimite);
+  });
+
+  return Promise.race([promesa, timeout]);
+}
+
+// Uso: Cancelar si tarda más de 5 segundos
+const datos = await conTimeout(fetch("/api/datos"), 5000);
+```
+
+### **2. Múltiples fuentes**
+
+```javascript
+// Cargar de la fuente más rápida
+const imagen = await Promise.race([
+  cargarDesdeCDN(),
+  cargarDesdeCache(),
+  cargarDesdeServidor(),
+]);
+```
+
+### **3. Cancelación por usuario**
+
+```javascript
+// Cancelar si el usuario hace clic en "cancelar"
+const resultado = await Promise.race([
+  operacionLarga(),
+  esperarCancelacionUsuario(),
+]);
+```
+
+### ✅ **¿Cuándo usar Promise.race()?**
+
+- Para implementar **timeouts**
+- Cuando tienes **múltiples fuentes** y quieres la más rápida
+- Para **cancelar operaciones** por acción del usuario
+- En **carreras de servicios** (¿qué servidor responde primero?)
+
+### ❌ **¿Cuándo NO usar Promise.race()?**
+
+- Cuando necesitas **todos los resultados**
+- Cuando las operaciones **dependen** entre sí
+- Cuando quieres **procesar** todos los datos
+
+### 💡 **Diferencias con Promise.all():**
+
+- **Promise.all():** Espera a TODAS (como un equipo)
+- **Promise.race():** Solo la PRIMERA (como una carrera)
+
+## 🧩 **¿Qué es AbortController?**
+
+Imagina que estás descargando un archivo grande:
+
+### 📥 **Ejemplo del mundo real:**
+
+- **Sin AbortController:** Una vez que empiezas la descarga, no puedes cancelarla
+- **Con AbortController:** Tienes un **botón de cancelar** que puedes presionar en cualquier momento
+
+### 💻 **Traducción a JavaScript:**
+
+**AbortController** es un objeto que permite **cancelar** operaciones asincrónicas como `fetch`, `Promise`, y otras cuando ya no las necesitas.
+
+## 🔧 **Sintaxis Básica de AbortController**
+
+```javascript
+// 1. Crear un AbortController
+const controller = new AbortController();
+const signal = controller.signal;
+
+// 2. Pasar la signal a operaciones que la soporten
+fetch("/api/datos", { signal })
+  .then((response) => response.json())
+  .then((datos) => {
+    console.log("Datos recibidos:", datos);
+  })
+  .catch((error) => {
+    if (error.name === "AbortError") {
+      console.log("✅ Fetch cancelado por el usuario");
+    } else {
+      console.error("❌ Otro error:", error);
+    }
+  });
+
+// 3. Cancelar cuando quieras
+document.getElementById("cancelar").addEventListener("click", () => {
+  controller.abort(); // ¡Cancela la operación!
+});
+```
+
+## 💻 **Demo Interactivo: AbortController en Acción**
+
+Aquí tienes un ejemplo completo que puedes probar:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AbortController - Cancelar Operaciones Asincrónicas</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .demo-section {
+        border: 3px solid;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .fetch-demo {
+        border-color: #007bff;
+        background: #f0f8ff;
+      }
+      .timeout-demo {
+        border-color: #28a745;
+        background: #f0fff4;
+      }
+      .custom-demo {
+        border-color: #6f42c1;
+        background: #f8f0ff;
+      }
+      .estado {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      .esperando {
+        background: #fff3cd;
+        color: #856404;
+        border: 2px dashed #ffc107;
+      }
+      .procesando {
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 2px solid #17a2b8;
+      }
+      .completado {
+        background: #d4edda;
+        color: #155724;
+        border: 2px solid #28a745;
+      }
+      .cancelado {
+        background: #f8d7da;
+        color: #721c24;
+        border: 2px solid #dc3545;
+      }
+      .error {
+        background: #fff3cd;
+        color: #856404;
+        border: 2px solid #ffc107;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+      .btn-iniciar {
+        background: #28a745;
+        color: white;
+      }
+      .btn-iniciar:hover {
+        background: #218838;
+      }
+      .btn-cancelar {
+        background: #dc3545;
+        color: white;
+      }
+      .btn-cancelar:hover {
+        background: #c82333;
+      }
+      .btn-cancelar:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+      }
+      .btn-ejemplo {
+        background: #007bff;
+        color: white;
+      }
+      .progreso {
+        height: 20px;
+        background: #e9ecef;
+        border-radius: 10px;
+        margin: 15px 0;
+        overflow: hidden;
+      }
+      .barra-progreso {
+        height: 100%;
+        background: linear-gradient(90deg, #007bff, #00ff88);
+        transition: width 0.3s ease;
+        width: 0%;
+      }
+      .controles {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+        flex-wrap: wrap;
+      }
+      .codigo {
+        background: #2d2d2d;
+        color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+      }
+      .consola {
+        background: #2d2d2d;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        min-height: 200px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .explicacion {
+        background: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+      .lista-descargas {
+        margin: 15px 0;
+      }
+      .descarga-item {
+        background: white;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border-left: 4px solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .descarga-pendiente {
+        border-left-color: #ffc107;
+      }
+      .descarga-activa {
+        border-left-color: #007bff;
+      }
+      .descarga-completada {
+        border-left-color: #28a745;
+      }
+      .descarga-cancelada {
+        border-left-color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚫 AbortController - Cancelar Operaciones Asincrónicas</h1>
+      <p>
+        <strong>Definición sencilla:</strong> Un "botón de cancelar" para
+        operaciones que tardan mucho tiempo.
+      </p>
+
+      <div class="explicacion">
+        <h3>🎯 ¿Por qué necesitamos AbortController?</h3>
+        <p>
+          ✅ <strong>Mejora la experiencia de usuario:</strong> Los usuarios
+          pueden cancelar operaciones lentas
+        </p>
+        <p>
+          ✅ <strong>Ahorra recursos:</strong> Detiene peticiones innecesarias
+          al servidor
+        </p>
+        <p>
+          ✅ <strong>Control preciso:</strong> Cancela exactamente lo que
+          quieres, cuando quieres
+        </p>
+      </div>
+
+      <!-- DEMO 1: FETCH CON ABORT CONTROLLER -->
+      <div class="demo-section fetch-demo">
+        <h2>🌐 Demo 1: Cancelar Petición Fetch</h2>
+        <p>Simula una petición HTTP lenta que puedes cancelar</p>
+
+        <div class="estado esperando" id="estado-fetch">
+          ⏳ Esperando para iniciar fetch...
+        </div>
+
+        <div class="progreso">
+          <div class="barra-progreso" id="progreso-fetch"></div>
+        </div>
+
+        <div class="controles">
+          <button class="btn-iniciar" onclick="iniciarFetch()">
+            🌐 Iniciar Fetch Lento
+          </button>
+          <button
+            class="btn-cancelar"
+            id="btn-cancelar-fetch"
+            disabled
+            onclick="cancelarFetch()"
+          >
+            🚫 Cancelar Fetch
+          </button>
+        </div>
+
+        <div class="codigo">
+          // 1. Crear AbortController<br />
+          const controller = new AbortController();<br />
+          const signal = controller.signal;<br /><br />
+          // 2. Usar en fetch<br />
+          fetch(url, { signal })<br />
+          &nbsp;&nbsp;.then(response => response.json())<br />
+          &nbsp;&nbsp;.then(data => console.log(data))<br />
+          &nbsp;&nbsp;.catch(error => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (error.name === 'AbortError') {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Fetch cancelado');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;});<br /><br />
+          // 3. Cancelar cuando quieras<br />
+          controller.abort();
+        </div>
+      </div>
+
+      <!-- DEMO 2: TIMEOUT PERSONALIZADO CON ABORT -->
+      <div class="demo-section timeout-demo">
+        <h2>⏰ Demo 2: Timeout con Cancelación</h2>
+        <p>Crea un timeout que puedes cancelar antes de que termine</p>
+
+        <div class="estado esperando" id="estado-timeout">
+          ⏳ Esperando para iniciar timeout...
+        </div>
+
+        <div class="progreso">
+          <div class="barra-progreso" id="progreso-timeout"></div>
+        </div>
+
+        <div class="controles">
+          <button class="btn-iniciar" onclick="iniciarTimeout()">
+            ⏰ Iniciar Timeout (5s)
+          </button>
+          <button
+            class="btn-cancelar"
+            id="btn-cancelar-timeout"
+            disabled
+            onclick="cancelarTimeout()"
+          >
+            🚫 Cancelar Timeout
+          </button>
+        </div>
+      </div>
+
+      <!-- DEMO 3: MÚLTIPLES DESCARGAS -->
+      <div class="demo-section custom-demo">
+        <h2>📥 Demo 3: Múltiples Descargas con Cancelación Individual</h2>
+        <p>Gestiona varias operaciones y cancela las que quieras</p>
+
+        <div class="controles">
+          <button class="btn-iniciar" onclick="agregarDescarga()">
+            📥 Agregar Nueva Descarga
+          </button>
+          <button class="btn-cancelar" onclick="cancelarTodasDescargas()">
+            🗑️ Cancelar Todas
+          </button>
+        </div>
+
+        <div class="lista-descargas" id="lista-descargas">
+          <!-- Las descargas se agregarán aquí dinámicamente -->
+        </div>
+      </div>
+
+      <button class="btn-ejemplo" onclick="ejemploAvanzado()">
+        🚀 Ejemplo Avanzado: Búsqueda en Tiempo Real
+      </button>
+      <button class="btn-ejemplo" onclick="limpiarTodo()">
+        🗑️ Limpiar Todo
+      </button>
+
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
+    </div>
+
+    <script>
+      // Elementos del DOM
+      const consola = document.getElementById("consola");
+
+      // Estado global
+      let fetchController = null;
+      let timeoutController = null;
+      let descargasActivas = new Map(); // Map para gestionar múltiples descargas
+
+      function log(mensaje) {
+        consola.innerHTML += `<div>${mensaje}</div>`;
+        consola.scrollTop = consola.scrollHeight;
+      }
+
+      function limpiarTodo() {
+        consola.innerHTML = "";
+        resetearFetch();
+        resetearTimeout();
+        cancelarTodasDescargas();
+      }
+
+      // ==================== DEMO 1: FETCH ====================
+      function resetearFetch() {
+        document.getElementById("estado-fetch").className = "estado esperando";
+        document.getElementById("estado-fetch").textContent =
+          "⏳ Esperando para iniciar fetch...";
+        document.getElementById("progreso-fetch").style.width = "0%";
+        document.getElementById("btn-cancelar-fetch").disabled = true;
+
+        if (fetchController) {
+          fetchController.abort();
+          fetchController = null;
+        }
+      }
+
+      async function iniciarFetch() {
+        resetearFetch();
+
+        // Crear nuevo AbortController
+        fetchController = new AbortController();
+        const signal = fetchController.signal;
+
+        // Actualizar UI
+        document.getElementById("estado-fetch").className = "estado procesando";
+        document.getElementById("estado-fetch").textContent =
+          "🔄 Haciendo petición fetch...";
+        document.getElementById("btn-cancelar-fetch").disabled = false;
+
+        log("🌐 Iniciando petición fetch lenta...");
+
+        try {
+          // Simular una petición fetch lenta con progreso
+          let progreso = 0;
+          const intervalo = setInterval(() => {
+            if (signal.aborted) {
+              clearInterval(intervalo);
+              return;
+            }
+
+            progreso += 10;
+            document.getElementById(
+              "progreso-fetch"
+            ).style.width = `${progreso}%`;
+
+            if (progreso >= 100) {
+              clearInterval(intervalo);
+            }
+          }, 200);
+
+          // Simular fetch con AbortController
+          await new Promise((resolve, reject) => {
+            // Verificar si ya fue abortado
+            if (signal.aborted) {
+              reject(new DOMException("Abortado", "AbortError"));
+              return;
+            }
+
+            // Escuchar el evento abort
+            signal.addEventListener("abort", () => {
+              reject(new DOMException("Abortado", "AbortError"));
+            });
+
+            // Simular trabajo que toma tiempo
+            setTimeout(() => {
+              if (signal.aborted) {
+                reject(new DOMException("Abortado", "AbortError"));
+              } else {
+                resolve("✅ Datos recibidos correctamente");
+              }
+            }, 2000);
+          });
+
+          // Éxito
+          document.getElementById("estado-fetch").className =
+            "estado completado";
+          document.getElementById("estado-fetch").textContent =
+            "✅ Fetch completado exitosamente";
+          document.getElementById("progreso-fetch").style.width = "100%";
+          document.getElementById("btn-cancelar-fetch").disabled = true;
+
+          log("✅ Fetch completado: Datos recibidos");
+        } catch (error) {
+          if (error.name === "AbortError") {
+            document.getElementById("estado-fetch").className =
+              "estado cancelado";
+            document.getElementById("estado-fetch").textContent =
+              "🚫 Fetch cancelado por el usuario";
+            log("🚫 Fetch cancelado por el usuario");
+          } else {
+            document.getElementById("estado-fetch").className = "estado error";
+            document.getElementById(
+              "estado-fetch"
+            ).textContent = `❌ Error: ${error.message}`;
+            log(`❌ Error en fetch: ${error.message}`);
+          }
+          document.getElementById("btn-cancelar-fetch").disabled = true;
+        }
+      }
+
+      function cancelarFetch() {
+        if (fetchController) {
+          fetchController.abort();
+          fetchController = null;
+        }
+      }
+
+      // ==================== DEMO 2: TIMEOUT ====================
+      function resetearTimeout() {
+        document.getElementById("estado-timeout").className =
+          "estado esperando";
+        document.getElementById("estado-timeout").textContent =
+          "⏳ Esperando para iniciar timeout...";
+        document.getElementById("progreso-timeout").style.width = "0%";
+        document.getElementById("btn-cancelar-timeout").disabled = true;
+
+        if (timeoutController) {
+          timeoutController.abort();
+          timeoutController = null;
+        }
+      }
+
+      async function iniciarTimeout() {
+        resetearTimeout();
+
+        // Crear nuevo AbortController
+        timeoutController = new AbortController();
+        const signal = timeoutController.signal;
+
+        // Actualizar UI
+        document.getElementById("estado-timeout").className =
+          "estado procesando";
+        document.getElementById("estado-timeout").textContent =
+          "⏰ Timeout en progreso (5 segundos)...";
+        document.getElementById("btn-cancelar-timeout").disabled = false;
+
+        log("⏰ Iniciando timeout de 5 segundos...");
+
+        try {
+          // Timeout con AbortController
+          await new Promise((resolve, reject) => {
+            if (signal.aborted) {
+              reject(new DOMException("Abortado", "AbortError"));
+              return;
+            }
+
+            const timeoutId = setTimeout(() => {
+              resolve("✅ Timeout completado");
+            }, 5000);
+
+            // Animación de progreso
+            let progreso = 0;
+            const intervalo = setInterval(() => {
+              if (signal.aborted) {
+                clearInterval(intervalo);
+                clearTimeout(timeoutId);
+                return;
+              }
+
+              progreso += 1;
+              document.getElementById(
+                "progreso-timeout"
+              ).style.width = `${progreso}%`;
+
+              if (progreso >= 100) {
+                clearInterval(intervalo);
+              }
+            }, 50);
+
+            // Escuchar cancelación
+            signal.addEventListener("abort", () => {
+              clearInterval(intervalo);
+              clearTimeout(timeoutId);
+              reject(new DOMException("Abortado", "AbortError"));
+            });
+          });
+
+          // Éxito
+          document.getElementById("estado-timeout").className =
+            "estado completado";
+          document.getElementById("estado-timeout").textContent =
+            "✅ Timeout completado";
+          document.getElementById("btn-cancelar-timeout").disabled = true;
+
+          log("✅ Timeout completado después de 5 segundos");
+        } catch (error) {
+          if (error.name === "AbortError") {
+            document.getElementById("estado-timeout").className =
+              "estado cancelado";
+            document.getElementById("estado-timeout").textContent =
+              "🚫 Timeout cancelado";
+            log("🚫 Timeout cancelado por el usuario");
+          } else {
+            document.getElementById("estado-timeout").className =
+              "estado error";
+            document.getElementById(
+              "estado-timeout"
+            ).textContent = `❌ Error: ${error.message}`;
+            log(`❌ Error en timeout: ${error.message}`);
+          }
+          document.getElementById("btn-cancelar-timeout").disabled = true;
+        }
+      }
+
+      function cancelarTimeout() {
+        if (timeoutController) {
+          timeoutController.abort();
+          timeoutController = null;
+        }
+      }
+
+      // ==================== DEMO 3: MÚLTIPLES DESCARGAS ====================
+      function agregarDescarga() {
+        const id = Date.now().toString();
+        const nombre = `Descarga ${Object.keys(descargasActivas).length + 1}`;
+
+        // Crear elemento UI
+        const descargaItem = document.createElement("div");
+        descargaItem.className = "descarga-item descarga-pendiente";
+        descargaItem.id = `descarga-${id}`;
+        descargaItem.innerHTML = `
+                <span>${nombre}</span>
+                <div>
+                    <span id="estado-${id}">⏳ Pendiente</span>
+                    <button onclick="iniciarDescarga('${id}', '${nombre}')" style="margin-left: 10px;">▶️ Iniciar</button>
+                    <button onclick="cancelarDescarga('${id}')" style="margin-left: 5px;">🚫 Cancelar</button>
+                </div>
+            `;
+
+        document.getElementById("lista-descargas").appendChild(descargaItem);
+
+        // Inicializar en el mapa
+        descargasActivas.set(id, {
+          controller: null,
+          nombre: nombre,
+          estado: "pendiente",
+        });
+
+        log(`📥 Nueva descarga agregada: ${nombre}`);
+      }
+
+      async function iniciarDescarga(id, nombre) {
+        const datos = descargasActivas.get(id);
+        if (!datos || datos.estado === "activa") return;
+
+        // Crear controller
+        const controller = new AbortController();
+        const signal = controller.signal;
+
+        // Actualizar estado
+        datos.controller = controller;
+        datos.estado = "activa";
+        descargasActivas.set(id, datos);
+
+        // Actualizar UI
+        const elemento = document.getElementById(`descarga-${id}`);
+        elemento.className = "descarga-item descarga-activa";
+        document.getElementById(`estado-${id}`).textContent =
+          "🔄 Descargando...";
+
+        log(`🔄 Iniciando descarga: ${nombre}`);
+
+        try {
+          // Simular descarga
+          await new Promise((resolve, reject) => {
+            if (signal.aborted) {
+              reject(new DOMException("Abortado", "AbortError"));
+              return;
+            }
+
+            const tiempo = 3000 + Math.random() * 4000; // 3-7 segundos
+            const inicio = Date.now();
+
+            const intervalo = setInterval(() => {
+              if (signal.aborted) {
+                clearInterval(intervalo);
+                return;
+              }
+
+              const transcurrido = Date.now() - inicio;
+              const progreso = Math.min(100, (transcurrido / tiempo) * 100);
+
+              if (progreso >= 100) {
+                clearInterval(intervalo);
+                resolve();
+              }
+            }, 100);
+
+            signal.addEventListener("abort", () => {
+              clearInterval(intervalo);
+              reject(new DOMException("Abortado", "AbortError"));
+            });
+
+            setTimeout(() => {
+              if (!signal.aborted) {
+                clearInterval(intervalo);
+                resolve();
+              }
+            }, tiempo);
+          });
+
+          // Éxito
+          elemento.className = "descarga-item descarga-completada";
+          document.getElementById(`estado-${id}`).textContent = "✅ Completada";
+          datos.estado = "completada";
+          descargasActivas.set(id, datos);
+
+          log(`✅ Descarga completada: ${nombre}`);
+        } catch (error) {
+          if (error.name === "AbortError") {
+            elemento.className = "descarga-item descarga-cancelada";
+            document.getElementById(`estado-${id}`).textContent =
+              "🚫 Cancelada";
+            datos.estado = "cancelada";
+            descargasActivas.set(id, datos);
+
+            log(`🚫 Descarga cancelada: ${nombre}`);
+          }
+        }
+      }
+
+      function cancelarDescarga(id) {
+        const datos = descargasActivas.get(id);
+        if (datos && datos.controller) {
+          datos.controller.abort();
+          log(`🗑️ Descarga cancelada manualmente: ${datos.nombre}`);
+        }
+      }
+
+      function cancelarTodasDescargas() {
+        let canceladas = 0;
+
+        descargasActivas.forEach((datos, id) => {
+          if (datos.controller && datos.estado === "activa") {
+            datos.controller.abort();
+            canceladas++;
+          }
+        });
+
+        log(`🗑️ Canceladas ${canceladas} descargas activas`);
+      }
+
+      // ==================== EJEMPLO AVANZADO ====================
+      async function ejemploAvanzado() {
+        log("\n🚀 EJEMPLO AVANZADO: Búsqueda en Tiempo Real con Cancelación");
+
+        let busquedaController = null;
+
+        async function buscar(termino) {
+          // Cancelar búsqueda anterior si existe
+          if (busquedaController) {
+            busquedaController.abort();
+            log(`🚫 Cancelando búsqueda anterior: "${terminoAnterior}"`);
+          }
+
+          // Nueva búsqueda
+          busquedaController = new AbortController();
+          const signal = busquedaController.signal;
+
+          log(`🔍 Buscando: "${termino}"...`);
+
+          try {
+            // Simular búsqueda en API
+            await new Promise((resolve, reject) => {
+              if (signal.aborted) {
+                reject(new DOMException("Abortado", "AbortError"));
+                return;
+              }
+
+              const tiempo = 800 + Math.random() * 1200;
+
+              signal.addEventListener("abort", () => {
+                reject(new DOMException("Abortado", "AbortError"));
+              });
+
+              setTimeout(() => {
+                if (!signal.aborted) {
+                  resolve();
+                }
+              }, tiempo);
+            });
+
+            // Simular resultados
+            const resultados = [
+              `Resultado 1 para "${termino}"`,
+              `Resultado 2 para "${termino}"`,
+              `Resultado 3 para "${termino}"`,
+            ];
+
+            log(
+              `✅ Búsqueda completada para "${termino}": ${resultados.length} resultados`
+            );
+            return resultados;
+          } catch (error) {
+            if (error.name === "AbortError") {
+              log(`🚫 Búsqueda cancelada para: "${termino}"`);
+            }
+            throw error;
+          }
+        }
+
+        // Simular usuario escribiendo rápido
+        const terminos = ["jav", "javas", "javasc", "javascript"];
+        let terminoAnterior = "";
+
+        for (const termino of terminos) {
+          terminoAnterior = termino;
+          await new Promise((resolve) => setTimeout(resolve, 300)); // Simular delay entre tecleo
+          await buscar(termino).catch(() => {}); // Ignorar errores de cancelación
+        }
+
+        log("💡 AbortController evita que se muestren resultados obsoletos");
+      }
+    </script>
+  </body>
+</html>
+```
+
+## 🎯 **Características Clave de AbortController**
+
+### ✅ **Ventajas:**
+
+- **Cancelación precisa:** Cancela exactamente lo que quieres
+- **Múltiples operaciones:** Un controller puede cancelar muchas operaciones
+- **Reutilizable:** Puedes crear nuevos controllers después de abortar
+- **Estándar moderno:** Soporte nativo en navegadores modernos
+
+### 🔧 **Cómo Funciona:**
+
+```javascript
+// 1. Crear controller y signal
+const controller = new AbortController();
+const signal = controller.signal;
+
+// 2. Pasar signal a operaciones compatibles
+fetch(url, { signal });
+someAsyncFunction(signal);
+
+// 3. Escuchar cancelación
+signal.addEventListener("abort", () => {
+  console.log("¡Operación cancelada!");
+});
+
+// 4. Cancelar cuando sea necesario
+controller.abort(); // Dispara el evento 'abort'
+```
+
+## 🛠️ **Operaciones que Soportan AbortController**
+
+### **1. Fetch API**
+
+```javascript
+const controller = new AbortController();
+
+fetch("/api/data", { signal: controller.signal })
+  .then((response) => response.json())
+  .catch((error) => {
+    if (error.name === "AbortError") {
+      console.log("Fetch cancelado");
+    }
+  });
+
+// Cancelar la petición
+controller.abort();
+```
+
+### **2. Promesas Personalizadas**
+
+```javascript
+function operacionCancelable(signal) {
+  return new Promise((resolve, reject) => {
+    // Verificar si ya fue cancelado
+    if (signal.aborted) {
+      reject(new DOMException("Abortado", "AbortError"));
+      return;
+    }
+
+    const timeoutId = setTimeout(() => {
+      resolve("Operación completada");
+    }, 5000);
+
+    // Escuchar cancelación
+    signal.addEventListener("abort", () => {
+      clearTimeout(timeoutId);
+      reject(new DOMException("Abortado", "AbortError"));
+    });
+  });
+}
+```
+
+### **3. Event Listeners**
+
+```javascript
+// También se puede usar para remover event listeners
+const controller = new AbortController();
+
+element.addEventListener(
+  "click",
+  () => {
+    console.log("Click!");
+  },
+  { signal: controller.signal }
+);
+
+// Esto removerá el event listener
+controller.abort();
+```
+
+## 🎯 **Casos de Uso Prácticos**
+
+### **1. Búsqueda en Tiempo Real**
+
+```javascript
+let searchController = null;
+
+async function buscar(termino) {
+  // Cancelar búsqueda anterior
+  if (searchController) {
+    searchController.abort();
+  }
+
+  searchController = new AbortController();
+
+  try {
+    const resultados = await fetch(`/api/search?q=${termino}`, {
+      signal: searchController.signal,
+    });
+    mostrarResultados(await resultados.json());
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error("Error de búsqueda:", error);
+    }
+  }
+}
+```
+
+### **2. Timeouts con Cancelación**
+
+```javascript
+function timeout(ms, signal) {
+  return new Promise((resolve, reject) => {
+    const timeoutId = setTimeout(resolve, ms);
+
+    signal.addEventListener("abort", () => {
+      clearTimeout(timeoutId);
+      reject(new DOMException("Timeout cancelado", "AbortError"));
+    });
+
+    if (signal.aborted) {
+      clearTimeout(timeoutId);
+      reject(new DOMException("Timeout cancelado", "AbortError"));
+    }
+  });
+}
+```
+
+### **3. Múltiples Peticiones con Cancelación Global**
+
+```javascript
+class GestionadorPeticiones {
+  constructor() {
+    this.controller = new AbortController();
+  }
+
+  async hacerPeticiones(urls) {
+    const promesas = urls.map((url) =>
+      fetch(url, { signal: this.controller.signal })
+    );
+
+    return Promise.all(promesas);
+  }
+
+  cancelarTodas() {
+    this.controller.abort();
+    this.controller = new AbortController(); // Nuevo para próximas peticiones
+  }
+}
+```
+
+### ✅ **¿Cuándo usar AbortController?**
+
+- **Búsquedas en tiempo real:** Cancelar búsquedas anteriores
+- **Descargas largas:** Permitir al usuario cancelar
+- **Timeouts personalizados:** Que se puedan cancelar
+- **Múltiples peticiones:** Cancelar todas de una vez
+
+### ❌ **Limitaciones:**
+
+- **No retrocompatible:** Navegadores antiguos no lo soportan
+- **Solo operaciones compatibles:** No funciona con todo
+- **Una vez usado:** Un controller no se puede reutilizar después de abort()
+
+### 💡 **Mejores Prácticas:**
+
+- **Verificar `signal.aborted`** antes de empezar operaciones costosas
+- **Siempre limpiar recursos** (timeouts, intervals) en el evento abort
+- **Usar nuevos controllers** para nuevas operaciones después de cancelar
+
+## 🧩 **¿Qué es el Retry Automático?**
+
+Imagina que intentas llamar por teléfono:
+
+### 📞 **Ejemplo del mundo real:**
+
+- **Sin retry:** Llamas una vez, si no contestan, te rindes
+- **Con retry:** Llamas, si no contestan, esperas 5 segundos y vuelves a llamar... hasta 3 veces
+
+### 💻 **Traducción a JavaScript:**
+
+El **retry automático** es un patrón que reintenta una operación fallida automáticamente, usualmente con un delay entre intentos.
+
+## 🔧 **Patrón Básico de Retry**
+
+```javascript
+async function conReintentos(operacion, maxReintentos = 3) {
+  for (let intento = 1; intento <= maxReintentos; intento++) {
+    try {
+      console.log(`🔄 Intento ${intento} de ${maxReintentos}`);
+      const resultado = await operacion();
+      return resultado; // ¡Éxito! Salimos del bucle
+    } catch (error) {
+      console.log(`❌ Intento ${intento} falló: ${error.message}`);
+
+      // Si es el último intento, relanzamos el error
+      if (intento === maxReintentos) {
+        throw new Error(`Todos los intentos fallaron: ${error.message}`);
+      }
+
+      // Esperamos antes del siguiente intento
+      console.log(`⏳ Esperando antes del siguiente intento...`);
+      await new Promise((resolve) => setTimeout(resolve, 1000 * intento));
+    }
+  }
+}
+```
+
+## 💻 **Demo Interactivo: Retry Automático en Acción**
+
+Aquí tienes un ejemplo completo que puedes probar:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retry Automático - Reintentos Inteligentes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .demo-section {
+        border: 3px solid;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .basico-demo {
+        border-color: #007bff;
+        background: #f0f8ff;
+      }
+      .avanzado-demo {
+        border-color: #28a745;
+        background: #f0fff4;
+      }
+      .estrategias-demo {
+        border-color: #6f42c1;
+        background: #f8f0ff;
+      }
+      .intento {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border-left: 5px solid;
+        transition: all 0.3s ease;
+      }
+      .pendiente {
+        border-left-color: #6c757d;
+        background: #f8f9fa;
+      }
+      .procesando {
+        border-left-color: #007bff;
+        background: #e7f3ff;
+      }
+      .exito {
+        border-left-color: #28a745;
+        background: #d4edda;
+      }
+      .fallo {
+        border-left-color: #dc3545;
+        background: #f8d7da;
+      }
+      .reintento {
+        border-left-color: #ffc107;
+        background: #fff3cd;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+      .btn-iniciar {
+        background: #28a745;
+        color: white;
+      }
+      .btn-iniciar:hover {
+        background: #218838;
+      }
+      .btn-iniciar:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+      }
+      .btn-api {
+        background: #007bff;
+        color: white;
+      }
+      .btn-estrategia {
+        background: #6f42c1;
+        color: white;
+      }
+      .btn-limpiar {
+        background: #6c757d;
+        color: white;
+      }
+      .estadisticas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+      }
+      .estadistica {
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        background: #e9ecef;
+      }
+      .exito-estadistica {
+        background: #d4edda;
+        border: 2px solid #28a745;
+      }
+      .fallo-estadistica {
+        background: #f8d7da;
+        border: 2px solid #dc3545;
+      }
+      .progreso {
+        height: 20px;
+        background: #e9ecef;
+        border-radius: 10px;
+        margin: 15px 0;
+        overflow: hidden;
+      }
+      .barra-progreso {
+        height: 100%;
+        background: linear-gradient(90deg, #007bff, #00ff88);
+        transition: width 0.3s ease;
+        width: 0%;
+      }
+      .controles {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+        flex-wrap: wrap;
+      }
+      .configuracion {
+        background: #fff3cd;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+      .config-item {
+        margin: 10px 0;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        font-weight: bold;
+      }
+      input[type="number"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 80px;
+      }
+      .codigo {
+        background: #2d2d2d;
+        color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+      }
+      .consola {
+        background: #2d2d2d;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        min-height: 200px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .estrategia-badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+      .backoff-lineal {
+        background: #007bff;
+        color: white;
+      }
+      .backoff-exponencial {
+        background: #28a745;
+        color: white;
+      }
+      .backoff-fibonacci {
+        background: #6f42c1;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔄 Retry Automático - Reintentos Inteligentes</h1>
+      <p>
+        <strong>Definición sencilla:</strong> Reintentar automáticamente una
+        operación fallida, usualmente con delays entre intentos.
+      </p>
+
+      <div class="configuracion">
+        <h3>⚙️ Configuración de Reintentos</h3>
+        <div class="config-item">
+          <label for="maxReintentos">Máx. Reintentos:</label>
+          <input type="number" id="maxReintentos" value="3" min="1" max="10" />
+        </div>
+        <div class="config-item">
+          <label for="delayBase">Delay Base (ms):</label>
+          <input
+            type="number"
+            id="delayBase"
+            value="1000"
+            min="100"
+            max="10000"
+          />
+        </div>
+        <div class="config-item">
+          <label>Estrategia de Backoff:</label>
+          <select id="estrategiaBackoff">
+            <option value="lineal">Lineal (constante)</option>
+            <option value="exponencial">Exponencial (creciente)</option>
+            <option value="fibonacci">Fibonacci (progresivo)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- DEMO 1: RETRY BÁSICO -->
+      <div class="demo-section basico-demo">
+        <h2>🔄 Demo 1: Retry Básico</h2>
+        <p>
+          Reintenta una operación inestable hasta que tenga éxito o se agoten
+          los intentos
+        </p>
+
+        <div class="progreso">
+          <div class="barra-progreso" id="progreso-basico"></div>
+        </div>
+
+        <div id="intentos-basico">
+          <!-- Los intentos se agregarán aquí dinámicamente -->
+        </div>
+
+        <div class="controles">
+          <button class="btn-iniciar" onclick="iniciarRetryBasico()">
+            🔄 Iniciar Retry Básico
+          </button>
+          <button class="btn-iniciar" onclick="iniciarRetryConFallos()">
+            💥 Probar con Más Fallos
+          </button>
+        </div>
+
+        <div class="codigo">
+          // PATRÓN BÁSICO DE RETRY<br />
+          async function conReintentos(operacion, maxReintentos) {<br />
+          &nbsp;&nbsp;for (let intento = 1; intento <= maxReintentos; intento++)
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return await operacion();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (intento === maxReintentos)
+          throw error;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await delay(1000 * intento); //
+          Backoff lineal<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;}<br />
+          }
+        </div>
+      </div>
+
+      <!-- DEMO 2: RETRY AVANZADO CON ESTRATEGIAS -->
+      <div class="demo-section avanzado-demo">
+        <h2>🎯 Demo 2: Retry Avanzado con Estrategias</h2>
+        <p>Diferentes estrategias de backoff para optimizar los reintentos</p>
+
+        <div class="estadisticas">
+          <div class="estadistica">
+            <h3>📊 Total de Intentos</h3>
+            <div class="tiempo" id="total-intentos">0</div>
+          </div>
+          <div class="estadistica">
+            <h3>⏱️ Tiempo Total</h3>
+            <div class="tiempo" id="tiempo-total">0ms</div>
+          </div>
+          <div class="estadistica">
+            <h3>🎯 Resultado</h3>
+            <div class="tiempo" id="resultado-final">-</div>
+          </div>
+        </div>
+
+        <div id="intentos-avanzado">
+          <!-- Los intentos avanzados se agregarán aquí -->
+        </div>
+
+        <div class="controles">
+          <button class="btn-estrategia" onclick="probarTodasEstrategias()">
+            🧪 Probar Todas las Estrategias
+          </button>
+          <button class="btn-api" onclick="ejemploAPIReal()">
+            🌐 Ejemplo con API Real
+          </button>
+        </div>
+      </div>
+
+      <!-- DEMO 3: ESTRATEGIAS DE BACKOFF -->
+      <div class="demo-section estrategias-demo">
+        <h2>📈 Demo 3: Estrategias de Backoff</h2>
+        <p>Compara diferentes estrategias de espera entre reintentos</p>
+
+        <div id="comparacion-estrategias">
+          <!-- Comparación de estrategias -->
+        </div>
+
+        <div class="controles">
+          <button class="btn-estrategia" onclick="compararEstrategias()">
+            📊 Comparar Estrategias
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-limpiar" onclick="limpiarTodo()">
+        🗑️ Limpiar Todo
+      </button>
+
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
+    </div>
+
+    <script>
+      // Elementos del DOM
+      const consola = document.getElementById("consola");
+
+      // Estado global
+      let ejecucionEnCurso = false;
+
+      function log(mensaje) {
+        consola.innerHTML += `<div>${mensaje}</div>`;
+        consola.scrollTop = consola.scrollHeight;
+      }
+
+      function limpiarTodo() {
+        consola.innerHTML = "";
+        document.getElementById("intentos-basico").innerHTML = "";
+        document.getElementById("intentos-avanzado").innerHTML = "";
+        document.getElementById("comparacion-estrategias").innerHTML = "";
+        document.getElementById("progreso-basico").style.width = "0%";
+        resetearEstadisticas();
+        ejecucionEnCurso = false;
+      }
+
+      function resetearEstadisticas() {
+        document.getElementById("total-intentos").textContent = "0";
+        document.getElementById("tiempo-total").textContent = "0ms";
+        document.getElementById("resultado-final").textContent = "-";
+      }
+
+      function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      // ==================== DEMO 1: RETRY BÁSICO ====================
+      function crearOperacionInestable(
+        probabilidadExito = 0.3,
+        nombre = "Operación"
+      ) {
+        return async function () {
+          await delay(500 + Math.random() * 500); // Simular trabajo
+
+          if (Math.random() < probabilidadExito) {
+            return `✅ ${nombre} exitosa`;
+          } else {
+            throw new Error(`❌ ${nombre} falló temporalmente`);
+          }
+        };
+      }
+
+      function agregarIntentoBasico(intento, estado, mensaje) {
+        const div = document.createElement("div");
+        div.className = `intento ${estado}`;
+        div.innerHTML = `
+                <strong>Intento ${intento}:</strong> ${mensaje}
+            `;
+        document.getElementById("intentos-basico").appendChild(div);
+      }
+
+      async function iniciarRetryBasico() {
+        if (ejecucionEnCurso) return;
+        ejecucionEnCurso = true;
+
+        document.getElementById("intentos-basico").innerHTML = "";
+        document.getElementById("progreso-basico").style.width = "0%";
+
+        const maxReintentos = parseInt(
+          document.getElementById("maxReintentos").value
+        );
+        const delayBase = parseInt(document.getElementById("delayBase").value);
+        const estrategia = document.getElementById("estrategiaBackoff").value;
+
+        log(`🔄 INICIANDO RETRY BÁSICO (${maxReintentos} intentos máx)`);
+
+        const operacion = crearOperacionInestable(0.3, "Tarea básica");
+
+        try {
+          const resultado = await conReintentos(
+            operacion,
+            maxReintentos,
+            delayBase,
+            estrategia,
+            (intento, estado, mensaje) => {
+              agregarIntentoBasico(intento, estado, mensaje);
+              document.getElementById("progreso-basico").style.width = `${
+                (intento / maxReintentos) * 100
+              }%`;
+            }
+          );
+
+          log(`🎉 ${resultado} después de varios intentos`);
+        } catch (error) {
+          log(`💥 ${error.message}`);
+        }
+
+        ejecucionEnCurso = false;
+      }
+
+      async function iniciarRetryConFallos() {
+        if (ejecucionEnCurso) return;
+
+        document.getElementById("intentos-basico").innerHTML = "";
+        document.getElementById("progreso-basico").style.width = "0%";
+
+        const maxReintentos = 3;
+        const operacion = crearOperacionInestable(0.1, "Tarea muy inestable"); // Solo 10% de éxito
+
+        log(`💥 PROBANDO CON OPERACIÓN MUY INESTABLE (10% éxito)`);
+
+        try {
+          const resultado = await conReintentos(
+            operacion,
+            maxReintentos,
+            1000,
+            "lineal",
+            (intento, estado, mensaje) => {
+              agregarIntentoBasico(intento, estado, mensaje);
+              document.getElementById("progreso-basico").style.width = `${
+                (intento / maxReintentos) * 100
+              }%`;
+            }
+          );
+
+          log(`🎉 ¡Milagro! ${resultado}`);
+        } catch (error) {
+          log(`💥 Como esperábamos: ${error.message}`);
+        }
+      }
+
+      // ==================== FUNCIÓN PRINCIPAL DE RETRY ====================
+      async function conReintentos(
+        operacion,
+        maxReintentos,
+        delayBase = 1000,
+        estrategia = "lineal",
+        callbackProgreso = null
+      ) {
+        let ultimoError = null;
+        const inicioTotal = Date.now();
+        let totalIntentos = 0;
+
+        for (let intento = 1; intento <= maxReintentos; intento++) {
+          totalIntentos++;
+
+          if (callbackProgreso) {
+            callbackProgreso(intento, "procesando", "🔄 Ejecutando...");
+          }
+
+          log(`📝 Intento ${intento}/${maxReintentos}...`);
+
+          try {
+            const resultado = await operacion();
+
+            if (callbackProgreso) {
+              callbackProgreso(intento, "exito", resultado);
+            }
+
+            const tiempoTotal = Date.now() - inicioTotal;
+            log(
+              `✅ ¡Éxito en el intento ${intento}! Tiempo total: ${tiempoTotal}ms`
+            );
+
+            return resultado;
+          } catch (error) {
+            ultimoError = error;
+
+            if (callbackProgreso) {
+              callbackProgreso(intento, "fallo", error.message);
+            }
+
+            log(`❌ Intento ${intento} falló: ${error.message}`);
+
+            // Si es el último intento, salimos
+            if (intento === maxReintentos) {
+              const tiempoTotal = Date.now() - inicioTotal;
+              log(
+                `💥 Todos los ${maxReintentos} intentos fallaron. Tiempo total: ${tiempoTotal}ms`
+              );
+              throw new Error(
+                `Todos los ${maxReintentos} intentos fallaron. Último error: ${error.message}`
+              );
+            }
+
+            // Calcular delay según estrategia
+            const delayMs = calcularDelay(estrategia, intento, delayBase);
+            log(
+              `⏳ Esperando ${delayMs}ms antes del siguiente intento (${estrategia})...`
+            );
+
+            if (callbackProgreso) {
+              callbackProgreso(
+                intento,
+                "reintento",
+                `⏳ Esperando ${delayMs}ms...`
+              );
+            }
+
+            await delay(delayMs);
+          }
+        }
+
+        throw ultimoError;
+      }
+
+      function calcularDelay(estrategia, intento, delayBase) {
+        switch (estrategia) {
+          case "lineal":
+            return delayBase * intento; // 1000, 2000, 3000...
+
+          case "exponencial":
+            return delayBase * Math.pow(2, intento - 1); // 1000, 2000, 4000, 8000...
+
+          case "fibonacci":
+            const fib = [1, 1, 2, 3, 5, 8, 13, 21];
+            return delayBase * (fib[intento - 1] || 21); // 1000, 1000, 2000, 3000, 5000...
+
+          default:
+            return delayBase;
+        }
+      }
+
+      // ==================== DEMO 2: RETRY AVANZADO ====================
+      function agregarIntentoAvanzado(
+        intento,
+        estrategia,
+        estado,
+        mensaje,
+        tiempo = ""
+      ) {
+        const div = document.createElement("div");
+        div.className = `intento ${estado}`;
+        div.innerHTML = `
+                <strong>Intento ${intento}</strong> 
+                <span class="estrategia-badge backoff-${estrategia}">${estrategia}</span>
+                <span style="float: right;">${tiempo}</span>
+                <br>${mensaje}
+            `;
+        document.getElementById("intentos-avanzado").appendChild(div);
+      }
+
+      async function probarTodasEstrategias() {
+        if (ejecucionEnCurso) return;
+        ejecucionEnCurso = true;
+
+        document.getElementById("intentos-avanzado").innerHTML = "";
+        resetearEstadisticas();
+
+        const estrategias = ["lineal", "exponencial", "fibonacci"];
+        const operacion = crearOperacionInestable(0.4, "Tarea avanzada");
+
+        log("🧪 PROBANDO TODAS LAS ESTRATEGIAS DE BACKOFF");
+
+        for (const estrategia of estrategias) {
+          log(`\n📊 Probando estrategia: ${estrategia.toUpperCase()}`);
+
+          try {
+            const inicio = Date.now();
+            const resultado = await conReintentos(
+              operacion,
+              4,
+              1000,
+              estrategia,
+              (intento, estado, mensaje) => {
+                const tiempoTranscurrido = Date.now() - inicio;
+                agregarIntentoAvanzado(
+                  intento,
+                  estrategia,
+                  estado,
+                  mensaje,
+                  `${tiempoTranscurrido}ms`
+                );
+              }
+            );
+
+            const tiempoTotal = Date.now() - inicio;
+            log(`✅ ${estrategia}: ${resultado} en ${tiempoTotal}ms`);
+          } catch (error) {
+            log(`❌ ${estrategia}: ${error.message}`);
+          }
+
+          await delay(1000); // Pausa entre estrategias
+        }
+
+        ejecucionEnCurso = false;
+      }
+
+      // ==================== DEMO 3: COMPARACIÓN DE ESTRATEGIAS ====================
+      async function compararEstrategias() {
+        document.getElementById("comparacion-estrategias").innerHTML = "";
+
+        const estrategias = [
+          { nombre: "lineal", desc: "Lineal (constante)" },
+          { nombre: "exponencial", desc: "Exponencial (creciente)" },
+          { nombre: "fibonacci", desc: "Fibonacci (progresivo)" },
+        ];
+
+        log("\n📈 COMPARANDO ESTRATEGIAS DE BACKOFF");
+
+        for (const estrategia of estrategias) {
+          const div = document.createElement("div");
+          div.className = "intento pendiente";
+          div.innerHTML = `
+                    <h4>${estrategia.desc}</h4>
+                    <div id="detalles-${estrategia.nombre}">Calculando...</div>
+                `;
+          document.getElementById("comparacion-estrategias").appendChild(div);
+
+          // Simular delays para esta estrategia
+          let detalles = "";
+          let tiempoAcumulado = 0;
+
+          for (let intento = 1; intento <= 5; intento++) {
+            const delayMs = calcularDelay(estrategia.nombre, intento, 1000);
+            tiempoAcumulado += delayMs;
+            detalles += `Intento ${intento}: ${delayMs}ms (Total: ${tiempoAcumulado}ms)<br>`;
+          }
+
+          document.getElementById(`detalles-${estrategia.nombre}`).innerHTML =
+            detalles;
+          log(`📊 ${estrategia.desc}: ${detalles.replace(/<br>/g, " | ")}`);
+        }
+      }
+
+      // ==================== EJEMPLO CON API REAL ====================
+      async function ejemploAPIReal() {
+        log("\n🌐 EJEMPLO CON API REAL (simulado)");
+
+        // Simular una API que a veces falla
+        async function llamarAPI(endpoint) {
+          await delay(300 + Math.random() * 700); // Simular latencia de red
+
+          // Simular diferentes tasas de error según el endpoint
+          const tasasError = {
+            "/api/usuarios": 0.2, // 20% de error
+            "/api/posts": 0.4, // 40% de error
+            "/api/comentarios": 0.6, // 60% de error
+          };
+
+          const tasaError = tasasError[endpoint] || 0.3;
+
+          if (Math.random() < tasaError) {
+            throw new Error(
+              `API ${endpoint} no disponible (${
+                Math.random() < 0.5 ? "Timeout" : "Error 500"
+              })`
+            );
+          }
+
+          return `✅ Datos de ${endpoint} recibidos`;
+        }
+
+        const endpoints = ["/api/usuarios", "/api/posts", "/api/comentarios"];
+
+        for (const endpoint of endpoints) {
+          log(`\n🔗 Llamando a ${endpoint}...`);
+
+          try {
+            const resultado = await conReintentos(
+              () => llamarAPI(endpoint),
+              3,
+              1000,
+              "exponencial"
+            );
+
+            log(resultado);
+          } catch (error) {
+            log(`💥 No se pudo conectar a ${endpoint}: ${error.message}`);
+          }
+        }
+
+        log(
+          "\n💡 En una app real, esto evita que errores temporales afecten al usuario"
+        );
+      }
+
+      // ==================== EJEMPLO AVANZADO: RETRY CON CIRCUIT BREAKER ====================
+      function crearRetryAvanzado() {
+        log("\n🛡️ EJEMPLO AVANZADO: Retry con Circuit Breaker");
+
+        class RetryAvanzado {
+          constructor(maxReintentos = 3, delayBase = 1000) {
+            this.maxReintentos = maxReintentos;
+            this.delayBase = delayBase;
+            this.estadisticas = {
+              exitos: 0,
+              fallos: 0,
+              reintentos: 0,
+            };
+          }
+
+          async ejecutar(operacion, contexto = "Operación") {
+            for (let intento = 1; intento <= this.maxReintentos; intento++) {
+              try {
+                log(
+                  `🔧 ${contexto} - Intento ${intento}/${this.maxReintentos}`
+                );
+                const resultado = await operacion();
+
+                this.estadisticas.exitos++;
+                log(`✅ ${contexto} exitosa en intento ${intento}`);
+
+                return resultado;
+              } catch (error) {
+                this.estadisticas.fallos++;
+                this.estadisticas.reintentos++;
+
+                log(
+                  `❌ ${contexto} falló en intento ${intento}: ${error.message}`
+                );
+
+                if (intento === this.maxReintentos) {
+                  log(`💥 ${contexto}: Todos los intentos fallaron`);
+                  throw error;
+                }
+
+                // Backoff exponencial con jitter (aleatoriedad)
+                const delay = this.calcularDelayConJitter(intento);
+                log(
+                  `⏳ ${contexto}: Esperando ${delay}ms antes del reintento...`
+                );
+
+                await delay(delay);
+              }
+            }
+          }
+
+          calcularDelayConJitter(intento) {
+            const baseDelay = this.delayBase * Math.pow(2, intento - 1);
+            const jitter = baseDelay * 0.2 * Math.random(); // ±20% de aleatoriedad
+            return baseDelay + jitter;
+          }
+
+          obtenerEstadisticas() {
+            return this.estadisticas;
+          }
+        }
+
+        // Ejemplo de uso
+        const retryAvanzado = new RetryAvanzado(4, 800);
+        const operacionCritica = crearOperacionInestable(
+          0.25,
+          "Operación crítica"
+        );
+
+        retryAvanzado
+          .ejecutar(operacionCritica, "Tarea importante")
+          .then((resultado) => {
+            log(`🎉 ${resultado}`);
+            const stats = retryAvanzado.obtenerEstadisticas();
+            log(`📊 Estadísticas: ${JSON.stringify(stats)}`);
+          })
+          .catch((error) => {
+            log(`💥 Error final: ${error.message}`);
+          });
+      }
+
+      // Ejecutar ejemplo avanzado después de un tiempo
+      setTimeout(crearRetryAvanzado, 3000);
+    </script>
+  </body>
+</html>
+```
+
+## 🎯 **Estrategias de Backoff (Espera entre Reintentos)**
+
+### **1. Backoff Lineal**
+
+```javascript
+// Tiempo de espera constante: 1s, 2s, 3s...
+function calcularDelayLineal(intento, delayBase) {
+  return delayBase * intento;
+}
+```
+
+### **2. Backoff Exponencial**
+
+```javascript
+// Tiempo se duplica: 1s, 2s, 4s, 8s...
+function calcularDelayExponencial(intento, delayBase) {
+  return delayBase * Math.pow(2, intento - 1);
+}
+```
+
+### **3. Backoff Fibonacci**
+
+```javascript
+// Secuencia Fibonacci: 1s, 1s, 2s, 3s, 5s...
+function calcularDelayFibonacci(intento, delayBase) {
+  const fib = [1, 1, 2, 3, 5, 8, 13, 21];
+  return delayBase * (fib[intento - 1] || 21);
+}
+```
+
+### **4. Backoff con Jitter (Aleatoriedad)**
+
+```javascript
+// Agrega aleatoriedad para evitar sincronización
+function calcularDelayConJitter(intento, delayBase) {
+  const baseDelay = delayBase * Math.pow(2, intento - 1);
+  const jitter = baseDelay * 0.2 * Math.random(); // ±20%
+  return baseDelay + jitter;
+}
+```
+
+## 🔧 **Patrón Avanzado: Retry con Circuit Breaker**
+
+```javascript
+class RetryAvanzado {
+  constructor(maxReintentos = 3, delayBase = 1000) {
+    this.maxReintentos = maxReintentos;
+    this.delayBase = delayBase;
+    this.circuitState = "CLOSED"; // OPEN, HALF_OPEN, CLOSED
+  }
+
+  async ejecutar(operacion) {
+    if (this.circuitState === "OPEN") {
+      throw new Error("Circuit breaker abierto - no se permiten operaciones");
+    }
+
+    for (let intento = 1; intento <= this.maxReintentos; intento++) {
+      try {
+        const resultado = await operacion();
+        this.registrarExito();
+        return resultado;
+      } catch (error) {
+        if (this.debeAbirCircuitBreaker(error)) {
+          this.circuitState = "OPEN";
+          setTimeout(() => (this.circuitState = "HALF_OPEN"), 30000); // Reintentar después de 30s
+        }
+
+        if (intento === this.maxReintentos) throw error;
+
+        await this.calcularDelay(intento);
+      }
+    }
+  }
+
+  debeAbirCircuitBreaker(error) {
+    // Abrir circuit breaker después de muchos errores consecutivos
+    return error.message.includes("500") || error.message.includes("Timeout");
+  }
+
+  registrarExito() {
+    if (this.circuitState === "HALF_OPEN") {
+      this.circuitState = "CLOSED";
+    }
+  }
+}
+```
+
+## 🎯 **Casos de Uso Prácticos**
+
+### **1. Peticiones HTTP con Fetch**
+
+```javascript
+async function fetchConReintentos(url, options = {}, maxReintentos = 3) {
+  for (let intento = 1; intento <= maxReintentos; intento++) {
+    try {
+      const response = await fetch(url, options);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      if (intento === maxReintentos) throw error;
+
+      console.log(`Reintento ${intento} falló, esperando...`);
+      await new Promise((resolve) => setTimeout(resolve, 1000 * intento));
+    }
+  }
+}
+```
+
+### **2. Conexiones de Base de Datos**
+
+```javascript
+async function conectarBDConReintentos(config, maxReintentos = 5) {
+  for (let intento = 1; intento <= maxReintentos; intento++) {
+    try {
+      const conexion = await database.connect(config);
+      console.log(`✅ Conexión a BD exitosa en intento ${intento}`);
+      return conexion;
+    } catch (error) {
+      console.log(`❌ Intento ${intento} falló: ${error.message}`);
+
+      if (intento === maxReintentos) {
+        throw new Error(
+          `No se pudo conectar a la BD después de ${maxReintentos} intentos`
+        );
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, 2000 * intento));
+    }
+  }
+}
+```
+
+### **3. Procesamiento de Archivos**
+
+```javascript
+async function procesarArchivoConReintentos(rutaArchivo, maxReintentos = 3) {
+  for (let intento = 1; intento <= maxReintentos; intento++) {
+    try {
+      const contenido = await fs.promises.readFile(rutaArchivo, "utf8");
+      return JSON.parse(contenido);
+    } catch (error) {
+      if (error.code === "ENOENT" && intento < maxReintentos) {
+        // Archivo no existe, esperar y reintentar (útil para archivos en proceso de escritura)
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        continue;
+      }
+
+      if (intento === maxReintentos) throw error;
+    }
+  }
+}
+```
+
+### ✅ **¿Cuándo usar Retry Automático?**
+
+- **Errores temporales:** Network timeouts, servidores ocupados
+- **Recursos no disponibles:** Archivos bloqueados, conexiones saturadas
+- **Inicialización:** Servicios que necesitan tiempo para arrancar
+- **Operaciones idempotentes:** Que se pueden repetir sin efectos secundarios
+
+### ❌ **¿Cuándo NO usar Retry?**
+
+- **Errores permanentes:** 404 Not Found, permisos denegados
+- **Operaciones no idempotentes:** Que causan efectos secundarios al repetirse
+- **Errores de validación:** Datos incorrectos del usuario
+- **Límites de tasa:** Podría empeorar la situación
+
+### 💡 **Mejores Prácticas:**
+
+- **Usar backoff exponencial** para no saturar el servidor
+- **Limitar el número máximo** de reintentos
+- **Considerar el contexto:** ¿Vale la pena reintentar?
+- **Loggear los reintentos** para debugging
+- **Agregar jitter** para evitar el "herd effect"
+
+---
+
+## 🔍 **CONCEPTOS QUE FALTAN (Pero son importantes)**
+
+### **1. 🚨 ERROR HANDLING AVANZADO**
+
+```javascript
+// Error boundaries, global error handlers, graceful degradation
+window.addEventListener("unhandledrejection", (event) => {
+  console.log("Promesa rechazada no manejada:", event.reason);
+  event.preventDefault();
+});
+```
+
+### **2. 🔄 PATRONES DE CONCURRENCIA**
+
+```javascript
+// Limitación de concurrencia, semáforos
+async function conLimiteConcurrencia(tareas, limite = 3) {
+  // Ejecutar máximo 3 tareas a la vez
+}
+```
+
+### **3. 📡 STREAMS Y DATA FLOW**
+
+```javascript
+// Para manejar datos en tiempo real, grandes volúmenes
+fetch("/api/datos-grandes").then((response) => {
+  const reader = response.body.getReader();
+  // Procesar datos en chunks
+});
+```
+
+### **4. 🛡️ CIRCUIT BREAKER PATTERN**
+
+```javascript
+// Más avanzado que retry - evita colapsar servicios caídos
+class CircuitBreaker {
+  // Estado: OPEN, HALF_OPEN, CLOSED
+}
+```
+
+### **5. ⚡ PERFORMANCE Y OPTIMIZACIÓN**
+
+```javascript
+// Debouncing, throttling para eventos
+function debounce(func, wait) {
+  // Agrupar múltiples llamadas
+}
+```
+
+### **6. 🔗 COMPOSICIÓN DE PROMESAS AVANZADA**
+
+```javascript
+// Promise.allSettled(), Promise.any(), encadenamiento complejo
+```
+
+### **7. 🌐 ASINCRONÍA EN NODE.JS**
+
+```javascript
+// nextTick, setImmediate, streams de Node.js
+process.nextTick(() => {
+  // Ejecutar después del event loop actual
+});
+```
+
+---
+
+## 🚀 **PROPUESTA DE CONTINUACIÓN**
+
+**3 caminos**:
+
+### **Opción 1: 🎯 PROFUNDIZAR EN LO ESENCIAL** (Recomendado)
+
+- **Error handling avanzado**
+- **Limitación de concurrencia**
+- **Debouncing/throttling**
+
+### **Opción 2: 🛠️ PATRONES DE DISEÑO**
+
+- **Circuit Breaker**
+- **Observer Pattern con async**
+- **Pub/Sub asincrónico**
+
+### **Opción 3: 🌐 ECOSISTEMA**
+
+- **Asincronía en Node.js**
+- **Web Workers**
+- **Service Workers**
