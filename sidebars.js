@@ -323,8 +323,6 @@ const sidebars = {
             "js/modulos",
             "js/depuracionCodigo",
             "js/asincronia",
-            "js/generators",
-            "js/proxies",
             {
               type: "category",
               label: "Api Rest",
