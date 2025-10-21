@@ -323,21 +323,6 @@ const sidebars = {
             "js/modulos",
             "js/depuracionCodigo",
             "js/asincronia",
-            {
-              type: "category",
-              label: "Api Rest",
-              collapsed: true,
-              items: [
-                "js/api/introduccion",
-                "js/api/metodosHTTP",
-                "js/api/endpoints",
-                "js/api/headers",
-                "js/api/codigosEstado",
-                "js/api/asyncAwait",
-                "js/api/autenticacionAutorizacion",
-                "js/api/casosAvanzados",
-              ],
-            },
           ],
         },
         {
