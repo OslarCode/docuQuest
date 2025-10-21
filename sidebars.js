@@ -257,12 +257,12 @@ const sidebars = {
             },
             {
               type: "category",
-              label: "Objetos",
+              label: "Objetos_Literales",
               collapsed: true,
               items: [
-                "js/objetos/objetos",
-                "js/objetos/this",
-                "js/objetos/todoSonObjetos",
+                "js/objetos_literales/objetos_literales",
+                "js/objetos_literales/this",
+                "js/objetos_literales/todoSonObjetos",
               ],
             },
             {

@@ -2121,3 +2121,1047 @@ async function obtenerDatosConTimeout() {
 - **Circuit breakers** para evitar colapsar servicios
 - **Timeouts** para operaciones lentas
 - **Fallbacks** (alternativas cuando el servicio principal falla)
+
+---
+
+# Conceptos sobre el mecanismo de la asincronía en JavaScript
+
+## 🧩 **¿Qué es el Event Loop?**
+
+Imagina un restaurante muy eficiente:
+
+### 🍽️ **Ejemplo del mundo real:**
+
+- **Cocina (Call Stack):** Donde se prepara un plato a la vez
+- **Mesas (Web APIs):** Donde los clientes esperan su comida
+- **Camarero (Event Loop):** Que constantemente verifica si la cocina está libre y trae nuevos pedidos
+
+### 💻 **Traducción a JavaScript:**
+
+El **Event Loop** es el mecanismo que permite a JavaScript manejar múltiples operaciones con un **solo hilo**, haciendo que parezca que hace varias cosas a la vez.
+
+## 🔧 **Los Componentes del Event Loop**
+
+### 1. **Call Stack (Pila de Llamadas)**
+
+```javascript
+function tarea1() {
+  console.log("Tarea 1");
+  tarea2(); // Se apila tarea2
+}
+
+function tarea2() {
+  console.log("Tarea 2"); // Se ejecuta
+  // tarea2 se desapila
+}
+
+tarea1(); // Se apila tarea1
+// tarea1 se desapila
+
+// Resultado:
+// Tarea 1
+// Tarea 2
+```
+
+### 2. **Web APIs**
+
+- `setTimeout`, `setInterval`
+- `fetch`, `XMLHttpRequest`
+- Eventos del DOM (clics, teclas)
+- `FileReader`
+
+### 3. **Callback Queue (Cola de Tareas)**
+
+### 4. **Microtask Queue (Cola de Microtareas)**
+
+## 💻 **Demo Interactivo: Visualizando el Event Loop**
+
+Aquí tienes un ejemplo completo que muestra cómo funciona:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Loop - Demo Visual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .sistema {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .componente {
+            border: 2px solid;
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 200px;
+        }
+        .call-stack { border-color: #dc3545; background: #f8d7da; }
+        .web-apis { border-color: #ffc107; background: #fff3cd; }
+        .task-queue { border-color: #28a745; background: #d4edda; }
+        .microtask-queue { border-color: #007bff; background: #cce7ff; }
+        .tarea {
+            background: white;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 4px solid;
+            font-size: 14px;
+        }
+        .sincrona { border-left-color: #dc3545; }
+        .settimeout { border-left-color: #ffc107; }
+        .promesa { border-left-color: #007bff; }
+        .evento { border-left-color: #28a745; }
+        button {
+            padding: 12px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-ejemplo { background: #007bff; color: white; }
+        .btn-limpiar { background: #6c757d; color: white; }
+        .explicacion {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .paso {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #6f42c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Event Loop en JavaScript</h1>
+        <p><strong>Definición sencilla:</strong> El "motor" que permite a JavaScript manejar operaciones asincrónicas con un solo hilo.</p>
+
+        <div class="explicacion">
+            <h3>🎯 ¿Cómo funciona?</h3>
+            <div class="paso">1. <strong>Call Stack:</strong> Ejecuta el código síncrono (una cosa a la vez)</div>
+            <div class="paso">2. <strong>Web APIs:</strong> Maneja operaciones asincrónicas (setTimeout, fetch, etc.)</div>
+            <div class="paso">3. <strong>Queues:</strong> Esperan callbacks listos para ejecutarse</div>
+            <div class="paso">4. <strong>Event Loop:</strong> Mueve callbacks al Call Stack cuando está vacío</div>
+        </div>
+
+        <div class="sistema">
+            <div class="componente call-stack">
+                <h3>🏗️ Call Stack</h3>
+                <p><em>Pila de llamadas - Una cosa a la vez</em></p>
+                <div id="stack-content"></div>
+            </div>
+
+            <div class="componente web-apis">
+                <h3>🌐 Web APIs</h3>
+                <p><em>Operaciones en segundo plano</em></p>
+                <div id="apis-content"></div>
+            </div>
+
+            <div class="componente task-queue">
+                <h3>📋 Task Queue</h3>
+                <p><em>Callbacks de setTimeout, eventos DOM</em></div>
+                <div id="task-queue-content"></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <div class="componente microtask-queue">
+                <h3>⚡ Microtask Queue</h3>
+                <p><em>Callbacks de Promesas - ALTA prioridad</em></p>
+                <div id="microtask-queue-content"></div>
+            </div>
+        </div>
+
+        <h2>🎯 Demo Interactivo</h2>
+
+        <button class="btn-ejemplo" onclick="ejecutarEjemploCompleto()">🚀 Ejecutar Ejemplo Completo</button>
+        <button class="btn-ejemplo" onclick="ejecutarEjemploMicrotasks()">⚡ Probar Microtasks vs Tasks</button>
+        <button class="btn-limpiar" onclick="limpiarTodo()">🗑️ Limpiar Todo</button>
+
+        <div id="consola" style="margin-top: 20px; font-family: 'Courier New', monospace; background: #2d2d2d; color: white; padding: 15px; border-radius: 5px;"></div>
+    </div>
+
+    <script>
+        // Elementos del DOM
+        const stackContent = document.getElementById('stack-content');
+        const apisContent = document.getElementById('apis-content');
+        const taskQueueContent = document.getElementById('task-queue-content');
+        const microtaskQueueContent = document.getElementById('microtask-queue-content');
+        const consola = document.getElementById('consola');
+
+        // Estado del sistema
+        let callStack = [];
+        let webAPIs = [];
+        let taskQueue = [];
+        let microtaskQueue = [];
+
+        function log(mensaje) {
+            consola.innerHTML += `<div>${new Date().toLocaleTimeString()}: ${mensaje}</div>`;
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        function actualizarVisualizacion() {
+            // Actualizar Call Stack
+            stackContent.innerHTML = callStack.map(tarea =>
+                `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`
+            ).join('');
+
+            // Actualizar Web APIs
+            apisContent.innerHTML = webAPIs.map(api =>
+                `<div class="tarea ${api.tipo}">${api.nombre} (${api.tiempoRestante}ms)</div>`
+            ).join('');
+
+            // Actualizar Task Queue
+            taskQueueContent.innerHTML = taskQueue.map(tarea =>
+                `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`
+            ).join('');
+
+            // Actualizar Microtask Queue
+            microtaskQueueContent.innerHTML = microtaskQueue.map(tarea =>
+                `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`
+            ).join('');
+        }
+
+        function limpiarTodo() {
+            callStack = [];
+            webAPIs = [];
+            taskQueue = [];
+            microtaskQueue = [];
+            consola.innerHTML = '';
+            actualizarVisualizacion();
+        }
+
+        function agregarAlStack(nombre, tipo = 'sincrona') {
+            callStack.push({ nombre, tipo });
+            log(`📥 Apilado: ${nombre}`);
+            actualizarVisualizacion();
+        }
+
+        function removerDelStack() {
+            if (callStack.length > 0) {
+                const tarea = callStack.pop();
+                log(`📤 Desapilado: ${tarea.nombre}`);
+                actualizarVisualizacion();
+                return tarea;
+            }
+        }
+
+        function simularWebAPI(nombre, tipo, duracion, callback) {
+            const api = {
+                nombre,
+                tipo,
+                tiempoRestante: duracion,
+                callback
+            };
+
+            webAPIs.push(api);
+            log(`🌐 Web API iniciada: ${nombre} (${duracion}ms)`);
+            actualizarVisualizacion();
+
+            // Simular el paso del tiempo
+            const interval = setInterval(() => {
+                api.tiempoRestante -= 100;
+
+                if (api.tiempoRestante <= 0) {
+                    clearInterval(interval);
+                    // Remover de Web APIs
+                    webAPIs = webAPIs.filter(a => a !== api);
+
+                    // Agregar a la cola correspondiente
+                    if (tipo === 'promesa') {
+                        microtaskQueue.push({ nombre: `Callback: ${nombre}`, tipo });
+                        log(`⚡ Microtask agregado: ${nombre}`);
+                    } else {
+                        taskQueue.push({ nombre: `Callback: ${nombre}`, tipo });
+                        log(`📋 Task agregado: ${nombre}`);
+                    }
+
+                    actualizarVisualizacion();
+                } else {
+                    actualizarVisualizacion();
+                }
+            }, 100);
+        }
+
+        function procesarEventLoop() {
+            // 1. Procesar todo el Call Stack primero
+            while (callStack.length > 0) {
+                removerDelStack();
+            }
+
+            // 2. Procesar TODAS las Microtasks (alta prioridad)
+            while (microtaskQueue.length > 0) {
+                const microtask = microtaskQueue.shift();
+                agregarAlStack(microtask.nombre, microtask.tipo);
+                setTimeout(() => removerDelStack(), 100);
+                log(`🎯 Microtask procesado: ${microtask.nombre}`);
+            }
+
+            // 3. Procesar UNA Task (baja prioridad)
+            if (taskQueue.length > 0) {
+                const task = taskQueue.shift();
+                agregarAlStack(task.nombre, task.tipo);
+                setTimeout(() => removerDelStack(), 100);
+                log(`📝 Task procesado: ${task.nombre}`);
+            }
+
+            actualizarVisualizacion();
+        }
+
+        // 1️⃣ EJEMPLO COMPLETO DEL EVENT LOOP
+        function ejecutarEjemploCompleto() {
+            limpiarTodo();
+            log('🚀 INICIANDO DEMO COMPLETO DEL EVENT LOOP');
+
+            // Código síncrono (se ejecuta inmediatamente)
+            agregarAlStack('script principal', 'sincrona');
+
+            // setTimeout (Web API → Task Queue)
+            setTimeout(() => {
+                simularWebAPI('setTimeout 100ms', 'settimeout', 100, () => {});
+            }, 10);
+
+            // Promesa (Web API → Microtask Queue)
+            setTimeout(() => {
+                simularWebAPI('Promise.resolve()', 'promesa', 50, () => {});
+            }, 20);
+
+            // Más código síncrono
+            setTimeout(() => {
+                agregarAlStack('console.log("Hola")', 'sincrona');
+                setTimeout(() => removerDelStack(), 100);
+            }, 30);
+
+            // Otro setTimeout
+            setTimeout(() => {
+                simularWebAPI('setTimeout 200ms', 'settimeout', 200, () => {});
+            }, 40);
+
+            // Procesar el event loop cada 300ms
+            let procesamientos = 0;
+            const interval = setInterval(() => {
+                procesarEventLoop();
+                procesamientos++;
+
+                if (procesamientos > 10) {
+                    clearInterval(interval);
+                    log('🏁 Demo completado');
+                }
+            }, 300);
+        }
+
+        // 2️⃣ EJEMPLO: MICROTASKS vs TASKS (¡IMPORTANTE!)
+        function ejecutarEjemploMicrotasks() {
+            limpiarTodo();
+            log('⚡ DEMO: MICROTASKS vs TASKS (PRIORIDAD)');
+
+            agregarAlStack('Inicio del script', 'sincrona');
+
+            // setTimeout (va a Task Queue - BAJA prioridad)
+            setTimeout(() => {
+                simularWebAPI('setTimeout 0ms', 'settimeout', 100, () => {});
+                log('⏰ setTimeout programado');
+            }, 10);
+
+            // Promesa (va a Microtask Queue - ALTA prioridad)
+            setTimeout(() => {
+                simularWebAPI('Promise.then()', 'promesa', 50, () => {});
+                log('🤝 Promesa programada');
+            }, 20);
+
+            // Evento de clic (simulado - va a Task Queue)
+            setTimeout(() => {
+                simularWebAPI('Evento click', 'evento', 80, () => {});
+                log('🖱️ Evento click simulado');
+            }, 30);
+
+            // Otra promesa
+            setTimeout(() => {
+                simularWebAPI('Promise.resolve().then()', 'promesa', 30, () => {});
+                log('🔁 Otra promesa programada');
+            }, 40);
+
+            // Procesar mostrando la prioridad
+            setTimeout(() => {
+                log('\n🎯 ORDEN DE EJECUCIÓN:');
+                log('1. Call Stack vacío');
+                log('2. MICROTASKS (Promesas) - TODAS primero');
+                log('3. TASKS (setTimeout, eventos) - UNA por vez');
+            }, 200);
+
+            let procesamientos = 0;
+            const interval = setInterval(() => {
+                procesarEventLoop();
+                procesamientos++;
+
+                if (procesamientos > 8) {
+                    clearInterval(interval);
+                    log('\n💡 CONCLUSIÓN: Las Microtasks tienen MÁS prioridad que las Tasks');
+                }
+            }, 400);
+        }
+
+        // Inicializar
+        actualizarVisualizacion();
+    </script>
+</body>
+</html>
+```
+
+## 🎯 **El Orden de Ejecución (¡CRUCIAL!)**
+
+```javascript
+console.log("1. 🟢 Script inicio"); // Call Stack
+
+setTimeout(() => {
+  console.log("6. ⏰ setTimeout"); // Task Queue
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("4. 🤝 Microtask 1"); // Microtask Queue
+});
+
+Promise.resolve().then(() => {
+  console.log("5. 🤝 Microtask 2"); // Microtask Queue
+});
+
+console.log("2. 🟡 Script medio"); // Call Stack
+
+queueMicrotask(() => {
+  console.log("3. ⚡ queueMicrotask"); // Microtask Queue
+});
+
+console.log("7. 🔴 Script fin"); // Call Stack
+
+// RESULTADO:
+// 1. 🟢 Script inicio
+// 2. 🟡 Script medio
+// 7. 🔴 Script fin
+// 4. 🤝 Microtask 1
+// 5. 🤝 Microtask 2
+// 3. ⚡ queueMicrotask
+// 6. ⏰ setTimeout
+```
+
+## 🔄 **Flujo del Event Loop Paso a Paso**
+
+### **Paso 1:** Ejecutar todo el **Call Stack**
+
+```javascript
+console.log("Sincrono 1");
+console.log("Sincrono 2");
+// Todo el código síncrono se ejecuta primero
+```
+
+### **Paso 2:** Procesar **TODAS** las Microtasks
+
+```javascript
+Promise.resolve().then(() => console.log("Microtask 1"));
+Promise.resolve().then(() => console.log("Microtask 2"));
+// Se ejecutan TODAS las microtasks antes de continuar
+```
+
+### **Paso 3:** Procesar **UNA** Task
+
+```javascript
+setTimeout(() => console.log("Task 1"), 0);
+setTimeout(() => console.log("Task 2"), 0);
+// Solo se ejecuta UNA task, luego vuelve al paso 1
+```
+
+### ✅ **Reglas del Event Loop:**
+
+1. **Call Stack primero** - Todo el código síncrono
+2. **Microtasks después** - Promesas, queueMicrotask (TODAS)
+3. **Tasks al final** - setTimeout, eventos (UNA por ciclo)
+
+### ⚡ **Microtasks (Alta Prioridad):**
+
+- `.then()`, `.catch()`, `.finally()` de Promesas
+- `queueMicrotask()`
+- `MutationObserver`
+
+### ⏰ **Tasks (Baja Prioridad):**
+
+- `setTimeout`, `setInterval`
+- Eventos del DOM (click, keypress)
+- `fetch` (la respuesta va a microtasks)
+- `requestAnimationFrame`
+
+### 🚨 **Errores Comunes:**
+
+- Pensar que `setTimeout(fn, 0)` se ejecuta inmediatamente
+- No entender por qué las promesas tienen prioridad
+- Creer que JavaScript es multi-hilo
+
+---
+
+## 🧩 **¿Qué es el Call Stack?**
+
+Imagina una pila de platos:
+
+### 🍽️ **Ejemplo del mundo real:**
+
+- Cuando lavas platos, **apilas** uno sobre otro
+- Cuando los guardas, **desapilas** empezando por el de arriba
+- Solo puedes tomar el plato de **arriba** de la pila
+
+### 💻 **Traducción a JavaScript:**
+
+El **Call Stack** es una estructura de datos que sigue el principio **LIFO** (Last In, First Out - Último en Entrar, Primero en Salir). Registra las funciones que se están ejecutando.
+
+## 🔧 **Cómo Funciona el Call Stack**
+
+### **Reglas Básicas:**
+
+1. **Apilar (Push):** Cuando llamas una función
+2. **Desapilar (Pop):** Cuando la función termina
+3. **Solo el tope:** Solo se puede ejecutar la función en el tope de la pila
+
+## 💻 **Demo Interactivo: Visualizando el Call Stack**
+
+Aquí tienes un ejemplo completo que muestra visualmente cómo se apilan y desapilan las funciones:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Call Stack - Demo Visual</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .call-stack {
+        border: 3px solid #dc3545;
+        border-radius: 10px;
+        padding: 20px;
+        background: #f8d7da;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 20px 0;
+      }
+      .funcion {
+        background: white;
+        padding: 15px;
+        margin: 5px 0;
+        border-radius: 8px;
+        border-left: 5px solid;
+        width: 80%;
+        text-align: center;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .funcion.entrando {
+        animation: entrar 0.5s ease;
+      }
+      .funcion.saliendo {
+        animation: salir 0.5s ease;
+      }
+      @keyframes entrar {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes salir {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+      }
+      .principal {
+        border-left-color: #dc3545;
+      }
+      .secundaria {
+        border-left-color: #007bff;
+      }
+      .terciaria {
+        border-left-color: #28a745;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .btn-ejecutar {
+        background: #28a745;
+        color: white;
+      }
+      .btn-paso {
+        background: #007bff;
+        color: white;
+      }
+      .btn-limpiar {
+        background: #6c757d;
+        color: white;
+      }
+      .controles {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+        flex-wrap: wrap;
+      }
+      .explicacion {
+        background: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+      .codigo {
+        background: #2d2d2d;
+        color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+      }
+      .consola {
+        background: #2d2d2d;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        margin: 15px 0;
+        min-height: 100px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏗️ Call Stack (Pila de Llamadas)</h1>
+      <p>
+        <strong>Definición sencilla:</strong> La "pila de platos" donde
+        JavaScript apila las funciones que está ejecutando.
+      </p>
+
+      <div class="explicacion">
+        <h3>🎯 Reglas del Call Stack:</h3>
+        <p>
+          ✅ <strong>LIFO:</strong> Last In, First Out (Último en entrar,
+          primero en salir)
+        </p>
+        <p>
+          ✅ <strong>Una a la vez:</strong> Solo se ejecuta la función en el
+          tope de la pila
+        </p>
+        <p>
+          ✅ <strong>Bloqueante:</strong> Si una función tarda, todo se detiene
+        </p>
+      </div>
+
+      <h2>📊 Call Stack en Tiempo Real</h2>
+      <div class="call-stack" id="callStack">
+        <div class="funcion principal" style="opacity: 0.7;">
+          [BASE] Contexto Global
+        </div>
+      </div>
+
+      <div class="controles">
+        <button class="btn-ejecutar" onclick="ejecutarEjemploCompleto()">
+          🚀 Ejecutar Ejemplo Completo
+        </button>
+        <button class="btn-paso" onclick="ejecutarPasoAPaso()">
+          👣 Ejecutar Paso a Paso
+        </button>
+        <button class="btn-limpiar" onclick="limpiarStack()">
+          🗑️ Limpiar Stack
+        </button>
+      </div>
+
+      <h3>📝 Código que se ejecutará:</h3>
+      <div class="codigo">
+        function funcionA() {<br />
+        &nbsp;&nbsp;console.log("🔵 Entrando a función A");<br />
+        &nbsp;&nbsp;funcionB(); // Llama a B desde A<br />
+        &nbsp;&nbsp;console.log("🔵 Saliendo de función A");<br />
+        }<br /><br />
+        function funcionB() {<br />
+        &nbsp;&nbsp;console.log("🟢 Entrando a función B");<br />
+        &nbsp;&nbsp;funcionC(); // Llama a C desde B<br />
+        &nbsp;&nbsp;console.log("🟢 Saliendo de función B");<br />
+        }<br /><br />
+        function funcionC() {<br />
+        &nbsp;&nbsp;console.log("🟡 Entrando a función C");<br />
+        &nbsp;&nbsp;console.log("🟡 Ejecutando código en C");<br />
+        &nbsp;&nbsp;console.log("🟡 Saliendo de función C");<br />
+        }<br /><br />
+        // Llamada inicial<br />
+        funcionA();
+      </div>
+
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
+    </div>
+
+    <script>
+      // Elementos del DOM
+      const callStackElement = document.getElementById("callStack");
+      const consolaElement = document.getElementById("consola");
+
+      // Estado del stack
+      let callStack = ["[BASE] Contexto Global"];
+      let ejecucionEnCurso = false;
+
+      function log(mensaje) {
+        consolaElement.innerHTML += `<div>${mensaje}</div>`;
+        consolaElement.scrollTop = consolaElement.scrollHeight;
+      }
+
+      function actualizarStackVisual() {
+        callStackElement.innerHTML = "";
+
+        callStack.forEach((funcion, index) => {
+          const div = document.createElement("div");
+          div.className = `funcion ${
+            funcion.includes("A")
+              ? "principal"
+              : funcion.includes("B")
+              ? "secundaria"
+              : funcion.includes("C")
+              ? "terciaria"
+              : "principal"
+          }`;
+          div.textContent = funcion;
+
+          if (index === callStack.length - 1 && callStack.length > 1) {
+            div.classList.add("entrando");
+          }
+
+          callStackElement.appendChild(div);
+        });
+      }
+
+      function apilarFuncion(nombreFuncion) {
+        callStack.push(nombreFuncion);
+        log(`📥 APILANDO: ${nombreFuncion}`);
+        actualizarStackVisual();
+      }
+
+      function desapilarFuncion() {
+        if (callStack.length > 1) {
+          const funcion = callStack.pop();
+          log(`📤 DESAPILANDO: ${funcion}`);
+          actualizarStackVisual();
+          return funcion;
+        }
+      }
+
+      function limpiarStack() {
+        callStack = ["[BASE] Contexto Global"];
+        consolaElement.innerHTML = "";
+        actualizarStackVisual();
+        ejecucionEnCurso = false;
+      }
+
+      // 1️⃣ EJEMPLO COMPLETO AUTOMÁTICO
+      async function ejecutarEjemploCompleto() {
+        if (ejecucionEnCurso) return;
+        ejecucionEnCurso = true;
+        limpiarStack();
+
+        log("🚀 INICIANDO EJECUCIÓN COMPLETA");
+
+        // Simulamos las funciones del ejemplo
+        async function funcionA() {
+          apilarFuncion("funcionA()");
+          await delay(1000);
+          log("🔵 Ejecutando código en A...");
+
+          // Llamada a funcionB
+          await funcionB();
+
+          log("🔵 Finalizando código en A...");
+          await delay(500);
+          desapilarFuncion();
+        }
+
+        async function funcionB() {
+          apilarFuncion("funcionB()");
+          await delay(1000);
+          log("🟢 Ejecutando código en B...");
+
+          // Llamada a funcionC
+          await funcionC();
+
+          log("🟢 Finalizando código en B...");
+          await delay(500);
+          desapilarFuncion();
+        }
+
+        async function funcionC() {
+          apilarFuncion("funcionC()");
+          await delay(1000);
+          log("🟡 Ejecutando código en C...");
+          await delay(500);
+          log("🟡 Más código en C...");
+          await delay(500);
+          desapilarFuncion();
+        }
+
+        function delay(ms) {
+          return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+
+        // Ejecutar
+        await funcionA();
+        log("🎯 ¡Ejecución completada!");
+        ejecucionEnCurso = false;
+      }
+
+      // 2️⃣ EJEMPLO PASO A PASO (INTERACTIVO)
+      let pasoActual = 0;
+      const pasos = [
+        { accion: "inicio", mensaje: "👋 Preparado para ejecutar paso a paso" },
+        {
+          accion: "apilar",
+          funcion: "funcionA()",
+          mensaje: "📥 Llamando a funcionA()",
+        },
+        { accion: "log", mensaje: "🔵 Ejecutando código en A..." },
+        {
+          accion: "apilar",
+          funcion: "funcionB()",
+          mensaje: "📥 funcionA() llama a funcionB()",
+        },
+        { accion: "log", mensaje: "🟢 Ejecutando código en B..." },
+        {
+          accion: "apilar",
+          funcion: "funcionC()",
+          mensaje: "📥 funcionB() llama a funcionC()",
+        },
+        { accion: "log", mensaje: "🟡 Ejecutando código en C..." },
+        { accion: "log", mensaje: "🟡 Más código en C..." },
+        { accion: "desapilar", mensaje: "📤 funcionC() termina - se desapila" },
+        { accion: "log", mensaje: "🟢 Volviendo a funcionB()..." },
+        { accion: "desapilar", mensaje: "📤 funcionB() termina - se desapila" },
+        { accion: "log", mensaje: "🔵 Volviendo a funcionA()..." },
+        { accion: "desapilar", mensaje: "📤 funcionA() termina - se desapila" },
+        { accion: "fin", mensaje: "🎉 ¡Todas las funciones completadas!" },
+      ];
+
+      function ejecutarPasoAPaso() {
+        if (ejecucionEnCurso) return;
+
+        if (pasoActual === 0) {
+          limpiarStack();
+          ejecucionEnCurso = true;
+        }
+
+        if (pasoActual >= pasos.length) {
+          pasoActual = 0;
+          ejecucionEnCurso = false;
+          return;
+        }
+
+        const paso = pasos[pasoActual];
+
+        switch (paso.accion) {
+          case "apilar":
+            apilarFuncion(paso.funcion);
+            break;
+          case "desapilar":
+            desapilarFuncion();
+            break;
+          case "log":
+            log(paso.mensaje);
+            break;
+          case "inicio":
+          case "fin":
+            log(paso.mensaje);
+            break;
+        }
+
+        pasoActual++;
+      }
+
+      // 3️⃣ EJEMPLO DE STACK OVERFLOW
+      function demostrarStackOverflow() {
+        log("⚠️ DEMOSTRACIÓN DE STACK OVERFLOW");
+
+        function funcionRecursiva(contador) {
+          apilarFuncion(`funcionRecursiva(${contador})`);
+
+          if (contador <= 0) {
+            desapilarFuncion();
+            return;
+          }
+
+          // Llamada recursiva sin condición de salida adecuada
+          funcionRecursiva(contador - 1);
+          desapilarFuncion();
+        }
+
+        // Esto causaría stack overflow en la vida real
+        log("💥 Demostración: Llamadas recursivas profundas");
+      }
+
+      // Inicializar
+      actualizarStackVisual();
+    </script>
+  </body>
+</html>
+```
+
+## 🔄 **Ejemplo Sencillo: Cómo se Apilan las Funciones**
+
+```javascript
+function saludar() {
+  console.log("Hola");
+  despedirse(); // Se apila despedirse()
+  console.log("Saludo completado");
+  // Se desapila saludar()
+}
+
+function despedirse() {
+  console.log("Adiós");
+  // Se desapila despedirse()
+}
+
+saludar(); // Se apila saludar()
+
+// ORDEN DE EJECUCIÓN:
+// 1. 📥 saludar() se apila
+// 2. 📥 despedirse() se apila (desde dentro de saludar)
+// 3. 📤 despedirse() se desapila (cuando termina)
+// 4. 📤 saludar() se desapila (cuando termina)
+```
+
+## 🎯 **El Proceso Visual del Call Stack**
+
+### **Estado Inicial:**
+
+```
+Call Stack:
+[ ] (vacío)
+```
+
+### **Paso 1: Llamar funcionA()**
+
+```
+Call Stack:
+[ funcionA() ]
+```
+
+### **Paso 2: funcionA() llama a funcionB()**
+
+```
+Call Stack:
+[ funcionA() ]
+[ funcionB() ]  ← TOPE (se ejecuta esta)
+```
+
+### **Paso 3: funcionB() llama a funcionC()**
+
+```
+Call Stack:
+[ funcionA() ]
+[ funcionB() ]
+[ funcionC() ]  ← TOPE (se ejecuta esta)
+```
+
+### **Paso 4: funcionC() termina**
+
+```
+Call Stack:
+[ funcionA() ]
+[ funcionB() ]  ← TOPE (vuelve a ejecutar esta)
+```
+
+### **Paso 5: funcionB() termina**
+
+```
+Call Stack:
+[ funcionA() ]  ← TOPE (vuelve a ejecutar esta)
+```
+
+### **Paso 6: funcionA() termina**
+
+```
+Call Stack:
+[ ] (vacío otra vez)
+```
+
+## 🚨 **Stack Overflow (Desbordamiento de Pila)**
+
+```javascript
+// ⚠️ ESTO CAUSA STACK OVERFLOW!
+function funcionInfinita() {
+  funcionInfinita(); // ¡Se llama a sí misma infinitamente!
+}
+
+funcionInfinita();
+
+// RESULTADO:
+// Call Stack:
+// [ funcionInfinita() ]
+// [ funcionInfinita() ]
+// [ funcionInfinita() ]
+// [ funcionInfinita() ]
+// ... (se llena la memoria) ...
+// 💥 ERROR: Maximum call stack size exceeded
+```
+
+### ✅ **Características del Call Stack:**
+
+- **LIFO:** Último en entrar, primero en salir
+- **Una operación a la vez:** Solo ejecuta la función del tope
+- **Sincrónico:** Si una función tarda, bloquea todo
+- **Tamaño limitado:** Puede desbordarse (stack overflow)
+
+### 🔍 **Para Depurar:**
+
+- Usa `console.trace()` para ver el stack actual
+- Los errores muestran el "stack trace"
+- Las herramientas de desarrollo muestran el call stack
+
+### ⚠️ **Problemas Comunes:**
+
+- **Stack Overflow:** Recursión infinita
+- **Bloqueo:** Funciones síncronas que tardan mucho
+- **Callbacks profundos:** Mucha anidación
