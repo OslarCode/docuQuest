@@ -19,27 +19,8 @@ const sidebars = {
           items: [
             "internet/fundamentos",
             "internet/historia",
-            "internet/https",
-            "internet/dominiosDNSHosting",
-            "internet/trafico",
-            "internet/navegadores",
-            {
-              type: "category",
-              label: "Google",
-              collapsed: true,
-              items: [
-                "internet/google/google",
-                "internet/google/pageRank",
-                "internet/google/hummingbird",
-                "internet/google/rankbrain",
-                "internet/google/SEO",
-                "internet/google/SEM",
-                "internet/google/googlebot",
-              ],
-            },
             "internet/conectando",
-            "internet/cloudflareEdgeComputing",
-            "internet/webSocketsHTTP2",
+            "internet/navegadores",
           ],
         },
         {
