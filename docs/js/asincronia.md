@@ -125,7 +125,6 @@ Aquí tienes un ejemplo práctico que puedes probar:
     </script>
   </body>
 </html>
-
 ```
 
 ## 🧠 **¿Qué está pasando aquí?**
@@ -154,7 +153,7 @@ Sin embargo, también implica desafíos: el **manejo de errores** puede ser más
 
 La asincronía en JavaScript se gestiona mediante tres mecanismos principales:
 
-- **Callbacks**, funciones que se ejecutan tras completar una tarea, pero que pueden complicar el código (problema conocido como *callback hell*).
+- **Callbacks**, funciones que se ejecutan tras completar una tarea, pero que pueden complicar el código (problema conocido como _callback hell_).
 - **Promesas**, que ofrecen una forma más estructurada de manejar tareas asincrónicas y sus posibles resultados (éxito o error).
 - **Async/Await**, que permite escribir código asincrónico de forma legible y parecida al código tradicional, facilitando el manejo y comprensión del flujo del programa.
 
@@ -196,7 +195,6 @@ saludar("María", despedirse);
 // Resultado en consola:
 // 👋 Hola María
 // ¡Hasta luego!
-
 ```
 
 ### **Ejemplo 2: Callback ASINCRÓNICO (con setTimeout)**
@@ -229,7 +227,6 @@ console.log("📝 Mientras tanto, puedo seguir haciendo otras cosas...");
 // (espera 2 segundos...)
 // ✅ Terminado: lavar platos
 // 🎉 ¡Callback ejecutado! La tarea terminó
-
 ```
 
 ## 📁 **Ejemplo Real: Callbacks con FileReader**
@@ -387,7 +384,6 @@ Aquí tienes el ejemplo práctico que puedes probar:
     </script>
   </body>
 </html>
-
 ```
 
 ### ✅ **Ventajas:**
@@ -431,7 +427,6 @@ comprarIngredientes(function (ingredientes) {
     });
   });
 });
-
 ```
 
 ### 💻 **Ejemplo Real: Callback Hell en Acción**
@@ -681,7 +676,6 @@ Aquí tienes un demo interactivo para que veas el problema:
     </script>
   </body>
 </html>
-
 ```
 
 ### 🎯 **Los Problemas del Callback Hell**
@@ -701,7 +695,6 @@ tarea1(function () {
     });
   });
 });
-
 ```
 
 ### 2. **❌ Manejo de Errores Complicado**
@@ -732,7 +725,6 @@ tarea1(
     // Error en tarea1
   }
 );
-
 ```
 
 ### 3. **🔄 Díficil de Reutilizar**
@@ -750,7 +742,6 @@ function procesoCompleto(callback) {
     });
   });
 }
-
 ```
 
 ### 4. **🐛 Díficil de Depurar**
@@ -786,7 +777,6 @@ procesarPago(function (pagoExitoso) {
     console.log("❌ Pago falló");
   }
 });
-
 ```
 
 ### 🔥 **Señales de Callback Hell:**
@@ -814,9 +804,9 @@ Imagina que le pides a un amigo que te traiga un libro de la biblioteca:
 
 - Tu amigo te dice: "**Te prometo** que te traeré el libro"
 - La promesa puede tener 3 estados:
-    - **📝 Pendiente:** Está yendo a la biblioteca
-    - ✅ **Cumplida:** Te trae el libro
-    - ❌ **Rechazada:** No había libros o la biblioteca estaba cerrada
+  - **📝 Pendiente:** Está yendo a la biblioteca
+  - ✅ **Cumplida:** Te trae el libro
+  - ❌ **Rechazada:** No había libros o la biblioteca estaba cerrada
 
 ### 💻 **Traducción a JavaScript:**
 
@@ -846,7 +836,6 @@ miPromesa
   .catch((error) => {
     console.log(error); // Se ejecuta si se RECHAZA
   });
-
 ```
 
 ### 💻 **Ejemplo Real: Demo Interactivo de Promesas**
@@ -910,80 +899,80 @@ Aquí tienes un ejemplo completo que puedes probar:
 ```
 
 ```css
-			body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        background: #f5f5f5;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .estado {
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 5px;
-        text-align: center;
-        font-weight: bold;
-      }
-      .pendiente {
-        background: #fff3cd;
-        color: #856404;
-        border: 2px dashed #ffc107;
-      }
-      .cumplida {
-        background: #d4edda;
-        color: #155724;
-        border: 2px solid #28a745;
-      }
-      .rechazada {
-        background: #f8d7da;
-        color: #721c24;
-        border: 2px solid #dc3545;
-      }
-      button {
-        padding: 12px 20px;
-        margin: 10px 5px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      .btn-exito {
-        background: #28a745;
-        color: white;
-      }
-      .btn-error {
-        background: #dc3545;
-        color: white;
-      }
-      .btn-ejemplo {
-        background: #007bff;
-        color: white;
-      }
-      .ejemplo {
-        background: #e9ecef;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 15px 0;
-        border-left: 4px solid #007bff;
-      }
-      .codigo {
-        background: #2d2d2d;
-        color: #f8f9fa;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-      }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.estado {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.pendiente {
+  background: #fff3cd;
+  color: #856404;
+  border: 2px dashed #ffc107;
+}
+.cumplida {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #28a745;
+}
+.rechazada {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #dc3545;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-exito {
+  background: #28a745;
+  color: white;
+}
+.btn-error {
+  background: #dc3545;
+  color: white;
+}
+.btn-ejemplo {
+  background: #007bff;
+  color: white;
+}
+.ejemplo {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  border-left: 4px solid #007bff;
+}
+.codigo {
+  background: #2d2d2d;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+}
 ```
 
 ```jsx
- // Obtenemos del DOM (documento HTML) el elemento con id="resultado".
+// Obtenemos del DOM (documento HTML) el elemento con id="resultado".
 // Este será el contenedor donde mostraremos mensajes en pantalla.
 const resultado = document.getElementById("resultado");
 
@@ -1194,7 +1183,6 @@ hacerTarea1(
     console.error("Error en tarea 1:", error1);
   }
 );
-
 ```
 
 ### ✅ **AHORA (con Promesas):**
@@ -1211,7 +1199,6 @@ hacerTarea1()
     // ¡UN SOLO manejador de errores para TODAS las tareas!
     console.error("Algo falló:", error);
   });
-
 ```
 
 ### ✅ **Ventajas de las Promesas:**
@@ -1264,7 +1251,6 @@ async function miFuncion() {
 function miFuncion() {
   return algunaPromesa().then((resultado) => resultado);
 }
-
 ```
 
 ### 💻 **Ejemplo Real: Demo Interactivo de Async/Await**
@@ -1338,83 +1324,83 @@ Aquí tienes un ejemplo completo que puedes probar:
 ```
 
 ```css
-  body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        background: #f5f5f5;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .paso {
-        padding: 12px;
-        margin: 8px 0;
-        border-radius: 5px;
-        border-left: 4px solid;
-      }
-      .info {
-        background: #d1ecf1;
-        border-color: #17a2b8;
-      }
-      .exito {
-        background: #d4edda;
-        border-color: #28a745;
-      }
-      .error {
-        background: #f8d7da;
-        border-color: #dc3545;
-      }
-      .espera {
-        background: #fff3cd;
-        border-color: #ffc107;
-      }
-      button {
-        padding: 12px 20px;
-        margin: 10px 5px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      .btn-ejemplo {
-        background: #007bff;
-        color: white;
-      }
-      .btn-comparar {
-        background: #6f42c1;
-        color: white;
-      }
-      .comparacion {
-        display: flex;
-        gap: 20px;
-        margin: 20px 0;
-      }
-      .columna {
-        flex: 1;
-        padding: 15px;
-        border-radius: 5px;
-      }
-      .promesas {
-        background: #e7f3ff;
-        border: 2px solid #007bff;
-      }
-      .async-await {
-        background: #f0e7ff;
-        border: 2px solid #6f42c1;
-      }
-      .codigo {
-        background: #2d2d2d;
-        color: #f8f9fa;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-      }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.paso {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border-left: 4px solid;
+}
+.info {
+  background: #d1ecf1;
+  border-color: #17a2b8;
+}
+.exito {
+  background: #d4edda;
+  border-color: #28a745;
+}
+.error {
+  background: #f8d7da;
+  border-color: #dc3545;
+}
+.espera {
+  background: #fff3cd;
+  border-color: #ffc107;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-ejemplo {
+  background: #007bff;
+  color: white;
+}
+.btn-comparar {
+  background: #6f42c1;
+  color: white;
+}
+.comparacion {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+.columna {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+}
+.promesas {
+  background: #e7f3ff;
+  border: 2px solid #007bff;
+}
+.async-await {
+  background: #f0e7ff;
+  border: 2px solid #6f42c1;
+}
+.codigo {
+  background: #2d2d2d;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+}
 ```
 
 ```jsx
@@ -1518,7 +1504,6 @@ async function ejecutarProcesoCompleto() {
 
     // Si llegamos hasta aquí, ningún paso falló.
     mostrarPaso("🎉 ¡Todo el proceso completado exitosamente!", "exito");
-
   } catch (error) {
     // Si ocurre cualquier error en CUALQUIER 'await', el flujo salta directamente aquí.
     mostrarPaso(error, "error");
@@ -1592,7 +1577,6 @@ async function procesoConPosibleError() {
       // Si "no hay suerte", forzamos un error intencional
       await simularTareaConError("Obtención de datos", 1000);
     }
-
   } catch (error) {
     // Captura cualquier error que ocurra dentro del bloque try
     mostrarPaso(`💥 Error capturado: ${error}`, "error");
@@ -1600,7 +1584,6 @@ async function procesoConPosibleError() {
     // Aquí podrías implementar lógica de recuperación,
     // como reintentar la petición o mostrar un mensaje al usuario.
     mostrarPaso("🔄 Intentando recuperación...", "info");
-
   } finally {
     // finally() se ejecuta siempre, haya error o no.
     mostrarPaso("🏁 Este código se ejecuta SIEMPRE (éxito o error)", "info");
@@ -1629,7 +1612,6 @@ function cargarDatosUsuario() {
       console.error("Error:", error);
     });
 }
-
 ```
 
 ### ✅ **AHORA (con Async/Await):**
@@ -1646,7 +1628,6 @@ async function cargarDatosUsuario() {
     console.error("Error:", error);
   }
 }
-
 ```
 
 ## 🎯 **Reglas Básicas de Async/Await**
@@ -1692,7 +1673,6 @@ async function procesoSeguro() {
     return null;
   }
 }
-
 ```
 
 ## 💡 **Ejemplo del Mundo Real: Proceso de Compra**
@@ -1729,7 +1709,6 @@ async function procesarCompra(usuarioId, productos) {
 procesarCompra(123, ["producto1", "producto2"])
   .then((factura) => console.log("Factura:", factura))
   .catch((error) => console.error("Falló:", error));
-
 ```
 
 ### ✅ **Ventajas de Async/Await:**
@@ -1835,7 +1814,7 @@ leerArchivo("mi-documento.txt", (error, contenido) => {
  * 📜 leerArchivoPromesa(nombreArchivo)
  * Esta función devuelve una PROMESA.
  * Ya no necesitamos usar callbacks manualmente como en el patrón anterior.
- * 
+ *
  * @param {string} nombreArchivo - Nombre del archivo a "leer".
  * @returns {Promise<string>} - Una promesa que:
  *   - ✅ se resuelve con el contenido si el archivo existe.
@@ -1887,7 +1866,7 @@ leerArchivoPromesa("mi-documento.txt")
  * 📜 procesarArchivo()
  * Esta función usa async/await para leer un archivo de forma asíncrona
  * sin necesidad de encadenar callbacks ni then().
- * 
+ *
  * 👉 'async' indica que esta función SIEMPRE devolverá una promesa.
  * 👉 'await' pausa la ejecución dentro de esta función hasta que la promesa termine.
  */
@@ -1900,7 +1879,6 @@ async function procesarArchivo() {
 
     // ✅ Si todo salió bien, esta línea se ejecuta con el contenido correcto.
     console.log("Contenido:", contenido);
-
   } catch (error) {
     // ❌ Si la promesa fue rechazada (por ejemplo, si el archivo no existe),
     // el flujo salta directamente aquí y 'error' contiene el mensaje del reject.
@@ -1980,96 +1958,96 @@ Aquí tienes un ejemplo completo que puedes probar:
 ```
 
 ```css
- body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        background: #f5f5f5;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .resultado {
-        padding: 12px;
-        margin: 8px 0;
-        border-radius: 5px;
-        border-left: 4px solid;
-      }
-      .exito {
-        background: #d4edda;
-        border-color: #28a745;
-      }
-      .error {
-        background: #f8d7da;
-        border-color: #dc3545;
-      }
-      .advertencia {
-        background: #fff3cd;
-        border-color: #ffc107;
-      }
-      .info {
-        background: #d1ecf1;
-        border-color: #17a2b8;
-      }
-      button {
-        padding: 12px 20px;
-        margin: 10px 5px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      .btn-exito {
-        background: #28a745;
-        color: white;
-      }
-      .btn-error {
-        background: #dc3545;
-        color: white;
-      }
-      .btn-api {
-        background: #007bff;
-        color: white;
-      }
-      .btn-reintento {
-        background: #6f42c1;
-        color: white;
-      }
-      .metodos {
-        display: flex;
-        gap: 20px;
-        margin: 20px 0;
-      }
-      .metodo {
-        flex: 1;
-        padding: 15px;
-        border-radius: 5px;
-        border: 2px solid;
-      }
-      .callbacks {
-        border-color: #ffc107;
-        background: #fffbf0;
-      }
-      .promesas {
-        border-color: #17a2b8;
-        background: #f0f9ff;
-      }
-      .async-await {
-        border-color: #28a745;
-        background: #f0fff4;
-      }
-      .codigo {
-        background: #2d2d2d;
-        color: #f8f9fa;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-      }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.resultado {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border-left: 4px solid;
+}
+.exito {
+  background: #d4edda;
+  border-color: #28a745;
+}
+.error {
+  background: #f8d7da;
+  border-color: #dc3545;
+}
+.advertencia {
+  background: #fff3cd;
+  border-color: #ffc107;
+}
+.info {
+  background: #d1ecf1;
+  border-color: #17a2b8;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-exito {
+  background: #28a745;
+  color: white;
+}
+.btn-error {
+  background: #dc3545;
+  color: white;
+}
+.btn-api {
+  background: #007bff;
+  color: white;
+}
+.btn-reintento {
+  background: #6f42c1;
+  color: white;
+}
+.metodos {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+.metodo {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid;
+}
+.callbacks {
+  border-color: #ffc107;
+  background: #fffbf0;
+}
+.promesas {
+  border-color: #17a2b8;
+  background: #f0f9ff;
+}
+.async-await {
+  border-color: #28a745;
+  background: #f0fff4;
+}
+.codigo {
+  background: #2d2d2d;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+}
 ```
 
 ```jsx
@@ -2082,10 +2060,10 @@ const resultado = document.getElementById("resultado");
  * y le inserta un timestamp + el mensaje, para mostrarlo en pantalla.
  */
 function mostrarResultado(mensaje, tipo = "info") {
-  const div = document.createElement("div");          // Creamos el nodo <div>
-  div.className = `resultado ${tipo}`;                // Clases CSS para estilado
+  const div = document.createElement("div"); // Creamos el nodo <div>
+  div.className = `resultado ${tipo}`; // Clases CSS para estilado
   div.innerHTML = `${new Date().toLocaleTimeString()}: ${mensaje}`; // Hora + texto
-  resultado.appendChild(div);                         // Lo añadimos al contenedor
+  resultado.appendChild(div); // Lo añadimos al contenedor
 }
 
 /**
@@ -2134,7 +2112,10 @@ function operacionAsincrona(nombre, probabilidadExito = 0.7) {
  */
 async function probarOperacionExitosa() {
   limpiarResultado();
-  mostrarResultado("🚀 Iniciando operación que probablemente tendrá éxito...", "info");
+  mostrarResultado(
+    "🚀 Iniciando operación que probablemente tendrá éxito...",
+    "info"
+  );
 
   try {
     // Esperamos a que la promesa se resuelva; si falla, saltará al catch
@@ -2157,7 +2138,10 @@ async function probarOperacionExitosa() {
  */
 async function probarOperacionFallida() {
   limpiarResultado();
-  mostrarResultado("🚀 Iniciando operación que probablemente fallará...", "info");
+  mostrarResultado(
+    "🚀 Iniciando operación que probablemente fallará...",
+    "info"
+  );
 
   try {
     const resultado = await operacionAsincrona("Proceso riesgoso", 0.2);
@@ -2165,7 +2149,10 @@ async function probarOperacionFallida() {
   } catch (error) {
     // Mostramos el error y damos respuestas “amigables”/alternativas
     mostrarResultado(error, "error");
-    mostrarResultado("💡 Mostrando mensaje amigable al usuario...", "advertencia");
+    mostrarResultado(
+      "💡 Mostrando mensaje amigable al usuario...",
+      "advertencia"
+    );
     mostrarResultado("🔄 Ofreciendo alternativas...", "info");
   }
 }
@@ -2185,7 +2172,9 @@ async function simularLlamadaAPI() {
 
   try {
     // Hacemos la petición; OJO: la URL debe ir como string plano sin <>
-    const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users/1"
+    );
 
     // fetch NO lanza error en 4xx/5xx; hay que revisar response.ok y status
     if (!response.ok) {
@@ -2202,7 +2191,6 @@ async function simularLlamadaAPI() {
     const usuario = await response.json();
     mostrarResultado(`✅ Usuario obtenido: ${usuario.name}`, "exito");
     mostrarResultado(`📧 Email: ${usuario.email}`, "exito");
-
   } catch (error) {
     // Diferenciamos por tipo y/o mensaje
     if (error.name === "TypeError" && String(error.message).includes("fetch")) {
@@ -2213,7 +2201,10 @@ async function simularLlamadaAPI() {
     } else if (String(error.message).includes("500")) {
       mostrarResultado("🖥️ Error del servidor, intenta más tarde", "error");
     } else {
-      mostrarResultado(`💥 Error inesperado: ${error.message || error}`, "error");
+      mostrarResultado(
+        `💥 Error inesperado: ${error.message || error}`,
+        "error"
+      );
     }
   }
 }
@@ -2236,11 +2227,14 @@ async function probarReintentos() {
 
     for (let intento = 1; intento <= maxReintentos; intento++) {
       try {
-        mostrarResultado(`📝 Intento ${intento} de ${maxReintentos}...`, "info");
+        mostrarResultado(
+          `📝 Intento ${intento} de ${maxReintentos}...`,
+          "info"
+        );
         const resultado = await operacion(); // Ejecutamos la operación
-        return resultado;                    // Si va bien, devolvemos y salimos
+        return resultado; // Si va bien, devolvemos y salimos
       } catch (error) {
-        ultimoError = error;                 // Guardamos el último error
+        ultimoError = error; // Guardamos el último error
         // ⚠️ OJO: si error es string, error.message será undefined (ver nota final)
         const msg = error?.message ?? String(error);
         mostrarResultado(`⚠️ Intento ${intento} falló: ${msg}`, "advertencia");
@@ -2248,7 +2242,10 @@ async function probarReintentos() {
         // Si aún quedan intentos, esperamos (backoff lineal)
         if (intento < maxReintentos) {
           const espera = intento * 1000; // 1s, 2s, 3s...
-          mostrarResultado(`⏳ Esperando ${espera}ms antes de reintentar...`, "info");
+          mostrarResultado(
+            `⏳ Esperando ${espera}ms antes de reintentar...`,
+            "info"
+          );
           await new Promise((resolve) => setTimeout(resolve, espera));
         }
       }
@@ -2315,24 +2312,25 @@ Usamos `fetch()` para hacer una petición, como mandar a nuestro camarero. Pero 
 
 ```jsx
 // Enviar a nuestro "camarero" (fetch) a por datos
-fetch('<https://api.ejemplo.com/datos>')
-  .then(response => {
+fetch("<https://api.ejemplo.com/datos>")
+  .then((response) => {
     // ¡Oh! El camarero volvió, pero quizás con malas noticias
     if (!response.ok) {
-      throw new Error(`¡Error ${response.status}! La bodega no pudo darnos el vino.`);
+      throw new Error(
+        `¡Error ${response.status}! La bodega no pudo darnos el vino.`
+      );
     }
     return response.json(); // Todo bien, leemos los datos (el vino)
   })
-  .then(datos => {
+  .then((datos) => {
     console.log("¡Éxito! Aquí están los datos:", datos);
     // Aquí mostramos los datos en la página web
   })
-  .catch(error => {
+  .catch((error) => {
     // ¡Zona de rescate! Aquí capturamos CUALQUIER error del viaje.
     console.error("Algo salió mal en el viaje:", error.message);
     // Mostramos un mensaje bonito al usuario: "Lo sentimos, no hay datos por un problema de conexión"
   });
-
 ```
 
 **¿Qué está pasando aquí?**
@@ -2378,7 +2376,6 @@ async function obtenerDatos() {
     // ✅ Si la respuesta fue correcta, parseamos el cuerpo como JSON
     // y lo devolvemos al que llame a esta función
     return await response.json();
-
   } catch (error) {
     // 🚨 Si ocurre algún error durante el fetch o el parseo, se captura aquí.
 
@@ -2391,22 +2388,19 @@ async function obtenerDatos() {
     }
   }
 }
-
 ```
 
 👉 **Qué debes entender aquí**:
 
 - `fetch()` devuelve una promesa que:
-    - **Se resuelve siempre**, aunque la respuesta sea 404 o 500.
-    - **Se rechaza** solo si hay un problema de red (por ejemplo, no hay internet o la URL es inválida).
+  - **Se resuelve siempre**, aunque la respuesta sea 404 o 500.
+  - **Se rechaza** solo si hay un problema de red (por ejemplo, no hay internet o la URL es inválida).
 - `response.ok` es un booleano que vale `true` solo si el código HTTP está entre 200 y 299.
-    
-    Si no lo está, tú mismo debes lanzar un `Error` manual (como se hace con `throw new Error(...)`).
-    
+  Si no lo está, tú mismo debes lanzar un `Error` manual (como se hace con `throw new Error(...)`).
 - `await response.json()` también puede lanzar error si la respuesta no es JSON válido. Por eso es mejor tener todo dentro del `try`.
 - `catch` diferencia dos casos:
-    - `TypeError` → normalmente indica que la petición ni siquiera llegó al servidor (por ejemplo, sin internet o fallo de CORS).
-    - Cualquier otro → normalmente es un error que tú lanzaste con `throw`.
+  - `TypeError` → normalmente indica que la petición ni siquiera llegó al servidor (por ejemplo, sin internet o fallo de CORS).
+  - Cualquier otro → normalmente es un error que tú lanzaste con `throw`.
 
 👉 **Ejemplo de uso**:
 
@@ -2452,35 +2446,36 @@ Pensad que pedimos los datos de un usuario a una API y esperamos un objeto con u
 
 ```jsx
 // Supongamos que esta petición es EXITOSA (código 200)
-fetch('<https://api.ejemplo.com/usuario>')
-  .then(response => response.json()) // Convertimos la respuesta a JSON (esto también funciona)
-  .then(usuario => {
-
+fetch("<https://api.ejemplo.com/usuario>")
+  .then((response) => response.json()) // Convertimos la respuesta a JSON (esto también funciona)
+  .then((usuario) => {
     // --- ¡ZONA DE VALIDACIÓN! ---
     // Aquí comprobamos MANUALMENTE si los datos son correctos.
 
     // ¿El usuario tiene la propiedad 'nombre' y es un string?
-    if (!usuario.nombre || typeof usuario.nombre !== 'string') {
-      throw new Error('Validación falló: El nombre es obligatorio y debe ser un texto.');
+    if (!usuario.nombre || typeof usuario.nombre !== "string") {
+      throw new Error(
+        "Validación falló: El nombre es obligatorio y debe ser un texto."
+      );
     }
 
     // ¿La 'edad' existe y es un número mayor que 0?
-    if (!usuario.edad || typeof usuario.edad !== 'number' || usuario.edad < 0) {
-      throw new Error('Validación falló: La edad es obligatoria y debe ser un número positivo.');
+    if (!usuario.edad || typeof usuario.edad !== "number" || usuario.edad < 0) {
+      throw new Error(
+        "Validación falló: La edad es obligatoria y debe ser un número positivo."
+      );
     }
 
     // --- Si pasamos la validación, todo está bien ---
     console.log(`Hola, ${usuario.nombre}. Tienes ${usuario.edad} años.`);
-
   })
-  .catch(error => {
+  .catch((error) => {
     // ¡OJO! Este 'catch' captura TODOS los errores:
     // - Errores de RED (el viaje falló)
     // - Errores de VALIDACIÓN (el "vino" era malo)
 
     console.error("Algo salió mal:", error.message);
   });
-
 ```
 
 **¿Y si el servidor nos devolviera esto?**
@@ -2498,13 +2493,13 @@ En ambos casos, nuestras comprobaciones con `if` lanzarían un error que caería
 
 ### **Diferencia Clave entre Error de Red y Error de Validación**
 
-| Característica | Error de Red | Error de Validación |
-| --- | --- | --- |
-| **¿Cuándo pasa?** | **Durante** la comunicación. | **Después** de una comunicación exitosa. |
-| **¿El servidor respondió?** | No, la petición falló. | Sí, con un código de estado 200 (o similar). |
-| **La respuesta...** | Ni siquiera llega. | Llega, pero su contenido es inválido. |
-| **¿Quién lo causa?** | Problemas de conexión, servidor caído, URL mala. | Datos mal formados, faltan campos, tipos incorrectos. |
-| **En la analogía** | El camarero no pudo llegar a la bodega. | El camarero trajo un refresco en lugar de vino. |
+| Característica              | Error de Red                                     | Error de Validación                                   |
+| --------------------------- | ------------------------------------------------ | ----------------------------------------------------- |
+| **¿Cuándo pasa?**           | **Durante** la comunicación.                     | **Después** de una comunicación exitosa.              |
+| **¿El servidor respondió?** | No, la petición falló.                           | Sí, con un código de estado 200 (o similar).          |
+| **La respuesta...**         | Ni siquiera llega.                               | Llega, pero su contenido es inválido.                 |
+| **¿Quién lo causa?**        | Problemas de conexión, servidor caído, URL mala. | Datos mal formados, faltan campos, tipos incorrectos. |
+| **En la analogía**          | El camarero no pudo llegar a la bodega.          | El camarero trajo un refresco en lugar de vino.       |
 
 ### **En Resumen:**
 
@@ -2544,7 +2539,6 @@ async function procesarUsuario(datos) {
 
     // ✅ Si la operación fue exitosa, devolvemos el usuario guardado.
     return usuario;
-
   } catch (error) {
     // 🚨 3. MANEJO DE ERRORES
     // Capturamos tanto errores de validación (síncronos) como errores de guardarUsuario (asíncronos).
@@ -2555,7 +2549,6 @@ async function procesarUsuario(datos) {
     throw error;
   }
 }
-
 ```
 
 👉 **Qué debes entender aquí**:
@@ -2563,27 +2556,25 @@ async function procesarUsuario(datos) {
 - **Validación síncrona**: no necesita `await`. Es inmediata y sirve para **prevenir** llamadas innecesarias a la base de datos o API si los datos ya son inválidos.
 - Si el email no es válido, `throw new Error(...)` **interrumpe la ejecución** de la función y salta directamente al bloque `catch`.
 - Si la validación pasa, se llama a `guardarUsuario(datos)`, que es una operación asíncrona.
-    
-    `await` espera a que termine y captura el resultado en `usuario`.
-    
+  `await` espera a que termine y captura el resultado en `usuario`.
 - Cualquier error que ocurra en `guardarUsuario` también será capturado en el `catch`.
 - `throw error` dentro del `catch` **relanza** el error para que **el código que llama a `procesarUsuario`** pueda reaccionar.
-    
-    (Por ejemplo, mostrar un mensaje en la interfaz al usuario).
-    
+  (Por ejemplo, mostrar un mensaje en la interfaz al usuario).
 
 👉 **Ejemplo de uso**:
 
 ```jsx
 (async () => {
   try {
-    const nuevoUsuario = await procesarUsuario({ nombre: "Ana", email: "ana@correo.com" });
+    const nuevoUsuario = await procesarUsuario({
+      nombre: "Ana",
+      email: "ana@correo.com",
+    });
     console.log("Usuario guardado correctamente:", nuevoUsuario);
   } catch (error) {
     console.log("No se pudo procesar el usuario:", error.message);
   }
 })();
-
 ```
 
 👉 **Ejemplo con error de validación**:
@@ -2597,7 +2588,6 @@ async function procesarUsuario(datos) {
     // Aquí podrías mostrar un mensaje en pantalla al usuario
   }
 })();
-
 ```
 
 ✅ Este patrón es muy común en la práctica:
@@ -2639,19 +2629,18 @@ setTimeout(() => {
 }, 5000);
 
 // Enviamos al camarero con el "control remoto"
-fetch('<https://api.ejemplo.com/datos-lentos>', { signal })
-  .then(response => response.json())
-  .then(datos => {
+fetch("<https://api.ejemplo.com/datos-lentos>", { signal })
+  .then((response) => response.json())
+  .then((datos) => {
     console.log("¡Datos recibidos!", datos);
   })
-  .catch(error => {
-    if (error.name === 'AbortError') {
+  .catch((error) => {
+    if (error.name === "AbortError") {
       console.error("⏰ ¡Timeout! La petición tardó más de 5 segundos.");
     } else {
       console.error("Otro tipo de error:", error.message);
     }
   });
-
 ```
 
 ### **Opción 2: Con `Promise.race()` (concepto más avanzado)**
@@ -2660,20 +2649,22 @@ fetch('<https://api.ejemplo.com/datos-lentos>', { signal })
 // Creamos una "carrera" entre la petición y el timeout
 function fetchConTimeout(url, tiempoMaximo = 5000) {
   const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => reject(new Error("⏰ ¡Timeout! La petición tardó demasiado")), tiempoMaximo);
+    setTimeout(
+      () => reject(new Error("⏰ ¡Timeout! La petición tardó demasiado")),
+      tiempoMaximo
+    );
   });
 
-  const fetchPromise = fetch(url).then(response => response.json());
+  const fetchPromise = fetch(url).then((response) => response.json());
 
   // El que gane la carrera (se resuelva primero) define el resultado
   return Promise.race([fetchPromise, timeoutPromise]);
 }
 
 // Usamos nuestra función con timeout
-fetchConTimeout('<https://api.ejemplo.com/datos-lentos>', 3000)
-  .then(datos => console.log("¡Éxito!", datos))
-  .catch(error => console.error("Error:", error.message));
-
+fetchConTimeout("<https://api.ejemplo.com/datos-lentos>", 3000)
+  .then((datos) => console.log("¡Éxito!", datos))
+  .catch((error) => console.error("Error:", error.message));
 ```
 
 ### **¿Por qué ocurren los Timeouts?**
@@ -2691,8 +2682,8 @@ async function obtenerDatos() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 segundos
 
-    const response = await fetch('<https://api.ejemplo.com/datos>', {
-      signal: controller.signal
+    const response = await fetch("<https://api.ejemplo.com/datos>", {
+      signal: controller.signal,
     });
 
     clearTimeout(timeoutId); // Cancelar el timeout si la petición tuvo éxito
@@ -2701,26 +2692,26 @@ async function obtenerDatos() {
 
     const datos = await response.json();
     console.log("Datos válidos:", datos);
-
   } catch (error) {
-    if (error.name === 'AbortError') {
-      console.error("⏰ Timeout: Por favor, verifica tu conexión o intenta más tarde.");
+    if (error.name === "AbortError") {
+      console.error(
+        "⏰ Timeout: Por favor, verifica tu conexión o intenta más tarde."
+      );
       // Mostrar mensaje amigable al usuario
     } else {
       console.error("Otro error:", error.message);
     }
   }
 }
-
 ```
 
 ### **En Resumen:**
 
-| Error | En la Analogía | En Código |
-| --- | --- | --- |
-| **Error de Red** | "No pudo salir del restaurante" | `fetch` rechaza inmediatamente |
-| **Error de Validación** | "Trajo el producto equivocado" | Respuesta OK, pero datos inválidos |
-| **Timeout** | **"Tardó demasiado, cancelamos el pedido"** | `AbortError` después de X segundos |
+| Error                   | En la Analogía                              | En Código                          |
+| ----------------------- | ------------------------------------------- | ---------------------------------- |
+| **Error de Red**        | "No pudo salir del restaurante"             | `fetch` rechaza inmediatamente     |
+| **Error de Validación** | "Trajo el producto equivocado"              | Respuesta OK, pero datos inválidos |
+| **Timeout**             | **"Tardó demasiado, cancelamos el pedido"** | `AbortError` después de X segundos |
 
 **La moraleja:** Siempre estableced tiempos de espera razonables en vuestras peticiones. ¡No dejéis que vuestra aplicación espere eternamente! Es mejor decir "lo sentimos, inténtalo de nuevo" que dejar al usuario con una pantalla cargando indefinidamente.
 
@@ -2775,7 +2766,6 @@ async function obtenerDatosConTimeout() {
 
     // Si llega aquí, la promesa se resolvió a tiempo ✅
     return datos;
-
   } catch (error) {
     // 🛑 Si ocurre un error, distinguimos si fue por timeout o por otro motivo
     if (error.message.includes("Timeout")) {
@@ -2785,18 +2775,15 @@ async function obtenerDatosConTimeout() {
     }
   }
 }
-
 ```
 
 👉 **Qué está pasando aquí**:
 
 - `setTimeout()` crea un temporizador que, al cumplirse `tiempoMs`, ejecuta `reject(new Error(...))`.
-    
-    Esto obliga a que la promesa falle si se demora demasiado.
-    
+  Esto obliga a que la promesa falle si se demora demasiado.
 - Mientras tanto, `promesa.then().catch()` gestiona normalmente la promesa original:
-    - Si se **resuelve antes de que expire el timeout**, se llama `resolve()` y todo funciona.
-    - Si se **rechaza antes**, se llama `reject()` con su error original.
+  - Si se **resuelve antes de que expire el timeout**, se llama `resolve()` y todo funciona.
+  - Si se **rechaza antes**, se llama `reject()` con su error original.
 - `.finally(clearTimeout(...))` garantiza que **el timeout se limpie**, para evitar fugas de recursos.
 
 👉 **Ejemplo práctico**:
@@ -2808,7 +2795,7 @@ En vez de dejar la interfaz esperando indefinidamente, estableces un tiempo lím
 ✅ **Ventajas de este patrón**:
 
 - Evita que la UI quede colgada por llamadas lentas.
-- Te permite mostrar mensajes como *“La operación está tardando demasiado, inténtalo de nuevo”*.
+- Te permite mostrar mensajes como _“La operación está tardando demasiado, inténtalo de nuevo”_.
 - Te da un control preciso sobre la experiencia del usuario.
 
 🚨 **Importante**:
@@ -2834,7 +2821,6 @@ async function fetchConTimeout(url, tiempoMs) {
     clearTimeout(timeoutId);
   }
 }
-
 ```
 
 👉 Esta versión sí **interrumpe** la petición al servidor, no solo la ignora.
@@ -2942,7 +2928,6 @@ iniciar();
  * PASO 8: iniciar() termina → SALE
  * Call Stack = [] VACÍO
  */
-
 ```
 
 ## Analogía del Libro de Recetas
@@ -2996,7 +2981,6 @@ recetaPrincipal();
  * 📍 PRINCIPIO LIFO: La última función que entró (picarIngredientes)
  * es la primera en salir
  */
-
 ```
 
 ### El Famoso Error: Stack Overflow
@@ -3050,7 +3034,6 @@ function recursionInfinita() {
 // ¡NO EJECUTES ESTO! Causaría:
 // Uncaught RangeError: Maximum call stack size exceeded
 // recursionInfinita();
-
 ```
 
 ### Call Stack vs Código Asíncrono
@@ -3086,7 +3069,6 @@ console.log("📍 Call Stack: Fin sincrónico");
  *
  * ⚠️ IMPORTANTE: El setTimeout aunque sea 0ms, NUNCA interrumpe el Call Stack
  */
-
 ```
 
 ### Depurando el Call Stack
@@ -3125,7 +3107,6 @@ funcionA();
  * 📍 Esto muestra exactamente la PILA de llamadas:
  * Quién llamó a quién, en orden inverso (del más reciente al más antiguo)
  */
-
 ```
 
 ### Ejemplo Práctico del Mundo Real
@@ -3185,7 +3166,6 @@ procesoCompra();
  *
  * 📍 NUNCA hay más de 3 funciones en el Call Stack a la vez
  */
-
 ```
 
 ### Reglas Fundamentales del Call Stack
@@ -3244,7 +3224,6 @@ regla3(); // Salida: A, B, C, D, E
  */
 
 console.log("🎯 ¡Ahora entiendes el Call Stack!");
-
 ```
 
 ### **En Resumen Muy Sencillo:**
@@ -3272,7 +3251,6 @@ function resumen() {
 }
 
 resumen();
-
 ```
 
 **¡El Call Stack es el motor de ejecución de JavaScript - donde realmente sucede la magia!**
@@ -3319,7 +3297,6 @@ console.log("🔹 Pedido 4: Entrada inmediata"); // Va directo al cocinero
  * 2. Los setTimeout van a la "lista de espera" (Callback Queue)
  * 3. Cuando el cocinero termina, el "mesero" (Event Loop) trae los pedidos de la lista
  */
-
 ```
 
 ### Código Explicado Paso a Paso
@@ -3386,7 +3363,6 @@ console.log("🏁 FIN: Última línea del código sincrónico");
  * - Luego la Microtask Queue (promesas)
  * - Finalmente el Callback Queue (setTimeout)
  */
-
 ```
 
 ### Analogía del Restaurante Detallada
@@ -3442,7 +3418,6 @@ setTimeout(() => {
  * 6. 📞 Cliente 2: 'Mi pedido de pizza está listo' - CALLBACK QUEUE
  *    - Después de 2 segundos reales
  */
-
 ```
 
 ### Reglas Clave del Callback Queue
@@ -3533,7 +3508,6 @@ cargarDatosDeUsuario();
  * - Manejar operaciones asíncronas correctamente
  * - Entender por qué a veces el código no se ejecuta en el orden esperado
  */
-
 ```
 
 ### **En Resumen Muy Sencillo:**
@@ -3555,7 +3529,6 @@ cargarDatosDeUsuario();
  */
 
 console.log("✨ ¡Ahora entiendes el Callback Queue!");
-
 ```
 
 ## 3. **Microtask Queue (Cola de Microtareas)**
@@ -3602,7 +3575,6 @@ console.log("2️⃣ Call Stack: Más código sincrónico");
  *
  * ¡La Promise se ejecuta ANTES del setTimeout aunque ambos estén "listos"!
  */
-
 ```
 
 ### Analogía de la Emergencia Hospitalaria
@@ -3646,7 +3618,6 @@ console.log("📋 Terminando registro de pacientes...");
  *
  * ¡Los URGENTES siempre pasan primero!
  */
-
 ```
 
 ### Jerarquía de Colas en JavaScript
@@ -3684,7 +3655,6 @@ console.log("🥇 Call Stack: Fin del código sincrónico");
  *
  * FLUJO: Call Stack → (vacío) → Microtask Queue → Callback Queue
  */
-
 ```
 
 ### Ejemplo con Múltiples Niveles
@@ -3737,7 +3707,6 @@ console.log("2️⃣ Call Stack: Fin");
  *
  * 6. "6️⃣ Callback Queue: setTimeout externo"
  */
-
 ```
 
 ### Caso Real: Promesas vs setTimeout
@@ -3784,7 +3753,6 @@ cargarDatosUsuario();
  * - Los timeouts esperan aunque su tiempo sea 0
  * - Podemos priorizar tareas críticas usando promesas
  */
-
 ```
 
 ### El Problema del "Starvation"
@@ -3832,7 +3800,6 @@ function starvationDemo() {
  *
  * 💡 SOLUCIÓN: No crear microtasks recursivamente sin control
  */
-
 ```
 
 ### Métodos que usan Microtask Queue
@@ -3881,7 +3848,6 @@ console.log("📍 Call Stack: Código normal");
  * 4. "2. queueMicrotask(): Función explícita"
  * 5. "5. setTimeout(): Callback Queue - Último lugar"
  */
-
 ```
 
 ### Reglas de Oro de la Microtask Queue
@@ -3949,7 +3915,6 @@ console.log("📜 Fin de las reglas - Call Stack vacío");
  */
 
 console.log("🎯 ¡Ahora entiendes la Microtask Queue!");
-
 ```
 
 ### **En Resumen Muy Sencillo:**
@@ -4032,85 +3997,113 @@ Aquí tienes un ejemplo completo que muestra cómo funciona:
 ```
 
 ```css
- body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .sistema {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .componente {
-            border: 2px solid;
-            border-radius: 8px;
-            padding: 15px;
-            min-height: 200px;
-        }
-        .call-stack { border-color: #dc3545; background: #f8d7da; }
-        .web-apis { border-color: #ffc107; background: #fff3cd; }
-        .task-queue { border-color: #28a745; background: #d4edda; }
-        .microtask-queue { border-color: #007bff; background: #cce7ff; }
-        .tarea {
-            background: white;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 4px;
-            border-left: 4px solid;
-            font-size: 14px;
-        }
-        .sincrona { border-left-color: #dc3545; }
-        .settimeout { border-left-color: #ffc107; }
-        .promesa { border-left-color: #007bff; }
-        .evento { border-left-color: #28a745; }
-        button {
-            padding: 12px 20px;
-            margin: 10px 5px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .btn-ejemplo { background: #007bff; color: white; }
-        .btn-limpiar { background: #6c757d; color: white; }
-        .explicacion {
-            background: #e9ecef;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        .paso {
-            padding: 10px;
-            margin: 5px 0;
-            background: #f8f9fa;
-            border-left: 4px solid #6f42c1;
-        }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.sistema {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+.componente {
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 15px;
+  min-height: 200px;
+}
+.call-stack {
+  border-color: #dc3545;
+  background: #f8d7da;
+}
+.web-apis {
+  border-color: #ffc107;
+  background: #fff3cd;
+}
+.task-queue {
+  border-color: #28a745;
+  background: #d4edda;
+}
+.microtask-queue {
+  border-color: #007bff;
+  background: #cce7ff;
+}
+.tarea {
+  background: white;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border-left: 4px solid;
+  font-size: 14px;
+}
+.sincrona {
+  border-left-color: #dc3545;
+}
+.settimeout {
+  border-left-color: #ffc107;
+}
+.promesa {
+  border-left-color: #007bff;
+}
+.evento {
+  border-left-color: #28a745;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-ejemplo {
+  background: #007bff;
+  color: white;
+}
+.btn-limpiar {
+  background: #6c757d;
+  color: white;
+}
+.explicacion {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+.paso {
+  padding: 10px;
+  margin: 5px 0;
+  background: #f8f9fa;
+  border-left: 4px solid #6f42c1;
+}
 ```
 
 ```jsx
 // =============== REFERENCIAS DEL DOM ===============
 // Contenedores donde pintaremos visualmente el estado del sistema
-const stackContent = document.getElementById('stack-content');
-const apisContent = document.getElementById('apis-content');
-const taskQueueContent = document.getElementById('task-queue-content');
-const microtaskQueueContent = document.getElementById('microtask-queue-content');
-const consola = document.getElementById('consola');
+const stackContent = document.getElementById("stack-content");
+const apisContent = document.getElementById("apis-content");
+const taskQueueContent = document.getElementById("task-queue-content");
+const microtaskQueueContent = document.getElementById(
+  "microtask-queue-content"
+);
+const consola = document.getElementById("consola");
 
 // =============== ESTADO (MODELO) ===============
 // Estructuras que representan, de forma DIDÁCTICA, el entorno de ejecución JS
-let callStack = [];      // Pila de llamadas (lo que se está ejecutando ahora)
-let webAPIs = [];        // "Zona" donde las Web APIs esperan/cronometan (setTimeout, fetch...)
-let taskQueue = [];      // Cola de tareas “macro” (setTimeout, eventos)
+let callStack = []; // Pila de llamadas (lo que se está ejecutando ahora)
+let webAPIs = []; // "Zona" donde las Web APIs esperan/cronometan (setTimeout, fetch...)
+let taskQueue = []; // Cola de tareas “macro” (setTimeout, eventos)
 let microtaskQueue = []; // Cola de microtareas (promesas, queueMicrotask)
 
 // =============== UTILIDADES DE LOG Y RENDER ===============
@@ -4123,23 +4116,26 @@ function log(mensaje) {
 function actualizarVisualizacion() {
   // Renderizamos Call Stack como bloques apilados
   stackContent.innerHTML = callStack
-    .map(tarea => `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`)
-    .join('');
+    .map((tarea) => `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`)
+    .join("");
 
   // Renderizamos Web APIs mostrando tiempo restante de cada “timer”
   apisContent.innerHTML = webAPIs
-    .map(api => `<div class="tarea ${api.tipo}">${api.nombre} (${api.tiempoRestante}ms)</div>`)
-    .join('');
+    .map(
+      (api) =>
+        `<div class="tarea ${api.tipo}">${api.nombre} (${api.tiempoRestante}ms)</div>`
+    )
+    .join("");
 
   // Renderizamos Task Queue (macro-tasks)
   taskQueueContent.innerHTML = taskQueue
-    .map(tarea => `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`)
-    .join('');
+    .map((tarea) => `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`)
+    .join("");
 
   // Renderizamos Microtask Queue (micro-tasks)
   microtaskQueueContent.innerHTML = microtaskQueue
-    .map(tarea => `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`)
-    .join('');
+    .map((tarea) => `<div class="tarea ${tarea.tipo}">${tarea.nombre}</div>`)
+    .join("");
 }
 
 function limpiarTodo() {
@@ -4148,12 +4144,12 @@ function limpiarTodo() {
   webAPIs = [];
   taskQueue = [];
   microtaskQueue = [];
-  consola.innerHTML = '';
+  consola.innerHTML = "";
   actualizarVisualizacion();
 }
 
 // =============== OPERACIONES SOBRE LA PILA ===============
-function agregarAlStack(nombre, tipo = 'sincrona') {
+function agregarAlStack(nombre, tipo = "sincrona") {
   // Empujar una “tarea” a la pila (visualización)
   callStack.push({ nombre, tipo });
   log(`📥 Apilado: ${nombre}`);
@@ -4192,10 +4188,10 @@ function simularWebAPI(nombre, tipo, duracion, callback) {
       clearInterval(interval);
 
       // Remover de Web APIs (ya “terminó”)
-      webAPIs = webAPIs.filter(a => a !== api);
+      webAPIs = webAPIs.filter((a) => a !== api);
 
       // Encolar su callback en la cola correcta
-      if (tipo === 'promesa') {
+      if (tipo === "promesa") {
         microtaskQueue.push({ nombre: `Callback: ${nombre}`, tipo });
         log(`⚡ Microtask agregado: ${nombre}`);
       } else {
@@ -4248,31 +4244,31 @@ function procesarEventLoop() {
 // =============== EJEMPLO 1: DEMO COMPLETA ===============
 function ejecutarEjemploCompleto() {
   limpiarTodo();
-  log('🚀 INICIANDO DEMO COMPLETO DEL EVENT LOOP');
+  log("🚀 INICIANDO DEMO COMPLETO DEL EVENT LOOP");
 
   // Código síncrono: entra directo a la pila
-  agregarAlStack('script principal', 'sincrona');
+  agregarAlStack("script principal", "sincrona");
 
   // Programamos, con pequeños retrasos, la creación de distintas “Web APIs”
   // setTimeout → terminará en Task Queue
   setTimeout(() => {
-    simularWebAPI('setTimeout 100ms', 'settimeout', 100, () => {});
+    simularWebAPI("setTimeout 100ms", "settimeout", 100, () => {});
   }, 10);
 
   // Promesa → terminará en Microtask Queue
   setTimeout(() => {
-    simularWebAPI('Promise.resolve()', 'promesa', 50, () => {});
+    simularWebAPI("Promise.resolve()", "promesa", 50, () => {});
   }, 20);
 
   // Más “código síncrono” (simulado) que entra a la pila y se desapila
   setTimeout(() => {
-    agregarAlStack('console.log("Hola")', 'sincrona');
+    agregarAlStack('console.log("Hola")', "sincrona");
     setTimeout(() => removerDelStack(), 100);
   }, 30);
 
   // Otro setTimeout
   setTimeout(() => {
-    simularWebAPI('setTimeout 200ms', 'settimeout', 200, () => {});
+    simularWebAPI("setTimeout 200ms", "settimeout", 200, () => {});
   }, 40);
 
   // “Tick” del event loop: cada 300ms procesamos colas según prioridad
@@ -4282,7 +4278,7 @@ function ejecutarEjemploCompleto() {
     procesamientos++;
     if (procesamientos > 10) {
       clearInterval(interval);
-      log('🏁 Demo completado');
+      log("🏁 Demo completado");
     }
   }, 300);
 }
@@ -4290,40 +4286,40 @@ function ejecutarEjemploCompleto() {
 // =============== EJEMPLO 2: MICROTASKS vs TASKS ===============
 function ejecutarEjemploMicrotasks() {
   limpiarTodo();
-  log('⚡ DEMO: MICROTASKS vs TASKS (PRIORIDAD)');
+  log("⚡ DEMO: MICROTASKS vs TASKS (PRIORIDAD)");
 
-  agregarAlStack('Inicio del script', 'sincrona');
+  agregarAlStack("Inicio del script", "sincrona");
 
   // setTimeout → Task Queue (baja prioridad frente a microtasks)
   setTimeout(() => {
-    simularWebAPI('setTimeout 0ms', 'settimeout', 100, () => {});
-    log('⏰ setTimeout programado');
+    simularWebAPI("setTimeout 0ms", "settimeout", 100, () => {});
+    log("⏰ setTimeout programado");
   }, 10);
 
   // Promesa → Microtask Queue (ALTA prioridad)
   setTimeout(() => {
-    simularWebAPI('Promise.then()', 'promesa', 50, () => {});
-    log('🤝 Promesa programada');
+    simularWebAPI("Promise.then()", "promesa", 50, () => {});
+    log("🤝 Promesa programada");
   }, 20);
 
   // Evento (simulado) → Task Queue
   setTimeout(() => {
-    simularWebAPI('Evento click', 'evento', 80, () => {});
-    log('🖱️ Evento click simulado');
+    simularWebAPI("Evento click", "evento", 80, () => {});
+    log("🖱️ Evento click simulado");
   }, 30);
 
   // Otra promesa → Microtask Queue
   setTimeout(() => {
-    simularWebAPI('Promise.resolve().then()', 'promesa', 30, () => {});
-    log('🔁 Otra promesa programada');
+    simularWebAPI("Promise.resolve().then()", "promesa", 30, () => {});
+    log("🔁 Otra promesa programada");
   }, 40);
 
   // Explicación del orden
   setTimeout(() => {
-    log('\\n🎯 ORDEN DE EJECUCIÓN:');
-    log('1. Call Stack vacío');
-    log('2. MICROTASKS (Promesas) - TODAS primero');
-    log('3. TASKS (setTimeout, eventos) - UNA por vez');
+    log("\\n🎯 ORDEN DE EJECUCIÓN:");
+    log("1. Call Stack vacío");
+    log("2. MICROTASKS (Promesas) - TODAS primero");
+    log("3. TASKS (setTimeout, eventos) - UNA por vez");
   }, 200);
 
   // Procesado periódico del “event loop” simulado
@@ -4333,14 +4329,15 @@ function ejecutarEjemploMicrotasks() {
     procesamientos++;
     if (procesamientos > 8) {
       clearInterval(interval);
-      log('\\n💡 CONCLUSIÓN: Las Microtasks tienen MÁS prioridad que las Tasks');
+      log(
+        "\\n💡 CONCLUSIÓN: Las Microtasks tienen MÁS prioridad que las Tasks"
+      );
     }
   }, 400);
 }
 
 // =============== ARRANQUE ===============
 actualizarVisualizacion(); // Pintamos vacío al iniciar
-
 ```
 
 ## 🎯 **El Orden de Ejecución (¡CRUCIAL!)**
@@ -4457,128 +4454,128 @@ Aquí tienes un ejemplo completo que muestra visualmente cómo se apilan y desap
 ```
 
 ```css
-  body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        background: #f5f5f5;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .call-stack {
-        border: 3px solid #dc3545;
-        border-radius: 10px;
-        padding: 20px;
-        background: #f8d7da;
-        min-height: 400px;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        margin: 20px 0;
-      }
-      .funcion {
-        background: white;
-        padding: 15px;
-        margin: 5px 0;
-        border-radius: 8px;
-        border-left: 5px solid;
-        width: 80%;
-        text-align: center;
-        font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-      .funcion.entrando {
-        animation: entrar 0.5s ease;
-      }
-      .funcion.saliendo {
-        animation: salir 0.5s ease;
-      }
-      @keyframes entrar {
-        from {
-          transform: translateY(-50px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-      @keyframes salir {
-        from {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        to {
-          transform: translateY(-50px);
-          opacity: 0;
-        }
-      }
-      .principal {
-        border-left-color: #dc3545;
-      }
-      .secundaria {
-        border-left-color: #007bff;
-      }
-      .terciaria {
-        border-left-color: #28a745;
-      }
-      button {
-        padding: 12px 20px;
-        margin: 10px 5px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      .btn-ejecutar {
-        background: #28a745;
-        color: white;
-      }
-      .btn-paso {
-        background: #007bff;
-        color: white;
-      }
-      .btn-limpiar {
-        background: #6c757d;
-        color: white;
-      }
-      .controles {
-        display: flex;
-        gap: 10px;
-        margin: 15px 0;
-        flex-wrap: wrap;
-      }
-      .explicacion {
-        background: #e9ecef;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 15px 0;
-      }
-      .codigo {
-        background: #2d2d2d;
-        color: #f8f9fa;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-      }
-      .consola {
-        background: #2d2d2d;
-        color: #00ff00;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-        min-height: 100px;
-        max-height: 200px;
-        overflow-y: auto;
-      }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.call-stack {
+  border: 3px solid #dc3545;
+  border-radius: 10px;
+  padding: 20px;
+  background: #f8d7da;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin: 20px 0;
+}
+.funcion {
+  background: white;
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border-left: 5px solid;
+  width: 80%;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.funcion.entrando {
+  animation: entrar 0.5s ease;
+}
+.funcion.saliendo {
+  animation: salir 0.5s ease;
+}
+@keyframes entrar {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes salir {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+.principal {
+  border-left-color: #dc3545;
+}
+.secundaria {
+  border-left-color: #007bff;
+}
+.terciaria {
+  border-left-color: #28a745;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-ejecutar {
+  background: #28a745;
+  color: white;
+}
+.btn-paso {
+  background: #007bff;
+  color: white;
+}
+.btn-limpiar {
+  background: #6c757d;
+  color: white;
+}
+.controles {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+.explicacion {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+.codigo {
+  background: #2d2d2d;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+}
+.consola {
+  background: #2d2d2d;
+  color: #00ff00;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+}
 ```
 
 ```jsx
@@ -4674,7 +4671,7 @@ function limpiarStack() {
  * Evita reentradas usando el flag ejecucionEnCurso.
  */
 async function ejecutarEjemploCompleto() {
-  if (ejecucionEnCurso) return;  // evita doble ejecución
+  if (ejecucionEnCurso) return; // evita doble ejecución
   ejecucionEnCurso = true;
   limpiarStack();
 
@@ -4740,11 +4737,23 @@ async function ejecutarEjemploCompleto() {
 let pasoActual = 0;
 const pasos = [
   { accion: "inicio", mensaje: "👋 Preparado para ejecutar paso a paso" },
-  { accion: "apilar", funcion: "funcionA()", mensaje: "📥 Llamando a funcionA()" },
+  {
+    accion: "apilar",
+    funcion: "funcionA()",
+    mensaje: "📥 Llamando a funcionA()",
+  },
   { accion: "log", mensaje: "🔵 Ejecutando código en A..." },
-  { accion: "apilar", funcion: "funcionB()", mensaje: "📥 funcionA() llama a funcionB()" },
+  {
+    accion: "apilar",
+    funcion: "funcionB()",
+    mensaje: "📥 funcionA() llama a funcionB()",
+  },
   { accion: "log", mensaje: "🟢 Ejecutando código en B..." },
-  { accion: "apilar", funcion: "funcionC()", mensaje: "📥 funcionB() llama a funcionC()" },
+  {
+    accion: "apilar",
+    funcion: "funcionC()",
+    mensaje: "📥 funcionB() llama a funcionC()",
+  },
   { accion: "log", mensaje: "🟡 Ejecutando código en C..." },
   { accion: "log", mensaje: "🟡 Más código en C..." },
   { accion: "desapilar", mensaje: "📤 funcionC() termina - se desapila" },
@@ -4829,7 +4838,6 @@ function demostrarStackOverflow() {
 
 // ===================== INICIO =====================
 actualizarStackVisual(); // Pintado inicial (solo contexto global)
-
 ```
 
 ## 🔄 **Ejemplo Real Sencillo: Cómo se Apilan las Funciones**
@@ -4839,215 +4847,224 @@ actualizarStackVisual(); // Pintado inicial (solo contexto global)
 ```html
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulador de Pedidos - Call Stack Visual</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <h1>🍕 Simulador de Pedidos - Call Stack Visual</h1>
-    
+
     <div class="container">
-        <div class="panel">
-            <h3>Call Stack</h3>
-            <div id="callStack" class="call-stack"></div>
-        </div>
-        
-        <div class="panel">
-            <h3>Web APIs</h3>
-            <div id="webApis" class="web-apis"></div>
-            
-            <h3>Callback Queue</h3>
-            <div id="callbackQueue" class="callback-queue"></div>
-        </div>
+      <div class="panel">
+        <h3>Call Stack</h3>
+        <div id="callStack" class="call-stack"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Web APIs</h3>
+        <div id="webApis" class="web-apis"></div>
+
+        <h3>Callback Queue</h3>
+        <div id="callbackQueue" class="callback-queue"></div>
+      </div>
     </div>
 
     <div class="controls">
-        <button onclick="hacerPedido()">Hacer Pedido de Pizza</button>
-        <button onclick="consultarEstado()">Consultar Estado</button>
-        <button onclick="cancelarPedido()">Cancelar Pedido</button>
-        <button onclick="limpiarLog()">Limpiar Log</button>
+      <button onclick="hacerPedido()">Hacer Pedido de Pizza</button>
+      <button onclick="consultarEstado()">Consultar Estado</button>
+      <button onclick="cancelarPedido()">Cancelar Pedido</button>
+      <button onclick="limpiarLog()">Limpiar Log</button>
     </div>
 
     <div class="log-container">
-        <h3>Log de Ejecución</h3>
-        <div id="log" class="log"></div>
+      <h3>Log de Ejecución</h3>
+      <div id="log" class="log"></div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
 ```
 
 ```css
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-    min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
 }
 
 h1 {
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .panel {
-    flex: 1;
-    min-width: 300px;
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .panel h3 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
 }
 
-.call-stack, .web-apis, .callback-queue {
-    min-height: 200px;
-    border: 2px dashed #bdc3c7;
-    border-radius: 8px;
-    padding: 15px;
-    transition: all 0.3s ease;
+.call-stack,
+.web-apis,
+.callback-queue {
+  min-height: 200px;
+  border: 2px dashed #bdc3c7;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
 }
 
 .call-stack {
-    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
 }
 
 .web-apis {
-    background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+  background: linear-gradient(145deg, #e3f2fd, #bbdefb);
 }
 
 .callback-queue {
-    background: linear-gradient(145deg, #fff3e0, #ffe0b2);
+  background: linear-gradient(145deg, #fff3e0, #ffe0b2);
 }
 
 .stack-item {
-    background: linear-gradient(145deg, #27ae60, #2ecc71);
-    color: white;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center;
-    font-weight: bold;
+  background: linear-gradient(145deg, #27ae60, #2ecc71);
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: bold;
 }
 
 .queue-item {
-    background: linear-gradient(145deg, #e67e22, #f39c12);
-    color: white;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center;
-    font-weight: bold;
+  background: linear-gradient(145deg, #e67e22, #f39c12);
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: bold;
 }
 
 .controls {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 button {
-    background: linear-gradient(145deg, #3498db, #2980b9);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    margin: 5px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .log-container {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .log {
-    background: #1a1a1a;
-    color: #00ff00;
-    padding: 20px;
-    border-radius: 8px;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    min-height: 200px;
-    max-height: 400px;
-    overflow-y: auto;
-    border: 2px solid #333;
+  background: #1a1a1a;
+  color: #00ff00;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 2px solid #333;
 }
 
 .log div {
-    margin-bottom: 5px;
-    padding: 5px;
-    border-left: 3px solid #00ff00;
-    padding-left: 10px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-left: 3px solid #00ff00;
+  padding-left: 10px;
 }
 
 /* Animaciones */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.stack-item, .queue-item {
-    animation: fadeIn 0.3s ease;
+.stack-item,
+.queue-item {
+  animation: fadeIn 0.3s ease;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .panel {
-        min-width: auto;
-    }
-    
-    button {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-    }
+  .container {
+    flex-direction: column;
+  }
+
+  .panel {
+    min-width: auto;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 ```
 
@@ -5058,255 +5075,234 @@ let numeroPedido = 0;
 let timeoutIds = [];
 
 // Función para actualizar la visualización
-function actualizarVisualizacion(callStack = [], webApis = [], callbackQueue = []) {
-    const callStackElement = document.getElementById('callStack');
-    const webApisElement = document.getElementById('webApis');
-    const callbackQueueElement = document.getElementById('callbackQueue');
-    
-    callStackElement.innerHTML = callStack.map(item => 
-        `<div class="stack-item">${item}</div>`
-    ).join('');
-    
-    webApisElement.innerHTML = webApis.map(item => 
-        `<div class="queue-item">${item}</div>`
-    ).join('');
-    
-    callbackQueueElement.innerHTML = callbackQueue.map(item => 
-        `<div class="queue-item">${item}</div>`
-    ).join('');
+function actualizarVisualizacion(
+  callStack = [],
+  webApis = [],
+  callbackQueue = []
+) {
+  const callStackElement = document.getElementById("callStack");
+  const webApisElement = document.getElementById("webApis");
+  const callbackQueueElement = document.getElementById("callbackQueue");
+
+  callStackElement.innerHTML = callStack
+    .map((item) => `<div class="stack-item">${item}</div>`)
+    .join("");
+
+  webApisElement.innerHTML = webApis
+    .map((item) => `<div class="queue-item">${item}</div>`)
+    .join("");
+
+  callbackQueueElement.innerHTML = callbackQueue
+    .map((item) => `<div class="queue-item">${item}</div>`)
+    .join("");
 }
 
 // Función para agregar logs
-function log(mensaje, tipo = 'info') {
-    const logDiv = document.getElementById('log');
-    const timestamp = new Date().toLocaleTimeString();
-    const color = {
-        'info': '#00ff00',
-        'error': '#ff4444',
-        'warning': '#ffaa00',
-        'success': '#44ff44'
-    }[tipo] || '#00ff00';
-    
-    const logEntry = document.createElement('div');
-    logEntry.style.color = color;
-    logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${mensaje}`;
-    
-    logDiv.appendChild(logEntry);
-    logDiv.scrollTop = logDiv.scrollHeight;
+function log(mensaje, tipo = "info") {
+  const logDiv = document.getElementById("log");
+  const timestamp = new Date().toLocaleTimeString();
+  const color =
+    {
+      info: "#00ff00",
+      error: "#ff4444",
+      warning: "#ffaa00",
+      success: "#44ff44",
+    }[tipo] || "#00ff00";
+
+  const logEntry = document.createElement("div");
+  logEntry.style.color = color;
+  logEntry.innerHTML = `<strong>[${timestamp}]</strong> ${mensaje}`;
+
+  logDiv.appendChild(logEntry);
+  logDiv.scrollTop = logDiv.scrollHeight;
 }
 
 // Función para limpiar el log
 function limpiarLog() {
-    document.getElementById('log').innerHTML = '';
-    log("🔧 Log limpiado - Listo para nuevos pedidos", 'info');
+  document.getElementById("log").innerHTML = "";
+  log("🔧 Log limpiado - Listo para nuevos pedidos", "info");
 }
 
 // Función principal - HACER PEDIDO
 function hacerPedido() {
-    log("🎯 CLICK: Usuario hace clic en 'Hacer Pedido'", 'info');
-    
-    // 1. Entra al Call Stack
-    actualizarVisualizacion(
-        ['hacerPedido()'], 
-        [], 
-        []
-    );
+  log("🎯 CLICK: Usuario hace clic en 'Hacer Pedido'", "info");
 
-    if (pedidoEnProceso) {
-        log("❌ Ya hay un pedido en proceso - No se puede hacer otro", 'error');
-        // Sale del Call Stack
-        actualizarVisualizacion([], [], []);
-        return;
-    }
+  // 1. Entra al Call Stack
+  actualizarVisualizacion(["hacerPedido()"], [], []);
 
-    pedidoEnProceso = true;
-    numeroPedido++;
-    
-    log(`📦 INICIANDO PEDIDO #${numeroPedido}`, 'success');
-    log("1️⃣ Procesando pago del pedido...", 'info');
-    
-    // Simular procesamiento síncrono
-    procesarPago();
-    
-    log("3️⃣ Pedido confirmado, cocinando pizza... 🍕", 'info');
-    
-    // 2. setTimeout entra al Call Stack y luego pasa a Web APIs
-    actualizarVisualizacion(
-        ['setTimeout()'], 
-        [], 
-        []
-    );
+  if (pedidoEnProceso) {
+    log("❌ Ya hay un pedido en proceso - No se puede hacer otro", "error");
+    // Sale del Call Stack
+    actualizarVisualizacion([], [], []);
+    return;
+  }
 
-    const timeoutId = setTimeout(() => {
-        // 5. Callback entra a la Queue cuando termina el tiempo
-        log("⏰ TIMEOUT COMPLETADO - Callback de pizza lista en Queue", 'warning');
-        actualizarVisualizacion(
-            [], 
-            [], 
-            ['callbackPizzaLista()']
-        );
+  pedidoEnProceso = true;
+  numeroPedido++;
 
-        // 6. Event Loop mueve el callback al Call Stack cuando está vacío
-        pizzaLista();
-    }, 3000);
+  log(`📦 INICIANDO PEDIDO #${numeroPedido}`, "success");
+  log("1️⃣ Procesando pago del pedido...", "info");
 
-    timeoutIds.push(timeoutId);
+  // Simular procesamiento síncrono
+  procesarPago();
 
-    // 3. setTimeout sale del Call Stack, callback queda en Web APIs
-    log("4️⃣ Pizza en el horno (esperando 3 segundos)... 🔥", 'info');
-    actualizarVisualizacion(
-        [], 
-        [`setTimeout(${timeoutId}) - Pizza en horno`], 
-        []
-    );
+  log("3️⃣ Pedido confirmado, cocinando pizza... 🍕", "info");
 
-    // 4. Función principal termina, Call Stack se vacía
-    log("✅ Función hacerPedido() completada - Call Stack vacío", 'success');
-    actualizarVisualizacion(
-        [], 
-        [`setTimeout(${timeoutId}) - Pizza en horno`], 
-        []
-    );
+  // 2. setTimeout entra al Call Stack y luego pasa a Web APIs
+  actualizarVisualizacion(["setTimeout()"], [], []);
+
+  const timeoutId = setTimeout(() => {
+    // 5. Callback entra a la Queue cuando termina el tiempo
+    log("⏰ TIMEOUT COMPLETADO - Callback de pizza lista en Queue", "warning");
+    actualizarVisualizacion([], [], ["callbackPizzaLista()"]);
+
+    // 6. Event Loop mueve el callback al Call Stack cuando está vacío
+    pizzaLista();
+  }, 3000);
+
+  timeoutIds.push(timeoutId);
+
+  // 3. setTimeout sale del Call Stack, callback queda en Web APIs
+  log("4️⃣ Pizza en el horno (esperando 3 segundos)... 🔥", "info");
+  actualizarVisualizacion(
+    [],
+    [`setTimeout(${timeoutId}) - Pizza en horno`],
+    []
+  );
+
+  // 4. Función principal termina, Call Stack se vacía
+  log("✅ Función hacerPedido() completada - Call Stack vacío", "success");
+  actualizarVisualizacion(
+    [],
+    [`setTimeout(${timeoutId}) - Pizza en horno`],
+    []
+  );
 }
 
 function procesarPago() {
-    log("2️⃣ EJECUTANDO: procesarPago() - Entra al Call Stack", 'info');
-    
-    // Simular validación de pago
-    actualizarVisualizacion(
-        ['hacerPedido()', 'procesarPago()'], 
-        ['setTimeout() - Pizza en horno'], 
-        []
-    );
-    
-    log("💳 Validando tarjeta de crédito...", 'info');
-    
-    // Pequeña pausa síncrona para simular procesamiento
-    const inicio = Date.now();
-    while (Date.now() - inicio < 1000) {
-        // Simular trabajo (no hacer esto en producción)
-    }
-    
-    log("✅ Pago procesado correctamente - €25.00", 'success');
-    
-    // procesarPago sale del Call Stack
-    actualizarVisualizacion(
-        ['hacerPedido()'], 
-        ['setTimeout() - Pizza en horno'], 
-        []
-    );
+  log("2️⃣ EJECUTANDO: procesarPago() - Entra al Call Stack", "info");
+
+  // Simular validación de pago
+  actualizarVisualizacion(
+    ["hacerPedido()", "procesarPago()"],
+    ["setTimeout() - Pizza en horno"],
+    []
+  );
+
+  log("💳 Validando tarjeta de crédito...", "info");
+
+  // Pequeña pausa síncrona para simular procesamiento
+  const inicio = Date.now();
+  while (Date.now() - inicio < 1000) {
+    // Simular trabajo (no hacer esto en producción)
+  }
+
+  log("✅ Pago procesado correctamente - €25.00", "success");
+
+  // procesarPago sale del Call Stack
+  actualizarVisualizacion(
+    ["hacerPedido()"],
+    ["setTimeout() - Pizza en horno"],
+    []
+  );
 }
 
 function pizzaLista() {
-    log("🎉 PIZZA LISTA - Callback ejecutándose en Call Stack", 'success');
-    
-    // Callback entra al Call Stack
-    actualizarVisualizacion(
-        ['pizzaLista()'], 
-        [], 
-        []
-    );
-    
-    log(`🍕 ¡Pedido #${numeroPedido} listo para entregar!`, 'success');
-    
-    // Simular entrega
-    log("🚗 Preparando entrega...", 'info');
-    
-    const entregaTimeoutId = setTimeout(() => {
-        log("📦 Callback de entrega listo en Queue", 'warning');
-        actualizarVisualizacion(
-            [], 
-            [], 
-            ['callbackEntrega()']
-        );
-        entregarPizza();
-    }, 2000);
-    
-    timeoutIds.push(entregaTimeoutId);
-    
-    log("⏱️ Entregando pizza (2 segundos)... 🚗", 'info');
-    actualizarVisualizacion(
-        [], 
-        [`setTimeout(${entregaTimeoutId}) - Entregando pizza`], 
-        []
-    );
-    
-    // pizzaLista sale del Call Stack
-    actualizarVisualizacion(
-        [], 
-        [`setTimeout(${entregaTimeoutId}) - Entregando pizza`], 
-        []
-    );
+  log("🎉 PIZZA LISTA - Callback ejecutándose en Call Stack", "success");
+
+  // Callback entra al Call Stack
+  actualizarVisualizacion(["pizzaLista()"], [], []);
+
+  log(`🍕 ¡Pedido #${numeroPedido} listo para entregar!`, "success");
+
+  // Simular entrega
+  log("🚗 Preparando entrega...", "info");
+
+  const entregaTimeoutId = setTimeout(() => {
+    log("📦 Callback de entrega listo en Queue", "warning");
+    actualizarVisualizacion([], [], ["callbackEntrega()"]);
+    entregarPizza();
+  }, 2000);
+
+  timeoutIds.push(entregaTimeoutId);
+
+  log("⏱️ Entregando pizza (2 segundos)... 🚗", "info");
+  actualizarVisualizacion(
+    [],
+    [`setTimeout(${entregaTimeoutId}) - Entregando pizza`],
+    []
+  );
+
+  // pizzaLista sale del Call Stack
+  actualizarVisualizacion(
+    [],
+    [`setTimeout(${entregaTimeoutId}) - Entregando pizza`],
+    []
+  );
 }
 
 function entregarPizza() {
-    log("🏠 PIZZA ENTREGADA - Segundo callback ejecutándose", 'success');
-    actualizarVisualizacion(
-        ['entregarPizza()'], 
-        [], 
-        []
-    );
-    
-    pedidoEnProceso = false;
-    log("✅ ¡Pedido COMPLETADO exitosamente! ¡Disfruta tu pizza! 🎉", 'success');
-    
-    // Limpiar timeouts
-    timeoutIds.forEach(id => clearTimeout(id));
-    timeoutIds = [];
-    
-    actualizarVisualizacion([], [], []);
+  log("🏠 PIZZA ENTREGADA - Segundo callback ejecutándose", "success");
+  actualizarVisualizacion(["entregarPizza()"], [], []);
+
+  pedidoEnProceso = false;
+  log("✅ ¡Pedido COMPLETADO exitosamente! ¡Disfruta tu pizza! 🎉", "success");
+
+  // Limpiar timeouts
+  timeoutIds.forEach((id) => clearTimeout(id));
+  timeoutIds = [];
+
+  actualizarVisualizacion([], [], []);
 }
 
 function consultarEstado() {
-    log("🔍 Consultando estado del pedido...", 'info');
-    actualizarVisualizacion(
-        ['consultarEstado()'], 
-        ['setTimeout() - Pizza en horno'], 
-        []
-    );
-    
-    const estado = pedidoEnProceso ? 
-        `Pedido #${numeroPedido} en proceso` : 
-        "Sin pedidos activos";
-    
-    log(`📊 Estado actual: ${estado}`, 'info');
-    
-    // Sale inmediatamente del Call Stack
-    actualizarVisualizacion(
-        [], 
-        ['setTimeout() - Pizza en horno'], 
-        []
-    );
+  log("🔍 Consultando estado del pedido...", "info");
+  actualizarVisualizacion(
+    ["consultarEstado()"],
+    ["setTimeout() - Pizza en horno"],
+    []
+  );
+
+  const estado = pedidoEnProceso
+    ? `Pedido #${numeroPedido} en proceso`
+    : "Sin pedidos activos";
+
+  log(`📊 Estado actual: ${estado}`, "info");
+
+  // Sale inmediatamente del Call Stack
+  actualizarVisualizacion([], ["setTimeout() - Pizza en horno"], []);
 }
 
 function cancelarPedido() {
-    log("❌ Intentando cancelar pedido...", 'warning');
-    actualizarVisualizacion(
-        ['cancelarPedido()'], 
-        ['setTimeout() - Pizza en horno'], 
-        []
+  log("❌ Intentando cancelar pedido...", "warning");
+  actualizarVisualizacion(
+    ["cancelarPedido()"],
+    ["setTimeout() - Pizza en horno"],
+    []
+  );
+
+  if (!pedidoEnProceso) {
+    log("ℹ️ No hay pedidos activos para cancelar", "info");
+  } else {
+    log(
+      "⚠️ Pedido ya en proceso - No se puede cancelar una vez en cocina",
+      "error"
     );
-    
-    if (!pedidoEnProceso) {
-        log("ℹ️ No hay pedidos activos para cancelar", 'info');
-    } else {
-        log("⚠️ Pedido ya en proceso - No se puede cancelar una vez en cocina", 'error');
-        log("💡 Sugerencia: Espera a que termine y haz uno nuevo", 'info');
-    }
-    
-    actualizarVisualizacion(
-        [], 
-        ['setTimeout() - Pizza en horno'], 
-        []
-    );
+    log("💡 Sugerencia: Espera a que termine y haz uno nuevo", "info");
+  }
+
+  actualizarVisualizacion([], ["setTimeout() - Pizza en horno"], []);
 }
 
 // Estado inicial
-document.addEventListener('DOMContentLoaded', function() {
-    actualizarVisualizacion([], [], []);
-    log("🚀 Simulador de Call Stack INICIADO", 'success');
-    log("👉 Haz clic en 'Hacer Pedido de Pizza' para comenzar", 'info');
-    log("📊 Observa cómo se mueven las funciones entre Call Stack, Web APIs y Callback Queue", 'info');
+document.addEventListener("DOMContentLoaded", function () {
+  actualizarVisualizacion([], [], []);
+  log("🚀 Simulador de Call Stack INICIADO", "success");
+  log("👉 Haz clic en 'Hacer Pedido de Pizza' para comenzar", "info");
+  log(
+    "📊 Observa cómo se mueven las funciones entre Call Stack, Web APIs y Callback Queue",
+    "info"
+  );
 });
 ```
 
@@ -5364,149 +5360,159 @@ document.addEventListener('DOMContentLoaded', function() {
 ```html
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo Stack Overflow</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-            color: #333;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+        color: #333;
+      }
 
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
 
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+      }
 
-        .stack-visualization {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            max-height: 300px;
-            overflow-y: auto;
-            font-family: 'Courier New', monospace;
-        }
+      .stack-visualization {
+        background: #2c3e50;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        max-height: 300px;
+        overflow-y: auto;
+        font-family: "Courier New", monospace;
+      }
 
-        .stack-frame {
-            background: #3498db;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 4px solid #e74c3c;
-        }
+      .stack-frame {
+        background: #3498db;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border-left: 4px solid #e74c3c;
+      }
 
-        .stack-warning {
-            background: #e74c3c;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            text-align: center;
-            font-weight: bold;
-        }
+      .stack-warning {
+        background: #e74c3c;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+        text-align: center;
+        font-weight: bold;
+      }
 
-        .controls {
-            text-align: center;
-            margin: 20px 0;
-        }
+      .controls {
+        text-align: center;
+        margin: 20px 0;
+      }
 
-        button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            margin: 5px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
+      button {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        margin: 5px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
 
-        button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
+      button:hover {
+        background: #2980b9;
+        transform: translateY(-2px);
+      }
 
-        button.danger {
-            background: #e74c3c;
-        }
+      button.danger {
+        background: #e74c3c;
+      }
 
-        button.danger:hover {
-            background: #c0392b;
-        }
+      button.danger:hover {
+        background: #c0392b;
+      }
 
-        .explanation {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 4px solid #3498db;
-        }
+      .explanation {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+        border-left: 4px solid #3498db;
+      }
 
-        .log {
-            background: #1a1a1a;
-            color: #00ff00;
-            padding: 15px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            max-height: 200px;
-            overflow-y: auto;
-            margin: 15px 0;
-        }
+      .log {
+        background: #1a1a1a;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: "Courier New", monospace;
+        max-height: 200px;
+        overflow-y: auto;
+        margin: 15px 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>🚨 Demo de Stack Overflow</h1>
+      <h1>🚨 Demo de Stack Overflow</h1>
 
-        <div class="explanation">
-            <h3>¿Qué es un Stack Overflow?</h3>
-            <p>Ocurre cuando una función se llama a sí misma <strong>infinitamente</strong> sin condición de salida,
-            llenando el Call Stack hasta que el navegador no puede manejar más llamadas.</p>
-        </div>
+      <div class="explanation">
+        <h3>¿Qué es un Stack Overflow?</h3>
+        <p>
+          Ocurre cuando una función se llama a sí misma
+          <strong>infinitamente</strong> sin condición de salida, llenando el
+          Call Stack hasta que el navegador no puede manejar más llamadas.
+        </p>
+      </div>
 
-        <div class="controls">
-            <button onclick="iniciarRecursionNormal()">🔁 Recursión Normal (Segura)</button>
-            <button onclick="iniciarStackOverflow()" class="danger">💥 Provocar Stack Overflow</button>
-            <button onclick="limpiarTodo()">🔄 Limpiar Todo</button>
-        </div>
+      <div class="controls">
+        <button onclick="iniciarRecursionNormal()">
+          🔁 Recursión Normal (Segura)
+        </button>
+        <button onclick="iniciarStackOverflow()" class="danger">
+          💥 Provocar Stack Overflow
+        </button>
+        <button onclick="limpiarTodo()">🔄 Limpiar Todo</button>
+      </div>
 
-        <div class="stack-visualization">
-            <h3>Call Stack Visualizer</h3>
-            <div id="stackContainer"></div>
-        </div>
+      <div class="stack-visualization">
+        <h3>Call Stack Visualizer</h3>
+        <div id="stackContainer"></div>
+      </div>
 
-        <div class="log">
-            <h3>Log de Ejecución</h3>
-            <div id="log"></div>
-        </div>
+      <div class="log">
+        <h3>Log de Ejecución</h3>
+        <div id="log"></div>
+      </div>
 
-        <div class="explanation">
-            <h3>¿Por qué pasa esto?</h3>
-            <p>El Call Stack tiene un <strong>límite máximo</strong> de llamadas anidadas (normalmente ~10,000-50,000 dependiendo del navegador).
-            Cuando una función recursiva no tiene caso base o el caso base nunca se alcanza, el stack se llena hasta explotar. 💥</p>
-        </div>
+      <div class="explanation">
+        <h3>¿Por qué pasa esto?</h3>
+        <p>
+          El Call Stack tiene un <strong>límite máximo</strong> de llamadas
+          anidadas (normalmente ~10,000-50,000 dependiendo del navegador).
+          Cuando una función recursiva no tiene caso base o el caso base nunca
+          se alcanza, el stack se llena hasta explotar. 💥
+        </p>
+      </div>
     </div>
 
     <script src="stack-overflow-demo.js"></script>
-</body>
+  </body>
 </html>
-
 ```
 
 ## ⚡ **2. stack-overflow-demo.js**
@@ -5520,288 +5526,299 @@ let isRunning = false;
 
 // Función para actualizar la visualización del stack
 function actualizarStackVisualization() {
-    const stackContainer = document.getElementById('stackContainer');
-    const framesHTML = stackFrames.map((frame, index) => {
-        const depth = stackFrames.length - index;
-        const backgroundColor = index === stackFrames.length - 1 ?
-            'linear-gradient(135deg, #e74c3c, #c0392b)' :
-            'linear-gradient(135deg, #3498db, #2980b9)';
+  const stackContainer = document.getElementById("stackContainer");
+  const framesHTML = stackFrames
+    .map((frame, index) => {
+      const depth = stackFrames.length - index;
+      const backgroundColor =
+        index === stackFrames.length - 1
+          ? "linear-gradient(135deg, #e74c3c, #c0392b)"
+          : "linear-gradient(135deg, #3498db, #2980b9)";
 
-        return `
+      return `
             <div class="stack-frame" style="
                 background: ${backgroundColor};
                 margin-left: ${depth * 10}px;
-                transform: scale(${1 - (index * 0.02)});
+                transform: scale(${1 - index * 0.02});
             ">
                 <strong>${frame.functionName}</strong>
                 (nivel: ${frame.level})<br>
                 <small>Recursión #${frame.iteration}</small>
             </div>
         `;
-    }).join('');
+    })
+    .join("");
 
-    stackContainer.innerHTML = framesHTML;
+  stackContainer.innerHTML = framesHTML;
 
-    // Mostrar advertencia si el stack está creciendo mucho
-    if (stackFrames.length > maxSafeRecursion * 0.7) {
-        const warning = document.createElement('div');
-        warning.className = 'stack-warning';
-        warning.innerHTML = `⚠️ STACK CRECIENDO PELIGROSAMENTE: ${stackFrames.length} frames`;
-        stackContainer.prepend(warning);
-    }
+  // Mostrar advertencia si el stack está creciendo mucho
+  if (stackFrames.length > maxSafeRecursion * 0.7) {
+    const warning = document.createElement("div");
+    warning.className = "stack-warning";
+    warning.innerHTML = `⚠️ STACK CRECIENDO PELIGROSAMENTE: ${stackFrames.length} frames`;
+    stackContainer.prepend(warning);
+  }
 }
 
 // Función para agregar logs
-function log(mensaje, tipo = 'info') {
-    const logDiv = document.getElementById('log');
-    const timestamp = new Date().toLocaleTimeString();
-    const color = {
-        'info': '#3498db',
-        'error': '#e74c3c',
-        'success': '#2ecc71',
-        'warning': '#f39c12'
-    }[tipo] || '#3498db';
+function log(mensaje, tipo = "info") {
+  const logDiv = document.getElementById("log");
+  const timestamp = new Date().toLocaleTimeString();
+  const color =
+    {
+      info: "#3498db",
+      error: "#e74c3c",
+      success: "#2ecc71",
+      warning: "#f39c12",
+    }[tipo] || "#3498db";
 
-    const logEntry = document.createElement('div');
-    logEntry.style.color = color;
-    logEntry.innerHTML = `[${timestamp}] ${mensaje}`;
+  const logEntry = document.createElement("div");
+  logEntry.style.color = color;
+  logEntry.innerHTML = `[${timestamp}] ${mensaje}`;
 
-    logDiv.appendChild(logEntry);
-    logDiv.scrollTop = logDiv.scrollHeight;
+  logDiv.appendChild(logEntry);
+  logDiv.scrollTop = logDiv.scrollHeight;
 }
 
 // Función para limpiar todo
 function limpiarTodo() {
-    stackFrames = [];
-    recursionCount = 0;
-    isRunning = false;
-    actualizarStackVisualization();
-    document.getElementById('log').innerHTML = '';
-    log("✅ Todo limpiado - Listo para nueva demo", 'success');
+  stackFrames = [];
+  recursionCount = 0;
+  isRunning = false;
+  actualizarStackVisualization();
+  document.getElementById("log").innerHTML = "";
+  log("✅ Todo limpiado - Listo para nueva demo", "success");
 }
 
 // ========== DEMO 1: RECURSIÓN NORMAL (SEGURA) ==========
 
 function recursionSegura(nivel = 0) {
-    if (!isRunning) return;
+  if (!isRunning) return;
 
-    // CASO BASE: Detenerse cuando llegamos al límite seguro
-    if (nivel >= maxSafeRecursion) {
-        log(`✅ RECURSIÓN SEGURA COMPLETADA: Alcanzado nivel ${nivel}`, 'success');
-        isRunning = false;
-        return;
-    }
+  // CASO BASE: Detenerse cuando llegamos al límite seguro
+  if (nivel >= maxSafeRecursion) {
+    log(`✅ RECURSIÓN SEGURA COMPLETADA: Alcanzado nivel ${nivel}`, "success");
+    isRunning = false;
+    return;
+  }
 
-    recursionCount++;
+  recursionCount++;
 
-    // Agregar frame al stack
-    stackFrames.push({
-        functionName: 'recursionSegura()',
-        level: nivel,
-        iteration: recursionCount
-    });
+  // Agregar frame al stack
+  stackFrames.push({
+    functionName: "recursionSegura()",
+    level: nivel,
+    iteration: recursionCount,
+  });
 
-    actualizarStackVisualization();
-    log(`🔁 Recursión segura - Nivel: ${nivel}, Stack size: ${stackFrames.length}`);
+  actualizarStackVisualization();
+  log(
+    `🔁 Recursión segura - Nivel: ${nivel}, Stack size: ${stackFrames.length}`
+  );
 
-    // Simular algún trabajo
-    const inicio = Date.now();
-    while (Date.now() - inicio < 20) {
-        // Pequeña pausa para visualización
-    }
+  // Simular algún trabajo
+  const inicio = Date.now();
+  while (Date.now() - inicio < 20) {
+    // Pequeña pausa para visualización
+  }
 
-    // Llamada recursiva
-    recursionSegura(nivel + 1);
+  // Llamada recursiva
+  recursionSegura(nivel + 1);
 
-    // Remover frame del stack (esto muestra cómo se desapila)
-    stackFrames.pop();
-    actualizarStackVisualization();
+  // Remover frame del stack (esto muestra cómo se desapila)
+  stackFrames.pop();
+  actualizarStackVisualization();
 }
 
 function iniciarRecursionNormal() {
-    if (isRunning) {
-        log("⚠️ Ya hay una ejecución en curso", 'warning');
-        return;
-    }
+  if (isRunning) {
+    log("⚠️ Ya hay una ejecución en curso", "warning");
+    return;
+  }
 
-    limpiarTodo();
-    isRunning = true;
-    log("🚀 INICIANDO RECURSIÓN SEGURA", 'success');
-    log(`📏 Límite seguro: ${maxSafeRecursion} niveles`, 'info');
+  limpiarTodo();
+  isRunning = true;
+  log("🚀 INICIANDO RECURSIÓN SEGURA", "success");
+  log(`📏 Límite seguro: ${maxSafeRecursion} niveles`, "info");
 
-    setTimeout(() => {
-        recursionSegura(0);
-    }, 100);
+  setTimeout(() => {
+    recursionSegura(0);
+  }, 100);
 }
 
 // ========== DEMO 2: STACK OVERFLOW ==========
 
 function funcionInfinita(nivel = 0) {
-    // ¡NO HAY CASO BASE! Esto causará stack overflow
-    recursionCount++;
+  // ¡NO HAY CASO BASE! Esto causará stack overflow
+  recursionCount++;
 
-    // Agregar frame al stack
-    stackFrames.push({
-        functionName: 'funcionInfinita()',
-        level: nivel,
-        iteration: recursionCount
-    });
+  // Agregar frame al stack
+  stackFrames.push({
+    functionName: "funcionInfinita()",
+    level: nivel,
+    iteration: recursionCount,
+  });
 
-    // Actualizar visualización cada ciertos niveles para no saturar
-    if (recursionCount % 100 === 0) {
-        actualizarStackVisualization();
-        log(`📈 Stack creciendo - Nivel: ${nivel}, Frames: ${stackFrames.length}`, 'warning');
-    }
+  // Actualizar visualización cada ciertos niveles para no saturar
+  if (recursionCount % 100 === 0) {
+    actualizarStackVisualization();
+    log(
+      `📈 Stack creciendo - Nivel: ${nivel}, Frames: ${stackFrames.length}`,
+      "warning"
+    );
+  }
 
-    // Llamada recursiva INFINITA
-    funcionInfinita(nivel + 1);
+  // Llamada recursiva INFINITA
+  funcionInfinita(nivel + 1);
 
-    // Esta línea NUNCA se ejecutará
-    stackFrames.pop();
+  // Esta línea NUNCA se ejecutará
+  stackFrames.pop();
 }
 
 function funcionConCondicionRota(nivel = 0) {
-    recursionCount++;
+  recursionCount++;
 
-    stackFrames.push({
-        functionName: 'funcionConCondicionRota()',
-        level: nivel,
-        iteration: recursionCount
-    });
+  stackFrames.push({
+    functionName: "funcionConCondicionRota()",
+    level: nivel,
+    iteration: recursionCount,
+  });
 
-    // ¡CONDICIÓN QUE NUNCA SE CUMPLE!
-    // El stack overflow ocurrirá antes de que nivel alcance 100,000
-    if (nivel > 100000) {
-        log("🎯 ¡Caso base alcanzado! (esto nunca pasará)", 'success');
-        stackFrames.pop();
-        return;
-    }
-
-    if (recursionCount % 200 === 0) {
-        actualizarStackVisualization();
-        log(`⚠️ Condición rota - Nivel: ${nivel}, Meta: 100,000`, 'warning');
-    }
-
-    // Llamada recursiva
-    funcionConCondicionRota(nivel + 1);
-
+  // ¡CONDICIÓN QUE NUNCA SE CUMPLE!
+  // El stack overflow ocurrirá antes de que nivel alcance 100,000
+  if (nivel > 100000) {
+    log("🎯 ¡Caso base alcanzado! (esto nunca pasará)", "success");
     stackFrames.pop();
+    return;
+  }
+
+  if (recursionCount % 200 === 0) {
+    actualizarStackVisualization();
+    log(`⚠️ Condición rota - Nivel: ${nivel}, Meta: 100,000`, "warning");
+  }
+
+  // Llamada recursiva
+  funcionConCondicionRota(nivel + 1);
+
+  stackFrames.pop();
 }
 
 function iniciarStackOverflow() {
-    if (isRunning) {
-        log("⚠️ Ya hay una ejecución en curso", 'warning');
-        return;
+  if (isRunning) {
+    log("⚠️ Ya hay una ejecución en curso", "warning");
+    return;
+  }
+
+  limpiarTodo();
+  isRunning = true;
+  recursionCount = 0;
+
+  log("💥 INICIANDO STACK OVERFLOW DEMO", "error");
+  log("❌ Esto crasheará el navegador - ¡Ten cuidado!", "error");
+  log("🛑 El stack se llenará hasta el límite máximo...", "warning");
+
+  // Usar setTimeout para dar tiempo a que se muestren los mensajes
+  setTimeout(() => {
+    try {
+      // Elegir una de las dos funciones para demostrar
+      if (Math.random() > 0.5) {
+        log("🔨 Usando función infinita sin caso base...", "error");
+        funcionInfinita(0);
+      } else {
+        log("🔨 Usando función con condición inalcanzable...", "error");
+        funcionConCondicionRota(0);
+      }
+    } catch (error) {
+      log(`💥 STACK OVERFLOW CAPTURADO: ${error.message}`, "error");
+      isRunning = false;
     }
-
-    limpiarTodo();
-    isRunning = true;
-    recursionCount = 0;
-
-    log("💥 INICIANDO STACK OVERFLOW DEMO", 'error');
-    log("❌ Esto crasheará el navegador - ¡Ten cuidado!", 'error');
-    log("🛑 El stack se llenará hasta el límite máximo...", 'warning');
-
-    // Usar setTimeout para dar tiempo a que se muestren los mensajes
-    setTimeout(() => {
-        try {
-            // Elegir una de las dos funciones para demostrar
-            if (Math.random() > 0.5) {
-                log("🔨 Usando función infinita sin caso base...", 'error');
-                funcionInfinita(0);
-            } else {
-                log("🔨 Usando función con condición inalcanzable...", 'error');
-                funcionConCondicionRota(0);
-            }
-        } catch (error) {
-            log(`💥 STACK OVERFLOW CAPTURADO: ${error.message}`, 'error');
-            isRunning = false;
-        }
-    }, 500);
+  }, 500);
 }
 
 // ========== DEMO 3: RECURSIÓN MUTUA (STACK OVERFLOW) ==========
 
 function funcionA(nivel) {
-    recursionCount++;
+  recursionCount++;
 
-    stackFrames.push({
-        functionName: 'funcionA()',
-        level: nivel,
-        iteration: recursionCount
-    });
+  stackFrames.push({
+    functionName: "funcionA()",
+    level: nivel,
+    iteration: recursionCount,
+  });
 
-    if (recursionCount % 150 === 0) {
-        actualizarStackVisualization();
-        log(`🔄 Recursión mutua A→B - Nivel: ${nivel}`, 'warning');
-    }
+  if (recursionCount % 150 === 0) {
+    actualizarStackVisualization();
+    log(`🔄 Recursión mutua A→B - Nivel: ${nivel}`, "warning");
+  }
 
-    // Llamar a B
-    funcionB(nivel + 1);
+  // Llamar a B
+  funcionB(nivel + 1);
 
-    stackFrames.pop();
+  stackFrames.pop();
 }
 
 function funcionB(nivel) {
-    recursionCount++;
+  recursionCount++;
 
-    stackFrames.push({
-        functionName: 'funcionB()',
-        level: nivel,
-        iteration: recursionCount
-    });
+  stackFrames.push({
+    functionName: "funcionB()",
+    level: nivel,
+    iteration: recursionCount,
+  });
 
-    if (recursionCount % 150 === 0) {
-        actualizarStackVisualization();
-        log(`🔄 Recursión mutua B→A - Nivel: ${nivel}`, 'warning');
-    }
+  if (recursionCount % 150 === 0) {
+    actualizarStackVisualization();
+    log(`🔄 Recursión mutua B→A - Nivel: ${nivel}`, "warning");
+  }
 
-    // Llamar de vuelta a A - ¡CICLO INFINITO!
-    funcionA(nivel + 1);
+  // Llamar de vuelta a A - ¡CICLO INFINITO!
+  funcionA(nivel + 1);
 
-    stackFrames.pop();
+  stackFrames.pop();
 }
 
 function iniciarRecursionMutua() {
-    if (isRunning) {
-        log("⚠️ Ya hay una ejecución en curso", 'warning');
-        return;
+  if (isRunning) {
+    log("⚠️ Ya hay una ejecución en curso", "warning");
+    return;
+  }
+
+  limpiarTodo();
+  isRunning = true;
+  recursionCount = 0;
+
+  log("🔄 INICIANDO RECURSIÓN MUTUA INFINITA", "error");
+  log("🔁 A llama a B, B llama a A... infinitamente", "warning");
+
+  setTimeout(() => {
+    try {
+      funcionA(0);
+    } catch (error) {
+      log(`💥 STACK OVERFLOW EN RECURSIÓN MUTUA: ${error.message}`, "error");
+      isRunning = false;
     }
-
-    limpiarTodo();
-    isRunning = true;
-    recursionCount = 0;
-
-    log("🔄 INICIANDO RECURSIÓN MUTUA INFINITA", 'error');
-    log("🔁 A llama a B, B llama a A... infinitamente", 'warning');
-
-    setTimeout(() => {
-        try {
-            funcionA(0);
-        } catch (error) {
-            log(`💥 STACK OVERFLOW EN RECURSIÓN MUTUA: ${error.message}`, 'error');
-            isRunning = false;
-        }
-    }, 500);
+  }, 500);
 }
 
 // Inicialización
-document.addEventListener('DOMContentLoaded', function() {
-    log("🚀 Demo de Stack Overflow cargado", 'success');
-    log("👉 Usa 'Recursión Normal' para ver cómo debería funcionar", 'info');
-    log("⚠️ 'Provocar Stack Overflow' crasheará esta pestaña - ¡Cuidado!", 'error');
+document.addEventListener("DOMContentLoaded", function () {
+  log("🚀 Demo de Stack Overflow cargado", "success");
+  log("👉 Usa 'Recursión Normal' para ver cómo debería funcionar", "info");
+  log(
+    "⚠️ 'Provocar Stack Overflow' crasheará esta pestaña - ¡Cuidado!",
+    "error"
+  );
 });
 
 // Agregar el botón de recursión mutua dinámicamente
-document.addEventListener('DOMContentLoaded', function() {
-    const controls = document.querySelector('.controls');
-    const mutuaButton = document.createElement('button');
-    mutuaButton.className = 'danger';
-    mutuaButton.textContent = '🔄 Recursión Mutua Infinita';
-    mutuaButton.onclick = iniciarRecursionMutua;
-    controls.appendChild(mutuaButton);
+document.addEventListener("DOMContentLoaded", function () {
+  const controls = document.querySelector(".controls");
+  const mutuaButton = document.createElement("button");
+  mutuaButton.className = "danger";
+  mutuaButton.textContent = "🔄 Recursión Mutua Infinita";
+  mutuaButton.onclick = iniciarRecursionMutua;
+  controls.appendChild(mutuaButton);
 });
-
 ```
 
 ## 🎯 **Cómo usar la demo:**
@@ -5850,622 +5867,633 @@ La demo de Stack Overflow **puede crashear la pestaña** del navegador. ¡Usa co
 ```html
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Gestión de Notificaciones</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1>🚀 Sistema de Gestión de Notificaciones</h1>
-            <p class="subtitle">Visualización del Event Loop en tiempo real</p>
-        </header>
+      <header class="header">
+        <h1>🚀 Sistema de Gestión de Notificaciones</h1>
+        <p class="subtitle">Visualización del Event Loop en tiempo real</p>
+      </header>
 
-        <div class="dashboard">
-            <!-- Panel de Control -->
-            <div class="control-panel">
-                <h2>🎮 Panel de Control</h2>
-                <div class="buttons">
-                    <button onclick="iniciarSimulacion()" class="btn btn-primary">
-                        ▶️ Iniciar Simulación
-                    </button>
-                    <button onclick="agregarNotificacionManual()" class="btn btn-secondary">
-                        ➕ Notificación Manual
-                    </button>
-                    <button onclick="limpiarTodo()" class="btn btn-danger">
-                        🗑️ Limpiar Todo
-                    </button>
-                </div>
+      <div class="dashboard">
+        <!-- Panel de Control -->
+        <div class="control-panel">
+          <h2>🎮 Panel de Control</h2>
+          <div class="buttons">
+            <button onclick="iniciarSimulacion()" class="btn btn-primary">
+              ▶️ Iniciar Simulación
+            </button>
+            <button
+              onclick="agregarNotificacionManual()"
+              class="btn btn-secondary"
+            >
+              ➕ Notificación Manual
+            </button>
+            <button onclick="limpiarTodo()" class="btn btn-danger">
+              🗑️ Limpiar Todo
+            </button>
+          </div>
 
-                <div class="stats">
-                    <div class="stat-card">
-                        <span class="stat-number" id="totalNotificaciones">0</span>
-                        <span class="stat-label">Total Notificaciones</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="urgentesCount">0</span>
-                        <span class="stat-label">Urgentes</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="normalesCount">0</span>
-                        <span class="stat-label">Normales</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="backgroundCount">0</span>
-                        <span class="stat-label">Background</span>
-                    </div>
-                </div>
+          <div class="stats">
+            <div class="stat-card">
+              <span class="stat-number" id="totalNotificaciones">0</span>
+              <span class="stat-label">Total Notificaciones</span>
             </div>
-
-            <!-- Visualización del Event Loop -->
-            <div class="event-loop-viz">
-                <h2>🔄 Event Loop - Colas de Prioridad</h2>
-                <div class="queues-container">
-                    <div class="queue microtask-queue">
-                        <h3>🚨 Microtask Queue (Alta Prioridad)</h3>
-                        <div class="queue-items" id="microtaskQueue">
-                            <div class="queue-empty">Vacía</div>
-                        </div>
-                    </div>
-
-                    <div class="queue task-queue">
-                        <h3>🟡 Task Queue (Prioridad Normal)</h3>
-                        <div class="queue-items" id="taskQueue">
-                            <div class="queue-empty">Vacía</div>
-                        </div>
-                    </div>
-
-                    <div class="queue background-queue">
-                        <h3>🔵 Background Queue (Baja Prioridad)</h3>
-                        <div class="queue-items" id="backgroundQueue">
-                            <div class="queue-empty">Vacía</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="stat-card">
+              <span class="stat-number" id="urgentesCount">0</span>
+              <span class="stat-label">Urgentes</span>
             </div>
-
-            <!-- Call Stack -->
-            <div class="call-stack-viz">
-                <h2>📚 Call Stack</h2>
-                <div class="stack-container">
-                    <div class="stack-items" id="callStack">
-                        <div class="stack-empty">Ejecución principal</div>
-                    </div>
-                </div>
+            <div class="stat-card">
+              <span class="stat-number" id="normalesCount">0</span>
+              <span class="stat-label">Normales</span>
             </div>
-
-            <!-- Log de Ejecución -->
-            <div class="execution-log">
-                <h2>📋 Log de Ejecución</h2>
-                <div class="log-container">
-                    <div class="log-header">
-                        <span>Tiempo</span>
-                        <span>Tipo</span>
-                        <span>Mensaje</span>
-                        <span>Estado</span>
-                    </div>
-                    <div class="log-entries" id="logEntries"></div>
-                </div>
+            <div class="stat-card">
+              <span class="stat-number" id="backgroundCount">0</span>
+              <span class="stat-label">Background</span>
             </div>
-
-            <!-- Notificaciones Procesadas -->
-            <div class="notifications-panel">
-                <h2>📨 Notificaciones Procesadas</h2>
-                <div class="notifications-list" id="notificationsList">
-                    <div class="empty-state">
-                        Las notificaciones aparecerán aquí cuando se procesen
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <!-- Explicación -->
-        <div class="explanation">
-            <h3>💡 ¿Cómo funciona el sistema de prioridades?</h3>
-            <div class="priority-examples">
-                <div class="priority-item urgent">
-                    <h4>🚨 URGENTE (Microtask Queue)</h4>
-                    <p>Se ejecuta inmediatamente después del código actual. Usado para errores críticos, validaciones de seguridad y respuestas inmediatas de API.</p>
-                </div>
-                <div class="priority-item normal">
-                    <h4>🟡 NORMAL (Task Queue)</h4>
-                    <p>Se ejecuta después de las microtasks. Usado para interacciones de usuario, actualizaciones de UI y mensajes normales.</p>
-                </div>
-                <div class="priority-item background">
-                    <h4>🔵 BACKGROUND (Task Queue con delay)</h4>
-                    <p>Se ejecuta después de un tiempo específico. Usado para analytics, logs y tareas de mantenimiento.</p>
-                </div>
+        <!-- Visualización del Event Loop -->
+        <div class="event-loop-viz">
+          <h2>🔄 Event Loop - Colas de Prioridad</h2>
+          <div class="queues-container">
+            <div class="queue microtask-queue">
+              <h3>🚨 Microtask Queue (Alta Prioridad)</h3>
+              <div class="queue-items" id="microtaskQueue">
+                <div class="queue-empty">Vacía</div>
+              </div>
             </div>
+
+            <div class="queue task-queue">
+              <h3>🟡 Task Queue (Prioridad Normal)</h3>
+              <div class="queue-items" id="taskQueue">
+                <div class="queue-empty">Vacía</div>
+              </div>
+            </div>
+
+            <div class="queue background-queue">
+              <h3>🔵 Background Queue (Baja Prioridad)</h3>
+              <div class="queue-items" id="backgroundQueue">
+                <div class="queue-empty">Vacía</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Call Stack -->
+        <div class="call-stack-viz">
+          <h2>📚 Call Stack</h2>
+          <div class="stack-container">
+            <div class="stack-items" id="callStack">
+              <div class="stack-empty">Ejecución principal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Log de Ejecución -->
+        <div class="execution-log">
+          <h2>📋 Log de Ejecución</h2>
+          <div class="log-container">
+            <div class="log-header">
+              <span>Tiempo</span>
+              <span>Tipo</span>
+              <span>Mensaje</span>
+              <span>Estado</span>
+            </div>
+            <div class="log-entries" id="logEntries"></div>
+          </div>
+        </div>
+
+        <!-- Notificaciones Procesadas -->
+        <div class="notifications-panel">
+          <h2>📨 Notificaciones Procesadas</h2>
+          <div class="notifications-list" id="notificationsList">
+            <div class="empty-state">
+              Las notificaciones aparecerán aquí cuando se procesen
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explicación -->
+      <div class="explanation">
+        <h3>💡 ¿Cómo funciona el sistema de prioridades?</h3>
+        <div class="priority-examples">
+          <div class="priority-item urgent">
+            <h4>🚨 URGENTE (Microtask Queue)</h4>
+            <p>
+              Se ejecuta inmediatamente después del código actual. Usado para
+              errores críticos, validaciones de seguridad y respuestas
+              inmediatas de API.
+            </p>
+          </div>
+          <div class="priority-item normal">
+            <h4>🟡 NORMAL (Task Queue)</h4>
+            <p>
+              Se ejecuta después de las microtasks. Usado para interacciones de
+              usuario, actualizaciones de UI y mensajes normales.
+            </p>
+          </div>
+          <div class="priority-item background">
+            <h4>🔵 BACKGROUND (Task Queue con delay)</h4>
+            <p>
+              Se ejecuta después de un tiempo específico. Usado para analytics,
+              logs y tareas de mantenimiento.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="notificaciones.js"></script>
     <script src="visualizacion.js"></script>
-</body>
+  </body>
 </html>
-
 ```
 
 ## 🎨 **2. styles.css**
 
 ```css
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-    min-height: 100vh;
-    line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 30px;
-    color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 .dashboard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 20px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .control-panel {
-    grid-column: 1 / 2;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 2;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .control-panel h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .btn {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
-    color: white;
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
 }
 
 .btn-danger {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    border-left: 4px solid #3498db;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border-left: 4px solid #3498db;
 }
 
 .stat-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2c3e50;
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    color: #7f8c8d;
+  font-size: 0.9rem;
+  color: #7f8c8d;
 }
 
 .event-loop-viz {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .event-loop-viz h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .queues-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
 }
 
 .queue {
-    flex: 1;
-    border-radius: 10px;
-    padding: 15px;
-    transition: all 0.3s ease;
+  flex: 1;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
 }
 
 .queue h3 {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
 .microtask-queue {
-    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
-    border: 2px solid #e17055;
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+  border: 2px solid #e17055;
 }
 
 .task-queue {
-    background: linear-gradient(135deg, #81ecec, #74b9ff);
-    border: 2px solid #0984e3;
+  background: linear-gradient(135deg, #81ecec, #74b9ff);
+  border: 2px solid #0984e3;
 }
 
 .background-queue {
-    background: linear-gradient(135deg, #a29bfe, #dfe6e9);
-    border: 2px solid #6c5ce7;
+  background: linear-gradient(135deg, #a29bfe, #dfe6e9);
+  border: 2px solid #6c5ce7;
 }
 
 .queue-items {
-    min-height: 120px;
-    max-height: 150px;
-    overflow-y: auto;
+  min-height: 120px;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 .queue-empty {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 20px;
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
 }
 
 .queue-item {
-    background: white;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-left: 4px solid;
-    animation: slideIn 0.3s ease;
+  background: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease;
 }
 
 .queue-item.urgent {
-    border-left-color: #e74c3c;
+  border-left-color: #e74c3c;
 }
 
 .queue-item.normal {
-    border-left-color: #f39c12;
+  border-left-color: #f39c12;
 }
 
 .queue-item.background {
-    border-left-color: #3498db;
+  border-left-color: #3498db;
 }
 
 .call-stack-viz {
-    grid-column: 1 / 2;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 2;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .call-stack-viz h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .stack-container {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    border-radius: 10px;
-    padding: 20px;
-    min-height: 150px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 150px;
 }
 
 .stack-items {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
 }
 
 .stack-empty {
-    text-align: center;
-    color: #bdc3c7;
-    font-style: italic;
-    padding: 20px;
+  text-align: center;
+  color: #bdc3c7;
+  font-style: italic;
+  padding: 20px;
 }
 
 .stack-item {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    padding: 12px;
-    border-radius: 6px;
-    text-align: center;
-    animation: stackPush 0.3s ease;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  animation: stackPush 0.3s ease;
 }
 
 .execution-log {
-    grid-column: 1 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .execution-log h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .log-container {
-    border: 2px solid #ecf0f1;
-    border-radius: 8px;
-    overflow: hidden;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .log-header {
-    display: grid;
-    grid-template-columns: 100px 120px 1fr 100px;
-    gap: 15px;
-    padding: 15px;
-    background: #34495e;
-    color: white;
-    font-weight: 600;
+  display: grid;
+  grid-template-columns: 100px 120px 1fr 100px;
+  gap: 15px;
+  padding: 15px;
+  background: #34495e;
+  color: white;
+  font-weight: 600;
 }
 
 .log-entries {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .log-entry {
-    display: grid;
-    grid-template-columns: 100px 120px 1fr 100px;
-    gap: 15px;
-    padding: 12px 15px;
-    border-bottom: 1px solid #ecf0f1;
-    animation: fadeIn 0.5s ease;
+  display: grid;
+  grid-template-columns: 100px 120px 1fr 100px;
+  gap: 15px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ecf0f1;
+  animation: fadeIn 0.5s ease;
 }
 
 .log-entry:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .log-entry.urgent {
-    background: #ffeaa7;
+  background: #ffeaa7;
 }
 
 .log-entry.normal {
-    background: #dfe6e9;
+  background: #dfe6e9;
 }
 
 .log-entry.background {
-    background: #a29bfe;
-    color: white;
+  background: #a29bfe;
+  color: white;
 }
 
 .notifications-panel {
-    grid-column: 1 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .notifications-panel h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .notifications-list {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .empty-state {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 40px;
-    background: #f8f9fa;
-    border-radius: 8px;
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
 
 .notification-item {
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-left: 4px solid;
-    animation: slideIn 0.3s ease;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease;
 }
 
 .notification-item.urgent {
-    background: #ffeaa7;
-    border-left-color: #e74c3c;
+  background: #ffeaa7;
+  border-left-color: #e74c3c;
 }
 
 .notification-item.normal {
-    background: #dfe6e9;
-    border-left-color: #f39c12;
+  background: #dfe6e9;
+  border-left-color: #f39c12;
 }
 
 .notification-item.background {
-    background: #a29bfe;
-    border-left-color: #3498db;
-    color: white;
+  background: #a29bfe;
+  border-left-color: #3498db;
+  color: white;
 }
 
 .explanation {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    margin-top: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
 .explanation h3 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .priority-examples {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
 }
 
 .priority-item {
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid;
 }
 
 .priority-item.urgent {
-    background: #ffeaa7;
-    border-left-color: #e74c3c;
+  background: #ffeaa7;
+  border-left-color: #e74c3c;
 }
 
 .priority-item.normal {
-    background: #dfe6e9;
-    border-left-color: #f39c12;
+  background: #dfe6e9;
+  border-left-color: #f39c12;
 }
 
 .priority-item.background {
-    background: #a29bfe;
-    border-left-color: #3498db;
-    color: white;
+  background: #a29bfe;
+  border-left-color: #3498db;
+  color: white;
 }
 
 .priority-item h4 {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 /* Animaciones */
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes stackPush {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
 
-    .event-loop-viz {
-        grid-column: 1;
-        grid-row: 2;
-    }
+  .event-loop-viz {
+    grid-column: 1;
+    grid-row: 2;
+  }
 
-    .execution-log,
-    .notifications-panel {
-        grid-column: 1;
-    }
+  .execution-log,
+  .notifications-panel {
+    grid-column: 1;
+  }
 
-    .priority-examples {
-        grid-template-columns: 1fr;
-    }
+  .priority-examples {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-    .stats {
-        grid-template-columns: 1fr;
-    }
+  .stats {
+    grid-template-columns: 1fr;
+  }
 
-    .buttons {
-        flex-direction: column;
-    }
+  .buttons {
+    flex-direction: column;
+  }
 
-    .log-header,
-    .log-entry {
-        grid-template-columns: 80px 100px 1fr 80px;
-        font-size: 0.9rem;
-    }
+  .log-header,
+  .log-entry {
+    grid-template-columns: 80px 100px 1fr 80px;
+    font-size: 0.9rem;
+  }
 }
-
 ```
 
 ## ⚡ **3. visualizacion.js**
@@ -6481,194 +6509,216 @@ body {
 // - Lista de notificaciones procesadas
 // - Contadores de estadísticas
 class VisualizadorEventLoop {
-    constructor() {
-        // 🧮 Inicializamos contadores de notificaciones por tipo
-        this.contadores = {
-            total: 0,       // Total de notificaciones procesadas
-            urgentes: 0,    // Microtasks (alta prioridad)
-            normales: 0,    // Tasks normales (prioridad estándar)
-            background: 0   // Tareas en background (baja prioridad)
-        };
-    }
+  constructor() {
+    // 🧮 Inicializamos contadores de notificaciones por tipo
+    this.contadores = {
+      total: 0, // Total de notificaciones procesadas
+      urgentes: 0, // Microtasks (alta prioridad)
+      normales: 0, // Tasks normales (prioridad estándar)
+      background: 0, // Tareas en background (baja prioridad)
+    };
+  }
 
-    /**
-     * 📈 actualizarEstadisticas()
-     * Actualiza los contadores visibles en el DOM
-     * según el estado actual del objeto `this.contadores`.
-     */
-    actualizarEstadisticas() {
-        document.getElementById('totalNotificaciones').textContent = this.contadores.total;
-        document.getElementById('urgentesCount').textContent = this.contadores.urgentes;
-        document.getElementById('normalesCount').textContent = this.contadores.normales;
-        document.getElementById('backgroundCount').textContent = this.contadores.background;
-    }
+  /**
+   * 📈 actualizarEstadisticas()
+   * Actualiza los contadores visibles en el DOM
+   * según el estado actual del objeto `this.contadores`.
+   */
+  actualizarEstadisticas() {
+    document.getElementById("totalNotificaciones").textContent =
+      this.contadores.total;
+    document.getElementById("urgentesCount").textContent =
+      this.contadores.urgentes;
+    document.getElementById("normalesCount").textContent =
+      this.contadores.normales;
+    document.getElementById("backgroundCount").textContent =
+      this.contadores.background;
+  }
 
-    /**
-     * 🧾 agregarALog(timestamp, tipo, mensaje, estado)
-     * Registra un nuevo evento en el panel de LOG visual.
-     * Cada entrada muestra:
-     * - Hora
-     * - Tipo (urgente / normal / background)
-     * - Mensaje descriptivo
-     * - Estado (ej: "Encolado", "Procesado")
-     */
-    agregarALog(timestamp, tipo, mensaje, estado) {
-        const logEntries = document.getElementById('logEntries');
-        const logEntry = document.createElement('div');
-        logEntry.className = `log-entry ${tipo}`;
+  /**
+   * 🧾 agregarALog(timestamp, tipo, mensaje, estado)
+   * Registra un nuevo evento en el panel de LOG visual.
+   * Cada entrada muestra:
+   * - Hora
+   * - Tipo (urgente / normal / background)
+   * - Mensaje descriptivo
+   * - Estado (ej: "Encolado", "Procesado")
+   */
+  agregarALog(timestamp, tipo, mensaje, estado) {
+    const logEntries = document.getElementById("logEntries");
+    const logEntry = document.createElement("div");
+    logEntry.className = `log-entry ${tipo}`;
 
-        logEntry.innerHTML = `
+    logEntry.innerHTML = `
             <span>${timestamp}</span>
             <span>
-                ${tipo === 'urgent' ? '🚨 URGENTE' :
-                  tipo === 'normal' ? '🟡 NORMAL' : '🔵 BACKGROUND'}
+                ${
+                  tipo === "urgent"
+                    ? "🚨 URGENTE"
+                    : tipo === "normal"
+                    ? "🟡 NORMAL"
+                    : "🔵 BACKGROUND"
+                }
             </span>
             <span>${mensaje}</span>
             <span>${estado}</span>
         `;
 
-        logEntries.appendChild(logEntry);
-        logEntries.scrollTop = logEntries.scrollHeight; // auto-scroll al final
-    }
+    logEntries.appendChild(logEntry);
+    logEntries.scrollTop = logEntries.scrollHeight; // auto-scroll al final
+  }
 
-    /**
-     * 📥 agregarACola(tipo, mensaje, id)
-     * Añade un item visual a la cola correspondiente según el tipo.
-     * - 'urgent' → microtaskQueue
-     * - 'normal' → taskQueue
-     * - 'background' → backgroundQueue
-     * También elimina el mensaje "Vacía" si la cola estaba vacía.
-     */
-    agregarACola(tipo, mensaje, id) {
-        const queueId = tipo === 'urgent' ? 'microtaskQueue' :
-                       tipo === 'normal' ? 'taskQueue' : 'backgroundQueue';
+  /**
+   * 📥 agregarACola(tipo, mensaje, id)
+   * Añade un item visual a la cola correspondiente según el tipo.
+   * - 'urgent' → microtaskQueue
+   * - 'normal' → taskQueue
+   * - 'background' → backgroundQueue
+   * También elimina el mensaje "Vacía" si la cola estaba vacía.
+   */
+  agregarACola(tipo, mensaje, id) {
+    const queueId =
+      tipo === "urgent"
+        ? "microtaskQueue"
+        : tipo === "normal"
+        ? "taskQueue"
+        : "backgroundQueue";
 
-        const queue = document.getElementById(queueId);
-        const queueItem = document.createElement('div');
-        queueItem.className = `queue-item ${tipo}`;
-        queueItem.id = `queue-${id}`;
-        queueItem.innerHTML = `
+    const queue = document.getElementById(queueId);
+    const queueItem = document.createElement("div");
+    queueItem.className = `queue-item ${tipo}`;
+    queueItem.id = `queue-${id}`;
+    queueItem.innerHTML = `
             <strong>${mensaje.substring(0, 30)}...</strong>
             <div class="queue-time">${new Date().toLocaleTimeString()}</div>
         `;
 
-        // Si hay mensaje "Vacía", lo quitamos porque ahora hay elementos
-        const emptyMsg = queue.querySelector('.queue-empty');
-        if (emptyMsg) {
-            emptyMsg.remove();
-        }
-
-        queue.appendChild(queueItem);
-        queue.scrollTop = queue.scrollHeight;
+    // Si hay mensaje "Vacía", lo quitamos porque ahora hay elementos
+    const emptyMsg = queue.querySelector(".queue-empty");
+    if (emptyMsg) {
+      emptyMsg.remove();
     }
 
-    /**
-     * 🗑️ removerDeCola(tipo, id)
-     * Quita un item visual de la cola según su id.
-     * Si la cola queda vacía, vuelve a mostrar el mensaje "Vacía".
-     */
-    removerDeCola(tipo, id) {
-        const queueId = tipo === 'urgent' ? 'microtaskQueue' :
-                       tipo === 'normal' ? 'taskQueue' : 'backgroundQueue';
+    queue.appendChild(queueItem);
+    queue.scrollTop = queue.scrollHeight;
+  }
 
-        const queueItem = document.getElementById(`queue-${id}`);
-        if (queueItem) {
-            queueItem.remove();
-        }
+  /**
+   * 🗑️ removerDeCola(tipo, id)
+   * Quita un item visual de la cola según su id.
+   * Si la cola queda vacía, vuelve a mostrar el mensaje "Vacía".
+   */
+  removerDeCola(tipo, id) {
+    const queueId =
+      tipo === "urgent"
+        ? "microtaskQueue"
+        : tipo === "normal"
+        ? "taskQueue"
+        : "backgroundQueue";
 
-        const queue = document.getElementById(queueId);
-        if (queue.children.length === 0) {
-            const emptyMsg = document.createElement('div');
-            emptyMsg.className = 'queue-empty';
-            emptyMsg.textContent = 'Vacía';
-            queue.appendChild(emptyMsg);
-        }
+    const queueItem = document.getElementById(`queue-${id}`);
+    if (queueItem) {
+      queueItem.remove();
     }
 
-    /**
-     * 🧱 agregarAlStack(funcion)
-     * Simula la entrada de una función en el Call Stack.
-     * Si el stack estaba vacío (solo tenía el mensaje base),
-     * se elimina ese mensaje antes de agregar la nueva función.
-     */
-    agregarAlStack(funcion) {
-        const stack = document.getElementById('callStack');
-        const stackItem = document.createElement('div');
-        stackItem.className = 'stack-item';
-        stackItem.textContent = funcion;
+    const queue = document.getElementById(queueId);
+    if (queue.children.length === 0) {
+      const emptyMsg = document.createElement("div");
+      emptyMsg.className = "queue-empty";
+      emptyMsg.textContent = "Vacía";
+      queue.appendChild(emptyMsg);
+    }
+  }
 
-        const emptyMsg = stack.querySelector('.stack-empty');
-        if (emptyMsg) {
-            emptyMsg.remove();
-        }
+  /**
+   * 🧱 agregarAlStack(funcion)
+   * Simula la entrada de una función en el Call Stack.
+   * Si el stack estaba vacío (solo tenía el mensaje base),
+   * se elimina ese mensaje antes de agregar la nueva función.
+   */
+  agregarAlStack(funcion) {
+    const stack = document.getElementById("callStack");
+    const stackItem = document.createElement("div");
+    stackItem.className = "stack-item";
+    stackItem.textContent = funcion;
 
-        stack.appendChild(stackItem);
+    const emptyMsg = stack.querySelector(".stack-empty");
+    if (emptyMsg) {
+      emptyMsg.remove();
     }
 
-    /**
-     * ⬇️ removerDelStack()
-     * Simula la salida de la función más reciente del Call Stack.
-     * Si la pila queda vacía, vuelve a mostrar el mensaje base
-     * "Ejecución principal".
-     */
-    removerDelStack() {
-        const stack = document.getElementById('callStack');
-        if (stack.children.length > 0) {
-            stack.removeChild(stack.lastChild);
-        }
+    stack.appendChild(stackItem);
+  }
 
-        if (stack.children.length === 0) {
-            const emptyMsg = document.createElement('div');
-            emptyMsg.className = 'stack-empty';
-            emptyMsg.textContent = 'Ejecución principal';
-            stack.appendChild(emptyMsg);
-        }
+  /**
+   * ⬇️ removerDelStack()
+   * Simula la salida de la función más reciente del Call Stack.
+   * Si la pila queda vacía, vuelve a mostrar el mensaje base
+   * "Ejecución principal".
+   */
+  removerDelStack() {
+    const stack = document.getElementById("callStack");
+    if (stack.children.length > 0) {
+      stack.removeChild(stack.lastChild);
     }
 
-    /**
-     * 📬 agregarNotificacionProcesada(tipo, mensaje, datos)
-     * Muestra una notificación procesada en el panel lateral.
-     * Incluye:
-     * - Tipo (con icono)
-     * - Hora de procesamiento
-     * - Mensaje original
-     * - Datos en JSON
-     */
-    agregarNotificacionProcesada(tipo, mensaje, datos) {
-        const notificationsList = document.getElementById('notificationsList');
-        const notificationItem = document.createElement('div');
-        notificationItem.className = `notification-item ${tipo}`;
+    if (stack.children.length === 0) {
+      const emptyMsg = document.createElement("div");
+      emptyMsg.className = "stack-empty";
+      emptyMsg.textContent = "Ejecución principal";
+      stack.appendChild(emptyMsg);
+    }
+  }
 
-        notificationItem.innerHTML = `
+  /**
+   * 📬 agregarNotificacionProcesada(tipo, mensaje, datos)
+   * Muestra una notificación procesada en el panel lateral.
+   * Incluye:
+   * - Tipo (con icono)
+   * - Hora de procesamiento
+   * - Mensaje original
+   * - Datos en JSON
+   */
+  agregarNotificacionProcesada(tipo, mensaje, datos) {
+    const notificationsList = document.getElementById("notificationsList");
+    const notificationItem = document.createElement("div");
+    notificationItem.className = `notification-item ${tipo}`;
+
+    notificationItem.innerHTML = `
             <div class="notification-header">
-                <strong>${tipo === 'urgent' ? '🚨 URGENTE' :
-                          tipo === 'normal' ? '🟡 NORMAL' : '🔵 BACKGROUND'}</strong>
+                <strong>${
+                  tipo === "urgent"
+                    ? "🚨 URGENTE"
+                    : tipo === "normal"
+                    ? "🟡 NORMAL"
+                    : "🔵 BACKGROUND"
+                }</strong>
                 <span class="notification-time">${new Date().toLocaleTimeString()}</span>
             </div>
             <div class="notification-message">${mensaje}</div>
             <div class="notification-data">${JSON.stringify(datos)}</div>
         `;
 
-        // Quitar mensaje de estado vacío si existe
-        const emptyState = notificationsList.querySelector('.empty-state');
-        if (emptyState) {
-            emptyState.remove();
-        }
-
-        notificationsList.appendChild(notificationItem);
-        notificationsList.scrollTop = notificationsList.scrollHeight;
+    // Quitar mensaje de estado vacío si existe
+    const emptyState = notificationsList.querySelector(".empty-state");
+    if (emptyState) {
+      emptyState.remove();
     }
 
-    /**
-     * 🔢 incrementarContador(tipo)
-     * Incrementa el contador total y el del tipo específico
-     * y actualiza la interfaz.
-     */
-    incrementarContador(tipo) {
-        this.contadores.total++;
-        this.contadores[tipo + 's']++;
-        this.actualizarEstadisticas();
-    }
+    notificationsList.appendChild(notificationItem);
+    notificationsList.scrollTop = notificationsList.scrollHeight;
+  }
+
+  /**
+   * 🔢 incrementarContador(tipo)
+   * Incrementa el contador total y el del tipo específico
+   * y actualiza la interfaz.
+   */
+  incrementarContador(tipo) {
+    this.contadores.total++;
+    this.contadores[tipo + "s"]++;
+    this.actualizarEstadisticas();
+  }
 }
 
 // ============================================
@@ -6686,15 +6736,25 @@ const visualizador = new VisualizadorEventLoop();
  * - Contadores en cero
  */
 function limpiarTodo() {
-    document.getElementById('microtaskQueue').innerHTML = '<div class="queue-empty">Vacía</div>';
-    document.getElementById('taskQueue').innerHTML = '<div class="queue-empty">Vacía</div>';
-    document.getElementById('backgroundQueue').innerHTML = '<div class="queue-empty">Vacía</div>';
-    document.getElementById('callStack').innerHTML = '<div class="stack-empty">Ejecución principal</div>';
-    document.getElementById('logEntries').innerHTML = '';
-    document.getElementById('notificationsList').innerHTML = '<div class="empty-state">Las notificaciones aparecerán aquí cuando se procesen</div>';
+  document.getElementById("microtaskQueue").innerHTML =
+    '<div class="queue-empty">Vacía</div>';
+  document.getElementById("taskQueue").innerHTML =
+    '<div class="queue-empty">Vacía</div>';
+  document.getElementById("backgroundQueue").innerHTML =
+    '<div class="queue-empty">Vacía</div>';
+  document.getElementById("callStack").innerHTML =
+    '<div class="stack-empty">Ejecución principal</div>';
+  document.getElementById("logEntries").innerHTML = "";
+  document.getElementById("notificationsList").innerHTML =
+    '<div class="empty-state">Las notificaciones aparecerán aquí cuando se procesen</div>';
 
-    visualizador.contadores = { total: 0, urgentes: 0, normales: 0, background: 0 };
-    visualizador.actualizarEstadisticas();
+  visualizador.contadores = {
+    total: 0,
+    urgentes: 0,
+    normales: 0,
+    background: 0,
+  };
+  visualizador.actualizarEstadisticas();
 }
 
 /**
@@ -6711,46 +6771,49 @@ function limpiarTodo() {
  * - Programa su “procesamiento” con un setTimeout según prioridad
  */
 function agregarNotificacionManual() {
-    // Seleccionamos tipo aleatorio
-    const tipos = ['urgent', 'normal', 'background'];
-    const tipo = tipos[Math.floor(Math.random() * tipos.length)];
+  // Seleccionamos tipo aleatorio
+  const tipos = ["urgent", "normal", "background"];
+  const tipo = tipos[Math.floor(Math.random() * tipos.length)];
 
-    // Mensajes predeterminados según el tipo
-    const mensajes = {
-        urgent: ['Error de conexión', 'Validación fallida', 'Alerta de seguridad'],
-        normal: ['Mensaje recibido', 'Actualización de UI', 'Evento de usuario'],
-        background: ['Enviar analytics', 'Limpiar cache', 'Sincronizar datos']
-    };
+  // Mensajes predeterminados según el tipo
+  const mensajes = {
+    urgent: ["Error de conexión", "Validación fallida", "Alerta de seguridad"],
+    normal: ["Mensaje recibido", "Actualización de UI", "Evento de usuario"],
+    background: ["Enviar analytics", "Limpiar cache", "Sincronizar datos"],
+  };
 
-    // Seleccionamos mensaje aleatorio del tipo
-    const mensaje = mensajes[tipo][Math.floor(Math.random() * mensajes[tipo].length)];
-    const id = Date.now(); // id único basado en timestamp
+  // Seleccionamos mensaje aleatorio del tipo
+  const mensaje =
+    mensajes[tipo][Math.floor(Math.random() * mensajes[tipo].length)];
+  const id = Date.now(); // id único basado en timestamp
 
-    // Log de encolado
-    visualizador.agregarALog(
+  // Log de encolado
+  visualizador.agregarALog(
+    new Date().toLocaleTimeString(),
+    tipo,
+    mensaje,
+    "Encolado"
+  );
+
+  // Agregar a la cola visual
+  visualizador.agregarACola(tipo, mensaje, id);
+  visualizador.incrementarContador(tipo);
+
+  // Simular procesamiento automático tras un tiempo distinto por prioridad
+  setTimeout(
+    () => {
+      visualizador.removerDeCola(tipo, id);
+      visualizador.agregarALog(
         new Date().toLocaleTimeString(),
         tipo,
         mensaje,
-        'Encolado'
-    );
-
-    // Agregar a la cola visual
-    visualizador.agregarACola(tipo, mensaje, id);
-    visualizador.incrementarContador(tipo);
-
-    // Simular procesamiento automático tras un tiempo distinto por prioridad
-    setTimeout(() => {
-        visualizador.removerDeCola(tipo, id);
-        visualizador.agregarALog(
-            new Date().toLocaleTimeString(),
-            tipo,
-            mensaje,
-            'Procesado'
-        );
-        visualizador.agregarNotificacionProcesada(tipo, mensaje, {id: id});
-    }, tipo === 'urgent' ? 100 : tipo === 'normal' ? 500 : 2000);
+        "Procesado"
+      );
+      visualizador.agregarNotificacionProcesada(tipo, mensaje, { id: id });
+    },
+    tipo === "urgent" ? 100 : tipo === "normal" ? 500 : 2000
+  );
 }
-
 ```
 
 ## ⚡ **3. notificaciones.js**
@@ -6764,100 +6827,100 @@ function agregarNotificacionManual() {
  */
 
 class GestorNotificaciones {
-    constructor() {
-        this.notificaciones = [];
-        this.isProcesando = false;
+  constructor() {
+    this.notificaciones = [];
+    this.isProcesando = false;
+  }
+
+  /**
+   * 🔴 NOTIFICACIÓN DE ALTA PRIORIDAD (Microtask Queue)
+   * Uso: Errores críticos, respuestas inmediatas de API, validaciones
+   * Comportamiento: Se ejecuta INMEDIATAMENTE después del código actual
+   */
+  agregarNotificacionUrgente(mensaje, datos) {
+    console.log(`🚨 [URGENTE] Encolando: ${mensaje}`);
+
+    // Usamos Promise para máxima prioridad (Microtask Queue)
+    Promise.resolve().then(() => {
+      this._procesarNotificacionUrgente(mensaje, datos);
+    });
+  }
+
+  /**
+   * 🟡 NOTIFICACIÓN DE MEDIA PRIORIDAD (Task Queue con delay 0)
+   * Uso: Actualizaciones de UI, notificaciones de usuario, procesos normales
+   * Comportamiento: Se ejecuta después de todas las microtasks
+   */
+  agregarNotificacionNormal(mensaje, datos) {
+    console.log(`🟡 [NORMAL] Encolando: ${mensaje}`);
+
+    // Usamos setTimeout para prioridad normal (Task Queue)
+    setTimeout(() => {
+      this._procesarNotificacionNormal(mensaje, datos);
+    }, 0);
+  }
+
+  /**
+   * 🔵 NOTIFICACIÓN DE BAJA PRIORIDAD (Task Queue con delay)
+   * Uso: Logs, analytics, tareas de mantenimiento, procesos en segundo plano
+   * Comportamiento: Se ejecuta después de un tiempo específico
+   */
+  agregarNotificacionBackground(mensaje, datos, delay = 1000) {
+    console.log(`🔵 [BACKGROUND] Encolando: ${mensaje} (delay: ${delay}ms)`);
+
+    // Usamos setTimeout con delay para baja prioridad
+    setTimeout(() => {
+      this._procesarNotificacionBackground(mensaje, datos);
+    }, delay);
+  }
+
+  /**
+   * 🎯 PROCESAMIENTO DE NOTIFICACIONES URGENTES
+   * Estas se ejecutan en la Microtask Queue (máxima prioridad)
+   */
+  _procesarNotificacionUrgente(mensaje, datos) {
+    console.log(`✅ [URGENTE] Procesada: ${mensaje}`);
+    console.log("   ↳ Datos:", datos);
+
+    // Las urgentes pueden generar más microtasks
+    if (mensaje.includes("error")) {
+      Promise.resolve().then(() => {
+        console.log("   ↳ 🔔 [MICROTASK] Notificando administrador del error");
+      });
     }
+  }
 
-    /**
-     * 🔴 NOTIFICACIÓN DE ALTA PRIORIDAD (Microtask Queue)
-     * Uso: Errores críticos, respuestas inmediatas de API, validaciones
-     * Comportamiento: Se ejecuta INMEDIATAMENTE después del código actual
-     */
-    agregarNotificacionUrgente(mensaje, datos) {
-        console.log(`🚨 [URGENTE] Encolando: ${mensaje}`);
+  /**
+   * 📝 PROCESAMIENTO DE NOTIFICACIONES NORMALES
+   * Estas se ejecutan en la Task Queue (prioridad normal)
+   */
+  _procesarNotificacionNormal(mensaje, datos) {
+    console.log(`✅ [NORMAL] Procesada: ${mensaje}`);
+    console.log("   ↳ Datos:", datos);
 
-        // Usamos Promise para máxima prioridad (Microtask Queue)
-        Promise.resolve().then(() => {
-            this._procesarNotificacionUrgente(mensaje, datos);
-        });
+    // Las normales pueden contener microtasks internas
+    if (mensaje.includes("actualizar")) {
+      Promise.resolve().then(() => {
+        console.log("   ↳ 🎨 [MICROTASK] Actualizando cache de UI");
+      });
     }
+  }
 
-    /**
-     * 🟡 NOTIFICACIÓN DE MEDIA PRIORIDAD (Task Queue con delay 0)
-     * Uso: Actualizaciones de UI, notificaciones de usuario, procesos normales
-     * Comportamiento: Se ejecuta después de todas las microtasks
-     */
-    agregarNotificacionNormal(mensaje, datos) {
-        console.log(`🟡 [NORMAL] Encolando: ${mensaje}`);
+  /**
+   * 📊 PROCESAMIENTO DE NOTIFICACIONES BACKGROUND
+   * Estas son las de más baja prioridad
+   */
+  _procesarNotificacionBackground(mensaje, datos) {
+    console.log(`✅ [BACKGROUND] Procesada: ${mensaje}`);
+    console.log("   ↳ Datos:", datos);
 
-        // Usamos setTimeout para prioridad normal (Task Queue)
-        setTimeout(() => {
-            this._procesarNotificacionNormal(mensaje, datos);
-        }, 0);
+    // Simulamos procesamiento pesado (pero no bloqueante gracias al delay)
+    const inicio = Date.now();
+    while (Date.now() - inicio < 50) {
+      // Simulamos trabajo de procesamiento
     }
-
-    /**
-     * 🔵 NOTIFICACIÓN DE BAJA PRIORIDAD (Task Queue con delay)
-     * Uso: Logs, analytics, tareas de mantenimiento, procesos en segundo plano
-     * Comportamiento: Se ejecuta después de un tiempo específico
-     */
-    agregarNotificacionBackground(mensaje, datos, delay = 1000) {
-        console.log(`🔵 [BACKGROUND] Encolando: ${mensaje} (delay: ${delay}ms)`);
-
-        // Usamos setTimeout con delay para baja prioridad
-        setTimeout(() => {
-            this._procesarNotificacionBackground(mensaje, datos);
-        }, delay);
-    }
-
-    /**
-     * 🎯 PROCESAMIENTO DE NOTIFICACIONES URGENTES
-     * Estas se ejecutan en la Microtask Queue (máxima prioridad)
-     */
-    _procesarNotificacionUrgente(mensaje, datos) {
-        console.log(`✅ [URGENTE] Procesada: ${mensaje}`);
-        console.log('   ↳ Datos:', datos);
-
-        // Las urgentes pueden generar más microtasks
-        if (mensaje.includes('error')) {
-            Promise.resolve().then(() => {
-                console.log('   ↳ 🔔 [MICROTASK] Notificando administrador del error');
-            });
-        }
-    }
-
-    /**
-     * 📝 PROCESAMIENTO DE NOTIFICACIONES NORMALES
-     * Estas se ejecutan en la Task Queue (prioridad normal)
-     */
-    _procesarNotificacionNormal(mensaje, datos) {
-        console.log(`✅ [NORMAL] Procesada: ${mensaje}`);
-        console.log('   ↳ Datos:', datos);
-
-        // Las normales pueden contener microtasks internas
-        if (mensaje.includes('actualizar')) {
-            Promise.resolve().then(() => {
-                console.log('   ↳ 🎨 [MICROTASK] Actualizando cache de UI');
-            });
-        }
-    }
-
-    /**
-     * 📊 PROCESAMIENTO DE NOTIFICACIONES BACKGROUND
-     * Estas son las de más baja prioridad
-     */
-    _procesarNotificacionBackground(mensaje, datos) {
-        console.log(`✅ [BACKGROUND] Procesada: ${mensaje}`);
-        console.log('   ↳ Datos:', datos);
-
-        // Simulamos procesamiento pesado (pero no bloqueante gracias al delay)
-        const inicio = Date.now();
-        while (Date.now() - inicio < 50) {
-            // Simulamos trabajo de procesamiento
-        }
-        console.log('   ↳ ⏱️  Procesamiento background completado');
-    }
+    console.log("   ↳ ⏱️  Procesamiento background completado");
+  }
 }
 
 /**
@@ -6868,68 +6931,72 @@ class GestorNotificaciones {
  */
 
 function simularAplicacionMensajeria() {
-    console.log('📱 INICIANDO SIMULACIÓN: App de Mensajería');
-    console.log('=' .repeat(50));
+  console.log("📱 INICIANDO SIMULACIÓN: App de Mensajería");
+  console.log("=".repeat(50));
 
-    const gestor = new GestorNotificaciones();
+  const gestor = new GestorNotificaciones();
 
-    // 📍 1. CÓDIGO SINCRÓNICO INICIAL (Call Stack)
-    console.log('📍 [CALL STACK] Configurando aplicación...');
-    const config = { usuario: 'john_doe', tema: 'oscuro' };
-    console.log('📍 [CALL STACK] Configuración cargada:', config);
+  // 📍 1. CÓDIGO SINCRÓNICO INICIAL (Call Stack)
+  console.log("📍 [CALL STACK] Configurando aplicación...");
+  const config = { usuario: "john_doe", tema: "oscuro" };
+  console.log("📍 [CALL STACK] Configuración cargada:", config);
 
-    // 🚨 2. NOTIFICACIÓN URGENTE: Error de conexión (Microtask Queue)
-    gestor.agregarNotificacionUrgente(
-        'Error de conexión con servidor principal',
-        { codigo: 503, servidor: 'api.principal.com' }
-    );
+  // 🚨 2. NOTIFICACIÓN URGENTE: Error de conexión (Microtask Queue)
+  gestor.agregarNotificacionUrgente(
+    "Error de conexión con servidor principal",
+    { codigo: 503, servidor: "api.principal.com" }
+  );
 
-    // 🟡 3. NOTIFICACIÓN NORMAL: Mensaje recibido (Task Queue)
-    gestor.agregarNotificacionNormal(
-        'Nuevo mensaje de Ana',
-        { de: 'ana', mensaje: '¿Quedamos esta tarde?', timestamp: Date.now() }
-    );
+  // 🟡 3. NOTIFICACIÓN NORMAL: Mensaje recibido (Task Queue)
+  gestor.agregarNotificacionNormal("Nuevo mensaje de Ana", {
+    de: "ana",
+    mensaje: "¿Quedamos esta tarde?",
+    timestamp: Date.now(),
+  });
 
-    // 🔵 4. NOTIFICACIÓN BACKGROUND: Analytics (Task Queue con delay)
-    gestor.agregarNotificacionBackground(
-        'Enviar datos de analytics',
-        { eventos: ['login', 'navegacion'], usuario: 'john_doe' },
-        2000
-    );
+  // 🔵 4. NOTIFICACIÓN BACKGROUND: Analytics (Task Queue con delay)
+  gestor.agregarNotificacionBackground(
+    "Enviar datos de analytics",
+    { eventos: ["login", "navegacion"], usuario: "john_doe" },
+    2000
+  );
 
-    // 🚨 5. OTRA NOTIFICACIÓN URGENTE: Validación fallida (Microtask Queue)
-    gestor.agregarNotificacionUrgente(
-        'Validación de seguridad fallida',
-        { intento: 3, ip: '192.168.1.100' }
-    );
+  // 🚨 5. OTRA NOTIFICACIÓN URGENTE: Validación fallida (Microtask Queue)
+  gestor.agregarNotificacionUrgente("Validación de seguridad fallida", {
+    intento: 3,
+    ip: "192.168.1.100",
+  });
 
-    // 🟡 6. NOTIFICACIÓN NORMAL: Actualización de estado (Task Queue)
-    gestor.agregarNotificacionNormal(
-        'Actualizar estado de conexión',
-        { estado: 'conectado', ultimaConexion: Date.now() }
-    );
+  // 🟡 6. NOTIFICACIÓN NORMAL: Actualización de estado (Task Queue)
+  gestor.agregarNotificacionNormal("Actualizar estado de conexión", {
+    estado: "conectado",
+    ultimaConexion: Date.now(),
+  });
 
-    // 📍 7. MÁS CÓDIGO SINCRÓNICO (Call Stack)
-    console.log('📍 [CALL STACK] Todas las notificaciones encoladas');
-    console.log('📍 [CALL STACK] Aplicación lista para interactuar');
+  // 📍 7. MÁS CÓDIGO SINCRÓNICO (Call Stack)
+  console.log("📍 [CALL STACK] Todas las notificaciones encoladas");
+  console.log("📍 [CALL STACK] Aplicación lista para interactuar");
 
-    // 🟡 8. NOTIFICACIÓN POR EVENTO DE USUARIO (Task Queue)
-    setTimeout(() => {
-        console.log('👤 [USUARIO] Usuario hace click en "Enviar mensaje"');
-        gestor.agregarNotificacionNormal(
-            'Mensaje enviado por usuario',
-            { para: 'ana', mensaje: '¡Sí, perfecto!', timestamp: Date.now() }
-        );
+  // 🟡 8. NOTIFICACIÓN POR EVENTO DE USUARIO (Task Queue)
+  setTimeout(() => {
+    console.log('👤 [USUARIO] Usuario hace click en "Enviar mensaje"');
+    gestor.agregarNotificacionNormal("Mensaje enviado por usuario", {
+      para: "ana",
+      mensaje: "¡Sí, perfecto!",
+      timestamp: Date.now(),
+    });
 
-        // 🚨 Respuesta inmediata del servidor (Microtask Queue)
-        gestor.agregarNotificacionUrgente(
-            'Mensaje entregado al servidor',
-            { id: 'msg_12345', estado: 'entregado' }
-        );
-    }, 100);
+    // 🚨 Respuesta inmediata del servidor (Microtask Queue)
+    gestor.agregarNotificacionUrgente("Mensaje entregado al servidor", {
+      id: "msg_12345",
+      estado: "entregado",
+    });
+  }, 100);
 
-    console.log('📍 [CALL STACK] Simulación configurada - Observa el orden de ejecución:');
-    console.log('=' .repeat(50));
+  console.log(
+    "📍 [CALL STACK] Simulación configurada - Observa el orden de ejecución:"
+  );
+  console.log("=".repeat(50));
 }
 
 /**
@@ -6974,28 +7041,27 @@ simularAplicacionMensajeria();
 
 // 🔄 Ejemplo adicional: Cómo manejar peticiones HTTP reales
 function ejemploPeticionHTTP() {
-    console.log('\\n🌐 EJEMPLO ADICIONAL: Petición HTTP real');
+  console.log("\\n🌐 EJEMPLO ADICIONAL: Petición HTTP real");
 
-    // Simulación de petición HTTP con diferentes fases
+  // Simulación de petición HTTP con diferentes fases
+  setTimeout(() => {
+    console.log("1. 📡 [TASK] Iniciando petición HTTP...");
+
+    // Simulamos respuesta exitosa (Microtask para procesamiento inmediato)
+    Promise.resolve().then(() => {
+      console.log("2. ✅ [MICROTASK] Procesando respuesta HTTP inmediatamente");
+
+      // Dentro del microtask, más trabajo que necesita alta prioridad
+      Promise.resolve().then(() => {
+        console.log("3. 🔄 [MICROTASK] Actualizando estado de loading");
+      });
+    });
+
+    // Task normal para actualizar UI después del procesamiento
     setTimeout(() => {
-        console.log('1. 📡 [TASK] Iniciando petición HTTP...');
-
-        // Simulamos respuesta exitosa (Microtask para procesamiento inmediato)
-        Promise.resolve().then(() => {
-            console.log('2. ✅ [MICROTASK] Procesando respuesta HTTP inmediatamente');
-
-            // Dentro del microtask, más trabajo que necesita alta prioridad
-            Promise.resolve().then(() => {
-                console.log('3. 🔄 [MICROTASK] Actualizando estado de loading');
-            });
-        });
-
-        // Task normal para actualizar UI después del procesamiento
-        setTimeout(() => {
-            console.log('4. 🎨 [TASK] Actualizando interfaz de usuario');
-        }, 0);
-
-    }, 500);
+      console.log("4. 🎨 [TASK] Actualizando interfaz de usuario");
+    }, 0);
+  }, 500);
 }
 
 // Ejecutamos el ejemplo adicional
@@ -7021,10 +7087,10 @@ ejemploPeticionHTTP();
 
 1. **Crea una carpeta** para el proyecto
 2. **Guarda los 4 archivos** con estos nombres:
-    - `index.html`
-    - `styles.css`
-    - `notificaciones.js` (tu código original)
-    - `visualizacion.js`
+   - `index.html`
+   - `styles.css`
+   - `notificaciones.js` (tu código original)
+   - `visualizacion.js`
 3. **Abre `index.html`** en tu navegador
 4. **Haz clic en "Iniciar Simulación"** para ver el sistema en acción
 
@@ -7049,783 +7115,799 @@ ejemploPeticionHTTP();
 ```html
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Caché Inteligente</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1>🚀 Sistema de Caché Inteligente</h1>
-            <p class="subtitle">Actualizaciones en Tiempo Real con Microtask Queue</p>
-        </header>
+      <header class="header">
+        <h1>🚀 Sistema de Caché Inteligente</h1>
+        <p class="subtitle">
+          Actualizaciones en Tiempo Real con Microtask Queue
+        </p>
+      </header>
 
-        <div class="dashboard">
-            <!-- Panel de Control -->
-            <div class="control-panel">
-                <h2>🎮 Panel de Control</h2>
-                <div class="buttons">
-                    <button onclick="iniciarSimulacion()" class="btn btn-primary">
-                        ▶️ Iniciar Dashboard Financiero
-                    </button>
-                    <button onclick="simularConsultaUsuario()" class="btn btn-secondary">
-                        👤 Simular Consulta Usuario
-                    </button>
-                    <button onclick="ejecutarActualizacionMasiva()" class="btn btn-warning">
-                        🔄 Actualización Masiva
-                    </button>
-                    <button onclick="limpiarTodo()" class="btn btn-danger">
-                        🗑️ Limpiar Todo
-                    </button>
-                </div>
+      <div class="dashboard">
+        <!-- Panel de Control -->
+        <div class="control-panel">
+          <h2>🎮 Panel de Control</h2>
+          <div class="buttons">
+            <button onclick="iniciarSimulacion()" class="btn btn-primary">
+              ▶️ Iniciar Dashboard Financiero
+            </button>
+            <button
+              onclick="simularConsultaUsuario()"
+              class="btn btn-secondary"
+            >
+              👤 Simular Consulta Usuario
+            </button>
+            <button
+              onclick="ejecutarActualizacionMasiva()"
+              class="btn btn-warning"
+            >
+              🔄 Actualización Masiva
+            </button>
+            <button onclick="limpiarTodo()" class="btn btn-danger">
+              🗑️ Limpiar Todo
+            </button>
+          </div>
 
-                <div class="stats">
-                    <div class="stat-card">
-                        <span class="stat-number" id="lecturasCount">0</span>
-                        <span class="stat-label">Lecturas</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="escriturasCount">0</span>
-                        <span class="stat-label">Escrituras</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="actualizacionesCount">0</span>
-                        <span class="stat-label">Actualizaciones</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="cacheSize">0</span>
-                        <span class="stat-label">Tamaño Caché</span>
-                    </div>
-                </div>
+          <div class="stats">
+            <div class="stat-card">
+              <span class="stat-number" id="lecturasCount">0</span>
+              <span class="stat-label">Lecturas</span>
             </div>
-
-            <!-- Visualización del Caché -->
-            <div class="cache-viz">
-                <h2>💾 Caché en Memoria</h2>
-                <div class="cache-container">
-                    <div class="cache-header">
-                        <span>Clave</span>
-                        <span>Valor</span>
-                        <span>Estado</span>
-                        <span>Última Actualización</span>
-                    </div>
-                    <div class="cache-items" id="cacheItems">
-                        <div class="cache-empty">El caché está vacío</div>
-                    </div>
-                </div>
+            <div class="stat-card">
+              <span class="stat-number" id="escriturasCount">0</span>
+              <span class="stat-label">Escrituras</span>
             </div>
-
-            <!-- Colas de Procesamiento -->
-            <div class="queues-viz">
-                <h2>🔄 Colas de Procesamiento</h2>
-                <div class="queues-container">
-                    <div class="queue microtask-queue">
-                        <h3>🚨 Microtask Queue (Alta Prioridad)</h3>
-                        <div class="queue-stats">
-                            <span id="microtaskCount">0</span> tareas pendientes
-                        </div>
-                        <div class="queue-items" id="microtaskQueue">
-                            <div class="queue-empty">Sin tareas pendientes</div>
-                        </div>
-                    </div>
-
-                    <div class="queue task-queue">
-                        <h3>⏰ Task Queue (Operaciones Programadas)</h3>
-                        <div class="queue-stats">
-                            <span id="taskCount">0</span> tareas pendientes
-                        </div>
-                        <div class="queue-items" id="taskQueue">
-                            <div class="queue-empty">Sin tareas programadas</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="stat-card">
+              <span class="stat-number" id="actualizacionesCount">0</span>
+              <span class="stat-label">Actualizaciones</span>
             </div>
-
-            <!-- Call Stack -->
-            <div class="call-stack-viz">
-                <h2>📚 Call Stack</h2>
-                <div class="stack-container">
-                    <div class="stack-items" id="callStack">
-                        <div class="stack-empty">Ejecución principal</div>
-                    </div>
-                </div>
+            <div class="stat-card">
+              <span class="stat-number" id="cacheSize">0</span>
+              <span class="stat-label">Tamaño Caché</span>
             </div>
-
-            <!-- Log de Ejecución -->
-            <div class="execution-log">
-                <h2>📋 Log de Operaciones</h2>
-                <div class="log-container">
-                    <div class="log-header">
-                        <span>Tiempo</span>
-                        <span>Tipo</span>
-                        <span>Operación</span>
-                        <span>Detalles</span>
-                    </div>
-                    <div class="log-entries" id="logEntries"></div>
-                </div>
-            </div>
-
-            <!-- Suscriptores Activos -->
-            <div class="subscribers-panel">
-                <h2>👥 Suscriptores Activos</h2>
-                <div class="subscribers-list" id="subscribersList">
-                    <div class="empty-state">
-                        No hay suscriptores activos
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <!-- Explicación del Sistema -->
-        <div class="explanation">
-            <h3>💡 ¿Cómo funciona el sistema de caché inteligente?</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🚨</div>
-                    <h4>Microtask Queue</h4>
-                    <p>Operaciones críticas se ejecutan inmediatamente después del código actual, con máxima prioridad y sin bloquear la UI.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💾</div>
-                    <h4>Actualizaciones en Background</h4>
-                    <p>Los datos se devuelven inmediatamente y se actualizan en segundo plano, manteniendo la aplicación responsive.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h4>Validaciones No Bloqueantes</h4>
-                    <p>Las validaciones se ejecutan en microtasks, permitiendo que las operaciones principales continúen sin esperar.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📢</div>
-                    <h4>Notificaciones Inmediatas</h4>
-                    <p>Los suscriptores reciben notificaciones instantáneas de cambios mediante microtasks.</p>
-                </div>
+        <!-- Visualización del Caché -->
+        <div class="cache-viz">
+          <h2>💾 Caché en Memoria</h2>
+          <div class="cache-container">
+            <div class="cache-header">
+              <span>Clave</span>
+              <span>Valor</span>
+              <span>Estado</span>
+              <span>Última Actualización</span>
             </div>
+            <div class="cache-items" id="cacheItems">
+              <div class="cache-empty">El caché está vacío</div>
+            </div>
+          </div>
         </div>
+
+        <!-- Colas de Procesamiento -->
+        <div class="queues-viz">
+          <h2>🔄 Colas de Procesamiento</h2>
+          <div class="queues-container">
+            <div class="queue microtask-queue">
+              <h3>🚨 Microtask Queue (Alta Prioridad)</h3>
+              <div class="queue-stats">
+                <span id="microtaskCount">0</span> tareas pendientes
+              </div>
+              <div class="queue-items" id="microtaskQueue">
+                <div class="queue-empty">Sin tareas pendientes</div>
+              </div>
+            </div>
+
+            <div class="queue task-queue">
+              <h3>⏰ Task Queue (Operaciones Programadas)</h3>
+              <div class="queue-stats">
+                <span id="taskCount">0</span> tareas pendientes
+              </div>
+              <div class="queue-items" id="taskQueue">
+                <div class="queue-empty">Sin tareas programadas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call Stack -->
+        <div class="call-stack-viz">
+          <h2>📚 Call Stack</h2>
+          <div class="stack-container">
+            <div class="stack-items" id="callStack">
+              <div class="stack-empty">Ejecución principal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Log de Ejecución -->
+        <div class="execution-log">
+          <h2>📋 Log de Operaciones</h2>
+          <div class="log-container">
+            <div class="log-header">
+              <span>Tiempo</span>
+              <span>Tipo</span>
+              <span>Operación</span>
+              <span>Detalles</span>
+            </div>
+            <div class="log-entries" id="logEntries"></div>
+          </div>
+        </div>
+
+        <!-- Suscriptores Activos -->
+        <div class="subscribers-panel">
+          <h2>👥 Suscriptores Activos</h2>
+          <div class="subscribers-list" id="subscribersList">
+            <div class="empty-state">No hay suscriptores activos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explicación del Sistema -->
+      <div class="explanation">
+        <h3>💡 ¿Cómo funciona el sistema de caché inteligente?</h3>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚨</div>
+            <h4>Microtask Queue</h4>
+            <p>
+              Operaciones críticas se ejecutan inmediatamente después del código
+              actual, con máxima prioridad y sin bloquear la UI.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💾</div>
+            <h4>Actualizaciones en Background</h4>
+            <p>
+              Los datos se devuelven inmediatamente y se actualizan en segundo
+              plano, manteniendo la aplicación responsive.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h4>Validaciones No Bloqueantes</h4>
+            <p>
+              Las validaciones se ejecutan en microtasks, permitiendo que las
+              operaciones principales continúen sin esperar.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📢</div>
+            <h4>Notificaciones Inmediatas</h4>
+            <p>
+              Los suscriptores reciben notificaciones instantáneas de cambios
+              mediante microtasks.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="cache-system.js"></script>
     <script src="visualizacion.js"></script>
-</body>
+  </body>
 </html>
-
 ```
 
 ## 🎨 **2. styles.css**
 
 ```css
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: #333;
-    min-height: 100vh;
-    line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #333;
+  min-height: 100vh;
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 30px;
-    color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 .dashboard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    gap: 20px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .control-panel {
-    grid-column: 1 / 2;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 2;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .control-panel h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .btn {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
-    text-align: center;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  text-align: center;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
-    color: white;
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
 }
 
 .btn-warning {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
-    color: white;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
 }
 
 .btn-danger {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    border-left: 4px solid #3498db;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border-left: 4px solid #3498db;
 }
 
 .stat-number {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #2c3e50;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    color: #7f8c8d;
+  font-size: 0.9rem;
+  color: #7f8c8d;
 }
 
 .cache-viz {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .cache-viz h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .cache-container {
-    border: 2px solid #ecf0f1;
-    border-radius: 8px;
-    overflow: hidden;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .cache-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
-    gap: 15px;
-    padding: 15px;
-    background: #34495e;
-    color: white;
-    font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
+  gap: 15px;
+  padding: 15px;
+  background: #34495e;
+  color: white;
+  font-weight: 600;
 }
 
 .cache-items {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .cache-empty {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 40px;
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 40px;
 }
 
 .cache-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
-    gap: 15px;
-    padding: 12px 15px;
-    border-bottom: 1px solid #ecf0f1;
-    animation: slideIn 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr 1.2fr;
+  gap: 15px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ecf0f1;
+  animation: slideIn 0.3s ease;
 }
 
 .cache-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .cache-item.updated {
-    background: #d4edda;
-    animation: highlight 1s ease;
+  background: #d4edda;
+  animation: highlight 1s ease;
 }
 
 .cache-item.pending {
-    background: #fff3cd;
+  background: #fff3cd;
 }
 
 .cache-key {
-    font-weight: 600;
-    color: #2c3e50;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 .cache-value {
-    font-family: 'Courier New', monospace;
-    background: #f8f9fa;
-    padding: 4px 8px;
-    border-radius: 4px;
-    border: 1px solid #e9ecef;
+  font-family: "Courier New", monospace;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
 }
 
 .cache-status {
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .status-actual {
-    background: #d4edda;
-    color: #155724;
+  background: #d4edda;
+  color: #155724;
 }
 
 .status-pending {
-    background: #fff3cd;
-    color: #856404;
+  background: #fff3cd;
+  color: #856404;
 }
 
 .status-updating {
-    background: #cce7ff;
-    color: #004085;
+  background: #cce7ff;
+  color: #004085;
 }
 
 .queues-viz {
-    grid-column: 1 / 2;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 2;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .queues-viz h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .queues-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .queue {
-    border-radius: 10px;
-    padding: 20px;
-    transition: all 0.3s ease;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
 }
 
 .queue h3 {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
 .queue-stats {
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: 600;
-    padding: 8px;
-    border-radius: 6px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 .microtask-queue {
-    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
-    border: 2px solid #e17055;
+  background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+  border: 2px solid #e17055;
 }
 
 .microtask-queue .queue-stats {
-    background: rgba(225, 112, 85, 0.2);
-    color: #c44569;
+  background: rgba(225, 112, 85, 0.2);
+  color: #c44569;
 }
 
 .task-queue {
-    background: linear-gradient(135deg, #81ecec, #74b9ff);
-    border: 2px solid #0984e3;
+  background: linear-gradient(135deg, #81ecec, #74b9ff);
+  border: 2px solid #0984e3;
 }
 
 .task-queue .queue-stats {
-    background: rgba(9, 132, 227, 0.2);
-    color: #0984e3;
+  background: rgba(9, 132, 227, 0.2);
+  color: #0984e3;
 }
 
 .queue-items {
-    min-height: 120px;
-    max-height: 150px;
-    overflow-y: auto;
+  min-height: 120px;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 .queue-empty {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 20px;
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
 }
 
 .queue-item {
-    background: white;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-left: 4px solid;
-    animation: slideIn 0.3s ease;
+  background: white;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease;
 }
 
 .queue-item.microtask {
-    border-left-color: #e74c3c;
+  border-left-color: #e74c3c;
 }
 
 .queue-item.task {
-    border-left-color: #3498db;
+  border-left-color: #3498db;
 }
 
 .queue-item .operation-type {
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .queue-item .operation-details {
-    font-size: 0.9rem;
-    color: #666;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .call-stack-viz {
-    grid-column: 2 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 2 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .call-stack-viz h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .stack-container {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    border-radius: 10px;
-    padding: 20px;
-    min-height: 150px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 150px;
 }
 
 .stack-items {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
 }
 
 .stack-empty {
-    text-align: center;
-    color: #bdc3c7;
-    font-style: italic;
-    padding: 20px;
+  text-align: center;
+  color: #bdc3c7;
+  font-style: italic;
+  padding: 20px;
 }
 
 .stack-item {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    padding: 12px;
-    border-radius: 6px;
-    text-align: center;
-    animation: stackPush 0.3s ease;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  animation: stackPush 0.3s ease;
 }
 
 .execution-log {
-    grid-column: 1 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .execution-log h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .log-container {
-    border: 2px solid #ecf0f1;
-    border-radius: 8px;
-    overflow: hidden;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .log-header {
-    display: grid;
-    grid-template-columns: 100px 120px 1fr 2fr;
-    gap: 15px;
-    padding: 15px;
-    background: #34495e;
-    color: white;
-    font-weight: 600;
+  display: grid;
+  grid-template-columns: 100px 120px 1fr 2fr;
+  gap: 15px;
+  padding: 15px;
+  background: #34495e;
+  color: white;
+  font-weight: 600;
 }
 
 .log-entries {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .log-entry {
-    display: grid;
-    grid-template-columns: 100px 120px 1fr 2fr;
-    gap: 15px;
-    padding: 12px 15px;
-    border-bottom: 1px solid #ecf0f1;
-    animation: fadeIn 0.5s ease;
+  display: grid;
+  grid-template-columns: 100px 120px 1fr 2fr;
+  gap: 15px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ecf0f1;
+  animation: fadeIn 0.5s ease;
 }
 
 .log-entry:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .log-entry.microtask {
-    background: #ffeaa7;
+  background: #ffeaa7;
 }
 
 .log-entry.task {
-    background: #dfe6e9;
+  background: #dfe6e9;
 }
 
 .log-entry.critical {
-    background: #ff6b6b;
-    color: white;
+  background: #ff6b6b;
+  color: white;
 }
 
 .log-entry .log-time {
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
 }
 
 .log-entry .log-type {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .subscribers-panel {
-    grid-column: 1 / 3;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  grid-column: 1 / 3;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .subscribers-panel h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .subscribers-list {
-    max-height: 200px;
-    overflow-y: auto;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .empty-state {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 40px;
-    background: #f8f9fa;
-    border-radius: 8px;
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
 
 .subscriber-item {
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #a29bfe, #74b9ff);
-    color: white;
-    animation: slideIn 0.3s ease;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #a29bfe, #74b9ff);
+  color: white;
+  animation: slideIn 0.3s ease;
 }
 
 .explanation {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    margin-top: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
 .explanation h3 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .feature-card {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #3498db;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
 }
 
 .feature-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .feature-card h4 {
-    margin-bottom: 10px;
-    color: #2c3e50;
+  margin-bottom: 10px;
+  color: #2c3e50;
 }
 
 .feature-card p {
-    color: #666;
-    line-height: 1.5;
+  color: #666;
+  line-height: 1.5;
 }
 
 /* Animaciones */
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes stackPush {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes highlight {
-    0% {
-        background: #d4edda;
-    }
-    50% {
-        background: #c3e6cb;
-    }
-    100% {
-        background: #d4edda;
-    }
+  0% {
+    background: #d4edda;
+  }
+  50% {
+    background: #c3e6cb;
+  }
+  100% {
+    background: #d4edda;
+  }
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
 
-    .cache-viz {
-        grid-column: 1;
-        grid-row: 2;
-    }
+  .cache-viz {
+    grid-column: 1;
+    grid-row: 2;
+  }
 
-    .call-stack-viz {
-        grid-column: 1;
-    }
+  .call-stack-viz {
+    grid-column: 1;
+  }
 
-    .execution-log,
-    .subscribers-panel {
-        grid-column: 1;
-    }
+  .execution-log,
+  .subscribers-panel {
+    grid-column: 1;
+  }
 
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-    .stats {
-        grid-template-columns: 1fr;
-    }
+  .stats {
+    grid-template-columns: 1fr;
+  }
 
-    .buttons {
-        grid-template-columns: 1fr;
-    }
+  .buttons {
+    grid-template-columns: 1fr;
+  }
 
-    .log-header,
-    .log-entry {
-        grid-template-columns: 80px 100px 1fr 1fr;
-        font-size: 0.9rem;
-    }
+  .log-header,
+  .log-entry {
+    grid-template-columns: 80px 100px 1fr 1fr;
+    font-size: 0.9rem;
+  }
 
-    .cache-header,
-    .cache-item {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
+  .cache-header,
+  .cache-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }
-
 ```
 
 ## ⚡ **3. visualizacion.js**
@@ -7833,211 +7915,222 @@ body {
 ```jsx
 // Sistema de visualización para el gestor de caché inteligente
 class VisualizadorCache {
-    constructor() {
-        this.estadisticas = {
-            lecturas: 0,
-            escrituras: 0,
-            actualizaciones: 0,
-            cacheSize: 0
-        };
-        this.microtaskCount = 0;
-        this.taskCount = 0;
-        this.suscriptores = new Set();
-    }
+  constructor() {
+    this.estadisticas = {
+      lecturas: 0,
+      escrituras: 0,
+      actualizaciones: 0,
+      cacheSize: 0,
+    };
+    this.microtaskCount = 0;
+    this.taskCount = 0;
+    this.suscriptores = new Set();
+  }
 
-    actualizarEstadisticas() {
-        document.getElementById('lecturasCount').textContent = this.estadisticas.lecturas;
-        document.getElementById('escriturasCount').textContent = this.estadisticas.escrituras;
-        document.getElementById('actualizacionesCount').textContent = this.estadisticas.actualizaciones;
-        document.getElementById('cacheSize').textContent = this.estadisticas.cacheSize;
-        document.getElementById('microtaskCount').textContent = this.microtaskCount;
-        document.getElementById('taskCount').textContent = this.taskCount;
-    }
+  actualizarEstadisticas() {
+    document.getElementById("lecturasCount").textContent =
+      this.estadisticas.lecturas;
+    document.getElementById("escriturasCount").textContent =
+      this.estadisticas.escrituras;
+    document.getElementById("actualizacionesCount").textContent =
+      this.estadisticas.actualizaciones;
+    document.getElementById("cacheSize").textContent =
+      this.estadisticas.cacheSize;
+    document.getElementById("microtaskCount").textContent = this.microtaskCount;
+    document.getElementById("taskCount").textContent = this.taskCount;
+  }
 
-    agregarALog(timestamp, tipo, operacion, detalles) {
-        const logEntries = document.getElementById('logEntries');
-        const logEntry = document.createElement('div');
-        logEntry.className = `log-entry ${tipo}`;
+  agregarALog(timestamp, tipo, operacion, detalles) {
+    const logEntries = document.getElementById("logEntries");
+    const logEntry = document.createElement("div");
+    logEntry.className = `log-entry ${tipo}`;
 
-        const icon = tipo === 'microtask' ? '🚨' :
-                    tipo === 'critical' ? '💾' : '⏰';
+    const icon =
+      tipo === "microtask" ? "🚨" : tipo === "critical" ? "💾" : "⏰";
 
-        logEntry.innerHTML = `
+    logEntry.innerHTML = `
             <span class="log-time">${timestamp}</span>
             <span class="log-type">${icon} ${tipo.toUpperCase()}</span>
             <span>${operacion}</span>
             <span>${detalles}</span>
         `;
 
-        logEntries.appendChild(logEntry);
-        logEntries.scrollTop = logEntries.scrollHeight;
-    }
+    logEntries.appendChild(logEntry);
+    logEntries.scrollTop = logEntries.scrollHeight;
+  }
 
-    actualizarCacheItem(clave, valor, estado = 'actual') {
-        const cacheItems = document.getElementById('cacheItems');
+  actualizarCacheItem(clave, valor, estado = "actual") {
+    const cacheItems = document.getElementById("cacheItems");
 
-        // Buscar si ya existe el item
-        let cacheItem = document.getElementById(`cache-${clave}`);
+    // Buscar si ya existe el item
+    let cacheItem = document.getElementById(`cache-${clave}`);
 
-        if (!cacheItem) {
-            cacheItem = document.createElement('div');
-            cacheItem.className = 'cache-item';
-            cacheItem.id = `cache-${clave}`;
+    if (!cacheItem) {
+      cacheItem = document.createElement("div");
+      cacheItem.className = "cache-item";
+      cacheItem.id = `cache-${clave}`;
 
-            cacheItem.innerHTML = `
+      cacheItem.innerHTML = `
                 <span class="cache-key">${clave}</span>
                 <span class="cache-value">${valor}</span>
                 <span class="cache-status status-${estado}">${estado.toUpperCase()}</span>
                 <span class="cache-time">${new Date().toLocaleTimeString()}</span>
             `;
 
-            // Remover mensaje de vacío si existe
-            const emptyMsg = cacheItems.querySelector('.cache-empty');
-            if (emptyMsg) {
-                emptyMsg.remove();
-            }
+      // Remover mensaje de vacío si existe
+      const emptyMsg = cacheItems.querySelector(".cache-empty");
+      if (emptyMsg) {
+        emptyMsg.remove();
+      }
 
-            cacheItems.appendChild(cacheItem);
-            this.estadisticas.cacheSize++;
-        } else {
-            cacheItem.querySelector('.cache-value').textContent = valor;
-            cacheItem.querySelector('.cache-status').className = `cache-status status-${estado}`;
-            cacheItem.querySelector('.cache-status').textContent = estado.toUpperCase();
-            cacheItem.querySelector('.cache-time').textContent = new Date().toLocaleTimeString();
+      cacheItems.appendChild(cacheItem);
+      this.estadisticas.cacheSize++;
+    } else {
+      cacheItem.querySelector(".cache-value").textContent = valor;
+      cacheItem.querySelector(
+        ".cache-status"
+      ).className = `cache-status status-${estado}`;
+      cacheItem.querySelector(".cache-status").textContent =
+        estado.toUpperCase();
+      cacheItem.querySelector(".cache-time").textContent =
+        new Date().toLocaleTimeString();
 
-            // Animación de actualización
-            cacheItem.classList.add('updated');
-            setTimeout(() => cacheItem.classList.remove('updated'), 1000);
-        }
-
-        this.actualizarEstadisticas();
+      // Animación de actualización
+      cacheItem.classList.add("updated");
+      setTimeout(() => cacheItem.classList.remove("updated"), 1000);
     }
 
-    agregarACola(tipo, operacion, detalles, id) {
-        const queueId = tipo === 'microtask' ? 'microtaskQueue' : 'taskQueue';
-        const queue = document.getElementById(queueId);
+    this.actualizarEstadisticas();
+  }
 
-        const queueItem = document.createElement('div');
-        queueItem.className = `queue-item ${tipo}`;
-        queueItem.id = `queue-${id}`;
+  agregarACola(tipo, operacion, detalles, id) {
+    const queueId = tipo === "microtask" ? "microtaskQueue" : "taskQueue";
+    const queue = document.getElementById(queueId);
 
-        queueItem.innerHTML = `
+    const queueItem = document.createElement("div");
+    queueItem.className = `queue-item ${tipo}`;
+    queueItem.id = `queue-${id}`;
+
+    queueItem.innerHTML = `
             <div class="operation-type">${operacion}</div>
             <div class="operation-details">${detalles}</div>
             <div class="queue-time">${new Date().toLocaleTimeString()}</div>
         `;
 
-        // Remover mensaje de "Vacía" si existe
-        const emptyMsg = queue.querySelector('.queue-empty');
-        if (emptyMsg) {
-            emptyMsg.remove();
-        }
-
-        queue.appendChild(queueItem);
-        queue.scrollTop = queue.scrollHeight;
-
-        // Actualizar contador
-        if (tipo === 'microtask') {
-            this.microtaskCount++;
-        } else {
-            this.taskCount++;
-        }
-        this.actualizarEstadisticas();
+    // Remover mensaje de "Vacía" si existe
+    const emptyMsg = queue.querySelector(".queue-empty");
+    if (emptyMsg) {
+      emptyMsg.remove();
     }
 
-    removerDeCola(tipo, id) {
-        const queueId = tipo === 'microtask' ? 'microtaskQueue' : 'taskQueue';
-        const queueItem = document.getElementById(`queue-${id}`);
+    queue.appendChild(queueItem);
+    queue.scrollTop = queue.scrollHeight;
 
-        if (queueItem) {
-            queueItem.remove();
+    // Actualizar contador
+    if (tipo === "microtask") {
+      this.microtaskCount++;
+    } else {
+      this.taskCount++;
+    }
+    this.actualizarEstadisticas();
+  }
 
-            // Actualizar contador
-            if (tipo === 'microtask') {
-                this.microtaskCount--;
-            } else {
-                this.taskCount--;
-            }
-            this.actualizarEstadisticas();
-        }
+  removerDeCola(tipo, id) {
+    const queueId = tipo === "microtask" ? "microtaskQueue" : "taskQueue";
+    const queueItem = document.getElementById(`queue-${id}`);
 
-        // Si la cola queda vacía, mostrar mensaje
-        const queue = document.getElementById(queueId);
-        if (queue.children.length === 0) {
-            const emptyMsg = document.createElement('div');
-            emptyMsg.className = 'queue-empty';
-            emptyMsg.textContent = tipo === 'microtask' ? 'Sin tareas pendientes' : 'Sin tareas programadas';
-            queue.appendChild(emptyMsg);
-        }
+    if (queueItem) {
+      queueItem.remove();
+
+      // Actualizar contador
+      if (tipo === "microtask") {
+        this.microtaskCount--;
+      } else {
+        this.taskCount--;
+      }
+      this.actualizarEstadisticas();
     }
 
-    agregarAlStack(funcion) {
-        const stack = document.getElementById('callStack');
-        const stackItem = document.createElement('div');
-        stackItem.className = 'stack-item';
-        stackItem.textContent = funcion;
+    // Si la cola queda vacía, mostrar mensaje
+    const queue = document.getElementById(queueId);
+    if (queue.children.length === 0) {
+      const emptyMsg = document.createElement("div");
+      emptyMsg.className = "queue-empty";
+      emptyMsg.textContent =
+        tipo === "microtask"
+          ? "Sin tareas pendientes"
+          : "Sin tareas programadas";
+      queue.appendChild(emptyMsg);
+    }
+  }
 
-        // Remover mensaje de "Ejecución principal" si existe
-        const emptyMsg = stack.querySelector('.stack-empty');
-        if (emptyMsg) {
-            emptyMsg.remove();
-        }
+  agregarAlStack(funcion) {
+    const stack = document.getElementById("callStack");
+    const stackItem = document.createElement("div");
+    stackItem.className = "stack-item";
+    stackItem.textContent = funcion;
 
-        stack.appendChild(stackItem);
+    // Remover mensaje de "Ejecución principal" si existe
+    const emptyMsg = stack.querySelector(".stack-empty");
+    if (emptyMsg) {
+      emptyMsg.remove();
     }
 
-    removerDelStack() {
-        const stack = document.getElementById('callStack');
-        if (stack.children.length > 0) {
-            stack.removeChild(stack.lastChild);
-        }
+    stack.appendChild(stackItem);
+  }
 
-        // Si el stack queda vacío, mostrar mensaje
-        if (stack.children.length === 0) {
-            const emptyMsg = document.createElement('div');
-            emptyMsg.className = 'stack-empty';
-            emptyMsg.textContent = 'Ejecución principal';
-            stack.appendChild(emptyMsg);
-        }
+  removerDelStack() {
+    const stack = document.getElementById("callStack");
+    if (stack.children.length > 0) {
+      stack.removeChild(stack.lastChild);
     }
 
-    agregarSuscriptor(id) {
-        this.suscriptores.add(id);
-        this.actualizarListaSuscriptores();
+    // Si el stack queda vacío, mostrar mensaje
+    if (stack.children.length === 0) {
+      const emptyMsg = document.createElement("div");
+      emptyMsg.className = "stack-empty";
+      emptyMsg.textContent = "Ejecución principal";
+      stack.appendChild(emptyMsg);
+    }
+  }
+
+  agregarSuscriptor(id) {
+    this.suscriptores.add(id);
+    this.actualizarListaSuscriptores();
+  }
+
+  removerSuscriptor(id) {
+    this.suscriptores.delete(id);
+    this.actualizarListaSuscriptores();
+  }
+
+  actualizarListaSuscriptores() {
+    const subscribersList = document.getElementById("subscribersList");
+    subscribersList.innerHTML = "";
+
+    if (this.suscriptores.size === 0) {
+      const emptyState = document.createElement("div");
+      emptyState.className = "empty-state";
+      emptyState.textContent = "No hay suscriptores activos";
+      subscribersList.appendChild(emptyState);
+      return;
     }
 
-    removerSuscriptor(id) {
-        this.suscriptores.delete(id);
-        this.actualizarListaSuscriptores();
-    }
-
-    actualizarListaSuscriptores() {
-        const subscribersList = document.getElementById('subscribersList');
-        subscribersList.innerHTML = '';
-
-        if (this.suscriptores.size === 0) {
-            const emptyState = document.createElement('div');
-            emptyState.className = 'empty-state';
-            emptyState.textContent = 'No hay suscriptores activos';
-            subscribersList.appendChild(emptyState);
-            return;
-        }
-
-        this.suscriptores.forEach(id => {
-            const subscriberItem = document.createElement('div');
-            subscriberItem.className = 'subscriber-item';
-            subscriberItem.innerHTML = `
+    this.suscriptores.forEach((id) => {
+      const subscriberItem = document.createElement("div");
+      subscriberItem.className = "subscriber-item";
+      subscriberItem.innerHTML = `
                 <strong>Suscriptor #${id}</strong>
                 <div>Recibiendo actualizaciones en tiempo real</div>
             `;
-            subscribersList.appendChild(subscriberItem);
-        });
-    }
+      subscribersList.appendChild(subscriberItem);
+    });
+  }
 
-    incrementarContador(tipo) {
-        this.estadisticas[tipo]++;
-        this.actualizarEstadisticas();
-    }
+  incrementarContador(tipo) {
+    this.estadisticas[tipo]++;
+    this.actualizarEstadisticas();
+  }
 }
 
 // Instancia global del visualizador
@@ -8045,65 +8138,74 @@ const visualizador = new VisualizadorCache();
 
 // Función para limpiar todo
 function limpiarTodo() {
-    document.getElementById('microtaskQueue').innerHTML = '<div class="queue-empty">Sin tareas pendientes</div>';
-    document.getElementById('taskQueue').innerHTML = '<div class="queue-empty">Sin tareas programadas</div>';
-    document.getElementById('callStack').innerHTML = '<div class="stack-empty">Ejecución principal</div>';
-    document.getElementById('logEntries').innerHTML = '';
-    document.getElementById('cacheItems').innerHTML = '<div class="cache-empty">El caché está vacío</div>';
-    document.getElementById('subscribersList').innerHTML = '<div class="empty-state">No hay suscriptores activos</div>';
+  document.getElementById("microtaskQueue").innerHTML =
+    '<div class="queue-empty">Sin tareas pendientes</div>';
+  document.getElementById("taskQueue").innerHTML =
+    '<div class="queue-empty">Sin tareas programadas</div>';
+  document.getElementById("callStack").innerHTML =
+    '<div class="stack-empty">Ejecución principal</div>';
+  document.getElementById("logEntries").innerHTML = "";
+  document.getElementById("cacheItems").innerHTML =
+    '<div class="cache-empty">El caché está vacío</div>';
+  document.getElementById("subscribersList").innerHTML =
+    '<div class="empty-state">No hay suscriptores activos</div>';
 
-    visualizador.estadisticas = { lecturas: 0, escrituras: 0, actualizaciones: 0, cacheSize: 0 };
-    visualizador.microtaskCount = 0;
-    visualizador.taskCount = 0;
-    visualizador.suscriptores.clear();
-    visualizador.actualizarEstadisticas();
+  visualizador.estadisticas = {
+    lecturas: 0,
+    escrituras: 0,
+    actualizaciones: 0,
+    cacheSize: 0,
+  };
+  visualizador.microtaskCount = 0;
+  visualizador.taskCount = 0;
+  visualizador.suscriptores.clear();
+  visualizador.actualizarEstadisticas();
 }
 
 // Funciones de simulación
 function iniciarSimulacion() {
-    limpiarTodo();
-    simularDashboardFinanciero();
+  limpiarTodo();
+  simularDashboardFinanciero();
 }
 
 function simularConsultaUsuario() {
-    const claves = ['precio_BTC', 'precio_ETH', 'portfolio_total'];
-    const clave = claves[Math.floor(Math.random() * claves.length)];
+  const claves = ["precio_BTC", "precio_ETH", "portfolio_total"];
+  const clave = claves[Math.floor(Math.random() * claves.length)];
 
-    visualizador.agregarALog(
-        new Date().toLocaleTimeString(),
-        'critical',
-        'Consulta de usuario',
-        `Solicitando: ${clave}`
-    );
+  visualizador.agregarALog(
+    new Date().toLocaleTimeString(),
+    "critical",
+    "Consulta de usuario",
+    `Solicitando: ${clave}`
+  );
 
-    visualizador.agregarACola(
-        'microtask',
-        'Actualización en background',
-        `Clave: ${clave}`,
-        Date.now()
-    );
+  visualizador.agregarACola(
+    "microtask",
+    "Actualización en background",
+    `Clave: ${clave}`,
+    Date.now()
+  );
 
-    visualizador.incrementarContador('lecturas');
+  visualizador.incrementarContador("lecturas");
 }
 
 function ejecutarActualizacionMasiva() {
-    visualizador.agregarALog(
-        new Date().toLocaleTimeString(),
-        'task',
-        'Actualización masiva',
-        'Procesando lote de 3 actualizaciones'
+  visualizador.agregarALog(
+    new Date().toLocaleTimeString(),
+    "task",
+    "Actualización masiva",
+    "Procesando lote de 3 actualizaciones"
+  );
+
+  ["precio_BTC", "precio_ETH", "portfolio_total"].forEach((clave, index) => {
+    visualizador.agregarACola(
+      "microtask",
+      `Actualización ${index + 1}`,
+      `Clave: ${clave}`,
+      Date.now() + index
     );
-
-    ['precio_BTC', 'precio_ETH', 'portfolio_total'].forEach((clave, index) => {
-        visualizador.agregarACola(
-            'microtask',
-            `Actualización ${index + 1}`,
-            `Clave: ${clave}`,
-            Date.now() + index
-        );
-    });
+  });
 }
-
 ```
 
 ## ⚡ **3. cache-system.js**
@@ -8435,10 +8537,10 @@ ejemploRetryInteligente();
 
 1. **Crea una carpeta** para el proyecto
 2. **Guarda los 4 archivos** con estos nombres:
-    - `index.html`
-    - `styles.css`
-    - `cache-system.js` (tu código original)
-    - `visualizacion.js`
+   - `index.html`
+   - `styles.css`
+   - `cache-system.js` (tu código original)
+   - `visualizacion.js`
 3. **Abre `index.html`** en tu navegador
 4. **Haz clic en "Iniciar Dashboard Financiero"** para ver el sistema en acción
 
@@ -8556,333 +8658,333 @@ Aquí tienes un ejemplo completo que muestra visualmente cómo interactúan toda
 ```
 
 ```css
- body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        background: #f5f5f5;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .sistema {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 15px;
-        margin: 20px 0;
-      }
-      .componente {
-        border: 3px solid;
-        border-radius: 8px;
-        padding: 15px;
-        min-height: 300px;
-      }
-      .call-stack {
-        border-color: #dc3545;
-        background: #f8d7da;
-      }
-      .web-apis {
-        border-color: #ffc107;
-        background: #fff3cd;
-      }
-      .microtask-queue {
-        border-color: #007bff;
-        background: #cce7ff;
-      }
-      .task-queue {
-        border-color: #28a745;
-        background: #d4edda;
-      }
-      .tarea {
-        background: white;
-        padding: 10px;
-        margin: 8px 0;
-        border-radius: 5px;
-        border-left: 4px solid;
-        font-size: 13px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      }
-      .sincrona {
-        border-left-color: #dc3545;
-      }
-      .promesa {
-        border-left-color: #007bff;
-      }
-      .settimeout {
-        border-left-color: #ffc107;
-      }
-      .evento {
-        border-left-color: #28a745;
-      }
-      button {
-        padding: 12px 20px;
-        margin: 10px 5px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      .btn-ejemplo {
-        background: #007bff;
-        color: white;
-      }
-      .btn-orden {
-        background: #6f42c1;
-        color: white;
-      }
-      .btn-limpiar {
-        background: #6c757d;
-        color: white;
-      }
-      .explicacion {
-        background: #e9ecef;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 15px 0;
-      }
-      .orden-ejecucion {
-        background: #2d2d2d;
-        color: #f8f9fa;
-        padding: 15px;
-        border-radius: 5px;
-        margin: 15px 0;
-        font-family: "Courier New", monospace;
-      }
-      .consola {
-        background: #2d2d2d;
-        color: #00ff00;
-        padding: 15px;
-        border-radius: 5px;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-        min-height: 150px;
-        max-height: 300px;
-        overflow-y: auto;
-      }
-      .prioridad {
-        display: flex;
-        justify-content: space-between;
-        margin: 20px 0;
-        text-align: center;
-      }
-      .nivel {
-        flex: 1;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 0 5px;
-      }
-      .alta {
-        background: #007bff;
-        color: white;
-      }
-      .media {
-        background: #28a745;
-        color: white;
-      }
-      .baja {
-        background: #ffc107;
-        color: #212529;
-      }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.sistema {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+.componente {
+  border: 3px solid;
+  border-radius: 8px;
+  padding: 15px;
+  min-height: 300px;
+}
+.call-stack {
+  border-color: #dc3545;
+  background: #f8d7da;
+}
+.web-apis {
+  border-color: #ffc107;
+  background: #fff3cd;
+}
+.microtask-queue {
+  border-color: #007bff;
+  background: #cce7ff;
+}
+.task-queue {
+  border-color: #28a745;
+  background: #d4edda;
+}
+.tarea {
+  background: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border-left: 4px solid;
+  font-size: 13px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.sincrona {
+  border-left-color: #dc3545;
+}
+.promesa {
+  border-left-color: #007bff;
+}
+.settimeout {
+  border-left-color: #ffc107;
+}
+.evento {
+  border-left-color: #28a745;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-ejemplo {
+  background: #007bff;
+  color: white;
+}
+.btn-orden {
+  background: #6f42c1;
+  color: white;
+}
+.btn-limpiar {
+  background: #6c757d;
+  color: white;
+}
+.explicacion {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+.orden-ejecucion {
+  background: #2d2d2d;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-family: "Courier New", monospace;
+}
+.consola {
+  background: #2d2d2d;
+  color: #00ff00;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.prioridad {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  text-align: center;
+}
+.nivel {
+  flex: 1;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 0 5px;
+}
+.alta {
+  background: #007bff;
+  color: white;
+}
+.media {
+  background: #28a745;
+  color: white;
+}
+.baja {
+  background: #ffc107;
+  color: #212529;
+}
 ```
 
 ```jsx
- // Elementos del DOM
-      const stackContent = document.getElementById("stack-content");
-      const apisContent = document.getElementById("apis-content");
-      const microtaskContent = document.getElementById("microtask-content");
-      const taskContent = document.getElementById("task-content");
-      const consola = document.getElementById("consola");
+// Elementos del DOM
+const stackContent = document.getElementById("stack-content");
+const apisContent = document.getElementById("apis-content");
+const microtaskContent = document.getElementById("microtask-content");
+const taskContent = document.getElementById("task-content");
+const consola = document.getElementById("consola");
 
-      // Estado del sistema
-      let callStack = [];
-      let webAPIs = [];
-      let microtaskQueue = [];
-      let taskQueue = [];
-      let contadorTareas = 0;
+// Estado del sistema
+let callStack = [];
+let webAPIs = [];
+let microtaskQueue = [];
+let taskQueue = [];
+let contadorTareas = 0;
 
-      function log(mensaje) {
-        consola.innerHTML += `<div>${mensaje}</div>`;
-        consola.scrollTop = consola.scrollHeight;
+function log(mensaje) {
+  consola.innerHTML += `<div>${mensaje}</div>`;
+  consola.scrollTop = consola.scrollHeight;
+}
+
+function limpiarTodo() {
+  callStack = [];
+  webAPIs = [];
+  microtaskQueue = [];
+  taskQueue = [];
+  contadorTareas = 0;
+  consola.innerHTML = "";
+  actualizarVisualizacion();
+}
+
+function actualizarVisualizacion() {
+  stackContent.innerHTML = callStack
+    .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
+    .join("");
+
+  apisContent.innerHTML = webAPIs
+    .map((api) => `<div class="tarea ${api.tipo}">${api.nombre}</div>`)
+    .join("");
+
+  microtaskContent.innerHTML = microtaskQueue
+    .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
+    .join("");
+
+  taskContent.innerHTML = taskQueue
+    .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
+    .join("");
+}
+
+// 1️⃣ EJEMPLO COMPLETO DEL SISTEMA
+async function ejecutarEjemploCompleto() {
+  limpiarTodo();
+  log("🚀 INICIANDO SISTEMA COMPLETO DE COLAS");
+
+  // Función para simular operaciones asincrónicas
+  function simularOperacion(nombre, tipo, destino, duracion = 1000) {
+    const id = contadorTareas++;
+    const tarea = { id, nombre: `${nombre} #${id}`, tipo };
+
+    // Agregar a Web APIs
+    webAPIs.push(tarea);
+    log(`🌐 Web API iniciada: ${tarea.nombre}`);
+    actualizarVisualizacion();
+
+    // Simular que termina después del tiempo
+    setTimeout(() => {
+      // Remover de Web APIs
+      webAPIs = webAPIs.filter((api) => api.id !== id);
+
+      // Agregar a la cola correspondiente
+      if (destino === "microtask") {
+        microtaskQueue.push(tarea);
+        log(`⚡ Microtask agregada: ${tarea.nombre}`);
+      } else {
+        taskQueue.push(tarea);
+        log(`📋 Task agregada: ${tarea.nombre}`);
       }
 
-      function limpiarTodo() {
-        callStack = [];
-        webAPIs = [];
-        microtaskQueue = [];
-        taskQueue = [];
-        contadorTareas = 0;
-        consola.innerHTML = "";
-        actualizarVisualizacion();
-      }
-
-      function actualizarVisualizacion() {
-        stackContent.innerHTML = callStack
-          .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
-          .join("");
-
-        apisContent.innerHTML = webAPIs
-          .map((api) => `<div class="tarea ${api.tipo}">${api.nombre}</div>`)
-          .join("");
-
-        microtaskContent.innerHTML = microtaskQueue
-          .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
-          .join("");
-
-        taskContent.innerHTML = taskQueue
-          .map((t) => `<div class="tarea ${t.tipo}">${t.nombre}</div>`)
-          .join("");
-      }
-
-      // 1️⃣ EJEMPLO COMPLETO DEL SISTEMA
-      async function ejecutarEjemploCompleto() {
-        limpiarTodo();
-        log("🚀 INICIANDO SISTEMA COMPLETO DE COLAS");
-
-        // Función para simular operaciones asincrónicas
-        function simularOperacion(nombre, tipo, destino, duracion = 1000) {
-          const id = contadorTareas++;
-          const tarea = { id, nombre: `${nombre} #${id}`, tipo };
-
-          // Agregar a Web APIs
-          webAPIs.push(tarea);
-          log(`🌐 Web API iniciada: ${tarea.nombre}`);
-          actualizarVisualizacion();
-
-          // Simular que termina después del tiempo
-          setTimeout(() => {
-            // Remover de Web APIs
-            webAPIs = webAPIs.filter((api) => api.id !== id);
-
-            // Agregar a la cola correspondiente
-            if (destino === "microtask") {
-              microtaskQueue.push(tarea);
-              log(`⚡ Microtask agregada: ${tarea.nombre}`);
-            } else {
-              taskQueue.push(tarea);
-              log(`📋 Task agregada: ${tarea.nombre}`);
-            }
-
-            actualizarVisualizacion();
-          }, duracion);
-        }
-
-        // Simular diferentes tipos de operaciones
-
-        // setTimeout (Task Queue)
-        simularOperacion("setTimeout", "settimeout", "task", 800);
-        simularOperacion("setTimeout", "settimeout", "task", 1200);
-
-        // Promesas (Microtask Queue)
-        simularOperacion("Promise.then()", "promesa", "microtask", 600);
-        simularOperacion("Promise.then()", "promesa", "microtask", 400);
-
-        // Eventos (Task Queue)
-        simularOperacion("Evento click", "evento", "task", 1000);
-
-        // queueMicrotask (Microtask Queue)
-        simularOperacion("queueMicrotask", "promesa", "microtask", 300);
-
-        // Procesar el event loop
-        let ciclos = 0;
-        const interval = setInterval(() => {
-          procesarEventLoop();
-          ciclos++;
-
-          if (ciclos > 15) {
-            clearInterval(interval);
-            log("🏁 Sistema completado");
-          }
-        }, 500);
-      }
-
-      function procesarEventLoop() {
-        log("\\n--- CICLO DEL EVENT LOOP ---");
-
-        // 1. Procesar Call Stack (código síncrono)
-        if (callStack.length > 0) {
-          const tarea = callStack.pop();
-          log(`🎯 Call Stack: ${tarea.nombre}`);
-        }
-
-        // 2. Procesar TODAS las Microtasks (alta prioridad)
-        while (microtaskQueue.length > 0) {
-          const microtask = microtaskQueue.shift();
-          log(`⚡ Microtask EJECUTADA: ${microtask.nombre}`);
-        }
-
-        // 3. Procesar UNA Task (baja prioridad)
-        if (taskQueue.length > 0) {
-          const task = taskQueue.shift();
-          log(`📋 Task EJECUTADA: ${task.nombre}`);
-        }
-
-        actualizarVisualizacion();
-      }
-
-      // 2️⃣ DEMOSTRACIÓN DEL ORDEN DE EJECUCIÓN
-      function demostrarOrdenEjecucion() {
-        limpiarTodo();
-        log("🎯 DEMOSTRANDO EL ORDEN DE EJECUCIÓN");
-        log("=====================================");
-
-        // Este código se ejecutará en el orden REAL
-        setTimeout(() => {
-          log("6. ⏰ setTimeout (Task Queue)");
-        }, 0);
-
-        Promise.resolve().then(() => {
-          log("3. 🤝 Promesa 1 (Microtask Queue)");
-        });
-
-        queueMicrotask(() => {
-          log("4. ⚡ queueMicrotask (Microtask Queue)");
-        });
-
-        Promise.resolve().then(() => {
-          log("5. 🤝 Promesa 2 (Microtask Queue)");
-        });
-
-        log("1. 🟢 Script inicio (Call Stack)");
-        log("2. 🔴 Script medio (Call Stack)");
-        log("7. 🟡 Script fin (Call Stack)");
-
-        log(
-          "\\n💡 NOTA: Observa cómo se ejecutan primero todas las Microtasks antes que el setTimeout"
-        );
-      }
-
-      // 3️⃣ EJEMPLO PRÁCTICO: ¿QUÉ PASA CUANDO...?
-      function ejemploPractico() {
-        log("\\n🔍 EJEMPLO PRÁCTICO: Microtasks dentro de Tasks");
-
-        setTimeout(() => {
-          log("A. ⏰ Timeout (Task) iniciado");
-
-          Promise.resolve().then(() => {
-            log("B. 🤝 Promesa DENTRO de timeout (Microtask)");
-          });
-
-          log("C. ⏰ Timeout (Task) terminado");
-        }, 0);
-
-        Promise.resolve().then(() => {
-          log("D. 🤝 Promesa FUERA de timeout (Microtask)");
-        });
-
-        log("E. 🟢 Código síncrono (Call Stack)");
-
-        // Orden esperado: E, D, A, C, B
-      }
-
-      // Inicializar
       actualizarVisualizacion();
+    }, duracion);
+  }
 
-      // Ejecutar ejemplo práctico automáticamente
-      setTimeout(ejemploPractico, 2000);
+  // Simular diferentes tipos de operaciones
+
+  // setTimeout (Task Queue)
+  simularOperacion("setTimeout", "settimeout", "task", 800);
+  simularOperacion("setTimeout", "settimeout", "task", 1200);
+
+  // Promesas (Microtask Queue)
+  simularOperacion("Promise.then()", "promesa", "microtask", 600);
+  simularOperacion("Promise.then()", "promesa", "microtask", 400);
+
+  // Eventos (Task Queue)
+  simularOperacion("Evento click", "evento", "task", 1000);
+
+  // queueMicrotask (Microtask Queue)
+  simularOperacion("queueMicrotask", "promesa", "microtask", 300);
+
+  // Procesar el event loop
+  let ciclos = 0;
+  const interval = setInterval(() => {
+    procesarEventLoop();
+    ciclos++;
+
+    if (ciclos > 15) {
+      clearInterval(interval);
+      log("🏁 Sistema completado");
+    }
+  }, 500);
+}
+
+function procesarEventLoop() {
+  log("\\n--- CICLO DEL EVENT LOOP ---");
+
+  // 1. Procesar Call Stack (código síncrono)
+  if (callStack.length > 0) {
+    const tarea = callStack.pop();
+    log(`🎯 Call Stack: ${tarea.nombre}`);
+  }
+
+  // 2. Procesar TODAS las Microtasks (alta prioridad)
+  while (microtaskQueue.length > 0) {
+    const microtask = microtaskQueue.shift();
+    log(`⚡ Microtask EJECUTADA: ${microtask.nombre}`);
+  }
+
+  // 3. Procesar UNA Task (baja prioridad)
+  if (taskQueue.length > 0) {
+    const task = taskQueue.shift();
+    log(`📋 Task EJECUTADA: ${task.nombre}`);
+  }
+
+  actualizarVisualizacion();
+}
+
+// 2️⃣ DEMOSTRACIÓN DEL ORDEN DE EJECUCIÓN
+function demostrarOrdenEjecucion() {
+  limpiarTodo();
+  log("🎯 DEMOSTRANDO EL ORDEN DE EJECUCIÓN");
+  log("=====================================");
+
+  // Este código se ejecutará en el orden REAL
+  setTimeout(() => {
+    log("6. ⏰ setTimeout (Task Queue)");
+  }, 0);
+
+  Promise.resolve().then(() => {
+    log("3. 🤝 Promesa 1 (Microtask Queue)");
+  });
+
+  queueMicrotask(() => {
+    log("4. ⚡ queueMicrotask (Microtask Queue)");
+  });
+
+  Promise.resolve().then(() => {
+    log("5. 🤝 Promesa 2 (Microtask Queue)");
+  });
+
+  log("1. 🟢 Script inicio (Call Stack)");
+  log("2. 🔴 Script medio (Call Stack)");
+  log("7. 🟡 Script fin (Call Stack)");
+
+  log(
+    "\\n💡 NOTA: Observa cómo se ejecutan primero todas las Microtasks antes que el setTimeout"
+  );
+}
+
+// 3️⃣ EJEMPLO PRÁCTICO: ¿QUÉ PASA CUANDO...?
+function ejemploPractico() {
+  log("\\n🔍 EJEMPLO PRÁCTICO: Microtasks dentro de Tasks");
+
+  setTimeout(() => {
+    log("A. ⏰ Timeout (Task) iniciado");
+
+    Promise.resolve().then(() => {
+      log("B. 🤝 Promesa DENTRO de timeout (Microtask)");
+    });
+
+    log("C. ⏰ Timeout (Task) terminado");
+  }, 0);
+
+  Promise.resolve().then(() => {
+    log("D. 🤝 Promesa FUERA de timeout (Microtask)");
+  });
+
+  log("E. 🟢 Código síncrono (Call Stack)");
+
+  // Orden esperado: E, D, A, C, B
+}
+
+// Inicializar
+actualizarVisualizacion();
+
+// Ejecutar ejemplo práctico automáticamente
+setTimeout(ejemploPractico, 2000);
 ```
 
 # Mecanismos avanzados de la asincronía en JavaScript
@@ -8915,7 +9017,6 @@ Promise.all([promesa1, promesa2, promesa3])
     // Si CUALQUIERA falla, se captura aquí
     console.error("Alguna falló:", error);
   });
-
 ```
 
 ## 💻 **Demo Interactivo: Promise.all() en Acción**
@@ -8927,257 +9028,255 @@ Promise.all([promesa1, promesa2, promesa3])
 ```html
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Promise.all() - Ejecutar Promesas en Paralelo</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>🚀 Promise.all() - Ejecutar Promesas en Paralelo</h1>
-        <p>
-            <strong>Definición sencilla:</strong> Ejecuta múltiples promesas
-            <strong>al mismo tiempo</strong> y espera a que
-            <strong>TODAS</strong> terminen.
-        </p>
+      <h1>🚀 Promise.all() - Ejecutar Promesas en Paralelo</h1>
+      <p>
+        <strong>Definición sencilla:</strong> Ejecuta múltiples promesas
+        <strong>al mismo tiempo</strong> y espera a que
+        <strong>TODAS</strong> terminen.
+      </p>
 
-        <div class="estadisticas">
-            <div class="estadistica">
-                <h3>⏱️ Tiempo Secuencial</h3>
-                <div class="tiempo" id="tiempoSecuencial">0ms</div>
-                <p>(Una después de otra)</p>
+      <div class="estadisticas">
+        <div class="estadistica">
+          <h3>⏱️ Tiempo Secuencial</h3>
+          <div class="tiempo" id="tiempoSecuencial">0ms</div>
+          <p>(Una después de otra)</p>
+        </div>
+        <div class="estadistica">
+          <h3>⚡ Tiempo Paralelo</h3>
+          <div class="tiempo" id="tiempoParalelo">0ms</div>
+          <p>(Todas al mismo tiempo)</p>
+        </div>
+        <div class="estadistica">
+          <h3>🎯 Mejora</h3>
+          <div class="tiempo" id="mejora">0%</div>
+          <p>(Más rápido)</p>
+        </div>
+      </div>
+
+      <div class="comparacion">
+        <div class="metodo secuencial">
+          <h3>🐌 Secuencial (Sin Promise.all)</h3>
+          <p><em>Una tarea después de otra</em></p>
+          <div id="tareas-secuenciales">
+            <div class="tarea pendiente" id="secuencial-1">
+              <span>📥 Descargar imagen 1</span>
+              <span>⏳ Esperando...</span>
             </div>
-            <div class="estadistica">
-                <h3>⚡ Tiempo Paralelo</h3>
-                <div class="tiempo" id="tiempoParalelo">0ms</div>
-                <p>(Todas al mismo tiempo)</p>
+            <div class="tarea pendiente" id="secuencial-2">
+              <span>📥 Descargar imagen 2</span>
+              <span>⏳ Esperando...</span>
             </div>
-            <div class="estadistica">
-                <h3>🎯 Mejora</h3>
-                <div class="tiempo" id="mejora">0%</div>
-                <p>(Más rápido)</p>
+            <div class="tarea pendiente" id="secuencial-3">
+              <span>📥 Descargar imagen 3</span>
+              <span>⏳ Esperando...</span>
             </div>
+          </div>
+          <button class="btn-secuencial" onclick="ejecutarSecuencial()">
+            🐌 Ejecutar Secuencial
+          </button>
         </div>
 
-        <div class="comparacion">
-            <div class="metodo secuencial">
-                <h3>🐌 Secuencial (Sin Promise.all)</h3>
-                <p><em>Una tarea después de otra</em></p>
-                <div id="tareas-secuenciales">
-                    <div class="tarea pendiente" id="secuencial-1">
-                        <span>📥 Descargar imagen 1</span>
-                        <span>⏳ Esperando...</span>
-                    </div>
-                    <div class="tarea pendiente" id="secuencial-2">
-                        <span>📥 Descargar imagen 2</span>
-                        <span>⏳ Esperando...</span>
-                    </div>
-                    <div class="tarea pendiente" id="secuencial-3">
-                        <span>📥 Descargar imagen 3</span>
-                        <span>⏳ Esperando...</span>
-                    </div>
-                </div>
-                <button class="btn-secuencial" onclick="ejecutarSecuencial()">
-                    🐌 Ejecutar Secuencial
-                </button>
+        <div class="metodo paralelo">
+          <h3>⚡ Paralelo (Con Promise.all)</h3>
+          <p><em>Todas las tareas al mismo tiempo</em></p>
+          <div id="tareas-paralelas">
+            <div class="tarea pendiente" id="paralelo-1">
+              <span>📥 Descargar imagen 1</span>
+              <span>⏳ Esperando...</span>
             </div>
-
-            <div class="metodo paralelo">
-                <h3>⚡ Paralelo (Con Promise.all)</h3>
-                <p><em>Todas las tareas al mismo tiempo</em></p>
-                <div id="tareas-paralelas">
-                    <div class="tarea pendiente" id="paralelo-1">
-                        <span>📥 Descargar imagen 1</span>
-                        <span>⏳ Esperando...</span>
-                    </div>
-                    <div class="tarea pendiente" id="paralelo-2">
-                        <span>📥 Descargar imagen 2</span>
-                        <span>⏳ Esperando...</span>
-                    </div>
-                    <div class="tarea pendiente" id="paralelo-3">
-                        <span>📥 Descargar imagen 3</span>
-                        <span>⏳ Esperando...</span>
-                    </div>
-                </div>
-                <button class="btn-paralelo" onclick="ejecutarParalelo()">
-                    ⚡ Ejecutar Paralelo
-                </button>
+            <div class="tarea pendiente" id="paralelo-2">
+              <span>📥 Descargar imagen 2</span>
+              <span>⏳ Esperando...</span>
             </div>
+            <div class="tarea pendiente" id="paralelo-3">
+              <span>📥 Descargar imagen 3</span>
+              <span>⏳ Esperando...</span>
+            </div>
+          </div>
+          <button class="btn-paralelo" onclick="ejecutarParalelo()">
+            ⚡ Ejecutar Paralelo
+          </button>
         </div>
+      </div>
 
-        <h3>📝 Código de Comparación:</h3>
-        <div class="comparacion">
-            <div class="codigo">
-                // 🐌 SECUENCIAL (lento)<br />
-                async function secuencial() {<br />
-                &nbsp;&nbsp;const resultado1 = await tarea(1000);<br />
-                &nbsp;&nbsp;const resultado2 = await tarea(1000);<br />
-                &nbsp;&nbsp;const resultado3 = await tarea(1000);<br />
-                &nbsp;&nbsp;// Tiempo total: ~3000ms<br />
-                }
-            </div>
-            <div class="codigo">
-                // ⚡ PARALELO (rápido)<br />
-                async function paralelo() {<br />
-                &nbsp;&nbsp;const resultados = await Promise.all([<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000),<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000),<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000)<br />
-                &nbsp;&nbsp;]);<br />
-                &nbsp;&nbsp;// Tiempo total: ~1000ms<br />
-                }
-            </div>
+      <h3>📝 Código de Comparación:</h3>
+      <div class="comparacion">
+        <div class="codigo">
+          // 🐌 SECUENCIAL (lento)<br />
+          async function secuencial() {<br />
+          &nbsp;&nbsp;const resultado1 = await tarea(1000);<br />
+          &nbsp;&nbsp;const resultado2 = await tarea(1000);<br />
+          &nbsp;&nbsp;const resultado3 = await tarea(1000);<br />
+          &nbsp;&nbsp;// Tiempo total: ~3000ms<br />
+          }
         </div>
+        <div class="codigo">
+          // ⚡ PARALELO (rápido)<br />
+          async function paralelo() {<br />
+          &nbsp;&nbsp;const resultados = await Promise.all([<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;tarea(1000)<br />
+          &nbsp;&nbsp;]);<br />
+          &nbsp;&nbsp;// Tiempo total: ~1000ms<br />
+          }
+        </div>
+      </div>
 
-        <button class="btn-api" onclick="ejemploAPIsReales()">
-            🌐 Ejemplo con APIs Reales
-        </button>
-        <button class="btn-limpiar" onclick="limpiarTodo()">
-            🗑️ Limpiar Todo
-        </button>
+      <button class="btn-api" onclick="ejemploAPIsReales()">
+        🌐 Ejemplo con APIs Reales
+      </button>
+      <button class="btn-limpiar" onclick="limpiarTodo()">
+        🗑️ Limpiar Todo
+      </button>
 
-        <h3>📟 Consola de Ejecución:</h3>
-        <div class="consola" id="consola"></div>
+      <h3>📟 Consola de Ejecución:</h3>
+      <div class="consola" id="consola"></div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
-
 ```
 
 ### 2. **styles.css**
 
 ```css
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
 }
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .comparacion {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
 }
 .metodo {
-    border: 2px solid;
-    border-radius: 8px;
-    padding: 15px;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 15px;
 }
 .secuencial {
-    border-color: #dc3545;
-    background: #f8d7da;
+  border-color: #dc3545;
+  background: #f8d7da;
 }
 .paralelo {
-    border-color: #28a745;
-    background: #d4edda;
+  border-color: #28a745;
+  background: #d4edda;
 }
 .tarea {
-    background: white;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 5px;
-    border-left: 4px solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border-left: 4px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .pendiente {
-    border-left-color: #ffc107;
+  border-left-color: #ffc107;
 }
 .procesando {
-    border-left-color: #007bff;
+  border-left-color: #007bff;
 }
 .completada {
-    border-left-color: #28a745;
+  border-left-color: #28a745;
 }
 .fallada {
-    border-left-color: #dc3545;
+  border-left-color: #dc3545;
 }
 button {
-    padding: 12px 20px;
-    margin: 10px 5px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
 }
 .btn-paralelo {
-    background: #28a745;
-    color: white;
+  background: #28a745;
+  color: white;
 }
 .btn-secuencial {
-    background: #dc3545;
-    color: white;
+  background: #dc3545;
+  color: white;
 }
 .btn-api {
-    background: #007bff;
-    color: white;
+  background: #007bff;
+  color: white;
 }
 .btn-limpiar {
-    background: #6c757d;
-    color: white;
+  background: #6c757d;
+  color: white;
 }
 .estadisticas {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-    text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  text-align: center;
 }
 .estadistica {
-    padding: 15px;
-    border-radius: 8px;
-    background: #e9ecef;
-    flex: 1;
-    margin: 0 10px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #e9ecef;
+  flex: 1;
+  margin: 0 10px;
 }
 .tiempo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #007bff;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
 }
 .codigo {
-    background: #2d2d2d;
-    color: #f8f9fa;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: "Courier New", monospace;
-    margin: 15px 0;
+  background: #2d2d2d;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
 }
 .consola {
-    background: #2d2d2d;
-    color: #00ff00;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: "Courier New", monospace;
-    margin: 15px 0;
-    min-height: 200px;
-    max-height: 400px;
-    overflow-y: auto;
+  background: #2d2d2d;
+  color: #00ff00;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 .progreso {
-    height: 20px;
-    background: #e9ecef;
-    border-radius: 10px;
-    margin: 5px 0;
-    overflow: hidden;
+  height: 20px;
+  background: #e9ecef;
+  border-radius: 10px;
+  margin: 5px 0;
+  overflow: hidden;
 }
 .barra-progreso {
-    height: 100%;
-    background: #007bff;
-    transition: width 0.3s ease;
-    width: 0%;
+  height: 100%;
+  background: #007bff;
+  transition: width 0.3s ease;
+  width: 0%;
 }
-
 ```
 
 ### 3. **app.js**
@@ -9215,8 +9314,8 @@ const mejora = document.getElementById("mejora");
  * hace scroll hacia abajo para mostrar el mensaje más reciente
  */
 function log(mensaje) {
-    consola.innerHTML += `<div>${mensaje}</div>`;
-    consola.scrollTop = consola.scrollHeight;
+  consola.innerHTML += `<div>${mensaje}</div>`;
+  consola.scrollTop = consola.scrollHeight;
 }
 
 /**
@@ -9226,19 +9325,19 @@ function log(mensaje) {
  * a su estado inicial. Es útil para realizar nuevas pruebas
  */
 function limpiarTodo() {
-    // Limpiar consola
-    consola.innerHTML = "";
+  // Limpiar consola
+  consola.innerHTML = "";
 
-    // Resetear contadores de tiempo
-    tiempoSecuencial.textContent = "0ms";
-    tiempoParalelo.textContent = "0ms";
-    mejora.textContent = "0%";
+  // Resetear contadores de tiempo
+  tiempoSecuencial.textContent = "0ms";
+  tiempoParalelo.textContent = "0ms";
+  mejora.textContent = "0%";
 
-    // Resetear estados visuales de todas las tareas
-    for (let i = 1; i <= 3; i++) {
-        resetearTarea(`secuencial-${i}`);
-        resetearTarea(`paralelo-${i}`);
-    }
+  // Resetear estados visuales de todas las tareas
+  for (let i = 1; i <= 3; i++) {
+    resetearTarea(`secuencial-${i}`);
+    resetearTarea(`paralelo-${i}`);
+  }
 }
 
 /**
@@ -9250,9 +9349,9 @@ function limpiarTodo() {
  * Cambia la clase CSS y el texto para reflejar el estado actual de la tarea
  */
 function actualizarTarea(id, estado, mensaje) {
-    const elemento = document.getElementById(id);
-    elemento.className = `tarea ${estado}`;
-    elemento.querySelector("span:last-child").textContent = mensaje;
+  const elemento = document.getElementById(id);
+  elemento.className = `tarea ${estado}`;
+  elemento.querySelector("span:last-child").textContent = mensaje;
 }
 
 /**
@@ -9260,7 +9359,7 @@ function actualizarTarea(id, estado, mensaje) {
  * @param {string} id - El ID del elemento DOM de la tarea
  */
 function resetearTarea(id) {
-    actualizarTarea(id, "pendiente", "⏳ Esperando...");
+  actualizarTarea(id, "pendiente", "⏳ Esperando...");
 }
 
 // ============================================================================
@@ -9280,33 +9379,33 @@ function resetearTarea(id) {
  * - Información detallada del resultado
  */
 function simularTarea(nombre, duracion, probabilidadExito = 0.9) {
-    return new Promise((resolve, reject) => {
-        const inicio = Date.now();
+  return new Promise((resolve, reject) => {
+    const inicio = Date.now();
 
-        // setTimeout simula el tiempo que tomaría una operación real
-        setTimeout(() => {
-            const exito = Math.random() < probabilidadExito;
-            const tiempoTranscurrido = Date.now() - inicio;
+    // setTimeout simula el tiempo que tomaría una operación real
+    setTimeout(() => {
+      const exito = Math.random() < probabilidadExito;
+      const tiempoTranscurrido = Date.now() - inicio;
 
-            if (exito) {
-                // ✅ La tarea fue exitosa
-                resolve({
-                    nombre,
-                    duracion,
-                    tiempoReal: tiempoTranscurrido,
-                    estado: "✅ Completado",
-                });
-            } else {
-                // ❌ La tarea falló
-                reject({
-                    nombre,
-                    duracion,
-                    tiempoReal: tiempoTranscurrido,
-                    estado: "❌ Falló",
-                });
-            }
-        }, duracion);
-    });
+      if (exito) {
+        // ✅ La tarea fue exitosa
+        resolve({
+          nombre,
+          duracion,
+          tiempoReal: tiempoTranscurrido,
+          estado: "✅ Completado",
+        });
+      } else {
+        // ❌ La tarea falló
+        reject({
+          nombre,
+          duracion,
+          tiempoReal: tiempoTranscurrido,
+          estado: "❌ Falló",
+        });
+      }
+    }, duracion);
+  });
 }
 
 // ============================================================================
@@ -9325,50 +9424,49 @@ function simularTarea(nombre, duracion, probabilidadExito = 0.9) {
  * TIEMPO ESTIMADO: ~3000ms (1000ms × 3 tareas)
  */
 async function ejecutarSecuencial() {
-    limpiarTodo();
-    log("🐌 INICIANDO EJECUCIÓN SECUENCIAL");
-    const inicioTotal = Date.now();
+  limpiarTodo();
+  log("🐌 INICIANDO EJECUCIÓN SECUENCIAL");
+  const inicioTotal = Date.now();
 
-    try {
-        // 📥 TAREA 1 - Primera descarga
-        actualizarTarea("secuencial-1", "procesando", "⏬ Descargando...");
-        const resultado1 = await simularTarea("Imagen 1", 1000);
-        actualizarTarea(
-            "secuencial-1",
-            "completada",
-            `✅ ${resultado1.tiempoReal}ms`
-        );
-        log(`📥 ${resultado1.nombre} completado en ${resultado1.tiempoReal}ms`);
+  try {
+    // 📥 TAREA 1 - Primera descarga
+    actualizarTarea("secuencial-1", "procesando", "⏬ Descargando...");
+    const resultado1 = await simularTarea("Imagen 1", 1000);
+    actualizarTarea(
+      "secuencial-1",
+      "completada",
+      `✅ ${resultado1.tiempoReal}ms`
+    );
+    log(`📥 ${resultado1.nombre} completado en ${resultado1.tiempoReal}ms`);
 
-        // 📥 TAREA 2 - Espera a que termine la 1
-        actualizarTarea("secuencial-2", "procesando", "⏬ Descargando...");
-        const resultado2 = await simularTarea("Imagen 2", 1000);
-        actualizarTarea(
-            "secuencial-2",
-            "completada",
-            `✅ ${resultado2.tiempoReal}ms`
-        );
-        log(`📥 ${resultado2.nombre} completado en ${resultado2.tiempoReal}ms`);
+    // 📥 TAREA 2 - Espera a que termine la 1
+    actualizarTarea("secuencial-2", "procesando", "⏬ Descargando...");
+    const resultado2 = await simularTarea("Imagen 2", 1000);
+    actualizarTarea(
+      "secuencial-2",
+      "completada",
+      `✅ ${resultado2.tiempoReal}ms`
+    );
+    log(`📥 ${resultado2.nombre} completado en ${resultado2.tiempoReal}ms`);
 
-        // 📥 TAREA 3 - Espera a que terminen la 1 y 2
-        actualizarTarea("secuencial-3", "procesando", "⏬ Descargando...");
-        const resultado3 = await simularTarea("Imagen 3", 1000);
-        actualizarTarea(
-            "secuencial-3",
-            "completada",
-            `✅ ${resultado3.tiempoReal}ms`
-        );
-        log(`📥 ${resultado3.nombre} completado en ${resultado3.tiempoReal}ms`);
+    // 📥 TAREA 3 - Espera a que terminen la 1 y 2
+    actualizarTarea("secuencial-3", "procesando", "⏬ Descargando...");
+    const resultado3 = await simularTarea("Imagen 3", 1000);
+    actualizarTarea(
+      "secuencial-3",
+      "completada",
+      `✅ ${resultado3.tiempoReal}ms`
+    );
+    log(`📥 ${resultado3.nombre} completado en ${resultado3.tiempoReal}ms`);
 
-        // 📊 CALCULAR TIEMPO TOTAL
-        const tiempoTotal = Date.now() - inicioTotal;
-        tiempoSecuencial.textContent = `${tiempoTotal}ms`;
-        log(`🐌 TIEMPO TOTAL SECUENCIAL: ${tiempoTotal}ms`);
-
-    } catch (error) {
-        // 🚨 MANEJO DE ERRORES
-        log(`❌ Error en ejecución secuencial: ${error.nombre}`);
-    }
+    // 📊 CALCULAR TIEMPO TOTAL
+    const tiempoTotal = Date.now() - inicioTotal;
+    tiempoSecuencial.textContent = `${tiempoTotal}ms`;
+    log(`🐌 TIEMPO TOTAL SECUENCIAL: ${tiempoTotal}ms`);
+  } catch (error) {
+    // 🚨 MANEJO DE ERRORES
+    log(`❌ Error en ejecución secuencial: ${error.nombre}`);
+  }
 }
 
 // ============================================================================
@@ -9387,56 +9485,55 @@ async function ejecutarSecuencial() {
  * TIEMPO ESTIMADO: ~1000ms (el tiempo de la tarea más lenta)
  */
 async function ejecutarParalelo() {
-    limpiarTodo();
-    log("⚡ INICIANDO EJECUCIÓN PARALELA CON PROMISE.ALL()");
-    const inicioTotal = Date.now();
+  limpiarTodo();
+  log("⚡ INICIANDO EJECUCIÓN PARALELA CON PROMISE.ALL()");
+  const inicioTotal = Date.now();
 
-    try {
-        // 🎯 INICIAR TODAS LAS TAREAS SIMULTÁNEAMENTE
-        actualizarTarea("paralelo-1", "procesando", "⏬ Descargando...");
-        actualizarTarea("paralelo-2", "procesando", "⏬ Descargando...");
-        actualizarTarea("paralelo-3", "procesando", "⏬ Descargando...");
+  try {
+    // 🎯 INICIAR TODAS LAS TAREAS SIMULTÁNEAMENTE
+    actualizarTarea("paralelo-1", "procesando", "⏬ Descargando...");
+    actualizarTarea("paralelo-2", "procesando", "⏬ Descargando...");
+    actualizarTarea("paralelo-3", "procesando", "⏬ Descargando...");
 
-        /**
-         * 🚀 PROMISE.ALL() - EL CORAZÓN DE LA EJECUCIÓN PARALELA
-         *
-         * Promise.all() recibe un array de promesas y:
-         * 1. Ejecuta TODAS las promesas inmediatamente
-         * 2. Espera a que TODAS se resuelvan
-         * 3. Retorna un array con los resultados en el MISMO ORDEN
-         * 4. Si UNA promesa es rechazada, Promise.all() se rechaza inmediatamente
-         */
-        const resultados = await Promise.all([
-            simularTarea("Imagen 1", 1000),
-            simularTarea("Imagen 2", 1000),
-            simularTarea("Imagen 3", 1000),
-        ]);
+    /**
+     * 🚀 PROMISE.ALL() - EL CORAZÓN DE LA EJECUCIÓN PARALELA
+     *
+     * Promise.all() recibe un array de promesas y:
+     * 1. Ejecuta TODAS las promesas inmediatamente
+     * 2. Espera a que TODAS se resuelvan
+     * 3. Retorna un array con los resultados en el MISMO ORDEN
+     * 4. Si UNA promesa es rechazada, Promise.all() se rechaza inmediatamente
+     */
+    const resultados = await Promise.all([
+      simularTarea("Imagen 1", 1000),
+      simularTarea("Imagen 2", 1000),
+      simularTarea("Imagen 3", 1000),
+    ]);
 
-        // 📊 ACTUALIZAR INTERFAZ CON RESULTADOS
-        resultados.forEach((resultado, index) => {
-            actualizarTarea(
-                `paralelo-${index + 1}`,
-                "completada",
-                `✅ ${resultado.tiempoReal}ms`
-            );
-            log(`📥 ${resultado.nombre} completado en ${resultado.tiempoReal}ms`);
-        });
+    // 📊 ACTUALIZAR INTERFAZ CON RESULTADOS
+    resultados.forEach((resultado, index) => {
+      actualizarTarea(
+        `paralelo-${index + 1}`,
+        "completada",
+        `✅ ${resultado.tiempoReal}ms`
+      );
+      log(`📥 ${resultado.nombre} completado en ${resultado.tiempoReal}ms`);
+    });
 
-        // ⏱️ CALCULAR TIEMPO TOTAL Y MEJORA
-        const tiempoTotal = Date.now() - inicioTotal;
-        tiempoParalelo.textContent = `${tiempoTotal}ms`;
-        log(`⚡ TIEMPO TOTAL PARALELO: ${tiempoTotal}ms`);
+    // ⏱️ CALCULAR TIEMPO TOTAL Y MEJORA
+    const tiempoTotal = Date.now() - inicioTotal;
+    tiempoParalelo.textContent = `${tiempoTotal}ms`;
+    log(`⚡ TIEMPO TOTAL PARALELO: ${tiempoTotal}ms`);
 
-        // 📈 CALCULAR PORCENTAJE DE MEJORA
-        const tiempoSec = parseInt(tiempoSecuencial.textContent) || 3000;
-        const mejoraPorcentaje = Math.round((1 - tiempoTotal / tiempoSec) * 100);
-        mejora.textContent = `${mejoraPorcentaje}% más rápido`;
-
-    } catch (error) {
-        // 🚨 MANEJO DE ERRORES EN PROMISE.ALL()
-        log(`❌ Error en ejecución paralela: ${error.nombre}`);
-        log('💡 Promise.all() es "todo o nada": si UNA falla, TODAS fallan');
-    }
+    // 📈 CALCULAR PORCENTAJE DE MEJORA
+    const tiempoSec = parseInt(tiempoSecuencial.textContent) || 3000;
+    const mejoraPorcentaje = Math.round((1 - tiempoTotal / tiempoSec) * 100);
+    mejora.textContent = `${mejoraPorcentaje}% más rápido`;
+  } catch (error) {
+    // 🚨 MANEJO DE ERRORES EN PROMISE.ALL()
+    log(`❌ Error en ejecución paralela: ${error.nombre}`);
+    log('💡 Promise.all() es "todo o nada": si UNA falla, TODAS fallan');
+  }
 }
 
 // ============================================================================
@@ -9452,36 +9549,41 @@ async function ejecutarParalelo() {
  * - Reducir tiempo de carga de aplicaciones
  */
 async function ejemploAPIsReales() {
-    limpiarTodo();
-    log("🌐 EJEMPLO CON APIS REALES - Cargando datos de usuarios...");
+  limpiarTodo();
+  log("🌐 EJEMPLO CON APIS REALES - Cargando datos de usuarios...");
 
-    try {
-        /**
-         * 🚀 CARGAR MÚLTIPLES RECURSOS EN PARALELO
-         *
-         * En lugar de esperar a que cada fetch termine antes de empezar el siguiente,
-         * Promise.all() permite hacer todas las peticiones simultáneamente
-         */
-        const [usuarios, posts, comentarios] = await Promise.all([
-            // 📥 Fetch 1: Lista de usuarios
-            fetch("<https://jsonplaceholder.typicode.com/users>").then(r => r.json()),
+  try {
+    /**
+     * 🚀 CARGAR MÚLTIPLES RECURSOS EN PARALELO
+     *
+     * En lugar de esperar a que cada fetch termine antes de empezar el siguiente,
+     * Promise.all() permite hacer todas las peticiones simultáneamente
+     */
+    const [usuarios, posts, comentarios] = await Promise.all([
+      // 📥 Fetch 1: Lista de usuarios
+      fetch("<https://jsonplaceholder.typicode.com/users>").then((r) =>
+        r.json()
+      ),
 
-            // 📥 Fetch 2: Lista de posts (comienza AL MISMO TIEMPO que el fetch 1)
-            fetch("<https://jsonplaceholder.typicode.com/posts>").then(r => r.json()),
+      // 📥 Fetch 2: Lista de posts (comienza AL MISMO TIEMPO que el fetch 1)
+      fetch("<https://jsonplaceholder.typicode.com/posts>").then((r) =>
+        r.json()
+      ),
 
-            // 📥 Fetch 3: Lista de comentarios (comienza AL MISMO TIEMPO que los otros)
-            fetch("<https://jsonplaceholder.typicode.com/comments>").then(r => r.json()),
-        ]);
+      // 📥 Fetch 3: Lista de comentarios (comienza AL MISMO TIEMPO que los otros)
+      fetch("<https://jsonplaceholder.typicode.com/comments>").then((r) =>
+        r.json()
+      ),
+    ]);
 
-        // 📊 MOSTRAR RESULTADOS
-        log(`✅ Usuarios cargados: ${usuarios.length}`);
-        log(`✅ Posts cargados: ${posts.length}`);
-        log(`✅ Comentarios cargados: ${comentarios.length}`);
-        log("🎉 ¡Todos los datos cargados en paralelo!");
-
-    } catch (error) {
-        log(`❌ Error cargando datos: ${error.message}`);
-    }
+    // 📊 MOSTRAR RESULTADOS
+    log(`✅ Usuarios cargados: ${usuarios.length}`);
+    log(`✅ Posts cargados: ${posts.length}`);
+    log(`✅ Comentarios cargados: ${comentarios.length}`);
+    log("🎉 ¡Todos los datos cargados en paralelo!");
+  } catch (error) {
+    log(`❌ Error cargando datos: ${error.message}`);
+  }
 }
 
 // ============================================================================
@@ -9497,20 +9599,20 @@ async function ejemploAPIsReales() {
  * - Las otras promesas siguen ejecutándose, pero sus resultados se ignoran
  */
 async function ejemploConErrores() {
-    log("\\n⚠️ EJEMPLO: Promise.all() con errores");
+  log("\\n⚠️ EJEMPLO: Promise.all() con errores");
 
-    try {
-        const resultados = await Promise.all([
-            simularTarea("Tarea 1", 500, 0.9),    // 90% probabilidad de éxito
-            simularTarea("Tarea 2", 800, 0.3),    // 30% probabilidad de éxito (probable falle)
-            simularTarea("Tarea 3", 600, 0.9),    // 90% probabilidad de éxito
-        ]);
+  try {
+    const resultados = await Promise.all([
+      simularTarea("Tarea 1", 500, 0.9), // 90% probabilidad de éxito
+      simularTarea("Tarea 2", 800, 0.3), // 30% probabilidad de éxito (probable falle)
+      simularTarea("Tarea 3", 600, 0.9), // 90% probabilidad de éxito
+    ]);
 
-        log("✅ Todas las tareas completadas");
-    } catch (error) {
-        log(`❌ Promise.all() falló porque una tarea falló: ${error.nombre}`);
-        log('💡 Promise.all() es "todo o nada": si UNA falla, TODAS fallan');
-    }
+    log("✅ Todas las tareas completadas");
+  } catch (error) {
+    log(`❌ Promise.all() falló porque una tarea falló: ${error.nombre}`);
+    log('💡 Promise.all() es "todo o nada": si UNA falla, TODAS fallan');
+  }
 }
 
 // ============================================================================
@@ -9527,26 +9629,26 @@ async function ejemploConErrores() {
  * - Útil cuando quieres procesar resultados parciales
  */
 async function ejemploAllSettled() {
-    log("\\n🛡️ EJEMPLO: Promise.allSettled() (no se detiene por errores)");
+  log("\\n🛡️ EJEMPLO: Promise.allSettled() (no se detiene por errores)");
 
-    const resultados = await Promise.allSettled([
-        simularTarea("Tarea A", 400, 0.9),
-        simularTarea("Tarea B", 600, 0.2),    // Esta probablemente falle
-        simularTarea("Tarea C", 500, 0.9),
-    ]);
+  const resultados = await Promise.allSettled([
+    simularTarea("Tarea A", 400, 0.9),
+    simularTarea("Tarea B", 600, 0.2), // Esta probablemente falle
+    simularTarea("Tarea C", 500, 0.9),
+  ]);
 
-    // 📊 PROCESAR TODOS LOS RESULTADOS (éxitos y fallos)
-    resultados.forEach((resultado, index) => {
-        if (resultado.status === "fulfilled") {
-            // ✅ Tarea completada exitosamente
-            log(`✅ Tarea ${index + 1}: ${resultado.value.estado}`);
-        } else {
-            // ❌ Tarea falló
-            log(`❌ Tarea ${index + 1}: ${resultado.reason.estado}`);
-        }
-    });
+  // 📊 PROCESAR TODOS LOS RESULTADOS (éxitos y fallos)
+  resultados.forEach((resultado, index) => {
+    if (resultado.status === "fulfilled") {
+      // ✅ Tarea completada exitosamente
+      log(`✅ Tarea ${index + 1}: ${resultado.value.estado}`);
+    } else {
+      // ❌ Tarea falló
+      log(`❌ Tarea ${index + 1}: ${resultado.reason.estado}`);
+    }
+  });
 
-    log("🎯 Promise.allSettled() espera a TODAS, sin importar errores");
+  log("🎯 Promise.allSettled() espera a TODAS, sin importar errores");
 }
 
 // ============================================================================
@@ -9558,8 +9660,8 @@ async function ejemploAllSettled() {
  * Esto permite ver diferentes comportamientos sin interacción del usuario
  */
 setTimeout(() => {
-    ejemploConErrores();
-    setTimeout(ejemploAllSettled, 2000);
+  ejemploConErrores();
+  setTimeout(ejemploAllSettled, 2000);
 }, 5000);
 ```
 
@@ -9567,14 +9669,14 @@ setTimeout(() => {
 
 1. **Crea una carpeta** para el proyecto
 2. **Guarda los 3 archivos** con estos nombres:
-    - `index.html`
-    - `styles.css`
-    - `app.js`
+   - `index.html`
+   - `styles.css`
+   - `app.js`
 3. **Abre `index.html`** en tu navegador
 4. **Prueba los diferentes métodos**:
-    - 🐌 **Secuencial**: Tareas una después de otra (~3000ms)
-    - ⚡ **Paralelo**: Todas las tareas al mismo tiempo (~1000ms)
-    - 🌐 **APIs Reales**: Ejemplo práctico con fetch
+   - 🐌 **Secuencial**: Tareas una después de otra (~3000ms)
+   - ⚡ **Paralelo**: Todas las tareas al mismo tiempo (~1000ms)
+   - 🌐 **APIs Reales**: Ejemplo práctico con fetch
 
 ## 🎯 Conceptos Explicados
 
@@ -9710,135 +9812,130 @@ Imagina que tienes 3 amigos buscando la respuesta a una pregunta:
 
 // 🕒 Función que simula una tarea con un tiempo específico
 function tarea(nombre, tiempo) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(`✅ ${nombre} terminó en ${tiempo}ms`);
-        }, tiempo);
-    });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`✅ ${nombre} terminó en ${tiempo}ms`);
+    }, tiempo);
+  });
 }
 
 // 🚨 Función que simula una tarea que FALLA
 function tareaQueFalla(nombre, tiempo) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject(`❌ ${nombre} FALLÓ en ${tiempo}ms`);
-        }, tiempo);
-    });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(`❌ ${nombre} FALLÓ en ${tiempo}ms`);
+    }, tiempo);
+  });
 }
 
 // 🎯 EJEMPLO 1: CARRERA NORMAL (TODAS EXITOSAS)
 async function carreraNormal() {
-    console.log("🏁 INICIANDO CARRERA NORMAL...");
+  console.log("🏁 INICIANDO CARRERA NORMAL...");
 
-    try {
-        const ganador = await Promise.race([
-            tarea("Descarga A", 3000),   // Tarda 3 segundos
-            tarea("Descarga B", 1500),   // Tarda 1.5 segundos  ← ¡ESTA GANA!
-            tarea("Descarga C", 2000)    // Tarda 2 segundos
-        ]);
+  try {
+    const ganador = await Promise.race([
+      tarea("Descarga A", 3000), // Tarda 3 segundos
+      tarea("Descarga B", 1500), // Tarda 1.5 segundos  ← ¡ESTA GANA!
+      tarea("Descarga C", 2000), // Tarda 2 segundos
+    ]);
 
-        console.log("🏆 GANADOR:", ganador);
-        console.log("💡 Nota: Las otras descargas siguen ejecutándose en segundo plano");
-
-    } catch (error) {
-        console.log("❌ Error:", error);
-    }
+    console.log("🏆 GANADOR:", ganador);
+    console.log(
+      "💡 Nota: Las otras descargas siguen ejecutándose en segundo plano"
+    );
+  } catch (error) {
+    console.log("❌ Error:", error);
+  }
 }
 
 // 🚨 EJEMPLO 2: CARRERA CON ERROR (LA MÁS RÁPIDA FALLA)
 async function carreraConError() {
-    console.log("\\n🏁 INICIANDO CARRERA CON ERROR...");
+  console.log("\\n🏁 INICIANDO CARRERA CON ERROR...");
 
-    try {
-        const ganador = await Promise.race([
-            tarea("Tarea Segura", 2000),     // Tarda 2 segundos
-            tareaQueFalla("Tarea Rápida", 500),  // Falla en 0.5 segundos ← ¡ESTA GANA!
-            tarea("Tarea Lenta", 3000)       // Tarda 3 segundos
-        ]);
+  try {
+    const ganador = await Promise.race([
+      tarea("Tarea Segura", 2000), // Tarda 2 segundos
+      tareaQueFalla("Tarea Rápida", 500), // Falla en 0.5 segundos ← ¡ESTA GANA!
+      tarea("Tarea Lenta", 3000), // Tarda 3 segundos
+    ]);
 
-        console.log("🏆 GANADOR:", ganador);
-
-    } catch (error) {
-        console.log("🎯 PRIMERA EN TERMINAR (pero con error):", error);
-        console.log("💡 Promise.race() NO espera a las exitosas si una falla primero");
-    }
+    console.log("🏆 GANADOR:", ganador);
+  } catch (error) {
+    console.log("🎯 PRIMERA EN TERMINAR (pero con error):", error);
+    console.log(
+      "💡 Promise.race() NO espera a las exitosas si una falla primero"
+    );
+  }
 }
 
 // ⏱️ EJEMPLO 3: TIMEOUT AUTOMÁTICO (Caso de uso REAL)
 async function conTimeout() {
-    console.log("\\n⏰ EJEMPLO REAL: TIMEOUT AUTOMÁTICO");
+  console.log("\\n⏰ EJEMPLO REAL: TIMEOUT AUTOMÁTICO");
 
-    // Simulamos una descarga que podría tardar mucho
-    const descargaLenta = tarea("Descarga de archivo grande", 5000);
+  // Simulamos una descarga que podría tardar mucho
+  const descargaLenta = tarea("Descarga de archivo grande", 5000);
 
-    // Creamos un timeout de seguridad (3 segundos)
-    const timeout = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject("⏰ TIMEOUT: La descarga tardó demasiado");
-        }, 3000);
-    });
+  // Creamos un timeout de seguridad (3 segundos)
+  const timeout = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("⏰ TIMEOUT: La descarga tardó demasiado");
+    }, 3000);
+  });
 
-    try {
-        const resultado = await Promise.race([
-            descargaLenta,  // La descarga real
-            timeout         // El timeout de seguridad
-        ]);
+  try {
+    const resultado = await Promise.race([
+      descargaLenta, // La descarga real
+      timeout, // El timeout de seguridad
+    ]);
 
-        console.log("✅ Descarga completada:", resultado);
-
-    } catch (error) {
-        console.log("❌", error);
-        console.log("💡 El timeout 'ganó la carrera' y canceló la descarga lenta");
-    }
+    console.log("✅ Descarga completada:", resultado);
+  } catch (error) {
+    console.log("❌", error);
+    console.log("💡 El timeout 'ganó la carrera' y canceló la descarga lenta");
+  }
 }
 
 // 🎮 EJEMPLO 4: MULTIPLES FUENTES DE DATOS
 async function multiplesFuentes() {
-    console.log("\\n🌐 EJEMPLO REAL: MÚLTIPLES FUENTES DE DATOS");
+  console.log("\\n🌐 EJEMPLO REAL: MÚLTIPLES FUENTES DE DATOS");
 
-    // Simulamos buscar el mismo dato en diferentes servidores
-    const servidorA = tarea("Servidor Principal", 800);
-    const servidorB = tarea("Servidor Secundario", 400);  // ← Este responde más rápido
-    const servidorC = tarea("Servidor de Respaldo", 600);
+  // Simulamos buscar el mismo dato en diferentes servidores
+  const servidorA = tarea("Servidor Principal", 800);
+  const servidorB = tarea("Servidor Secundario", 400); // ← Este responde más rápido
+  const servidorC = tarea("Servidor de Respaldo", 600);
 
-    try {
-        const dato = await Promise.race([
-            servidorA,
-            servidorB,
-            servidorC
-        ]);
+  try {
+    const dato = await Promise.race([servidorA, servidorB, servidorC]);
 
-        console.log("📡 Dato obtenido del:", dato);
-        console.log("💡 Usamos el servidor más rápido, ignoramos los demás");
-
-    } catch (error) {
-        console.log("❌ Todos los servidores fallaron");
-    }
+    console.log("📡 Dato obtenido del:", dato);
+    console.log("💡 Usamos el servidor más rápido, ignoramos los demás");
+  } catch (error) {
+    console.log("❌ Todos los servidores fallaron");
+  }
 }
 
 // 🚀 EJECUTAR TODOS LOS EJEMPLOS
 async function ejecutarEjemplos() {
-    console.log("🎯 ====================================");
-    console.log("🏎️  DEMOSTRACIÓN DE PROMISE.RACE()");
-    console.log("🎯 ====================================\\n");
+  console.log("🎯 ====================================");
+  console.log("🏎️  DEMOSTRACIÓN DE PROMISE.RACE()");
+  console.log("🎯 ====================================\\n");
 
-    await carreraNormal();
-    await carreraConError();
-    await conTimeout();
-    await multiplesFuentes();
+  await carreraNormal();
+  await carreraConError();
+  await conTimeout();
+  await multiplesFuentes();
 
-    console.log("\\n🎯 ====================================");
-    console.log("📚 RESUMEN: CUÁNDO USAR PROMISE.RACE()");
-    console.log("🎯 ====================================");
-    console.log("1️⃣ ⏰ Timeouts automáticos");
-    console.log("2️⃣ 🌐 Múltiples fuentes de datos (usar la más rápida)");
-    console.log("3️⃣ 🚨 Detección rápida de errores");
-    console.log("4️⃣ 🎯 Cualquier caso donde solo necesites el primer resultado");
+  console.log("\\n🎯 ====================================");
+  console.log("📚 RESUMEN: CUÁNDO USAR PROMISE.RACE()");
+  console.log("🎯 ====================================");
+  console.log("1️⃣ ⏰ Timeouts automáticos");
+  console.log("2️⃣ 🌐 Múltiples fuentes de datos (usar la más rápida)");
+  console.log("3️⃣ 🚨 Detección rápida de errores");
+  console.log("4️⃣ 🎯 Cualquier caso donde solo necesites el primer resultado");
 }
 
 // Ejecutar la demostración
 ejecutarEjemplos();
-
 ```
 
 ### 🎯 SALIDA ESPERADA DEL CÓDIGO:
@@ -9889,12 +9986,12 @@ RESULTADO: Promise.race() = 🐇 (la más rápida)
 
 ## 🆚 COMPARACIÓN RÁPIDA
 
-| Método | Comportamiento | Cuando usar |
-| --- | --- | --- |
-| `Promise.all()` | Espera a **TODAS** | Necesitas todos los resultados |
-| `Promise.race()` | Toma al **PRIMERO** | Solo necesitas el más rápido |
-| `Promise.any()` | Toma al **PRIMERO EXITOSO** | Quieres el primer éxito |
-| `Promise.allSettled()` | Espera a **TODAS** (éxito/error) | Necesitas saber de todas |
+| Método                 | Comportamiento                   | Cuando usar                    |
+| ---------------------- | -------------------------------- | ------------------------------ |
+| `Promise.all()`        | Espera a **TODAS**               | Necesitas todos los resultados |
+| `Promise.race()`       | Toma al **PRIMERO**              | Solo necesitas el más rápido   |
+| `Promise.any()`        | Toma al **PRIMERO EXITOSO**      | Quieres el primer éxito        |
+| `Promise.allSettled()` | Espera a **TODAS** (éxito/error) | Necesitas saber de todas       |
 
 ### 💡 CASOS DE USO REALES
 
@@ -9903,10 +10000,9 @@ RESULTADO: Promise.race() = 🐇 (la más rápida)
 ```jsx
 // Si la API no responde en 5 segundos, muestra error
 const respuesta = await Promise.race([
-  fetch('/api/datos'),
-  timeout(5000) // Timeout de 5 segundos
+  fetch("/api/datos"),
+  timeout(5000), // Timeout de 5 segundos
 ]);
-
 ```
 
 ### 2. **Múltiples Servidores:**
@@ -9916,9 +10012,8 @@ const respuesta = await Promise.race([
 const dato = await Promise.race([
   servidorEuropeo.getDatos(),
   servidorAmericano.getDatos(),
-  servidorAsiatico.getDatos()
+  servidorAsiatico.getDatos(),
 ]);
-
 ```
 
 ### 3. **Carga con Fallback:**
@@ -9927,9 +10022,8 @@ const dato = await Promise.race([
 // Intentar cargar de cache primero, si no de red
 const imagen = await Promise.race([
   cargarDeCache(),
-  cargarDeRed().then(guardarEnCache)
+  cargarDeRed().then(guardarEnCache),
 ]);
-
 ```
 
 **¡Promise.race() es tu aliado cuando la velocidad importa más que tener todos los resultados!** 🏎️💨
@@ -10531,7 +10625,6 @@ Promise.race([
 ]).then((resultado) => {
   console.log(resultado); // "✅ Éxito inmediato"
 });
-
 ```
 
 ### ✅ **¿Cuándo usar Promise.race()?**
@@ -11331,7 +11424,6 @@ async function ejemploAvanzado() {
 
   log("💡 AbortController evita que se muestren resultados obsoletos");
 }
-
 ```
 
 ## 🎯 **Características Clave de AbortController**
@@ -11415,13 +11507,12 @@ El .catch() intercepta ese error y te permite manejarlo de forma controlada.*/
  * 🧭 operacionCancelable(signal)
  * Esta función devuelve una promesa que representa una operación asíncrona
  * que **puede ser cancelada externamente** mediante una señal AbortSignal.
- * 
+ *
  * @param {AbortSignal} signal - La señal de cancelación asociada a un AbortController
  * @returns {Promise<string>} - Promesa que se resuelve o rechaza según lo que ocurra
  */
 function operacionCancelable(signal) {
   return new Promise((resolve, reject) => {
-
     // =========================================================
     // 🛑 1. Verificar si ya estaba cancelado antes de empezar
     // =========================================================
@@ -11573,7 +11664,9 @@ async function buscarEnAPI(query) {
     // Simulamos una llamada a un endpoint de búsqueda
     // ⚠️ Nota: Aquí podrías poner tu URL real, por ejemplo:
     // `https://miapi.com/search?q=${encodeURIComponent(query)}`
-    const response = await fetch(`/api/buscar?q=${encodeURIComponent(query)}`, { signal });
+    const response = await fetch(`/api/buscar?q=${encodeURIComponent(query)}`, {
+      signal,
+    });
 
     // Si la petición fue abortada, esta línea no se ejecuta
     const datos = await response.json();
@@ -11583,7 +11676,9 @@ async function buscarEnAPI(query) {
   } catch (error) {
     // Si la petición fue abortada, capturamos el AbortError
     if (error.name === "AbortError") {
-      console.log("⏳ Petición anterior cancelada (usuario siguió escribiendo)");
+      console.log(
+        "⏳ Petición anterior cancelada (usuario siguió escribiendo)"
+      );
     } else {
       console.error("❌ Error en la búsqueda:", error);
     }
@@ -11603,7 +11698,7 @@ function mostrarResultados(datos) {
   }
 
   const ul = document.createElement("ul");
-  datos.forEach(item => {
+  datos.forEach((item) => {
     const li = document.createElement("li");
     li.textContent = item.nombre;
     ul.appendChild(li);
@@ -11628,7 +11723,6 @@ inputBusqueda.addEventListener("input", (e) => {
 
   buscarEnAPI(query);
 });
-
 ```
 
 ### 🧠 **Explicación del flujo**
@@ -11636,7 +11730,7 @@ inputBusqueda.addEventListener("input", (e) => {
 1. El usuario escribe en el `input`.
 2. Se dispara el evento `input` y se llama a `buscarEnAPI(query)`.
 3. Antes de lanzar la nueva búsqueda:
-    - si había una anterior en curso → **se cancela** con `controller.abort()`.
+   - si había una anterior en curso → **se cancela** con `controller.abort()`.
 4. Se crea un nuevo `AbortController` para la nueva búsqueda.
 5. Si la búsqueda anterior termina después de la nueva… **no pasa nada**, porque ya fue cancelada.
 6. La UI siempre muestra solo el resultado de **la última búsqueda**.
@@ -11655,9 +11749,17 @@ if (!window.fetchInterceptado) {
       const q = params.get("q").toLowerCase();
       return new Promise((resolve) => {
         setTimeout(() => {
-          const fakeResults = ["Manzana", "Mango", "Mandarina", "Melón", "Melocotón", "Pera", "Piña"]
-            .filter(fruta => fruta.toLowerCase().includes(q))
-            .map(nombre => ({ nombre }));
+          const fakeResults = [
+            "Manzana",
+            "Mango",
+            "Mandarina",
+            "Melón",
+            "Melocotón",
+            "Pera",
+            "Piña",
+          ]
+            .filter((fruta) => fruta.toLowerCase().includes(q))
+            .map((nombre) => ({ nombre }));
           resolve(new Response(JSON.stringify(fakeResults), { status: 200 }));
         }, 1000); // simulamos 1 segundo de latencia
       });
@@ -11666,7 +11768,6 @@ if (!window.fetchInterceptado) {
   };
   window.fetchInterceptado = true;
 }
-
 ```
 
 ### 📌 Ventajas de este patrón
@@ -11679,9 +11780,8 @@ if (!window.fetchInterceptado) {
 
 ```jsx
 if (controllerActual) controllerActual.abort(); // Cancela la búsqueda anterior
-controllerActual = new AbortController();       // Nuevo controlador para la nueva búsqueda
+controllerActual = new AbortController(); // Nuevo controlador para la nueva búsqueda
 fetch(url, { signal: controllerActual.signal });
-
 ```
 
 ### ✅ **¿Cuándo usar AbortController?**
@@ -11753,7 +11853,6 @@ async function conReintentos(operacion, maxReintentos = 3) {
       // =============================================================
       // Salimos del bucle inmediatamente devolviendo el resultado.
       return resultado;
-
     } catch (error) {
       // =============================================================
       // ❌ 4. Si ocurre un error, capturamos la excepción
@@ -11774,14 +11873,15 @@ async function conReintentos(operacion, maxReintentos = 3) {
       // Esto evita saturar el servidor con reintentos inmediatos.
       // Aquí aplicamos una espera proporcional al número de intento (backoff lineal).
       const tiempoEspera = 1000 * intento; // ej. 1s, 2s, 3s...
-      console.log(`⏳ Esperando ${tiempoEspera}ms antes del siguiente intento...`);
+      console.log(
+        `⏳ Esperando ${tiempoEspera}ms antes del siguiente intento...`
+      );
 
       // Usamos una pequeña promesa con setTimeout para "pausar" el bucle
       await new Promise((resolve) => setTimeout(resolve, tiempoEspera));
     }
   }
 }
-
 ```
 
 ### 🧠 **Qué hace este patrón paso a paso**:
@@ -11789,8 +11889,8 @@ async function conReintentos(operacion, maxReintentos = 3) {
 1. **Ejecuta la operación** asíncrona dentro de un bucle `for`.
 2. Si **tiene éxito** → sale del bucle y devuelve el resultado.
 3. Si **falla**, captura el error y:
-    - si es el **último intento**, lanza el error final;
-    - si **quedan intentos**, espera un tiempo y vuelve a intentarlo.
+   - si es el **último intento**, lanza el error final;
+   - si **quedan intentos**, espera un tiempo y vuelve a intentarlo.
 4. El tiempo de espera **crece con cada intento** (1s, 2s, 3s, …) para no saturar al servidor.
 5. Si todos los intentos fallan → la función lanza un error.
 
@@ -11807,9 +11907,10 @@ async function fetchDatos() {
 
 // Llamamos a la función con reintentos
 conReintentos(fetchDatos, 3)
-  .then(datos => console.log("✅ Datos recibidos:", datos))
-  .catch(err => console.error("❌ No se pudo completar la operación:", err.message));
-
+  .then((datos) => console.log("✅ Datos recibidos:", datos))
+  .catch((err) =>
+    console.error("❌ No se pudo completar la operación:", err.message)
+  );
 ```
 
 📌 Si `/api/datos` falla la primera vez pero responde bien en el segundo intento, se completará con éxito.
@@ -11825,13 +11926,13 @@ Si falla las 3 veces, se lanza un error final con un mensaje claro.
 
 👉 **Resumen final del patrón de retry**:
 
-| Paso | Qué hace |
-| --- | --- |
+| Paso                          | Qué hace                                   |
+| ----------------------------- | ------------------------------------------ |
 | `try/catch` en un bucle `for` | Reintenta varias veces de forma controlada |
-| `await operacion()` | Ejecuta la tarea asíncrona |
-| `if (último intento)` | Lanza error final si no hay éxito |
-| `await setTimeout(...)` | Espera entre intentos (backoff) |
-| Devuelve resultado | Si al menos un intento es exitoso |
+| `await operacion()`           | Ejecuta la tarea asíncrona                 |
+| `if (último intento)`         | Lanza error final si no hay éxito          |
+| `await setTimeout(...)`       | Espera entre intentos (backoff)            |
+| Devuelve resultado            | Si al menos un intento es exitoso          |
 
 ## 💻 **Demo Interactivo: Retry Automático en Acción**
 
@@ -12611,7 +12712,6 @@ setTimeout(crearRetryAvanzado, 3000);
 function calcularDelayLineal(intento, delayBase) {
   return delayBase * intento;
 }
-
 ```
 
 ### **2. Backoff Exponencial**
@@ -12621,7 +12721,6 @@ function calcularDelayLineal(intento, delayBase) {
 function calcularDelayExponencial(intento, delayBase) {
   return delayBase * Math.pow(2, intento - 1);
 }
-
 ```
 
 ### **3. Backoff Fibonacci**
@@ -12632,7 +12731,6 @@ function calcularDelayFibonacci(intento, delayBase) {
   const fib = [1, 1, 2, 3, 5, 8, 13, 21];
   return delayBase * (fib[intento - 1] || 21);
 }
-
 ```
 
 ### **4. Backoff con Jitter (Aleatoriedad)**
@@ -12644,7 +12742,6 @@ function calcularDelayConJitter(intento, delayBase) {
   const jitter = baseDelay * 0.2 * Math.random(); // ±20%
   return baseDelay + jitter;
 }
-
 ```
 
 ## 🔧 **Patrón Avanzado: Retry con Circuit Breaker**
@@ -12704,7 +12801,6 @@ class RetryAvanzado {
 
         // Y devolvemos el resultado al llamador
         return resultado;
-
       } catch (error) {
         // ===========================================================
         // 🧨 3. Si ocurre un error, evaluamos si debemos abrir el circuito
@@ -12762,7 +12858,7 @@ class RetryAvanzado {
   async calcularDelay(intento) {
     const delay = this.delayBase * intento; // ej. 1000ms, 2000ms, 3000ms…
     console.log(`⏳ Reintentando en ${delay}ms...`);
-    return new Promise(resolve => setTimeout(resolve, delay));
+    return new Promise((resolve) => setTimeout(resolve, delay));
   }
 }
 
@@ -12783,7 +12879,6 @@ Si la prueba sale bien → se cierra el circuito (CLOSED) y todo vuelve a la nor
 
 ⏳ Backoff progresivo:
 Cada intento espera más tiempo que el anterior antes de reintentar.*/
-
 ```
 
 ## 🎯 **Casos de Uso Prácticos**
@@ -12833,7 +12928,6 @@ async function fetchConReintentos(url, options = {}, maxReintentos = 3) {
       // =========================================================
       // Y devolvemos el resultado al llamador (rompiendo el bucle).
       return await response.json();
-
     } catch (error) {
       // =========================================================
       // ❌ 4. Si ocurre un error (de red o HTTP no OK), lo manejamos aquí
@@ -12858,7 +12952,6 @@ async function fetchConReintentos(url, options = {}, maxReintentos = 3) {
     }
   }
 }
-
 ```
 
 ### 🧠 **Qué hace este patrón paso a paso**
@@ -12879,7 +12972,6 @@ fetchConReintentos("https://api.ejemplo.com/datos", {}, 3)
   .catch((error) => {
     console.error("❌ No se pudo completar la operación:", error.message);
   });
-
 ```
 
 ### 🧰 Mejores prácticas comunes que podrías agregar:
@@ -12890,12 +12982,12 @@ fetchConReintentos("https://api.ejemplo.com/datos", {}, 3)
 
 👉 **Resumen del patrón:**
 
-| Paso | Acción |
-| --- | --- |
-| Intentar fetch | Hace la llamada a la API |
-| Verificar `response.ok` | Lanza error si la respuesta no es exitosa |
-| Manejar error | Muestra el error y decide si reintenta |
-| Espera progresiva | Aumenta el tiempo entre cada reintento |
+| Paso                      | Acción                                                               |
+| ------------------------- | -------------------------------------------------------------------- |
+| Intentar fetch            | Hace la llamada a la API                                             |
+| Verificar `response.ok`   | Lanza error si la respuesta no es exitosa                            |
+| Manejar error             | Muestra el error y decide si reintenta                               |
+| Espera progresiva         | Aumenta el tiempo entre cada reintento                               |
 | Error final si todo falla | Permite al código que llama decidir cómo manejar el fallo definitivo |
 
 ### **2. Conexiones de Base de Datos**
@@ -12936,7 +13028,6 @@ async function conectarBDConReintentos(config, maxReintentos = 5) {
       // ============================================================
       console.log(`✅ Conexión a BD exitosa en intento ${intento}`);
       return conexion; // Terminamos la función aquí.
-
     } catch (error) {
       // ============================================================
       // ❌ 3. Si ocurre un error, lo informamos
@@ -12963,7 +13054,6 @@ async function conectarBDConReintentos(config, maxReintentos = 5) {
     }
   }
 }
-
 ```
 
 ### 🧠 **Cómo funciona este patrón**
@@ -12981,7 +13071,7 @@ const configBD = {
   host: "localhost",
   user: "root",
   password: "1234",
-  database: "miapp"
+  database: "miapp",
 };
 
 (async () => {
@@ -12994,7 +13084,6 @@ const configBD = {
     process.exit(1); // Salir del proceso si la conexión es crítica
   }
 })();
-
 ```
 
 ### 📌 **Ventajas prácticas de este patrón**
@@ -13013,13 +13102,13 @@ const configBD = {
 
 📌 **Resumen del patrón `conectarBDConReintentos`:**
 
-| Paso | Acción |
-| --- | --- |
-| `database.connect()` | Intenta conectarse a la base de datos |
-| `try/catch` con bucle `for` | Controla los intentos y captura errores |
-| Delay entre intentos | Evita reintentar demasiado rápido |
-| Lanza error final | Si no logra conectarse después del máximo de intentos |
-| Mejora la resiliencia | La app no cae por pequeños fallos temporales |
+| Paso                        | Acción                                                |
+| --------------------------- | ----------------------------------------------------- |
+| `database.connect()`        | Intenta conectarse a la base de datos                 |
+| `try/catch` con bucle `for` | Controla los intentos y captura errores               |
+| Delay entre intentos        | Evita reintentar demasiado rápido                     |
+| Lanza error final           | Si no logra conectarse después del máximo de intentos |
+| Mejora la resiliencia       | La app no cae por pequeños fallos temporales          |
 
 ### **3. Procesamiento de Archivos**
 
@@ -13061,7 +13150,6 @@ async function procesarArchivoConReintentos(rutaArchivo, maxReintentos = 3) {
       // Si la lectura fue exitosa, intentamos convertir el contenido
       // en un objeto JavaScript (por ejemplo, si es un archivo de configuración).
       return JSON.parse(contenido);
-
     } catch (error) {
       // ============================================================
       // ❌ 4. Si ocurre un error, lo analizamos
@@ -13072,7 +13160,7 @@ async function procesarArchivoConReintentos(rutaArchivo, maxReintentos = 3) {
       if (error.code === "ENOENT" && intento < maxReintentos) {
         console.log(
           `⚠️ Archivo no encontrado. Intento ${intento} de ${maxReintentos}. ` +
-          `Esperando 500ms antes de reintentar...`
+            `Esperando 500ms antes de reintentar...`
         );
 
         // Esperamos medio segundo antes de volver a intentar
@@ -13090,7 +13178,6 @@ async function procesarArchivoConReintentos(rutaArchivo, maxReintentos = 3) {
     }
   }
 }
-
 ```
 
 ### 🧠 **Qué hace esta función paso a paso**
@@ -13099,8 +13186,8 @@ async function procesarArchivoConReintentos(rutaArchivo, maxReintentos = 3) {
 2. Intenta leer el archivo con `fs.promises.readFile`.
 3. Si la lectura tiene éxito, **devuelve el contenido parseado como JSON**.
 4. Si falla con código `ENOENT` (archivo no encontrado):
-    - Espera 500 ms.
-    - Vuelve a intentar.
+   - Espera 500 ms.
+   - Vuelve a intentar.
 5. Si se agotan los intentos o el error es de otro tipo, **lanza el error** para que lo maneje el llamador.
 
 ✅ **Ejemplo de uso típico**:
@@ -13116,7 +13203,6 @@ import fs from "fs";
     console.error("❌ No se pudo leer el archivo:", error.message);
   }
 })();
-
 ```
 
 ### 📌 **Ventajas prácticas de este patrón**:
@@ -13135,13 +13221,13 @@ import fs from "fs";
 
 📊 **Resumen del patrón de lectura con reintentos**
 
-| Paso | Acción |
-| --- | --- |
-| `readFile` | Intenta leer el archivo |
-| `catch` con código ENOENT | Detecta si no existe → espera y vuelve a intentar |
-| `maxReintentos` | Lanza error si falla después de varios intentos |
-| JSON.parse() | Devuelve el contenido como objeto si fue exitoso |
-| Mejora la resiliencia | Evita errores por archivos que tardan en generarse |
+| Paso                      | Acción                                             |
+| ------------------------- | -------------------------------------------------- |
+| `readFile`                | Intenta leer el archivo                            |
+| `catch` con código ENOENT | Detecta si no existe → espera y vuelve a intentar  |
+| `maxReintentos`           | Lanza error si falla después de varios intentos    |
+| JSON.parse()              | Devuelve el contenido como objeto si fue exitoso   |
+| Mejora la resiliencia     | Evita errores por archivos que tardan en generarse |
 
 ### ✅ **¿Cuándo usar Retry Automático?**
 
@@ -13175,7 +13261,6 @@ window.addEventListener("unhandledrejection", (event) => {
   console.log("Promesa rechazada no manejada:", event.reason);
   event.preventDefault();
 });
-
 ```
 
 ### **2. 🔄 PATRONES DE CONCURRENCIA**
@@ -13185,7 +13270,6 @@ window.addEventListener("unhandledrejection", (event) => {
 async function conLimiteConcurrencia(tareas, limite = 3) {
   // Ejecutar máximo 3 tareas a la vez
 }
-
 ```
 
 ### **3. 📡 STREAMS Y DATA FLOW**
@@ -13196,7 +13280,6 @@ fetch("/api/datos-grandes").then((response) => {
   const reader = response.body.getReader();
   // Procesar datos en chunks
 });
-
 ```
 
 ### **4. 🛡️ CIRCUIT BREAKER PATTERN**
@@ -13206,7 +13289,6 @@ fetch("/api/datos-grandes").then((response) => {
 class CircuitBreaker {
   // Estado: OPEN, HALF_OPEN, CLOSED
 }
-
 ```
 
 ### **5. ⚡ PERFORMANCE Y OPTIMIZACIÓN**
@@ -13216,14 +13298,12 @@ class CircuitBreaker {
 function debounce(func, wait) {
   // Agrupar múltiples llamadas
 }
-
 ```
 
 ### **6. 🔗 COMPOSICIÓN DE PROMESAS AVANZADA**
 
 ```jsx
 // Promise.allSettled(), Promise.any(), encadenamiento complejo
-
 ```
 
 ### **7. 🌐 ASINCRONÍA EN NODE.JS**
@@ -13233,7 +13313,6 @@ function debounce(func, wait) {
 process.nextTick(() => {
   // Ejecutar después del event loop actual
 });
-
 ```
 
 # Manejo de errores avanzado en la asincronía
@@ -13288,7 +13367,6 @@ obtenerUsuario(50, function (error, usuario) {
 
   console.log("✅ Usuario encontrado:", usuario);
 });
-
 ```
 
 ## 2. Promesas - La forma moderna
@@ -13349,7 +13427,6 @@ obtenerUsuarioPromesa(25)
     // de la cadena completa
     console.log("❌ Algo falló en el proceso:", error.message);
   });
-
 ```
 
 ## 3. Async/Await - La forma más legible
@@ -13395,7 +13472,6 @@ async function main() {
 
 // Ejecutamos todo
 main();
-
 ```
 
 ## 4. Ejemplo del Mundo Real: Cargar Datos de una API
@@ -13446,7 +13522,6 @@ async function mostrarClima() {
 }
 
 mostrarClima();
-
 ```
 
 ## Resumen de Reglas de Oro:
@@ -13640,7 +13715,6 @@ async function procesarRegistro() {
 // ✔ Centraliza la lógica de control de errores
 // ✔ Devuelve mensajes estructurados y reutilizables
 // ✔ Hace que el código sea más fácil de probar y mantener
-
 ```
 
 ## 2. Error Boundaries con Función Wrapper
@@ -13791,7 +13865,6 @@ function manejarErrorDePago(error) {
 //    - operaciones con bases de datos
 //    - integraciones con pasarelas de pago
 //    - funciones críticas que no deben romper todo el flujo
-
 ```
 
 ## 3. Patrón "Railway Oriented Programming"
@@ -14055,7 +14128,6 @@ async function crearEnvio(pedido) {
 //   const res = await procesarPedido(pedido);
 //   console.log(JSON.stringify(res, null, 2));
 // })();
-
 ```
 
 ## 4. Sistema de Recuperación y Reintentos
@@ -14169,7 +14241,6 @@ async function obtenerDatosDeAPI() {
   // resultado es un Result: success|failure
   return resultado;
 }
-
 ```
 
 ## 5. Monitorización y Logging Avanzado
@@ -14334,7 +14405,6 @@ async function funcionCritica() {
     throw error;
   }
 }
-
 ```
 
 ## Resumen de Metodologías Avanzadas:
@@ -14517,7 +14587,6 @@ async function simularBanco() {
 
 // Ejecutamos la simulación
 simularBanco();
-
 ```
 
 ## 2. Limitación Simple para Peticiones HTTP
@@ -14640,7 +14709,6 @@ async function descargarImagenes() {
 
 // Ejecuta la demo si quieres probarlo
 // descargarImagenes();
-
 ```
 
 ## 3. Patrón "Pool de Workers" Reutilizable
@@ -14805,7 +14873,6 @@ async function procesarArchivos() {
 
 // Ejecutar ejemplo
 // procesarArchivos();
-
 ```
 
 ## 4. Ejemplo con APIs Reales (fetch)
@@ -14906,7 +14973,6 @@ async function consultarMultiplesAPIs() {
 
 // Para probar localmente, descomenta:
 // consultarMultiplesAPIs();
-
 ```
 
 ## Resumen Visual:
@@ -15013,7 +15079,6 @@ function simularUsuarioEscribiendo() {
 
 // Ejecutar simulación
 // simularUsuarioEscribiendo();
-
 ```
 
 ### Ejemplo Práctico: Search Input en una Web
@@ -15076,7 +15141,6 @@ function demostrarSearch() {
 
 // Ejecutar demo
 // demostrarSearch();
-
 ```
 
 ## Throttling
@@ -15159,7 +15223,6 @@ function simularScrollRapido() {
 
 // Ejecutar simulación
 // simularScrollRapido();
-
 ```
 
 ### Ejemplo Práctico: Botón de "Cargar Más"
@@ -15212,7 +15275,6 @@ function demostrarClicksMultiples() {
 
 // Ejecutar demo
 // demostrarClicksMultiples();
-
 ```
 
 ## Comparación directa
@@ -15253,7 +15315,6 @@ function comparacionDirecta() {
 
 // Ejecutar comparación
 // comparacionDirecta();
-
 ```
 
 ## Casos de uso del mundo real
@@ -15343,24 +15404,15 @@ THROTTLE (🚦 Limita la frecuencia):
 
 // Mostrar resumen
 mostrarResumen();
-
 ```
 
 ## Resumen Final:
 
-| Característica | Debouncing | Throttling |
-| --- | --- | --- |
+| Característica     | Debouncing           | Throttling             |
+| ------------------ | -------------------- | ---------------------- |
 | **Comportamiento** | Espera a que termine | Ejecuta periódicamente |
-| **Analogía** | Ascensor que espera | Semáforo que controla |
-| **Caso de uso** | Search inputs | Scroll events |
-| **Resultado** | 1 ejecución al final | Ejecuciones espaciadas |
+| **Analogía**       | Ascensor que espera  | Semáforo que controla  |
+| **Caso de uso**    | Search inputs        | Scroll events          |
+| **Resultado**      | 1 ejecución al final | Ejecuciones espaciadas |
 
 ---
-
-[Actividad práctica 1. El orden de ejecución no es lo que esperas](https://www.notion.so/Actividad-pr-ctica-1-El-orden-de-ejecuci-n-no-es-lo-que-esperas-2949de518f22809cb261e8a09f1c9aaf?pvs=21)
-
-[Actividad práctica 2. Simulando llamadas a una API](https://www.notion.so/Actividad-pr-ctica-2-Simulando-llamadas-a-una-API-2949de518f2280118470ec4d5c82da9e?pvs=21)
-
-[Actividad práctica 3. Async/Await: la magia de la sintaxis moderna](https://www.notion.so/Actividad-pr-ctica-3-Async-Await-la-magia-de-la-sintaxis-moderna-2949de518f2280baa2d7ee527e59c5f1?pvs=21)
-
-[Actividad práctica 4. Fetch real con API pública](https://www.notion.so/Actividad-pr-ctica-4-Fetch-real-con-API-p-blica-2949de518f2280cc8958dbc18a66e2d8?pvs=21)
