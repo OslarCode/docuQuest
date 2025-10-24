@@ -1,4 +1,4 @@
-# 🧠 Programación Backend
+# Programación Backend
 
 El **backend** es la parte de una aplicación web que vive en el **servidor**: recibe peticiones, ejecuta la lógica del negocio, habla con bases de datos o servicios externos y devuelve respuestas (normalmente JSON o HTML).
 

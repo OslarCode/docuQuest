@@ -1,6 +1,6 @@
 # Conectandolo todo: Desarrollo web basado en Internet
 
-# 🌐 El ciclo completo para conectar tu sitio web a Internet
+# El ciclo completo para conectar tu sitio web a Internet
 
 Una vez que has diseñado tu sitio web con HTML, CSS, JavaScript o cualquier framework moderno, llega el momento clave: **hacer que el mundo pueda verlo**.
 
@@ -10,11 +10,11 @@ Este proceso involucra varios componentes de Internet que ya has visto en módul
 
 Veámoslo paso a paso, de forma clara y conectada con lo que ya sabes.
 
-## 🧱 ¿Qué se necesita para que una web sea accesible?
+## ¿Qué se necesita para que una web sea accesible?
 
 Tener solo los archivos `.html`, `.css`, `.js` no es suficiente. Para que cualquier persona, desde cualquier parte del mundo, pueda ver tu web, necesitas **conectar cuatro piezas clave**:
 
-### 🧩 1. Dominio + DNS + Hosting + HTTPS
+### 1. Dominio + DNS + Hosting + HTTPS
 
 | Elemento    | ¿Qué es?                              | ¿Qué hace?                                             |
 | ----------- | ------------------------------------- | ------------------------------------------------------ |
@@ -41,19 +41,19 @@ Tener solo los archivos `.html`, `.css`, `.js` no es suficiente. Para que cualqu
 5. Activas **HTTPS** con un certificado SSL (normalmente automático).
 6. Tu web queda disponible en Internet a través de una URL, lista para cualquier visitante.
 
-## ☁️ ¿Cómo subir tu sitio web a un hosting?
+## ¿Cómo subir tu sitio web a un hosting?
 
 Aquí tienes tres plataformas **gratuitas, modernas y fáciles de usar**, perfectas para comenzar. Funcionan especialmente bien con sitios estáticos (HTML, CSS, JS) o apps modernas (React, Vue, Next.js).
 
-### ✅ Opción 1: GitHub Pages
+### Opción 1: GitHub Pages
 
 Ideal para sitios estáticos, portafolios y documentación.
 
-### 🧰 Requisitos:
+### Requisitos:
 
 - Tener una cuenta en [GitHub](https://github.com/)
 
-### 🪜 Pasos:
+### Pasos:
 
 1. Crea un repositorio llamado `tusitio`.
 2. Sube tus archivos (`index.html`, `styles.css`, etc.).
@@ -72,11 +72,11 @@ https://tuusuario.github.io/tusitio/
 
 Perfecto para sitios personales, landings y pequeños proyectos.
 
-### 🧰 Requisitos:
+### Requisitos:
 
 - Cuenta en [Netlify.com](https://www.netlify.com/)
 
-### 🪜 Pasos:
+### Pasos:
 
 1. Haz clic en “**Add new site** → Import from Git”.
 2. Conecta tu cuenta de GitHub y selecciona tu repositorio.
@@ -94,11 +94,11 @@ https://nombre-unico.netlify.app
 
 Perfecta para proyectos en **React, Next.js, Vue, Svelte, Astro**, etc.
 
-### 🧰 Requisitos:
+### Requisitos:
 
 - Cuenta en [Vercel.com](https://vercel.com/)
 
-### 🪜 Pasos:
+### Pasos:
 
 1. Importa tu proyecto desde GitHub.
 2. Vercel detecta el framework y realiza el build automáticamente.
@@ -109,9 +109,9 @@ https://tusitio.vercel.app
 
 ```
 
-> 🛡️ Vercel proporciona HTTPS automático, configuración continua y CDN integrada.
+> Vercel proporciona HTTPS automático, configuración continua y CDN integrada.
 
-### 📊 Comparativa rápida
+### Comparativa rápida
 
 | Plataforma       | Ideal para…                 | Facilidad  | Dominio propio | HTTPS automático |
 | ---------------- | --------------------------- | ---------- | -------------- | ---------------- |
@@ -142,7 +142,7 @@ Cuando alguien visita tu sitio, el proceso invisible que ocurre en segundos es:
 | **Seguridad HTTPS** | Cifrado para proteger datos entre el visitante y el servidor |
 | **Visibilidad web** | Tu sitio es accesible desde cualquier parte del mundo        |
 
-## 📚 Recursos adicionales
+## Recursos adicionales
 
 ### Libros
 
@@ -182,7 +182,7 @@ Cuando alguien visita tu sitio, el proceso invisible que ocurre en segundos es:
 >
 > Una vez que tu sitio web está publicado y accesible desde cualquier parte del mundo, el siguiente paso es **garantizar que sea seguro** para los usuarios que lo visitan. Esto no solo genera confianza (candado verde 🔒), sino que **protege los datos y evita ataques** que podrían comprometer tu sitio o a tus visitantes.
 
-## 🔐 ¿Qué es un certificado SSL?
+## ¿Qué es un certificado SSL?
 
 Un **certificado SSL** (Secure Sockets Layer) —actualmente reemplazado por **TLS (Transport Layer Security)**— es un **archivo digital** que se instala en tu servidor para habilitar la navegación segura a través de **HTTPS**.
 
@@ -199,17 +199,17 @@ Un **certificado SSL** (Secure Sockets Layer) —actualmente reemplazado por **T
 
 Al entrar en `https://www.mi-banco.com`, el navegador usa el certificado SSL para confirmar que estás en el sitio original y cifra tu contraseña cuando inicias sesión.
 
-## 📄 ¿Dónde se consiguen estos certificados?
+## ¿Dónde se consiguen estos certificados?
 
 - **En el proveedor de hosting:** la mayoría incluyen certificados gratuitos.
 - **Con Let's Encrypt:** organización que emite certificados SSL gratuitos y automáticos.
 - **De pago:** algunas empresas prefieren certificados con **validación extendida (EV)** para mostrar su nombre legal junto al candado, ideal para ecommerce y bancos.
 
-## 🧱 Otras capas de seguridad importantes
+## Otras capas de seguridad importantes
 
 Cuando un sitio está disponible por HTTPS, ya cumple una parte esencial de la seguridad web. Pero aún existen **otras amenazas comunes** que podemos prevenir con configuraciones adicionales.
 
-### 🔐 HSTS (HTTP Strict Transport Security)
+### HSTS (HTTP Strict Transport Security)
 
 Es una cabecera que le indica al navegador:
 
@@ -222,7 +222,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 ✅ _Previene ataques de downgrade_, donde un atacante intenta forzar una conexión no segura.
 
-### 🔐 CSP (Content Security Policy)
+### CSP (Content Security Policy)
 
 Permite definir **desde qué fuentes externas se pueden cargar archivos** como scripts, imágenes o estilos. Así puedes evitar la ejecución de código malicioso.
 
@@ -233,7 +233,7 @@ Content-Security-Policy: default-src 'self'; img-src 'self' cdn.miweb.com; scrip
 
 ✅ _Bloquea ataques XSS_ (ver más abajo).
 
-### ⚠️ ¿Qué es XSS (Cross-Site Scripting)?
+### ¿Qué es XSS (Cross-Site Scripting)?
 
 Es cuando un atacante **inyecta código JavaScript malicioso** en tu web. Puede robar cookies, redirigir al usuario, manipular el contenido o registrar lo que escribe.
 
@@ -245,13 +245,13 @@ Es cuando un atacante **inyecta código JavaScript malicioso** en tu web. Puede 
 </script>
 ```
 
-### 🔒 ¿Cómo prevenir XSS?
+### ¿Cómo prevenir XSS?
 
 - Escapando correctamente caracteres peligrosos (`<`, `>`, `&`, etc.)
 - Aplicando una política **CSP restrictiva**
 - **Validando y sanitizando** todas las entradas del usuario
 
-### 🎭 ¿Qué es CSRF (Cross-Site Request Forgery)?
+### ¿Qué es CSRF (Cross-Site Request Forgery)?
 
 Ocurre cuando un usuario legítimo es engañado para ejecutar **acciones maliciosas sin saberlo**, como enviar dinero o cambiar su contraseña.
 
@@ -261,7 +261,7 @@ Ocurre cuando un usuario legítimo es engañado para ejecutar **acciones malicio
 2. Sin cerrar sesión, visitas una web maliciosa.
 3. Esa web envía una solicitud automática a `POST /transferir` sin que tú lo sepas.
 
-### 🔒 ¿Cómo se previene CSRF?
+### ¿Cómo se previene CSRF?
 
 - Usando **tokens únicos** que verifiquen cada acción.
 - Validando el **origen** de la solicitud (cabeceras `Origin` o `Referer`).
@@ -271,7 +271,7 @@ Ocurre cuando un usuario legítimo es engañado para ejecutar **acciones malicio
 
 Consiste en **engañar al usuario para que haga clic en algo sin saberlo**. El atacante incrusta tu web en un `iframe` invisible y pone encima un botón falso.
 
-### 🔒 ¿Cómo prevenirlo?
+### ¿Cómo prevenirlo?
 
 - Con esta cabecera:
 
@@ -287,7 +287,7 @@ Content-Security-Policy: frame-ancestors 'none';
 
 ```
 
-## 🛠️ ¿Cómo proteger tu web desde el navegador y el servidor?
+## ¿Cómo proteger tu web desde el navegador y el servidor?
 
 ### Desde el navegador (cliente):
 
@@ -322,7 +322,7 @@ Content-Security-Policy: frame-ancestors 'none';
 | **Clickjacking**      | Clics engañosos en iframes → se bloquea con X-Frame-Options      |
 | **Cabeceras seguras** | Mejoran protección y privacidad en cada navegador                |
 
-## 📚 Recursos adicionales para reforzar
+## Recursos adicionales para reforzar
 
 ### Libros y guías:
 
@@ -354,9 +354,9 @@ Content-Security-Policy: frame-ancestors 'none';
 >
 > Ahora llega el momento de **ir más allá** y aplicar una serie de buenas prácticas para que tu web sea también **rápida, compatible y profesional**.
 
-## 🧪 1. Pruebas en diferentes navegadores y redes
+## 1. Pruebas en diferentes navegadores y redes
 
-### 🧭 ¿Por qué es importante?
+### ¿Por qué es importante?
 
 Un sitio web puede funcionar perfecto en tu portátil con Wi-Fi rápido y navegador actualizado… pero fallar en un móvil antiguo con red 3G o en un navegador menos usado como Safari o Edge.
 
@@ -375,11 +375,11 @@ Un sitio web puede funcionar perfecto en tu portátil con Wi-Fi rápido y navega
 
 En pestaña **Rendering**, activa simulación de problemas visuales.
 
-## ⚠️ 2. Errores comunes en producción (¡y cómo evitarlos!)
+## 2. Errores comunes en producción (¡y cómo evitarlos!)
 
 Llevar una web a producción sin revisar ciertos aspectos técnicos es uno de los errores más frecuentes. Aquí van los más típicos:
 
-### 🚧 CORS (Cross-Origin Resource Sharing)
+### CORS (Cross-Origin Resource Sharing)
 
 Cuando tu web necesita hacer peticiones a otro dominio (como una API), el servidor remoto debe autorizar esa conexión. Si no lo hace, el navegador **la bloqueará por seguridad**.
 
@@ -401,7 +401,7 @@ Access-Control-Allow-Origin: https://miweb.com
 
 - En desarrollo: usa **proxies locales** (`vite.config.js`, `next.config.js`) o servidores intermedios.
 
-### ⚠️ Mixed content (contenido mixto)
+### Mixed content (contenido mixto)
 
 Si tu sitio carga por `https://` pero **incluye imágenes, scripts o iframes desde `http://`**, el navegador bloqueará esos recursos por seguridad.
 
@@ -417,7 +417,7 @@ Si tu sitio carga por `https://` pero **incluye imágenes, scripts o iframes des
 />
 ```
 
-### 🧭 DNS mal configurado
+### DNS mal configurado
 
 - El dominio no apunta al hosting.
 - Registros `A`, `CNAME`, `MX` o `TXT` mal definidos.
@@ -428,7 +428,7 @@ Si tu sitio carga por `https://` pero **incluye imágenes, scripts o iframes des
 - Verifica tus DNS en [https://dnschecker.org](https://dnschecker.org/)
 - Usa comandos como `dig`, `nslookup` o los paneles de tu proveedor (Cloudflare, DonDominio, etc.)
 
-## 🚀 3. Optimización web real
+## 3. Optimización web real
 
 Optimizar tu web no es solo cuestión de estética o velocidad: **mejora la experiencia del usuario, reduce consumo de datos y mejora tu SEO**.
 
@@ -449,7 +449,7 @@ Evita cargar todas las imágenes desde el inicio. Cárgalas solo cuando el usuar
 
 ✅ Mejora la velocidad inicial de carga y el rendimiento en móviles.
 
-### 📦 Minificación y compresión
+### Minificación y compresión
 
 ### ✅ CSS y JS:
 
@@ -491,7 +491,7 @@ gzip_types text/html text/css application/javascript;
 | Usar lazy loading              | Mejora la experiencia de usuario                      |
 | Minificar y comprimir archivos | Reduce peso y mejora velocidad de carga               |
 
-## 📌 Próximos pasos
+## Próximos pasos
 
 Has llegado al final de una parte crucial del ciclo de desarrollo web: poner tu sitio en línea, **de forma segura, optimizada y profesional**.
 

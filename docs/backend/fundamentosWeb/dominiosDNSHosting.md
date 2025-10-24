@@ -1,6 +1,6 @@
 # Dominios, DNS y Hosting
 
-## 🌐 ¿Qué es un dominio?
+## ¿Qué es un dominio?
 
 Un **dominio** es el **nombre legible** que usamos para acceder a una web en lugar de escribir una dirección IP.
 
@@ -11,7 +11,7 @@ Un **dominio** es el **nombre legible** que usamos para acceder a una web en lug
 
 Así, en lugar de escribir una serie de números, simplemente accedemos por nombre.
 
-### 🆚 Nombre de dominio vs Dirección IP
+### Nombre de dominio vs Dirección IP
 
 | Concepto          | ¿Qué es?                                                   | Ejemplo         |
 | ----------------- | ---------------------------------------------------------- | --------------- |
@@ -20,7 +20,7 @@ Así, en lugar de escribir una serie de números, simplemente accedemos por nomb
 
 📌 El dominio es como el **nombre de un contacto**, y la IP es como su **número de teléfono**.
 
-## 🔍 Estructura de un dominio
+## Estructura de un dominio
 
 Un dominio tiene varias partes. Por ejemplo:
 
@@ -38,7 +38,7 @@ Lo descomponemos así:
 | `miweb`       | Subdominio                                                  |
 | `www`         | Subdominio de tercer nivel (opcional, tradicionalmente web) |
 
-### 📘 TLD (Top-Level Domain)
+### TLD (Top-Level Domain)
 
 - Es la **extensión del dominio**.
 - Hay dos tipos:
@@ -50,12 +50,12 @@ Lo descomponemos así:
 - `google.com` (gTLD)
 - `gob.es` (ccTLD de España)
 
-### 📗 SLD (Second-Level Domain)
+### SLD (Second-Level Domain)
 
 - Es el nombre **real** que tú registras como marca o proyecto.
 - En `openai.com`, el SLD es `openai`.
 
-### 📙 Subdominios
+### Subdominios
 
 - Son **divisiones o secciones** de un dominio.
 - Te permiten crear zonas distintas del sitio sin comprar otro dominio.
@@ -66,23 +66,23 @@ Lo descomponemos así:
 - `tienda.ejemplo.net`
 - `api.spotify.com`
 
-## 🛒 ¿Cómo se registra un dominio?
+## ¿Cómo se registra un dominio?
 
 Para tener un dominio propio, debes **registrarlo** a tu nombre o empresa.
 
-### 🔗 ¿Dónde?
+### ¿Dónde?
 
 - En empresas llamadas **registradores de dominios**.
 - Ejemplos: [Namecheap](https://namecheap.com/), [GoDaddy](https://godaddy.com/), [Google Domains](https://domains.google/), [DonDominio](https://dondominio.com/), etc.
 
-### 🔧 ¿Cómo funciona el registro?
+### ¿Cómo funciona el registro?
 
 1. Buscas si el dominio está disponible (`midominio.com`)
 2. Si está libre, puedes **registrarlo por 1 año o más** (pagando una cuota anual)
 3. El dominio se **asocia a tus datos personales o empresa**
 4. Puedes modificar sus **registros DNS** para apuntarlo a tu hosting
 
-### 🕵️ WHOIS: consulta de propietarios
+### WHOIS: consulta de propietarios
 
 El sistema **WHOIS** te permite saber **quién es el propietario de un dominio** (a menos que use protección de privacidad).
 
@@ -90,7 +90,7 @@ El sistema **WHOIS** te permite saber **quién es el propietario de un dominio**
 
 [https://who.is](https://who.is/) o [https://lookup.icann.org](https://lookup.icann.org/)
 
-### 🏛 ICANN: el regulador de dominios
+### ICANN: el regulador de dominios
 
 **ICANN** (Internet Corporation for Assigned Names and Numbers):
 
@@ -100,7 +100,7 @@ El sistema **WHOIS** te permite saber **quién es el propietario de un dominio**
 
 📌 No puedes registrar dominios directamente con ICANN, solo a través de registradores acreditados.
 
-## ✅ Resumen del Módulo 5
+## Resumen
 
 | Término      | Definición                                             |
 | ------------ | ------------------------------------------------------ |
@@ -113,9 +113,9 @@ El sistema **WHOIS** te permite saber **quién es el propietario de un dominio**
 | WHOIS        | Sistema para consultar propietarios de dominios        |
 | ICANN        | Organización que regula dominios e IPs                 |
 
-## 🏠 Módulo 6: Hosting y servidores web
+## Hosting y servidores web
 
-### 🌐 ¿Qué es un hosting?
+### ¿Qué es un hosting?
 
 Un **hosting** (o alojamiento web) es un **servicio que te alquila espacio en un servidor conectado a Internet** para que puedas **subir tu sitio web** y que esté disponible para todo el mundo 24/7.
 
@@ -123,11 +123,11 @@ Un **hosting** (o alojamiento web) es un **servicio que te alquila espacio en un
 
 Piensa en el hosting como **un terreno en Internet** donde vas a construir tu casa (tu web). El dominio es la **dirección postal** de esa casa.
 
-## 🧱 Tipos de hosting
+## Tipos de hosting
 
 Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el nivel de control** que necesites.
 
-### 1. ☁️ **Hosting compartido**
+### 1. **Hosting compartido**
 
 - **Barato y sencillo**
 - Tu web **comparte recursos** (RAM, CPU, ancho de banda) con otras webs
@@ -145,7 +145,7 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 - Lentitud si otras webs consumen muchos recursos
 - Poca personalización
 
-### 2. 🖥️ **VPS (Servidor Privado Virtual)**
+### 2. **VPS (Servidor Privado Virtual)**
 
 - Una máquina virtual dentro de un servidor físico
 - **Más control y recursos dedicados**
@@ -163,7 +163,7 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 - Requiere conocimientos técnicos
 - Más caro que el compartido
 
-### 3. 💪 **Servidor dedicado**
+### 3. **Servidor dedicado**
 
 - Tienes **un servidor físico entero solo para ti**
 - Máximo control, alto rendimiento
@@ -181,7 +181,7 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 - Muy caro
 - Necesitas saber administración de servidores
 
-### 4. 🌩️ **Hosting en la nube (Cloud)**
+### 4. **Hosting en la nube (Cloud)**
 
 - Tu web **no depende de un solo servidor**, sino de **una red de servidores**
 - Escalable, muy confiable y rápido
@@ -204,7 +204,7 @@ La elección de un proveedor de hosting es una de las decisiones más importante
 
 Es crucial seleccionar un proveedor de hosting que ofrezca un buen equilibrio entre rendimiento, fiabilidad y costo. Además, es importante considerar aspectos como la escalabilidad, la seguridad, el soporte técnico y la ubicación de los servidores, ya que estos factores pueden afectar significativamente la experiencia del usuario y el posicionamiento en motores de búsqueda.
 
-## 🌐 Relación entre dominio y hosting
+## Relación entre dominio y hosting
 
 Para que una web funcione necesitas **ambas cosas**:
 
@@ -216,7 +216,7 @@ Para que una web funcione necesitas **ambas cosas**:
 
 💡 Cuando compras un dominio, debes **apuntarlo al hosting** modificando los **registros DNS**, que veremos en el siguiente módulo.
 
-## ⚙️ ¿Qué es un servidor web?
+## ¿Qué es un servidor web?
 
 Un **servidor web** es el **software que recibe las peticiones HTTP** y responde con contenido (HTML, CSS, JS, imágenes, etc.).
 
@@ -230,7 +230,7 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 
 🔍 Ejemplo: muchos hostings compartidos usan Apache
 
-### 🚀 Nginx (se pronuncia “Engine-X”)
+### Nginx (se pronuncia “Engine-X”)
 
 - **Rápido y eficiente**, ideal para alto tráfico
 - Usa menos memoria
@@ -244,7 +244,7 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 - **Caddy** (sencillo, con HTTPS automático)
 - **Node.js** también se puede usar como servidor (Express.js)
 
-## ✅ Resumen del Módulo 6
+## ✅ Resumen
 
 | Concepto           | Qué significa                                                 |
 | ------------------ | ------------------------------------------------------------- |
@@ -256,9 +256,9 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 | Dominio + hosting  | El dominio apunta al hosting mediante registros DNS           |
 | Servidor web       | Software que entrega la web al navegador (Apache, Nginx...)   |
 
-## 🌐 Módulo 7: DNS (Domain Name System)
+## DNS (Domain Name System)
 
-### 🧠 ¿Qué es el DNS?
+### ¿Qué es el DNS?
 
 DNS significa **Domain Name System** y es como **la guía telefónica de Internet**.
 
@@ -270,13 +270,13 @@ Convertir nombres de dominio fáciles de recordar (como `google.com`) en direcci
 
 Cuando escribes `facebook.com`, tu navegador no entiende ese texto. El sistema DNS lo convierte en una dirección IP para poder conectarse al servidor correcto.
 
-## 🔄 ¿Cómo funciona el proceso de resolución de nombres?
+## ¿Cómo funciona el proceso de resolución de nombres?
 
 Vamos a explicarlo paso a paso con un ejemplo:
 
 📌 Supón que visitas `www.ejemplo.com`.
 
-### 🔍 Paso a paso:
+### Paso a paso:
 
 1. **Consulta caché local** (tu navegador o sistema operativo guarda la IP si ya la usaste antes).
 2. Si no la encuentra, consulta tu **servidor DNS configurado** (por tu ISP o uno público como `8.8.8.8` de Google).
@@ -293,7 +293,7 @@ Vamos a explicarlo paso a paso con un ejemplo:
 
 ⏱ Este proceso suele tardar **menos de 1 segundo** gracias al uso de **cachés**.
 
-## 🧾 Tipos de registros DNS
+## Tipos de registros DNS
 
 En los DNS se usan diferentes tipos de **registros** para manejar diferentes funciones:
 
@@ -360,7 +360,7 @@ ejemplo.com → ns1.dondominio.com, ns2.dondominio.com
 
 ```
 
-## ⏳ ¿Qué es el TTL?
+## ¿Qué es el TTL?
 
 **TTL** = Time To Live
 
@@ -370,12 +370,12 @@ Indica **cuánto tiempo puede almacenarse la información DNS en caché** antes 
 
 TTL = 3600 segundos → la IP de ese dominio se guarda por **1 hora** en caché.
 
-### 🛠 ¿Para qué sirve?
+### ¿Para qué sirve?
 
 - Evita hacer consultas DNS cada vez (más rápido).
 - Si haces cambios (como cambiar de hosting), puede que tarde un poco en “propagarse”.
 
-## 🌍 ¿Qué significa “propagar un dominio”?
+##¿Qué significa “propagar un dominio”?
 
 Cuando cambias los DNS de tu dominio o alguno de sus registros, ese cambio **tarda un tiempo en actualizarse globalmente**.
 
@@ -386,7 +386,7 @@ Este proceso se llama **propagación DNS**, y puede durar desde **unos minutos h
 - Algunos usuarios verán la versión antigua.
 - Otros ya verán la nueva.
 
-## ✅ Resumen del Módulo 7
+## ✅ Resumen
 
 | Concepto              | Explicación                                                   |
 | --------------------- | ------------------------------------------------------------- |
