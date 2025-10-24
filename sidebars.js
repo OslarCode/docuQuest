@@ -404,6 +404,17 @@ const sidebars = {
             "backend/databases/Modulo36_Documentar_para_el_futuro",
           ],
         },
+        {
+          type: "category",
+          label: "Fundamentos de la Web y Http",
+          collapsed: true,
+          items: [
+            "backend/fundamentosWeb/introduction",
+            "backend/fundamentosWeb/cicloVidaPeticionesHttp",
+            "backend/fundamentosWeb/dominiosDNSHosting",
+            "backend/fundamentosWeb/conectandoloTodo",
+          ],
+        },
       ],
     },
   ],
