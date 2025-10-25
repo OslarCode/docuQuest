@@ -403,10 +403,10 @@ Ctrl + Shift + P  # Comando palette (¡MUY ÚTIL!)
 
 **EN SETTINGS (F1):**
 
-- ✅ "Disable cache (while DevTools is open)"
-- ✅ "Group similar messages in console"
-- ✅ "Show timestamps in console"
-- ✅ "Enable custom formatters"
+- "Disable cache (while DevTools is open)"
+- "Group similar messages in console"
+- "Show timestamps in console"
+- "Enable custom formatters"
 
 ## **Resumen para el Programador Web**
 

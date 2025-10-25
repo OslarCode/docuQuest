@@ -20,7 +20,7 @@ Cuando visitas una página:
 2. El servidor **procesa la petición**.
 3. El servidor **responde con la información solicitada**.
 
-👉 Esta conversación entre cliente y servidor se hace mediante un “idioma común”: **el protocolo HTTP**.
+Esta conversación entre cliente y servidor se hace mediante un “idioma común”: **el protocolo HTTP**.
 
 ---
 
@@ -61,9 +61,7 @@ Content-Type: text/html
 </html>
 ```
 
-👉 Este ida y vuelta es **la base de cualquier sitio web**.
-
----
+Este ida y vuelta es **la base de cualquier sitio web**.
 
 ## 3. Dominios, DNS y hosting
 
@@ -76,8 +74,6 @@ Ahí entra en juego:
 
 Ejemplo:
 `www.google.com` → DNS → `142.250.185.132` → servidor real.
-
----
 
 ## 4. Tipos de peticiones HTTP
 
@@ -96,7 +92,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
   .then((data) => console.log(data));
 ```
 
-👉 Aquí el navegador hace una **petición GET** a un servidor público y recibe un listado en JSON.
+Aquí el navegador hace una **petición GET** a un servidor público y recibe un listado en JSON.
 
 ---
 
@@ -112,8 +108,6 @@ http://localhost:3000
 - `3000` → el **puerto** donde estará escuchando tu servidor.
 
 Esto es como decirle: “conéctate a este ordenador, en esta puerta específica”.
-
----
 
 ## 6. Un primer servidor con Node.js
 
@@ -135,7 +129,7 @@ server.listen(3000, () => {
 });
 ```
 
-👉 Pasos para probarlo:
+Pasos para probarlo:
 
 1. Guarda el archivo como `server.js`.
 2. Ejecuta en la terminal:
@@ -160,8 +154,6 @@ Petición recibida: GET /
 
 Con esto, los alumnos entienden que **el navegador (cliente)** envía una petición y **el servidor Node.js** responde.
 
----
-
 ## 7. HTTPS y seguridad básica
 
 HTTPS es simplemente **HTTP cifrado con un certificado SSL/TLS**.
@@ -171,7 +163,7 @@ Esto:
 - Es obligatorio para sitios modernos (por ejemplo, en formularios, login, pagos, etc.).
 - Se activa normalmente en el hosting o con servicios como Let’s Encrypt.
 
-👉 En local usaremos HTTP para aprender. En producción, **siempre HTTPS**.
+En local usaremos HTTP para aprender. En producción, **siempre HTTPS**.
 
 ---
 

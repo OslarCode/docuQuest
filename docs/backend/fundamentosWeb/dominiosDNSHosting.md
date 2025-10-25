@@ -4,7 +4,7 @@
 
 Un **dominio** es el **nombre legible** que usamos para acceder a una web en lugar de escribir una dirección IP.
 
-💡 Ejemplo real:
+Ejemplo real:
 
 - IP del servidor: `93.184.216.34`
 - Dominio equivalente: `example.com`
@@ -18,7 +18,7 @@ Así, en lugar de escribir una serie de números, simplemente accedemos por nomb
 | Dirección IP      | Dirección numérica del servidor donde está alojada una web | `93.184.216.34` |
 | Nombre de dominio | Nombre fácil de recordar que apunta a esa IP               | `example.com`   |
 
-📌 El dominio es como el **nombre de un contacto**, y la IP es como su **número de teléfono**.
+El dominio es como el **nombre de un contacto**, y la IP es como su **número de teléfono**.
 
 ## Estructura de un dominio
 
@@ -45,7 +45,7 @@ Lo descomponemos así:
   - **Genéricos (gTLD):** `.com`, `.net`, `.org`, `.info`, `.xyz`...
   - **Territoriales (ccTLD):** `.es`, `.fr`, `.ar`, `.mx`, `.de`...
 
-🔍 Ejemplos:
+Ejemplos:
 
 - `google.com` (gTLD)
 - `gob.es` (ccTLD de España)
@@ -60,7 +60,7 @@ Lo descomponemos así:
 - Son **divisiones o secciones** de un dominio.
 - Te permiten crear zonas distintas del sitio sin comprar otro dominio.
 
-🔍 Ejemplos:
+Ejemplos:
 
 - `blog.miweb.com`
 - `tienda.ejemplo.net`
@@ -98,7 +98,7 @@ El sistema **WHOIS** te permite saber **quién es el propietario de un dominio**
 - Gestiona la asignación de nombres de dominio y direcciones IP
 - Supervisa a los **registradores oficiales**
 
-📌 No puedes registrar dominios directamente con ICANN, solo a través de registradores acreditados.
+No puedes registrar dominios directamente con ICANN, solo a través de registradores acreditados.
 
 ## Resumen
 
@@ -119,7 +119,7 @@ El sistema **WHOIS** te permite saber **quién es el propietario de un dominio**
 
 Un **hosting** (o alojamiento web) es un **servicio que te alquila espacio en un servidor conectado a Internet** para que puedas **subir tu sitio web** y que esté disponible para todo el mundo 24/7.
 
-💡 **Ejemplo práctico:**
+**Ejemplo práctico:**
 
 Piensa en el hosting como **un terreno en Internet** donde vas a construir tu casa (tu web). El dominio es la **dirección postal** de esa casa.
 
@@ -135,12 +135,12 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 
 🔍 Ejemplo: una tienda básica, un blog, un portfolio
 
-✅ Ventajas:
+Ventajas:
 
 - Económico
 - Fácil de usar (panel tipo cPanel)
 
-❌ Desventajas:
+Desventajas:
 
 - Lentitud si otras webs consumen muchos recursos
 - Poca personalización
@@ -153,12 +153,12 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 
 🔍 Ejemplo: web con tráfico moderado + base de datos
 
-✅ Ventajas:
+Ventajas:
 
 - Más potencia
 - Acceso root (control total)
 
-❌ Desventajas:
+Desventajas:
 
 - Requiere conocimientos técnicos
 - Más caro que el compartido
@@ -169,14 +169,14 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 - Máximo control, alto rendimiento
 - Para grandes empresas o proyectos con mucho tráfico
 
-🔍 Ejemplo: eCommerce tipo Amazon, plataformas de streaming
+Ejemplo: eCommerce tipo Amazon, plataformas de streaming
 
-✅ Ventajas:
+Ventajas:
 
 - Todo el rendimiento es tuyo
 - Muy seguro
 
-❌ Desventajas:
+Desventajas:
 
 - Muy caro
 - Necesitas saber administración de servidores
@@ -188,12 +188,12 @@ Hay diferentes tipos de hosting según **el tamaño, la potencia, el precio y el
 
 🔍 Ejemplo: Google Cloud, AWS, Vercel, Netlify, Heroku
 
-✅ Ventajas:
+Ventajas:
 
 - Se adapta al tráfico automáticamente
 - Escalable, rápido, seguro
 
-❌ Desventajas:
+Desventajas:
 
 - Costes variables (según uso)
 - Puede ser complejo al principio
@@ -222,13 +222,13 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 
 ### Los más comunes:
 
-### 📦 Apache
+### Apache
 
 - Muy usado, **flexible y estable**
 - Se configura con archivos `.htaccess`
 - Ideal para proyectos PHP (WordPress, Laravel...)
 
-🔍 Ejemplo: muchos hostings compartidos usan Apache
+Ejemplo: muchos hostings compartidos usan Apache
 
 ### Nginx (se pronuncia “Engine-X”)
 
@@ -236,7 +236,7 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 - Usa menos memoria
 - Se usa mucho en sitios modernos, APIs, Node.js, React...
 
-🔍 Ejemplo: Netflix, Dropbox, WordPress.com usan Nginx
+Ejemplo: Netflix, Dropbox, WordPress.com usan Nginx
 
 ### Otros servidores:
 
@@ -244,7 +244,7 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 - **Caddy** (sencillo, con HTTPS automático)
 - **Node.js** también se puede usar como servidor (Express.js)
 
-## ✅ Resumen
+## Resumen
 
 | Concepto           | Qué significa                                                 |
 | ------------------ | ------------------------------------------------------------- |
@@ -262,11 +262,11 @@ Un **servidor web** es el **software que recibe las peticiones HTTP** y responde
 
 DNS significa **Domain Name System** y es como **la guía telefónica de Internet**.
 
-🧭 **Función principal:**
+**Función principal:**
 
 Convertir nombres de dominio fáciles de recordar (como `google.com`) en direcciones IP que las computadoras entienden (como `142.250.186.206`).
 
-💡 **Ejemplo real:**
+**Ejemplo real:**
 
 Cuando escribes `facebook.com`, tu navegador no entiende ese texto. El sistema DNS lo convierte en una dirección IP para poder conectarse al servidor correcto.
 
@@ -274,7 +274,7 @@ Cuando escribes `facebook.com`, tu navegador no entiende ese texto. El sistema D
 
 Vamos a explicarlo paso a paso con un ejemplo:
 
-📌 Supón que visitas `www.ejemplo.com`.
+Supón que visitas `www.ejemplo.com`.
 
 ### Paso a paso:
 
@@ -291,32 +291,32 @@ Vamos a explicarlo paso a paso con un ejemplo:
 5. Por fin, contacta a los **servidores de nombres de `ejemplo.com`**, que le devuelven la IP final.
 6. Tu navegador se conecta a esa IP y carga la web.
 
-⏱ Este proceso suele tardar **menos de 1 segundo** gracias al uso de **cachés**.
+Este proceso suele tardar **menos de 1 segundo** gracias al uso de **cachés**.
 
 ## Tipos de registros DNS
 
 En los DNS se usan diferentes tipos de **registros** para manejar diferentes funciones:
 
-### 🔹 `A` (Address)
+### `A` (Address)
 
 - Apunta un dominio a una dirección IPv4.
 
-🔍 Ejemplo:
+Ejemplo:
 
 ```
 ejemplo.com → 93.184.216.34
 
 ```
 
-### 🔹 `AAAA`
+### `AAAA`
 
 - Igual que `A`, pero para direcciones IPv6.
 
-### 🔹 `CNAME` (Canonical Name)
+### `CNAME` (Canonical Name)
 
 - Apunta un dominio **a otro dominio**, no a una IP.
 
-🔍 Ejemplo:
+Ejemplo:
 
 ```
 www.ejemplo.com → ejemplo.com
@@ -325,18 +325,18 @@ www.ejemplo.com → ejemplo.com
 
 (Se usa para redirigir subdominios)
 
-### 🔹 `MX` (Mail Exchange)
+### `MX` (Mail Exchange)
 
 - Define **los servidores de correo electrónico** de ese dominio.
 
-🔍 Ejemplo:
+Ejemplo:
 
 ```
 ejemplo.com → mail.servidorcorreo.com (prioridad 10)
 
 ```
 
-### 🔹 `TXT`
+### `TXT`
 
 - Registro de texto. Se usa para:
   - Verificaciones de propiedad (Google, Microsoft...)
@@ -349,7 +349,7 @@ ejemplo.com → mail.servidorcorreo.com (prioridad 10)
 
 ```
 
-### 🔹 `NS` (Name Server)
+### `NS` (Name Server)
 
 - Define **qué servidores DNS son responsables** del dominio.
 
@@ -366,7 +366,7 @@ ejemplo.com → ns1.dondominio.com, ns2.dondominio.com
 
 Indica **cuánto tiempo puede almacenarse la información DNS en caché** antes de actualizarla.
 
-🔍 Ejemplo:
+Ejemplo:
 
 TTL = 3600 segundos → la IP de ese dominio se guarda por **1 hora** en caché.
 
@@ -381,12 +381,12 @@ Cuando cambias los DNS de tu dominio o alguno de sus registros, ese cambio **tar
 
 Este proceso se llama **propagación DNS**, y puede durar desde **unos minutos hasta 48 horas**, dependiendo del TTL anterior y las zonas del mundo.
 
-💡 Mientras se propaga:
+Mientras se propaga:
 
 - Algunos usuarios verán la versión antigua.
 - Otros ya verán la nueva.
 
-## ✅ Resumen
+## Resumen
 
 | Concepto              | Explicación                                                   |
 | --------------------- | ------------------------------------------------------------- |

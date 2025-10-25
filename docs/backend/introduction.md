@@ -4,30 +4,30 @@ El **backend** es la parte de una aplicación web que vive en el **servidor**: r
 
 Si el frontend es _“la cara”_, el backend es _“el cerebro + las manos”_.
 
-## ⚙️ Cómo funciona (flujo básico)
+## Cómo funciona (flujo básico)
 
-1. 🖥️ El navegador o la app móvil hace una **request** a una URL (por ejemplo `POST /api/pedidos`).
-2. 🧮 El backend procesa: valida datos, aplica reglas, consulta o guarda en la base de datos, integra pasarelas, etc.
-3. 📬 El backend responde con un status (`200`, `201`, `400`, `401`, `500`…) y un payload (`JSON`, `HTML`, archivo…).
+1. El navegador o la app móvil hace una **request** a una URL (por ejemplo `POST /api/pedidos`).
+2. El backend procesa: valida datos, aplica reglas, consulta o guarda en la base de datos, integra pasarelas, etc.
+3. El backend responde con un status (`200`, `201`, `400`, `401`, `500`…) y un payload (`JSON`, `HTML`, archivo…).
 
 Cliente → (HTTP) → Backend (Rutas, Controladores, Servicios, DB) → Respuesta
 
 ## 🧩 Piezas clave (sin rodeos)
 
-- 🧭 **Rutas y Controladores** → definen qué URL existe y qué hace.
-- 🧠 **Servicios** → contienen la lógica real (cálculos, reglas, integraciones).
-- 🗃️ **Modelos / Base de datos** → guardan y leen datos con consistencia.
-- 🔐 **Autenticación y Autorización** → controlan quién eres y qué puedes hacer (JWT, sesiones).
-- 🧼 **Validación** → nunca confíes en lo que entra desde el cliente.
-- 📊 **Observabilidad** → logs, métricas, trazas; si no se mide, no existe.
-- 🧱 **Seguridad** → CORS, rate limiting, saneo de inputs, secretos en variables de entorno.
-- 🚀 **Despliegue** → ejecutar el servidor en VPS, Docker o serverless de forma reproducible.
+- **Rutas y Controladores** → definen qué URL existe y qué hace.
+- **Servicios** → contienen la lógica real (cálculos, reglas, integraciones).
+- **Modelos / Base de datos** → guardan y leen datos con consistencia.
+- **Autenticación y Autorización** → controlan quién eres y qué puedes hacer (JWT, sesiones).
+- **Validación** → nunca confíes en lo que entra desde el cliente.
+- **Observabilidad** → logs, métricas, trazas; si no se mide, no existe.
+- **Seguridad** → CORS, rate limiting, saneo de inputs, secretos en variables de entorno.
+- **Despliegue** → ejecutar el servidor en VPS, Docker o serverless de forma reproducible.
 
 ## 🧪 Ejemplo real mínimo con Node.js (Express + SQLite)
 
 Un CRUD básico de productos para que un frontend pueda listar y crear.
 
-### 📦 `package.json`
+### `package.json`
 
 ```json
 {
@@ -45,7 +45,7 @@ Un CRUD básico de productos para que un frontend pueda listar y crear.
 }
 ```
 
-### 🧠 `index.js`
+### `index.js`
 
 ```jsx
 import "dotenv/config";
@@ -120,18 +120,18 @@ curl -X POST http://localhost:3000/api/products \
   -d '{"name":"Teclado mecánico","price":79.9}'
 ```
 
-## 🧱 Cosas que harías en un backend real
+## Cosas que harías en un backend real
 
-- 🔐 Autenticación JWT para rutas protegidas (`/api/admin/*`).
-- ⚡ Rate limiting y configuración de CORS.
-- 🧼 Validación fuerte con Zod o Joi en entrada y salida.
-- 🧠 Capas separadas (rutas → controladores → servicios → repositorios).
-- 🗄️ Migraciones formales y seeds de base de datos.
-- 🪵 Logs estructurados y métricas para monitoreo.
-- 🧪 Tests automáticos y CI/CD antes de desplegar.
-- 🕵️ Variables de entorno para secretos y configuración (nunca en el repo).
+- Autenticación JWT para rutas protegidas (`/api/admin/*`).
+- Rate limiting y configuración de CORS.
+- Validación fuerte con Zod o Joi en entrada y salida.
+- Capas separadas (rutas → controladores → servicios → repositorios).
+- Migraciones formales y seeds de base de datos.
+- Logs estructurados y métricas para monitoreo.
+- Tests automáticos y CI/CD antes de desplegar.
+- Variables de entorno para secretos y configuración (nunca en el repo).
 
-## 🪄 En una frase
+## En una frase
 
 > El **backend** es el servicio que **custodia datos** y **hace cumplir las reglas**.
 > Expone APIs fiables y seguras, y garantiza que cada request se convierta en una respuesta coherente.

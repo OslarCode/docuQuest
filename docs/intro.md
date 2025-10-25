@@ -2,20 +2,20 @@
 sidebar_position: 1
 ---
 
-# 🚀 Tutorial: Cómo empezar en la programación web (en 5 minutos)
+# Tutorial: Cómo empezar en la programación web (en 5 minutos)
 
-## 🧠 1. ¿Qué es la programación web?
+## 1. ¿Qué es la programación web?
 
 La programación web consiste en crear sitios y aplicaciones que funcionan en navegadores como Chrome, Firefox o Safari. Existen **dos partes clave**:
 
 - **Frontend (cliente)**: lo que el usuario ve y con lo que interactúa (HTML, CSS, JavaScript).
 - **Backend (servidor)**: lo que sucede detrás del escenario (PHP, Python, Node.js, bases de datos).
 
-👉 Como principiante, **empieza por el frontend**, que es lo más visual y accesible.
+Como principiante, **empieza por el frontend**, que es lo más visual y accesible.
 
 ## 🔧 2. ¿Qué necesitas para empezar?
 
-### ✅ Herramientas básicas:
+### Herramientas básicas:
 
 1. **Navegador moderno**
 
@@ -45,7 +45,7 @@ La programación web consiste en crear sitios y aplicaciones que funcionan en na
 4. **Abre el archivo en tu navegador**  
    Haz doble clic en `index.html` o arrástralo al navegador para ver el resultado.
 
-## 🧱 3. Aprende estos tres pilares
+## 3. Aprende estos tres pilares
 
 ### 1. **HTML** – La estructura de la web
 
@@ -59,7 +59,7 @@ Te permite cambiar colores, fuentes, márgenes, fondos, etc.
 
 Hace tu página interactiva: botones, formularios, animaciones, etc.
 
-## 🧭 4. ¿Dónde aprender?
+## 4. ¿Dónde aprender?
 
 ### 📘 Plataformas gratuitas:
 
@@ -71,7 +71,7 @@ Hace tu página interactiva: botones, formularios, animaciones, etc.
 
 - Fazt Code, Hola Mundo, CódigoFacilito, Midudev
 
-## 🧩 5. Siguiente paso recomendado
+## 5. Siguiente paso recomendado
 
 Una vez que sepas crear páginas básicas con HTML y CSS, sigue esta ruta:
 
@@ -79,7 +79,7 @@ Una vez que sepas crear páginas básicas con HTML y CSS, sigue esta ruta:
 2. Empieza a usar JavaScript para interactividad.
 3. Crea un proyecto propio: tu CV online, una página de recetas, etc.
 
-## ✅ Resumen en 30 segundos:
+## Resumen en 30 segundos:
 
 - Instala VS Code y crea tu primer archivo HTML.
 - Aprende HTML, CSS y luego JavaScript.

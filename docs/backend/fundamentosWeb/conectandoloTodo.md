@@ -23,7 +23,7 @@ Tener solo los archivos `.html`, `.css`, `.js` no es suficiente. Para que cualqu
 | **Hosting** | Servidor donde se aloja tu web        | Almacena tus archivos y los sirve cuando alguien entra |
 | **HTTPS**   | Protocolo de comunicación segura      | Protege los datos que viajan entre usuario y servidor  |
 
-> 💡 Analogía completa:
+> Analogía completa:
 >
 > Piensa en tu web como un restaurante:
 >
@@ -32,7 +32,7 @@ Tener solo los archivos `.html`, `.css`, `.js` no es suficiente. Para que cualqu
 > - El **hosting** es el local donde está el restaurante.
 > - El **HTTPS** es la cerradura segura que impide que alguien robe la comida por el camino.
 
-## 🔁 Flujo completo: ¿Cómo conectas tu web al mundo?
+## Flujo completo: ¿Cómo conectas tu web al mundo?
 
 1. **Registras un dominio** en un proveedor como DonDominio, Namecheap o Google Domains.
 2. **Contratas un hosting** o usas uno gratuito como GitHub Pages, Netlify o Vercel.
@@ -66,9 +66,9 @@ https://tuusuario.github.io/tusitio/
 
 ```
 
-> ✅ Automáticamente, GitHub incluye HTTPS gratuito.
+> Automáticamente, GitHub incluye HTTPS gratuito.
 
-### ✅ Opción 2: Netlify (ultra fácil)
+### Opción 2: Netlify (ultra fácil)
 
 Perfecto para sitios personales, landings y pequeños proyectos.
 
@@ -88,9 +88,9 @@ https://nombre-unico.netlify.app
 
 ```
 
-> ☑️ Incluye HTTPS gratis, despliegue automático y opciones avanzadas de rendimiento.
+> Incluye HTTPS gratis, despliegue automático y opciones avanzadas de rendimiento.
 
-### ✅ Opción 3: Vercel (ideal para apps con JavaScript moderno)
+### Opción 3: Vercel (ideal para apps con JavaScript moderno)
 
 Perfecta para proyectos en **React, Next.js, Vue, Svelte, Astro**, etc.
 
@@ -119,7 +119,7 @@ https://tusitio.vercel.app
 | **Netlify**      | Portafolios, landings       | ⭐⭐⭐⭐⭐ | Sí             | Sí               |
 | **Vercel**       | Apps JS (React, Next, etc.) | ⭐⭐⭐⭐   | Sí             | Sí               |
 
-## 📡 ¿Y qué pasa a nivel de red?
+## ¿Y qué pasa a nivel de red?
 
 Cuando alguien visita tu sitio, el proceso invisible que ocurre en segundos es:
 
@@ -130,9 +130,9 @@ Cuando alguien visita tu sitio, el proceso invisible que ocurre en segundos es:
 5. El navegador descarga los archivos desde el **hosting** (HTML, CSS, JS).
 6. Se renderiza la web en la pantalla del usuario.
 
-> 💡 Todo esto sucede en milisegundos, pero involucra routers, switches, protocolos, puertos, IPs y servidores en varias partes del mundo.
+> Todo esto sucede en milisegundos, pero involucra routers, switches, protocolos, puertos, IPs y servidores en varias partes del mundo.
 
-## ✅ Conclusiones
+## Conclusiones
 
 | Paso                | ¿Qué implica?                                                |
 | ------------------- | ------------------------------------------------------------ |
@@ -164,21 +164,21 @@ Cuando alguien visita tu sitio, el proceso invisible que ocurre en segundos es:
 
 ### Vídeos recomendados
 
-1. 🎥 **“Cómo subir tu web a GitHub Pages” – Fazt (YouTube, español)**
+1.  **“Cómo subir tu web a GitHub Pages” – Fazt (YouTube, español)**
 
-   [https://youtu.be/8AZ8GqW5iak](https://youtu.be/8AZ8GqW5iak)
+[https://youtu.be/8AZ8GqW5iak](https://youtu.be/8AZ8GqW5iak)
 
-2. 🎥 **“Desplegar una web en Netlify en 5 minutos” – HolaMundo (español)**
+2.  **“Desplegar una web en Netlify en 5 minutos” – HolaMundo (español)**
 
-   [https://youtu.be/ExFE6rj9gJU](https://youtu.be/ExFE6rj9gJU)
+[https://youtu.be/ExFE6rj9gJU](https://youtu.be/ExFE6rj9gJU)
 
-3. 🎥 **“¿Cómo funciona un dominio, DNS y hosting?” – La Cocina del Código (español)**
+3.  **“¿Cómo funciona un dominio, DNS y hosting?” – La Cocina del Código (español)**
 
-   [https://youtu.be/B1k_sxosg5M](https://youtu.be/B1k_sxosg5M)
+[https://youtu.be/B1k_sxosg5M](https://youtu.be/B1k_sxosg5M)
 
-# 🛡️ Seguridad web básica
+# Seguridad web básica
 
-> 🔗 Continuación del módulo anterior:
+> Continuación del módulo anterior:
 >
 > Una vez que tu sitio web está publicado y accesible desde cualquier parte del mundo, el siguiente paso es **garantizar que sea seguro** para los usuarios que lo visitan. Esto no solo genera confianza (candado verde 🔒), sino que **protege los datos y evita ataques** que podrían comprometer tu sitio o a tus visitantes.
 
@@ -186,16 +186,16 @@ Cuando alguien visita tu sitio, el proceso invisible que ocurre en segundos es:
 
 Un **certificado SSL** (Secure Sockets Layer) —actualmente reemplazado por **TLS (Transport Layer Security)**— es un **archivo digital** que se instala en tu servidor para habilitar la navegación segura a través de **HTTPS**.
 
-> ⚙️ HTTPS es la versión segura de HTTP. Usa el protocolo SSL/TLS para cifrar los datos que viajan entre el navegador y tu servidor.
+> HTTPS es la versión segura de HTTP. Usa el protocolo SSL/TLS para cifrar los datos que viajan entre el navegador y tu servidor.
 
-## ✅ ¿Qué hace un certificado SSL/TLS?
+## ¿Qué hace un certificado SSL/TLS?
 
 1. **Cifra los datos** (como contraseñas o tarjetas de crédito) para que nadie pueda espiarlos.
 2. **Verifica la identidad del sitio**, asegurando al usuario que está en la web correcta.
-3. Activa el icono de **candado** 🔒 en la barra del navegador.
+3. Activa el icono de **candado** en la barra del navegador.
 4. **Evita advertencias de seguridad** al visitar la web.
 
-🔍 _Ejemplo real:_
+_Ejemplo real:_
 
 Al entrar en `https://www.mi-banco.com`, el navegador usa el certificado SSL para confirmar que estás en el sitio original y cifra tu contraseña cuando inicias sesión.
 
@@ -220,7 +220,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 ```
 
-✅ _Previene ataques de downgrade_, donde un atacante intenta forzar una conexión no segura.
+_Previene ataques de downgrade_, donde un atacante intenta forzar una conexión no segura.
 
 ### CSP (Content Security Policy)
 
@@ -231,13 +231,13 @@ Content-Security-Policy: default-src 'self'; img-src 'self' cdn.miweb.com; scrip
 
 ```
 
-✅ _Bloquea ataques XSS_ (ver más abajo).
+_Bloquea ataques XSS_ (ver más abajo).
 
 ### ¿Qué es XSS (Cross-Site Scripting)?
 
 Es cuando un atacante **inyecta código JavaScript malicioso** en tu web. Puede robar cookies, redirigir al usuario, manipular el contenido o registrar lo que escribe.
 
-🔍 _Ejemplo típico:_
+_Ejemplo típico:_
 
 ```html
 <script>
@@ -255,7 +255,7 @@ Es cuando un atacante **inyecta código JavaScript malicioso** en tu web. Puede 
 
 Ocurre cuando un usuario legítimo es engañado para ejecutar **acciones maliciosas sin saberlo**, como enviar dinero o cambiar su contraseña.
 
-🔍 _Ejemplo real:_
+_Ejemplo real:_
 
 1. Inicias sesión en tu banco.
 2. Sin cerrar sesión, visitas una web maliciosa.
@@ -267,7 +267,7 @@ Ocurre cuando un usuario legítimo es engañado para ejecutar **acciones malicio
 - Validando el **origen** de la solicitud (cabeceras `Origin` o `Referer`).
 - Configurando cookies con `SameSite=Strict`.
 
-### 🪞 ¿Qué es Clickjacking?
+### ¿Qué es Clickjacking?
 
 Consiste en **engañar al usuario para que haga clic en algo sin saberlo**. El atacante incrusta tu web en un `iframe` invisible y pone encima un botón falso.
 
@@ -310,7 +310,7 @@ Content-Security-Policy: frame-ancestors 'none';
 - Aplica políticas de acceso y control de errores en `.htaccess`
 - Asegúrate de que tus **certificados SSL estén activos y renovados**
 
-## ✅ Resumen
+## Resumen
 
 | Amenaza / Protección  | ¿Qué hace?                                                       |
 | --------------------- | ---------------------------------------------------------------- |
@@ -326,9 +326,9 @@ Content-Security-Policy: frame-ancestors 'none';
 
 ### Libros y guías:
 
-- 📘 _Web Security for Developers_ – Malcolm McDonald
+- _Web Security for Developers_ – Malcolm McDonald
   Práctico, enfocado a seguridad moderna sin complicarse.
-- 📘 _Hacking Web Apps_ – Mike Shema
+- _Hacking Web Apps_ – Mike Shema
   Explica los tipos de ataque web con ejemplos y prevención.
 
 ### Webs y documentación:
@@ -341,14 +341,14 @@ Content-Security-Policy: frame-ancestors 'none';
 
 ### Vídeos:
 
-- 🎥 **“¿Qué es HTTPS y SSL?” – DotCSV (español)**
+- **“¿Qué es HTTPS y SSL?” – DotCSV (español)**
   [https://youtu.be/Efw1n9xKbGk](https://youtu.be/Efw1n9xKbGk)
-- 🎥 **“Cómo proteger tu sitio con cabeceras HTTP” – La Cocina del Código**
+- **“Cómo proteger tu sitio con cabeceras HTTP” – La Cocina del Código**
   [https://youtu.be/vKnCUmYfc5E](https://youtu.be/vKnCUmYfc5E)
 
-# 🧩 Buenas prácticas para desarrolladores web
+# Buenas prácticas para desarrolladores web
 
-> 🛡️ Conexión con el módulo anterior:
+> Conexión con el módulo anterior:
 >
 > Ya sabes cómo proteger tu web con HTTPS, certificados, cabeceras seguras y otras medidas clave de seguridad.
 >
@@ -360,9 +360,9 @@ Content-Security-Policy: frame-ancestors 'none';
 
 Un sitio web puede funcionar perfecto en tu portátil con Wi-Fi rápido y navegador actualizado… pero fallar en un móvil antiguo con red 3G o en un navegador menos usado como Safari o Edge.
 
-> 🧪 Desarrollar sin probar es como lanzar un cohete sin revisar los controles: puede que funcione… o puede que explote.
+> Desarrollar sin probar es como lanzar un cohete sin revisar los controles: puede que funcione… o puede que explote.
 
-### ✅ Recomendaciones clave
+### Recomendaciones clave
 
 | Prueba                             | ¿Qué verificar?                                             |
 | ---------------------------------- | ----------------------------------------------------------- |
@@ -371,7 +371,7 @@ Un sitio web puede funcionar perfecto en tu portátil con Wi-Fi rápido y navega
 | Conexión lenta (Fast 3G, Slow 3G)  | Rendimiento, carga progresiva, errores                      |
 | Sin JavaScript o navegador antiguo | Comportamiento degradado (fallbacks), mensajes alternativos |
 
-💡 En DevTools → pestaña **Network**, puedes simular velocidad lenta o desconexión.
+En DevTools → pestaña **Network**, puedes simular velocidad lenta o desconexión.
 
 En pestaña **Rendering**, activa simulación de problemas visuales.
 
@@ -383,14 +383,14 @@ Llevar una web a producción sin revisar ciertos aspectos técnicos es uno de lo
 
 Cuando tu web necesita hacer peticiones a otro dominio (como una API), el servidor remoto debe autorizar esa conexión. Si no lo hace, el navegador **la bloqueará por seguridad**.
 
-🔍 Error típico:
+Error típico:
 
 ```bash
 Access to fetch at 'https://api.otrositio.com' from origin 'https://miweb.com' has been blocked by CORS policy.
 
 ```
 
-### ✅ Solución:
+### Solución:
 
 - En el servidor remoto:
 
@@ -405,7 +405,7 @@ Access-Control-Allow-Origin: https://miweb.com
 
 Si tu sitio carga por `https://` pero **incluye imágenes, scripts o iframes desde `http://`**, el navegador bloqueará esos recursos por seguridad.
 
-### ✅ Solución:
+### Solución:
 
 - Usa siempre **URLs seguras (https)** para todo.
 - Puedes forzar la actualización automática con:
@@ -423,7 +423,7 @@ Si tu sitio carga por `https://` pero **incluye imágenes, scripts o iframes des
 - Registros `A`, `CNAME`, `MX` o `TXT` mal definidos.
 - Subdominios como `www` o `blog` no resuelven.
 
-### ✅ Solución:
+### Solución:
 
 - Verifica tus DNS en [https://dnschecker.org](https://dnschecker.org/)
 - Usa comandos como `dig`, `nslookup` o los paneles de tu proveedor (Cloudflare, DonDominio, etc.)
@@ -432,7 +432,7 @@ Si tu sitio carga por `https://` pero **incluye imágenes, scripts o iframes des
 
 Optimizar tu web no es solo cuestión de estética o velocidad: **mejora la experiencia del usuario, reduce consumo de datos y mejora tu SEO**.
 
-### 📷 Imágenes: formato y peso
+### Imágenes: formato y peso
 
 - Usa **formatos modernos** como `.webp` o `.avif`.
 - Comprime sin perder calidad:
@@ -447,22 +447,22 @@ Evita cargar todas las imágenes desde el inicio. Cárgalas solo cuando el usuar
 <img src="imagen.jpg" loading="lazy" alt="Ejemplo de imagen optimizada" />
 ```
 
-✅ Mejora la velocidad inicial de carga y el rendimiento en móviles.
+Mejora la velocidad inicial de carga y el rendimiento en móviles.
 
 ### Minificación y compresión
 
-### ✅ CSS y JS:
+### CSS y JS:
 
 - Minifica los archivos (`.min.js`, `.min.css`) para reducir su tamaño.
 - Herramientas recomendadas:
   - `Terser`, `esbuild`, `cssnano`
   - Automatizado por frameworks como **Vite**, **Next.js**, **Parcel**
 
-### ✅ HTML:
+### HTML:
 
 - Usa herramientas de build como `html-minifier` o ajustes en el sistema de producción.
 
-### ✅ Servidor:
+### Servidor:
 
 Activa compresión Gzip o Brotli para servir archivos más pequeños:
 
@@ -479,7 +479,7 @@ gzip_types text/html text/css application/javascript;
 
 ```
 
-## ✅ Resumen
+## Resumen
 
 | Buenas prácticas               | ¿Por qué aplicarlas?                                  |
 | ------------------------------ | ----------------------------------------------------- |
@@ -495,7 +495,7 @@ gzip_types text/html text/css application/javascript;
 
 Has llegado al final de una parte crucial del ciclo de desarrollo web: poner tu sitio en línea, **de forma segura, optimizada y profesional**.
 
-> 🌐 A partir de aquí, puedes explorar herramientas avanzadas como:
+> A partir de aquí, puedes explorar herramientas avanzadas como:
 >
 > - **Auditorías con Lighthouse**
 > - **Monitorización de errores en tiempo real**

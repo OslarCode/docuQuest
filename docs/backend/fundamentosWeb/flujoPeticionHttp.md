@@ -25,13 +25,13 @@ Y el servidor responde:
 
 Esto quiere decir que los datos viajan **cifrados** entre tu navegador y el servidor.
 
-🔐 Esto evita que alguien pueda:
+Esto evita que alguien pueda:
 
 - Espiar lo que ves.
 - Interceptar formularios o contraseñas.
 - Suplantar la identidad del sitio web.
 
-💡 **Ejemplo real:**
+  **Ejemplo real:**
 
 - HTTP: los datos viajan como una postal (todo visible).
 - HTTPS: los datos viajan como una carta cerrada y sellada (nadie puede leerlos).
