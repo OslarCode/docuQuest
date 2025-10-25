@@ -1,102 +1,103 @@
-````txt
-$$$$$$$\   $$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\  $$\   $$\ $$$$$$$$\  $$$$$$\ $$$$$$$$\ 
-$$  __$$\ $$  __$$\ $$  __$$\ $$ |  $$ |$$  __$$\ $$ |  $$ |$$  _____|$$  __$$\\__$$  __|
-$$ |  $$ |$$ /  $$ |$$ /  \__|$$ |  $$ |$$ /  $$ |$$ |  $$ |$$ |      $$ /  \__|  $$ |   
-$$ |  $$ |$$ |  $$ |$$ |      $$ |  $$ |$$ |  $$ |$$ |  $$ |$$$$$\    \$$$$$$\    $$ |   
-$$ |  $$ |$$ |  $$ |$$ |      $$ |  $$ |$$ |  $$ |$$ |  $$ |$$  __|    \____$$\   $$ |   
-$$ |  $$ |$$ |  $$ |$$ |  $$\ $$ |  $$ |$$ $$\$$ |$$ |  $$ |$$ |      $$\   $$ |  $$ |   
-$$$$$$$  | $$$$$$  |\$$$$$$  |\$$$$$$  |\$$$$$$ / \$$$$$$  |$$$$$$$$\ \$$$$$$  |  $$ |   
-\_______/  \______/  \______/  \______/  \___$$$\  \______/ \________| \______/   \__|   
-                                             \___|
-````
+# DocuQuest 📚
 
-````markdown
-# DocuQuest – Tu portal de aprendizaje en desarrollo web
+**Tu portal de aprendizaje en desarrollo web**
 
-DocuQuest es un sitio web educativo creado con [Docusaurus](https://docusaurus.io/)
-que recopila temarios explicativos sobre tecnologías clave para el desarrollo web moderno,
-como HTML, CSS, JavaScript y muchas más. El objetivo es ofrecer una documentación clara,
-organizada y accesible para estudiantes, autodidactas y desarrolladores que desean aprender
-o reforzar sus conocimientos.
+![Docusaurus](https://img.shields.io/badge/Docusaurus-2.0.0-blue?style=for-the-badge&logo=docusaurus)  
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Tecnologías cubiertas
+DocuQuest es un sitio web educativo construido con **[Docusaurus](https://docusaurus.io/)**, diseñado para ofrecer documentación clara, accesible y bien estructurada sobre tecnologías esenciales en el desarrollo web moderno. Ideal para estudiantes, autodidactas y desarrolladores que buscan aprender o reforzar sus conocimientos.
 
-- HTML semántico y buenas prácticas
-- CSS moderno y responsive (Flexbox, Grid, variables, etc.)
-- JavaScript (básico a avanzado, asincronía, DOM, módulos)
-- Próximamente: Git, Bootstrap, React y más
+## 🚀 Características
 
-## Instalación del proyecto
+- 📖 Documentación organizada y fácil de navegar
+- 📱 Diseño totalmente responsive
+- 🎯 Contenido actualizado y en expansión
+- 🔍 Enfoque en buenas prácticas y estándares web
+- 🌐 Despliegue automático con GitHub Pages
 
-1. Clona el repositorio:
+## 🛠️ Tecnologías cubiertas
+
+- **HTML**: Semántica, accesibilidad y buenas prácticas
+- **CSS**: Flexbox, Grid, variables CSS, responsive design
+- **JavaScript**: Desde lo básico hasta temas avanzados (asincronía, DOM, módulos)
+- **Próximamente**: Git, Bootstrap, React y más
+
+## 📦 Instalación
+
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 ```bash
+# Clona el repositorio
 git clone https://github.com/OslarCode/docuQuest.git
+
+# Entra en el directorio del proyecto
 cd docuQuest
-```
 
-2. Instala las dependencias:
-
-```bash
+# Instala las dependencias
 npm install
 ```
 
-## Desarrollo local
+## 🧪 Desarrollo
 
-Inicia el servidor de desarrollo:
+Para iniciar el servidor de desarrollo:
 
 ```bash
 npm start
 ```
 
-Abre tu navegador en `http://localhost:3000` para ver el sitio en vivo. Los cambios se reflejan automáticamente.
+El sitio estará disponible en `http://localhost:3000`. Los cambios se reflejarán en tiempo real.
 
-## Construcción del sitio
+## 📤 Construcción y despliegue
 
-Para generar los archivos estáticos listos para producción:
+### Construir para producción:
 
 ```bash
 npm run build
 ```
 
-El resultado se encuentra en la carpeta `/build`.
+Los archivos estáticos se generarán en la carpeta `/build`.
 
-## Despliegue en GitHub Pages
+### Desplegar en GitHub Pages:
 
-1. Asegúrate de haber configurado correctamente los campos `organizationName` y `projectName` en `docusaurus.config.js`.
-
-2. Ejecuta el comando:
+Asegúrate de que `organizationName` y `projectName` estén correctamente configurados en `docusaurus.config.js`, luego ejecuta:
 
 ```bash
 npm run deploy
 ```
 
-Esto compilará el sitio y lo publicará en la rama `gh-pages` del repositorio. El sitio quedará disponible en:
+El sitio se publicará automáticamente en la rama `gh-pages` y estará disponible en:
 
-https://oslarcode.github.io/docuQuest
+🔗 **https://oslarcode.github.io/docuQuest**
 
-> También puedes usar SSH o configurar `GIT_USER` si no usas autenticación por clave pública.
+## 📁 Estructura del proyecto
 
-## Estructura del proyecto
+```
+docuQuest/
+├── docs/           # Documentación principal
+├── src/            # Código fuente personalizado
+├── static/         # Recursos estáticos (favicon, imágenes)
+├── docusaurus.config.js  # Configuración del sitio
+└── package.json
+```
 
-- `/docs`: Documentación principal (temarios de HTML, CSS, JS…)
-- `/src`: Archivos de personalización del sitio (CSS, imágenes, componentes)
-- `/static`: Recursos estáticos (favicon, logos, imágenes)
-- `docusaurus.config.js`: Configuración general del sitio
+## 🎯 Objetivos
 
-## Objetivos del proyecto
-
-- Reunir temarios claros y estructurados sobre desarrollo web
+- Recopilar y estructurar temarios educativos sobre desarrollo web
 - Facilitar el acceso a contenido técnico desde cualquier dispositivo
-- Servir como material complementario en cursos o clases de programación
-- Convertirse en una wiki educativa en constante crecimiento
+- Servir como material de apoyo en cursos y formaciones
+- Evolucionar como una wiki educativa colaborativa y en crecimiento
 
-## Autor
+## 👨‍💻 Autor
 
-Proyecto creado por [OslarCode](https://github.com/OslarCode).
-Puedes encontrarme en [LinkedIn](https://www.linkedin.com/in/oslar-code-036438328/).
+Creado por **[OslarCode](https://github.com/OslarCode)**  
+📫 Conéctame en [LinkedIn](https://www.linkedin.com/in/oslar-code-036438328/)
 
-## Licencia
+## 📄 Licencia
 
-Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y compartirlo libremente dando atribución.
-````
+Este proyecto está bajo la **Licencia MIT**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+¡Si te gusta el proyecto, no olvides dejar una ⭐ en el repositorio!
+
+---
