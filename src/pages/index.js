@@ -10,7 +10,7 @@ import styles from "./index.module.css";
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
+    <header className={clsx("hero", styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroContent}>
           <Heading as="h1" className="hero__title">
@@ -59,7 +59,7 @@ function TechShowcase() {
   ];
 
   return (
-    <section className={clsx("hero hero--primary", styles.techSection)}>
+    <section className={clsx("hero", styles.techSection)}>
       <div className="container">
         <div className={styles.techContent}>
           <Heading as="h2" className={clsx("hero__title", styles.sectionTitle)}>

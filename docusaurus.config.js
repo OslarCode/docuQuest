@@ -86,34 +86,22 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Documentación",
+            title: "Navegación",
             items: [
-              {
-                label: "Documentos",
-                to: "/docs/intro",
-              },
+              { label: "Inicio", to: "/" },
+              { label: "Documentación", to: "/docs/intro" },
+              { label: "Blog", to: "/blog" },
             ],
           },
           {
-            title: "Comunidad",
+            title: "Recursos",
             items: [
-              {
-                label: "Linkedin",
-                href: "https://www.linkedin.com/in/oslar-code-036438328/",
-              },
-            ],
-          },
-          {
-            title: "Más",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/OslarCode/OslarCode",
-              },
+              { label: "GitHub", href: "https://github.com/OslarCode" },
+              { label: "Contacto", href: "mailto:tuemail@ejemplo.com" },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} DocuQuest. Todos los derechos reservados.`,
+        copyright: `© ${new Date().getFullYear()} OslarCode. Todos los derechos reservados.`,
       },
       prism: {
         theme: prismThemes.github,

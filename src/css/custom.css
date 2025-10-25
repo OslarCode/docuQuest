@@ -1,55 +1,6 @@
-/* Modo claro - Blue 
+/* === Paleta y tokens de marca (CLARO) === */
 :root {
-  --ifm-color-primary: #1d80f6;
-  --ifm-color-primary-dark: #1a73dd;
-  --ifm-color-primary-darker: #186acb;
-  --ifm-color-primary-darkest: #1457a5;
-  --ifm-color-primary-light: #3891f8;
-  --ifm-color-primary-lighter: #59a4f9;
-  --ifm-color-primary-lightest: #7fb9fb;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-} */
-
-/* Modo oscuro - Blue 
-[data-theme="dark"] {
-  --ifm-color-primary: #57a9ff;
-  --ifm-color-primary-dark: #4c98e6;
-  --ifm-color-primary-darker: #4488cc;
-  --ifm-color-primary-darkest: #386ea3;
-  --ifm-color-primary-light: #74b8ff;
-  --ifm-color-primary-lighter: #8dc5ff;
-  --ifm-color-primary-lightest: #aad4ff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-} */
-
-/* Modo claro - Indigo  
-:root {
-  --ifm-color-primary: #4f46e5;        
-  --ifm-color-primary-dark: #4338ca;   
-  --ifm-color-primary-darker: #3730a3; 
-  --ifm-color-primary-darkest: #312e81;
-  --ifm-color-primary-light: #6366f1;  
-  --ifm-color-primary-lighter: #818cf8;
-  --ifm-color-primary-lightest: #a5b4fc;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
-} */
-
-/* Modo oscuro - Indigo  
-[data-theme="dark"] {
-  --ifm-color-primary: #818cf8;     
-  --ifm-color-primary-dark: #6366f1;
-  --ifm-color-primary-darker: #4f46e5;
-  --ifm-color-primary-darkest: #4338ca;
-  --ifm-color-primary-light: #a5b4fc;
-  --ifm-color-primary-lighter: #c7d2fe;
-  --ifm-color-primary-lightest: #e0e7ff;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
-} */
-
-/* Modo claro - Emerald */
-:root {
+  /* Primario (Emerald) — botones primarios, CTA, acentos principales */
   --ifm-color-primary: #059669;
   --ifm-color-primary-dark: #047857;
   --ifm-color-primary-darker: #065f46;
@@ -57,11 +8,25 @@
   --ifm-color-primary-light: #10b981;
   --ifm-color-primary-lighter: #34d399;
   --ifm-color-primary-lightest: #6ee7b7;
+
+  /* Secundario (Indigo) — enlaces, outline, detalles */
+  --brand-indigo-600: #4f46e5;
+  --brand-indigo-500: #6366f1;
+  --brand-indigo-400: #818cf8;
+
+  /* Neutrales suaves para bordes y superficies */
+  --neutral-200: #e5e7eb;
+
+  /* Ajustes de tipografía / código */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
+
+  /* Unificación navbar/footer (opcional) */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #0b0f12;
 }
 
-/* Modo oscuro - Emerald */
+/* === Paleta y tokens de marca (OSCURO) === */
 [data-theme="dark"] {
   --ifm-color-primary: #34d399;
   --ifm-color-primary-dark: #10b981;
@@ -70,44 +35,54 @@
   --ifm-color-primary-light: #6ee7b7;
   --ifm-color-primary-lighter: #a7f3d0;
   --ifm-color-primary-lightest: #d1fae5;
+
+  --brand-indigo-600: #6366f1;
+  --brand-indigo-500: #818cf8;
+  --brand-indigo-400: #a5b4fc;
+
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+
+  --ifm-navbar-background-color: #111418;
+  --ifm-footer-background-color: #0b0f12;
 }
 
-/* Modo claro -- Cyberpunk 
-:root {
-  --ifm-color-primary: #f9e400;
-  --ifm-color-primary-dark: #d6c800;
-  --ifm-color-primary-darker: #b5ab00;
-  --ifm-color-primary-darkest: #8c8600;
-  --ifm-color-primary-light: #ffee55;
-  --ifm-color-primary-lighter: #fff176;
-  --ifm-color-primary-lightest: #fff59d;
-  --ifm-background-color: #000000;
-  --ifm-font-color-base: #e0e0e0;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 0, 0.1);
-} */
-
-/* Modo oscuro -- Cyberpunk 
+/* === Utilidades globales mínimas y unificadas (Docs + Home) === */
+:root,
 [data-theme="dark"] {
-  --ifm-color-primary: #00b4e0;
-  --ifm-color-primary-dark: #0090b8;
-  --ifm-color-primary-darker: #007c9d;
-  --ifm-color-primary-darkest: #005e75;
-  --ifm-color-primary-light: #33c6ea;
-  --ifm-color-primary-lighter: #66d7f0;
-  --ifm-color-primary-lightest: #99e5f6;
-  --ifm-background-color: #0b0b0b;
-  --ifm-font-color-base: #e6e6e6;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 180, 224, 0.1);
-} */
-
-/* Opcional — Personaliza navbar y footer 
-:root {
-  --ifm-navbar-background-color: #000000;
-  --ifm-footer-background-color: #0b0b0b;
+  /* Enlaces con acento indigo */
+  --ifm-link-color: var(--brand-indigo-600);
+  --ifm-link-hover-color: var(--brand-indigo-500);
 }
-[data-theme="dark"] {
-  --ifm-navbar-background-color: #0b0b0b;
-  --ifm-footer-background-color: #000000;
-} */
+
+/* Botón outline consistente en todo el sitio */
+.button.button--outline {
+  background: transparent;
+  border: 1px solid var(--brand-indigo-400);
+  color: var(--brand-indigo-600);
+}
+.button.button--outline:hover {
+  border-color: var(--brand-indigo-600);
+  color: var(--brand-indigo-600);
+  background: transparent;
+}
+
+.footer {
+  background: var(--ifm-footer-background-color);
+  color: white;
+  padding-top: 2rem;
+}
+
+.footer__links {
+  justify-content: center;
+}
+
+.footer__title {
+  font-weight: 600;
+}
+
+.footer__link-item {
+  color: var(--brand-indigo-600);
+}
+.footer__link-item:hover {
+  color: var(--brand-indigo-500);
+}

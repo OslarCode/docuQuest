@@ -3,12 +3,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    var(--ifm-color-primary) 0%,
-    #2c3e50 100%
-  );
-  color: white;
+  background: transparent; /* sin degradado */
+  color: inherit;
 }
 
 .featuresHeader {
@@ -28,23 +24,22 @@
   opacity: 0.9;
 }
 
+/* Card plana y minimal, con hover sutil */
 .featureCard {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: var(--ifm-background-color);
+  border: 1px solid var(--neutral-200);
   border-radius: 12px;
   padding: 2rem 1.5rem;
   text-align: center;
   height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .featureCard:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  border-color: var(--brand-indigo-400);
 }
 
 .featureIcon {
@@ -52,22 +47,22 @@
   position: relative;
 }
 
+/* Icono minimal (círculo en primario) */
 .iconBackground {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--ifm-color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   position: relative;
 }
-
 .iconBackground::before {
   content: "✓";
   font-size: 2rem;
-  color: white;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -81,24 +76,21 @@
   font-size: 1.3rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: white;
 }
 
 .featureContent p {
   opacity: 0.9;
   line-height: 1.6;
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 996px) {
   .col--4 {
     width: 100%;
     max-width: 400px;
     margin: 0 auto 2rem;
   }
-
   .featureCard {
     max-width: 400px;
     margin: 0 auto;
@@ -109,24 +101,19 @@
   .sectionTitle {
     font-size: 2rem;
   }
-
   .sectionSubtitle {
     font-size: 1.1rem;
   }
-
   .featureCard {
     padding: 1.5rem 1rem;
   }
-
   .featureContent h3 {
     font-size: 1.2rem;
   }
-
   .iconBackground {
     width: 60px;
     height: 60px;
   }
-
   .iconBackground::before {
     font-size: 1.5rem;
   }

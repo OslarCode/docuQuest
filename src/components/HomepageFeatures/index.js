@@ -53,7 +53,7 @@ function Feature({ title, description }) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={clsx("hero hero--primary", styles.features)}>
+    <section className={clsx("hero", styles.features)}>
       <div className="container">
         <div className={styles.featuresHeader}>
           <Heading as="h2" className={styles.sectionTitle}>
