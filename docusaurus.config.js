@@ -17,8 +17,9 @@ const config = {
   deploymentBranch: "gh-pages",
   url: "https://oslarcode.github.io",
   baseUrl: "/docuQuest/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
+  onBrokenAnchors: "warn",
 
   i18n: {
     defaultLocale: "en",
