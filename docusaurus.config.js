@@ -14,7 +14,8 @@ const config = {
 
   organizationName: "oslarcode",
   projectName: "docuQuest",
-
+  deploymentBranch: "gh-pages",
+  url: "https://oslarcode.github.io/docuQuest/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
