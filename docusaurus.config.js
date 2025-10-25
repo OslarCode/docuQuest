@@ -9,14 +9,12 @@ const config = {
     v4: true,
   },
 
-  url: "https://your-docusaurus-site.example.com",
-  baseUrl: "/",
+  url: "https://oslarcode.github.io",
+  baseUrl: "/docuQuest/",
 
   organizationName: "oslarcode",
   projectName: "docuQuest",
   deploymentBranch: "gh-pages",
-  url: "https://oslarcode.github.io",
-  baseUrl: "/docuQuest/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   onBrokenAnchors: "warn",
