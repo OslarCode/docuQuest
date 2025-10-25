@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkDocuQuest_oslar_code=self.webpackChunkDocuQuest_oslar_code||[]).push([[1235],{8552:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

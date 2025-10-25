@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-backend/fundamentosWeb/dominiosDNSHosting" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Dominios, DNS y Hosting | DocuQuest</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://oslarcode.github.io/docuQuest/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://oslarcode.github.io/docuQuest/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://oslarcode.github.io/docuQuest/docs/backend/fundamentosWeb/dominiosDNSHosting"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Dominios, DNS y Hosting | DocuQuest"><meta data-rh="true" name="description" content="¿Qué es un dominio?"><meta data-rh="true" property="og:description" content="¿Qué es un dominio?"><link data-rh="true" rel="icon" href="#"><link data-rh="true" rel="canonical" href="https://oslarcode.github.io/docuQuest/docs/backend/fundamentosWeb/dominiosDNSHosting"><link data-rh="true" rel="alternate" href="https://oslarcode.github.io/docuQuest/docs/backend/fundamentosWeb/dominiosDNSHosting" hreflang="en"><link data-rh="true" rel="alternate" href="https://oslarcode.github.io/docuQuest/docs/backend/fundamentosWeb/dominiosDNSHosting" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Dominios, DNS y Hosting","item":"https://oslarcode.github.io/docuQuest/docs/backend/fundamentosWeb/dominiosDNSHosting"}]}</script><link rel="stylesheet" href="/docuQuest/assets/css/styles.b479b292.css">
+<script src="/docuQuest/assets/js/runtime~main.4d94679b.js" defer="defer"></script>
+<script src="/docuQuest/assets/js/main.094a4abe.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docuQuest/"><b class="navbar__title text--truncate">DocuQuest</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docuQuest/docs/intro">Documentos</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/OslarCode/OslarCode" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docuQuest/docs/intro"><span title="Introducción" class="linkLabel_WmDU">Introducción</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docuQuest/docs/internet/fundamentos"><span title="Frontend" class="categoryLinkLabel_W154">Frontend</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docuQuest/docs/backend/introduction"><span title="Backend" class="categoryLinkLabel_W154">Backend</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/introduction"><span title="Programación Backend" class="linkLabel_WmDU">Programación Backend</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docuQuest/docs/backend/databases/Modulo1_Que_es_una_base_de_datos_relacional"><span title="Bases de Datos Relacionales" class="categoryLinkLabel_W154">Bases de Datos Relacionales</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/introduction"><span title="Fundamentos de la Web y Http" class="categoryLinkLabel_W154">Fundamentos de la Web y Http</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/introduction"><span title="Fundamentos de la Web y HTTP" class="linkLabel_WmDU">Fundamentos de la Web y HTTP</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/servidorWeb"><span title="¿Qué es un Servidor?" class="linkLabel_WmDU">¿Qué es un Servidor?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/arquitecturaClienteServidor"><span title="¿Qué es la Arquitectura Cliente-Servidor?" class="linkLabel_WmDU">¿Qué es la Arquitectura Cliente-Servidor?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/flujoPeticionHttp"><span title="El Flujo de una Petición Web" class="linkLabel_WmDU">El Flujo de una Petición Web</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-3 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/componentesComunicacion/"><span title="Componentes de la comunicacion Web" class="categoryLinkLabel_W154">Componentes de la comunicacion Web</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/dominiosDNSHosting"><span title="Dominios, DNS y Hosting" class="linkLabel_WmDU">Dominios, DNS y Hosting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/conectandoloTodo"><span title="Conectandolo todo: Desarrollo web basado en Internet" class="linkLabel_WmDU">Conectandolo todo: Desarrollo web basado en Internet</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/direccionesIP"><span title="Direcciones IP" class="linkLabel_WmDU">Direcciones IP</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docuQuest/docs/backend/fundamentosWeb/devTools"><span title="DevTools de Google Chome" class="linkLabel_WmDU">DevTools de Google Chome</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docuQuest/docs/backend/Node.js/introduction"><span title="Node.js" class="categoryLinkLabel_W154">Node.js</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docuQuest/docs/backend/JSON/queEsJSON"><span title="JSON" class="categoryLinkLabel_W154">JSON</span></a></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docuQuest/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Backend</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Fundamentos de la Web y Http</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Dominios, DNS y Hosting</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Dominios, DNS y Hosting</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-un-dominio">¿Qué es un dominio?<a href="#qué-es-un-dominio" class="hash-link" aria-label="Direct link to ¿Qué es un dominio?" title="Direct link to ¿Qué es un dominio?" translate="no">​</a></h2>
+<p>Un <strong>dominio</strong> es el <strong>nombre legible</strong> que usamos para acceder a una web en lugar de escribir una dirección IP.</p>
+<p>Ejemplo real:</p>
+<ul>
+<li class="">IP del servidor: <code>93.184.216.34</code></li>
+<li class="">Dominio equivalente: <code>example.com</code></li>
+</ul>
+<p>Así, en lugar de escribir una serie de números, simplemente accedemos por nombre.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nombre-de-dominio-vs-dirección-ip">Nombre de dominio vs Dirección IP<a href="#nombre-de-dominio-vs-dirección-ip" class="hash-link" aria-label="Direct link to Nombre de dominio vs Dirección IP" title="Direct link to Nombre de dominio vs Dirección IP" translate="no">​</a></h3>
+<table><thead><tr><th>Concepto</th><th>¿Qué es?</th><th>Ejemplo</th></tr></thead><tbody><tr><td>Dirección IP</td><td>Dirección numérica del servidor donde está alojada una web</td><td><code>93.184.216.34</code></td></tr><tr><td>Nombre de dominio</td><td>Nombre fácil de recordar que apunta a esa IP</td><td><code>example.com</code></td></tr></tbody></table>
+<p>El dominio es como el <strong>nombre de un contacto</strong>, y la IP es como su <strong>número de teléfono</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="estructura-de-un-dominio">Estructura de un dominio<a href="#estructura-de-un-dominio" class="hash-link" aria-label="Direct link to Estructura de un dominio" title="Direct link to Estructura de un dominio" translate="no">​</a></h2>
+<p>Un dominio tiene varias partes. Por ejemplo:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">www.miweb.informativa.es</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>Lo descomponemos así:</p>
+<table><thead><tr><th>Parte</th><th>Qué significa</th></tr></thead><tbody><tr><td><code>.es</code></td><td>TLD (Top-Level Domain) → dominio de nivel superior</td></tr><tr><td><code>informativa</code></td><td>SLD (Second-Level Domain) → nombre principal registrado</td></tr><tr><td><code>miweb</code></td><td>Subdominio</td></tr><tr><td><code>www</code></td><td>Subdominio de tercer nivel (opcional, tradicionalmente web)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tld-top-level-domain">TLD (Top-Level Domain)<a href="#tld-top-level-domain" class="hash-link" aria-label="Direct link to TLD (Top-Level Domain)" title="Direct link to TLD (Top-Level Domain)" translate="no">​</a></h3>
+<ul>
+<li class="">Es la <strong>extensión del dominio</strong>.</li>
+<li class="">Hay dos tipos:<!-- -->
+<ul>
+<li class=""><strong>Genéricos (gTLD):</strong> <code>.com</code>, <code>.net</code>, <code>.org</code>, <code>.info</code>, <code>.xyz</code>...</li>
+<li class=""><strong>Territoriales (ccTLD):</strong> <code>.es</code>, <code>.fr</code>, <code>.ar</code>, <code>.mx</code>, <code>.de</code>...</li>
+</ul>
+</li>
+</ul>
+<p>Ejemplos:</p>
+<ul>
+<li class=""><code>google.com</code> (gTLD)</li>
+<li class=""><code>gob.es</code> (ccTLD de España)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sld-second-level-domain">SLD (Second-Level Domain)<a href="#sld-second-level-domain" class="hash-link" aria-label="Direct link to SLD (Second-Level Domain)" title="Direct link to SLD (Second-Level Domain)" translate="no">​</a></h3>
+<ul>
+<li class="">Es el nombre <strong>real</strong> que tú registras como marca o proyecto.</li>
+<li class="">En <code>openai.com</code>, el SLD es <code>openai</code>.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="subdominios">Subdominios<a href="#subdominios" class="hash-link" aria-label="Direct link to Subdominios" title="Direct link to Subdominios" translate="no">​</a></h3>
+<ul>
+<li class="">Son <strong>divisiones o secciones</strong> de un dominio.</li>
+<li class="">Te permiten crear zonas distintas del sitio sin comprar otro dominio.</li>
+</ul>
+<p>Ejemplos:</p>
+<ul>
+<li class=""><code>blog.miweb.com</code></li>
+<li class=""><code>tienda.ejemplo.net</code></li>
+<li class=""><code>api.spotify.com</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cómo-se-registra-un-dominio">¿Cómo se registra un dominio?<a href="#cómo-se-registra-un-dominio" class="hash-link" aria-label="Direct link to ¿Cómo se registra un dominio?" title="Direct link to ¿Cómo se registra un dominio?" translate="no">​</a></h2>
+<p>Para tener un dominio propio, debes <strong>registrarlo</strong> a tu nombre o empresa.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dónde">¿Dónde?<a href="#dónde" class="hash-link" aria-label="Direct link to ¿Dónde?" title="Direct link to ¿Dónde?" translate="no">​</a></h3>
+<ul>
+<li class="">En empresas llamadas <strong>registradores de dominios</strong>.</li>
+<li class="">Ejemplos: <a href="https://namecheap.com/" target="_blank" rel="noopener noreferrer" class="">Namecheap</a>, <a href="https://godaddy.com/" target="_blank" rel="noopener noreferrer" class="">GoDaddy</a>, <a href="https://domains.google/" target="_blank" rel="noopener noreferrer" class="">Google Domains</a>, <a href="https://dondominio.com/" target="_blank" rel="noopener noreferrer" class="">DonDominio</a>, etc.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cómo-funciona-el-registro">¿Cómo funciona el registro?<a href="#cómo-funciona-el-registro" class="hash-link" aria-label="Direct link to ¿Cómo funciona el registro?" title="Direct link to ¿Cómo funciona el registro?" translate="no">​</a></h3>
+<ol>
+<li class="">Buscas si el dominio está disponible (<code>midominio.com</code>)</li>
+<li class="">Si está libre, puedes <strong>registrarlo por 1 año o más</strong> (pagando una cuota anual)</li>
+<li class="">El dominio se <strong>asocia a tus datos personales o empresa</strong></li>
+<li class="">Puedes modificar sus <strong>registros DNS</strong> para apuntarlo a tu hosting</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="whois-consulta-de-propietarios">WHOIS: consulta de propietarios<a href="#whois-consulta-de-propietarios" class="hash-link" aria-label="Direct link to WHOIS: consulta de propietarios" title="Direct link to WHOIS: consulta de propietarios" translate="no">​</a></h3>
+<p>El sistema <strong>WHOIS</strong> te permite saber <strong>quién es el propietario de un dominio</strong> (a menos que use protección de privacidad).</p>
+<p>🔍 Prueba en:</p>
+<p><a href="https://who.is/" target="_blank" rel="noopener noreferrer" class="">https://who.is</a> o <a href="https://lookup.icann.org/" target="_blank" rel="noopener noreferrer" class="">https://lookup.icann.org</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="icann-el-regulador-de-dominios">ICANN: el regulador de dominios<a href="#icann-el-regulador-de-dominios" class="hash-link" aria-label="Direct link to ICANN: el regulador de dominios" title="Direct link to ICANN: el regulador de dominios" translate="no">​</a></h3>
+<p><strong>ICANN</strong> (Internet Corporation for Assigned Names and Numbers):</p>
+<ul>
+<li class="">Es una <strong>organización sin ánimo de lucro</strong></li>
+<li class="">Gestiona la asignación de nombres de dominio y direcciones IP</li>
+<li class="">Supervisa a los <strong>registradores oficiales</strong></li>
+</ul>
+<p>No puedes registrar dominios directamente con ICANN, solo a través de registradores acreditados.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resumen">Resumen<a href="#resumen" class="hash-link" aria-label="Direct link to Resumen" title="Direct link to Resumen" translate="no">​</a></h2>
+<table><thead><tr><th>Término</th><th>Definición</th></tr></thead><tbody><tr><td>Dominio</td><td>Nombre fácil que sustituye a una IP</td></tr><tr><td>Dirección IP</td><td>Dirección numérica de un servidor</td></tr><tr><td>TLD</td><td>Extensión final del dominio (<code>.com</code>, <code>.es</code>, etc.)</td></tr><tr><td>SLD</td><td>Nombre principal del dominio (<code>miweb</code>, <code>google</code>, etc.)</td></tr><tr><td>Subdominio</td><td>División del dominio (<code>blog.</code>, <code>tienda.</code>, <code>api.</code>)</td></tr><tr><td>Registrador</td><td>Empresa donde puedes comprar un dominio</td></tr><tr><td>WHOIS</td><td>Sistema para consultar propietarios de dominios</td></tr><tr><td>ICANN</td><td>Organización que regula dominios e IPs</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hosting-y-servidores-web">Hosting y servidores web<a href="#hosting-y-servidores-web" class="hash-link" aria-label="Direct link to Hosting y servidores web" title="Direct link to Hosting y servidores web" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-un-hosting">¿Qué es un hosting?<a href="#qué-es-un-hosting" class="hash-link" aria-label="Direct link to ¿Qué es un hosting?" title="Direct link to ¿Qué es un hosting?" translate="no">​</a></h3>
+<p>Un <strong>hosting</strong> (o alojamiento web) es un <strong>servicio que te alquila espacio en un servidor conectado a Internet</strong> para que puedas <strong>subir tu sitio web</strong> y que esté disponible para todo el mundo 24/7.</p>
+<p><strong>Ejemplo práctico:</strong></p>
+<p>Piensa en el hosting como <strong>un terreno en Internet</strong> donde vas a construir tu casa (tu web). El dominio es la <strong>dirección postal</strong> de esa casa.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tipos-de-hosting">Tipos de hosting<a href="#tipos-de-hosting" class="hash-link" aria-label="Direct link to Tipos de hosting" title="Direct link to Tipos de hosting" translate="no">​</a></h2>
+<p>Hay diferentes tipos de hosting según <strong>el tamaño, la potencia, el precio y el nivel de control</strong> que necesites.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-hosting-compartido">1. <strong>Hosting compartido</strong><a href="#1-hosting-compartido" class="hash-link" aria-label="Direct link to 1-hosting-compartido" title="Direct link to 1-hosting-compartido" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Barato y sencillo</strong></li>
+<li class="">Tu web <strong>comparte recursos</strong> (RAM, CPU, ancho de banda) con otras webs</li>
+<li class="">Ideal para webs pequeñas o personales</li>
+</ul>
+<p>🔍 Ejemplo: una tienda básica, un blog, un portfolio</p>
+<p>Ventajas:</p>
+<ul>
+<li class="">Económico</li>
+<li class="">Fácil de usar (panel tipo cPanel)</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li class="">Lentitud si otras webs consumen muchos recursos</li>
+<li class="">Poca personalización</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-vps-servidor-privado-virtual">2. <strong>VPS (Servidor Privado Virtual)</strong><a href="#2-vps-servidor-privado-virtual" class="hash-link" aria-label="Direct link to 2-vps-servidor-privado-virtual" title="Direct link to 2-vps-servidor-privado-virtual" translate="no">​</a></h3>
+<ul>
+<li class="">Una máquina virtual dentro de un servidor físico</li>
+<li class=""><strong>Más control y recursos dedicados</strong></li>
+<li class="">Ideal para desarrolladores o proyectos medianos</li>
+</ul>
+<p>🔍 Ejemplo: web con tráfico moderado + base de datos</p>
+<p>Ventajas:</p>
+<ul>
+<li class="">Más potencia</li>
+<li class="">Acceso root (control total)</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li class="">Requiere conocimientos técnicos</li>
+<li class="">Más caro que el compartido</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-servidor-dedicado">3. <strong>Servidor dedicado</strong><a href="#3-servidor-dedicado" class="hash-link" aria-label="Direct link to 3-servidor-dedicado" title="Direct link to 3-servidor-dedicado" translate="no">​</a></h3>
+<ul>
+<li class="">Tienes <strong>un servidor físico entero solo para ti</strong></li>
+<li class="">Máximo control, alto rendimiento</li>
+<li class="">Para grandes empresas o proyectos con mucho tráfico</li>
+</ul>
+<p>Ejemplo: eCommerce tipo Amazon, plataformas de streaming</p>
+<p>Ventajas:</p>
+<ul>
+<li class="">Todo el rendimiento es tuyo</li>
+<li class="">Muy seguro</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li class="">Muy caro</li>
+<li class="">Necesitas saber administración de servidores</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-hosting-en-la-nube-cloud">4. <strong>Hosting en la nube (Cloud)</strong><a href="#4-hosting-en-la-nube-cloud" class="hash-link" aria-label="Direct link to 4-hosting-en-la-nube-cloud" title="Direct link to 4-hosting-en-la-nube-cloud" translate="no">​</a></h3>
+<ul>
+<li class="">Tu web <strong>no depende de un solo servidor</strong>, sino de <strong>una red de servidores</strong></li>
+<li class="">Escalable, muy confiable y rápido</li>
+</ul>
+<p>🔍 Ejemplo: Google Cloud, AWS, Vercel, Netlify, Heroku</p>
+<p>Ventajas:</p>
+<ul>
+<li class="">Se adapta al tráfico automáticamente</li>
+<li class="">Escalable, rápido, seguro</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li class="">Costes variables (según uso)</li>
+<li class="">Puede ser complejo al principio</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selección-del-proveedor-de-hosting"><strong>Selección del Proveedor de Hosting</strong><a href="#selección-del-proveedor-de-hosting" class="hash-link" aria-label="Direct link to selección-del-proveedor-de-hosting" title="Direct link to selección-del-proveedor-de-hosting" translate="no">​</a></h3>
+<p>La elección de un proveedor de hosting es una de las decisiones más importantes en la publicación de una página web. Los proveedores de hosting ofrecen servicios que permiten que los sitios web sean accesibles en Internet. Estos servicios incluyen servidores físicos o virtuales, almacenamiento, ancho de banda y soporte técnico.</p>
+<p>Es crucial seleccionar un proveedor de hosting que ofrezca un buen equilibrio entre rendimiento, fiabilidad y costo. Además, es importante considerar aspectos como la escalabilidad, la seguridad, el soporte técnico y la ubicación de los servidores, ya que estos factores pueden afectar significativamente la experiencia del usuario y el posicionamiento en motores de búsqueda.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="relación-entre-dominio-y-hosting">Relación entre dominio y hosting<a href="#relación-entre-dominio-y-hosting" class="hash-link" aria-label="Direct link to Relación entre dominio y hosting" title="Direct link to Relación entre dominio y hosting" translate="no">​</a></h2>
+<p>Para que una web funcione necesitas <strong>ambas cosas</strong>:</p>
+<table><thead><tr><th>Dominio</th><th>Hosting</th></tr></thead><tbody><tr><td>Es la dirección</td><td>Es el lugar donde está la web</td></tr><tr><td>Se registra aparte</td><td>Se contrata con un proveedor</td></tr><tr><td>Se apunta al hosting mediante DNS</td><td>Alberga los archivos reales del sitio</td></tr></tbody></table>
+<p>💡 Cuando compras un dominio, debes <strong>apuntarlo al hosting</strong> modificando los <strong>registros DNS</strong>, que veremos en el siguiente módulo.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-un-servidor-web">¿Qué es un servidor web?<a href="#qué-es-un-servidor-web" class="hash-link" aria-label="Direct link to ¿Qué es un servidor web?" title="Direct link to ¿Qué es un servidor web?" translate="no">​</a></h2>
+<p>Un <strong>servidor web</strong> es el <strong>software que recibe las peticiones HTTP</strong> y responde con contenido (HTML, CSS, JS, imágenes, etc.).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="los-más-comunes">Los más comunes:<a href="#los-más-comunes" class="hash-link" aria-label="Direct link to Los más comunes:" title="Direct link to Los más comunes:" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apache">Apache<a href="#apache" class="hash-link" aria-label="Direct link to Apache" title="Direct link to Apache" translate="no">​</a></h3>
+<ul>
+<li class="">Muy usado, <strong>flexible y estable</strong></li>
+<li class="">Se configura con archivos <code>.htaccess</code></li>
+<li class="">Ideal para proyectos PHP (WordPress, Laravel...)</li>
+</ul>
+<p>Ejemplo: muchos hostings compartidos usan Apache</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nginx-se-pronuncia-engine-x">Nginx (se pronuncia “Engine-X”)<a href="#nginx-se-pronuncia-engine-x" class="hash-link" aria-label="Direct link to Nginx (se pronuncia “Engine-X”)" title="Direct link to Nginx (se pronuncia “Engine-X”)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Rápido y eficiente</strong>, ideal para alto tráfico</li>
+<li class="">Usa menos memoria</li>
+<li class="">Se usa mucho en sitios modernos, APIs, Node.js, React...</li>
+</ul>
+<p>Ejemplo: Netflix, Dropbox, WordPress.com usan Nginx</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="otros-servidores">Otros servidores:<a href="#otros-servidores" class="hash-link" aria-label="Direct link to Otros servidores:" title="Direct link to Otros servidores:" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>LiteSpeed</strong> (rápido, compatible con Apache)</li>
+<li class=""><strong>Caddy</strong> (sencillo, con HTTPS automático)</li>
+<li class=""><strong>Node.js</strong> también se puede usar como servidor (Express.js)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resumen-1">Resumen<a href="#resumen-1" class="hash-link" aria-label="Direct link to Resumen" title="Direct link to Resumen" translate="no">​</a></h2>
+<table><thead><tr><th>Concepto</th><th>Qué significa</th></tr></thead><tbody><tr><td>Hosting</td><td>Servicio que aloja tu web en un servidor conectado a Internet</td></tr><tr><td>Hosting compartido</td><td>Varias webs en el mismo servidor</td></tr><tr><td>VPS</td><td>Servidor virtual con más control y recursos</td></tr><tr><td>Servidor dedicado</td><td>Servidor físico exclusivo</td></tr><tr><td>Cloud hosting</td><td>Alojamiento en la nube, escalable</td></tr><tr><td>Dominio + hosting</td><td>El dominio apunta al hosting mediante registros DNS</td></tr><tr><td>Servidor web</td><td>Software que entrega la web al navegador (Apache, Nginx...)</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dns-domain-name-system">DNS (Domain Name System)<a href="#dns-domain-name-system" class="hash-link" aria-label="Direct link to DNS (Domain Name System)" title="Direct link to DNS (Domain Name System)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-el-dns">¿Qué es el DNS?<a href="#qué-es-el-dns" class="hash-link" aria-label="Direct link to ¿Qué es el DNS?" title="Direct link to ¿Qué es el DNS?" translate="no">​</a></h3>
+<p>DNS significa <strong>Domain Name System</strong> y es como <strong>la guía telefónica de Internet</strong>.</p>
+<p><strong>Función principal:</strong></p>
+<p>Convertir nombres de dominio fáciles de recordar (como <code>google.com</code>) en direcciones IP que las computadoras entienden (como <code>142.250.186.206</code>).</p>
+<p><strong>Ejemplo real:</strong></p>
+<p>Cuando escribes <code>facebook.com</code>, tu navegador no entiende ese texto. El sistema DNS lo convierte en una dirección IP para poder conectarse al servidor correcto.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cómo-funciona-el-proceso-de-resolución-de-nombres">¿Cómo funciona el proceso de resolución de nombres?<a href="#cómo-funciona-el-proceso-de-resolución-de-nombres" class="hash-link" aria-label="Direct link to ¿Cómo funciona el proceso de resolución de nombres?" title="Direct link to ¿Cómo funciona el proceso de resolución de nombres?" translate="no">​</a></h2>
+<p>Vamos a explicarlo paso a paso con un ejemplo:</p>
+<p>Supón que visitas <code>www.ejemplo.com</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paso-a-paso">Paso a paso:<a href="#paso-a-paso" class="hash-link" aria-label="Direct link to Paso a paso:" title="Direct link to Paso a paso:" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Consulta caché local</strong> (tu navegador o sistema operativo guarda la IP si ya la usaste antes).</p>
+</li>
+<li class="">
+<p>Si no la encuentra, consulta tu <strong>servidor DNS configurado</strong> (por tu ISP o uno público como <code>8.8.8.8</code> de Google).</p>
+</li>
+<li class="">
+<p>Ese servidor DNS pregunta a los <strong>servidores raíz</strong>:</p>
+<blockquote>
+<p>“¿Dónde están los servidores del TLD .com?”</p>
+</blockquote>
+</li>
+<li class="">
+<p>Luego pregunta a los <strong>servidores del TLD</strong> (<code>.com</code>):</p>
+<blockquote>
+<p>“¿Dónde están los DNS autorizados para ejemplo.com?”</p>
+</blockquote>
+</li>
+<li class="">
+<p>Por fin, contacta a los <strong>servidores de nombres de <code>ejemplo.com</code></strong>, que le devuelven la IP final.</p>
+</li>
+<li class="">
+<p>Tu navegador se conecta a esa IP y carga la web.</p>
+</li>
+</ol>
+<p>Este proceso suele tardar <strong>menos de 1 segundo</strong> gracias al uso de <strong>cachés</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tipos-de-registros-dns">Tipos de registros DNS<a href="#tipos-de-registros-dns" class="hash-link" aria-label="Direct link to Tipos de registros DNS" title="Direct link to Tipos de registros DNS" translate="no">​</a></h2>
+<p>En los DNS se usan diferentes tipos de <strong>registros</strong> para manejar diferentes funciones:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-address"><code>A</code> (Address)<a href="#a-address" class="hash-link" aria-label="Direct link to a-address" title="Direct link to a-address" translate="no">​</a></h3>
+<ul>
+<li class="">Apunta un dominio a una dirección IPv4.</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ejemplo.com → 93.184.216.34</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="aaaa"><code>AAAA</code><a href="#aaaa" class="hash-link" aria-label="Direct link to aaaa" title="Direct link to aaaa" translate="no">​</a></h3>
+<ul>
+<li class="">Igual que <code>A</code>, pero para direcciones IPv6.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cname-canonical-name"><code>CNAME</code> (Canonical Name)<a href="#cname-canonical-name" class="hash-link" aria-label="Direct link to cname-canonical-name" title="Direct link to cname-canonical-name" translate="no">​</a></h3>
+<ul>
+<li class="">Apunta un dominio <strong>a otro dominio</strong>, no a una IP.</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">www.ejemplo.com → ejemplo.com</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<p>(Se usa para redirigir subdominios)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mx-mail-exchange"><code>MX</code> (Mail Exchange)<a href="#mx-mail-exchange" class="hash-link" aria-label="Direct link to mx-mail-exchange" title="Direct link to mx-mail-exchange" translate="no">​</a></h3>
+<ul>
+<li class="">Define <strong>los servidores de correo electrónico</strong> de ese dominio.</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ejemplo.com → mail.servidorcorreo.com (prioridad 10)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="txt"><code>TXT</code><a href="#txt" class="hash-link" aria-label="Direct link to txt" title="Direct link to txt" translate="no">​</a></h3>
+<ul>
+<li class="">Registro de texto. Se usa para:<!-- -->
+<ul>
+<li class="">Verificaciones de propiedad (Google, Microsoft...)</li>
+<li class="">Seguridad del correo (SPF, DKIM, DMARC)</li>
+</ul>
+</li>
+</ul>
+<p>🔍 Ejemplo:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">&quot;v=spf1 include:_spf.google.com ~all&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ns-name-server"><code>NS</code> (Name Server)<a href="#ns-name-server" class="hash-link" aria-label="Direct link to ns-name-server" title="Direct link to ns-name-server" translate="no">​</a></h3>
+<ul>
+<li class="">Define <strong>qué servidores DNS son responsables</strong> del dominio.</li>
+</ul>
+<p>🔍 Ejemplo:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ejemplo.com → ns1.dondominio.com, ns2.dondominio.com</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-el-ttl">¿Qué es el TTL?<a href="#qué-es-el-ttl" class="hash-link" aria-label="Direct link to ¿Qué es el TTL?" title="Direct link to ¿Qué es el TTL?" translate="no">​</a></h2>
+<p><strong>TTL</strong> = Time To Live</p>
+<p>Indica <strong>cuánto tiempo puede almacenarse la información DNS en caché</strong> antes de actualizarla.</p>
+<p>Ejemplo:</p>
+<p>TTL = 3600 segundos → la IP de ese dominio se guarda por <strong>1 hora</strong> en caché.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="para-qué-sirve">¿Para qué sirve?<a href="#para-qué-sirve" class="hash-link" aria-label="Direct link to ¿Para qué sirve?" title="Direct link to ¿Para qué sirve?" translate="no">​</a></h3>
+<ul>
+<li class="">Evita hacer consultas DNS cada vez (más rápido).</li>
+<li class="">Si haces cambios (como cambiar de hosting), puede que tarde un poco en “propagarse”.</li>
+</ul>
+<p>##¿Qué significa “propagar un dominio”?</p>
+<p>Cuando cambias los DNS de tu dominio o alguno de sus registros, ese cambio <strong>tarda un tiempo en actualizarse globalmente</strong>.</p>
+<p>Este proceso se llama <strong>propagación DNS</strong>, y puede durar desde <strong>unos minutos hasta 48 horas</strong>, dependiendo del TTL anterior y las zonas del mundo.</p>
+<p>Mientras se propaga:</p>
+<ul>
+<li class="">Algunos usuarios verán la versión antigua.</li>
+<li class="">Otros ya verán la nueva.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resumen-2">Resumen<a href="#resumen-2" class="hash-link" aria-label="Direct link to Resumen" title="Direct link to Resumen" translate="no">​</a></h2>
+<table><thead><tr><th>Concepto</th><th>Explicación</th></tr></thead><tbody><tr><td>DNS</td><td>Sistema que convierte nombres de dominio en IPs</td></tr><tr><td>Proceso de resolución</td><td>Serie de pasos desde el dominio hasta la IP final</td></tr><tr><td>Registros <code>A</code></td><td>Apuntan a IPs IPv4</td></tr><tr><td>Registros <code>CNAME</code></td><td>Apuntan a otros dominios</td></tr><tr><td>Registros <code>MX</code></td><td>Configuran servidores de correo</td></tr><tr><td>Registros <code>TXT</code></td><td>Información adicional (verificaciones, seguridad)</td></tr><tr><td>Registros <code>NS</code></td><td>Qué DNS gestionan el dominio</td></tr><tr><td>TTL</td><td>Tiempo que se guarda la info DNS en caché</td></tr><tr><td>Propagación DNS</td><td>Tiempo que tarda en reflejarse un cambio DNS en todo el mundo</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/OslarCode/OslarCode/docs/backend/fundamentosWeb/dominiosDNSHosting.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docuQuest/docs/backend/fundamentosWeb/componentesComunicacion/certificadosHTTP"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Certificados HTTPs</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docuQuest/docs/backend/fundamentosWeb/conectandoloTodo"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Conectandolo todo: Desarrollo web basado en Internet</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#qué-es-un-dominio" class="table-of-contents__link toc-highlight">¿Qué es un dominio?</a><ul><li><a href="#nombre-de-dominio-vs-dirección-ip" class="table-of-contents__link toc-highlight">Nombre de dominio vs Dirección IP</a></li></ul></li><li><a href="#estructura-de-un-dominio" class="table-of-contents__link toc-highlight">Estructura de un dominio</a><ul><li><a href="#tld-top-level-domain" class="table-of-contents__link toc-highlight">TLD (Top-Level Domain)</a></li><li><a href="#sld-second-level-domain" class="table-of-contents__link toc-highlight">SLD (Second-Level Domain)</a></li><li><a href="#subdominios" class="table-of-contents__link toc-highlight">Subdominios</a></li></ul></li><li><a href="#cómo-se-registra-un-dominio" class="table-of-contents__link toc-highlight">¿Cómo se registra un dominio?</a><ul><li><a href="#dónde" class="table-of-contents__link toc-highlight">¿Dónde?</a></li><li><a href="#cómo-funciona-el-registro" class="table-of-contents__link toc-highlight">¿Cómo funciona el registro?</a></li><li><a href="#whois-consulta-de-propietarios" class="table-of-contents__link toc-highlight">WHOIS: consulta de propietarios</a></li><li><a href="#icann-el-regulador-de-dominios" class="table-of-contents__link toc-highlight">ICANN: el regulador de dominios</a></li></ul></li><li><a href="#resumen" class="table-of-contents__link toc-highlight">Resumen</a></li><li><a href="#hosting-y-servidores-web" class="table-of-contents__link toc-highlight">Hosting y servidores web</a><ul><li><a href="#qué-es-un-hosting" class="table-of-contents__link toc-highlight">¿Qué es un hosting?</a></li></ul></li><li><a href="#tipos-de-hosting" class="table-of-contents__link toc-highlight">Tipos de hosting</a><ul><li><a href="#1-hosting-compartido" class="table-of-contents__link toc-highlight">1. <strong>Hosting compartido</strong></a></li><li><a href="#2-vps-servidor-privado-virtual" class="table-of-contents__link toc-highlight">2. <strong>VPS (Servidor Privado Virtual)</strong></a></li><li><a href="#3-servidor-dedicado" class="table-of-contents__link toc-highlight">3. <strong>Servidor dedicado</strong></a></li><li><a href="#4-hosting-en-la-nube-cloud" class="table-of-contents__link toc-highlight">4. <strong>Hosting en la nube (Cloud)</strong></a></li><li><a href="#selección-del-proveedor-de-hosting" class="table-of-contents__link toc-highlight"><strong>Selección del Proveedor de Hosting</strong></a></li></ul></li><li><a href="#relación-entre-dominio-y-hosting" class="table-of-contents__link toc-highlight">Relación entre dominio y hosting</a></li><li><a href="#qué-es-un-servidor-web" class="table-of-contents__link toc-highlight">¿Qué es un servidor web?</a><ul><li><a href="#los-más-comunes" class="table-of-contents__link toc-highlight">Los más comunes:</a></li><li><a href="#apache" class="table-of-contents__link toc-highlight">Apache</a></li><li><a href="#nginx-se-pronuncia-engine-x" class="table-of-contents__link toc-highlight">Nginx (se pronuncia “Engine-X”)</a></li><li><a href="#otros-servidores" class="table-of-contents__link toc-highlight">Otros servidores:</a></li></ul></li><li><a href="#resumen-1" class="table-of-contents__link toc-highlight">Resumen</a></li><li><a href="#dns-domain-name-system" class="table-of-contents__link toc-highlight">DNS (Domain Name System)</a><ul><li><a href="#qué-es-el-dns" class="table-of-contents__link toc-highlight">¿Qué es el DNS?</a></li></ul></li><li><a href="#cómo-funciona-el-proceso-de-resolución-de-nombres" class="table-of-contents__link toc-highlight">¿Cómo funciona el proceso de resolución de nombres?</a><ul><li><a href="#paso-a-paso" class="table-of-contents__link toc-highlight">Paso a paso:</a></li></ul></li><li><a href="#tipos-de-registros-dns" class="table-of-contents__link toc-highlight">Tipos de registros DNS</a><ul><li><a href="#a-address" class="table-of-contents__link toc-highlight"><code>A</code> (Address)</a></li><li><a href="#aaaa" class="table-of-contents__link toc-highlight"><code>AAAA</code></a></li><li><a href="#cname-canonical-name" class="table-of-contents__link toc-highlight"><code>CNAME</code> (Canonical Name)</a></li><li><a href="#mx-mail-exchange" class="table-of-contents__link toc-highlight"><code>MX</code> (Mail Exchange)</a></li><li><a href="#txt" class="table-of-contents__link toc-highlight"><code>TXT</code></a></li><li><a href="#ns-name-server" class="table-of-contents__link toc-highlight"><code>NS</code> (Name Server)</a></li></ul></li><li><a href="#qué-es-el-ttl" class="table-of-contents__link toc-highlight">¿Qué es el TTL?</a><ul><li><a href="#para-qué-sirve" class="table-of-contents__link toc-highlight">¿Para qué sirve?</a></li></ul></li><li><a href="#resumen-2" class="table-of-contents__link toc-highlight">Resumen</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Navegación</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docuQuest/">Inicio</a></li><li class="footer__item"><a class="footer__link-item" href="/docuQuest/docs/intro">Documentación</a></li><li class="footer__item"><a class="footer__link-item" href="/docuQuest/blog">Blog</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Recursos</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/OslarCode" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="mailto:tuemail@ejemplo.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contacto<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 OslarCode. Todos los derechos reservados.</div></div></div></footer></div>
+</body>
+</html>
