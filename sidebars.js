@@ -436,7 +436,16 @@ const sidebars = {
           type: "category",
           label: "Node.js",
           collapsed: true,
-          items: ["backend/Node.js/introduction"],
+          items: [
+            "backend/Node.js/introduction",
+            "backend/Node.js/modulosGestionDependenciasNPM",
+            "backend/Node.js/asincronia",
+            "backend/Node.js/sistemaArchivosProcesos",
+            "backend/Node.js/servidorWeb",
+            "backend/Node.js/expressJS",
+            "backend/Node.js/mongoDBMongoose",
+            "backend/Node.js/seguridadBuenasPracticas",
+          ],
         },
         {
           type: "category",
