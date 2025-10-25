@@ -5,14 +5,9 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 
-// Si en tu archivo original ya tienes estructuras semejantes (hero + features + tech + cta),
-// este componente sustituye únicamente la presentación por una versión minimalista.
-
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
-  // Lista de “píldoras” del header: usa exactamente los mismos textos que ya tenías en tus 3 tarjetas.
-  // Si en tu proyecto estos textos vienen de otra fuente, reemplaza aquí por los tuyos.
   const headerItems = [
     { title: "Aprende Desarrollo Web", subtitle: "Tutoriales paso a paso" },
     { title: "Contenido Actualizado", subtitle: "Tecnologías modernas" },
@@ -36,11 +31,11 @@ function HomepageHeader() {
             >
               Empezar
             </Link>
-            {/* Eliminado el acceso al Blog */}
+            {}
           </div>
         </div>
 
-        {/* Sustitución de las 3 “cards con iconos” por una lista simple, sin iconos */}
+        {}
         <ul className={styles.featureList}>
           {headerItems.map((item, i) => (
             <li className={styles.featureItem} key={i}>
@@ -55,8 +50,6 @@ function HomepageHeader() {
 }
 
 function TechShowcase() {
-  // Si antes tenías un array de tecnologías con iconos/colores,
-  // aquí solo mostramos el nombre en una lista simple.
   const technologies = [
     { name: "HTML" },
     { name: "CSS" },
@@ -80,7 +73,7 @@ function TechShowcase() {
           </p>
         </div>
 
-        {/* Lista minimalista (sin tarjetas, sin iconos) */}
+        {}
         <ul className={styles.techList}>
           {technologies.map((tech, i) => (
             <li key={i}>{tech.name}</li>
@@ -104,7 +97,7 @@ function CTA() {
           <Link className="button button--primary button--lg" to="/docs/intro">
             Ir a la documentación
           </Link>
-          {/* Eliminado el acceso al Blog */}
+          {}
         </div>
       </div>
     </section>
