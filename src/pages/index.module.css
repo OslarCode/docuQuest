@@ -1,4 +1,4 @@
-/* Hero limpio y neutro (sin degradado) */
+/* HERO minimal: sin degradado ni glassmorphism */
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -10,18 +10,18 @@
 
 .heroContent {
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
 }
 
 .hero__title {
   font-size: 3rem;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .hero__subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
   opacity: 0.9;
 }
 
@@ -33,50 +33,37 @@
   flex-wrap: wrap;
 }
 
-/* Botón outline se unifica con custom.css (no forzar aquí colores) */
-
-.githubIcon {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 0.5rem;
-}
-
-/* Tarjetas flotantes: sin glassmorphism */
-.heroVisual {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+/* Lista simple en lugar de las 3 cards con iconos */
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
   margin-top: 2rem;
+  padding: 0;
+  list-style: none;
 }
 
-.floatingCard {
+.featureItem {
   background: var(--ifm-background-color);
-  border: 1px solid var(--neutral-200);
+  border: 1px solid var(--neutral-200, #e5e7eb);
   border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  width: 180px;
-  animation: none; /* minimalista: sin flotación */
+  padding: 1rem 1.25rem;
+  text-align: left;
 }
 
-.cardIcon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.floatingCard h4 {
-  margin: 0.5rem 0;
+.featureItem h4 {
+  margin: 0 0 0.35rem;
   font-size: 1.1rem;
+  font-weight: 700;
 }
 
-.floatingCard p {
+.featureItem p {
   margin: 0;
-  opacity: 0.8;
-  font-size: 0.9rem;
+  opacity: 0.9;
+  font-size: 0.95rem;
 }
 
-/* Sección de tecnologías limpia */
+/* Tech section minimal: sin degradado, solo lista limpia */
 .techSection {
   padding: 4rem 0;
   text-align: center;
@@ -88,59 +75,39 @@
 
 .techContent {
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
 }
 
 .sectionSubtitle {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
   opacity: 0.9;
 }
 
-.techVisual {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+/* Lista de tecnologías (sin cards, sin iconos) */
+.techList {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  max-width: 720px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+  text-align: left;
 }
 
-.techFloatingCard {
-  background: var(--ifm-background-color);
-  border: 1px solid var(--neutral-200);
-  border-radius: 12px;
-  padding: 1.25rem 1rem;
-  text-align: center;
-  width: 140px;
-  animation: none;
+.techList li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--neutral-200, #e5e7eb);
 }
 
-.techCardIcon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 0.8rem;
-  color: white;
-  background: var(--ifm-color-primary); /* sin inline styles en React */
-}
-
-.techFloatingCard h4 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* CTA sólida en primario */
+/* CTA sólida con el primario */
 .ctaSection {
   padding: 5rem 0;
   background: var(--ifm-color-primary);
@@ -149,14 +116,15 @@
 }
 
 .ctaContent h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
 }
 
 .ctaContent p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  opacity: 0.95;
 }
 
 .ctaButtons {
@@ -167,54 +135,23 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 996px) {
+  .featureList {
+    grid-template-columns: 1fr;
+  }
+  .techList {
+    grid-template-columns: 1fr 1fr;
+  }
   .hero__title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   .hero__subtitle {
-    font-size: 1.2rem;
-  }
-  .buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .floatingCard {
-    width: 140px;
-    padding: 1rem;
-  }
-  .sectionTitle {
-    font-size: 2rem;
-  }
-  .sectionSubtitle {
-    font-size: 1.1rem;
-  }
-  .techFloatingCard {
-    width: 120px;
-    padding: 1rem 0.5rem;
-  }
-  .techCardIcon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  .techFloatingCard h4 {
-    font-size: 0.9rem;
-  }
-  .ctaContent h2 {
-    font-size: 2rem;
-  }
-  .ctaButtons {
-    flex-direction: column;
-    align-items: center;
+    font-size: 1.05rem;
   }
 }
 
-@media (max-width: 480px) {
-  .techVisual {
-    gap: 1rem;
-  }
-  .techFloatingCard {
-    width: 100px;
-    padding: 0.8rem 0.3rem;
+@media (max-width: 640px) {
+  .techList {
+    grid-template-columns: 1fr;
   }
 }

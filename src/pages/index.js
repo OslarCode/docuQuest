@@ -1,123 +1,110 @@
+import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
-
-import Heading from "@theme/Heading";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
+
+// Si en tu archivo original ya tienes estructuras semejantes (hero + features + tech + cta),
+// este componente sustituye únicamente la presentación por una versión minimalista.
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+
+  // Lista de “píldoras” del header: usa exactamente los mismos textos que ya tenías en tus 3 tarjetas.
+  // Si en tu proyecto estos textos vienen de otra fuente, reemplaza aquí por los tuyos.
+  const headerItems = [
+    { title: "Aprende Desarrollo Web", subtitle: "Tutoriales paso a paso" },
+    { title: "Contenido Actualizado", subtitle: "Tecnologías modernas" },
+    { title: "Enfoque Práctico", subtitle: "Ejemplos reales" },
+  ];
+
   return (
     <header className={clsx("hero", styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroContent}>
-          <Heading as="h1" className="hero__title">
-            {siteConfig.title}
-          </Heading>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className={styles.hero__title}>
+            {siteConfig.title ?? "DocuQuest"}
+          </h1>
+          <p className={styles.hero__subtitle}>
+            {siteConfig.tagline ?? "Documentación clara, sin ruido visual."}
+          </p>
           <div className={styles.buttons}>
             <Link
-              className="button button--secondary button--lg"
+              className="button button--primary button--lg"
               to="/docs/intro"
             >
-              Comenzar Tutorial - 5min ⏱️
+              Empezar
             </Link>
+            {/* Eliminado el acceso al Blog */}
           </div>
         </div>
-        <div className={styles.heroVisual}>
-          <div className={styles.floatingCard}>
-            <div className={styles.cardIcon}>📚</div>
-            <h4>Aprende Desarrollo Web</h4>
-            <p>Tutoriales paso a paso</p>
-          </div>
-          <div className={styles.floatingCard}>
-            <div className={styles.cardIcon}>⚡</div>
-            <h4>Contenido Actualizado</h4>
-            <p>Tecnologías modernas</p>
-          </div>
-          <div className={styles.floatingCard}>
-            <div className={styles.cardIcon}>🎯</div>
-            <h4>Enfoque Práctico</h4>
-            <p>Ejemplos reales</p>
-          </div>
-        </div>
+
+        {/* Sustitución de las 3 “cards con iconos” por una lista simple, sin iconos */}
+        <ul className={styles.featureList}>
+          {headerItems.map((item, i) => (
+            <li className={styles.featureItem} key={i}>
+              <h4>{item.title}</h4>
+              <p>{item.subtitle}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );
 }
 
 function TechShowcase() {
+  // Si antes tenías un array de tecnologías con iconos/colores,
+  // aquí solo mostramos el nombre en una lista simple.
   const technologies = [
-    { name: "React", icon: "⚛️", color: "#61dafb" },
-    { name: "JavaScript", icon: "🟨", color: "#f7df1e" },
-    { name: "Bases de datos", icon: "🔷", color: "#3178c6" },
-    { name: "Node.js", icon: "📦", color: "#339933" },
-    { name: "CSS", icon: "🎨", color: "#1572b6" },
-    { name: "HTML", icon: "🌐", color: "#e34f26" },
+    { name: "HTML" },
+    { name: "CSS" },
+    { name: "JavaScript" },
+    { name: "React" },
+    { name: "Node.js" },
+    { name: "Express" },
+    { name: "SQLite" },
+    { name: "JSON" },
+    { name: "Pruebas y docs" },
   ];
 
   return (
     <section className={clsx("hero", styles.techSection)}>
       <div className="container">
         <div className={styles.techContent}>
-          <Heading as="h2" className={clsx("hero__title", styles.sectionTitle)}>
-            Tecnologías que Cubrimos
-          </Heading>
-          <p className={clsx("hero__subtitle", styles.sectionSubtitle)}>
-            Aprende las tecnologías más demandadas del desarrollo web moderno
+          <h2 className={styles.sectionTitle}>Tecnologías que Cubrimos</h2>
+          <p className={styles.sectionSubtitle}>
+            Una plataforma diseñada específicamente para desarrolladores que
+            buscan aprender y crecer
           </p>
         </div>
-        <div className={styles.techVisual}>
-          {technologies.map((tech, index) => (
-            <div
-              key={index}
-              className={styles.techFloatingCard}
-              style={{ animationDelay: `${index * 0.5}s` }}
-            >
-              <div
-                className={styles.techCardIcon}
-                style={{ backgroundColor: tech.color }}
-              >
-                {tech.icon}
-              </div>
-              <h4>{tech.name}</h4>
-            </div>
+
+        {/* Lista minimalista (sin tarjetas, sin iconos) */}
+        <ul className={styles.techList}>
+          {technologies.map((tech, i) => (
+            <li key={i}>{tech.name}</li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
 }
 
-function CTASection() {
+function CTA() {
   return (
     <section className={styles.ctaSection}>
-      <div className="container">
-        <div className={styles.ctaContent}>
-          <Heading as="h2">
-            ¿Listo para comenzar tu viaje en desarrollo web?
-          </Heading>
-          <p>
-            Únete a nuestra comunidad y accede a todos nuestros recursos
-            gratuitos
-          </p>
-          <div className={styles.ctaButtons}>
-            <Link
-              className="button button--primary button--lg"
-              to="/docs/intro"
-            >
-              Comenzar Ahora
-            </Link>
-            <Link
-              className="button button--outline button--lg"
-              to="https://github.com/OslarCode/docuQuest"
-              target="_blank"
-            >
-              Contribuir en GitHub
-            </Link>
-          </div>
+      <div className="container ctaContent">
+        <h2>Abre la guía y empieza</h2>
+        <p>
+          La documentación está pensada para leerse de arriba abajo, sin
+          distracciones.
+        </p>
+        <div className={styles.ctaButtons}>
+          <Link className="button button--primary button--lg" to="/docs/intro">
+            Ir a la documentación
+          </Link>
+          {/* Eliminado el acceso al Blog */}
         </div>
       </div>
     </section>
@@ -125,19 +112,14 @@ function CTASection() {
 }
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} - Aprende Desarrollo Web`}
-      description="DocuQuest es una plataforma educativa con tutoriales sobre tecnologías clave para el desarrollo web moderno. Aprende React, JavaScript, TypeScript y más."
+      title="DocuQuest"
+      description="Documentación minimalista con Docusaurus"
     >
       <HomepageHeader />
-
-      <main>
-        <HomepageFeatures />
-      </main>
       <TechShowcase />
-      <CTASection />
+      <CTA />
     </Layout>
   );
 }

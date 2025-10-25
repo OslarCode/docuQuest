@@ -68,21 +68,36 @@
 
 .footer {
   background: var(--ifm-footer-background-color);
-  color: white;
-  padding-top: 2rem;
+  color: #fff;
+  text-align: center; /* centra títulos, enlaces y textos */
+  padding: 3rem 0 2rem;
 }
 
 .footer__links {
-  justify-content: center;
+  justify-content: center; /* centra las columnas */
+  gap: 3rem;
 }
 
 .footer__title {
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer__link-item {
   color: var(--brand-indigo-600);
+  text-decoration: none;
+  padding: 0.2rem 0;
 }
+
 .footer__link-item:hover {
   color: var(--brand-indigo-500);
+}
+
+.footer__bottom {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center; /* centra también el copyright */
+  opacity: 0.8;
 }
