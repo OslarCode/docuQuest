@@ -12,7 +12,7 @@ Si el frontend es _“la cara”_, el backend es _“el cerebro + las manos”_.
 
 Cliente → (HTTP) → Backend (Rutas, Controladores, Servicios, DB) → Respuesta
 
-## 🧩 Piezas clave (sin rodeos)
+## Piezas clave (sin rodeos)
 
 - **Rutas y Controladores** → definen qué URL existe y qué hace.
 - **Servicios** → contienen la lógica real (cálculos, reglas, integraciones).
@@ -23,7 +23,7 @@ Cliente → (HTTP) → Backend (Rutas, Controladores, Servicios, DB) → Respues
 - **Seguridad** → CORS, rate limiting, saneo de inputs, secretos en variables de entorno.
 - **Despliegue** → ejecutar el servidor en VPS, Docker o serverless de forma reproducible.
 
-## 🧪 Ejemplo real mínimo con Node.js (Express + SQLite)
+## Ejemplo real mínimo con Node.js (Express + SQLite)
 
 Un CRUD básico de productos para que un frontend pueda listar y crear.
 
@@ -107,7 +107,7 @@ const port = process.env.PORT ?? 3000;
 app.listen(port, () => console.log(`✅ API lista en http://localhost:${port}`));
 ```
 
-### 🧪 Cómo probarlo
+### Cómo probarlo
 
 ```bash
 npm install

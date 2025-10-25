@@ -1,4 +1,4 @@
-/* Modo claro - Blue */
+/* Modo claro - Blue 
 :root {
   --ifm-color-primary: #1d80f6;
   --ifm-color-primary-dark: #1a73dd;
@@ -9,9 +9,9 @@
   --ifm-color-primary-lightest: #7fb9fb;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
+} */
 
-/* Modo oscuro - Blue */
+/* Modo oscuro - Blue 
 [data-theme="dark"] {
   --ifm-color-primary: #57a9ff;
   --ifm-color-primary-dark: #4c98e6;
@@ -21,7 +21,7 @@
   --ifm-color-primary-lighter: #8dc5ff;
   --ifm-color-primary-lightest: #aad4ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* Modo claro - Indigo  
 :root {
@@ -48,22 +48,22 @@
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 } */
 
-/* Modo claro - Emerald
+/* Modo claro - Emerald */
 :root {
-  --ifm-color-primary: #059669;        
-  --ifm-color-primary-dark: #047857;   
-  --ifm-color-primary-darker: #065f46; 
+  --ifm-color-primary: #059669;
+  --ifm-color-primary-dark: #047857;
+  --ifm-color-primary-darker: #065f46;
   --ifm-color-primary-darkest: #064e3b;
-  --ifm-color-primary-light: #10b981;  
+  --ifm-color-primary-light: #10b981;
   --ifm-color-primary-lighter: #34d399;
   --ifm-color-primary-lightest: #6ee7b7;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
-} */
+}
 
-/* Modo oscuro - Emerald
+/* Modo oscuro - Emerald */
 [data-theme="dark"] {
-  --ifm-color-primary: #34d399;        
+  --ifm-color-primary: #34d399;
   --ifm-color-primary-dark: #10b981;
   --ifm-color-primary-darker: #059669;
   --ifm-color-primary-darkest: #047857;
@@ -71,13 +71,13 @@
   --ifm-color-primary-lighter: #a7f3d0;
   --ifm-color-primary-lightest: #d1fae5;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
-} */
+}
 
-/* Links y botones 
+/* Links y botones */
 :root {
   --ifm-link-color: var(--ifm-color-primary);
   --ifm-button-border-radius: 0.5rem;
-} */
+}
 
 /* Tipografía base (ejemplo con Inter) 
 :root {
