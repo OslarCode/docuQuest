@@ -1,11 +1,133 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary) 0%,
+    #2c3e50 100%
+  );
+  color: white;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featuresHeader {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.sectionSubtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.featureIcon {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.iconBackground {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.iconBackground::before {
+  content: "✓";
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.featureContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureContent h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.featureContent p {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .col--4 {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+  }
+
+  .featureCard {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .featureContent h3 {
+    font-size: 1.2rem;
+  }
+
+  .iconBackground {
+    width: 60px;
+    height: 60px;
+  }
+
+  .iconBackground::before {
+    font-size: 1.5rem;
+  }
 }

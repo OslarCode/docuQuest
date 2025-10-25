@@ -5,7 +5,6 @@ import styles from "./styles.module.css";
 const FeatureList = [
   {
     title: "Plataforma de documentación técnica flexible y fácil de usar.",
-    Svg: require("@site/static/img/undraw_book-lover_f1dq.svg").default,
     description: (
       <>
         Consulta la documentación cuando la necesites, desde cualquier
@@ -16,7 +15,6 @@ const FeatureList = [
   },
   {
     title: "Temarios de programación bien organizados y fáciles de seguir.",
-    Svg: require("@site/static/img/undraw_adventure-map_3e4p.svg").default,
     description: (
       <>
         Accede a rutas de aprendizaje ordenadas, desde lo más básico hasta lo
@@ -27,7 +25,6 @@ const FeatureList = [
   },
   {
     title: "Documentación accesible y optimizada para desarrolladores.",
-    Svg: require("@site/static/img/undraw_building-a-website_1wrp.svg").default,
     description: (
       <>
         Navega por contenidos claros, indexados y actualizados. Todo está
@@ -38,15 +35,17 @@ const FeatureList = [
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ title, description }) {
   return (
     <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={styles.featureCard}>
+        <div className={styles.featureIcon}>
+          <div className={styles.iconBackground}></div>
+        </div>
+        <div className={styles.featureContent}>
+          <Heading as="h3">{title}</Heading>
+          <p>{description}</p>
+        </div>
       </div>
     </div>
   );
@@ -54,8 +53,17 @@ function Feature({ Svg, title, description }) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
+    <section className={clsx("hero hero--primary", styles.features)}>
       <div className="container">
+        <div className={styles.featuresHeader}>
+          <Heading as="h2" className={styles.sectionTitle}>
+            Por Qué Elegir DocuQuest
+          </Heading>
+          <p className={styles.sectionSubtitle}>
+            Una plataforma diseñada específicamente para desarrolladores que
+            buscan aprender y crecer
+          </p>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

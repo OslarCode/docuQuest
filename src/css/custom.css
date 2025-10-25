@@ -73,24 +73,41 @@
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 }
 
-/* Links y botones */
+/* Modo claro -- Cyberpunk 
 :root {
-  --ifm-link-color: var(--ifm-color-primary);
-  --ifm-button-border-radius: 0.5rem;
+  --ifm-color-primary: #f9e400;
+  --ifm-color-primary-dark: #d6c800;
+  --ifm-color-primary-darker: #b5ab00;
+  --ifm-color-primary-darkest: #8c8600;
+  --ifm-color-primary-light: #ffee55;
+  --ifm-color-primary-lighter: #fff176;
+  --ifm-color-primary-lightest: #fff59d;
+  --ifm-background-color: #000000;
+  --ifm-font-color-base: #e0e0e0;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 0, 0.1);
+} */
+
+/* Modo oscuro -- Cyberpunk 
+[data-theme="dark"] {
+  --ifm-color-primary: #00b4e0;
+  --ifm-color-primary-dark: #0090b8;
+  --ifm-color-primary-darker: #007c9d;
+  --ifm-color-primary-darkest: #005e75;
+  --ifm-color-primary-light: #33c6ea;
+  --ifm-color-primary-lighter: #66d7f0;
+  --ifm-color-primary-lightest: #99e5f6;
+  --ifm-background-color: #0b0b0b;
+  --ifm-font-color-base: #e6e6e6;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 180, 224, 0.1);
+} */
+
+/* Opcional — Personaliza navbar y footer 
+:root {
+  --ifm-navbar-background-color: #000000;
+  --ifm-footer-background-color: #0b0b0b;
 }
-
-/* Tipografía base (ejemplo con Inter) 
-:root {
-  --ifm-font-family-base: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --ifm-font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-} */
-
-/* Navbar y footer ligeros 
-:root {
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #0b1220;
-} */
-
-/* [data-theme="dark"] {
-  --ifm-navbar-background-color: #0b1220;
+[data-theme="dark"] {
+  --ifm-navbar-background-color: #0b0b0b;
+  --ifm-footer-background-color: #000000;
 } */
