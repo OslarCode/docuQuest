@@ -67,10 +67,7 @@ const config = {
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "DocuQuest",
-        logo: {
-          alt: "Logo del sitio",
-          src: "img/logo.svg",
-        },
+
         items: [
           {
             type: "docSidebar",
