@@ -1,8 +1,8 @@
 # Fundamentos de Internet y la Web - Guía Completa para Principiantes
 
-## 🌐 Módulo 1: Internet - La Carretera Digital Global
+## Internet - La Carretera Digital Global
 
-### 📌 ¿Qué es Internet realmente?
+### Qué es Internet realmente?
 
 **Internet es como una red de carreteras gigante que conecta todas las computadoras del mundo.**
 
@@ -13,7 +13,7 @@ Imagina que:
 - **Los datos** son los coches que viajan por ellas
 - **Los routers** son los cruces y semáforos
 
-### 🔍 Ejemplo visual:
+### Ejemplo visual:
 
 ```
 Tu Casa → Router → Proveedor Internet → Internet Mundial → Servidor YouTube
@@ -22,21 +22,21 @@ Tu Casa → Router → Proveedor Internet → Internet Mundial → Servidor YouT
               local        de peaje        global        de videos
 ```
 
-### 🏗️ ¿Quién construyó Internet?
+### ¿Quién construyó Internet?
 
 - No tiene un dueño único
 - Es una colaboración global
 - Se mantiene por gobiernos, empresas y comunidades
 
-## 🗣️ Módulo 2: El Idioma de Internet - TCP/IP
+## El Idioma de Internet - TCP/IP
 
-### 📦 ¿Por qué necesitamos un "idioma" común?
+### ¿Por qué necesitamos un "idioma" común?
 
 Sin reglas comunes, sería como intentar hablar con alguien que no entiende tu idioma.
 
 **TCP/IP es el conjunto de reglas que todas las computadoras siguen.**
 
-### 🎯 Los dos protocolos principales:
+### Los dos protocolos principales:
 
 **IP (Internet Protocol)** - El cartero:
 
@@ -49,7 +49,7 @@ Sin reglas comunes, sería como intentar hablar con alguien que no entiende tu i
 - Pide que reenvíen lo que se pierde
 - Ordena los paquetes correctamente
 
-### 🍕 Analogía completa de la pizza:
+### Analogía completa de la pizza:
 
 **Escenario:** Pides una pizza online
 
@@ -86,9 +86,9 @@ Sin reglas comunes, sería como intentar hablar con alguien que no entiende tu i
    "Pedido recibido - Pizza en camino"
    ```
 
-## 🏠 Módulo 3: Redes - De lo Local a lo Global
+## Redes - De lo Local a lo Global
 
-### 🏠 LAN (Red de Área Local) - Tu Vecindario Digital
+### LAN (Red de Área Local) - Tu Vecindario Digital
 
 **¿Qué incluye una LAN típica?**
 
@@ -103,9 +103,9 @@ TU CASA:
 
 **Características de una LAN:**
 
-- ✅ **Rápida** (hasta 1,000 Mbps)
-- ✅ **Privada** (solo dispositivos de tu casa)
-- ✅ **Funciona sin Internet** (compartir archivos localmente)
+- **Rápida** (hasta 1,000 Mbps)
+- **Privada** (solo dispositivos de tu casa)
+- **Funciona sin Internet** (compartir archivos localmente)
 
 ### 🌍 WAN (Red de Área Amplia) - Internet Global
 
@@ -127,9 +127,9 @@ TU LAN (Casa) → Router → ISP → INTERNET (WAN) → Servidores Mundo
    locales              Internet
 ```
 
-## 📍 Módulo 4: Direcciones IP - El GPS de Internet
+## Direcciones IP - El GPS de Internet
 
-### 🏠 Direcciones IP Privadas - Dentro de Tu Casa
+### Direcciones IP Privadas - Dentro de Tu Casa
 
 **Rangos comunes:**
 
@@ -150,7 +150,7 @@ Casa de María:
 └── TV: 192.168.1.13
 ```
 
-### 🌍 Direcciones IP Públicas - En Internet
+### Direcciones IP Públicas - En Internet
 
 **Tu "dirección postal" en Internet:**
 
@@ -159,7 +159,7 @@ Desde dentro de tu casa:   192.168.1.10
 Desde Internet:            85.245.132.78  (IP pública del router)
 ```
 
-### 🔄 Cómo funciona el proceso:
+### Cómo funciona el proceso:
 
 ```
 INTERNAMENTE:
@@ -169,7 +169,7 @@ EXTERNAMENTE:
 Router (85.245.132.78) → Internet → Google (142.250.184.206)
 ```
 
-### 📊 IPv4 vs IPv6 - Explicación simple
+### IPv4 vs IPv6 - Explicación simple
 
 **IPv4 (El sistema antiguo pero aún mayoritario):**
 
@@ -187,16 +187,16 @@ Capacidad: 340 sextillones de direcciones
 Ventaja: Suficiente para todos los dispositivos futuros
 ```
 
-## 📦 Módulo 5: Paquetes de Datos - Los Viajeros Digitales
+## Paquetes de Datos - Los Viajeros Digitales
 
-### 🧩 ¿Por qué dividir la información?
+### ¿Por qué dividir la información?
 
 **Imagina que quieres enviar un libro completo:**
 
-- ❌ **Enviar todo junto**: Riesgo de perderlo todo
-- ✅ **Enviar página por página**: Si se pierde una, solo reenvías esa
+- **Enviar todo junto**: Riesgo de perderlo todo
+- **Enviar página por página**: Si se pierde una, solo reenvías esa
 
-### 📦 Estructura de un paquete típico:
+### Estructura de un paquete típico:
 
 ```
 [ CABECERA ] [ DATOS ] [ PIE ]
@@ -205,7 +205,7 @@ Ventaja: Suficiente para todos los dispositivos futuros
    Origen/Destino        de errores
 ```
 
-### 🎥 Ejemplo real: Ver un video de YouTube
+### Ejemplo real: Ver un video de YouTube
 
 **Proceso detallado:**
 
@@ -252,9 +252,9 @@ Ventaja: Suficiente para todos los dispositivos futuros
        MOSTRAR_VIDEO(PAQUETES_RECIBIDOS)
    ```
 
-## 🛣️ Módulo 6: El Viaje de los Datos - Paso a Paso
+## El Viaje de los Datos - Paso a Paso
 
-### 🎯 Ejemplo completo: Visitar Google.com
+### Ejemplo completo: Visitar Google.com
 
 **Paso 1: Escribes la dirección**
 
@@ -308,7 +308,7 @@ Paquetes → Router → Tu PC → Navegador → Página Google
 fragmentados local           HTML/CSS/JS  final
 ```
 
-### ⏱️ Línea de tiempo real:
+### Línea de tiempo real:
 
 ```
 Tiempo 0.0s:  Escribes "google.com"
@@ -320,9 +320,9 @@ Tiempo 0.5s:  Primeros paquetes vuelven
 Tiempo 0.8s:  Página completamente cargada
 ```
 
-## 🔧 Módulo 7: Los Protagonistas - Dispositivos Clave
+## Los Protagonistas - Dispositivos Clave
 
-### 🚦 Router - El Director de Tráfico
+### Router - El Director de Tráfico
 
 **Funciones principales:**
 
@@ -351,15 +351,15 @@ Familia Pérez - Router Casero:
 Router gestiona todo simultáneamente sin conflictos
 ```
 
-### 💾 Servidor - El Almacén Digital
+### Servidor - El Almacén Digital
 
 **Tipos comunes de servidores:**
 
 ```
-🌐 Web Server:    Aloja sitios web
-📧 Mail Server:   Gestiona correos electrónicos
-📁 File Server:   Almacena archivos compartidos
-🎮 Game Server:   Coordina juegos online
+Web Server:    Aloja sitios web
+Mail Server:   Gestiona correos electrónicos
+File Server:   Almacena archivos compartidos
+Game Server:   Coordina juegos online
 ```
 
 **Ejemplo: Servidor web típico**
@@ -385,7 +385,7 @@ CLASE ServidorWeb:
             ENVIAR_ERROR("404 No encontrado")
 ```
 
-### 🔌 Switch - El Panel de Conexiones
+### Switch - El Panel de Conexiones
 
 **Diferencia Router vs Switch:**
 
@@ -394,9 +394,9 @@ ROUTER: Conecta redes diferentes (tu casa ↔ Internet)
 SWITCH: Conecta dispositivos en la misma red (tu PC ↔ Impresora)
 ```
 
-## 🛡️ Módulo 8: Seguridad Básica - Protegiendo tu Rincón Digital
+## Seguridad Básica - Protegiendo tu Rincón Digital
 
-### 🔥 Firewall - El Guardia de Seguridad
+### Firewall - El Guardia de Seguridad
 
 **Cómo funciona:**
 
@@ -423,13 +423,13 @@ FUNCION firewall(paquete):
 **Ejemplos de decisiones del firewall:**
 
 ```
-✅ PERMITIDO: Tu navegador → google.com (puerto 443)
-✅ PERMITIDO: App email → servidor correo (puerto 993)
-❌ BLOQUEADO: Conexión desconocida → tu PC (puerto 1234)
-❌ BLOQUEADO: Programa sospechoso intentando "escuchar"
+PERMITIDO: Tu navegador → google.com (puerto 443)
+PERMITIDO: App email → servidor correo (puerto 993)
+BLOQUEADO: Conexión desconocida → tu PC (puerto 1234)
+BLOQUEADO: Programa sospechoso intentando "escuchar"
 ```
 
-### 🌐 VPN - Tu Túnel Privado
+### VPN - Tu Túnel Privado
 
 **Sin VPN:**
 
@@ -448,9 +448,9 @@ Cifrado  Ve solo  Cifrado   Ve IP de la VPN
          cifrado            no tu IP real
 ```
 
-## 🌐 Módulo 9: Internet vs Web - La Diferencia Crucial
+## Internet vs Web - La Diferencia Crucial
 
-### 🏗️ Internet - La Infraestructura
+### Internet - La Infraestructura
 
 **Componentes de Internet:**
 
@@ -469,21 +469,21 @@ PROTOCOLOS:
 └── Muchos más...
 ```
 
-### 🎨 La Web - Lo que Vemos
+### La Web - Lo que Vemos
 
 **La Web es UNO de los servicios que usa Internet:**
 
 ```
 SERVICIOS SOBRE INTERNET:
-├── 🌐 World Wide Web (páginas web)
-├── 📧 Email (correo electrónico)
-├── 💬 Mensajería (WhatsApp, Telegram)
-├── 🎮 Juegos online
-├── 📞 VoIP (llamadas por Internet)
-└── 🏦 Banca online
+├── World Wide Web (páginas web)
+├── Email (correo electrónico)
+├── Mensajería (WhatsApp, Telegram)
+├── Juegos online
+├── VoIP (llamadas por Internet)
+└── Banca online
 ```
 
-### 💻 Tecnologías Web Básicas - La Tríada Fundamental
+### Tecnologías Web Básicas - La Tríada Fundamental
 
 **HTML - Los Cimientos:**
 
@@ -527,9 +527,9 @@ FUNCION cerrar_ventanas():
          CERRAR(ventana)
 ```
 
-## 🎯 Módulo 10: Casos Prácticos - De la Teoría a la Realidad
+## Casos Prácticos - De la Teoría a la Realidad
 
-### 📱 Caso 1: Enviar un Mensaje por WhatsApp
+### Caso 1: Enviar un Mensaje por WhatsApp
 
 **Proceso completo:**
 
@@ -569,12 +569,12 @@ FUNCION cerrar_ventanas():
 
 5. **Confirmación de entrega**
    ```
-   ✅ Un check: Enviado al servidor
-   ✅ Dos checks: Entregado al dispositivo del amigo
-   ✅ Dos checks azules: El amigo lo ha leído
+   Un check: Enviado al servidor
+   Dos checks: Entregado al dispositivo del amigo
+   Dos checks azules: El amigo lo ha leído
    ```
 
-### 🛒 Caso 2: Comprar en Amazon
+### Caso 2: Comprar en Amazon
 
 **Flujo de datos seguro:**
 
@@ -614,11 +614,11 @@ FUNCION cerrar_ventanas():
    Banco autoriza → Amazon confirma → Prepara envío → Te notifica
    ```
 
-## 🔍 Módulo 11: Resolución de Problemas Básicos
+## Resolución de Problemas Básicos
 
-### 🐛 Problemas comunes y sus soluciones:
+### Problemas comunes y sus soluciones:
 
-**❌ "No tengo Internet"**
+**"No tengo Internet"**
 
 ```
 POSIBLES CAUSAS:
@@ -628,7 +628,7 @@ POSIBLES CAUSAS:
 └── Configuración red → Reiniciar configuración red
 ```
 
-**❌ "Página no carga"**
+**"Página no carga"**
 
 ```
 DIAGNÓSTICO PASO A PASO:
@@ -638,7 +638,7 @@ DIAGNÓSTICO PASO A PASO:
 4. ¿Firewall bloqueando? → Verificar configuración
 ```
 
-**❌ "Internet lento"**
+**"Internet lento"**
 
 ```
 POSIBLES SOLUCIONES:
@@ -649,7 +649,7 @@ POSIBLES SOLUCIONES:
 └── Comprobar velocidad con speedtest.net
 ```
 
-### 🛠️ Herramientas básicas de diagnóstico:
+### Herramientas básicas de diagnóstico:
 
 **Comando PING (verificar conectividad):**
 
@@ -671,9 +671,9 @@ MOSTRAR("IP local: " + IP_LOCAL)
 MOSTRAR("IP pública: " + IP_PUBLICA)
 ```
 
-## 🎓 Módulo 12: Glosario Visual - Para No Perderse
+## Glosario Visual - Para No Perderse
 
-### 🏗️ Arquitectura de Internet - Resumen Visual
+### Arquitectura de Internet - Resumen Visual
 
 ```
 INTERNET = [
@@ -685,7 +685,7 @@ INTERNET = [
 ]
 ```
 
-### 🔄 Flujo de Datos - Diagrama Simple
+### Flujo de Datos - Diagrama Simple
 
 ```
 [TU DISPOSITIVO] ←→ [ROUTER CASA] ←→ [ISP] ←→ [INTERNET] ←→ [SERVIDORES]
@@ -694,29 +694,29 @@ INTERNET = [
    locales              tráfico        salida    global         globales
 ```
 
-### 📊 Comparativa: TCP vs UDP
+### Comparativa: TCP vs UDP
 
 ```
 PROTOCOLO TCP (Fiable):
-✅ Garantiza entrega
-✅ Ordena los paquetes
-✅ Controla congestión
-✅ Reenvía lo perdido
-🔄 Más lento, más overhead
-🎯 Uso: Webs, email, archivos
+Garantiza entrega
+Ordena los paquetes
+Controla congestión
+Reenvía lo perdido
+Más lento, más overhead
+Uso: Webs, email, archivos
 
 PROTOCOLO UDP (Rápido):
-🚀 Muy rápida
-📦 Menos overhead
-❌ Sin garantías
-❌ Sin orden
-❌ Sin reenvíos
-🎯 Uso: Video llamadas, juegos, streaming
+Muy rápida
+Menos overhead
+Sin garantías
+Sin orden
+Sin reenvíos
+Uso: Video llamadas, juegos, streaming
 ```
 
-## ✅ Conclusión Final - Lo que Realmente Importa
+## Conclusión Final - Lo que Realmente Importa
 
-### 🎯 Puntos clave para recordar:
+### Puntos clave para recordar:
 
 1. **Internet es una red de redes** - No una sola cosa
 2. **TCP/IP es el idioma común** - Sin él, no hay comunicación
@@ -726,7 +726,7 @@ PROTOCOLO UDP (Rápido):
 6. **Servidor = Almacén digital** - Donde viven las páginas web
 7. **Web ≠ Internet** - La web es un servicio que usa Internet
 
-### 🚀 Próximos pasos en tu aprendizaje:
+### Próximos pasos en tu aprendizaje:
 
 ```
 FASE ACTUAL: ✅ Entender cómo funciona Internet
@@ -743,5 +743,3 @@ FUTURO:       🗄️ Bases de datos y servidores
 ### 💡 Consejo final:
 
 "Internet parece mágico, pero sigue reglas lógicas. Una vez entiendes los conceptos básicos, todo lo demás tiene sentido."
-
----

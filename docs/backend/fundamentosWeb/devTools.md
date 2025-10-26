@@ -1,4 +1,4 @@
-# DevTools de Google Chome
+# DevTools de Google Chrome
 
 ## **¿Qué son las DevTools de Chrome?**
 

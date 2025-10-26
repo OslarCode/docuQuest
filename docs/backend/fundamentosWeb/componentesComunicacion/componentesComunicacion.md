@@ -56,8 +56,6 @@ Set-Cookie: session=xyz789
 {"producto": "Laptop", "precio": 999, "stock": 5}
 ```
 
----
-
 ## 4. **Métodos HTTP (Verbos)**
 
 **FUNCIÓN:** Indican la acción que el cliente quiere realizar.
@@ -101,8 +99,6 @@ Set-Cookie: session=xyz789
 - **Peticiones POST/PUT:** Datos del formulario, archivos, JSON
 - **Respuestas:** HTML de la página, datos JSON, archivos
 
----
-
 ### Ejemplo Real Completo: Login en una Aplicación
 
 **PETICIÓN DEL CLIENTE:**
@@ -125,8 +121,6 @@ Set-Cookie: session_token=abc123xyz; Secure; HttpOnly
 
 {"status": "success", "user": {"name": "Juan", "id": 123}}
 ```
-
----
 
 ### Resumen de Componentes Esenciales
 

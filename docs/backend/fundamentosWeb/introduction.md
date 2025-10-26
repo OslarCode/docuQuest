@@ -5,8 +5,6 @@
 Cuando abrimos nuestro navegador y escribimos una dirección como `https://www.google.com`, lo que ocurre detrás de escena es **mucho más interesante** de lo que parece.
 Antes de aprender a programar en el lado del servidor (backend), es fundamental **entender cómo funciona la web**.
 
----
-
 ## 1. Cliente y servidor: la base de todo
 
 La web funciona con un **modelo cliente-servidor**:
@@ -21,8 +19,6 @@ Cuando visitas una página:
 3. El servidor **responde con la información solicitada**.
 
 Esta conversación entre cliente y servidor se hace mediante un “idioma común”: **el protocolo HTTP**.
-
----
 
 ## 2. HTTP y HTTPS: el lenguaje de la Web
 
@@ -94,8 +90,6 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 
 Aquí el navegador hace una **petición GET** a un servidor público y recibe un listado en JSON.
 
----
-
 ## 5. Puertos y direcciones locales
 
 Cuando trabajes en tu propio backend, usarás algo como:
@@ -164,8 +158,6 @@ Esto:
 - Se activa normalmente en el hosting o con servicios como Let’s Encrypt.
 
 En local usaremos HTTP para aprender. En producción, **siempre HTTPS**.
-
----
 
 ## 8. Resumen final
 

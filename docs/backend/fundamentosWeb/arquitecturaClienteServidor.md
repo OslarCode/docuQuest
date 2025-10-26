@@ -35,8 +35,6 @@ El proceso sigue siempre una secuencia lógica y predecible:
 
 4.  **Renderizado/Visualización:** El cliente (el navegador) recibe la respuesta y la interpreta para presentársela al usuario final (mostrando la página web en pantalla).
 
----
-
 ### Ejemplos Reales y Concretos
 
 - **Navegación Web:**
