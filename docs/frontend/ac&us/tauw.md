@@ -1,137 +1,83 @@
-# Módulo 12: Tecnologías de Asistencia y su Uso en la Web
+# Tecnologías de Asistencia y su Uso en la Web
 
-## 🌍 ¿Qué son las tecnologías de asistencia y por qué importan?
+## ¿Qué son las tecnologías de asistencia y por qué importan?
 
-Las tecnologías de asistencia son herramientas que ayudan a las personas con discapacidades a usar la web y las aplicaciones. No se trata solo de hacer un sitio "bonito", sino de lograr que sea realmente utilizable por todos, sin importar sus capacidades. Este módulo te muestra cómo funcionan estas tecnologías y cómo asegurarte de que tu web sea compatible con ellas.
+Las tecnologías de asistencia son herramientas que ayudan a las personas con discapacidades a usar la web y las aplicaciones. No se trata solo de hacer un sitio agradable visualmente, sino de lograr que sea utilizable por todos, sin importar sus capacidades. Este módulo explica cómo funcionan estas tecnologías y cómo asegurarte de que tu web sea compatible con ellas.
 
 ### Escuchar la web: lectores de pantalla y sintetizadores de voz
 
-Las personas con discapacidad visual muchas veces no ven la pantalla, pero sí pueden **escuchar** su contenido gracias a programas especiales. Estos convierten el texto en voz y permiten navegar por sitios web.
+Las personas con discapacidad visual pueden navegar por la web escuchando su contenido gracias a programas que convierten texto en voz.
 
-Entre los más usados están:
+Lectores de pantalla más usados:
 
-- **JAWS** (Windows): muy potente, pero de pago.
-- **NVDA** (Windows): gratuito y muy completo.
-- **VoiceOver** (Apple): ya viene con iPhone, iPad o Mac.
+- **JAWS** (Windows): muy completo, de pago.
+- **NVDA** (Windows): gratuito y potente.
+- **VoiceOver** (Apple): incluido en iPhone, iPad y Mac.
 - **TalkBack** (Android): integrado en la mayoría de móviles Android.
 
-🧠 **Ejemplo práctico**: Si una imagen no tiene texto alternativo, el lector de pantalla solo dirá "imagen", dejando al usuario sin contexto.
+**Ejemplo práctico:**
+Si una imagen no tiene texto alternativo, el lector de pantalla solo dirá “imagen”, sin aportar contexto.
 
-Por eso es clave:
+Buenas prácticas:
 
-- Añadir **texto alternativo** útil a las imágenes.
-- Usar bien los **encabezados** (H1, H2, etc.) para organizar el contenido.
-- Aplicar **roles ARIA** en elementos dinámicos como botones o menús desplegables.
+- Añadir texto alternativo útil a las imágenes.
+- Usar encabezados bien estructurados (H1, H2, etc.).
+- Aplicar roles ARIA cuando sea necesario en elementos dinámicos.
 
 ### Hablar con la web: control por voz y asistentes virtuales
 
-Para algunas personas, escribir o usar el ratón es complicado o imposible. Ahí entra el **control por voz**: una forma de manejar el ordenador hablando.
+Para algunas personas, escribir o usar el ratón resulta complicado o imposible. El control por voz permite manejar el dispositivo hablando.
 
-Herramientas como:
+Herramientas destacadas:
 
-- **Dragon NaturallySpeaking** permiten escribir y controlar el PC con comandos hablados.
-- **Siri**, **Google Assistant** y **Alexa** también ayudan a navegar, buscar y ejecutar acciones con la voz.
+- **Dragon NaturallySpeaking** para dictado y control total.
+- **Siri**, **Google Assistant** y **Alexa** para ejecutar acciones y búsquedas por voz.
 
-🧠 **Ejemplo real**: Una persona con movilidad reducida puede decir "abrir correo" o "buscar recetas de pasta" sin tocar el teclado.
+**Ejemplo real:**
+Una persona con movilidad reducida puede abrir apps o realizar búsquedas sin tocar el teclado.
 
 ### Moverse sin manos: otras formas de interactuar
 
-Hay muchas formas de usar un ordenador sin necesidad de teclado o ratón.
+Hay usuarios que navegan sin teclado ni ratón utilizando tecnologías alternativas:
 
-- **Switches**: pequeños botones que se activan con un leve movimiento.
-- **Eye-tracking**: el cursor sigue el movimiento de los ojos. Ideal para personas con parálisis.
-- **Dispositivos Braille**: transforman el texto de la pantalla en puntos táctiles que se pueden leer con los dedos.
+- **Switches**: botones que se activan con pequeños movimientos.
+- **Eye-tracking**: control mediante movimientos oculares.
+- **Dispositivos Braille**: convierten el contenido en puntos táctiles para leer con los dedos.
 
-🧠 **Imagina** controlar toda una página web solo con la mirada o tocando un botón con la rodilla. Para algunas personas, esa es su única vía de acceso.
+**Ejercicio imaginativo:**
+Piensa en navegar una web solo moviendo los ojos o presionando un botón con la rodilla. Para muchos, esa es la única vía de acceso digital.
 
-### Hacer accesibles también las apps móviles
+### Accesibilidad también en apps móviles
 
-La accesibilidad no es solo para sitios web. Las **aplicaciones móviles** también deben ser fáciles de usar para todos.
+Las aplicaciones móviles deben ser diseñadas para ser accesibles, igual que los sitios web.
 
-Claves para lograrlo:
+Principios básicos:
 
-- Botones grandes y bien espaciados.
+- Botones grandes y bien separados.
 - Compatibilidad con lectores de pantalla y control por voz.
-- Gestos táctiles simples e intuitivos.
+- Gestos sencillos e intuitivos.
 
-Además, existen herramientas como:
+Herramientas para desarrolladores:
 
-- **Android Accessibility API** y **Apple Accessibility API**, que ayudan a los desarrolladores a que sus apps funcionen con tecnologías de asistencia.
-- Frameworks como **React** o **Angular**, que ofrecen buenas prácticas para implementar accesibilidad desde el código.
+- **Android Accessibility API**
+- **Apple Accessibility API**
+- Frameworks como **React** o **Angular**, que ya incluyen buenas prácticas para accesibilidad.
 
-## 🧠 Recapitulando los puntos clave
+## Puntos clave
 
-1. Los lectores de pantalla convierten texto en voz y necesitan páginas bien estructuradas.
-2. El control por voz es vital para personas con movilidad reducida.
-3. Existen tecnologías como eye-tracking y Braille que permiten usar la web sin manos ni vista.
-4. Las apps móviles deben ser accesibles desde el diseño: botones grandes, texto legible, gestos claros.
-5. APIs y frameworks modernos facilitan que todo lo anterior sea posible desde el desarrollo.
+1. Los lectores de pantalla requieren buena estructura y contenido accesible.
+2. El control por voz es esencial para personas con movilidad reducida.
+3. Tecnologías como eye-tracking y Braille permiten navegar sin manos ni vista.
+4. Las apps móviles deben diseñarse con accesibilidad desde el inicio.
+5. Las APIs de accesibilidad facilitan integrar estas herramientas en el código.
 
-## 🧪 ¿Y si lo pruebas tú?
+## Reto: pruébalo tú mismo
 
-Haz este pequeño reto:
+Pasos para experimentar la accesibilidad:
 
-1. Entra en un sitio web y navega solo usando el teclado (Tab y Enter).
-2. Prueba un lector de pantalla gratuito como NVDA o activa VoiceOver si tienes Mac.
-3. Usa tu móvil para buscar algo solo con comandos de voz.
-4. Piensa cómo podrías mejorar ese sitio para que fuera más cómodo de usar.
+1. Navega un sitio solo con teclado (Tab y Enter).
+2. Prueba NVDA en Windows o VoiceOver en Mac.
+3. Usa comandos de voz en tu móvil para hacer una búsqueda.
+4. Reflexiona: ¿cómo podrías mejorar el sitio que probaste?
 
-👉 Diseñar con accesibilidad en mente no solo mejora la vida de quienes tienen una discapacidad. Hace que la web sea mejor para todos: más clara, más usable y más humana.
-
-### **📝 Flashcards para Memorizar el Contenido**
-
-Aquí tienes una serie de flashcards para ayudar a recordar los conceptos clave:
-
-### **1️⃣ Flashcard: Lectores de Pantalla**
-
-🧐 **Pregunta:** Menciona dos lectores de pantalla populares y en qué sistemas operativos funcionan.
-
-✅ **Respuesta:** JAWS (Windows) y VoiceOver (Apple).
-
-### **2️⃣ Flashcard: Uso del Control por Voz**
-
-🧐 **Pregunta:** ¿Qué tecnologías permiten controlar dispositivos mediante la voz?
-
-✅ **Respuesta:** Dragon NaturallySpeaking, Siri, Google Assistant y Alexa.
-
-### **3️⃣ Flashcard: Dispositivos de Asistencia**
-
-🧐 **Pregunta:** ¿Qué tecnologías pueden usar personas con discapacidades motoras para navegar en la web?
-
-✅ **Respuesta:** Switches, eye-tracking y dispositivos Braille.
-
-### **4️⃣ Flashcard: Accesibilidad en Apps Móviles**
-
-🧐 **Pregunta:** ¿Qué características debe tener una aplicación móvil accesible?
-
-✅ **Respuesta:** Botones grandes, compatibilidad con lectores de pantalla y gestos táctiles intuitivos.
-
-### **5️⃣ Flashcard: APIs y Frameworks**
-
-🧐 **Pregunta:** ¿Qué APIs permiten mejorar la accesibilidad en apps móviles?
-
-✅ **Respuesta:** Android Accessibility API y Apple Accessibility API.
-
-### **🛠 Actividad Práctica para Aplicar lo Aprendido**
-
-💡 **Título:** "Explorando Tecnologías de Asistencia en la Web"
-
-🎯 **Objetivo:** Identificar y probar tecnologías de asistencia para mejorar la accesibilidad web.
-
-🔹 **Instrucciones:**
-
-1. **Prueba un lector de pantalla:** Usa NVDA (Windows) o VoiceOver (Mac) para navegar por un sitio web.
-2. **Controla un dispositivo con la voz:** Usa Siri, Google Assistant o Alexa para realizar una búsqueda en la web.
-3. **Simula la navegación sin ratón:** Usa solo el teclado para interactuar con una página web (tecla Tab y Enter).
-4. **Investiga APIs de accesibilidad:** Busca información sobre cómo integrar accesibilidad en una app con React o Angular.
-5. **Registra tus observaciones y discute en clase:** Comparte dificultades encontradas y posibles mejoras.
-
-🔹 **Materiales Necesarios:**
-
-✅ Un ordenador con NVDA o VoiceOver activado.
-
-✅ Un teléfono con Google Assistant, Siri o Alexa.
-
-✅ Un navegador web para pruebas con teclado.
-
-✅ Documento para registrar observaciones.
+Diseñar pensando en accesibilidad mejora la vida de muchos y hace la web más clara, usable y humana.

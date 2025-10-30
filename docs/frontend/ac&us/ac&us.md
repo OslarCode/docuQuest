@@ -1,6 +1,6 @@
-# Módulo 5: Accesibilidad y Usabilidad
+# Accesibilidad y Usabilidad
 
-## 🌐 Que nadie se quede fuera: Accesibilidad y usabilidad en la web
+## Que nadie se quede fuera: Accesibilidad y usabilidad en la web
 
 Cuando navegamos por internet, solemos dar por hecho que todo funciona bien. Pero, ¿qué pasa con quienes tienen dificultades visuales, motoras o cognitivas? Este módulo trata sobre cómo crear sitios web que no solo sean fáciles de usar (usabilidad), sino también accesibles para **todas las personas**, sin importar sus capacidades. Aquí descubrirás cómo se complementan estos dos conceptos, por qué son tan importantes y cómo aplicarlos desde ya en tus proyectos.
 
@@ -25,7 +25,6 @@ Aunque van de la mano, son cosas distintas:
 - **Accesibilidad**: se enfoca en que nadie quede excluido, incluso si usa un lector de pantalla o navega sin ratón.
 
 > **Ejemplo claro:** Un formulario puede ser fácil de entender (usabilidad), pero si no se puede llenar con teclado, no es accesible.
-> 
 
 ### ¿Qué pasa si combinas accesibilidad y usabilidad?
 
@@ -64,7 +63,6 @@ No tienes que hacerlo todo solo. Existen herramientas que revisan tu sitio y te 
 - **Axe**: útil para desarrolladores, señala problemas en tiempo real.
 
 > **Ejemplo:** Ejecutas WAVE en tu página y detectas que tus botones no tienen etiquetas claras. Lo corriges y mejoras tanto accesibilidad como usabilidad.
-> 
 
 ### WCAG 2.2: la guía internacional que debes conocer
 
@@ -82,72 +80,8 @@ Las **WCAG (Web Content Accessibility Guidelines)** son un conjunto de normas pa
 - Haces que más personas puedan usar tu web.
 - Es una ventaja competitiva: menos rebote, más interacción.
 
-## 💭 Para cerrar: ¿Diseñas para unos pocos… o para todos?
+## Para cerrar: ¿Diseñas para unos pocos… o para todos?
 
 Crear una web accesible no es solo una opción, es una forma de hacer las cosas bien. Al combinar accesibilidad y usabilidad, construyes puentes en lugar de barreras. No se trata solo de cumplir normas, sino de **conectar mejor con las personas**.
 
 Piensa en tu próxima web o app: ¿es fácil de usar solo para ti, o también para alguien que no ve bien, no usa el ratón o tiene problemas de comprensión? Ahí está el reto… y la oportunidad.
-
-### **📝 Flashcards para Memorizar el Contenido**
-
-Aquí tienes una serie de flashcards para ayudar a recordar los conceptos clave:
-
-### **1️⃣ Flashcard: ¿Qué es la accesibilidad web?**
-
-🧐 **Pregunta:** ¿Qué es la accesibilidad web?
-
-✅ **Respuesta:** Es el diseño y desarrollo de sitios web para que todas las personas, incluidas aquellas con discapacidades, puedan interactuar sin barreras.
-
-### **2️⃣ Flashcard: Diferencias entre Usabilidad y Accesibilidad**
-
-🧐 **Pregunta:** ¿En qué se diferencian la usabilidad y la accesibilidad?
-
-✅ **Respuesta:** La usabilidad optimiza la experiencia del usuario, mientras que la accesibilidad elimina barreras para personas con discapacidades.
-
-### **3️⃣ Flashcard: Beneficios de la Accesibilidad Web**
-
-🧐 **Pregunta:** ¿Cuáles son los beneficios de un sitio accesible?
-
-✅ **Respuesta:** Inclusividad, cumplimiento legal, mejor experiencia de usuario y mayor alcance de audiencia.
-
-### **4️⃣ Flashcard: Buenas Prácticas en Diseño Inclusivo**
-
-🧐 **Pregunta:** Menciona tres buenas prácticas de accesibilidad web.
-
-✅ **Respuesta:** Uso de HTML semántico, navegación con teclado y textos alternativos en imágenes.
-
-### **5️⃣ Flashcard: Herramientas para Evaluar la Accesibilidad**
-
-🧐 **Pregunta:** ¿Qué herramientas pueden evaluar la accesibilidad de un sitio web?
-
-✅ **Respuesta:** Lighthouse, WAVE y Axe.
-
-### **6️⃣ Flashcard: WCAG 2.2**
-
-🧐 **Pregunta:** ¿Qué son las WCAG 2.2 y por qué son importantes?
-
-✅ **Respuesta:** Son pautas internacionales que mejoran la accesibilidad web, asegurando que todos los usuarios puedan interactuar con el contenido.
-
-### **🛠 Actividad Práctica para Aplicar lo Aprendido**
-
-💡 **Título:** "Evalúa la Accesibilidad de un Sitio Web"
-
-🎯 **Objetivo:** Aplicar herramientas y conceptos de accesibilidad web para mejorar la experiencia de usuario.
-
-🔹 **Instrucciones:**
-
-1. **Selecciona un sitio web** (puede ser una página popular o un sitio en desarrollo).
-2. **Evalúa su accesibilidad** utilizando una de estas herramientas:
-    - Lighthouse (Google Chrome).
-    - WAVE (Extensión de navegador).
-    - Axe (para desarrolladores).
-3. **Identifica al menos tres problemas de accesibilidad** y propón soluciones.
-4. **Verifica la conformidad con WCAG 2.2** y clasifica el sitio en nivel A, AA o AAA.
-5. **Escribe un breve informe** con tus hallazgos y mejoras sugeridas.
-6. **Comparte y discute en clase** los resultados y cómo mejorar la accesibilidad en futuros proyectos.
-
-🔹 **Materiales Necesarios:**
-
-✅ Un navegador web con acceso a Lighthouse, WAVE o Axe.
-
-✅ Papel o documento digital para registrar observaciones.
