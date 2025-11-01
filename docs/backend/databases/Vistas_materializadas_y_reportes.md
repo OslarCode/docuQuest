@@ -1,6 +1,6 @@
-# Modulo 29. Vistas materializadas y reportes
+# Vistas materializadas y reportes
 
-## 🧭 29.1. El problema: consultas costosas repetidas
+## 29.1. El problema: consultas costosas repetidas
 
 Imagina una tabla de pedidos de una tienda online:
 
@@ -34,11 +34,11 @@ ORDER BY dia DESC;
 
 ```
 
-👉 Al principio es rápido… pero a medida que crece la tabla, esta consulta se vuelve **lenta**.
+Al principio es rápido… pero a medida que crece la tabla, esta consulta se vuelve **lenta**.
 
-👉 Y si tienes 50 usuarios viendo el dashboard, la estás ejecutando 50 veces 😬
+Y si tienes 50 usuarios viendo el dashboard, la estás ejecutando 50 veces
 
-## 🧠 29.2. Vistas normales vs vistas materializadas
+## 29.2. Vistas normales vs vistas materializadas
 
 Una **vista normal** es básicamente una **consulta guardada con nombre**:
 
@@ -50,14 +50,14 @@ GROUP BY dia;
 
 ```
 
-- ✅ Se comporta como una tabla al consultarla:
+- Se comporta como una tabla al consultarla:
 
 ```sql
 SELECT * FROM ventas_por_dia;
 
 ```
 
-- ❌ Pero **se calcula en cada consulta**, no guarda nada.
+- Pero **se calcula en cada consulta**, no guarda nada.
 
 Una **vista materializada**:
 
@@ -75,7 +75,7 @@ GROUP BY dia;
 
 ```
 
-👉 Cuando alguien hace:
+Cuando alguien hace:
 
 ```sql
 SELECT * FROM ventas_por_dia_mv;
@@ -86,9 +86,9 @@ No se recalcula nada.
 
 Solo se **lee directamente** la vista precomputada.
 
-📌 Esto es ideal para dashboards, reportes internos, analítica básica y optimización de consultas recurrentes.
+Esto es ideal para dashboards, reportes internos, analítica básica y optimización de consultas recurrentes.
 
-## 🧭 29.3. Refrescar vistas materializadas
+## 29.3. Refrescar vistas materializadas
 
 Una vista materializada no se actualiza sola.
 
@@ -101,15 +101,15 @@ REFRESH MATERIALIZED VIEW ventas_por_dia_mv;
 
 ```
 
-👉 Esto vuelve a ejecutar la consulta original y **reemplaza el contenido** de la vista.
+Esto vuelve a ejecutar la consulta original y **reemplaza el contenido** de la vista.
 
-📌 Lo habitual es programar estos refrescos:
+Lo habitual es programar estos refrescos:
 
 - Cada 5 minutos (si se necesita semitiempo real).
 - Cada hora o día (para reportes nocturnos).
 - Manualmente tras grandes importaciones.
 
-## 🧠 29.4. Reportes agregados sencillos
+## 29.4. Reportes agregados sencillos
 
 Además de ventas por día, hay muchas consultas que se benefician de vistas materializadas:
 
@@ -135,9 +135,9 @@ GROUP BY mes;
 
 ```
 
-👉 Ahora puedes consultar estos reportes **instantáneamente**, sin recalcular millones de filas cada vez.
+Ahora puedes consultar estos reportes **instantáneamente**, sin recalcular millones de filas cada vez.
 
-## 🧭 29.5. Indexar vistas materializadas
+## 29.5. Indexar vistas materializadas
 
 Otra ventaja: a diferencia de las vistas normales, las **vistas materializadas pueden tener índices**.
 
@@ -148,9 +148,9 @@ CREATE INDEX idx_ventas_por_dia_dia ON ventas_por_dia_mv (dia);
 
 ```
 
-👉 Así las consultas filtradas, ordenadas o paginadas sobre la vista **son igual de rápidas que sobre una tabla bien optimizada**.
+Así las consultas filtradas, ordenadas o paginadas sobre la vista **son igual de rápidas que sobre una tabla bien optimizada**.
 
-## 🧠 29.6. Automatizar refrescos programados
+## 29.6. Automatizar refrescos programados
 
 La mayoría de escenarios reales no refrescan manualmente las vistas.
 
@@ -168,7 +168,7 @@ Ejemplo con cron (Linux):
 
 ```
 
-👉 Esto refresca cada hora.
+Esto refresca cada hora.
 
 Ejemplo más controlado (PostgreSQL + función):
 
@@ -183,7 +183,7 @@ $$ LANGUAGE plpgsql;
 
 ```
 
-👉 Luego puedes llamar a:
+Luego puedes llamar a:
 
 ```sql
 SELECT refrescar_reportes();
@@ -192,7 +192,7 @@ SELECT refrescar_reportes();
 
 O programarlo como tarea.
 
-## 🧭 29.7. Control de consistencia y bloqueos
+## 29.7. Control de consistencia y bloqueos
 
 Por defecto, cuando refrescas una vista materializada:
 
@@ -206,9 +206,9 @@ REFRESH MATERIALIZED VIEW CONCURRENTLY ventas_por_dia_mv;
 
 ```
 
-📌 Requiere índices únicos adecuados, pero permite refrescar sin bloquear a los usuarios que están consultando.
+Requiere índices únicos adecuados, pero permite refrescar sin bloquear a los usuarios que están consultando.
 
-## 🧠 29.8. Vistas materializadas vs tablas de reportes manuales
+## 29.8. Vistas materializadas vs tablas de reportes manuales
 
 Antes de que existieran vistas materializadas, muchos equipos creaban **tablas de reportes** y las llenaban con scripts cron.
 
@@ -222,19 +222,19 @@ SELECT ...
 
 ```
 
-👉 Funciona, pero:
+Funciona, pero:
 
 - Necesitas más código de mantenimiento.
 - Debes cuidar integridad manualmente.
 - Es más fácil cometer errores.
 
-📌 Las vistas materializadas **reducen esta complejidad**, porque:
+Las vistas materializadas **reducen esta complejidad**, porque:
 
 - Encapsulan la lógica.
 - Se refrescan de forma atómica.
 - No requieren scripts adicionales para leer.
 
-## 🧭 29.9. Buenas prácticas para reportes con vistas materializadas
+## 29.9. Buenas prácticas para reportes con vistas materializadas
 
 - Usa vistas materializadas solo para **consultas pesadas y recurrentes**.
 - No las refresques en exceso si no es necesario.
@@ -244,10 +244,10 @@ SELECT ...
 - Automatiza su refresco en un cron o job controlado.
 - Controla bloqueos si tienes muchos usuarios concurrentes.
 
-## 🚨 29.10. Errores comunes
+## 29.10. Errores comunes
 
 - Creer que una vista normal mejora rendimiento (no lo hace).
-- Refrescar vistas manualmente a mano en producción 😬.
+- Refrescar vistas manualmente a mano en producción.
 - No indexar vistas materializadas.
 - Refrescar con demasiada frecuencia → bloqueos y sobrecarga.
 - No versionar la lógica de las vistas → descoordinación con el código.

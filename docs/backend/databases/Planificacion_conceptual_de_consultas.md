@@ -1,14 +1,14 @@
-# Modulo 19. Planificación conceptual de consultas
+# Planificación conceptual de consultas
 
-## 🧭 19.1. Qué es la planificación de consultas
+## 19.1. Qué es la planificación de consultas
 
 Cuando lanzas una consulta SQL, el motor **no la ejecuta directamente**:
 
 1. La analiza (parsing).
-2. La optimiza: elige *cómo* obtener los datos.
+2. La optimiza: elige _cómo_ obtener los datos.
 3. La ejecuta.
 
-👉 Este “*cómo*” es lo que se llama **plan de ejecución** (*query plan*).
+Este “_cómo_” es lo que se llama **plan de ejecución** (_query plan_).
 
 Ejemplo:
 
@@ -23,17 +23,17 @@ El motor podría:
 - Usar un índice en `correo` (`Index Scan`).
 - Combinarla con otras tablas (si hay JOIN).
 
-📌 Entender **cómo piensa el optimizador** te permite **escribir consultas más eficientes**, sin depender de trucos específicos de cada motor.
+Entender **cómo piensa el optimizador** te permite **escribir consultas más eficientes**, sin depender de trucos específicos de cada motor.
 
-## 🧱 19.2. Full Table Scan vs Index Scan
+## 19.2. Full Table Scan vs Index Scan
 
-| Tipo de plan | Descripción | Cuándo ocurre |
-| --- | --- | --- |
-| **Full Table Scan** | Recorre toda la tabla | No hay índice útil o pocos filtros selectivos |
-| **Index Scan** | Usa un índice para ubicar filas directamente | Hay índice y el filtro es selectivo |
-| **Bitmap Index Scan** | Combina varios índices para filtrar | Filtros múltiples y no hay índice compuesto directo |
+| Tipo de plan          | Descripción                                  | Cuándo ocurre                                       |
+| --------------------- | -------------------------------------------- | --------------------------------------------------- |
+| **Full Table Scan**   | Recorre toda la tabla                        | No hay índice útil o pocos filtros selectivos       |
+| **Index Scan**        | Usa un índice para ubicar filas directamente | Hay índice y el filtro es selectivo                 |
+| **Bitmap Index Scan** | Combina varios índices para filtrar          | Filtros múltiples y no hay índice compuesto directo |
 
-📌 Ejemplo real:
+Ejemplo real:
 
 ```sql
 EXPLAIN
@@ -50,17 +50,17 @@ Index Scan using idx_cliente_correo on cliente ...
 
 → El motor eligió el índice porque **filtra bien**.
 
-## 🧠 19.3. Cardinalidad y selectividad: el núcleo de la decisión
+## 19.3. Cardinalidad y selectividad: el núcleo de la decisión
 
 **Cardinalidad:** número de filas esperadas en el resultado.
 
 **Selectividad:** proporción de filas que pasan el filtro.
 
-👉 Si la consulta devuelve el 0.001 % de las filas, usar un índice es claramente mejor.
+Si la consulta devuelve el 0.001 % de las filas, usar un índice es claramente mejor.
 
-👉 Si devuelve el 80 %… un full scan puede ser más barato que hacer millones de “saltos de índice”.
+Si devuelve el 80 %… un full scan puede ser más barato que hacer millones de “saltos de índice”.
 
-📌 Regla práctica:
+Regla práctica:
 
 - Alta selectividad → índice.
 - Baja selectividad → full scan suele ser más eficiente.
@@ -76,7 +76,7 @@ Si solo 5 % de los pedidos están pendientes → índice es útil.
 
 Si el 95 % están pendientes → probablemente no lo usará.
 
-## 🧭 19.4. Costos estimados y reales
+## 19.4. Costos estimados y reales
 
 Los optimizadores usan un **modelo de costos**:
 
@@ -100,34 +100,34 @@ Seq Scan on pedido  (cost=0.00..1023.00 rows=500 width=32)
 
 ```
 
-👉 “cost” = estimación
+“cost” = estimación
 
-👉 “rows” = cuántas filas cree que saldrán
+“rows” = cuántas filas cree que saldrán
 
-👉 Si la estimación está mal, el plan puede no ser el mejor.
+Si la estimación está mal, el plan puede no ser el mejor.
 
-## 🧠 19.5. Cómo influir en el plan sin “forzar” nada
+## 19.5. Cómo influir en el plan sin “forzar” nada
 
 - **Diseñando bien índices** (M17–M18).
 - **Usando filtros claros y específicos**.
 - **Evitando funciones innecesarias sobre columnas indexadas**.
 - **Usando tipos correctos** (buscar `fecha` en un campo `DATE` y no en texto).
 
-❌ Ejemplo malo:
+Ejemplo malo:
 
 ```sql
 WHERE LOWER(correo) = 'ana@example.com'
 
 ```
 
-👉 El índice no se usa si fue creado sobre `correo` sin LOWER.
+El índice no se usa si fue creado sobre `correo` sin LOWER.
 
-✅ Mejor:
+Mejor:
 
 - Crear un índice funcional sobre `LOWER(correo)` si es necesario.
 - O guardar el correo normalizado.
 
-## 🧮 19.6. Planificación en consultas con JOIN
+## 19.6. Planificación en consultas con JOIN
 
 Cuando haces joins, el optimizador debe decidir:
 
@@ -150,23 +150,23 @@ Orden lógico:
 2. Buscar sus pedidos (usa índice en `pedido.id_cliente`).
 3. Devolver resultados.
 
-📌 Si no hay índices → escanea ambas tablas, genera un producto cartesiano parcial y luego filtra.
+Si no hay índices → escanea ambas tablas, genera un producto cartesiano parcial y luego filtra.
 
-👉 Coste altísimo.
+Coste altísimo.
 
-## 🧭 19.7. Tipos comunes de join y cuándo se eligen
+## 19.7. Tipos comunes de join y cuándo se eligen
 
-| Tipo de join | Cómo funciona | Cuándo se usa normalmente |
-| --- | --- | --- |
-| **Nested Loop** | Repite sobre cada fila de una tabla y busca en la otra (rápido con índices) | 1-a-N con índices |
-| **Merge Join** | Combina dos flujos ordenados | Tablas ordenadas, consultas grandes |
-| **Hash Join** | Construye tabla hash y compara | Filtros amplios, sin índice |
+| Tipo de join    | Cómo funciona                                                               | Cuándo se usa normalmente           |
+| --------------- | --------------------------------------------------------------------------- | ----------------------------------- |
+| **Nested Loop** | Repite sobre cada fila de una tabla y busca en la otra (rápido con índices) | 1-a-N con índices                   |
+| **Merge Join**  | Combina dos flujos ordenados                                                | Tablas ordenadas, consultas grandes |
+| **Hash Join**   | Construye tabla hash y compara                                              | Filtros amplios, sin índice         |
 
-👉 Tú no eliges directamente el algoritmo: **el optimizador lo hace según el costo estimado**.
+Tú no eliges directamente el algoritmo: **el optimizador lo hace según el costo estimado**.
 
-Pero puedes *influir* en su decisión **dando buena información** (índices, estadísticas actualizadas, filtros claros).
+Pero puedes _influir_ en su decisión **dando buena información** (índices, estadísticas actualizadas, filtros claros).
 
-## 🧠 19.8. Ordenación y planificación
+## 19.8. Ordenación y planificación
 
 Cuando haces:
 
@@ -179,9 +179,9 @@ SELECT * FROM pedido ORDER BY fecha;
 
 → Si no, debe ordenar en memoria o en disco (coste extra).
 
-👉 **La presencia de un índice adecuado puede cambiar totalmente el plan**.
+**La presencia de un índice adecuado puede cambiar totalmente el plan**.
 
-## 🧱 19.9. Agrupaciones (`GROUP BY`) y planificación
+## 19.9. Agrupaciones (`GROUP BY`) y planificación
 
 Los índices también ayudan en `GROUP BY` y agregaciones:
 
@@ -197,9 +197,9 @@ Si hay un índice en `estado`, el motor:
 
 Si no, tendrá que escanear toda la tabla y agrupar desde cero.
 
-👉 También influye si hay pocas categorías (`estado`) o muchas.
+También influye si hay pocas categorías (`estado`) o muchas.
 
-## 🧠 19.10. Subconsultas vs joins: impacto en el plan
+## 19.10. Subconsultas vs joins: impacto en el plan
 
 Dos consultas que devuelven lo mismo pueden generar **planes muy diferentes**:
 
@@ -221,15 +221,15 @@ WHERE c.ciudad = 'Madrid';
 
 ```
 
-📌 Muchas veces el join produce **un plan más eficiente**, porque permite:
+Muchas veces el join produce **un plan más eficiente**, porque permite:
 
 - Optimizar el orden de acceso,
 - Reutilizar índices,
 - Evitar subconsultas repetitivas.
 
-*(aunque esto depende del motor — lo importante es razonar sobre el plan resultante).*
+_(aunque esto depende del motor — lo importante es razonar sobre el plan resultante)._
 
-## 🧭 19.11. Paginación y planificación
+## 19.11. Paginación y planificación
 
 Paginaciones grandes con `OFFSET` generan planes costosos:
 
@@ -238,16 +238,16 @@ SELECT * FROM pedido ORDER BY fecha LIMIT 10 OFFSET 50000;
 
 ```
 
-👉 Aunque haya índice, el motor debe **recorrer las 50.000 filas anteriores**.
+Aunque haya índice, el motor debe **recorrer las 50.000 filas anteriores**.
 
-👉 El plan puede volverse muy caro.
+El plan puede volverse muy caro.
 
 Patrón recomendado:
 
 - Paginación por cursor o marcador (como ya vimos en M18),
 - Reutilizar índices ordenados.
 
-## 🧮 19.12. Estadísticas actualizadas = planes más inteligentes
+## 19.12. Estadísticas actualizadas = planes más inteligentes
 
 El optimizador se basa en **estadísticas internas** (número de filas, distribución de valores).
 
@@ -257,7 +257,7 @@ Si están desactualizadas:
 - Elegirá planes subóptimos,
 - Consultas lentas aunque haya índices.
 
-📌 Solución:
+Solución:
 
 ```sql
 VACUUM ANALYZE;  -- PostgreSQL
@@ -265,9 +265,9 @@ ANALYZE TABLE pedido;  -- MySQL
 
 ```
 
-👉 Siempre analiza tablas **después de cargas grandes o cambios estructurales**.
+Siempre analiza tablas **después de cargas grandes o cambios estructurales**.
 
-## 🧠 19.13. Buenas prácticas de planificación conceptual
+## 19.13. Buenas prácticas de planificación conceptual
 
 - Diseña tus consultas pensando en **selectividad**, no en “lo que suena bien”.
 - Usa índices alineados con los patrones reales de acceso.
@@ -277,7 +277,7 @@ ANALYZE TABLE pedido;  -- MySQL
 - Prefiere joins bien diseñados a subconsultas innecesarias.
 - Ajusta consultas para evitar recorrer más filas de las necesarias.
 
-## 🚨 19.14. Errores comunes
+## 19.14. Errores comunes
 
 - Pensar que “si hay índice, siempre se usará”.
 - No revisar los planes de ejecución y confiar ciegamente.

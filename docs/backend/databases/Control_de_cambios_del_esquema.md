@@ -1,6 +1,6 @@
-# Modulo 26. Control de cambios del esquema
+# Control de cambios del esquema
 
-## 🧭 26.1. Por qué versionar cambios en la base
+## 26.1. Por qué versionar cambios en la base
 
 Cuando desarrollas una aplicación moderna:
 
@@ -8,7 +8,7 @@ Cuando desarrollas una aplicación moderna:
 - El frontend evoluciona con commits y ramas,
 - Pero la base de datos… ¿cómo controlas su evolución?
 
-👉 No puedes depender de “copiar y pegar scripts SQL a mano”.
+No puedes depender de “copiar y pegar scripts SQL a mano”.
 
 Si dos desarrolladores hacen cambios en paralelo, sin control:
 
@@ -16,9 +16,9 @@ Si dos desarrolladores hacen cambios en paralelo, sin control:
 - Desplegar a producción se vuelve riesgoso.
 - No hay forma de “volver atrás” si algo sale mal.
 
-📌 Por eso usamos **migraciones**: scripts ordenados que describen cómo cambia la base a lo largo del tiempo.
+Por eso usamos **migraciones**: scripts ordenados que describen cómo cambia la base a lo largo del tiempo.
 
-## 🧠 26.2. Qué es una migración
+## 26.2. Qué es una migración
 
 Una **migración** es un archivo que contiene instrucciones para **modificar la estructura de la base** de forma **determinística y reversible**.
 
@@ -43,17 +43,17 @@ DROP TABLE productos;
 
 ```
 
-📌 *Up = aplicar cambios*
+_Up = aplicar cambios_
 
-📌 *Down = revertir cambios*
+_Down = revertir cambios_
 
-👉 Con esto puedes:
+Con esto puedes:
 
 - Crear la tabla en desarrollo, staging y producción.
 - Revertir si algo falla.
 - Mantener un historial claro de cambios.
 
-## 🧭 26.3. Migraciones ascendentes y descendentes
+## 26.3. Migraciones ascendentes y descendentes
 
 Las migraciones se **aplican en orden** (ascendentes) o se **deshacen** (descendentes).
 
@@ -69,9 +69,9 @@ Ejemplo:
 - Migrar “hacia arriba” → se aplican en orden 1, 2, 3.
 - Migrar “hacia abajo” → se revierten en orden 3, 2, 1.
 
-✅ Esto permite sincronizar la estructura de la base con cualquier versión del código.
+Esto permite sincronizar la estructura de la base con cualquier versión del código.
 
-## 🧱 26.4. Ejemplo práctico — añadir columna
+## 26.4. Ejemplo práctico — añadir columna
 
 Up:
 
@@ -87,22 +87,22 @@ ALTER TABLE productos DROP COLUMN stock;
 
 ```
 
-👉 Pequeño cambio, pero versionado y reversible.
+Pequeño cambio, pero versionado y reversible.
 
-## 🧭 26.5. Herramientas comunes para migraciones
+## 26.5. Herramientas comunes para migraciones
 
 Dependiendo del stack, hay varias opciones populares:
 
-| Herramienta | Lenguaje | Descripción breve |
-| --- | --- | --- |
-| Flyway | SQL / Java | Muy usada en entornos empresariales |
-| Liquibase | SQL / XML / YAML | Ideal para equipos grandes |
-| Knex Migrations | JS | Muy usada en Node.js |
-| Prisma Migrate | JS/TS | ORM + migraciones |
-| Alembic | Python | Standard en ecosistemas Flask/FastAPI |
-| Django Migrations | Python | Integrado al framework |
+| Herramienta       | Lenguaje         | Descripción breve                     |
+| ----------------- | ---------------- | ------------------------------------- |
+| Flyway            | SQL / Java       | Muy usada en entornos empresariales   |
+| Liquibase         | SQL / XML / YAML | Ideal para equipos grandes            |
+| Knex Migrations   | JS               | Muy usada en Node.js                  |
+| Prisma Migrate    | JS/TS            | ORM + migraciones                     |
+| Alembic           | Python           | Standard en ecosistemas Flask/FastAPI |
+| Django Migrations | Python           | Integrado al framework                |
 
-👉 Todas siguen el mismo patrón: scripts versionados, ordenados y reversibles.
+Todas siguen el mismo patrón: scripts versionados, ordenados y reversibles.
 
 Ejemplo Knex:
 
@@ -113,17 +113,17 @@ npx knex migrate:rollback
 
 ```
 
-## 🧠 26.6. Migraciones automáticas vs manuales
+## 26.6. Migraciones automáticas vs manuales
 
 - **Manuales** → tú escribes las instrucciones SQL a mano (máximo control).
 - **Automáticas** → la herramienta las genera a partir de cambios en modelos (rápido, pero puede ser menos preciso).
 
-📌 Recomendación práctica:
+Recomendación práctica:
 
 - Usa automáticas para cambios sencillos (agregar columnas, índices).
 - Usa manuales para operaciones delicadas (mover datos, refactorizar claves, etc.).
 
-## 🧭 26.7. Semillas (seeders) — poblar datos iniciales
+## 26.7. Semillas (seeders) — poblar datos iniciales
 
 Además de migrar estructura, muchas apps necesitan:
 
@@ -131,7 +131,7 @@ Además de migrar estructura, muchas apps necesitan:
 - Configuraciones por defecto,
 - Catálogos básicos (países, roles, categorías…).
 
-👉 Para eso usamos **semillas** (seed data).
+Para eso usamos **semillas** (seed data).
 
 Ejemplo en SQL:
 
@@ -145,18 +145,17 @@ Ejemplo con Knex:
 
 ```jsx
 exports.seed = async function (knex) {
-  await knex('roles').insert([
-    { nombre: 'admin' },
-    { nombre: 'editor' },
-    { nombre: 'lector' }
+  await knex("roles").insert([
+    { nombre: "admin" },
+    { nombre: "editor" },
+    { nombre: "lector" },
   ]);
 };
-
 ```
 
-📌 Esto se ejecuta después de las migraciones iniciales, garantizando que la BD arranca con datos mínimos funcionales.
+Esto se ejecuta después de las migraciones iniciales, garantizando que la BD arranca con datos mínimos funcionales.
 
-## 🧱 26.8. Data-migrations — cuando cambia la forma de los datos
+## 26.8. Data-migrations — cuando cambia la forma de los datos
 
 No todos los cambios son estructurales.
 
@@ -192,12 +191,12 @@ ALTER TABLE usuarios DROP COLUMN apellido;
 
 ```
 
-👉 Esto es una **data-migration**:
+Esto es una **data-migration**:
 
 - Cambia estructura + contenido.
 - Debe ser tratada como una migración normal, versionada y reversible.
 
-## 🧭 26.9. Buenas prácticas con migraciones
+## 26.9. Buenas prácticas con migraciones
 
 - Una migración debe ser **atómica**: hace un cambio lógico y nada más.
 - Usa nombres claros: `001_add_stock_column.sql`, no `mig1.sql`.
@@ -206,7 +205,7 @@ ALTER TABLE usuarios DROP COLUMN apellido;
 - Documenta por qué se hizo cada cambio.
 - Usa control de versiones (Git) para todo el historial.
 
-## 🧠 26.10. Despliegues seguros con migraciones
+## 26.10. Despliegues seguros con migraciones
 
 En entornos reales:
 
@@ -215,7 +214,7 @@ En entornos reales:
 - Se hacen backups previos si son cambios críticos.
 - Se monitorean tiempos de ejecución para no bloquear la base.
 
-📌 Ejemplo de pipeline típico:
+Ejemplo de pipeline típico:
 
 ```
 git push main
@@ -227,9 +226,9 @@ git push main
 
 ```
 
-## 🚨 26.11. Errores comunes
+## 26.11. Errores comunes
 
-- Editar directamente la base de datos “a mano” en producción 😬
+- Editar directamente la base de datos “a mano” en producción
 - No escribir migraciones de reversión (down).
 - Hacer migraciones gigantes que mezclan 10 cambios distintos.
 - No poblar datos iniciales con seeders → sistemas vacíos que fallan.

@@ -1,10 +1,10 @@
-# Modulo 3. Relaciones y cardinalidad
+# Relaciones y cardinalidad
 
-## 🧭 3.1. Qué es una relación (en serio)
+## 3.1. Qué es una relación (en serio)
 
 En el modelo relacional, **una relación no es “una amistad entre tablas”** ni un “link” informal:
 
-👉 Es **una correspondencia formal entre entidades**, basada en **claves** que garantizan integridad.
+Es **una correspondencia formal entre entidades**, basada en **claves** que garantizan integridad.
 
 Ejemplo cotidiano:
 
@@ -14,7 +14,7 @@ Ejemplo cotidiano:
 
 Estas relaciones se definen en el diseño de la base de datos, no en el código de la aplicación.
 
-## 🔸 3.2. Tipos de cardinalidades
+## 3.2. Tipos de cardinalidades
 
 La **cardinalidad** indica **cuántas instancias de una entidad se relacionan con cuántas de otra**.
 
@@ -26,28 +26,28 @@ En bases de datos relacionales, hay **tres tipos fundamentales**:
 
 Vamos a verlas una por una con ejemplos **reales**, **diagramas conceptuales** y **simulación práctica con CSV + JS**.
 
-## 🟢 3.3. Relación 1 a 1 — “Identidad extendida”
+## 3.3. Relación 1 a 1 — “Identidad extendida”
 
 Una relación 1 a 1 se da cuando:
 
 - Cada fila de la tabla A **se relaciona con una sola** fila de la tabla B.
 - Y cada fila de la tabla B **solo pertenece a una** de la tabla A.
 
-👉 Se usa cuando **una entidad se divide en dos tablas** por motivos lógicos, técnicos o de seguridad.
+Se usa cuando **una entidad se divide en dos tablas** por motivos lógicos, técnicos o de seguridad.
 
 Ejemplo real:
 
 - Tabla `Usuario` (información general)
 - Tabla `Perfil` (información sensible o adicional)
 
-| Usuario | Perfil |
-| --- | --- |
+| Usuario         | Perfil              |
+| --------------- | ------------------- |
 | id_usuario (PK) | id_perfil (PK = FK) |
-| nombre | dirección |
-| correo | fecha_nacimiento |
-|  | teléfono |
+| nombre          | dirección           |
+| correo          | fecha_nacimiento    |
+|                 | teléfono            |
 
-📌 Nota:
+Nota:
 
 `id_perfil` es **a la vez PK y FK** → esto fuerza la relación 1:1 estricta.
 
@@ -73,7 +73,7 @@ id_perfil,direccion,fecha_nacimiento,telefono
 
 ```
 
-## 🧑‍💻 Ejercicio práctico — Validar 1:1
+## Ejercicio práctico — Validar 1:1
 
 Vamos a verificar que **cada usuario tenga como máximo un perfil** y viceversa.
 
@@ -84,7 +84,7 @@ function leerCSV(ruta) {
   const data = fs.readFileSync(ruta, "utf-8").trim();
   const [cabecera, ...filas] = data.split("\n");
   const campos = cabecera.split(",");
-  return filas.map(fila => {
+  return filas.map((fila) => {
     const valores = fila.split(",");
     return Object.fromEntries(valores.map((v, i) => [campos[i], v]));
   });
@@ -93,13 +93,15 @@ function leerCSV(ruta) {
 const usuarios = leerCSV("./datos/usuarios.csv");
 const perfiles = leerCSV("./datos/perfiles.csv");
 
-const idsUsuarios = new Set(usuarios.map(u => u.id_usuario));
-const idsPerfiles = new Set(perfiles.map(p => p.id_perfil));
+const idsUsuarios = new Set(usuarios.map((u) => u.id_usuario));
+const idsPerfiles = new Set(perfiles.map((p) => p.id_perfil));
 
 // Verificamos que cada perfil corresponde a un usuario existente
 for (const perfil of perfiles) {
   if (!idsUsuarios.has(perfil.id_perfil)) {
-    console.error(`❌ Perfil ${perfil.id_perfil} no corresponde a ningún usuario`);
+    console.error(
+      `❌ Perfil ${perfil.id_perfil} no corresponde a ningún usuario`
+    );
   }
 }
 
@@ -112,12 +114,11 @@ if (idsPerfiles.size !== perfiles.length) {
 }
 
 console.log("✅ Relación 1:1 verificada correctamente");
-
 ```
 
-👉 Esto es lo que en un motor real se implementaría con **una PK/FK compartida**.
+Esto es lo que en un motor real se implementaría con **una PK/FK compartida**.
 
-## 🟡 3.4. Relación 1 a N — “Padre e hijos”
+## 3.4. Relación 1 a N — “Padre e hijos”
 
 La relación 1 a N es la más común:
 
@@ -129,14 +130,14 @@ Ejemplo real:
 - Un **cliente** puede hacer muchos **pedidos**.
 - Pero cada **pedido** solo pertenece a un **cliente**.
 
-| Cliente | Pedido |
-| --- | --- |
-| id_cliente (PK) | id_pedido (PK) |
-| nombre | id_cliente (FK) |
-| correo | fecha |
-|  | total |
+| Cliente         | Pedido          |
+| --------------- | --------------- |
+| id_cliente (PK) | id_pedido (PK)  |
+| nombre          | id_cliente (FK) |
+| correo          | fecha           |
+|                 | total           |
 
-📌 Esta relación se implementa poniendo **la PK del padre como FK en la tabla hija**.
+Esta relación se implementa poniendo **la PK del padre como FK en la tabla hija**.
 
 Ejemplo en CSV:
 
@@ -159,19 +160,21 @@ A003,2,2025-10-11,35.00
 
 ```
 
-👉 El cliente 1 (Ana) tiene **2 pedidos**; el cliente 2 (Luis) tiene **1 pedido**.
+El cliente 1 (Ana) tiene **2 pedidos**; el cliente 2 (Luis) tiene **1 pedido**.
 
-## 🧑‍💻 Ejercicio práctico — Validar 1:N
+## Ejercicio práctico — Validar 1:N
 
 ```jsx
 const clientes = leerCSV("./datos/clientes.csv");
 const pedidos = leerCSV("./datos/pedidos.csv");
 
-const idsClientes = new Set(clientes.map(c => c.id_cliente));
+const idsClientes = new Set(clientes.map((c) => c.id_cliente));
 
 for (const pedido of pedidos) {
   if (!idsClientes.has(pedido.id_cliente)) {
-    console.error(`❌ Pedido ${pedido.id_pedido} apunta a un cliente inexistente`);
+    console.error(
+      `❌ Pedido ${pedido.id_pedido} apunta a un cliente inexistente`
+    );
   }
 }
 
@@ -182,12 +185,13 @@ for (const pedido of pedidos) {
 }
 
 for (const cliente of clientes) {
-  console.log(`${cliente.nombre} tiene ${contador[cliente.id_cliente] || 0} pedidos`);
+  console.log(
+    `${cliente.nombre} tiene ${contador[cliente.id_cliente] || 0} pedidos`
+  );
 }
-
 ```
 
-📌 **Salida esperada:**
+**Salida esperada:**
 
 ```
 Ana tiene 2 pedidos
@@ -195,9 +199,9 @@ Luis tiene 1 pedidos
 
 ```
 
-👉 Así es como se implementa conceptualmente un `JOIN` 1:N sin motor.
+Así es como se implementa conceptualmente un `JOIN` 1:N sin motor.
 
-## 🔵 3.5. Relación N a N — “Redes reales”
+## 3.5. Relación N a N — “Redes reales”
 
 Una relación N a N significa:
 
@@ -209,13 +213,13 @@ Ejemplo real:
 - Un **producto** puede estar en **muchos pedidos**.
 - Un **pedido** puede tener **muchos productos**.
 
-| Pedido | PedidoProducto (intermedia) | Producto |
-| --- | --- | --- |
-| id_pedido (PK) | id_pedido (FK) | id_producto (PK) |
-|  | id_producto (FK) | nombre |
-|  | cantidad | precio |
+| Pedido         | PedidoProducto (intermedia) | Producto         |
+| -------------- | --------------------------- | ---------------- |
+| id_pedido (PK) | id_pedido (FK)              | id_producto (PK) |
+|                | id_producto (FK)            | nombre           |
+|                | cantidad                    | precio           |
 
-📌 **Esto no se implementa directamente** entre las dos tablas principales:
+**Esto no se implementa directamente** entre las dos tablas principales:
 
 se usa una **tabla intermedia** que contiene las relaciones (y a veces atributos adicionales como `cantidad`).
 
@@ -252,17 +256,17 @@ A003,2,3
 
 ```
 
-👉 Pedido A001 tiene dos productos: Teclado (2 uds) y Monitor (1 ud).
+Pedido A001 tiene dos productos: Teclado (2 uds) y Monitor (1 ud).
 
-👉 El producto Teclado aparece en varios pedidos.
+El producto Teclado aparece en varios pedidos.
 
-## 🧑‍💻 Ejercicio práctico — Validar N:N
+## Ejercicio práctico — Validar N:N
 
 ```jsx
 const productos = leerCSV("./datos/productos.csv");
 const pedidoProducto = leerCSV("./datos/pedido_producto.csv");
-const idsPedidos = new Set(pedidos.map(p => p.id_pedido));
-const idsProductos = new Set(productos.map(p => p.id_producto));
+const idsPedidos = new Set(pedidos.map((p) => p.id_pedido));
+const idsProductos = new Set(productos.map((p) => p.id_producto));
 
 for (const fila of pedidoProducto) {
   if (!idsPedidos.has(fila.id_pedido)) {
@@ -274,20 +278,19 @@ for (const fila of pedidoProducto) {
 }
 
 console.log("✅ Relaciones N:N verificadas correctamente");
-
 ```
 
-👉 Esto simula lo que en SQL sería una **tabla de unión** con claves compuestas.
+Esto simula lo que en SQL sería una **tabla de unión** con claves compuestas.
 
-## 🧠 3.6. Resumen visual rápido
+## 3.6. Resumen visual rápido
 
-| Tipo relación | Ejemplo real | Estructura típica | Observación clave |
-| --- | --- | --- | --- |
-| 1:1 | Usuario ↔ Perfil | PK = FK | Extiende entidad |
-| 1:N | Cliente → Pedido | FK en la tabla hija | Caso más común |
-| N:N | Pedido ↔ Producto | Tabla intermedia con FK compuestas | Escalable y flexible |
+| Tipo relación | Ejemplo real      | Estructura típica                  | Observación clave    |
+| ------------- | ----------------- | ---------------------------------- | -------------------- |
+| 1:1           | Usuario ↔ Perfil  | PK = FK                            | Extiende entidad     |
+| 1:N           | Cliente → Pedido  | FK en la tabla hija                | Caso más común       |
+| N:N           | Pedido ↔ Producto | Tabla intermedia con FK compuestas | Escalable y flexible |
 
-## ⚠️ 3.7. Buenas prácticas con relaciones y cardinalidades
+## 3.7. Buenas prácticas con relaciones y cardinalidades
 
 - Define siempre **en qué tabla va la FK** (lado “muchos”).
 - Usa tablas intermedias con PK compuesta para N:N.
@@ -295,9 +298,9 @@ console.log("✅ Relaciones N:N verificadas correctamente");
 - Evita meter información repetida en varias tablas.
 - Usa NULL con cuidado en relaciones opcionales (por ejemplo, “un perfil opcional”).
 
-## 🚨 Errores comunes de principiantes
+## Errores comunes de principiantes
 
-- Intentar modelar N:N con columnas repetidas o listas de IDs → 💥 desnormalización chapucera.
+- Intentar modelar N:N con columnas repetidas o listas de IDs → desnormalización chapucera.
 - No definir restricciones → relaciones inconsistentes.
 - No usar PK compuesta en tablas intermedias → duplicados silenciosos.
 - Usar claves naturales que cambian con el tiempo.

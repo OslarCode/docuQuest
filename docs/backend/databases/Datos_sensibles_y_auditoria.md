@@ -1,6 +1,6 @@
-# Modulo 23. Datos sensibles y auditoría
+# Datos sensibles y auditoría
 
-## 🧭 23.1. ¿Qué son “datos sensibles”?
+## 23.1. ¿Qué son “datos sensibles”?
 
 **Datos sensibles** son aquellos que pueden:
 
@@ -9,15 +9,15 @@
 
 Ejemplos comunes en aplicaciones reales:
 
-- 📛 Nombre completo, DNI, dirección
-- 📧 Email, teléfono
-- 💳 Datos financieros (número de tarjeta, cuenta bancaria)
-- 🏥 Datos de salud
-- 🔐 Contraseñas, tokens de autenticación, información confidencial interna
+- Nombre completo, DNI, dirección
+- Email, teléfono
+- Datos financieros (número de tarjeta, cuenta bancaria)
+- Datos de salud
+- Contraseñas, tokens de autenticación, información confidencial interna
 
-📌 *En bases de datos, no todos los datos son iguales. Algunos requieren medidas de seguridad especiales*.
+_En bases de datos, no todos los datos son iguales. Algunos requieren medidas de seguridad especiales_.
 
-## 🧠 23.2. Principios básicos de protección de datos sensibles
+## 23.2. Principios básicos de protección de datos sensibles
 
 1. **Minimizar**: almacenar solo lo estrictamente necesario.
 2. **Limitar acceso**: no todos deben ver todo.
@@ -26,21 +26,21 @@ Ejemplos comunes en aplicaciones reales:
 5. **Eliminar o anonimizar** cuando los datos dejan de ser necesarios.
 6. **Nunca** almacenar contraseñas en texto plano.
 
-## 🧭 23.3. Ejemplo práctico — emails y contraseñas
+## 23.3. Ejemplo práctico — emails y contraseñas
 
-**Tabla insegura ❌:**
+**Tabla insegura:**
 
 ```sql
 CREATE TABLE usuario (
   id SERIAL PRIMARY KEY,
   nombre VARCHAR(100),
   email VARCHAR(150),
-  password VARCHAR(100) -- ❌ inseguro
+  password VARCHAR(100) --  inseguro
 );
 
 ```
 
-**Tabla más segura ✅:**
+**Tabla más segura:**
 
 ```sql
 CREATE TABLE usuario (
@@ -57,7 +57,7 @@ CREATE TABLE usuario (
 - El correo es único → evita duplicados y acceso descontrolado.
 - Se puede limitar el acceso al campo sensible.
 
-👉 Ejemplo de privilegio restringido:
+Ejemplo de privilegio restringido:
 
 ```sql
 REVOKE SELECT ON usuario FROM lector;
@@ -65,9 +65,9 @@ GRANT SELECT (id, nombre) ON usuario TO lector;
 
 ```
 
-👉 Solo roles con permisos especiales podrán ver emails.
+Solo roles con permisos especiales podrán ver emails.
 
-## 🧠 23.4. Enmascaramiento y anonimización
+## 23.4. Enmascaramiento y anonimización
 
 A veces necesitamos mostrar datos **parciales**, por ejemplo, para soporte o informes.
 
@@ -90,9 +90,9 @@ GRANT SELECT ON vista_usuario_enmascarado TO soporte;
 
 ```
 
-👉 El equipo de soporte **no ve el email real completo**, solo la versión enmascarada.
+El equipo de soporte **no ve el email real completo**, solo la versión enmascarada.
 
-## 🧭 23.5. Retención y eliminación controlada
+## 23.5. Retención y eliminación controlada
 
 Un error común es **guardar datos sensibles para siempre**.
 
@@ -112,9 +112,9 @@ WHERE fecha_creacion < NOW() - INTERVAL '5 years';
 
 ```
 
-👉 Así se conserva la estructura de la base sin mantener información personal.
+Así se conserva la estructura de la base sin mantener información personal.
 
-## 🧠 23.6. Auditoría: registrar accesos y modificaciones
+## 23.6. Auditoría: registrar accesos y modificaciones
 
 La **auditoría** permite responder a preguntas como:
 
@@ -122,7 +122,7 @@ La **auditoría** permite responder a preguntas como:
 - ¿Cuándo se modificó este registro?
 - ¿Qué valores se cambiaron?
 
-👉 Esto no es opcional en entornos reales.
+Esto no es opcional en entornos reales.
 
 Muchos motores ofrecen mecanismos nativos de auditoría o triggers personalizados.
 
@@ -157,9 +157,9 @@ FOR EACH ROW EXECUTE FUNCTION log_pedido();
 
 ```
 
-👉 Cada vez que alguien inserte, actualice o borre en `pedido`, se registrará automáticamente.
+Cada vez que alguien inserte, actualice o borre en `pedido`, se registrará automáticamente.
 
-## 🧭 23.7. Auditoría de lectura (SELECT)
+## 23.7. Auditoría de lectura (SELECT)
 
 Por defecto, la mayoría de motores no auditan lecturas (`SELECT`),
 
@@ -185,9 +185,9 @@ SELECT * FROM log_acceso_usuario();
 
 ```
 
-👉 Así sabemos quién consultó la tabla sensible.
+Así sabemos quién consultó la tabla sensible.
 
-## 🧠 23.8. Roles especiales para datos sensibles
+## 23.8. Roles especiales para datos sensibles
 
 No todos los usuarios que tienen acceso a la base deben poder ver información sensible.
 
@@ -205,9 +205,9 @@ REVOKE INSERT, UPDATE, DELETE ON auditoria FROM auditor;
 
 ```
 
-👉 Así garantizamos que el auditor puede leer los registros, pero **no modificarlos**.
+Así garantizamos que el auditor puede leer los registros, pero **no modificarlos**.
 
-## 🧭 23.9. Buenas prácticas en protección y auditoría
+## 23.9. Buenas prácticas en protección y auditoría
 
 - Identifica datos sensibles en tu modelo y márcalos desde el principio.
 - Usa roles y privilegios diferenciados para controlar acceso.
@@ -217,7 +217,7 @@ REVOKE INSERT, UPDATE, DELETE ON auditoria FROM auditor;
 - Documenta qué se audita y por qué.
 - Automatiza revisiones periódicas de accesos.
 
-## 🚨 23.10. Errores comunes
+## 23.10. Errores comunes
 
 - Guardar contraseñas en texto plano (¡aún ocurre!).
 - Dar acceso de lectura total a todos los roles.

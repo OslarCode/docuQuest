@@ -1,6 +1,6 @@
-# Modulo 5. Modelado conceptual ER/UML
+# Modelado conceptual ER/UML
 
-## 🧭 5.1. Qué es el modelado conceptual
+## 5.1. Qué es el modelado conceptual
 
 El **modelo conceptual** representa las entidades y relaciones de un dominio **de forma gráfica y abstracta**, sin entrar todavía en detalles técnicos de SQL, tipos de datos o índices.
 
@@ -11,12 +11,12 @@ El objetivo es:
 - Alinear la visión de analistas, desarrolladores y responsables del proyecto,
 - Prevenir errores de diseño antes de que lleguen a la base de datos real.
 
-👉 En bases de datos relacionales, esto se suele hacer con:
+En bases de datos relacionales, esto se suele hacer con:
 
 - **Diagramas Entidad–Relación (ER)** tradicionales (Chen / Crow’s Foot)
 - O **diagramas de clases UML** simplificados, si se prefiere un estilo orientado a objetos.
 
-## 🧱 5.2. Elementos principales de un diagrama ER
+## 5.2. Elementos principales de un diagrama ER
 
 1. **Entidad** → Representa un conjunto de objetos reales o abstractos.
    - Se dibuja como un rectángulo.
@@ -35,7 +35,7 @@ El objetivo es:
    - `0..*` muchos opcional
    - `1..*` muchos obligatorio
 
-## 🏫 5.3. Ejemplo: Sistema de gestión académica (continuación del Módulo 4)
+## 5.3. Ejemplo: Sistema de gestión académica (continuación del Módulo 4)
 
 Tomamos el diccionario de datos del centro de formación:
 
@@ -53,13 +53,13 @@ Relaciones:
 - Cada **Matrícula** pertenece a exactamente **un Alumno** y **un Curso**
 - Cada **Curso** tiene un **Instructor** responsable
 
-👉 Observa:
+Observa:
 
 - `Alumno` ↔ `Matrícula` es 1:N (un alumno tiene muchas matrículas, cada matrícula es de un solo alumno).
 - `Curso` ↔ `Matrícula` es 1:N (igual lógica).
 - `Curso` ↔ `Instructor` es 1:1 (un curso tiene un instructor principal; un instructor puede impartir varios cursos si el negocio lo permite —esto sería 1:N).
 
-## ✏️ 5.4. Sintaxis de cardinalidades (Crow’s Foot)
+## 5.4. Sintaxis de cardinalidades (Crow’s Foot)
 
 | Notación       | Significado        |
 | -------------- | ------------------ |
@@ -69,9 +69,9 @@ Relaciones:
 | 0..\* ———— 1   | Muchos opcional    |
 | 0.._ ———— 0.._ | Muchos a muchos    |
 
-👉 Esta notación es práctica y clara para el análisis y documentación.
+Esta notación es práctica y clara para el análisis y documentación.
 
-## 📊 5.5. Ejemplo UML (alternativa válida)
+## 5.5. Ejemplo UML (alternativa válida)
 
 Si trabajas con equipos más cercanos a programación orientada a objetos, puedes usar **UML simplificado** para modelar entidades como clases:
 
@@ -94,11 +94,11 @@ Si trabajas con equipos más cercanos a programación orientada a objetos, puede
 
 ```
 
-👉 UML no sustituye al ER clásico, pero puede ser útil cuando la base de datos se integrará directamente con código orientado a objetos.
+UML no sustituye al ER clásico, pero puede ser útil cuando la base de datos se integrará directamente con código orientado a objetos.
 
-## 🧰 5.6. Ejercicio práctico guiado — Crear un ER conceptual simple
+## 5.6. Ejercicio práctico guiado — Crear un ER conceptual simple
 
-📌 **Dominio**: sistema de biblioteca (el que usamos en Módulo 4)
+**Dominio**: sistema de biblioteca (el que usamos en Módulo 4)
 
 Entidades:
 
@@ -113,7 +113,7 @@ Relaciones:
 - Socio (1) — Préstamo (N)
 - Ejemplar (1) — Préstamo (N)
 
-👉 Objetivo:
+Objetivo:
 
 - Crear un diagrama ER con entidades, atributos y cardinalidades.
 - Usar la notación Crow’s Foot.
@@ -164,7 +164,7 @@ Table Prestamo {
 
 Esto genera automáticamente un diagrama ER con relaciones y cardinalidades.
 
-## 🧠 5.7. Buenas prácticas en modelado conceptual
+## 5.7. Buenas prácticas en modelado conceptual
 
 - Cada relación debe tener **una justificación funcional**, no se crean “por si acaso”.
 - Define cardinalidades con precisión (evita dejar “N:N” si no sabes si es opcional u obligatorio).
@@ -172,7 +172,7 @@ Esto genera automáticamente un diagrama ER con relaciones y cardinalidades.
 - El modelo conceptual **no incluye aún índices, triggers ni optimizaciones físicas**.
 - No intentes resolver reglas de negocio complejas aquí: documenta la lógica y sigue.
 
-## 🚨 Errores comunes de principiantes
+## Errores comunes de principiantes
 
 - Crear relaciones circulares sin motivo.
 - No diferenciar entre cardinalidad obligatoria y opcional.

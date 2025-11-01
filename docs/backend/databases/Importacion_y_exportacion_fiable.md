@@ -1,17 +1,17 @@
-# Modulo 28. Importación y exportación fiable
+# Importación y exportación fiable
 
-## 🧭 28.1. CSV y JSON: los formatos más comunes
+## 28.1. CSV y JSON: los formatos más comunes
 
 Cuando hablamos de integración de datos, estos son los formatos que más aparecen:
 
-| Formato | Características principales | Uso típico |
-| --- | --- | --- |
-| **CSV** | Ligero, fácil de leer, ampliamente soportado | Importar/exportar listados (productos, usuarios…) |
-| **JSON** | Estructurado, jerárquico, admite anidación | APIs, integraciones complejas, catálogos con relaciones |
+| Formato  | Características principales                  | Uso típico                                              |
+| -------- | -------------------------------------------- | ------------------------------------------------------- |
+| **CSV**  | Ligero, fácil de leer, ampliamente soportado | Importar/exportar listados (productos, usuarios…)       |
+| **JSON** | Estructurado, jerárquico, admite anidación   | APIs, integraciones complejas, catálogos con relaciones |
 
-📌 En ambos casos, la clave no es solo mover datos… sino **validarlos y cargarlos correctamente** sin romper la integridad de la base.
+En ambos casos, la clave no es solo mover datos… sino **validarlos y cargarlos correctamente** sin romper la integridad de la base.
 
-## 🧠 28.2. Importación básica desde CSV
+## 28.2. Importación básica desde CSV
 
 Ejemplo: supongamos que tenemos esta tabla:
 
@@ -45,13 +45,13 @@ CSV HEADER;
 
 ```
 
-👉 Esto carga las tres filas directamente en la tabla.
+Esto carga las tres filas directamente en la tabla.
 
-📌 Esto funciona muy bien… **si** el CSV está limpio.
+Esto funciona muy bien… **si** el CSV está limpio.
 
 Pero en la práctica, hay que validar antes de confiar.
 
-## 🧭 28.3. Validar antes de insertar
+## 28.3. Validar antes de insertar
 
 Errores comunes en archivos reales:
 
@@ -88,9 +88,9 @@ FROM tmp_producto;
 
 ```
 
-👉 De esta forma **no contaminas** la tabla real con datos rotos.
+De esta forma **no contaminas** la tabla real con datos rotos.
 
-## 🧠 28.4. Importación de JSON
+## 28.4. Importación de JSON
 
 JSON es ideal cuando:
 
@@ -102,10 +102,9 @@ Ejemplo de archivo:
 
 ```json
 [
-  { "nombre": "Teclado", "precio": 59.90, "categoria": "Electrónica" },
+  { "nombre": "Teclado", "precio": 59.9, "categoria": "Electrónica" },
   { "nombre": "Camiseta", "precio": 19.99, "categoria": "Ropa" }
 ]
-
 ```
 
 En PostgreSQL (u otros motores con soporte JSON):
@@ -124,9 +123,9 @@ FROM tmp_json;
 
 ```
 
-👉 Esto permite validar y transformar **campo por campo** antes de insertar.
+Esto permite validar y transformar **campo por campo** antes de insertar.
 
-## 🧭 28.5. Validación semántica (no solo sintaxis)
+## 28.5. Validación semántica (no solo sintaxis)
 
 No basta con que el archivo “tenga datos”.
 
@@ -145,13 +144,13 @@ SELECT * FROM tmp_producto WHERE categoria NOT IN (SELECT nombre FROM categoria)
 
 ```
 
-👉 Si algo falla, **se corrige antes de insertarlo**.
+Si algo falla, **se corrige antes de insertarlo**.
 
-## 🧠 28.6. Cargas idempotentes — que no duplican datos
+## 28.6. Cargas idempotentes — que no duplican datos
 
 Una carga idempotente es aquella que puedes ejecutar varias veces y **el resultado es siempre el mismo**.
 
-Ejemplo inseguro ❌:
+Ejemplo inseguro:
 
 ```sql
 INSERT INTO producto (nombre, precio, categoria)
@@ -159,9 +158,9 @@ SELECT nombre, precio, categoria FROM tmp_producto;
 
 ```
 
-👉 Si ejecutas este script dos veces → duplica los registros.
+Si ejecutas este script dos veces → duplica los registros.
 
-Ejemplo idempotente ✅:
+Ejemplo idempotente:
 
 ```sql
 INSERT INTO producto (nombre, precio, categoria)
@@ -173,15 +172,15 @@ SET precio = EXCLUDED.precio,
 
 ```
 
-👉 Si el producto ya existe, **se actualiza**.
+Si el producto ya existe, **se actualiza**.
 
-👉 Si no existe, **se inserta**.
+Si no existe, **se inserta**.
 
-👉 Si ejecutas el script 10 veces, la tabla queda igual.
+Si ejecutas el script 10 veces, la tabla queda igual.
 
-📌 Esto es especialmente importante en **integraciones automáticas y cron jobs**.
+Esto es especialmente importante en **integraciones automáticas y cron jobs**.
 
-## 🧭 28.7. Control de errores y reportes
+## 28.7. Control de errores y reportes
 
 En flujos de importación reales conviene:
 
@@ -206,9 +205,9 @@ VALUES ('productos.csv', 42, 'Precio inválido: abc');
 
 ```
 
-👉 Así puedes **depurar problemas sin abortar toda la importación**.
+Así puedes **depurar problemas sin abortar toda la importación**.
 
-## 🧠 28.8. Exportación fiable
+## 28.8. Exportación fiable
 
 La exportación es el proceso inverso: sacar datos de forma segura y limpia.
 
@@ -229,14 +228,14 @@ SELECT json_agg(row_to_json(producto)) FROM producto;
 
 ```
 
-👉 Es importante:
+Es importante:
 
 - Asegurar formatos consistentes.
 - Escapar caracteres especiales.
 - Filtrar datos sensibles.
 - Registrar quién exportó y cuándo (auditoría).
 
-## 🧭 28.9. Buenas prácticas en integraciones
+## 28.9. Buenas prácticas en integraciones
 
 - **Nunca** insertes directamente sin validación previa.
 - Usa **tablas temporales o staging** para limpiar datos antes.
@@ -246,7 +245,7 @@ SELECT json_agg(row_to_json(producto)) FROM producto;
 - Haz que la exportación sea clara, repetible y verificable.
 - Si hay datos sensibles → aplica enmascaramiento (ver M23).
 
-## 🚨 28.10. Errores comunes
+## 28.10. Errores comunes
 
 - Cargar CSV directamente sin validar → tablas rotas.
 - No controlar duplicados → datos inflados.

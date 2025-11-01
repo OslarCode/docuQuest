@@ -1,6 +1,6 @@
-# Modulo 13. Integridad referencial en serio
+# Integridad referencial en serio
 
-## 🧭 13.1. ¿Qué es la integridad referencial?
+## 13.1. ¿Qué es la integridad referencial?
 
 En una base de datos relacional, no todas las tablas viven aisladas: muchas están **relacionadas entre sí**.
 
@@ -10,7 +10,7 @@ Por ejemplo:
 - Un **préstamo** de biblioteca pertenece a un **socio** y a un **libro**.
 - Una **matrícula** se asocia a un **alumno** y un **curso**.
 
-👉 La **integridad referencial** es la **regla que garantiza que las relaciones entre tablas se mantengan consistentes**.
+La **integridad referencial** es la **regla que garantiza que las relaciones entre tablas se mantengan consistentes**.
 
 Es decir:
 
@@ -18,12 +18,11 @@ Es decir:
 - No puede haber un préstamo de un libro que no exista.
 - No puedes matricularte en un curso que no está registrado.
 
-📌 Técnicamente:
+Técnicamente:
 
 > Una clave foránea (FK) en una tabla apunta a la clave primaria (PK) de otra tabla, asegurando que el valor siempre existe en la tabla referenciada.
-> 
 
-## 🧱 13.2. Definición de clave foránea
+## 13.2. Definición de clave foránea
 
 **Clave foránea = restricción que conecta dos tablas.**
 
@@ -48,11 +47,11 @@ CREATE TABLE pedido (
 
 ```
 
-👉 `id_cliente` en `pedido` **debe existir primero en la tabla `cliente`**.
+`id_cliente` en `pedido` **debe existir primero en la tabla `cliente`**.
 
 Si intentas insertar un pedido con un `id_cliente` que no existe… ❌ la base de datos lo bloquea.
 
-## 🧠 13.3. Qué pasa cuando se rompe la referencia
+## 13.3. Qué pasa cuando se rompe la referencia
 
 Imagina que existe un pedido:
 
@@ -66,18 +65,18 @@ Si alguien intenta borrar el cliente con `id_cliente = 5` de la tabla `cliente`:
 - La base de datos detecta que **hay pedidos que dependen de ese cliente**.
 - Por defecto, no permitirá borrar (error de integridad referencial).
 
-👉 Esta protección evita que queden **registros “huérfanos”** en la tabla hija.
+Esta protección evita que queden **registros “huérfanos”** en la tabla hija.
 
-## 🧭 13.4. Acciones en cascada — políticas de borrado y actualización
+## 13.4. Acciones en cascada — políticas de borrado y actualización
 
 Cuando definimos una FK, podemos **decidir qué pasa** si se borra o actualiza el registro padre:
 
-| Acción | Descripción |
-| --- | --- |
+| Acción                   | Descripción                                                            |
+| ------------------------ | ---------------------------------------------------------------------- |
 | `RESTRICT` / `NO ACTION` | (Por defecto) No permite borrar/actualizar si hay referencias activas. |
-| `CASCADE` | Borra o actualiza automáticamente los registros hijos. |
-| `SET NULL` | Pone en `NULL` la FK en la tabla hija. |
-| `SET DEFAULT` | Pone un valor por defecto definido. |
+| `CASCADE`                | Borra o actualiza automáticamente los registros hijos.                 |
+| `SET NULL`               | Pone en `NULL` la FK en la tabla hija.                                 |
+| `SET DEFAULT`            | Pone un valor por defecto definido.                                    |
 
 Ejemplo con acciones explícitas:
 
@@ -94,16 +93,16 @@ CREATE TABLE pedido (
 
 ```
 
-👉 Si borras un cliente:
+Si borras un cliente:
 
 - Los pedidos no se borran.
 - Su `id_cliente` pasa a ser `NULL`.
 
-👉 Si actualizas `id_cliente` en la tabla `cliente`:
+Si actualizas `id_cliente` en la tabla `cliente`:
 
 - Se actualiza automáticamente en todos los pedidos asociados.
 
-## 🧱 13.5. Ejemplo real — Biblioteca
+## 13.5. Ejemplo real — Biblioteca
 
 Vamos a modelar un pequeño sistema de biblioteca:
 
@@ -137,37 +136,37 @@ CREATE TABLE prestamo (
 
 ```
 
-👉 Interpretación:
+Interpretación:
 
 - Si borras un socio → **se borran sus préstamos** (CASCADE).
 - Si intentas borrar un libro que está prestado → ❌ no se permite (RESTRICT).
 - Esto mantiene la integridad del modelo.
 
-## 🧠 13.6. Políticas de borrado/actualización — cuándo usar cada una
+## 13.6. Políticas de borrado/actualización — cuándo usar cada una
 
-| Política | Caso típico |
-| --- | --- |
-| `RESTRICT` / `NO ACTION` | Entidades “fuertes” que no deben borrarse si tienen dependencias. Ej: libro, curso |
-| `CASCADE` | Entidades “débiles” que dependen totalmente del padre. Ej: líneas de pedido, préstamos |
-| `SET NULL` | Para preservar datos históricos aunque desaparezca la relación. Ej: cliente eliminado pero pedido histórico |
-| `SET DEFAULT` | Escenarios controlados con un valor predefinido (menos frecuente) |
+| Política                 | Caso típico                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| `RESTRICT` / `NO ACTION` | Entidades “fuertes” que no deben borrarse si tienen dependencias. Ej: libro, curso                          |
+| `CASCADE`                | Entidades “débiles” que dependen totalmente del padre. Ej: líneas de pedido, préstamos                      |
+| `SET NULL`               | Para preservar datos históricos aunque desaparezca la relación. Ej: cliente eliminado pero pedido histórico |
+| `SET DEFAULT`            | Escenarios controlados con un valor predefinido (menos frecuente)                                           |
 
-👉 La elección **no es arbitraria**:
+La elección **no es arbitraria**:
 
 debe basarse en la **semántica del negocio real**.
 
-## 🧭 13.7. Políticas de actualización
+## 13.7. Políticas de actualización
 
 Aunque el borrado es lo más común, también se puede definir qué pasa si **se actualiza la PK** de la tabla padre:
 
 - `ON UPDATE CASCADE` → actualiza en hijos automáticamente.
 - `ON UPDATE RESTRICT` → impide cambiar la PK si hay dependencias.
 
-📌 Nota: si usas **claves sustitutas** (autonuméricos o UUID), normalmente **no se actualizan nunca** → esta política se usa menos.
+Nota: si usas **claves sustitutas** (autonuméricos o UUID), normalmente **no se actualizan nunca** → esta política se usa menos.
 
 ---
 
-## 🧩 13.8. Ejemplo — Pedido y cliente con ON UPDATE CASCADE
+## 13.8. Ejemplo — Pedido y cliente con ON UPDATE CASCADE
 
 ```sql
 CREATE TABLE cliente (
@@ -192,11 +191,11 @@ UPDATE cliente SET id_cliente = 10 WHERE id_cliente = 5;
 
 ```
 
-👉 Automáticamente se actualiza en `pedido`.
+Automáticamente se actualiza en `pedido`.
 
 Esto **evita inconsistencias manuales**.
 
-## 🧠 13.9. Buenas prácticas
+## 13.9. Buenas prácticas
 
 - Define siempre claves foráneas explícitas: no confíes en “coherencia lógica”.
 - Elige la acción de borrado según la **semántica del dominio**.
@@ -204,7 +203,7 @@ Esto **evita inconsistencias manuales**.
 - Documenta las políticas de borrado/actualización.
 - Asegúrate de que tus aplicaciones manejen bien las restricciones (errores FK).
 
-## 🚨 13.10. Errores comunes
+## 13.10. Errores comunes
 
 - No definir FKs → datos huérfanos y consultas inconsistentes.
 - Usar CASCADE sin entender su impacto.

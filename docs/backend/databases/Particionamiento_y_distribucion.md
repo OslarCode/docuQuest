@@ -1,6 +1,6 @@
-# Modulo 33. Particionamiento y distribución
+# Particionamiento y distribución
 
-## 🧭 33.1. El problema que resuelve el particionamiento
+## 33.1. El problema que resuelve el particionamiento
 
 Imagina una tabla `pedido` con **cientos de millones de filas**.
 
@@ -11,15 +11,15 @@ Con el tiempo:
 - Los backups tardan horas.
 - Las operaciones de mantenimiento ya no entran en la ventana nocturna.
 
-📌 Llegados a ese punto, **ya no basta con agregar índices**:
+Llegados a ese punto, **ya no basta con agregar índices**:
 
-👉 hay que **dividir la tabla en partes más manejables**, sin cambiar la lógica de consultas.
+hay que **dividir la tabla en partes más manejables**, sin cambiar la lógica de consultas.
 
 A eso se le llama **particionamiento**.
 
-## 🧠 33.2. Qué es particionar
+## 33.2. Qué es particionar
 
-Particionar una tabla significa **dividir físicamente** sus datos en **segmentos más pequeños**, llamados *particiones*, mientras la aplicación **sigue viéndola como una sola tabla lógica**.
+Particionar una tabla significa **dividir físicamente** sus datos en **segmentos más pequeños**, llamados _particiones_, mientras la aplicación **sigue viéndola como una sola tabla lógica**.
 
 Ejemplo conceptual:
 
@@ -31,34 +31,34 @@ pedido (tabla lógica)
 
 ```
 
-👉 Para la app:
+Para la app:
 
 ```sql
 SELECT * FROM pedido WHERE fecha BETWEEN '2025-01-01' AND '2025-12-31';
 
 ```
 
-👉 Internamente:
+Internamente:
 
 la base **solo toca la partición 2025**, en lugar de escanear millones de filas de todos los años.
 
-📌 Resultado:
+Resultado:
 
 - Consultas más rápidas,
 - Mantenimientos más ágiles,
 - Archivos más pequeños por partición.
 
-## 🧭 33.3. Tipos de particionamiento más comunes
+## 33.3. Tipos de particionamiento más comunes
 
-1. 🪜 **Por rango** (ej. fechas, IDs secuenciales)
-2. 🧮 **Por hash** (distribuir carga uniformemente)
-3. 🧾 **Por lista** (categorías o conjuntos discretos)
+1. **Por rango** (ej. fechas, IDs secuenciales)
+2. **Por hash** (distribuir carga uniformemente)
+3. **Por lista** (categorías o conjuntos discretos)
 
 En la práctica, el **particionamiento por rango** es el más fácil de implementar y entender.
 
 Los otros se usan cuando hay más nodos, más tráfico o más necesidades de balanceo.
 
-## 🧠 33.4. Particionamiento por rango — ejemplo real
+## 33.4. Particionamiento por rango — ejemplo real
 
 Supongamos que tenemos una tabla `pedido` con 3 años de datos:
 
@@ -73,7 +73,7 @@ CREATE TABLE pedido (
 
 ```
 
-👉 Hemos definido que la tabla se particionará por **rango de fechas**.
+Hemos definido que la tabla se particionará por **rango de fechas**.
 
 Ahora creamos las particiones:
 
@@ -92,7 +92,7 @@ CREATE TABLE pedido_2026
 
 ```
 
-✅ Cuando insertas:
+Cuando insertas:
 
 ```sql
 INSERT INTO pedido (fecha, cliente_id, total)
@@ -100,25 +100,25 @@ VALUES ('2025-05-01', 123, 59.90);
 
 ```
 
-👉 La fila va automáticamente a `pedido_2025`.
+La fila va automáticamente a `pedido_2025`.
 
-✅ Cuando consultas:
+Cuando consultas:
 
 ```sql
 SELECT SUM(total) FROM pedido WHERE fecha BETWEEN '2025-01-01' AND '2025-12-31';
 
 ```
 
-👉 El motor solo toca `pedido_2025`.
+El motor solo toca `pedido_2025`.
 
 Esto se llama **partition pruning** (poda de particiones).
 
-## 🧭 33.5. Ventajas prácticas del particionamiento por rango
+## 33.5. Ventajas prácticas del particionamiento por rango
 
-- 🚀 Consultas más rápidas sobre períodos acotados.
-- 🧹 Mantenimiento selectivo: puedes vaciar o archivar una partición completa sin afectar las demás.
-- 🧱 Cada partición puede tener sus propios índices, almacenarse en diferentes discos o tablespaces.
-- 🧭 Se pueden aplicar estrategias de retención (por ejemplo, borrar automáticamente particiones viejas).
+- Consultas más rápidas sobre períodos acotados.
+- Mantenimiento selectivo: puedes vaciar o archivar una partición completa sin afectar las demás.
+- Cada partición puede tener sus propios índices, almacenarse en diferentes discos o tablespaces.
+- Se pueden aplicar estrategias de retención (por ejemplo, borrar automáticamente particiones viejas).
 
 Ejemplo de limpieza:
 
@@ -127,9 +127,9 @@ DROP TABLE pedido_2024;
 
 ```
 
-👉 Esto borra **todo 2024** en un solo comando — sin escanear fila a fila.
+Esto borra **todo 2024** en un solo comando — sin escanear fila a fila.
 
-## 🧠 33.6. Particionamiento por hash — distribuir carga
+## 33.6. Particionamiento por hash — distribuir carga
 
 Cuando no tienes un criterio natural como una fecha, puedes usar un **hash** para distribuir filas entre particiones.
 
@@ -154,11 +154,11 @@ CREATE TABLE cliente_p3 PARTITION OF cliente FOR VALUES WITH (MODULUS 4, REMAIND
 
 ```
 
-👉 Cada nueva fila se distribuye automáticamente según `id % 4`.
+Cada nueva fila se distribuye automáticamente según `id % 4`.
 
-📌 Esto **balancea la carga** entre particiones, útil cuando no hay una columna temporal o categórica clara.
+Esto **balancea la carga** entre particiones, útil cuando no hay una columna temporal o categórica clara.
 
-## 🧭 33.7. Particionamiento por lista — categorías discretas
+## 33.7. Particionamiento por lista — categorías discretas
 
 Si tus datos tienen pocos valores fijos, puedes particionar por lista.
 
@@ -176,11 +176,11 @@ CREATE TABLE pedido_cancelado PARTITION OF pedido_estado FOR VALUES IN ('cancela
 
 ```
 
-👉 Cada fila va a la partición correspondiente según su `estado`.
+Cada fila va a la partición correspondiente según su `estado`.
 
-📌 Útil cuando tienes categorías bien definidas (ej. regiones, tipos de cliente…).
+Útil cuando tienes categorías bien definidas (ej. regiones, tipos de cliente…).
 
-## 🧠 33.8. Índices y mantenimiento por partición
+## 33.8. Índices y mantenimiento por partición
 
 Cada partición:
 
@@ -201,13 +201,13 @@ CREATE INDEX idx_pedido_2025_fecha ON pedido_2025 (fecha);
 
 ```
 
-👉 La consulta solo usará ese índice cuando filtre por 2025.
+La consulta solo usará ese índice cuando filtre por 2025.
 
-## 🧭 33.9. Sharding — la idea extendida
+## 33.9. Sharding — la idea extendida
 
 Cuando una base ya no cabe **ni siquiera en un solo servidor físico o lógico**, entra en juego el **sharding**:
 
-👉 *Dividir la base en varios servidores* (shards), cada uno con **una parte de los datos**.
+_Dividir la base en varios servidores_ (shards), cada uno con **una parte de los datos**.
 
 Ejemplo clásico:
 
@@ -218,7 +218,7 @@ Shard 3 → clientes con ID 2000001–...
 
 ```
 
-📌 La aplicación debe saber **a qué shard enviar cada consulta**.
+La aplicación debe saber **a qué shard enviar cada consulta**.
 
 Ventajas:
 
@@ -231,26 +231,26 @@ Desventajas:
 - Consultas globales (ej. `SELECT COUNT(*)`) se vuelven más difíciles.
 - Requiere infraestructura más avanzada.
 
-👉 **El particionamiento es local**, **el sharding es distribuido**.
+**El particionamiento es local**, **el sharding es distribuido**.
 
-## 🧠 33.10. Cuándo usar particionamiento y cuándo NO
+## 33.10. Cuándo usar particionamiento y cuándo NO
 
-✅ **Sí conviene particionar**:
+**Sí conviene particionar**:
 
 - Tablas muy grandes (decenas de millones de filas).
 - Consultas mayoritariamente filtradas por fechas o categorías claras.
 - Cuando necesitas archivar datos antiguos fácilmente.
 - Cuando quieres mejorar mantenibilidad sin cambiar la lógica de consultas.
 
-❌ **No hace falta particionar**:
+**No hace falta particionar**:
 
 - Bases pequeñas o medianas.
 - Consultas que siempre leen toda la tabla igualmente.
 - Si el equipo aún no tiene operaciones maduras para mantener múltiples particiones.
 
-📌 Particionar demasiado pronto **puede añadir complejidad innecesaria**.
+Particionar demasiado pronto **puede añadir complejidad innecesaria**.
 
-## 🧭 33.11. Buenas prácticas al particionar
+## 33.11. Buenas prácticas al particionar
 
 - Elige **un criterio de partición estable y natural** (fecha, ID, categoría…).
 - Mantén particiones equilibradas — evita que una crezca desproporcionadamente.
@@ -260,7 +260,7 @@ Desventajas:
 - Mide rendimiento antes y después para ajustar.
 - Documenta cómo están organizadas las particiones y por qué.
 
-## 🚨 33.12. Errores comunes
+## 33.12. Errores comunes
 
 - Particionar sin un criterio claro → desequilibrio de datos.
 - Olvidar crear particiones futuras → inserciones fallan.

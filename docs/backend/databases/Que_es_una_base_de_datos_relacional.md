@@ -29,7 +29,7 @@ Ejemplo sencillo (mundo real):
 
 Aquí estamos modelando **personas** como filas (instancias) y **atributos** como columnas.
 
-### 🧱 1.2. Lo que hace “relacional” a una base de datos
+### 1.2. Lo que hace “relacional” a una base de datos
 
 - Los **datos están organizados en tablas** (no en documentos, ni en ficheros de texto).
 - Las **relaciones entre datos están definidas de forma explícita**, no implícita.
@@ -49,9 +49,9 @@ Ejemplo de relación:
 | A001   | 1         | 1          | 50.00 |
 | A002   | 2         | 2          | 35.00 |
 
-👉 Un pedido está **relacionado con** un cliente a través de `id_cliente`.
+Un pedido está **relacionado con** un cliente a través de `id_cliente`.
 
-### ⚡ 1.3. Ventajas prácticas frente a “archivos sueltos”
+### 1.3. Ventajas prácticas frente a “archivos sueltos”
 
 | Archivos sueltos                         | Base de datos relacional         |
 | ---------------------------------------- | -------------------------------- |
@@ -69,28 +69,28 @@ Un negocio que empieza guardando clientes en un Excel… y después no puede:
 - Evitar duplicados (“Luis Gómez” / “Luis G.”).
 - Evitar inconsistencias (“cliente borrado pero pedido activo”).
 
-👉 Una base de datos relacional soluciona esto **desde el diseño**.
+Una base de datos relacional soluciona esto **desde el diseño**.
 
-### 🧭 1.4. Cuándo **sí** usar una base de datos relacional
+### 1.4. Cuándo **sí** usar una base de datos relacional
 
 - Cuando los datos **tienen estructura clara** (clientes, facturas, productos, matrículas, etc.).
 - Cuando necesitas **consistencia estricta** (por ejemplo, en sistemas financieros, administrativos o educativos).
 - Cuando hay **relaciones complejas** entre entidades.
 - Cuando la información debe ser **consultable de múltiples formas**.
 
-### 🚫 Cuándo **no** es la mejor opción
+### Cuándo **no** es la mejor opción
 
 - Datos extremadamente flexibles, sin esquema fijo (ej. logs, eventos, documentos variables).
 - Grandes volúmenes de datos semi-estructurados sin relaciones complejas.
 - Casos donde la estructura cambia todo el tiempo y no hay integridad estricta requerida.
 
-👉 Esto no significa que no puedas usar una base relacional, pero quizá **no sea la más óptima**.
+Esto no significa que no puedas usar una base relacional, pero quizá **no sea la más óptima**.
 
-### 🧪 1.5. Ejercicio práctico guiado (VSCode + archivos planos simulados)
+### 1.5. Ejercicio práctico guiado (VSCode + archivos planos simulados)
 
 Este ejercicio es conceptual pero lo haremos en tu entorno de trabajo para que entiendas **por qué estructurar importa**.
 
-### 📂 Estructura de carpetas sugerida:
+### Estructura de carpetas sugerida:
 
 ```
 proyecto-relacional/
@@ -105,7 +105,7 @@ proyecto-relacional/
 
 ```
 
-### 🧾 Contenido inicial de `clientes.csv`
+### Contenido inicial de `clientes.csv`
 
 ```
 id_cliente,nombre,correo
@@ -115,7 +115,7 @@ id_cliente,nombre,correo
 
 ```
 
-### 🧾 Contenido inicial de `pedidos.csv`
+### Contenido inicial de `pedidos.csv`
 
 ```
 id_pedido,id_cliente,total
@@ -125,7 +125,7 @@ A003,1,20.00
 
 ```
 
-### 🧠 Objetivo del ejercicio:
+### Objetivo del ejercicio:
 
 Simular **una consulta relacional sin usar un motor**.
 
@@ -133,7 +133,7 @@ Por ejemplo:
 
 “Quiero saber cuánto ha gastado cada cliente en total”.
 
-### 🧑‍💻 Código ejemplo (JavaScript — `analisis.js`):
+### Código ejemplo (JavaScript — `analisis.js`):
 
 ```jsx
 import fs from "fs";
@@ -167,7 +167,7 @@ for (const cliente of clientes) {
 }
 ```
 
-📌 **Salida esperada**:
+**Salida esperada**:
 
 ```
 Ana ha gastado 70 €
@@ -176,20 +176,20 @@ Sara ha gastado 0 €
 
 ```
 
-👉 Lo que acabas de hacer manualmente es, en esencia, **una operación de JOIN + GROUP BY**.
+Lo que acabas de hacer manualmente es, en esencia, **una operación de JOIN + GROUP BY**.
 
 Si tuvieras una base de datos relacional real, esto sería una simple consulta declarativa.
 
 Aquí ves **por qué es útil delegar esta lógica al sistema**, no hacerla tú cada vez.
 
-### ⚠️ 1.6. Buenas prácticas iniciales
+### 1.6. Buenas prácticas iniciales
 
 - Siempre define una **clave única** para identificar cada fila. No uses nombres, correos ni números aleatorios sin control.
 - Piensa en las **relaciones** antes de programar.
 - Usa nombres consistentes y significativos.
 - Separa datos de lógica: los datos son de la base, no del código.
 
-### 🚨 Errores comunes de principiantes
+### Errores comunes de principiantes
 
 - No definir claves (después no puedes enlazar bien).
 - Duplicar información “por comodidad”.

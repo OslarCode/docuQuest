@@ -1,24 +1,24 @@
-# Modulo 34. Replicación y lectura pesada
+# Replicación y lectura pesada
 
-## 🧭 34.1. Por qué replicar una base de datos
+## 34.1. Por qué replicar una base de datos
 
 Cuando una base de datos crece:
 
 - Las lecturas se multiplican (dashboards, APIs, informes, consultas de usuarios…),
 - Pero **no todas esas lecturas tienen que ir al mismo servidor**.
 
-👉 Al replicar la base:
+Al replicar la base:
 
 - Mantienes **un nodo primario** para escrituras,
 - Y **uno o varios nodos secundarios** que reciben copias de los datos para lecturas.
 
-📌 Ventajas prácticas:
+Ventajas prácticas:
 
-- 🚀 Escalas lecturas sin saturar el nodo principal.
-- 🧯 Tienes redundancia en caso de fallo del primario.
-- 📊 Puedes usar los secundarios para reporting, backups o tareas pesadas sin afectar la producción.
+- Escalas lecturas sin saturar el nodo principal.
+- Tienes redundancia en caso de fallo del primario.
+- Puedes usar los secundarios para reporting, backups o tareas pesadas sin afectar la producción.
 
-## 🧠 34.2. Arquitectura básica primario/secundario
+## 34.2. Arquitectura básica primario/secundario
 
 ```
         ┌───────────┐
@@ -41,9 +41,9 @@ Cuando una base de datos crece:
 - Los **secundarios** replican esos cambios automáticamente.
 - La aplicación puede **dirigir las lecturas** a los secundarios.
 
-👉 Este patrón se llama *asynchronous replication* (replicación asíncrona) cuando los secundarios no bloquean las escrituras del primario.
+Este patrón se llama _asynchronous replication_ (replicación asíncrona) cuando los secundarios no bloquean las escrituras del primario.
 
-## 🧭 34.3. Ejemplo sencillo — PostgreSQL streaming replication
+## 34.3. Ejemplo sencillo — PostgreSQL streaming replication
 
 Supón que tienes dos servidores:
 
@@ -73,13 +73,13 @@ pg_basebackup -h db1 -D /var/lib/postgresql/data -U replicador -P --wal-method=s
 
 ```
 
-👉 A partir de ahí, `db2` recibirá en tiempo real los cambios de `db1`.
+A partir de ahí, `db2` recibirá en tiempo real los cambios de `db1`.
 
-📌 No necesitas que la aplicación cambie nada en la lógica de escritura.
+No necesitas que la aplicación cambie nada en la lógica de escritura.
 
 Solo decides a qué nodo va cada consulta de lectura.
 
-## 🧠 34.4. Lecturas escaladas — distribuir carga
+## 34.4. Lecturas escaladas — distribuir carga
 
 Un patrón común:
 
@@ -98,14 +98,13 @@ function getReadConnection() {
 function getWriteConnection() {
   return dbPrimary;
 }
-
 ```
 
-👉 Así reduces la presión sobre el primario, evitando cuellos de botella.
+Así reduces la presión sobre el primario, evitando cuellos de botella.
 
-📌 Muy usado en aplicaciones con muchas lecturas (ecommerce, SaaS, APIs públicas…).
+Muy usado en aplicaciones con muchas lecturas (ecommerce, SaaS, APIs públicas…).
 
-## 🧭 34.5. Consistencia eventual — concepto clave
+## 34.5. Consistencia eventual — concepto clave
 
 La replicación **no es instantánea**.
 
@@ -120,34 +119,32 @@ Ejemplo:
 2. SELECT en secundario a las 12:00:00.010 → todavía no aparece.
 3. SELECT en secundario a las 12:00:00.050 → ahora sí aparece.
 
-📌 Este retraso (replication lag) puede ser:
+Este retraso (replication lag) puede ser:
 
 - Imperceptible (milisegundos), o
 - Notable (segundos o minutos) si el sistema está bajo carga.
 
-👉 Esto se llama **consistencia eventual**:
+Esto se llama **consistencia eventual**:
 
 Los datos **terminan siendo consistentes**, pero no **instantáneamente consistentes**.
 
-## 🧠 34.6. Ejemplo real de inconsistencia temporal
+## 34.6. Ejemplo real de inconsistencia temporal
 
 Imagina que un usuario crea un pedido:
 
 ```jsx
-await dbPrimary.query('INSERT INTO pedidos ...');
-
+await dbPrimary.query("INSERT INTO pedidos ...");
 ```
 
 Y justo después la app lo consulta para mostrarlo en su panel:
 
 ```jsx
-const result = await dbReplica.query('SELECT * FROM pedidos WHERE id = ...');
-
+const result = await dbReplica.query("SELECT * FROM pedidos WHERE id = ...");
 ```
 
 Si la consulta de lectura va a una réplica que **aún no recibió la actualización**,
 
-👉 la app mostrará “no hay pedidos”.
+la app mostrará “no hay pedidos”.
 
 📌 Este es un **problema común** en sistemas con réplicas.
 
@@ -156,14 +153,14 @@ Si la consulta de lectura va a una réplica que **aún no recibió la actualizac
 - Para operaciones sensibles: **leer del primario** inmediatamente después de escribir.
 - O usar mecanismos de sincronización (por ejemplo, esperar confirmación de replicación en algunos motores).
 
-## 🧭 34.7. Replicación síncrona vs asíncrona
+## 34.7. Replicación síncrona vs asíncrona
 
-| Tipo | Características | Ventajas | Desventajas |
-| --- | --- | --- | --- |
-| **Asíncrona** (la más común) | El primario no espera a los secundarios | Rápida, escalable, sin bloquear escrituras | Pequeño retraso entre nodos |
-| **Síncrona** | El primario espera confirmación de al menos un secundario | Cero lag (consistencia fuerte) | Menor rendimiento, más latencia en escritura |
+| Tipo                         | Características                                           | Ventajas                                   | Desventajas                                  |
+| ---------------------------- | --------------------------------------------------------- | ------------------------------------------ | -------------------------------------------- |
+| **Asíncrona** (la más común) | El primario no espera a los secundarios                   | Rápida, escalable, sin bloquear escrituras | Pequeño retraso entre nodos                  |
+| **Síncrona**                 | El primario espera confirmación de al menos un secundario | Cero lag (consistencia fuerte)             | Menor rendimiento, más latencia en escritura |
 
-👉 En la práctica:
+En la práctica:
 
 - Asíncrona se usa para escalabilidad de lecturas.
 - Síncrona se usa cuando no se puede perder ni un solo dato.
@@ -173,11 +170,11 @@ Ejemplo:
 - Plataforma de streaming → asíncrona.
 - Sistema bancario → síncrona.
 
-## 🧠 34.8. Failover y alta disponibilidad
+## 34.8. Failover y alta disponibilidad
 
 Otro beneficio de la replicación:
 
-👉 Si el nodo primario falla, **uno de los secundarios puede asumir su rol**.
+Si el nodo primario falla, **uno de los secundarios puede asumir su rol**.
 
 - **Failover manual** → un administrador promueve un nodo secundario.
 - **Failover automático** → herramientas como Patroni, Stolon, Orchestrator o RDS lo hacen de forma controlada.
@@ -189,24 +186,24 @@ pg_ctl promote
 
 ```
 
-👉 El nodo replica pasa a ser primario.
+El nodo replica pasa a ser primario.
 
-📌 Esto mejora la disponibilidad sin requerir copias manuales de última hora.
+Esto mejora la disponibilidad sin requerir copias manuales de última hora.
 
-## 🧭 34.9. Replicación + particionamiento = escalabilidad real
+## 34.9. Replicación + particionamiento = escalabilidad real
 
 - El particionamiento (Módulo 33) divide grandes tablas en pedazos manejables dentro de un nodo.
 - La replicación (Módulo 34) permite **multiplicar nodos para distribuir carga**.
 
-👉 Combinarlos da lugar a arquitecturas muy potentes:
+Combinarlos da lugar a arquitecturas muy potentes:
 
 - Primario particionado, con múltiples réplicas por shard.
 - Lecturas distribuidas geográficamente.
 - Alta disponibilidad con failover automatizado.
 
-📌 Ejemplo real: muchas plataformas globales (Netflix, GitHub, Shopify) usan este patrón híbrido.
+Ejemplo real: muchas plataformas globales (Netflix, GitHub, Shopify) usan este patrón híbrido.
 
-## 🧠 34.10. Buenas prácticas en entornos con replicación
+## 34.10. Buenas prácticas en entornos con replicación
 
 - Define qué consultas pueden ir a réplicas (solo lecturas no críticas).
 - Mide y monitorea el **replication lag** constantemente.
@@ -215,10 +212,10 @@ pg_ctl promote
 - Documenta cómo se maneja cada escenario (falla del primario, recuperación, etc.).
 - No uses réplicas solo como “backup”: su propósito es **distribuir carga** y **mejorar disponibilidad**.
 
-## 🚨 34.11. Errores comunes
+## 34.11. Errores comunes
 
 - Leer datos recién escritos desde una réplica → inconsistencias visibles.
 - Asumir que la replicación es instantánea.
 - No monitorear el lag → consultas lentas y datos desfasados.
 - No probar el failover → caos cuando el primario se cae.
-- Pensar que tener réplicas reemplaza a los backups (⚠️ no lo hace).
+- Pensar que tener réplicas reemplaza a los backups (no lo hace).

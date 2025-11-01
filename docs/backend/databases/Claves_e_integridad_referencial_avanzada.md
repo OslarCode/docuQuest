@@ -1,24 +1,24 @@
-# Modulo 12. Claves e integridad referencial avanzada
+# Claves e integridad referencial avanzada
 
-## 🧭 12.1. Recordatorio: ¿qué es una clave?
+## 12.1. Recordatorio: ¿qué es una clave?
 
 En el modelo relacional, una **clave** es un **conjunto mínimo de atributos que identifica de forma única una tupla (fila)**.
 
 Existen varios tipos de claves:
 
-| Tipo de clave | Descripción |
-| --- | --- |
-| **Clave primaria (PK)** | Identifica de forma única cada fila. No puede ser NULL. |
-| **Clave candidata** | Cualquier conjunto de atributos que podría ser PK. |
+| Tipo de clave              | Descripción                                                                  |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| **Clave primaria (PK)**    | Identifica de forma única cada fila. No puede ser NULL.                      |
+| **Clave candidata**        | Cualquier conjunto de atributos que podría ser PK.                           |
 | **Clave alternativa (AK)** | Clave candidata que no se usa como PK, pero también identifica unívocamente. |
-| **Clave foránea (FK)** | Atributo que referencia la PK (o AK) de otra tabla. |
-| **Clave compuesta** | Clave formada por dos o más columnas. |
+| **Clave foránea (FK)**     | Atributo que referencia la PK (o AK) de otra tabla.                          |
+| **Clave compuesta**        | Clave formada por dos o más columnas.                                        |
 
-👉 Esto no es teoría “de manual”:
+Esto no es teoría “de manual”:
 
 una buena elección de claves evita duplicidades, corrupciones y datos huérfanos en producción.
 
-## 🧱 12.2. Clave primaria — la columna que “ancla” la identidad
+## 12.2. Clave primaria — la columna que “ancla” la identidad
 
 Una **Primary Key (PK)**:
 
@@ -39,11 +39,11 @@ CREATE TABLE cliente (
 
 ```
 
-👉 `id_cliente` es la **PK**.
+`id_cliente` es la **PK**.
 
-👉 `correo` también podría haber sido una clave candidata, pero decidimos usar un ID numérico estable.
+`correo` también podría haber sido una clave candidata, pero decidimos usar un ID numérico estable.
 
-## 🧠 12.3. Claves candidatas y alternativas
+## 12.3. Claves candidatas y alternativas
 
 Una **clave candidata** es cualquier atributo (o conjunto) que podría servir como PK.
 
@@ -61,17 +61,17 @@ CREATE TABLE producto (
 
 ```
 
-👉 `id_producto` = PK.
+`id_producto` = PK.
 
-👉 `codigo_interno` = clave alternativa (AK).
+`codigo_interno` = clave alternativa (AK).
 
-👉 Ambas identifican unívocamente un producto, pero la PK es más práctica para relaciones.
+Ambas identifican unívocamente un producto, pero la PK es más práctica para relaciones.
 
-📌 **Regla de oro:**
+**Regla de oro:**
 
 Usa **claves sustitutas (IDs)** para relaciones y **claves naturales (como emails, códigos)** para validaciones de negocio.
 
-## 🧮 12.4. Claves compuestas — cuando 2 o más columnas definen identidad
+## 12.4. Claves compuestas — cuando 2 o más columnas definen identidad
 
 En muchas relaciones N:N no necesitas un `id` artificial, basta con usar las claves combinadas.
 
@@ -87,15 +87,15 @@ CREATE TABLE matricula (
 
 ```
 
-👉 Cada alumno solo puede matricularse **una vez** en cada curso.
+Cada alumno solo puede matricularse **una vez** en cada curso.
 
-👉 La combinación `(id_alumno, id_curso)` es única.
+La combinación `(id_alumno, id_curso)` es única.
 
-👉 No hay necesidad de un `id_matricula`.
+No hay necesidad de un `id_matricula`.
 
-📌 Este patrón es extremadamente común en tablas intermedias.
+Este patrón es extremadamente común en tablas intermedias.
 
-## 🔸 12.5. Clave foránea — la pieza que conecta tablas
+## 12.5. Clave foránea — la pieza que conecta tablas
 
 Una **Foreign Key (FK)** es un atributo (o conjunto) que **referencia una PK o AK en otra tabla**.
 
@@ -114,23 +114,23 @@ CREATE TABLE pedido (
 
 ```
 
-👉 Cada pedido está vinculado a un cliente existente.
+Cada pedido está vinculado a un cliente existente.
 
-👉 Si intentas insertar un pedido con un `id_cliente` que no existe, fallará.
+Si intentas insertar un pedido con un `id_cliente` que no existe, fallará.
 
-👉 Esto protege la integridad referencial **automáticamente**.
+Esto protege la integridad referencial **automáticamente**.
 
-## 🧭 12.6. ON UPDATE / ON DELETE — reglas de integridad referencial
+## 12.6. ON UPDATE / ON DELETE — reglas de integridad referencial
 
 Al crear una FK, puedes especificar qué pasa si la fila **referenciada cambia** o **se borra**:
 
-| Acción | Descripción |
-| --- | --- |
-| `RESTRICT` (por defecto) | No permite borrar ni actualizar si hay referencias. |
-| `CASCADE` | Borra o actualiza automáticamente las filas hijas. |
-| `SET NULL` | Coloca NULL en las filas hijas. (La columna FK debe permitir NULL.) |
-| `SET DEFAULT` | Coloca el valor por defecto en la FK. |
-| `NO ACTION` | Similar a RESTRICT (depende del motor). |
+| Acción                   | Descripción                                                         |
+| ------------------------ | ------------------------------------------------------------------- |
+| `RESTRICT` (por defecto) | No permite borrar ni actualizar si hay referencias.                 |
+| `CASCADE`                | Borra o actualiza automáticamente las filas hijas.                  |
+| `SET NULL`               | Coloca NULL en las filas hijas. (La columna FK debe permitir NULL.) |
+| `SET DEFAULT`            | Coloca el valor por defecto en la FK.                               |
+| `NO ACTION`              | Similar a RESTRICT (depende del motor).                             |
 
 Ejemplo:
 
@@ -148,13 +148,13 @@ CREATE TABLE pedido (
 
 ```
 
-👉 Si cambias `id_cliente` en `cliente`, se actualiza automáticamente en `pedido`.
+Si cambias `id_cliente` en `cliente`, se actualiza automáticamente en `pedido`.
 
-👉 Si borras un cliente, los pedidos quedan con `id_cliente = NULL` (histórico preservado).
+Si borras un cliente, los pedidos quedan con `id_cliente = NULL` (histórico preservado).
 
-## 🧰 12.7. Ejemplo completo — Sistema de biblioteca
+## 12.7. Ejemplo completo — Sistema de biblioteca
 
-### 📄 Tabla `socio`
+### Tabla `socio`
 
 ```sql
 CREATE TABLE socio (
@@ -165,7 +165,7 @@ CREATE TABLE socio (
 
 ```
 
-### 📄 Tabla `libro`
+### Tabla `libro`
 
 ```sql
 CREATE TABLE libro (
@@ -176,7 +176,7 @@ CREATE TABLE libro (
 
 ```
 
-### 📄 Tabla `prestamo`
+### Tabla `prestamo`
 
 ```sql
 CREATE TABLE prestamo (
@@ -195,13 +195,13 @@ CREATE TABLE prestamo (
 
 ```
 
-👉 Este diseño:
+Este diseño:
 
 - Evita que existan préstamos sin socio o sin libro,
 - Borra automáticamente préstamos si desaparece un socio,
 - Impide borrar libros con préstamos activos.
 
-## 🧭 12.8. ON UPDATE — cuándo usarlo
+## 12.8. ON UPDATE — cuándo usarlo
 
 Aunque `ON UPDATE` se usa menos, puede ser útil cuando:
 
@@ -218,24 +218,24 @@ FOREIGN KEY (codigo_producto)
 
 ```
 
-👉 Si el código cambia, todas las tablas relacionadas se actualizan automáticamente.
+Si el código cambia, todas las tablas relacionadas se actualizan automáticamente.
 
-⚠️ Pero:
+Pero:
 
 Si usas **claves sustitutas numéricas** (como IDs autoincrementales), esto casi nunca se usa.
 
 ## 🧠 12.9. Combinaciones habituales de reglas de FK
 
-| Escenario | ON DELETE | ON UPDATE | Explicación breve |
-| --- | --- | --- | --- |
-| Datos maestros (clientes, libros) | RESTRICT | CASCADE | No permitir borrar si hay referencias |
-| Relaciones débiles (histórico pedidos) | SET NULL | CASCADE | Mantener histórico sin cliente activo |
-| Tablas hijas totalmente dependientes | CASCADE | CASCADE | Borrar en cascada si desaparece el padre |
-| Claves naturales actualizables | RESTRICT | CASCADE | Actualizar hijos automáticamente si cambia el valor de PK |
+| Escenario                              | ON DELETE | ON UPDATE | Explicación breve                                         |
+| -------------------------------------- | --------- | --------- | --------------------------------------------------------- |
+| Datos maestros (clientes, libros)      | RESTRICT  | CASCADE   | No permitir borrar si hay referencias                     |
+| Relaciones débiles (histórico pedidos) | SET NULL  | CASCADE   | Mantener histórico sin cliente activo                     |
+| Tablas hijas totalmente dependientes   | CASCADE   | CASCADE   | Borrar en cascada si desaparece el padre                  |
+| Claves naturales actualizables         | RESTRICT  | CASCADE   | Actualizar hijos automáticamente si cambia el valor de PK |
 
-👉 Elegir bien estas reglas es una **decisión de diseño**, no de conveniencia inmediata.
+Elegir bien estas reglas es una **decisión de diseño**, no de conveniencia inmediata.
 
-## 🧪 12.10. Ejercicio práctico guiado — e-commerce
+## 12.10. Ejercicio práctico guiado — e-commerce
 
 Tablas:
 
@@ -285,14 +285,14 @@ CREATE TABLE pedido_producto (
 
 ```
 
-✅ Comportamiento esperado:
+Comportamiento esperado:
 
 - Si elimino un pedido → desaparecen sus productos asociados.
 - Si elimino un cliente → los pedidos quedan con cliente NULL (histórico).
 - No puedo borrar un producto que tenga pedidos asociados.
 - No puede existir `pedido_producto` sin pedido ni producto válido.
 
-## ⚠️ 12.11. Buenas prácticas con claves y FKs
+## 12.11. Buenas prácticas con claves y FKs
 
 - Siempre define PK en toda tabla.
 - Prefiere **claves sustitutas** para relaciones (IDs autoincrementales o UUID).
@@ -301,7 +301,7 @@ CREATE TABLE pedido_producto (
 - Documenta claramente las reglas de integridad en tu modelo de datos.
 - Mantén consistencia de nombres (`id_cliente` en todas las tablas, no `cliente_id` en unas y `cli` en otras).
 
-## 🚨 Errores comunes
+## Errores comunes
 
 - No definir claves → datos duplicados y consultas ineficientes.
 - FK sin reglas → borrados inconsistentes.

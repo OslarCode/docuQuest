@@ -1,6 +1,6 @@
-# Modulo 2. Elementos básicos del modelo relacional
+# Elementos básicos del modelo relacional
 
-## 🧱 2.1. Las tablas: estructuras, no listas caóticas
+## 2.1. Las tablas: estructuras, no listas caóticas
 
 En el modelo relacional, la **tabla** es la unidad estructural fundamental.
 
@@ -14,15 +14,15 @@ Cada tabla debe tener:
 
 Ejemplo conceptual (tabla `Producto`):
 
-| id_producto | nombre | precio | stock |
-| --- | --- | --- | --- |
-| 1 | Teclado | 20.00 | 15 |
-| 2 | Ratón | 10.00 | 30 |
-| 3 | Monitor 24" | 120.00 | 5 |
+| id_producto | nombre      | precio | stock |
+| ----------- | ----------- | ------ | ----- |
+| 1           | Teclado     | 20.00  | 15    |
+| 2           | Ratón       | 10.00  | 30    |
+| 3           | Monitor 24" | 120.00 | 5     |
 
-👉 Cada **fila** representa un producto concreto.
+Cada **fila** representa un producto concreto.
 
-👉 Cada **columna** representa una propiedad bien definida.
+Cada **columna** representa una propiedad bien definida.
 
 **Importante:**
 
@@ -32,7 +32,7 @@ En el modelo relacional:
 - Cada fila debe ser única en su clave.
 - El orden visual no significa nada para el motor.
 
-## 🧬 2.2. Las columnas: atributos y dominios
+## 2.2. Las columnas: atributos y dominios
 
 Las **columnas** no solo tienen nombre, también tienen:
 
@@ -51,9 +51,9 @@ Esto evita errores como:
 - Guardar precios negativos.
 - Duplicar tipos incompatibles.
 
-📌 Por eso, en un buen diseño relacional, **los dominios se definen con cuidado**, no se dejan “abiertos”.
+Por eso, en un buen diseño relacional, **los dominios se definen con cuidado**, no se dejan “abiertos”.
 
-## 🔑 2.3. Las filas: instancias de la relación
+## 2.3. Las filas: instancias de la relación
 
 Cada **fila (tupla)** representa una **instancia única** del concepto modelado.
 
@@ -61,17 +61,17 @@ Si tienes una tabla `Cliente`, cada fila es un cliente distinto.
 
 Ejemplo:
 
-| id_cliente | nombre | correo |
-| --- | --- | --- |
-| 1 | Ana | [ana@example.com](mailto:ana@example.com) |
-| 2 | Luis | [luis@example.com](mailto:luis@example.com) |
-| 3 | Sara | [sara@example.com](mailto:sara@example.com) |
+| id_cliente | nombre | correo                                      |
+| ---------- | ------ | ------------------------------------------- |
+| 1          | Ana    | [ana@example.com](mailto:ana@example.com)   |
+| 2          | Luis   | [luis@example.com](mailto:luis@example.com) |
+| 3          | Sara   | [sara@example.com](mailto:sara@example.com) |
 
 Cada fila está definida de forma precisa y verificable.
 
 Si duplicas una fila completa sin control… ya rompiste una de las bases del modelo: **unicidad de instancias**.
 
-## 🧭 2.4. Claves: identidad y consistencia
+## 2.4. Claves: identidad y consistencia
 
 En el modelo relacional **toda tabla debe tener una clave primaria** que identifique unívocamente cada fila.
 
@@ -80,50 +80,46 @@ Esta clave es **la identidad lógica** de la instancia.
 Tipos de claves más comunes:
 
 - **Clave primaria (PK)**: la identidad única de la fila.
-    
-    Ej: `id_cliente`.
-    
+  Ej: `id_cliente`.
 - **Clave alternativa (AK)**: otra columna que también podría identificar (por ejemplo, un `correo` único).
 - **Clave compuesta**: combinación de columnas que juntas identifican una fila única.
-    
-    Ej: (id_producto, id_pedido) en una tabla de detalle de pedidos.
-    
+  Ej: (id_producto, id_pedido) en una tabla de detalle de pedidos.
 
 Ejemplo:
 
-| id_cliente (PK) | correo | nombre |
-| --- | --- | --- |
-| 1 | [ana@example.com](mailto:ana@example.com) | Ana |
-| 2 | [luis@example.com](mailto:luis@example.com) | Luis |
+| id_cliente (PK) | correo                                      | nombre |
+| --------------- | ------------------------------------------- | ------ |
+| 1               | [ana@example.com](mailto:ana@example.com)   | Ana    |
+| 2               | [luis@example.com](mailto:luis@example.com) | Luis   |
 
 Aquí `id_cliente` es la PK. Si alguien intenta insertar otra fila con `id_cliente = 1`, debe fallar.
 
-👉 **Esto no es un capricho:** sin clave, no puedes relacionar tablas de forma segura.
+**Esto no es un capricho:** sin clave, no puedes relacionar tablas de forma segura.
 
-## 🕳️ 2.5. Valores nulos (NULL): ausencia, no cero
+## 2.5. Valores nulos (NULL): ausencia, no cero
 
 Un **valor NULL** no es “0” ni “cadena vacía”.
 
-Significa literalmente: *“valor desconocido o no aplicable”*.
+Significa literalmente: _“valor desconocido o no aplicable”_.
 
 Ejemplo:
 
-| id_cliente | nombre | telefono |
-| --- | --- | --- |
-| 1 | Ana | 611000000 |
-| 2 | Luis | NULL |
+| id_cliente | nombre | telefono  |
+| ---------- | ------ | --------- |
+| 1          | Ana    | 611000000 |
+| 2          | Luis   | NULL      |
 
 Luis no tiene teléfono registrado. Esto no es un error, es un estado válido que hay que manejar con cuidado.
 
-👉 Muchos principiantes caen en este error: confundir NULL con “vacío”.
+Muchos principiantes caen en este error: confundir NULL con “vacío”.
 
 Esto puede llevar a consultas incorrectas y bugs difíciles de rastrear.
 
-## 🧰 2.6. Ejercicio práctico guiado — Representar relaciones con estructuras planas
+## 2.6. Ejercicio práctico guiado — Representar relaciones con estructuras planas
 
 Este ejercicio sigue siendo agnóstico de motor, usando archivos CSV para reforzar **los conceptos de tabla, fila, columna, clave y NULL**.
 
-### 📂 Estructura de carpetas:
+### Estructura de carpetas:
 
 ```
 proyecto-relacional/
@@ -139,7 +135,7 @@ proyecto-relacional/
 
 ```
 
-### 📄 `clientes.csv`:
+### `clientes.csv`:
 
 ```
 id_cliente,nombre,correo,telefono
@@ -149,9 +145,9 @@ id_cliente,nombre,correo,telefono
 
 ```
 
-👉 Nota el valor vacío en la columna `telefono` de Luis: eso representa `NULL`.
+Nota el valor vacío en la columna `telefono` de Luis: eso representa `NULL`.
 
-### 📄 `productos.csv`:
+### `productos.csv`:
 
 ```
 id_producto,nombre,precio
@@ -161,7 +157,7 @@ id_producto,nombre,precio
 
 ```
 
-### 📄 `pedidos.csv`:
+### `pedidos.csv`:
 
 ```
 id_pedido,id_cliente,id_producto,cantidad
@@ -171,7 +167,7 @@ A003,2,2,4
 
 ```
 
-## 🧑‍💻 Código ejemplo `claves.js` (JavaScript)
+## Código ejemplo `claves.js` (JavaScript)
 
 Vamos a:
 
@@ -186,7 +182,7 @@ function leerCSV(ruta) {
   const data = fs.readFileSync(ruta, "utf-8").trim();
   const [cabecera, ...filas] = data.split("\n");
   const campos = cabecera.split(",");
-  return filas.map(fila => {
+  return filas.map((fila) => {
     const valores = fila.split(",");
     return Object.fromEntries(valores.map((v, i) => [campos[i], v]));
   });
@@ -201,7 +197,9 @@ function verificarClaveUnica(datos, campoClave) {
   const claves = new Set();
   for (const fila of datos) {
     if (claves.has(fila[campoClave])) {
-      console.error(`❌ Duplicado detectado en ${campoClave}: ${fila[campoClave]}`);
+      console.error(
+        `❌ Duplicado detectado en ${campoClave}: ${fila[campoClave]}`
+      );
     } else {
       claves.add(fila[campoClave]);
     }
@@ -213,30 +211,33 @@ verificarClaveUnica(productos, "id_producto");
 verificarClaveUnica(pedidos, "id_pedido");
 
 // 2. Validar integridad de referencias
-const idsClientes = new Set(clientes.map(c => c.id_cliente));
-const idsProductos = new Set(productos.map(p => p.id_producto));
+const idsClientes = new Set(clientes.map((c) => c.id_cliente));
+const idsProductos = new Set(productos.map((p) => p.id_producto));
 
 for (const pedido of pedidos) {
   if (!idsClientes.has(pedido.id_cliente)) {
-    console.error(`❌ Pedido ${pedido.id_pedido} referencia un cliente inexistente`);
+    console.error(
+      `❌ Pedido ${pedido.id_pedido} referencia un cliente inexistente`
+    );
   }
   if (!idsProductos.has(pedido.id_producto)) {
-    console.error(`❌ Pedido ${pedido.id_pedido} referencia un producto inexistente`);
+    console.error(
+      `❌ Pedido ${pedido.id_pedido} referencia un producto inexistente`
+    );
   }
 }
 
-console.log("✅ Verificación completada");
+console.log("Verificación completada");
+```
+
+**Salida esperada (si todo está bien)**:
+
+```
+Verificación completada
 
 ```
 
-📌 **Salida esperada (si todo está bien)**:
-
-```
-✅ Verificación completada
-
-```
-
-👉 Lo que hiciste manualmente aquí es:
+Lo que hiciste manualmente aquí es:
 
 - Definir **claves primarias** (sin duplicados).
 - Usar **claves foráneas** (referencias entre tablas).
@@ -244,7 +245,7 @@ console.log("✅ Verificación completada");
 
 Esto es exactamente lo que un motor relacional hace por ti cuando defines la estructura correctamente.
 
-## ⚠️ 2.7. Buenas prácticas en la definición de elementos básicos
+## 2.7. Buenas prácticas en la definición de elementos básicos
 
 - Define siempre una clave primaria clara y estable.
 - Evita claves que cambien con el tiempo (por ejemplo, correos).
@@ -252,7 +253,7 @@ Esto es exactamente lo que un motor relacional hace por ti cuando defines la est
 - Usa nombres de columnas consistentes (ej. `id_cliente` en todas las tablas).
 - Mantén los dominios de datos coherentes: no mezcles tipos.
 
-## 🚨 Errores comunes de principiantes
+## Errores comunes de principiantes
 
 - Usar el nombre del usuario como clave → cambia con el tiempo.
 - Dejar columnas “abiertas” → datos inconsistentes.

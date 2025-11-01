@@ -1,6 +1,6 @@
-# Modulo 15. Tipos de dominios prácticos
+# Tipos de dominios prácticos
 
-## 🧭 15.1. Por qué elegir bien los tipos de datos importa
+## 15.1. Por qué elegir bien los tipos de datos importa
 
 Elegir tipos de datos no es un detalle menor.
 
@@ -15,18 +15,18 @@ Ejemplo real:
 
 Si guardas fechas como texto (`'2025-10-19'`) en lugar de tipo `DATE`,
 
-👉 no podrás comparar ni ordenar correctamente por fecha.
+no podrás comparar ni ordenar correctamente por fecha.
 
-## 🧱 15.2. Tipos numéricos — tamaño, rango y precisión
+## 15.2. Tipos numéricos — tamaño, rango y precisión
 
 ### 🔹 Enteros
 
-| Tipo | Tamaño | Rango aproximado | Uso típico |
-| --- | --- | --- | --- |
-| `SMALLINT` | 2 bytes | -32.768 a 32.767 | IDs pequeños |
-| `INT` o `INTEGER` | 4 bytes | ±2.000 millones | Claves comunes |
-| `BIGINT` | 8 bytes | ±9 cuatrillones | Claves globales o contadores grandes |
-| `SERIAL` / `BIGSERIAL` | auto-incremento | según base | Identificadores automáticos |
+| Tipo                   | Tamaño          | Rango aproximado | Uso típico                           |
+| ---------------------- | --------------- | ---------------- | ------------------------------------ |
+| `SMALLINT`             | 2 bytes         | -32.768 a 32.767 | IDs pequeños                         |
+| `INT` o `INTEGER`      | 4 bytes         | ±2.000 millones  | Claves comunes                       |
+| `BIGINT`               | 8 bytes         | ±9 cuatrillones  | Claves globales o contadores grandes |
+| `SERIAL` / `BIGSERIAL` | auto-incremento | según base       | Identificadores automáticos          |
 
 **Ejemplo:**
 
@@ -38,16 +38,16 @@ CREATE TABLE producto (
 
 ```
 
-👉 Si vas a tener menos de 100.000 registros, `INT` es suficiente.
+Si vas a tener menos de 100.000 registros, `INT` es suficiente.
 
 Evita usar `BIGINT` sin necesidad: ocupa el doble de espacio.
 
 ### 🔹 Decimales y reales
 
-| Tipo | Precisión | Características |
-| --- | --- | --- |
-| `NUMERIC(p,s)` | Precisión exacta, configurable | Ideal para dinero o valores críticos |
-| `REAL` / `FLOAT` | Aproximado (no exacto) | Cálculos científicos, promedios |
+| Tipo             | Precisión                      | Características                      |
+| ---------------- | ------------------------------ | ------------------------------------ |
+| `NUMERIC(p,s)`   | Precisión exacta, configurable | Ideal para dinero o valores críticos |
+| `REAL` / `FLOAT` | Aproximado (no exacto)         | Cálculos científicos, promedios      |
 
 **Ejemplo (dinero):**
 
@@ -59,17 +59,17 @@ CREATE TABLE factura (
 
 ```
 
-👉 `NUMERIC(10,2)` = hasta 10 dígitos, 2 decimales (99999999.99).
+`NUMERIC(10,2)` = hasta 10 dígitos, 2 decimales (99999999.99).
 
-👉 Nunca uses `FLOAT` para dinero o contabilidad: genera redondeos impredecibles.
+Nunca uses `FLOAT` para dinero o contabilidad: genera redondeos impredecibles.
 
-## 🧩 15.3. Tipos de texto — longitud y rendimiento
+## 15.3. Tipos de texto — longitud y rendimiento
 
-| Tipo | Características | Uso recomendado |
-| --- | --- | --- |
-| `CHAR(n)` | Longitud fija | Códigos o abreviaturas (e.g., “ES”, “US”) |
-| `VARCHAR(n)` | Longitud variable con límite | Nombres, correos, direcciones |
-| `TEXT` | Sin límite fijo | Comentarios, descripciones largas |
+| Tipo         | Características              | Uso recomendado                           |
+| ------------ | ---------------------------- | ----------------------------------------- |
+| `CHAR(n)`    | Longitud fija                | Códigos o abreviaturas (e.g., “ES”, “US”) |
+| `VARCHAR(n)` | Longitud variable con límite | Nombres, correos, direcciones             |
+| `TEXT`       | Sin límite fijo              | Comentarios, descripciones largas         |
 
 **Ejemplo:**
 
@@ -82,24 +82,24 @@ CREATE TABLE cliente (
 
 ```
 
-👉 `VARCHAR` es preferible a `TEXT` en la mayoría de los casos:
+`VARCHAR` es preferible a `TEXT` en la mayoría de los casos:
 
 permite validar longitudes y optimiza índices.
 
-📌 **Regla práctica:**
+**Regla práctica:**
 
 - Usa `VARCHAR(n)` cuando sepas el tamaño máximo razonable.
 - Usa `TEXT` solo para campos donde la longitud es impredecible (observaciones, mensajes, etc.).
 
-## 🧮 15.4. Tipos de fecha y hora
+## 15.4. Tipos de fecha y hora
 
-| Tipo | Descripción | Ejemplo |
-| --- | --- | --- |
-| `DATE` | Solo fecha (año-mes-día) | `'2025-10-19'` |
-| `TIME` | Solo hora | `'14:35:00'` |
-| `TIMESTAMP` | Fecha + hora | `'2025-10-19 14:35:00'` |
-| `TIMESTAMPTZ` | Fecha + hora con zona horaria | `'2025-10-19 14:35:00+02'` |
-| `INTERVAL` | Duración o diferencia de tiempo | `'3 days 4 hours'` |
+| Tipo          | Descripción                     | Ejemplo                    |
+| ------------- | ------------------------------- | -------------------------- |
+| `DATE`        | Solo fecha (año-mes-día)        | `'2025-10-19'`             |
+| `TIME`        | Solo hora                       | `'14:35:00'`               |
+| `TIMESTAMP`   | Fecha + hora                    | `'2025-10-19 14:35:00'`    |
+| `TIMESTAMPTZ` | Fecha + hora con zona horaria   | `'2025-10-19 14:35:00+02'` |
+| `INTERVAL`    | Duración o diferencia de tiempo | `'3 days 4 hours'`         |
 
 **Ejemplo:**
 
@@ -111,16 +111,16 @@ CREATE TABLE pedido (
 
 ```
 
-👉 `CURRENT_TIMESTAMP` garantiza que cada registro tenga su marca de creación.
+`CURRENT_TIMESTAMP` garantiza que cada registro tenga su marca de creación.
 
-👉 Si la aplicación opera en varios países, usa `TIMESTAMPTZ`.
+Si la aplicación opera en varios países, usa `TIMESTAMPTZ`.
 
-## 🧠 15.5. Tipos booleanos
+## 15.5. Tipos booleanos
 
-| Valor lógico | SQL estándar | Alternativas (según motor) |
-| --- | --- | --- |
-| Verdadero | `TRUE` o `1` | `'t'`, `'yes'` |
-| Falso | `FALSE` o `0` | `'f'`, `'no'` |
+| Valor lógico | SQL estándar  | Alternativas (según motor) |
+| ------------ | ------------- | -------------------------- |
+| Verdadero    | `TRUE` o `1`  | `'t'`, `'yes'`             |
+| Falso        | `FALSE` o `0` | `'f'`, `'no'`              |
 
 **Ejemplo:**
 
@@ -133,12 +133,12 @@ CREATE TABLE usuario (
 
 ```
 
-👉 `BOOLEAN` evita errores de interpretación y mejora la legibilidad:
+`BOOLEAN` evita errores de interpretación y mejora la legibilidad:
 
 - Mejor que usar `INT` con 0/1.
 - Más portable que `CHAR(1)` con `'S'` o `'N'`.
 
-## 🧰 15.6. Valores por defecto y consistencia semántica
+## 15.6. Valores por defecto y consistencia semántica
 
 Los valores por defecto (`DEFAULT`) ayudan a mantener coherencia en los datos.
 
@@ -154,16 +154,16 @@ CREATE TABLE alumno (
 
 ```
 
-👉 Esto asegura que, si la app no manda esos campos,
+Esto asegura que, si la app no manda esos campos,
 
 la base mantenga coherencia y no queden vacíos.
 
-📌 **Regla práctica:**
+**Regla práctica:**
 
 - Usa `DEFAULT` para inicializar datos con sentido lógico.
 - Pero **no abuses de ellos** para ocultar errores de inserción.
 
-## 🧩 15.7. Tipos personalizados y dominios reutilizables
+## 15.7. Tipos personalizados y dominios reutilizables
 
 En motores como PostgreSQL, puedes crear **dominios** para encapsular validaciones repetidas.
 
@@ -181,9 +181,9 @@ CREATE TABLE contacto (
 
 ```
 
-👉 Si el número no cumple el patrón, la base lo rechaza.
+Si el número no cumple el patrón, la base lo rechaza.
 
-👉 Puedes usar este dominio en todas las tablas que manejen teléfonos.
+Puedes usar este dominio en todas las tablas que manejen teléfonos.
 
 Ventajas:
 
@@ -204,9 +204,9 @@ CREATE TABLE evento (
 
 ```
 
-👉 Luego, mediante un *trigger*, puedes actualizar `actualizado_en` automáticamente cuando cambien los datos (veremos esto más adelante en Módulos 26–27 sobre migraciones y mantenimiento).
+Luego, mediante un _trigger_, puedes actualizar `actualizado_en` automáticamente cuando cambien los datos (veremos esto más adelante en Módulos 26–27 sobre migraciones y mantenimiento).
 
-## 🧭 15.9. Compatibilidad y portabilidad
+## 15.9. Compatibilidad y portabilidad
 
 Cada motor tiene matices:
 
@@ -214,12 +214,12 @@ Cada motor tiene matices:
 - `TEXT` puede tener límites distintos.
 - `BOOLEAN` no existe en todos los motores antiguos (en algunos es `BIT`).
 
-📌 Recomendación general:
+Recomendación general:
 
 - Usa tipos **estándar SQL** siempre que sea posible (`INT`, `VARCHAR`, `DATE`, `NUMERIC`, `BOOLEAN`).
 - Evita tipos propietarios si el proyecto debe migrarse en el futuro.
 
-## 🧱 15.10. Buenas prácticas
+## 15.10. Buenas prácticas
 
 - Usa el tipo más **preciso y pequeño posible** que represente tu dato.
 - Nunca guardes fechas como texto ni números como cadenas.
@@ -229,7 +229,7 @@ Cada motor tiene matices:
 - Define valores `DEFAULT` coherentes.
 - Aprovecha los **dominios** para validaciones recurrentes.
 
-## 🚨 15.11. Errores comunes
+## 15.11. Errores comunes
 
 - Usar `TEXT` para todo (ineficiencia y sin control de longitud).
 - Usar `FLOAT` para montos financieros.

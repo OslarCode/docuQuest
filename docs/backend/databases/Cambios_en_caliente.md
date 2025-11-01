@@ -1,6 +1,6 @@
-# Modulo 32. Cambios en caliente
+# Cambios en caliente
 
-## 🧭 32.1. El reto: “cambiar sin romper”
+## 32.1. El reto: “cambiar sin romper”
 
 En producción hay tres objetivos al modificar el esquema:
 
@@ -10,18 +10,18 @@ En producción hay tres objetivos al modificar el esquema:
 
 Esto implica que **la forma en que haces cambios en producción no puede ser la misma que en desarrollo**.
 
-## 🧠 32.2. Cambios seguros vs cambios peligrosos
+## 32.2. Cambios seguros vs cambios peligrosos
 
 Algunos cambios son **casi instantáneos** y no bloquean:
 
-✅ Cambios seguros:
+Cambios seguros:
 
 - Añadir columnas con valores por defecto simples o nulos.
 - Crear índices en paralelo.
 - Crear nuevas tablas, vistas o constraints diferidas.
 - Añadir triggers o funciones sin tocar tablas grandes.
 
-⚠️ Cambios peligrosos:
+Cambios peligrosos:
 
 - Borrar columnas o tablas usadas por la aplicación.
 - Cambiar tipos de datos de campos grandes.
@@ -29,24 +29,24 @@ Algunos cambios son **casi instantáneos** y no bloquean:
 - Renombrar columnas que el código aún usa.
 - Reescribir relaciones o claves foráneas activas.
 
-📌 La clave está en **descomponer los cambios peligrosos en pasos seguros**.
+La clave está en **descomponer los cambios peligrosos en pasos seguros**.
 
-## 🧭 32.3. Estrategia básica: cambios en dos fases
+## 32.3. Estrategia básica: cambios en dos fases
 
 La regla de oro: **“add first, remove later”**.
 
 Ejemplo: quieres **renombrar una columna** `precio` a `precio_unitario`.
 
-❌ Mal enfoque (riesgoso):
+Mal enfoque (riesgoso):
 
 ```sql
 ALTER TABLE productos RENAME COLUMN precio TO precio_unitario;
 
 ```
 
-👉 La aplicación rompe inmediatamente si sigue consultando `precio`.
+La aplicación rompe inmediatamente si sigue consultando `precio`.
 
-✅ Enfoque correcto (seguro):
+Enfoque correcto (seguro):
 
 1. **Agregar nueva columna**:
 
@@ -65,9 +65,9 @@ ALTER TABLE productos DROP COLUMN precio;
 
 ```
 
-👉 Cero tiempo de inactividad.
+Cero tiempo de inactividad.
 
-## 🧠 32.4. Añadir restricciones pesadas sin bloqueo
+## 32.4. Añadir restricciones pesadas sin bloqueo
 
 Añadir un `NOT NULL` o `UNIQUE` sobre tablas grandes puede bloquear la escritura durante minutos u horas.
 
@@ -94,9 +94,9 @@ VALIDATE CONSTRAINT email_no_nulo;
 
 ```
 
-👉 El `VALIDATE` se hace en segundo plano en muchos motores, reduciendo bloqueos.
+El `VALIDATE` se hace en segundo plano en muchos motores, reduciendo bloqueos.
 
-## 🧭 32.5. Creación de índices sin interrumpir tráfico
+## 32.5. Creación de índices sin interrumpir tráfico
 
 Crear un índice en una tabla grande puede bloquear lecturas y escrituras.
 
@@ -109,14 +109,14 @@ CREATE INDEX CONCURRENTLY idx_pedidos_cliente ON pedidos(cliente_id);
 
 ```
 
-👉 Mientras el índice se crea:
+Mientras el índice se crea:
 
 - Las operaciones normales siguen funcionando,
 - No hay lock exclusivo sobre la tabla.
 
-📌 Este tipo de operaciones debe planificarse, pero **no requieren downtime**.
+Este tipo de operaciones debe planificarse, pero **no requieren downtime**.
 
-## 🧠 32.6. “Expand and contract” — estrategia profesional para despliegues
+## 32.6. “Expand and contract” — estrategia profesional para despliegues
 
 Este patrón se usa en muchas empresas grandes (GitHub, Shopify, Stripe…).
 
@@ -131,9 +131,9 @@ Este patrón se usa en muchas empresas grandes (GitHub, Shopify, Stripe…).
 - Una vez que todo el tráfico usa la nueva estructura,
 - Elimina la antigua de forma controlada y sin impacto.
 
-👉 Así, nunca tienes un estado intermedio que rompa la app.
+Así, nunca tienes un estado intermedio que rompa la app.
 
-## 🧭 32.7. Cambios complejos: particiones y relaciones
+## 32.7. Cambios complejos: particiones y relaciones
 
 Algunas migraciones son especialmente sensibles:
 
@@ -163,9 +163,9 @@ INSERT INTO pedidos_nuevo SELECT * FROM pedidos WHERE fecha < NOW() - INTERVAL '
 
 ```
 
-📌 Esto permite “mover” estructuras pesadas **sin downtime masivo**.
+Esto permite “mover” estructuras pesadas **sin downtime masivo**.
 
-## 🧠 32.8. Feature flags y compatibilidad temporal
+## 32.8. Feature flags y compatibilidad temporal
 
 En muchos despliegues modernos se usan **feature flags** para:
 
@@ -179,9 +179,9 @@ Ejemplo:
 - El código lee de `estado` y `nuevo_estado` durante una semana.
 - Cuando todo el tráfico usa la nueva columna, borras la vieja.
 
-👉 Esto reduce riesgo y permite rollback rápido.
+Esto reduce riesgo y permite rollback rápido.
 
-## 🧭 32.9. Testing de cambios en caliente
+## 32.9. Testing de cambios en caliente
 
 Antes de tocar producción:
 
@@ -196,9 +196,9 @@ Ejemplo:
 - Medir cuánto tarda el índice concurrente.
 - Planificar el despliegue real en consecuencia.
 
-📌 Cambiar sin medir = receta para el desastre.
+Cambiar sin medir = receta para el desastre.
 
-## 🧭 32.10. Buenas prácticas para cambios en caliente
+## 32.10. Buenas prácticas para cambios en caliente
 
 - Prefiere agregar antes que eliminar.
 - Usa operaciones concurrentes cuando estén disponibles.
@@ -208,7 +208,7 @@ Ejemplo:
 - Automatiza validaciones previas y postcambio.
 - Documenta procedimientos de rollback.
 
-## 🚨 32.11. Errores comunes
+## 32.11. Errores comunes
 
 - Hacer un `ALTER` destructivo directamente en producción 😬
 - No probar cuánto tarda un cambio en tablas grandes.

@@ -1,6 +1,6 @@
-# Modulo 11. Vistas lógicas y composición de consultas complejas
+# Vistas lógicas y composición de consultas complejas
 
-## 🧭 11.1. El problema de las consultas “monstruo”
+## 11.1. El problema de las consultas “monstruo”
 
 En sistemas reales, no es raro ver consultas así 👇
 
@@ -22,7 +22,7 @@ ORDER BY total_gastado DESC;
 
 ```
 
-👉 Es funcional, sí.
+Es funcional, sí.
 
 Pero:
 
@@ -32,21 +32,20 @@ Pero:
 
 La solución: **composición de consultas**.
 
-## 🧱 11.2. Composición de consultas — la idea base
+## 11.2. Composición de consultas — la idea base
 
 La idea es simple pero poderosa:
 
 > “Divide una consulta compleja en bloques lógicos reutilizables.”
-> 
 
 Y puedes hacerlo de **dos maneras principales**:
 
-1. 🧾 **Subconsultas / Common Table Expressions (CTE)** — composición temporal dentro de la misma query.
-2. 🧰 **Vistas (VIEW)** — composición persistente, reutilizable en varias consultas.
+1. **Subconsultas / Common Table Expressions (CTE)** — composición temporal dentro de la misma query.
+2. **Vistas (VIEW)** — composición persistente, reutilizable en varias consultas.
 
-## 🔸 11.3. Subconsultas — anidar resultados intermedios
+## 11.3. Subconsultas — anidar resultados intermedios
 
-📌 Caso: queremos saber cuánto gastó cada cliente, pero la parte de calcular el total de cada pedido es repetitiva.
+Caso: queremos saber cuánto gastó cada cliente, pero la parte de calcular el total de cada pedido es repetitiva.
 
 En lugar de:
 
@@ -76,13 +75,13 @@ GROUP BY c.nombre;
 
 ```
 
-👉 Ventajas:
+Ventajas:
 
 - Separamos responsabilidades: primero calculamos totales por pedido, luego totales por cliente.
 - Más legible y mantenible.
 - Reutilizable con ligeros cambios.
 
-## 🟡 11.4. CTE — Common Table Expressions (WITH)
+## 11.4. CTE — Common Table Expressions (WITH)
 
 Las **CTE** son como subconsultas, pero:
 
@@ -110,19 +109,19 @@ GROUP BY c.nombre;
 
 ```
 
-📌 Ventajas sobre subconsultas:
+Ventajas sobre subconsultas:
 
 - Legibilidad clara, estructura en bloques.
 - Reutilizable dentro de la misma consulta.
 - Fácil de debuggear (puedes ejecutar cada CTE por separado).
 
-👉 Las CTE **no almacenan datos**, son temporales y existen solo durante esa consulta.
+Las CTE **no almacenan datos**, son temporales y existen solo durante esa consulta.
 
-## 🧰 11.5. Vistas — encapsulación persistente
+## 11.5. Vistas — encapsulación persistente
 
 Cuando una consulta es **reutilizada frecuentemente**, no necesitas repetirla en cada lugar.
 
-👉 La solución: **crear una vista**.
+La solución: **crear una vista**.
 
 ```sql
 CREATE VIEW totales_por_pedido AS
@@ -146,25 +145,25 @@ GROUP BY c.nombre;
 
 ```
 
-👉 Esto mejora la mantenibilidad brutalmente:
+Esto mejora la mantenibilidad brutalmente:
 
 - Si cambian reglas de cálculo, actualizas **una vista**, no todas las consultas.
 - La vista **puede tener permisos** diferentes a la tabla original.
 - Se puede usar en múltiples queries, reportes y aplicaciones.
 
-## 🧠 11.6. Vistas vs CTE — cuándo usar cada una
+## 11.6. Vistas vs CTE — cuándo usar cada una
 
-| CTE (WITH) | Vista (VIEW) |
-| --- | --- |
-| Temporal, vive solo durante la consulta | Persistente en el esquema |
-| Ideal para consultas grandes puntuales | Ideal para lógica de negocio reutilizable |
-| Muy buena para debug y lectura | Muy buena para simplificar código repetido |
-| No afecta al esquema ni requiere permisos extra | Necesita CREATE VIEW (y permisos) |
-| Útil en ETL, transformaciones, reportes puntuales | Útil en reporting, BI, APIs, dashboards |
+| CTE (WITH)                                        | Vista (VIEW)                               |
+| ------------------------------------------------- | ------------------------------------------ |
+| Temporal, vive solo durante la consulta           | Persistente en el esquema                  |
+| Ideal para consultas grandes puntuales            | Ideal para lógica de negocio reutilizable  |
+| Muy buena para debug y lectura                    | Muy buena para simplificar código repetido |
+| No afecta al esquema ni requiere permisos extra   | Necesita CREATE VIEW (y permisos)          |
+| Útil en ETL, transformaciones, reportes puntuales | Útil en reporting, BI, APIs, dashboards    |
 
-👉 En muchos proyectos, **empiezas con una CTE** y si la usas varias veces, **la conviertes en vista**.
+En muchos proyectos, **empiezas con una CTE** y si la usas varias veces, **la conviertes en vista**.
 
-## 🧱 11.7. Vistas encadenadas — composición jerárquica
+## 11.7. Vistas encadenadas — composición jerárquica
 
 También puedes **construir vistas sobre otras vistas**.
 
@@ -189,7 +188,7 @@ WHERE total_gastado > 1000;
 
 ```
 
-👉 Con esto puedes construir un **modelo de datos en capas**:
+Con esto puedes construir un **modelo de datos en capas**:
 
 - Vistas base: limpian y transforman datos.
 - Vistas intermedias: agregan lógica de negocio.
@@ -197,7 +196,7 @@ WHERE total_gastado > 1000;
 
 Este patrón es muy usado en **data warehouses** y **modelos de negocio bien estructurados**.
 
-## 🧮 11.8. Ejemplo práctico — Sistema de biblioteca
+## 11.8. Ejemplo práctico — Sistema de biblioteca
 
 Tablas:
 
@@ -205,7 +204,7 @@ Tablas:
 - `socio(id_socio, nombre)`
 - `libro(id_libro, titulo)`
 
-📌 Vista base: préstamos activos
+Vista base: préstamos activos
 
 ```sql
 CREATE VIEW prestamos_activos AS
@@ -215,7 +214,7 @@ WHERE p.estado = 'activo';
 
 ```
 
-📌 Vista intermedia: préstamos activos con datos enriquecidos
+Vista intermedia: préstamos activos con datos enriquecidos
 
 ```sql
 CREATE VIEW prestamos_detalle AS
@@ -226,7 +225,7 @@ JOIN libro l ON pa.id_libro = l.id_libro;
 
 ```
 
-📌 Vista final: conteo de préstamos por socio
+Vista final: conteo de préstamos por socio
 
 ```sql
 CREATE VIEW prestamos_por_socio AS
@@ -243,16 +242,16 @@ SELECT * FROM prestamos_por_socio;
 
 ```
 
-📌 Resultado:
+Resultado:
 
 | socio | prestamos_activos |
-| --- | --- |
-| Ana | 3 |
-| Luis | 1 |
+| ----- | ----------------- |
+| Ana   | 3                 |
+| Luis  | 1                 |
 
-👉 Tres vistas, tres niveles de responsabilidad, una consulta final **limpia y rápida**.
+Tres vistas, tres niveles de responsabilidad, una consulta final **limpia y rápida**.
 
-## ⚠️ 11.9. Buenas prácticas con vistas y CTE
+## 11.9. Buenas prácticas con vistas y CTE
 
 - Crea vistas **con un propósito claro**, no para “todo”.
 - Nombra las vistas con **semántica de negocio**, no técnica (`ventas_por_mes`, no `v123`).
@@ -261,7 +260,7 @@ SELECT * FROM prestamos_por_socio;
 - Usa CTE para operaciones complejas puntuales y vistas para reglas de negocio estables.
 - Mide el rendimiento: demasiadas vistas encadenadas pueden volverse lentas si no están bien diseñadas.
 
-## 🚨 Errores comunes
+## Errores comunes
 
 - Repetir lógica en múltiples queries en vez de crear una vista.
 - Vistas sin filtros → consultas más lentas de lo necesario.

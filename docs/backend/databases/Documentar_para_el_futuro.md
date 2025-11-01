@@ -1,6 +1,6 @@
-# Modulo 36. Documentar para el futuro
+# Documentar para el futuro
 
-## 🧭 36.1. Por qué documentar importa de verdad
+## 36.1. Por qué documentar importa de verdad
 
 Cuando diseñas una base de datos, **tú sabes cómo funciona**:
 
@@ -13,11 +13,11 @@ Pero dentro de seis meses:
 - Otro desarrollador (o tú mismo) tendrá que entender todo sin preguntar.
 - Y si no hay documentación… perderá horas, cometerá errores o rehará trabajo que ya estaba hecho.
 
-📌 La documentación no es un “lujo corporativo”:
+La documentación no es un “lujo corporativo”:
 
-👉 es **parte de la arquitectura de datos**.
+es **parte de la arquitectura de datos**.
 
-## 🧠 36.2. ERDs (Entity-Relationship Diagrams)
+## 36.2. ERDs (Entity-Relationship Diagrams)
 
 Los **diagramas entidad-relación** son la forma visual más clara de:
 
@@ -41,9 +41,9 @@ Relaciones:
 - Cliente 1—N Pedido
 - Pedido N—N Producto (a través de Pedido_Producto)
 
-📌 Con un ERD, cualquier persona nueva puede entender la base sin abrir una sola línea de código SQL.
+Con un ERD, cualquier persona nueva puede entender la base sin abrir una sola línea de código SQL.
 
-## 🧭 36.3. Herramientas prácticas para ERDs
+## 36.3. Herramientas prácticas para ERDs
 
 Puedes usar desde herramientas sencillas hasta soluciones colaborativas profesionales:
 
@@ -83,9 +83,9 @@ erDiagram
 
 ```
 
-👉 Esto se puede versionar junto al repositorio.
+Esto se puede versionar junto al repositorio.
 
-## 🧠 36.4. Catálogos de datos — saber **qué significa cada campo**
+## 36.4. Catálogos de datos — saber **qué significa cada campo**
 
 Un **catálogo de datos** es básicamente un **diccionario que describe cada tabla y columna** de tu base.
 
@@ -99,22 +99,22 @@ Debe incluir:
 
 Ejemplo:
 
-| Tabla | Columna | Tipo | Descripción | Restricciones |
-| --- | --- | --- | --- | --- |
-| cliente | id_cliente | INT | Identificador único del cliente | PK, autoincrement |
-| cliente | email | VARCHAR(255) | Correo electrónico del cliente | UNIQUE, NOT NULL |
-| pedido | total | DECIMAL(10,2) | Total de la compra | >= 0 |
-| pedido_producto | cantidad | INT | Cantidad del producto en el pedido | > 0 |
+| Tabla           | Columna    | Tipo          | Descripción                        | Restricciones     |
+| --------------- | ---------- | ------------- | ---------------------------------- | ----------------- |
+| cliente         | id_cliente | INT           | Identificador único del cliente    | PK, autoincrement |
+| cliente         | email      | VARCHAR(255)  | Correo electrónico del cliente     | UNIQUE, NOT NULL  |
+| pedido          | total      | DECIMAL(10,2) | Total de la compra                 | >= 0              |
+| pedido_producto | cantidad   | INT           | Cantidad del producto en el pedido | > 0               |
 
-📌 Este documento es oro cuando:
+Este documento es oro cuando:
 
 - Alguien debe hacer integraciones externas.
 - Un analista necesita entender los datos.
 - Hay que migrar a otro motor o arquitectura.
 
-👉 Lo ideal: **versionar este catálogo junto al código** y actualizarlo con cada cambio estructural.
+Lo ideal: **versionar este catálogo junto al código** y actualizarlo con cada cambio estructural.
 
-## 🧭 36.5. Linaje de datos — saber **de dónde vienen y a dónde van**
+## 36.5. Linaje de datos — saber **de dónde vienen y a dónde van**
 
 El **linaje de datos** (data lineage) describe **el recorrido que hace la información**:
 
@@ -136,17 +136,17 @@ email (clientes) → se anonimiza → tabla marketing_email → herramienta exte
 
 ```
 
-📌 Esto permite:
+Esto permite:
 
 - Detectar impactos cuando cambias una estructura,
 - Cumplir normativas (ej. GDPR),
 - Mejorar trazabilidad.
 
-👉 No necesitas una mega herramienta de “data governance” para empezar.
+No necesitas una mega herramienta de “data governance” para empezar.
 
 Un simple **mapa de flujo documentado** ya ayuda muchísimo.
 
-## 🧠 36.6. Convenciones de nombres — pequeñas decisiones que ahorran grandes dolores
+## 36.6. Convenciones de nombres — pequeñas decisiones que ahorran grandes dolores
 
 Tener **nombres consistentes**:
 
@@ -162,19 +162,19 @@ Buenas prácticas comunes:
 - ✅ prefijos o sufijos claros si hay variantes (`vista_cliente`, `tmp_*`, `log_*`).
 - ✅ FK con el mismo nombre que la PK referenciada (`cliente_id` en pedido).
 
-❌ Evitar:
+Evitar:
 
 - Nombres genéricos tipo `data1`, `table2`, `valor`.
 - Usar mayúsculas inconsistentes.
 - Columnas con significados diferentes en tablas distintas.
 
-📌 Convenciones consistentes = menos documentación que leer = menos errores.
+Convenciones consistentes = menos documentación que leer = menos errores.
 
-## 🧭 36.7. Versionar la documentación junto al código
+## 36.7. Versionar la documentación junto al código
 
 Un error común es tener documentación en PDFs olvidados o wikis desactualizadas.
 
-👉 La documentación **debe vivir con el proyecto**:
+La documentación **debe vivir con el proyecto**:
 
 - Dentro del repositorio,
 - Versionada con Git,
@@ -193,9 +193,9 @@ Ejemplo de estructura:
 
 ```
 
-📌 Así, si alguien revisa una migración en Git, puede ver la documentación correspondiente al estado de la base en ese momento.
+Así, si alguien revisa una migración en Git, puede ver la documentación correspondiente al estado de la base en ese momento.
 
-## 🧠 36.8. Documentación viva vs muerta
+## 36.8. Documentación viva vs muerta
 
 **Documentación viva**:
 
@@ -209,11 +209,11 @@ Ejemplo de estructura:
 - Se hizo una vez al principio y nunca más.
 - Nadie la cree ni la consulta.
 
-👉 Lo primero construye sistemas sostenibles.
+Lo primero construye sistemas sostenibles.
 
-👉 Lo segundo genera deuda técnica.
+Lo segundo genera deuda técnica.
 
-## 🧭 36.9. Buenas prácticas para documentar bases de datos
+## 36.9. Buenas prácticas para documentar bases de datos
 
 - Documenta ERDs desde el principio.
 - Crea un catálogo de datos claro y mantenlo actualizado.
@@ -223,7 +223,7 @@ Ejemplo de estructura:
 - Automatiza generación de documentación cuando sea posible.
 - No documentes “por obligación”, sino para que otros (y tú mismo en 6 meses) puedan entender la base rápidamente.
 
-## 🚨 36.10. Errores comunes
+## 36.10. Errores comunes
 
 - Pensar que “la base se explica sola” (spoiler: no lo hace).
 - Nombrar tablas y columnas de forma inconsistente.

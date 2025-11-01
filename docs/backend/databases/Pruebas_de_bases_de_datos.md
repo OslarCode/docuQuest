@@ -1,6 +1,6 @@
-# Modulo 27. Pruebas de bases de datos
+# Pruebas de bases de datos
 
-## 🧭 27.1. Por qué probar la base de datos
+## 27.1. Por qué probar la base de datos
 
 Muchas apps fallan no por errores de código… sino por:
 
@@ -9,31 +9,31 @@ Muchas apps fallan no por errores de código… sino por:
 - Consultas que devuelven resultados inesperados.
 - Integridad referencial rota sin darse cuenta.
 
-📌 Las pruebas de base de datos sirven para:
+Las pruebas de base de datos sirven para:
 
 - Detectar errores **antes** de llegar a producción.
 - Asegurar que las migraciones no rompen integridad.
 - Verificar que las consultas críticas siguen funcionando.
 - Facilitar despliegues y rollback seguros.
 
-## 🧠 27.2. Qué se prueba exactamente en la base
+## 27.2. Qué se prueba exactamente en la base
 
 1. **Estructura**:
-    - Existen las tablas esperadas.
-    - Las columnas tienen el tipo correcto.
-    - Las constraints están activas.
+   - Existen las tablas esperadas.
+   - Las columnas tienen el tipo correcto.
+   - Las constraints están activas.
 2. **Integridad**:
-    - FKs, restricciones UNIQUE, CHECK… se cumplen.
-    - No hay relaciones rotas.
+   - FKs, restricciones UNIQUE, CHECK… se cumplen.
+   - No hay relaciones rotas.
 3. **Consultas críticas**:
-    - Devuelven los resultados esperados para casos conocidos.
+   - Devuelven los resultados esperados para casos conocidos.
 4. **Reglas de negocio en BD**:
-    - Triggers, vistas, funciones y restricciones hacen lo correcto.
+   - Triggers, vistas, funciones y restricciones hacen lo correcto.
 5. **Migraciones**:
-    - Se aplican y revierten sin errores.
-    - No rompen datos existentes.
+   - Se aplican y revierten sin errores.
+   - No rompen datos existentes.
 
-## 🧭 27.3. Fixtures — datos controlados para probar
+## 27.3. Fixtures — datos controlados para probar
 
 Un **fixture** es un conjunto de datos **pequeño, limpio y conocido** que sirve para:
 
@@ -54,15 +54,15 @@ VALUES (101, 1, 50.00),
 
 ```
 
-👉 Con estos datos conocidos, puedes probar:
+Con estos datos conocidos, puedes probar:
 
 - Que las consultas JOIN devuelven lo correcto.
 - Que no hay problemas de FK.
 - Que triggers o reglas de negocio se comportan como se espera.
 
-📌 Es recomendable **mantener fixtures bajo control de versiones** junto con el código.
+Es recomendable **mantener fixtures bajo control de versiones** junto con el código.
 
-## 🧠 27.4. Ejemplo práctico — verificación de integridad
+## 27.4. Ejemplo práctico — verificación de integridad
 
 Supón estas tablas:
 
@@ -86,31 +86,33 @@ INSERT INTO pedido (id, cliente_id) VALUES (1, 999);
 
 ```
 
-👉 La prueba debe **fallar** porque viola la FK.
+La prueba debe **fallar** porque viola la FK.
 
 Una prueba automatizada en Node.js podría ser:
 
 ```jsx
-import { strict as assert } from 'assert';
-import db from './db.js';
+import { strict as assert } from "assert";
+import db from "./db.js";
 
-await db.query('BEGIN');
+await db.query("BEGIN");
 try {
-  await db.query('INSERT INTO pedido (id, cliente_id) VALUES ($1, $2)', [1, 999]);
-  assert.fail('La FK debería haber fallado');
+  await db.query(
+    "INSERT INTO pedido (id, cliente_id) VALUES ($1, $2)",
+    [1, 999]
+  );
+  assert.fail("La FK debería haber fallado");
 } catch (e) {
-  assert.ok(e.message.includes('violates foreign key constraint'));
+  assert.ok(e.message.includes("violates foreign key constraint"));
 } finally {
-  await db.query('ROLLBACK');
+  await db.query("ROLLBACK");
 }
-
 ```
 
-👉 No se daña la base real porque usamos una transacción revertida.
+No se daña la base real porque usamos una transacción revertida.
 
-👉 Si alguien rompe la FK en una migración futura, la CI lo detectará.
+Si alguien rompe la FK en una migración futura, la CI lo detectará.
 
-## 🧭 27.5. Verificación de consultas críticas
+## 27.5. Verificación de consultas críticas
 
 Si tienes consultas de negocio que **no deben romperse nunca** (por ejemplo, informes o dashboards), conviene probarlas directamente:
 
@@ -130,12 +132,11 @@ Test:
 const result = await db.query(/* consulta */);
 assert.equal(result.rows[0].pedidos, 1);
 assert.equal(result.rows[1].pedidos, 1);
-
 ```
 
-👉 Si alguien cambia columnas, nombres, JOINs o lógica → el test falla antes de desplegar.
+Si alguien cambia columnas, nombres, JOINs o lógica → el test falla antes de desplegar.
 
-## 🧠 27.6. Migraciones y tests automáticos
+## 27.6. Migraciones y tests automáticos
 
 Una buena práctica es:
 
@@ -154,9 +155,9 @@ npm run migrate:rollback --all
 
 ```
 
-📌 Esto asegura que las migraciones **son realmente reproducibles** y no dependen de un entorno “mágico” que ya estaba montado.
+Esto asegura que las migraciones **son realmente reproducibles** y no dependen de un entorno “mágico” que ya estaba montado.
 
-## 🧭 27.7. Testeo de triggers, restricciones y reglas de negocio
+## 27.7. Testeo de triggers, restricciones y reglas de negocio
 
 Ejemplo:
 
@@ -170,21 +171,22 @@ ALTER TABLE pedido ADD CONSTRAINT total_no_negativo CHECK (total >= 0);
 Test:
 
 ```jsx
-await db.query('BEGIN');
+await db.query("BEGIN");
 try {
-  await db.query('INSERT INTO pedido (id, cliente_id, total) VALUES (103, 1, -50)');
-  assert.fail('Debería haber lanzado error por CHECK');
+  await db.query(
+    "INSERT INTO pedido (id, cliente_id, total) VALUES (103, 1, -50)"
+  );
+  assert.fail("Debería haber lanzado error por CHECK");
 } catch (e) {
-  assert.ok(e.message.includes('total_no_negativo'));
+  assert.ok(e.message.includes("total_no_negativo"));
 } finally {
-  await db.query('ROLLBACK');
+  await db.query("ROLLBACK");
 }
-
 ```
 
-👉 Esto permite **verificar reglas internas de la base** sin necesidad de probarlas indirectamente desde el frontend o backend.
+Esto permite **verificar reglas internas de la base** sin necesidad de probarlas indirectamente desde el frontend o backend.
 
-## 🧠 27.8. Revisión de regresiones en CI
+## 27.8. Revisión de regresiones en CI
 
 Cuando integras esto en **CI/CD**:
 
@@ -203,9 +205,9 @@ Ejemplo (pipeline simple):
 
 ```
 
-📌 Esto protege tu esquema igual que los tests unitarios protegen tu lógica de negocio.
+Esto protege tu esquema igual que los tests unitarios protegen tu lógica de negocio.
 
-## 🧭 27.9. Buenas prácticas para pruebas de base de datos
+## 27.9. Buenas prácticas para pruebas de base de datos
 
 - Mantén fixtures pequeños, claros y versionados.
 - Usa transacciones para aislar tests y no ensuciar la base.
@@ -215,7 +217,7 @@ Ejemplo (pipeline simple):
 - No dependas de “baselines manuales” o dumps sin versionar.
 - Loguea fallos con contexto (tabla, migración, error exacto).
 
-## 🚨 27.10. Errores comunes
+## 27.10. Errores comunes
 
 - No probar la base porque “los tests ya están en backend”.
 - Asumir que si la migración funciona una vez, funcionará siempre.

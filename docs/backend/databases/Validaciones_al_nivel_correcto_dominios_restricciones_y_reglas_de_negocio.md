@@ -1,6 +1,6 @@
-# Modulo 14. Validaciones al nivel correcto: dominios, restricciones y reglas de negocio en la BD
+# Validaciones al nivel correcto: dominios, restricciones y reglas de negocio en la BD
 
-## 🧭 14.1. Por qué validar en la base de datos
+## 14.1. Por qué validar en la base de datos
 
 En muchas aplicaciones, toda la validación se hace “en el backend” o incluso en el frontend.
 
@@ -11,32 +11,29 @@ Si alguien:
 - inserta datos desde otro sistema,
 - usa un script,
 - o explota un error en la app…
-    
-    👉 puede **romper las reglas** de negocio si estas no están definidas en la base.
-    
+  puede **romper las reglas** de negocio si estas no están definidas en la base.
 
-📌 Las **restricciones y validaciones al nivel de la base de datos** son la **última línea de defensa**.
+Las **restricciones y validaciones al nivel de la base de datos** son la **última línea de defensa**.
 
 > “Si es una regla estructural e inmutable, debería estar en la base, no en la lógica de la app.”
-> 
 
-## 🧱 14.2. Tipos de restricciones que podemos aplicar
+## 14.2. Tipos de restricciones que podemos aplicar
 
-| Tipo | Qué garantiza | Ejemplo práctico |
-| --- | --- | --- |
-| `NOT NULL` | Que un campo no quede vacío | nombre de cliente |
-| `UNIQUE` | Que un valor no se repita | correo electrónico |
-| `CHECK` | Que un valor cumpla una condición lógica | precio >= 0 |
-| `DEFAULT` | Que haya un valor por defecto cuando no se especifica | fecha actual |
-| `FOREIGN KEY` | Que exista en otra tabla (ya visto en M13) | id_cliente |
-| **Dominios** | Tipos personalizados con reglas | email válido, DNI, etc. |
-| **Triggers / reglas** | Validaciones más complejas | límite de préstamos por socio, stock mínimo |
+| Tipo                  | Qué garantiza                                         | Ejemplo práctico                            |
+| --------------------- | ----------------------------------------------------- | ------------------------------------------- |
+| `NOT NULL`            | Que un campo no quede vacío                           | nombre de cliente                           |
+| `UNIQUE`              | Que un valor no se repita                             | correo electrónico                          |
+| `CHECK`               | Que un valor cumpla una condición lógica              | precio >= 0                                 |
+| `DEFAULT`             | Que haya un valor por defecto cuando no se especifica | fecha actual                                |
+| `FOREIGN KEY`         | Que exista en otra tabla (ya visto en M13)            | id_cliente                                  |
+| **Dominios**          | Tipos personalizados con reglas                       | email válido, DNI, etc.                     |
+| **Triggers / reglas** | Validaciones más complejas                            | límite de préstamos por socio, stock mínimo |
 
-## 🧩 14.3. Restricciones básicas: `NOT NULL` y `UNIQUE`
+## 14.3. Restricciones básicas: `NOT NULL` y `UNIQUE`
 
 Estas son las más simples y también las más olvidadas.
 
-### 📌 Ejemplo — tabla de clientes
+### Ejemplo — tabla de clientes
 
 ```sql
 CREATE TABLE cliente (
@@ -57,13 +54,13 @@ INSERT INTO cliente (nombre, correo) VALUES ('Ana', NULL);
 
 ```
 
-👉 ❌ Error inmediato: violación de `NOT NULL`.
+Error inmediato: violación de `NOT NULL`.
 
-## 🧮 14.4. Restricciones con `CHECK` — validaciones condicionales
+## 14.4. Restricciones con `CHECK` — validaciones condicionales
 
 `CHECK` permite imponer **reglas lógicas directas** sobre un campo o combinación de campos.
 
-### 📌 Ejemplo — precios de productos
+### Ejemplo — precios de productos
 
 ```sql
 CREATE TABLE producto (
@@ -81,9 +78,9 @@ INSERT INTO producto (nombre, precio) VALUES ('Taza', -5.50);
 
 ```
 
-👉 ❌ La base lo bloquea automáticamente.
+La base lo bloquea automáticamente.
 
-### 📌 Ejemplo — valores predefinidos
+### Ejemplo — valores predefinidos
 
 ```sql
 CREATE TABLE pedido (
@@ -93,9 +90,9 @@ CREATE TABLE pedido (
 
 ```
 
-👉 No se puede insertar otro estado distinto a los previstos.
+No se puede insertar otro estado distinto a los previstos.
 
-## 🧠 14.5. Valores por defecto con `DEFAULT`
+## 14.5. Valores por defecto con `DEFAULT`
 
 Los `DEFAULT` simplifican el código de inserción y evitan campos nulos innecesarios.
 
@@ -111,13 +108,13 @@ CREATE TABLE pedido (
 - Si no se especifica `fecha` → se inserta la actual.
 - Si no se especifica `estado` → queda “pendiente”.
 
-👉 Esto **reduce errores en el código de la aplicación**.
+Esto **reduce errores en el código de la aplicación**.
 
-## 🧭 14.6. Dominios: tipos personalizados con reglas incorporadas
+## 14.6. Dominios: tipos personalizados con reglas incorporadas
 
 Algunos motores (como PostgreSQL) permiten crear **dominios**, es decir, tipos de datos que ya incluyen restricciones.
 
-📌 Ideal para valores que se repiten en muchas tablas (email, DNI, etc.).
+Ideal para valores que se repiten en muchas tablas (email, DNI, etc.).
 
 ```sql
 CREATE DOMAIN email_valido AS VARCHAR(255)
@@ -130,11 +127,11 @@ CREATE TABLE usuario (
 
 ```
 
-👉 Cada vez que insertes un correo, se valida automáticamente.
+Cada vez que insertes un correo, se valida automáticamente.
 
-👉 Y puedes usar `email_valido` en cualquier otra tabla sin repetir la expresión.
+Y puedes usar `email_valido` en cualquier otra tabla sin repetir la expresión.
 
-## 🧰 14.7. Triggers y validaciones complejas
+## 14.7. Triggers y validaciones complejas
 
 Cuando las restricciones básicas no bastan, puedes usar **triggers** para validar reglas más elaboradas.
 
@@ -166,9 +163,9 @@ EXECUTE FUNCTION validar_limite_prestamos();
 
 ```
 
-👉 Esto asegura que aunque la app falle, la BD **nunca permita más de 5 préstamos activos por socio**.
+Esto asegura que aunque la app falle, la BD **nunca permita más de 5 préstamos activos por socio**.
 
-## 🧱 14.8. Validaciones combinadas
+## 14.8. Validaciones combinadas
 
 Puedes mezclar restricciones para reforzar la calidad:
 
@@ -186,22 +183,22 @@ CREATE TABLE alumno (
 - `UNIQUE` para DNI
 - `CHECK` para edad
 
-👉 Este tipo de modelo reduce muchísimo la necesidad de validaciones redundantes en la app.
+Este tipo de modelo reduce muchísimo la necesidad de validaciones redundantes en la app.
 
-## 🧠 14.9. Dónde poner cada validación
+## 14.9. Dónde poner cada validación
 
-| Tipo de regla | Lugar adecuado | Ejemplo |
-| --- | --- | --- |
-| Estructural, inmutable | Base de datos | DNI único, edad mínima, FK obligatoria |
-| De negocio estable | Base de datos o capa mixta | Límite de préstamos, stock mínimo |
+| Tipo de regla                   | Lugar adecuado                | Ejemplo                                     |
+| ------------------------------- | ----------------------------- | ------------------------------------------- |
+| Estructural, inmutable          | Base de datos                 | DNI único, edad mínima, FK obligatoria      |
+| De negocio estable              | Base de datos o capa mixta    | Límite de préstamos, stock mínimo           |
 | Temporal, dinámica o contextual | Aplicación (backend/frontend) | Promociones, reglas que cambian cada semana |
 
-📌 Regla práctica:
+Regla práctica:
 
 - Si **romper la regla corrompe datos** → ponla en la base.
 - Si **romper la regla solo afecta la lógica temporal** → puede ir en la aplicación.
 
-## 🧭 14.10. Buenas prácticas
+## 14.10. Buenas prácticas
 
 - Usa restricciones básicas (`NOT NULL`, `CHECK`, `UNIQUE`) siempre que puedas.
 - Usa dominios para patrones repetidos.
@@ -209,7 +206,7 @@ CREATE TABLE alumno (
 - Documenta todas las reglas en un diccionario de datos.
 - Valida primero en la aplicación por usabilidad, pero **refuerza en la base por seguridad**.
 
-## 🚨 14.11. Errores comunes
+## 14.11. Errores comunes
 
 - No definir restricciones, confiando en la app.
 - Repetir la misma validación en muchas tablas sin dominios.

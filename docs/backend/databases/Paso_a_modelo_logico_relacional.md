@@ -1,6 +1,6 @@
-# Modulo 6. Paso a modelo lógico relacional
+# Paso a modelo lógico relacional
 
-## 🧭 6.1. Diferencia entre modelo conceptual y modelo lógico
+## 6.1. Diferencia entre modelo conceptual y modelo lógico
 
 | Conceptual                              | Lógico relacional                                    |
 | --------------------------------------- | ---------------------------------------------------- |
@@ -10,9 +10,9 @@
 | Independiente de la tecnología          | Aún agnóstico de motor, pero ya con estructura firme |
 | Ejemplo: “Alumno se matricula en Curso” | Tabla `matricula` con PK compuesta (alumno, curso)   |
 
-👉 En resumen: **lo conceptual describe, lo lógico estructura**.
+En resumen: **lo conceptual describe, lo lógico estructura**.
 
-## 🏫 6.2. Ejemplo base — Sistema académico
+## 6.2. Ejemplo base — Sistema académico
 
 Recordemos el ER del módulo anterior:
 
@@ -31,7 +31,7 @@ Relaciones:
 
 Vamos a transformarlo paso a paso en tablas lógicas.
 
-## 🧱 6.3. Paso 1 — Crear una tabla por entidad fuerte
+## 6.3. Paso 1 — Crear una tabla por entidad fuerte
 
 Cada **entidad principal** del modelo conceptual se convierte en **una tabla**.
 
@@ -64,13 +64,13 @@ Esto incluye todas las entidades que tienen existencia propia (no solo relacione
 | nombre        | texto       | NOT NULL            |
 | correo        | texto       | UNIQUE, NOT NULL    |
 
-👉 Hasta aquí no hay relaciones, solo estructura base.
+Hasta aquí no hay relaciones, solo estructura base.
 
-## 🔑 6.4. Paso 2 — Traducir relaciones 1:N
+## 6.4. Paso 2 — Traducir relaciones 1:N
 
 Regla práctica:
 
-👉 La **clave primaria** de la entidad del lado “1” se convierte en **clave foránea** en la tabla del lado “N”.
+La **clave primaria** de la entidad del lado “1” se convierte en **clave foránea** en la tabla del lado “N”.
 
 Ejemplo:
 
@@ -87,12 +87,12 @@ Entonces, la relación conceptual `Alumno — Matrícula — Curso` se traduce e
 | estado_matricula | texto                 | NOT NULL                                       |
 | PRIMARY KEY      | (id_alumno, id_curso) | compuesta, para evitar duplicidad de matrícula |
 
-👉 Notas:
+Notas:
 
 - No es necesario un `id_matricula` artificial, porque la combinación alumno+curso ya identifica unívocamente una matrícula.
 - Este es un caso típico de **relación N:N convertida en tabla intermedia**.
 
-## 🔸 6.5. Paso 3 — Traducir relaciones 1:1
+## 6.5. Paso 3 — Traducir relaciones 1:1
 
 Si un `Curso` tiene un `Instructor` responsable (relación 1:1), hay dos opciones:
 
@@ -134,12 +134,12 @@ id_instructor (FK → instructor.id_instructor)
 
 ---
 
-👉 Esto significa:
+Esto significa:
 
 - Cada curso tiene exactamente un instructor.
 - Un instructor puede estar en varios cursos (1:N).
 
-## 🧰 6.6. Paso 4 — Definir claves y restricciones de integridad
+## 6.6. Paso 4 — Definir claves y restricciones de integridad
 
 En el modelo lógico debemos dejar claras las reglas:
 
@@ -150,7 +150,7 @@ En el modelo lógico debemos dejar claras las reglas:
 | instructor | id_instructor         | —                                                                                |
 | matricula  | (id_alumno, id_curso) | id_alumno → alumno.id_alumno, id_curso → curso.id_curso                          |
 
-👉 Aunque aún no usamos sintaxis SQL, **este modelo es suficientemente detallado** como para implementarlo en cualquier motor (PostgreSQL, MySQL, SQLite, etc.) sin ambigüedades.
+Aunque aún no usamos sintaxis SQL, **este modelo es suficientemente detallado** como para implementarlo en cualquier motor (PostgreSQL, MySQL, SQLite, etc.) sin ambigüedades.
 
 ## 🧪 6.7. Ejercicio práctico guiado — Biblioteca (del módulo anterior)
 
@@ -169,7 +169,7 @@ Vamos a convertir el **modelo conceptual de biblioteca** a su **modelo lógico**
 - Socio 1:N Préstamo
 - Ejemplar 1:N Préstamo
 
-👉 Resultado:
+Resultado:
 
 Tabla
 
@@ -275,9 +275,9 @@ estado
 
 ---
 
-👉 Observa cómo las relaciones N:N no existen aquí porque ya fueron **resueltas en el modelo conceptual**.
+Observa cómo las relaciones N:N no existen aquí porque ya fueron **resueltas en el modelo conceptual**.
 
-## 🧠 6.8. Buenas prácticas en el paso a modelo lógico
+## 6.8. Buenas prácticas en el paso a modelo lógico
 
 - Usa **PK compuestas** cuando la relación intermedia ya identifica de por sí una fila (como matrícula).
 - No generes IDs artificiales innecesarios.
@@ -286,7 +286,7 @@ estado
 - Documenta las políticas de ON DELETE / ON UPDATE aunque no las implementes todavía.
 - Usa ENUMs o dominios controlados para valores fijos (ej. `estado`).
 
-## 🚨 Errores comunes de principiantes
+## Errores comunes de principiantes
 
 - Duplicar claves sin necesidad.
 - No marcar PK y FK claramente → confusión al generar el SQL.
