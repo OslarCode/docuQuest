@@ -3,15 +3,13 @@ title: ¿Qué es una base de datos relacional?
 sidebar_label: ¿Qué es una base de datos relacional?
 ---
 
-# Modulo 1. ¿Qué es una base de datos relacional?
-
-## 📘 **Módulo 1 — ¿Qué es una base de datos relacional y por qué usarla?**
+# ¿Qué es una base de datos relacional?
 
 Este primer módulo no busca que aprendas comandos ni sintaxis. Su objetivo es que **pienses como alguien que diseña información con cabeza**, no como alguien que amontona datos en cualquier parte.
 
 Vamos a entender **por qué existen las bases de datos relacionales**, **cuándo son útiles** y **cuáles son sus ideas clave**, sin depender de ningún sistema específico.
 
-### 🧠 1.1. Concepto base
+### 1.1. Concepto base
 
 Una base de datos relacional es un sistema organizado que **almacena y gestiona datos estructurados** en forma de **tablas**.
 
