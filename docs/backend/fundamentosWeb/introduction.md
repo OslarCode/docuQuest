@@ -103,52 +103,7 @@ http://localhost:3000
 
 Esto es como decirle: “conéctate a este ordenador, en esta puerta específica”.
 
-## 6. Un primer servidor con Node.js
-
-Vamos a hacer una **demostración muy simple** de cómo un servidor responde a una petición.
-Este ejemplo no necesita frameworks, solo Node.js.
-
-```javascript
-// server.js
-const http = require("http");
-
-const server = http.createServer((req, res) => {
-  console.log(`Petición recibida: ${req.method} ${req.url}`);
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hola desde mi primer servidor Node.js");
-});
-
-server.listen(3000, () => {
-  console.log("Servidor escuchando en http://localhost:3000");
-});
-```
-
-Pasos para probarlo:
-
-1. Guarda el archivo como `server.js`.
-2. Ejecuta en la terminal:
-
-   ```
-   node server.js
-   ```
-
-3. Abre en el navegador: `http://localhost:3000`.
-
-Verás en pantalla:
-
-```
-Hola desde mi primer servidor Node.js
-```
-
-Y en la terminal:
-
-```
-Petición recibida: GET /
-```
-
-Con esto, los alumnos entienden que **el navegador (cliente)** envía una petición y **el servidor Node.js** responde.
-
-## 7. HTTPS y seguridad básica
+## 6. HTTPS y seguridad básica
 
 HTTPS es simplemente **HTTP cifrado con un certificado SSL/TLS**.
 Esto:

@@ -19,6 +19,83 @@ En términos simples, un **servidor es una computadora muy potente y especializa
 
 Su trabajo principal es **escuchar y responder**.
 
+## Cómo está construido un servidor web
+
+Un servidor web completo suele componerse de varias capas:
+
+**1. Hardware o infraestructura**
+Puede ser un equipo físico en un centro de datos, una máquina virtual en la nube o un contenedor aislado. Lo importante es que proporciona CPU, memoria, almacenamiento y red.
+
+**2. Sistema operativo**
+Generalmente Linux por estabilidad, seguridad y eficiencia. También existen despliegues en Windows Server. El sistema operativo gestiona procesos, conexiones y permisos.
+
+**3. Software del servidor web**
+Programa encargado de escuchar peticiones y responder. Ejemplos clásicos incluyen Nginx, Apache, Caddy y Lighttpd. Estos manejan HTTP, TLS, compresión, enrutado y caching básico.
+
+**4. Runtime o entorno de ejecución**
+Es la capa donde se ejecuta el código de la aplicación. Por ejemplo, Node.js para JavaScript, PHP-FPM para PHP, JVM para Java o Python con WSGI.
+
+**5. Código backend**
+Tu aplicación: rutas, controladores, lógica de negocio, acceso a base de datos, plantillas HTML o APIs REST/GraphQL.
+
+**6. Base de datos y servicios auxiliares**
+Sistemas para almacenar información y dar soporte a la aplicación: PostgreSQL, MySQL, Redis, MongoDB, motores de colas, sistemas de cache distribuida y almacenamiento de ficheros.
+
+En conjunto, estas piezas trabajan para recibir solicitudes, procesarlas y devolver respuestas consistentes bajo alta carga y con seguridad.
+
+## Tipos de servidores web usados en empresas
+
+No todas las empresas usan el mismo tipo de servidor, porque cada caso de uso tiene demandas diferentes: latencia, concurrencia, contenido estático, contenido dinámico o tiempo real.
+
+A continuación, una clasificación práctica.
+
+### Servidores web tradicionales
+
+Ejemplos: Apache, Nginx, IIS
+Utilizados para sitios web, APIs, CMS y aplicaciones empresariales. Gestionan tráfico HTTP, certificados SSL, compresión y redirecciones.
+
+### Servidores de aplicaciones
+
+Ejemplos: Node.js con Express, Spring Boot, Laravel, Django
+Procesan la lógica del negocio y generan respuestas dinámicas. Suelen conectarse con un servidor web frontal o reverse proxy como Nginx.
+
+### Servidores de bases de datos
+
+Ejemplos: PostgreSQL, MySQL, SQL Server, MongoDB
+No sirven páginas web, sino que almacenan y gestionan datos para las aplicaciones. Son críticos en casi todo sistema moderno.
+
+### Servidores de archivos y multimedia
+
+Ejemplos: servidores S3 compatibles, servicios CDN, NFS
+Usados para distribuir contenido estático, imágenes, vídeos y descargas masivas con baja latencia.
+
+### Servidores de streaming
+
+Ejemplos: Wowza, Nginx RTMP, Red5, plataformas HLS y DASH
+Diseñados para transmisiones de vídeo y audio en tiempo real. Manejan buffering, latencia y segmentación de medios.
+
+### Servidores para videojuegos online
+
+Ejemplos: servidores dedicados para Unreal/Unity, Photon, AWS GameLift
+Optimizados para baja latencia y sincronización de estados entre jugadores. Utilizan protocolos como UDP además de TCP.
+
+### Servidores serverless y edge
+
+Ejemplos: AWS Lambda, Cloudflare Workers, Vercel Edge
+Ejecutan funciones bajo demanda. Ideales para escalar sin gestionar servidores. Muy usados en microservicios y proyectos modernos.
+
+## Cómo practicar sin un servidor físico
+
+Aunque no tengas acceso directo a un servidor dedicado, puedes simular entornos reales en local y en la nube:
+
+- Docker para contenedores y despliegues reproducibles
+- WSL en Windows para trabajar como en Linux
+- Plataformas gratuitas como Render, Fly.io o Railway
+- Servicios gratuitos de edge como Cloudflare Pages + Workers
+- Servidores locales como Apache o Nginx instalados en tu máquina
+
+Estas herramientas te permiten replicar casi cualquier arquitectura moderna en local sin necesitar un datacenter físico.
+
 ## **3. ¿Cómo Funciona? El Baile entre Cliente y Servidor**
 
 Vamos a ver el proceso paso a paso con un ejemplo real: **Ustedes escriben "www.netflix.com" en su navegador y presionan Enter.**
