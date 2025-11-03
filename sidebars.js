@@ -497,7 +497,7 @@ const sidebars = {
           items: [
             "backend/apiWeb/introduction",
             "backend/apiWeb/restFull",
-            "backend/apiWeb/disenioYDocumentacion",
+            "backend/apiWeb/documentacion",
             "backend/apiWeb/consumo",
             "backend/apiWeb/graphQL",
             "backend/apiWeb/seguridad",
