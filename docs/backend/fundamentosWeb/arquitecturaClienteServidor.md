@@ -59,6 +59,79 @@ El proceso sigue siempre una secuencia lógica y predecible:
   - **Procesamiento:** El servidor verifica la identidad y consulta la base de datos de cuentas.
   - **Respuesta:** Los datos del saldo, que la app muestra en pantalla.
 
+### Variantes del modelo cliente-servidor
+
+El modelo cliente-servidor tradicional sigue siendo la base de la web moderna, pero hoy existen variantes que adaptan esta idea a distintas necesidades tecnológicas.
+
+**Cliente ligero**
+
+El cliente solo muestra la interfaz y envía peticiones simples. Toda la lógica se ejecuta en el servidor.
+
+Ejemplo típico: sitios web tradicionales generados desde el servidor (PHP, Django, Laravel, Ruby on Rails).
+
+Ventajas: simplicidad, seguridad centralizada, fácil mantenimiento.
+
+Limitaciones: menos interactividad avanzada en la interfaz.
+
+**Cliente pesado (SPA)**
+
+En este modelo, el navegador ejecuta gran parte de la lógica de la aplicación. El servidor expone una API y el cliente consume datos para renderizar la interfaz dinámicamente.
+
+Ejemplos: aplicaciones desarrolladas con React, Vue o Angular.
+
+Ventajas: experiencia fluida, interfaz rica, actualizaciones rápidas.
+
+Limitaciones: más complejidad en el frontend, mayor responsabilidad de seguridad en el cliente.
+
+**Arquitecturas distribuidas y microservicios**
+
+La lógica se reparte en varios servicios independientes que colaboran entre sí. El cliente sigue haciendo peticiones, pero ya no existe un único servidor central para todo.
+
+Usado en grandes sistemas donde se requiere alta disponibilidad, aislamiento de fallos y escalabilidad modular.
+
+**Servidor en el Edge y Serverless**
+
+Algunas aplicaciones distribuyen funciones más cerca del usuario para reducir latencia. En estos casos no hay un servidor “central” tradicional, sino múltiples puntos de ejecución en red.
+
+La idea sigue siendo la misma: el cliente solicita servicios, pero la infraestructura es más distribuida y automatizada.
+
+### Concepto de estado y escalabilidad
+
+Un aspecto clave al diseñar sistemas cliente-servidor modernos es cómo se gestiona el estado y cómo escalan bajo carga.
+
+**Servidores con estado (stateful)**
+
+El servidor recuerda información sobre el usuario mientras dura la sesión.
+
+Ejemplo: sesiones de login almacenadas en memoria del servidor.
+
+Ventajas: gestión directa del usuario, lógica sencilla.
+
+Limitaciones: requiere que el usuario vuelva al mismo servidor, difícil escalado horizontal.
+
+**Servidores sin estado (stateless)**
+
+El servidor no almacena información sobre la sesión. Cada petición envía los datos necesarios para validarla. Esto permite que cualquier servidor pueda atenderla.
+
+Ejemplo: sistemas basados en tokens JWT.
+
+Ventajas: escalado horizontal sencillo, alta resiliencia.
+
+Limitaciones: requiere un diseño cuidadoso del intercambio de datos y seguridad.
+
+**Escalabilidad vertical vs horizontal**
+
+- Escalado vertical: aumentar recursos del mismo servidor (más memoria, más CPU). Es simple, pero tiene límites físicos y económicos.
+- Escalado horizontal: añadir más servidores para repartir la carga. Es la estrategia utilizada por sistemas modernos, exige coordinación y mecanismos como balanceadores de carga y sincronización de datos.
+
+**Implicaciones prácticas**
+
+Cuando el servidor mantiene estado, escalar se vuelve complejo porque las sesiones y datos deben estar sincronizados o compartidos.
+
+Cuando el servidor es stateless, escalar es más directo: basta con añadir instancias.
+
+Por esta razón, las APIs modernas siguen el principio de ser stateless para facilitar crecimiento, redundancia y fiabilidad.
+
 ### Resumen Técnico
 
 La arquitectura cliente-servidor se caracteriza por:

@@ -1,6 +1,6 @@
 # Conectandolo todo: Desarrollo web basado en Internet
 
-# El ciclo completo para conectar tu sitio web a Internet
+## El ciclo completo para conectar tu sitio web a Internet
 
 Una vez que has diseñado tu sitio web con HTML, CSS, JavaScript o cualquier framework moderno, llega el momento clave: **hacer que el mundo pueda verlo**.
 
