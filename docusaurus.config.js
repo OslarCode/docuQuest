@@ -3,7 +3,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "DocuQuest",
   tagline: "Explora, aprende, domina el código",
-  favicon: "#",
+  favicon: "/img/favicon.ico",
 
   future: {
     v4: true,
