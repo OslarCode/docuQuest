@@ -77,7 +77,7 @@ Seguir buenas prácticas como las que acabas de leer no solo mejora la experienc
 
 **¿Qué tipo de experiencia estás ofreciendo hoy con tu API? ¿Te animas a mejorarla y convertirla en una herramienta que los demás disfruten usar?**
 
-### **Práctica guiada: Documentación de una API REST con OpenAPI (Swagger Editor)**
+### Práctica guiada: Documentación de una API REST con OpenAPI (Swagger Editor)\*
 
 **Contexto:**
 
@@ -136,7 +136,7 @@ info:
   description: API para gestionar una biblioteca de libros
   version: 1.0.0
 servers:
-  - url: <https://api.ejemplo-libros.com/v1>
+  - url: "https://api.ejemplo-libros.com/v1"
     description: Servidor de producción
 paths: {}
 components:
@@ -149,6 +149,7 @@ components:
 En la sección `components/schemas`, define la estructura del recurso libro:
 
 ```yaml
+<!-- Nota: fragmento parcial de OpenAPI; fusionar con el documento raíz antes de validar. -->
 components:
   schemas:
     Libro:
@@ -178,6 +179,7 @@ components:
 Crea respuestas reutilizables en `components/responses`:
 
 ```yaml
+<!-- Nota: fragmento parcial de OpenAPI; fusionar con el documento raíz antes de validar. -->
 components:
   responses:
     NotFound:
@@ -210,6 +212,7 @@ components:
 Crea parámetros reutilizables en `components/parameters`:
 
 ```yaml
+<!-- Nota: fragmento parcial de OpenAPI; fusionar con el documento raíz antes de validar. -->
 components:
   parameters:
     IdLibro:
@@ -242,6 +245,7 @@ components:
 En la sección `paths`, documenta el primer endpoint:
 
 ```yaml
+<!-- Nota: fragmento parcial de OpenAPI; fusionar con el documento raíz antes de validar. -->
 paths:
   /libros:
     get:
@@ -270,7 +274,7 @@ paths:
                       $ref: "#/components/schemas/Libro"
 ```
 
-### **Continuación de pasos detallados**
+### Continuación de pasos detallados\*
 
 **Paso 6: Documentar el endpoint GET /libros/{id}**
 
