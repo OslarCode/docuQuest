@@ -1,6 +1,6 @@
 # Diseño y documentación de APIs web
 
-# Diseñar y documentar APIs web sin perderse en el camino
+## Diseñar y documentar APIs web sin perderse en el camino
 
 Cuando desarrollas software, las APIs web son como puentes que conectan diferentes partes de una aplicación o distintos sistemas. Pero no basta con que funcionen: deben estar bien diseñadas, documentadas y probadas.
 
