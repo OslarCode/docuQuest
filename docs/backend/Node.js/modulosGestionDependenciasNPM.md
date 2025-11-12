@@ -10,8 +10,6 @@ Sin embargo, el estándar actual de JavaScript define otra forma más moderna: l
 
 Hoy en día, Node.js admite ambos sistemas, aunque es importante conocer sus diferencias para usarlos correctamente según el caso.
 
----
-
 ## CommonJS: el sistema tradicional
 
 Imagina que tienes un archivo llamado `saludos.js` con una función para saludar:
@@ -34,8 +32,6 @@ console.log(saludar("Laura"));
 ```
 
 CommonJS carga los módulos de forma **sincrónica**, por eso fue tan útil para el backend, donde no hay bloqueos visibles para el usuario. Este sistema sigue funcionando y es compatible con millones de paquetes existentes en NPM.
-
----
 
 ## ES Modules: la forma moderna y compatible con el navegador
 
@@ -78,8 +74,6 @@ console.log(despedir("Laura"));
 
 La principal diferencia es que **ES Modules usa la palabra clave `import/export` y requiere la extensión `.js` explícita** en las rutas locales.
 Además, **las importaciones son evaluadas de forma asíncrona**, lo que permite optimizar la carga del código.
-
----
 
 ## Diferencias prácticas entre CommonJS y ES Modules
 
@@ -162,8 +156,6 @@ import chalk from "chalk";
 console.log(chalk.green("Texto en verde"));
 ```
 
----
-
 ## Explorando el archivo package.json
 
 El archivo **package.json** no solo lista los paquetes que usas, también te permite definir scripts personalizados para automatizar tareas.
@@ -183,8 +175,6 @@ npm run iniciar
 
 También puedes definir scripts para pruebas, compilaciones, o formateo de código.
 Este archivo es fundamental para mantener organizado tu entorno, sobre todo cuando trabajas en equipo o despliegas en servidores.
-
----
 
 ## Creando tus propios módulos reutilizables
 
@@ -242,8 +232,6 @@ console.log(miNota);
 
 De esta forma, tu código se mantiene limpio, legible y modular.
 
----
-
 ## Dependencias normales y de desarrollo
 
 Cuando instalas paquetes con NPM, puedes diferenciarlos en dos grupos:
@@ -259,8 +247,6 @@ npm install nodemon --save-dev
 
 Esto hace que el paquete se registre en la sección `devDependencies` del `package.json`.
 Así, si despliegas tu proyecto en producción, esas dependencias no se instalan si no son necesarias.
-
----
 
 ## Proyecto práctico: Generador de notas con formato de colores
 
@@ -347,8 +333,6 @@ Ejecuta desde consola:
 ```bash
 node index.js "Revisar código" "Terminar módulo 2"
 ```
-
----
 
 ## Conclusión
 

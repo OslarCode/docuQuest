@@ -194,7 +194,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "javascript",
+          label: "Javascript",
           collapsed: true,
           items: [
             "frontend/js/introduccion",
@@ -443,11 +443,13 @@ const sidebars = {
           items: [
             "backend/Node.js/introduction",
             "backend/Node.js/modulosGestionDependenciasNPM",
+            "backend/Node.js/manejoDeRutas",
+            "backend/Node.js/manejoDeArchivos",
+            "backend/Node.js/manejoDeProcesos",
             "backend/Node.js/asincronia",
-            "backend/Node.js/sistemaArchivosProcesos",
             "backend/Node.js/servidorWeb",
             "backend/Node.js/expressJS",
-            "backend/Node.js/mongoDBMongoose",
+            "backend/Node.js/testingDocumentacion",
             "backend/Node.js/seguridadBuenasPracticas",
           ],
         },
