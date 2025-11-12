@@ -70,8 +70,7 @@ Y luego importarlos así:
 
 ```js
 // app.js
-import { saludar } from "./saludos.js";
-import despedir from "./saludos.js";
+import despedir, { saludar } from "./saludos.js";
 
 console.log(saludar("Laura"));
 console.log(despedir("Laura"));
@@ -94,9 +93,38 @@ Además, **las importaciones son evaluadas de forma asíncrona**, lo que permite
 | Activación     | Por defecto en Node.js       | Requiere `"type": "module"` en `package.json` o usar `.mjs` |
 
 En proyectos nuevos, especialmente si también trabajas con frontend, **ES Modules** es la opción más coherente y estándar.
-Si trabajas con librerías antiguas o proyectos donde ya se usa CommonJS, es completamente válido seguir con `require()`.
+Si trabajas con librerías antiguas o proyectos donde ya se usa CommonJS, es completamente válido seguir con `require()`. Solo una advertencia, no se deberían usar los dos tipos de archivos al mismo tiempo en el mismo proyecto, ya que posiblemente esto cause problemas.
 
----
+## Manejo de rutas y `__dirname` en ES Modules
+
+En los módulos CommonJS, Node.js proporciona de forma automática las variables globales `__dirname` y `__filename`, que indican respectivamente la ruta del directorio y del archivo actual. Sin embargo, **en los módulos ES (ES Modules) estas variables no existen**, ya que el nuevo sistema de módulos sigue el estándar ECMAScript y evita introducir identificadores específicos del entorno.
+
+Cuando se trabaja con rutas de archivos en un proyecto que utiliza `"type": "module"`, debemos construir esas variables de forma explícita utilizando las utilidades nativas de Node.js. El patrón recomendado y oficial es el siguiente:
+
+```js
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+
+// Convertimos la URL del módulo actual en una ruta del sistema de archivos
+const __filename = fileURLToPath(import.meta.url);
+
+// Obtenemos el directorio base del archivo actual
+const __dirname = path.dirname(__filename);
+```
+
+A partir de aquí, puedes usar `__dirname` y `__filename` como lo harías en CommonJS:
+
+```js
+import fs from "node:fs";
+
+// Ejemplo: leer un archivo que está en el mismo directorio
+const rutaArchivo = path.join(__dirname, "datos.txt");
+const contenido = fs.readFileSync(rutaArchivo, "utf8");
+
+console.log(contenido);
+```
+
+Este enfoque garantiza compatibilidad con cualquier entorno moderno de Node.js y es la forma recomendada para trabajar con rutas relativas en proyectos ESM.
 
 ## ¿Qué es NPM y para qué sirve?
 
@@ -271,7 +299,7 @@ const contenido = process.argv[3];
 
 if (!titulo || !contenido) {
   console.log(chalk.red("Debes proporcionar un título y contenido"));
-  process.exit();
+  process.exit(1);
 }
 
 const nota = crearNota(titulo, contenido);
