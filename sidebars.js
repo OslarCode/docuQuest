@@ -444,6 +444,7 @@ const sidebars = {
             "backend/Node.js/introduction",
             "backend/Node.js/modulosGestionDependenciasNPM",
             "backend/Node.js/manejoDeRutas",
+            "backend/Node.js/manejoDeHTTP",
             "backend/Node.js/manejoDeArchivos",
             "backend/Node.js/manejoDeProcesos",
             "backend/Node.js/asincronia",

@@ -16,8 +16,13 @@ const config = {
   projectName: "docuQuest",
   deploymentBranch: "gh-pages",
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
   onBrokenAnchors: "warn",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   i18n: {
     defaultLocale: "en",
