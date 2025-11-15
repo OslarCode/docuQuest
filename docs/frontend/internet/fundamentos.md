@@ -107,7 +107,7 @@ TU CASA:
 - **Privada** (solo dispositivos de tu casa)
 - **Funciona sin Internet** (compartir archivos localmente)
 
-### 🌍 WAN (Red de Área Amplia) - Internet Global
+### WAN (Red de Área Amplia) - Internet Global
 
 **Ejemplo de comunicación WAN:**
 
@@ -118,7 +118,7 @@ España → Francia → Alemania → Estados Unidos
 Tu Casa   Nodo      Nodo    Servidor Netflix
 ```
 
-### 🔄 Cómo se conectan LAN y WAN:
+### Cómo se conectan LAN y WAN:
 
 ```
 TU LAN (Casa) → Router → ISP → INTERNET (WAN) → Servidores Mundo
@@ -729,17 +729,17 @@ Uso: Video llamadas, juegos, streaming
 ### Próximos pasos en tu aprendizaje:
 
 ```
-FASE ACTUAL: ✅ Entender cómo funciona Internet
+FASE ACTUAL: Entender cómo funciona Internet
                ↓
-SIGUIENTE:    🌐 Aprender HTML - La estructura web
+SIGUIENTE:    Aprender HTML - La estructura web
                ↓
-DESPUÉS:      🎨 Aprender CSS - El diseño web
+DESPUÉS:      Aprender CSS - El diseño web
                ↓
-LUEGO:        ⚡ Aprender JavaScript - La interactividad
+LUEGO:        Aprender JavaScript - La interactividad
                ↓
-FUTURO:       🗄️ Bases de datos y servidores
+FUTURO:       Bases de datos y servidores
 ```
 
-### 💡 Consejo final:
+### Consejo final:
 
 "Internet parece mágico, pero sigue reglas lógicas. Una vez entiendes los conceptos básicos, todo lo demás tiene sentido."

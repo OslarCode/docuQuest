@@ -2,7 +2,7 @@
 
 ## 🌐 ¿Qué es un Navegador Web?
 
-### 🎯 Definición simple:
+### Definición simple:
 
 Un **navegador web** es el programa que usas para visitar páginas de Internet. Es como tu "ventana al mundo digital".
 

@@ -1,43 +1,43 @@
 # Conectando todo: Cómo llevar tu sitio web al mundo - Guía para principiantes
 
-## 🌐 De tu computadora a Internet: El gran paso
+## De tu computadora a Internet: El gran paso
 
 Imagina que has creado tu primera página web. Tienes archivos HTML, CSS y tal vez algo de JavaScript. Pero todo está solo en tu computadora... ¿Cómo hacer para que cualquier persona en el mundo pueda verla?
 
-### 🧩 Las 4 piezas clave que necesitas:
+### Las 4 piezas clave que necesitas:
 
-| Pieza          | ¿Qué es?                              | Ejemplo en la vida real                   |
-| -------------- | ------------------------------------- | ----------------------------------------- |
-| **🌐 Hosting** | Donde viven tus archivos web          | Como alquilar un local para tu negocio    |
-| **🏷️ Dominio** | La dirección de tu web                | Como el cartel con el nombre de tu tienda |
-| **📡 DNS**     | El traductor de nombres a direcciones | Como un directorio telefónico digital     |
-| **🔒 HTTPS**   | La seguridad para tu web              | Como una cerradura para tu tienda         |
+| Pieza       | ¿Qué es?                              | Ejemplo en la vida real                   |
+| ----------- | ------------------------------------- | ----------------------------------------- |
+| **Hosting** | Donde viven tus archivos web          | Como alquilar un local para tu negocio    |
+| **Dominio** | La dirección de tu web                | Como el cartel con el nombre de tu tienda |
+| **DNS**     | El traductor de nombres a direcciones | Como un directorio telefónico digital     |
+| **HTTPS**   | La seguridad para tu web              | Como una cerradura para tu tienda         |
 
-## 🏠 Módulo 1: El Hosting - Tu hogar en Internet
+## Módulo 1: El Hosting - Tu hogar en Internet
 
 ### ¿Qué es exactamente un hosting?
 
 Un **hosting** es como un "terreno digital" donde construyes tu casa (tu sitio web). Es un servidor que está encendido 24/7 para que tu web esté siempre disponible.
 
-### 🎯 Tipos de hosting para principiantes:
+### Tipos de hosting para principiantes:
 
 **1. Hosting Gratuito** - Perfecto para empezar:
 
 ```
-✅ Ventajas: Gratis, fácil de usar, sin complicaciones
-❌ Desventajas: Límites de espacio, puede ser lento
-🎯 Ideal: Pruebas, proyectos pequeños, portafolios básicos
+Ventajas: Gratis, fácil de usar, sin complicaciones
+Desventajas: Límites de espacio, puede ser lento
+Ideal: Pruebas, proyectos pequeños, portafolios básicos
 ```
 
 **2. Hosting Compartido** - Como vivir en un edificio:
 
 ```
-✅ Ventajas: Económico, gestionado por otros
-❌ Desventajas: Recursos compartidos, puede haber vecinos "ruidosos"
-🎯 Ideal: Sitios pequeños y medianos
+Ventajas: Económico, gestionado por otros
+Desventajas: Recursos compartidos, puede haber vecinos "ruidosos"
+Ideal: Sitios pequeños y medianos
 ```
 
-### 🌟 Plataformas gratuitas recomendadas:
+### Plataformas gratuitas recomendadas:
 
 **GitHub Pages** - Para sitios estáticos:
 
@@ -63,13 +63,13 @@ URL que obtienes: misitio.vercel.app
 Costo: Gratuito para proyectos personales
 ```
 
-## 🏷️ Módulo 2: Dominios - Tu dirección en Internet
+## Módulo 2: Dominios - Tu dirección en Internet
 
 ### ¿Qué es un dominio?
 
 Un **dominio** es la dirección que las personas escriben para encontrar tu web. Es como tu dirección postal en el mundo digital.
 
-### 🔍 Partes de un dominio:
+### Partes de un dominio:
 
 ```
 https://www.mitienda.com
@@ -86,15 +86,15 @@ Seguridad  Sub   Nombre  Extensión
 - `.edu` - Educación
 - `.es, .mx, .ar` - Países
 
-### 💡 Cómo elegir un buen dominio:
+### Cómo elegir un buen dominio:
 
-**✅ HACER:**
+**HACER:**
 
 - Corto y fácil de recordar
 - Relacionado con tu contenido
 - Fácil de deletrear
 
-**❌ NO HACER:**
+**NO HACER:**
 
 - Usar números confusos (4 vs four)
 - Guiones complicados
@@ -103,20 +103,20 @@ Seguridad  Sub   Nombre  Extensión
 **Ejemplos buenos vs malos:**
 
 ```
-✅ BUENO: panaderiadiana.com
-❌ MALO: panaderia-de-diana-en-madrid-2024.com
+BUENO: panaderiadiana.com
+MALO: panaderia-de-diana-en-madrid-2024.com
 
-✅ BUENO: tutoriafacil.com
-❌ MALO: tut0r14_f4c1l.com
+BUENO: tutoriafacil.com
+MALO: tut0r14_f4c1l.com
 ```
 
-## 📡 Módulo 3: DNS - El directorio telefónico de Internet
+## Módulo 3: DNS - El directorio telefónico de Internet
 
 ### ¿Qué hace el DNS?
 
 El **DNS (Sistema de Nombres de Dominio)** es como un directorio telefónico gigante que traduce nombres de dominio a direcciones IP.
 
-### 🎯 Analogía del directorio telefónico:
+### Analogía del directorio telefónico:
 
 ```
 Quieres llamar a: "Pizzería La Italiana"
@@ -132,7 +132,7 @@ DNS busca: Encuentra la IP: 142.250.184.206
 Te conectas: Llegas a Google
 ```
 
-### 🔄 Cómo configurar DNS - Paso a paso:
+### Cómo configurar DNS - Paso a paso:
 
 1. **Compras tu dominio** en sites como GoDaddy, Namecheap o Google Domains
 2. **Contratas hosting** en Netlify, Vercel, GitHub Pages, etc.
@@ -152,25 +152,25 @@ APUNTA A: 185.199.108.153 (servidor de GitHub Pages)
 RESULTADO: Cuando alguien escribe mipagina.com → llega a tu hosting
 ```
 
-## 🔒 Módulo 4: HTTPS - Tu candado de seguridad
+## Módulo 4: HTTPS - Tu candado de seguridad
 
 ### ¿Por qué necesitas HTTPS?
 
 **HTTPS** es como poner una cerradura de seguridad en tu sitio web. Protege la información que viaja entre tus visitantes y tu sitio.
 
-### 🛡️ Qué protege HTTPS:
+### Qué protege HTTPS:
 
-**✅ Información personal:** Nombres, emails, contraseñas
-**✅ Datos de pago:** Tarjetas de crédito, información bancaria
-**✅ Mensajes privados:** Chats, formularios de contacto
+**Información personal:** Nombres, emails, contraseñas
+**Datos de pago:** Tarjetas de crédito, información bancaria
+**Mensajes privados:** Chats, formularios de contacto
 
-### 🔍 Cómo saber si un sitio es seguro:
+### Cómo saber si un sitio es seguro:
 
 **Sitio SEGURO:**
 
 ```
 https://mitiendasegura.com
-🔒 Candado verde
+Candado verde
 "Es seguro" en la barra de direcciones
 ```
 
@@ -178,23 +178,23 @@ https://mitiendasegura.com
 
 ```
 http://mitienda.com
-⚠️ Triángulo de advertencia
+Triángulo de advertencia
 "No seguro" en la barra de direcciones
 ```
 
-### 🎯 Cómo obtener HTTPS gratis:
+### Cómo obtener HTTPS gratis:
 
 **En plataformas modernas:**
 
-- GitHub Pages: ✅ HTTPS automático
-- Netlify: ✅ HTTPS automático
-- Vercel: ✅ HTTPS automático
+- GitHub Pages: HTTPS automático
+- Netlify: HTTPS automático
+- Vercel: HTTPS automático
 
 **Con Let's Encrypt:** Servicio que proporciona certificados SSL gratuitos
 
-## 🚀 Módulo 5: El proceso completo - De 0 a online
+## Módulo 5: El proceso completo - De 0 a online
 
-### 📋 Checklist para publicar tu primera web:
+### Checklist para publicar tu primera web:
 
 **FASE 1: Preparación (En tu computadora)**
 
@@ -220,28 +220,28 @@ http://mitienda.com
 - [ ] Verificas que HTTPS está activo
 - [ ] Probas en diferentes dispositivos
 
-### ⏱️ Línea de tiempo realista:
+### Línea de tiempo realista:
 
 ```
 Día 1 - Mañana:
-✅ Creas cuenta en Netlify
-✅ Subes tus archivos
-✅ Tu web está en: misitio.netlify.app
+Creas cuenta en Netlify
+Subes tus archivos
+Tu web está en: misitio.netlify.app
 
 Día 1 - Tarde:
-✅ Compras: mipagina.com
-✅ Configuras DNS
+Compras: mipagina.com
+Configuras DNS
 
 Día 2-3:
-⏳ Esperas propagación DNS
+Esperas propagación DNS
 
 Día 3:
-🎉 Tu web está en: mipagina.com (con HTTPS)
+Tu web está en: mipagina.com (con HTTPS)
 ```
 
-## 🛡️ Módulo 6: Seguridad básica - Protegiendo tu sitio
+## Módulo 6: Seguridad básica - Protegiendo tu sitio
 
-### 🛡️ Medidas esenciales de seguridad:
+### Medidas esenciales de seguridad:
 
 **1. HTTPS obligatorio:**
 
@@ -261,55 +261,55 @@ Día 3:
 - Usa GitHub para guardar versiones
 - Plataformas como Netlify hacen backups automáticos
 
-### 🚨 Señales de alerta:
+### Señales de alerta:
 
 **Problemas comunes y soluciones:**
 
-**❌ "Mi sitio muestra advertencias de seguridad"**
+**"Mi sitio muestra advertencias de seguridad"**
 
 ```
 CAUSA: HTTPS no configurado correctamente
 SOLUCIÓN: Activar HTTPS en tu hosting
 ```
 
-**❌ "No puedo acceder a mi propio sitio"**
+**"No puedo acceder a mi propio sitio"**
 
 ```
 CAUSA: DNS mal configurado o en proceso de propagación
 SOLUCIÓN: Verificar configuración DNS y esperar
 ```
 
-**❌ "Mi sitio se ve diferente en el móvil"**
+**"Mi sitio se ve diferente en el móvil"**
 
 ```
 CAUSA: Problemas de diseño responsive
 SOLUCIÓN: Probar en diferentes dispositivos durante el desarrollo
 ```
 
-## 📱 Módulo 7: Probando tu sitio - Antes de decir "¡Listo!"
+## Módulo 7: Probando tu sitio - Antes de decir "¡Listo!"
 
-### 🧪 Checklist de pruebas esenciales:
+### Checklist de pruebas esenciales:
 
 **1. En diferentes navegadores:**
 
-- Chrome ✅
-- Firefox ✅
-- Safari ✅
-- Edge ✅
+- Chrome
+- Firefox
+- Safari
+- Edge
 
 **2. En diferentes dispositivos:**
 
-- Móvil 📱
-- Tablet 📟
-- Computadora 💻
+- Móvil
+- Tablet
+- Computadora
 
 **3. En diferentes conexiones:**
 
-- WiFi rápido 🚀
-- Datos móviles 📶
-- Conexión lenta (simulada) 🐢
+- WiFi rápido
+- Datos móviles
+- Conexión lenta (simulada)
 
-### 🔧 Herramientas gratuitas para testing:
+### Herramientas gratuitas para testing:
 
 **Para probar en diferentes dispositivos:**
 
@@ -326,9 +326,9 @@ SOLUCIÓN: Probar en diferentes dispositivos durante el desarrollo
 - SSL Labs (verifica tu HTTPS)
 - SecurityHeaders.com
 
-## 🎯 Módulo 8: Casos prácticos reales
+## Módulo 8: Casos prácticos reales
 
-### 📝 Caso 1: María - Portfolio personal
+### Caso 1: María - Portfolio personal
 
 **Situación:**
 María es diseñadora y quiere mostrar su trabajo online.
@@ -345,7 +345,7 @@ María es diseñadora y quiere mostrar su trabajo online.
 4. RESULTADO: Portfolio profesional por menos de €15
 ```
 
-### 🛍️ Caso 2: Carlos - Tienda pequeña
+### Caso 2: Carlos - Tienda pequeña
 
 **Situación:**
 Carlos tiene una tienda de artesanías y quiere vender online.
@@ -359,7 +359,7 @@ Carlos tiene una tienda de artesanías y quiere vender online.
 4. RESULTADO: Tienda online segura y profesional
 ```
 
-### 🎓 Caso 3: Academia Online
+### Caso 3: Academia Online
 
 **Situación:**
 Una academia quiere tener presencia online con cursos.
@@ -373,9 +373,9 @@ Una academia quiere tener presencia online con cursos.
 4. RESULTADO: Sitio educativo profesional
 ```
 
-## 📊 Módulo 9: Mantenimiento básico
+## Módulo 9: Mantenimiento básico
 
-### 🔄 Tareas mensuales recomendadas:
+### Tareas mensuales recomendadas:
 
 **Cada mes:**
 
@@ -396,9 +396,9 @@ Una academia quiere tener presencia online con cursos.
 - Evaluar si necesitas más espacio o funciones
 - Revisar y actualizar contenido
 
-## 🎉 Módulo 10: ¡Lo lograste! - Y ahora qué...
+## Módulo 10: ¡Lo lograste! - Y ahora qué...
 
-### 🚀 Próximos pasos después de publicar:
+### Próximos pasos después de publicar:
 
 **Inmediato:**
 
@@ -418,7 +418,7 @@ Una academia quiere tener presencia online con cursos.
 - Aprender sobre bases de datos
 - Considerar comercio electrónico
 
-### 🌟 Recursos para continuar aprendiendo:
+### Recursos para continuar aprendiendo:
 
 **Gratuitos:**
 
@@ -432,9 +432,9 @@ Una academia quiere tener presencia online con cursos.
 - Comunidades de Discord sobre desarrollo web
 - Meetups locales de programación
 
-## ✅ Resumen final - Lo esencial recordado
+## Resumen final - Lo esencial recordado
 
-### 🎯 Las 5 cosas más importantes:
+### Las 5 cosas más importantes:
 
 1. **El hosting** es donde vive tu web - Elige uno adecuado a tus necesidades
 2. **El dominio** es tu dirección - Hazla fácil de recordar
@@ -442,19 +442,19 @@ Una academia quiere tener presencia online con cursos.
 4. **HTTPS** es seguridad esencial - No publiques sin él
 5. **Probar en diferentes dispositivos** asegura que todos vean bien tu sitio
 
-### 💡 Consejo de experto:
+### Consejo de experto:
 
 "Empieza simple. Usa hosting gratuito para tus primeros proyectos. Cuando tengas más experiencia y necesidades específicas, podrás migrar a soluciones más avanzadas."
 
-### 🏆 ¡Felicidades!
+### ¡Felicidades!
 
 Has aprendido cómo llevar tu sitio web desde tu computadora hasta el mundo entero. Este conocimiento es fundamental para cualquier desarrollador web.
 
 # Conectando todo: Parte 2 - Seguridad y Optimización para Principiantes
 
-## 🛡️ Módulo 11: Seguridad Web - Protegiendo tu Sitio y Visitantes
+## Módulo 11: Seguridad Web - Protegiendo tu Sitio y Visitantes
 
-### 🔒 ¿Por qué la seguridad es importante?
+### ¿Por qué la seguridad es importante?
 
 Imagina que tu sitio web es una tienda física. La seguridad web es como:
 
@@ -462,7 +462,7 @@ Imagina que tu sitio web es una tienda física. La seguridad web es como:
 - **Tener cámaras de seguridad**
 - **Contratar un guardia de seguridad**
 
-### 🎯 Amenazas comunes que debes conocer:
+### Amenazas comunes que debes conocer:
 
 **1. Contenido Mixto - El problema del "candado roto"**
 
@@ -475,8 +475,8 @@ SOLUCIÓN: Asegurar que TODOS los recursos usen HTTPS
 **Ejemplo visual:**
 
 ```
-✅ CORRECTO: https://misitio.com/imagen.jpg
-❌ PELIGROSO: http://otroservidor.com/script.js
+CORRECTO: https://misitio.com/imagen.jpg
+PELIGROSO: http://otroservidor.com/script.js
 ```
 
 **2. XSS (Cross-Site Scripting) - Inyección de código malicioso**
@@ -495,7 +495,7 @@ EJEMPLO: Hacer clic en un link que cambia su contraseña
 PELIGRO: Pérdida de control de la cuenta
 ```
 
-### 🛡️ Medidas de protección básicas:
+### Medidas de protección básicas:
 
 **Para proteger contra XSS:**
 
@@ -509,37 +509,37 @@ PELIGRO: Pérdida de control de la cuenta
 - Verificar el origen de las peticiones
 - Configurar cookies de forma segura
 
-## 🔧 Módulo 12: Configuración de Seguridad Paso a Paso
+## Módulo 12: Configuración de Seguridad Paso a Paso
 
-### 📋 Checklist de seguridad básica:
+### Checklist de seguridad básica:
 
-**✅ Configuración HTTPS:**
+**Configuración HTTPS:**
 
 - [ ] Todo tu sitio carga con HTTPS
 - [ ] No hay recursos mezclados (HTTP/HTTPS)
 - [ ] El candado verde aparece en el navegador
 
-**✅ Cabeceras de seguridad:**
+**Cabeceras de seguridad:**
 
 - [ ] HSTS activado (fuerza HTTPS)
 - [ ] Política de seguridad de contenido
 - [ ] Protección contra clickjacking
 
-**✅ Seguridad del servidor:**
+**Seguridad del servidor:**
 
 - [ ] Contraseñas seguras
 - [ ] Actualizaciones regulares
 - [ ] Backups automáticos
 
-### 🛠️ Herramientas gratuitas para verificar seguridad:
+### Herramientas gratuitas para verificar seguridad:
 
 **SSL Labs:** Verifica tu certificado SSL
 **Security Headers:** Revisa tus cabeceras de seguridad
 **Mozilla Observatory:** Análisis completo de seguridad
 
-## ⚡ Módulo 13: Optimización - Haciendo tu Sitio Rápido
+## Módulo 13: Optimización - Haciendo tu Sitio Rápido
 
-### 🚀 ¿Por qué la velocidad importa?
+### ¿Por qué la velocidad importa?
 
 **Estadísticas importantes:**
 
@@ -547,7 +547,7 @@ PELIGRO: Pérdida de control de la cuenta
 - Google penaliza sitios lentos en los resultados de búsqueda
 - Cada segundo de mejora aumenta las conversiones
 
-### 🎯 Áreas clave para optimizar:
+### Áreas clave para optimizar:
 
 **1. Imágenes - El mayor culpable de lentitud:**
 
@@ -573,7 +573,7 @@ SOLUCIÓN: Activar compresión GZIP
 RESULTADO: Menos datos para descargar
 ```
 
-### 📊 Ejemplo real de optimización:
+### Ejemplo real de optimización:
 
 **ANTES de optimizar:**
 
@@ -591,25 +591,25 @@ Tiempo de carga: 2 segundos
 Imágenes: 400 KB (comprimidas y en WebP)
 ```
 
-## 🖼️ Módulo 14: Optimización de Imágenes para No-Técnicos
+## Módulo 14: Optimización de Imágenes para No-Técnicos
 
-### 🎯 Formatos de imagen modernos:
+### Formatos de imagen modernos:
 
 **WebP - El formato recomendado:**
 
 ```
-✅ 30% más pequeño que JPEG
-✅ Calidad similar o mejor
-✅ Soporte transparente como PNG
-❌ No compatible con navegadores muy antiguos
+30% más pequeño que JPEG
+Calidad similar o mejor
+Soporte transparente como PNG
+No compatible con navegadores muy antiguos
 ```
 
 **AVIF - El más moderno:**
 
 ```
-✅ 50% más pequeño que JPEG
-✅ Excelente calidad
-✅ Muy nuevo, soporte limitado
+50% más pequeño que JPEG
+Excelente calidad
+Muy nuevo, soporte limitado
 ```
 
 ### 🔧 Cómo optimizar imágenes sin programar:
@@ -626,7 +626,7 @@ Imágenes: 400 KB (comprimidas y en WebP)
 - En builders como Webflow
 - En hosting como Netlify (transformaciones automáticas)
 
-### 📐 Tamaños recomendados por dispositivo:
+### Tamaños recomendados por dispositivo:
 
 **Para móviles:** Máximo 800px de ancho
 **Para tablets:** Máximo 1200px de ancho  
@@ -634,9 +634,9 @@ Imágenes: 400 KB (comprimidas y en WebP)
 
 **Regla simple:** "Nunca subas una imagen más grande de lo que se verá en pantalla"
 
-## 📦 Módulo 15: Optimización de Código
+## Módulo 15: Optimización de Código
 
-### 🎯 Qué significa "minificar" código:
+### Qué significa "minificar" código:
 
 **Código original (fácil de leer):**
 
@@ -659,7 +659,7 @@ Imágenes: 400 KB (comprimidas y en WebP)
 }
 ```
 
-### 🔧 Herramientas automáticas:
+### Herramientas automáticas:
 
 **Para principiantes:**
 
@@ -673,9 +673,9 @@ Imágenes: 400 KB (comprimidas y en WebP)
 - Plugins para editores de código
 - Procesadores CSS como Sass
 
-## 🌐 Módulo 16: CDN - La Red de Entrega de Contenido
+## Módulo 16: CDN - La Red de Entrega de Contenido
 
-### 🎯 ¿Qué es un CDN y por qué lo necesitas?
+### ¿Qué es un CDN y por qué lo necesitas?
 
 Un **CDN** es como tener copias de tu sitio en diferentes ciudades del mundo.
 
@@ -691,7 +691,7 @@ Usuario en México → Servidor en España = LENTO
 Usuario en México → Servidor CDN en México = RÁPIDO
 ```
 
-### 🏗️ Cómo funciona un CDN:
+### Cómo funciona un CDN:
 
 ```
 TU SITIO ORIGINAL (España)
@@ -704,15 +704,15 @@ COPIAS EN CDN:
 └── Sídney 🇦🇺
 ```
 
-### 🆓 CDN gratuitos para empezar:
+### CDN gratuitos para empezar:
 
 **Cloudflare:** El más popular, plan gratis excelente
 **Netlify CDN:** Incluido automáticamente
 **Vercel Edge Network:** Para aplicaciones modernas
 
-## 📱 Módulo 17: Mobile First - Diseño para Móviles
+## Módulo 17: Mobile First - Diseño para Móviles
 
-### 📊 Por qué móvil primero:
+### Por qué móvil primero:
 
 **Estadísticas actuales:**
 
@@ -720,14 +720,14 @@ COPIAS EN CDN:
 - Google indexa primero la versión móvil
 - Los usuarios esperan buena experiencia móvil
 
-### 🎯 Principios de diseño mobile-first:
+### Principios de diseño mobile-first:
 
 **1. Contenido primero:** Lo importante va arriba
 **2. Touch-friendly:** Botones grandes, fácil de tocar
 **3. Velocidad:** Imágenes optimizadas, código ligero
 **4. Simplicidad:** Menos es más en móviles
 
-### 🔧 Herramientas para testing móvil:
+### Herramientas para testing móvil:
 
 **Desarrollador:** Herramientas del navegador (F12 → Toggle device toolbar)
 **No técnico:**
@@ -736,9 +736,9 @@ COPIAS EN CDN:
 - Usa tu propio móvil para probar
 - Pide feedback sobre usabilidad
 
-## 🧪 Módulo 18: Testing - Asegurando Calidad
+## Módulo 18: Testing - Asegurando Calidad
 
-### 📋 Checklist de testing antes de publicar:
+### Checklist de testing antes de publicar:
 
 **Funcionalidad básica:**
 
@@ -760,15 +760,15 @@ COPIAS EN CDN:
 - [ ] No hay imágenes que pesen demasiado
 - [ ] El sitio es usable con conexión lenta
 
-### 🛠️ Herramientas de testing gratuitas:
+### Herramientas de testing gratuitas:
 
 **Google PageSpeed Insights:** Análisis completo de velocidad
 **GTmetrix:** Métricas detalladas de rendimiento
 **BrowserStack:** Prueba en diferentes navegadores (versión free limitada)
 
-## 📈 Módulo 19: Analytics - Entendiendo a tus Visitantes
+## Módulo 19: Analytics - Entendiendo a tus Visitantes
 
-### 🎯 ¿Por qué usar analytics?
+### ¿Por qué usar analytics?
 
 **Google Analytics te ayuda a entender:**
 
@@ -777,14 +777,14 @@ COPIAS EN CDN:
 - Qué páginas ven más
 - Cuánto tiempo se quedan
 
-### 📊 Métricas básicas que debes conocer:
+### Métricas básicas que debes conocer:
 
 **Visitantes:** Cuánta gente viene a tu sitio
 **Páginas vistas:** Cuántas páginas ven en total
 **Tiempo en sitio:** Cuánto se quedan
 **Tasa de rebote:** Porcentaje que se va rápidamente
 
-### 🔧 Cómo instalar Google Analytics:
+### Cómo instalar Google Analytics:
 
 **Paso a paso simplificado:**
 
@@ -799,37 +799,37 @@ COPIAS EN CDN:
 - Vercel: Analytics en el dashboard
 - GitHub Pages: Necesitas agregar manualmente
 
-## 🚀 Módulo 20: SEO Básico - Encontrando tu Sitio en Google
+## Módulo 20: SEO Básico - Encontrando tu Sitio en Google
 
-### 🎯 SEO para principiantes:
+### SEO para principiantes:
 
 **SEO** es como poner señales que guían a Google hacia tu sitio.
 
-### 📋 Checklist SEO básico:
+### Checklist SEO básico:
 
-**✅ En la página:**
+**En la página:**
 
 - Títulos descriptivos en cada página
 - Descripciones atractivas
 - URLs limpias y comprensibles
 - Contenido de calidad y original
 
-**✅ Técnico:**
+**Técnico:**
 
 - Sitio rápido
 - Optimizado para móviles
 - Estructura clara de enlaces
 - Mapa del sitio (sitemap)
 
-### 🔍 Herramientas SEO gratuitas:
+### Herramientas SEO gratuitas:
 
 **Google Search Console:** La más importante, te dice cómo te ve Google
 **Google PageSpeed Insights:** Velocidad + métricas SEO
 **Screaming Frog:** Análisis técnico (versión free limitada)
 
-## 📝 Módulo 21: Contenido - El Rey del Internet
+## Módulo 21: Contenido - El Rey del Internet
 
-### 🎯 Creando contenido efectivo:
+### Creando contenido efectivo:
 
 **Para sitios personales/portafolios:**
 
@@ -845,7 +845,7 @@ COPIAS EN CDN:
 - Galería de trabajos
 - Información de contacto clara
 
-### ✍️ Escribiendo para la web:
+### Escribiendo para la web:
 
 **Hazlo escaneable:**
 
@@ -857,17 +857,17 @@ COPIAS EN CDN:
 **Ejemplo malo vs bueno:**
 
 ```
-❌ MALO: Texto largo sin separar, difícil de leer en móvil...
-✅ BUENO:
+MALO: Texto largo sin separar, difícil de leer en móvil...
+BUENO:
 Puntos clave separados
 • Fácil de escanear
 • Mejor para móviles
 • Más efectivo
 ```
 
-## 🛠️ Módulo 22: Mantenimiento Continuo
+## Módulo 22: Mantenimiento Continuo
 
-### 📅 Tareas regulares de mantenimiento:
+### Tareas regulares de mantenimiento:
 
 **Semanal:**
 
@@ -887,7 +887,7 @@ Puntos clave separados
 - Revisar y actualizar diseño si es necesario
 - Evaluar si necesitas más funciones
 
-### 🚨 Señales de que necesitas mantenimiento:
+### Señales de que necesitas mantenimiento:
 
 **Problemas técnicos:**
 
@@ -901,9 +901,9 @@ Puntos clave separados
 - Se ve mal en móvil
 - Google marca errores
 
-## 🎯 Módulo 23: Próximos Pasos en tu Journey Web
+## Módulo 23: Próximos Pasos en tu Journey Web
 
-### 🚀 De principiante a intermedio:
+### De principiante a intermedio:
 
 **Habilidades a desarrollar:**
 
@@ -919,7 +919,7 @@ Puntos clave separados
 - Aplicación de notas/tareas
 - Pequeño e-commerce
 
-### 🌟 Recursos para seguir aprendiendo:
+### Recursos para seguir aprendiendo:
 
 **Gratuitos:**
 
@@ -934,9 +934,9 @@ Puntos clave separados
 - Discord servers (comunidades específicas)
 - Meetups locales (networking)
 
-## ✅ Resumen Final - Tu Checklist de Éxito
+## Resumen Final - Tu Checklist de Éxito
 
-### 🎯 Antes de publicar:
+### Antes de publicar:
 
 - [ ] Hosting elegido y configurado
 - [ ] Dominio apuntando correctamente
@@ -944,18 +944,18 @@ Puntos clave separados
 - [ ] Imágenes optimizadas
 - [ ] Testing en diferentes dispositivos
 
-### 🛡️ Seguridad básica:
+### Seguridad básica:
 
 - [ ] Sin contenido mixto HTTP/HTTPS
 - [ ] Contraseñas seguras en todas las cuentas
 - [ ] Backups configurados
 
-### 📈 Después de publicar:
+### Después de publicar:
 
 - [ ] Analytics instalado
 - [ ] SEO básico implementado
 - [ ] Plan de mantenimiento establecido
 
-### 💡 Consejo final:
+### Consejo final:
 
 "La perfección es enemiga de lo bueno. Publica tu sitio, recibe feedback, y mejora iterativamente. Cada sitio web exitoso empezó siendo imperfecto."
